@@ -1,0 +1,1221 @@
+{
+  "year": 2026,
+  "label": "2025-26",
+  "scoring": "categories",
+  "categories": [
+    "FG%",
+    "FT%",
+    "3PM",
+    "PTS",
+    "REB",
+    "AST",
+    "STL",
+    "BLK",
+    "TO"
+  ],
+  "teams": [
+    {
+      "id": "2026:matt",
+      "managerId": "matt",
+      "name": "Mad Maxey"
+    },
+    {
+      "id": "2026:dadder",
+      "managerId": "dadder",
+      "name": "Big Papa"
+    },
+    {
+      "id": "2026:najim",
+      "managerId": "najim",
+      "name": "Baby-Faced Assassin"
+    },
+    {
+      "id": "2026:dylan",
+      "managerId": "dylan",
+      "name": "Vagiannis"
+    },
+    {
+      "id": "2026:jake",
+      "managerId": "jake",
+      "name": "Anteaters"
+    },
+    {
+      "id": "2026:benjamin",
+      "managerId": "benjamin",
+      "name": "Sweet Home Wembanyama"
+    },
+    {
+      "id": "2026:mitchell",
+      "managerId": "mitchell",
+      "name": "Sunday Strangler"
+    },
+    {
+      "id": "2026:michael",
+      "managerId": "michael",
+      "name": "Dončić Corleone"
+    },
+    {
+      "id": "2026:eddie",
+      "managerId": "eddie",
+      "name": "Ain't No Jokic"
+    },
+    {
+      "id": "2026:jacob-g",
+      "managerId": "jacob-g",
+      "name": "Melo and the Silver Seekers"
+    },
+    {
+      "id": "2026:jacob-v",
+      "managerId": "jacob-v",
+      "name": "After all that🤪"
+    },
+    {
+      "id": "2026:jordan",
+      "managerId": "jordan",
+      "name": "Day to Davis"
+    }
+  ],
+  "matchups": [
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:mitchell",
+      "homeCats": 1,
+      "awayCats": 8,
+      "tiedCats": 0
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:eddie",
+      "homeCats": 8,
+      "awayCats": 1,
+      "tiedCats": 0
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:jake",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:michael",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:dylan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:jacob-v",
+      "homeCats": 8,
+      "awayCats": 1,
+      "tiedCats": 0
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:najim",
+      "homeCats": 7,
+      "awayCats": 1,
+      "tiedCats": 1
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:jacob-g",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:jordan",
+      "homeCats": 7,
+      "awayCats": 1,
+      "tiedCats": 1
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:benjamin",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:dadder",
+      "homeCats": 8,
+      "awayCats": 0,
+      "tiedCats": 1
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:mitchell",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:eddie",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:jake",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:michael",
+      "homeCats": 8,
+      "awayCats": 1,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:dylan",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:jacob-v",
+      "homeCats": 2,
+      "awayCats": 6,
+      "tiedCats": 1
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:najim",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 19,
+      "stage": "regular",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:jacob-g",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2026:dadder",
+      "awayTeamId": "2026:eddie",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2026:dadder",
+      "awayTeamId": "2026:jake",
+      "homeCats": 2,
+      "awayCats": 6,
+      "tiedCats": 1
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2026:dadder",
+      "awayTeamId": "2026:michael",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2026:dadder",
+      "awayTeamId": "2026:dylan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2026:dadder",
+      "awayTeamId": "2026:jacob-v",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2026:dadder",
+      "awayTeamId": "2026:najim",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2026:dadder",
+      "awayTeamId": "2026:jacob-g",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2026:dadder",
+      "awayTeamId": "2026:jordan",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2026:dadder",
+      "awayTeamId": "2026:benjamin",
+      "homeCats": 7,
+      "awayCats": 1,
+      "tiedCats": 1
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2026:dadder",
+      "awayTeamId": "2026:mitchell",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2026:dadder",
+      "awayTeamId": "2026:eddie",
+      "homeCats": 4,
+      "awayCats": 4,
+      "tiedCats": 1
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2026:dadder",
+      "awayTeamId": "2026:jake",
+      "homeCats": 6,
+      "awayCats": 2,
+      "tiedCats": 1
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2026:dadder",
+      "awayTeamId": "2026:michael",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2026:dadder",
+      "awayTeamId": "2026:dylan",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2026:dadder",
+      "awayTeamId": "2026:jacob-v",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2026:dadder",
+      "awayTeamId": "2026:najim",
+      "homeCats": 3,
+      "awayCats": 5,
+      "tiedCats": 1
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2026:dadder",
+      "awayTeamId": "2026:jacob-g",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 19,
+      "stage": "regular",
+      "homeTeamId": "2026:dadder",
+      "awayTeamId": "2026:jordan",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2026:najim",
+      "awayTeamId": "2026:jacob-v",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2026:najim",
+      "awayTeamId": "2026:mitchell",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2026:najim",
+      "awayTeamId": "2026:jacob-g",
+      "homeCats": 9,
+      "awayCats": 0,
+      "tiedCats": 0
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2026:najim",
+      "awayTeamId": "2026:jordan",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2026:najim",
+      "awayTeamId": "2026:benjamin",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2026:najim",
+      "awayTeamId": "2026:eddie",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2026:najim",
+      "awayTeamId": "2026:jake",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2026:najim",
+      "awayTeamId": "2026:michael",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2026:najim",
+      "awayTeamId": "2026:dylan",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2026:najim",
+      "awayTeamId": "2026:jacob-v",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2026:najim",
+      "awayTeamId": "2026:mitchell",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2026:najim",
+      "awayTeamId": "2026:jacob-g",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2026:najim",
+      "awayTeamId": "2026:jordan",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2026:najim",
+      "awayTeamId": "2026:benjamin",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 19,
+      "stage": "regular",
+      "homeTeamId": "2026:najim",
+      "awayTeamId": "2026:eddie",
+      "homeCats": 1,
+      "awayCats": 8,
+      "tiedCats": 0
+    },
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2026:dylan",
+      "awayTeamId": "2026:jacob-g",
+      "homeCats": 4,
+      "awayCats": 4,
+      "tiedCats": 1
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2026:dylan",
+      "awayTeamId": "2026:jordan",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2026:dylan",
+      "awayTeamId": "2026:benjamin",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2026:dylan",
+      "awayTeamId": "2026:eddie",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2026:dylan",
+      "awayTeamId": "2026:jake",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2026:dylan",
+      "awayTeamId": "2026:michael",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2026:dylan",
+      "awayTeamId": "2026:mitchell",
+      "homeCats": 1,
+      "awayCats": 8,
+      "tiedCats": 0
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2026:dylan",
+      "awayTeamId": "2026:jacob-v",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2026:dylan",
+      "awayTeamId": "2026:jacob-g",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2026:dylan",
+      "awayTeamId": "2026:jordan",
+      "homeCats": 3,
+      "awayCats": 5,
+      "tiedCats": 1
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2026:dylan",
+      "awayTeamId": "2026:benjamin",
+      "homeCats": 3,
+      "awayCats": 5,
+      "tiedCats": 1
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2026:dylan",
+      "awayTeamId": "2026:eddie",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2026:dylan",
+      "awayTeamId": "2026:jake",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 19,
+      "stage": "regular",
+      "homeTeamId": "2026:dylan",
+      "awayTeamId": "2026:michael",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2026:jake",
+      "awayTeamId": "2026:benjamin",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2026:jake",
+      "awayTeamId": "2026:eddie",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2026:jake",
+      "awayTeamId": "2026:mitchell",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2026:jake",
+      "awayTeamId": "2026:michael",
+      "homeCats": 4,
+      "awayCats": 4,
+      "tiedCats": 1
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2026:jake",
+      "awayTeamId": "2026:jacob-v",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2026:jake",
+      "awayTeamId": "2026:jacob-g",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2026:jake",
+      "awayTeamId": "2026:jordan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2026:jake",
+      "awayTeamId": "2026:benjamin",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2026:jake",
+      "awayTeamId": "2026:eddie",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2026:jake",
+      "awayTeamId": "2026:mitchell",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2026:jake",
+      "awayTeamId": "2026:michael",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 19,
+      "stage": "regular",
+      "homeTeamId": "2026:jake",
+      "awayTeamId": "2026:jacob-v",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2026:benjamin",
+      "awayTeamId": "2026:michael",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2026:benjamin",
+      "awayTeamId": "2026:jacob-v",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2026:benjamin",
+      "awayTeamId": "2026:jacob-g",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2026:benjamin",
+      "awayTeamId": "2026:jordan",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2026:benjamin",
+      "awayTeamId": "2026:mitchell",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2026:benjamin",
+      "awayTeamId": "2026:eddie",
+      "homeCats": 1,
+      "awayCats": 8,
+      "tiedCats": 0
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2026:benjamin",
+      "awayTeamId": "2026:michael",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2026:benjamin",
+      "awayTeamId": "2026:jacob-v",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2026:benjamin",
+      "awayTeamId": "2026:jacob-g",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2026:benjamin",
+      "awayTeamId": "2026:jordan",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 19,
+      "stage": "regular",
+      "homeTeamId": "2026:benjamin",
+      "awayTeamId": "2026:mitchell",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2026:mitchell",
+      "awayTeamId": "2026:eddie",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2026:mitchell",
+      "awayTeamId": "2026:jacob-g",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2026:mitchell",
+      "awayTeamId": "2026:jordan",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2026:mitchell",
+      "awayTeamId": "2026:michael",
+      "homeCats": 8,
+      "awayCats": 1,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2026:mitchell",
+      "awayTeamId": "2026:jacob-v",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2026:mitchell",
+      "awayTeamId": "2026:eddie",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2026:mitchell",
+      "awayTeamId": "2026:jacob-g",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2026:mitchell",
+      "awayTeamId": "2026:jordan",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2026:mitchell",
+      "awayTeamId": "2026:michael",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2026:michael",
+      "awayTeamId": "2026:jordan",
+      "homeCats": 5,
+      "awayCats": 3,
+      "tiedCats": 1
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2026:michael",
+      "awayTeamId": "2026:eddie",
+      "homeCats": 6,
+      "awayCats": 2,
+      "tiedCats": 1
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2026:michael",
+      "awayTeamId": "2026:jacob-v",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2026:michael",
+      "awayTeamId": "2026:jacob-g",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2026:michael",
+      "awayTeamId": "2026:jordan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2026:michael",
+      "awayTeamId": "2026:eddie",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2026:eddie",
+      "awayTeamId": "2026:jacob-v",
+      "homeCats": 2,
+      "awayCats": 6,
+      "tiedCats": 1
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2026:eddie",
+      "awayTeamId": "2026:jacob-g",
+      "homeCats": 5,
+      "awayCats": 3,
+      "tiedCats": 1
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2026:eddie",
+      "awayTeamId": "2026:jordan",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2026:eddie",
+      "awayTeamId": "2026:jacob-v",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2026:jacob-g",
+      "awayTeamId": "2026:jacob-v",
+      "homeCats": 3,
+      "awayCats": 5,
+      "tiedCats": 1
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2026:jacob-g",
+      "awayTeamId": "2026:jordan",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2026:jacob-g",
+      "awayTeamId": "2026:jacob-v",
+      "homeCats": 3,
+      "awayCats": 5,
+      "tiedCats": 1
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2026:jacob-g",
+      "awayTeamId": "2026:jordan",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2026:jacob-v",
+      "awayTeamId": "2026:jordan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2026:jacob-v",
+      "awayTeamId": "2026:jordan",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 20,
+      "stage": "quarterfinal",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:michael",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 20,
+      "stage": "quarterfinal",
+      "homeTeamId": "2026:jake",
+      "awayTeamId": "2026:najim",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 20,
+      "stage": "quarterfinal",
+      "homeTeamId": "2026:jacob-v",
+      "awayTeamId": "2026:eddie",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 20,
+      "stage": "quarterfinal",
+      "homeTeamId": "2026:mitchell",
+      "awayTeamId": "2026:dylan",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 21,
+      "stage": "semifinal",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:dylan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 21,
+      "stage": "semifinal",
+      "homeTeamId": "2026:najim",
+      "awayTeamId": "2026:eddie",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 22,
+      "stage": "final",
+      "homeTeamId": "2026:matt",
+      "awayTeamId": "2026:najim",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 22,
+      "stage": "third_place",
+      "homeTeamId": "2026:eddie",
+      "awayTeamId": "2026:dylan",
+      "homeCats": 6,
+      "awayCats": 2,
+      "tiedCats": 1
+    }
+  ],
+  "finalRanks": {
+    "2026:najim": 1,
+    "2026:matt": 2,
+    "2026:eddie": 3,
+    "2026:dylan": 4,
+    "2026:jacob-v": 5,
+    "2026:michael": 6,
+    "2026:jake": 7,
+    "2026:mitchell": 8,
+    "2026:dadder": 9,
+    "2026:jacob-g": 10,
+    "2026:benjamin": 11,
+    "2026:jordan": 12
+  },
+  "verification": {
+    "source": "https://basketball.fantasysports.yahoo.com/2025/nba/5250",
+    "extracted": "2026-10-17",
+    "categoryRecords": {
+      "2026:najim": "87-82-2",
+      "2026:matt": "109-58-4",
+      "2026:eddie": "84-83-4",
+      "2026:dylan": "81-87-3",
+      "2026:jacob-v": "94-73-4",
+      "2026:michael": "76-92-3",
+      "2026:jake": "91-77-3",
+      "2026:mitchell": "99-72-0",
+      "2026:dadder": "73-92-6",
+      "2026:jacob-g": "74-93-4",
+      "2026:benjamin": "70-99-2",
+      "2026:jordan": "69-99-3"
+    },
+    "playoffSeeds": [
+      "2026:matt",
+      "2026:mitchell",
+      "2026:jacob-v",
+      "2026:jake",
+      "2026:najim",
+      "2026:eddie",
+      "2026:dylan",
+      "2026:michael"
+    ],
+    "champion": "2026:najim"
+  }
+}

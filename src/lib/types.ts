@@ -22,7 +22,7 @@ export interface Team {
   name: string;
 }
 
-export type Stage = "regular" | "semifinal" | "final" | "third_place";
+export type Stage = "regular" | "quarterfinal" | "semifinal" | "final" | "third_place";
 
 /** One head-to-head weekly matchup in a categories league. */
 export interface Matchup {
@@ -38,12 +38,26 @@ export interface Matchup {
   tiebreakWinnerTeamId?: TeamId;
 }
 
+/**
+ * How regular-season standings are ranked:
+ * - "categories": Yahoo "Head-to-Head - Categories"; every category counts, ranked by category win %.
+ * - "most_categories": one win/loss/tie per weekly matchup, ranked by matchup win %.
+ */
+export type ScoringType = "categories" | "most_categories";
+
 export interface Season {
   year: number; // season end year (2025 = the 2024-25 season)
   label: string;
+  /** Defaults to "most_categories" when absent. */
+  scoring?: ScoringType;
   categories: string[];
   teams: Team[];
   matchups: Matchup[];
+  /**
+   * Official final placement from the source, when known. Leagues with
+   * consolation brackets decide 5th place and below in games we may not store.
+   */
+  finalRanks?: Record<TeamId, number>;
 }
 
 export interface League {

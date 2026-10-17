@@ -7,6 +7,7 @@ import type { League, Stage } from "@/lib/types";
 
 const STAGE_LABEL: Record<Stage, string> = {
   regular: "Regular season",
+  quarterfinal: "Quarterfinal",
   semifinal: "Semifinal",
   final: "Final",
   third_place: "Third-place game",
