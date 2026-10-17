@@ -7,18 +7,22 @@ import { careerFromSeasons, managerSeasons } from "@/lib/analytics/career";
 import { formatNumber, formatPct, formatRecord } from "@/lib/analytics/format";
 import { opponentRecords } from "@/lib/analytics/headToHead";
 import { MIN_SEASONS_FOR_RATES } from "@/lib/analytics/overview";
-import { provider } from "@/lib/data";
+import { getLeague } from "@/lib/data";
 
 const MIN_RIVAL_GAMES = 4;
 
-export async function generateStaticParams() {
-  const league = await provider.getLeague();
-  return league.managers.map((m) => ({ managerId: m.id }));
+export async function generateStaticParams({ params }: { params: { league: string } }) {
+  const league = await getLeague(params.league);
+  if (!league) return [];
+  // Only managers who actually played in this league get a page.
+  const played = new Set(league.seasons.flatMap((s) => s.teams.map((t) => t.managerId)));
+  return league.managers.filter((m) => played.has(m.id)).map((m) => ({ managerId: m.id }));
 }
 
-export default async function ManagerPage(props: PageProps<"/demo/managers/[managerId]">) {
-  const { managerId } = await props.params;
-  const league = await provider.getLeague();
+export default async function ManagerPage(props: PageProps<"/[league]/managers/[managerId]">) {
+  const { league: slug, managerId } = await props.params;
+  const league = await getLeague(slug);
+  if (!league) notFound();
   const manager = league.managers.find((m) => m.id === managerId);
   if (!manager) notFound();
 
@@ -97,7 +101,7 @@ export default async function ManagerPage(props: PageProps<"/demo/managers/[mana
               {[...seasons].reverse().map((s) => (
                 <tr key={s.year} className={tr}>
                   <td className={td}>
-                    <Link href={`/demo/seasons/${s.year}`} className="text-accent hover:underline">{s.label}</Link>
+                    <Link href={`/${slug}/seasons/${s.year}`} className="text-accent hover:underline">{s.label}</Link>
                   </td>
                   <td className={td}>{s.teamName}</td>
                   <td className={`${td} tabular-nums`}>{formatRecord(s.wins, s.losses, s.ties)}</td>
@@ -111,7 +115,7 @@ export default async function ManagerPage(props: PageProps<"/demo/managers/[mana
         </TableWrap>
       </Section>
 
-      <Section title="Rivalries" aside={<Link href="/demo/rivalries" className="text-sm text-accent hover:underline">Compare any two managers →</Link>}>
+      <Section title="Rivalries" aside={<Link href={`/${slug}/rivalries`} className="text-sm text-accent hover:underline">Compare any two managers →</Link>}>
         {rivals.length === 0 ? (
           <p className="text-sm text-muted">Not enough head-to-head history yet (needs {MIN_RIVAL_GAMES}+ matchups against an opponent).</p>
         ) : (

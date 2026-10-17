@@ -7,12 +7,15 @@ import { formatPct, formatRecord } from "@/lib/analytics/format";
 import { championHistory, leagueSummary, MIN_SEASONS_FOR_RATES, seasonRecords } from "@/lib/analytics/overview";
 import { seasonOutcome } from "@/lib/analytics/season";
 import { colorForManager, managerColor } from "@/lib/colors";
-import { provider } from "@/lib/data";
+import { notFound } from "next/navigation";
+import { getLeague } from "@/lib/data";
 
 export const metadata = { title: "League overview" };
 
-export default async function OverviewPage() {
-  const league = await provider.getLeague();
+export default async function OverviewPage(props: PageProps<"/[league]">) {
+  const { league: slug } = await props.params;
+  const league = await getLeague(slug);
+  if (!league) notFound();
   const summary = leagueSummary(league);
   const champions = championHistory(league);
   const careers = careerStats(league);
@@ -102,7 +105,7 @@ export default async function OverviewPage() {
             <div className="mt-4 text-muted">Not decided yet.</div>
           )}
           <Link
-            href={`/demo/seasons/${reigning.year}`}
+            href={`/${slug}/seasons/${reigning.year}`}
             className="mt-6 inline-block text-sm text-accent hover:underline"
           >
             View the {reigning.label} season →
@@ -136,7 +139,7 @@ export default async function OverviewPage() {
           {[...champions].reverse().map((c) => (
             <li key={c.year}>
               <Link
-                href={`/demo/seasons/${c.year}`}
+                href={`/${slug}/seasons/${c.year}`}
                 className={`${cardClass} group block h-full p-4 transition-colors hover:border-accent/50`}
               >
                 <div className="flex items-center justify-between text-xs text-muted">
@@ -163,7 +166,7 @@ export default async function OverviewPage() {
       <Section
         title="All-time rankings"
         aside={
-          <Link href="/demo/leaderboard" className="text-sm text-accent hover:underline">
+          <Link href={`/${slug}/leaderboard`} className="text-sm text-accent hover:underline">
             Full leaderboard →
           </Link>
         }
@@ -220,7 +223,7 @@ export default async function OverviewPage() {
       <Section
         title={`Latest season · ${recent.label}`}
         aside={
-          <Link href={`/demo/seasons/${recent.year}`} className="text-sm text-accent hover:underline">
+          <Link href={`/${slug}/seasons/${recent.year}`} className="text-sm text-accent hover:underline">
             Season details →
           </Link>
         }

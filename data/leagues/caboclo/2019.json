@@ -20,8 +20,8 @@
       "name": "35.2 PPG"
     },
     {
-      "id": "2019:brendon",
-      "managerId": "brendon",
+      "id": "2019:dadder",
+      "managerId": "dadder",
       "name": "Daddy Dong"
     },
     {
@@ -123,7 +123,7 @@
     {
       "week": 7,
       "stage": "regular",
-      "homeTeamId": "2019:brendon",
+      "homeTeamId": "2019:dadder",
       "awayTeamId": "2019:matt",
       "homeCats": 2,
       "awayCats": 6,
@@ -204,7 +204,7 @@
     {
       "week": 16,
       "stage": "regular",
-      "homeTeamId": "2019:brendon",
+      "homeTeamId": "2019:dadder",
       "awayTeamId": "2019:matt",
       "homeCats": 7,
       "awayCats": 2,
@@ -303,7 +303,7 @@
     {
       "week": 9,
       "stage": "regular",
-      "homeTeamId": "2019:brendon",
+      "homeTeamId": "2019:dadder",
       "awayTeamId": "2019:najim",
       "homeCats": 6,
       "awayCats": 3,
@@ -465,7 +465,7 @@
     {
       "week": 10,
       "stage": "regular",
-      "homeTeamId": "2019:brendon",
+      "homeTeamId": "2019:dadder",
       "awayTeamId": "2019:michael",
       "homeCats": 7,
       "awayCats": 2,
@@ -528,7 +528,7 @@
     {
       "week": 20,
       "stage": "regular",
-      "homeTeamId": "2019:brendon",
+      "homeTeamId": "2019:dadder",
       "awayTeamId": "2019:michael",
       "homeCats": 6,
       "awayCats": 3,
@@ -538,7 +538,7 @@
       "week": 1,
       "stage": "regular",
       "homeTeamId": "2019:mitchell",
-      "awayTeamId": "2019:brendon",
+      "awayTeamId": "2019:dadder",
       "homeCats": 7,
       "awayCats": 2,
       "tiedCats": 0
@@ -601,7 +601,7 @@
       "week": 12,
       "stage": "regular",
       "homeTeamId": "2019:mitchell",
-      "awayTeamId": "2019:brendon",
+      "awayTeamId": "2019:dadder",
       "homeCats": 7,
       "awayCats": 1,
       "tiedCats": 1
@@ -663,7 +663,7 @@
     {
       "week": 2,
       "stage": "regular",
-      "homeTeamId": "2019:brendon",
+      "homeTeamId": "2019:dadder",
       "awayTeamId": "2019:eddie",
       "homeCats": 6,
       "awayCats": 3,
@@ -717,7 +717,7 @@
     {
       "week": 13,
       "stage": "regular",
-      "homeTeamId": "2019:brendon",
+      "homeTeamId": "2019:dadder",
       "awayTeamId": "2019:eddie",
       "homeCats": 3,
       "awayCats": 6,
@@ -771,7 +771,7 @@
     {
       "week": 3,
       "stage": "regular",
-      "homeTeamId": "2019:brendon",
+      "homeTeamId": "2019:dadder",
       "awayTeamId": "2019:jordan",
       "homeCats": 5,
       "awayCats": 4,
@@ -807,7 +807,7 @@
     {
       "week": 11,
       "stage": "regular",
-      "homeTeamId": "2019:brendon",
+      "homeTeamId": "2019:dadder",
       "awayTeamId": "2019:jordan",
       "homeCats": 4,
       "awayCats": 5,
@@ -834,7 +834,7 @@
     {
       "week": 21,
       "stage": "regular",
-      "homeTeamId": "2019:brendon",
+      "homeTeamId": "2019:dadder",
       "awayTeamId": "2019:jordan",
       "homeCats": 4,
       "awayCats": 5,
@@ -852,7 +852,7 @@
     {
       "week": 4,
       "stage": "regular",
-      "homeTeamId": "2019:brendon",
+      "homeTeamId": "2019:dadder",
       "awayTeamId": "2019:jacob-g",
       "homeCats": 6,
       "awayCats": 3,
@@ -870,7 +870,7 @@
     {
       "week": 8,
       "stage": "regular",
-      "homeTeamId": "2019:brendon",
+      "homeTeamId": "2019:dadder",
       "awayTeamId": "2019:jacob-g",
       "homeCats": 6,
       "awayCats": 3,
@@ -897,7 +897,7 @@
     {
       "week": 17,
       "stage": "regular",
-      "homeTeamId": "2019:brendon",
+      "homeTeamId": "2019:dadder",
       "awayTeamId": "2019:jacob-g",
       "homeCats": 4,
       "awayCats": 5,
@@ -915,7 +915,7 @@
     {
       "week": 5,
       "stage": "regular",
-      "homeTeamId": "2019:brendon",
+      "homeTeamId": "2019:dadder",
       "awayTeamId": "2019:benjamin",
       "homeCats": 3,
       "awayCats": 6,
@@ -924,7 +924,7 @@
     {
       "week": 6,
       "stage": "regular",
-      "homeTeamId": "2019:brendon",
+      "homeTeamId": "2019:dadder",
       "awayTeamId": "2019:benjamin",
       "homeCats": 7,
       "awayCats": 2,
@@ -933,7 +933,7 @@
     {
       "week": 14,
       "stage": "regular",
-      "homeTeamId": "2019:brendon",
+      "homeTeamId": "2019:dadder",
       "awayTeamId": "2019:brendan",
       "homeCats": 5,
       "awayCats": 4,
@@ -942,7 +942,7 @@
     {
       "week": 15,
       "stage": "regular",
-      "homeTeamId": "2019:brendon",
+      "homeTeamId": "2019:dadder",
       "awayTeamId": "2019:benjamin",
       "homeCats": 4,
       "awayCats": 5,
@@ -951,7 +951,7 @@
     {
       "week": 18,
       "stage": "regular",
-      "homeTeamId": "2019:brendon",
+      "homeTeamId": "2019:dadder",
       "awayTeamId": "2019:brendan",
       "homeCats": 5,
       "awayCats": 4,
@@ -970,7 +970,7 @@
       "week": 22,
       "stage": "quarterfinal",
       "homeTeamId": "2019:jacob-g",
-      "awayTeamId": "2019:brendon",
+      "awayTeamId": "2019:dadder",
       "homeCats": 5,
       "awayCats": 4,
       "tiedCats": 0
@@ -1027,7 +1027,7 @@
     "2019:najim": 3,
     "2019:mitchell": 4,
     "2019:jordan": 5,
-    "2019:brendon": 6,
+    "2019:dadder": 6,
     "2019:eddie": 7,
     "2019:brendan": 8,
     "2019:benjamin": 9,
@@ -1038,7 +1038,7 @@
     "2019:matt",
     "2019:najim",
     "2019:jacob-g",
-    "2019:brendon",
+    "2019:dadder",
     "2019:jordan"
   ],
   "draft": [
@@ -1062,7 +1062,7 @@
       "round": 1,
       "pick": 3,
       "overall": 3,
-      "teamId": "2019:brendon",
+      "teamId": "2019:dadder",
       "playerId": "3704",
       "playerName": "LeBron James"
     },
@@ -1182,7 +1182,7 @@
       "round": 2,
       "pick": 8,
       "overall": 18,
-      "teamId": "2019:brendon",
+      "teamId": "2019:dadder",
       "playerId": "4840",
       "playerName": "Kyrie Irving"
     },
@@ -1222,7 +1222,7 @@
       "round": 3,
       "pick": 3,
       "overall": 23,
-      "teamId": "2019:brendon",
+      "teamId": "2019:dadder",
       "playerId": "5015",
       "playerName": "Andre Drummond"
     },
@@ -1342,7 +1342,7 @@
       "round": 4,
       "pick": 8,
       "overall": 38,
-      "teamId": "2019:brendon",
+      "teamId": "2019:dadder",
       "playerId": "5638",
       "playerName": "Jamal Murray"
     },
@@ -1382,7 +1382,7 @@
       "round": 5,
       "pick": 3,
       "overall": 43,
-      "teamId": "2019:brendon",
+      "teamId": "2019:dadder",
       "playerId": "5765",
       "playerName": "Jayson Tatum"
     },
@@ -1502,7 +1502,7 @@
       "round": 6,
       "pick": 8,
       "overall": 58,
-      "teamId": "2019:brendon",
+      "teamId": "2019:dadder",
       "playerId": "5324",
       "playerName": "Zach LaVine"
     },
@@ -1542,7 +1542,7 @@
       "round": 7,
       "pick": 3,
       "overall": 63,
-      "teamId": "2019:brendon",
+      "teamId": "2019:dadder",
       "playerId": "5163",
       "playerName": "Steven Adams"
     },
@@ -1662,7 +1662,7 @@
       "round": 8,
       "pick": 8,
       "overall": 78,
-      "teamId": "2019:brendon",
+      "teamId": "2019:dadder",
       "playerId": "5636",
       "playerName": "Kris Dunn"
     },
@@ -1702,7 +1702,7 @@
       "round": 9,
       "pick": 3,
       "overall": 83,
-      "teamId": "2019:brendon",
+      "teamId": "2019:dadder",
       "playerId": "4610",
       "playerName": "Ricky Rubio"
     },
@@ -1822,7 +1822,7 @@
       "round": 10,
       "pick": 8,
       "overall": 98,
-      "teamId": "2019:brendon",
+      "teamId": "2019:dadder",
       "playerId": "5487",
       "playerName": "Larry Nance Jr."
     },
@@ -1862,7 +1862,7 @@
       "round": 11,
       "pick": 3,
       "overall": 103,
-      "teamId": "2019:brendon",
+      "teamId": "2019:dadder",
       "playerId": "5013",
       "playerName": "Harrison Barnes"
     },
@@ -1982,7 +1982,7 @@
       "round": 12,
       "pick": 8,
       "overall": 118,
-      "teamId": "2019:brendon",
+      "teamId": "2019:dadder",
       "playerId": "5341",
       "playerName": "Kyle Anderson"
     },
@@ -2022,7 +2022,7 @@
       "round": 13,
       "pick": 3,
       "overall": 123,
-      "teamId": "2019:brendon",
+      "teamId": "2019:dadder",
       "playerId": "5640",
       "playerName": "Jakob Poeltl"
     },
@@ -2194,7 +2194,7 @@
       "actualRank": 14,
       "preseasonRank": 25,
       "gamesPlayed": null,
-      "teamId": "2019:brendon"
+      "teamId": "2019:dadder"
     },
     {
       "playerId": "4840",
@@ -2202,7 +2202,7 @@
       "actualRank": 15,
       "preseasonRank": 18,
       "gamesPlayed": null,
-      "teamId": "2019:brendon"
+      "teamId": "2019:dadder"
     },
     {
       "playerId": "4130",
@@ -2402,7 +2402,7 @@
       "actualRank": 40,
       "preseasonRank": 50,
       "gamesPlayed": null,
-      "teamId": "2019:brendon"
+      "teamId": "2019:dadder"
     },
     {
       "playerId": "5492",
@@ -2498,7 +2498,7 @@
       "actualRank": 52,
       "preseasonRank": 77,
       "gamesPlayed": null,
-      "teamId": "2019:brendon"
+      "teamId": "2019:dadder"
     },
     {
       "playerId": "5835",
@@ -2594,7 +2594,7 @@
       "actualRank": 64,
       "preseasonRank": 40,
       "gamesPlayed": null,
-      "teamId": "2019:brendon"
+      "teamId": "2019:dadder"
     },
     {
       "playerId": "5161",
@@ -2618,7 +2618,7 @@
       "actualRank": 67,
       "preseasonRank": 7,
       "gamesPlayed": null,
-      "teamId": "2019:brendon"
+      "teamId": "2019:dadder"
     },
     {
       "playerId": "5142",
@@ -2658,7 +2658,7 @@
       "actualRank": 72,
       "preseasonRank": 65,
       "gamesPlayed": null,
-      "teamId": "2019:brendon"
+      "teamId": "2019:dadder"
     },
     {
       "playerId": "4139",
@@ -2858,7 +2858,7 @@
       "actualRank": 97,
       "preseasonRank": 62,
       "gamesPlayed": null,
-      "teamId": "2019:brendon"
+      "teamId": "2019:dadder"
     },
     {
       "playerId": "5154",
@@ -2970,7 +2970,7 @@
       "actualRank": 111,
       "preseasonRank": 74,
       "gamesPlayed": null,
-      "teamId": "2019:brendon"
+      "teamId": "2019:dadder"
     },
     {
       "playerId": "4724",
@@ -3018,7 +3018,7 @@
       "actualRank": 117,
       "preseasonRank": 161,
       "gamesPlayed": null,
-      "teamId": "2019:brendon"
+      "teamId": "2019:dadder"
     },
     {
       "playerId": "5338",
@@ -3306,7 +3306,7 @@
       "actualRank": 153,
       "preseasonRank": 171,
       "gamesPlayed": null,
-      "teamId": "2019:brendon"
+      "teamId": "2019:dadder"
     },
     {
       "playerId": "5325",
@@ -3754,7 +3754,7 @@
       "actualRank": 209,
       "preseasonRank": 172,
       "gamesPlayed": null,
-      "teamId": "2019:brendon"
+      "teamId": "2019:dadder"
     },
     {
       "playerId": "5214",
@@ -4330,7 +4330,7 @@
       "actualRank": 281,
       "preseasonRank": 329,
       "gamesPlayed": null,
-      "teamId": "2019:brendon"
+      "teamId": "2019:dadder"
     },
     {
       "playerId": "4638",
@@ -4490,7 +4490,7 @@
       "moves": 27,
       "trades": 1
     },
-    "2019:brendon": {
+    "2019:dadder": {
       "moves": 40,
       "trades": 1
     },
@@ -4542,7 +4542,7 @@
           ]
         },
         {
-          "teamId": "2019:brendon",
+          "teamId": "2019:dadder",
           "receives": [
             "Ben Simmons",
             "Pascal Siakam",
@@ -4566,7 +4566,7 @@
           ]
         },
         {
-          "teamId": "2019:brendon",
+          "teamId": "2019:dadder",
           "receives": [
             "Ben Simmons",
             "Pascal Siakam",
@@ -4581,7 +4581,7 @@
       "status": "completed",
       "sides": [
         {
-          "teamId": "2019:brendon",
+          "teamId": "2019:dadder",
           "receives": [
             "DeAndre Jordan"
           ]
@@ -4605,7 +4605,7 @@
           ]
         },
         {
-          "teamId": "2019:brendon",
+          "teamId": "2019:dadder",
           "receives": [
             "Al Horford"
           ]
@@ -4809,7 +4809,7 @@
       "2019:najim": "94-83-3",
       "2019:mitchell": "108-67-5",
       "2019:jordan": "87-92-1",
-      "2019:brendon": "93-85-2",
+      "2019:dadder": "93-85-2",
       "2019:eddie": "68-108-4",
       "2019:brendan": "81-99-0",
       "2019:benjamin": "87-93-0",
@@ -4820,7 +4820,7 @@
       "2019:matt",
       "2019:najim",
       "2019:jacob-g",
-      "2019:brendon",
+      "2019:dadder",
       "2019:jordan"
     ],
     "champion": "2019:matt"

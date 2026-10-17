@@ -14,6 +14,8 @@ const PALETTE = [
   "#fb923c",
   "#c084fc",
   "#a3e635",
+  "#e879f9",
+  "#94a3b8",
 ];
 
 export const managerColor = (index: number) => PALETTE[index % PALETTE.length];

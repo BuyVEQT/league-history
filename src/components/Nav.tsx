@@ -3,20 +3,23 @@
 import { CalendarDays, LayoutDashboard, ListOrdered, Swords } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useLeagueBase } from "./useLeagueBase";
 
 const LINKS = [
-  { href: "/demo", label: "Overview", icon: LayoutDashboard },
-  { href: "/demo/leaderboard", label: "Leaderboard", icon: ListOrdered },
-  { href: "/demo/seasons", label: "Seasons", icon: CalendarDays },
-  { href: "/demo/rivalries", label: "Rivalries", icon: Swords },
+  { href: "", label: "Overview", icon: LayoutDashboard },
+  { href: "/leaderboard", label: "Leaderboard", icon: ListOrdered },
+  { href: "/seasons", label: "Seasons", icon: CalendarDays },
+  { href: "/rivalries", label: "Rivalries", icon: Swords },
 ];
 
 export function Nav() {
   const pathname = usePathname();
+  const base = useLeagueBase();
   return (
     <nav aria-label="Main" className="flex gap-1 overflow-x-auto md:flex-col">
-      {LINKS.map(({ href, label, icon: Icon }) => {
-        const active = href === "/demo" ? pathname === href : pathname.startsWith(href);
+      {LINKS.map(({ href: path, label, icon: Icon }) => {
+        const href = base + path;
+        const active = path === "" ? pathname === href : pathname.startsWith(href);
         return (
           <Link
             key={href}

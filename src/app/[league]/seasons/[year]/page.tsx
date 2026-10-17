@@ -4,7 +4,7 @@ import { ManagerLink, PageTitle, Section, StatCard, TableWrap, td, th, tr } from
 import { formatPct, formatRecord } from "@/lib/analytics/format";
 import { seasonRecords } from "@/lib/analytics/overview";
 import { matchupWinner, seasonOutcome, teamIndex } from "@/lib/analytics/season";
-import { provider } from "@/lib/data";
+import { getLeague } from "@/lib/data";
 import type { Stage } from "@/lib/types";
 
 const STAGE_LABEL: Record<Stage, string> = {
@@ -15,14 +15,16 @@ const STAGE_LABEL: Record<Stage, string> = {
   third_place: "Third-place game",
 };
 
-export async function generateStaticParams() {
-  const league = await provider.getLeague();
+export async function generateStaticParams({ params }: { params: { league: string } }) {
+  const league = await getLeague(params.league);
+  if (!league) return [];
   return league.seasons.map((s) => ({ year: String(s.year) }));
 }
 
-export default async function SeasonPage(props: PageProps<"/demo/seasons/[year]">) {
-  const { year } = await props.params;
-  const league = await provider.getLeague();
+export default async function SeasonPage(props: PageProps<"/[league]/seasons/[year]">) {
+  const { league: slug, year } = await props.params;
+  const league = await getLeague(slug);
+  if (!league) notFound();
   const season = league.seasons.find((s) => String(s.year) === year);
   if (!season) notFound();
 
@@ -30,7 +32,8 @@ export default async function SeasonPage(props: PageProps<"/demo/seasons/[year]"
   const teams = teamIndex(season);
   const records = seasonRecords(season);
   const managerName = (id: string) => league.managers.find((m) => m.id === id)!.name;
-  const weeks = Math.max(...season.matchups.filter((m) => m.stage === "regular").map((m) => m.week));
+  // Count weeks actually played; some seasons skip a week number (2018-19 has no week 19).
+  const weeks = new Set(season.matchups.filter((m) => m.stage === "regular").map((m) => m.week)).size;
   const champ = outcome.championTeamId ? teams.get(outcome.championTeamId)! : null;
   const runnerUp = outcome.runnerUpTeamId ? teams.get(outcome.runnerUpTeamId)! : null;
   const playoffGames = season.matchups
@@ -45,7 +48,7 @@ export default async function SeasonPage(props: PageProps<"/demo/seasons/[year]"
         {league.seasons.map((s) => (
           <Link
             key={s.year}
-            href={`/demo/seasons/${s.year}`}
+            href={`/${slug}/seasons/${s.year}`}
             aria-current={s.year === season.year ? "page" : undefined}
             className={`rounded-full border px-3 py-1 text-sm ${
               s.year === season.year ? "border-accent bg-accent/10 text-accent" : "border-border text-muted hover:text-foreground"

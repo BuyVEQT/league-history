@@ -1,7 +1,7 @@
 # idx|team name (as on the Managers page)|manager id     (10-team season)
-# brendon / brendan: two different Yahoo accounts (different email providers); confirm with the commissioner.
+# Daddy Dong = Brendon. The commissioner says Brendon is a long-time manager; matched to dadder (the b.dadson account). notoriousBMG = Brendan, a one-season manager.
 0|35.2 PPG|mitchell
-1|Daddy Dong|brendon
+1|Daddy Dong|dadder
 2|Jordan Over LeBum|michael
 3|Klaw Leonard|matt
 4|Knicks 2.0|jordan

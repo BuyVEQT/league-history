@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import { careerStats, defaultCompare, type CareerRow } from "@/lib/analytics/career";
 import { DASH, formatNumber, formatPct, formatRecord } from "@/lib/analytics/format";
 import type { League } from "@/lib/types";
+import { useLeagueBase } from "@/components/useLeagueBase";
 
 interface Column {
   key: string;
@@ -30,6 +31,7 @@ const COLUMNS: Column[] = [
 ];
 
 export function LeaderboardTable({ league }: { league: League }) {
+  const base = useLeagueBase();
   const years = league.seasons.map((s) => s.year);
   const [from, setFrom] = useState(years[0]);
   const [to, setTo] = useState(years.at(-1)!);
@@ -132,7 +134,7 @@ export function LeaderboardTable({ league }: { league: League }) {
             {rows.map((r) => (
               <tr key={r.managerId} className="transition-colors hover:bg-surface-2/60">
                 <td className="whitespace-nowrap px-3 py-2">
-                  <Link href={`/demo/managers/${r.managerId}`} className="font-medium hover:text-accent hover:underline">
+                  <Link href={`${base}/managers/${r.managerId}`} className="font-medium hover:text-accent hover:underline">
                     {r.name}
                   </Link>
                 </td>

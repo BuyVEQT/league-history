@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
 
 export function PageTitle({ title, subtitle, eyebrow }: { title: string; subtitle?: string; eyebrow?: string }) {
@@ -72,13 +71,7 @@ export function Avatar({ name, color, size = "md" }: { name: string; color: stri
   );
 }
 
-export function ManagerLink({ id, name }: { id: string; name: string }) {
-  return (
-    <Link href={`/demo/managers/${id}`} className="font-medium text-foreground hover:text-accent">
-      {name}
-    </Link>
-  );
-}
+export { ManagerLink } from "./ManagerLink";
 
 export function EmptyState({ children }: { children: ReactNode }) {
   return (
