@@ -1,23 +1,29 @@
 "use client";
 
-import { CalendarDays, LayoutDashboard, ListOrdered, Swords } from "lucide-react";
+import { CalendarDays, ClipboardList, LayoutDashboard, ListOrdered, Swords } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLeagueBase } from "./useLeagueBase";
 
-const LINKS = [
+/** Sections that only exist when the league has the data behind them. */
+export interface NavFeatures {
+  draft?: boolean;
+}
+
+const LINKS: { href: string; label: string; icon: typeof Swords; needs?: keyof NavFeatures }[] = [
   { href: "", label: "Overview", icon: LayoutDashboard },
   { href: "/leaderboard", label: "Leaderboard", icon: ListOrdered },
   { href: "/seasons", label: "Seasons", icon: CalendarDays },
   { href: "/rivalries", label: "Rivalries", icon: Swords },
+  { href: "/draft", label: "Draft", icon: ClipboardList, needs: "draft" },
 ];
 
-export function Nav() {
+export function Nav({ features = {} }: { features?: NavFeatures }) {
   const pathname = usePathname();
   const base = useLeagueBase();
   return (
     <nav aria-label="Main" className="flex gap-1 overflow-x-auto md:flex-col">
-      {LINKS.map(({ href: path, label, icon: Icon }) => {
+      {LINKS.filter((l) => !l.needs || features[l.needs]).map(({ href: path, label, icon: Icon }) => {
         const href = base + path;
         const active = path === "" ? pathname === href : pathname.startsWith(href);
         return (
