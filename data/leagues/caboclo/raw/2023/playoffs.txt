@@ -1,0 +1,9 @@
+# week|stage|higher seed idx|lower seed idx|cats higher|cats lower   (championship bracket only)
+19|quarterfinal|6|11|5|3
+19|quarterfinal|7|9|5|4
+19|quarterfinal|3|0|6|3
+19|quarterfinal|1|10|3|6
+20|semifinal|6|10|6|3
+20|semifinal|3|7|5|4
+21|final|6|3|5|4
+21|third_place|7|10|4|5

@@ -1,0 +1,17 @@
+# managers page: team | moves | trades
+BIG papa|47|0
+Brunthony Davocolo|53|0
+Chef Curry|24|1
+Daddy Doncic|65|0
+Dame or Bust (Capt)|26|0
+Davis Bertans (JVL)|50|0
+Jimmy BUMtler 👑|57|0
+KD²|56|0
+Mikola Colić|51|1
+SGA-2|77|2
+Sunday Strangler|61|1
+Tyrese's Pieces|55|1
+# trades: date | status | team receives: players
+2023-12-05|completed|Mikola Colić: Myles Turner ;; SGA-2: Kyrie Irving
+2023-11-10|completed|SGA-2: Jalen Brunson, Jalen Williams, Bruce Brown ;; Tyrese's Pieces: Trey Murphy III, Cam Thomas, Bradley Beal
+2023-11-03|completed|Chef Curry: Jaylen Brown, Brook Lopez ;; Sunday Strangler: Devin Vassell, Zion Williamson

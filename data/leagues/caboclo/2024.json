@@ -1,0 +1,7140 @@
+{
+  "year": 2024,
+  "label": "2023-24",
+  "scoring": "categories",
+  "categories": [
+    "FG%",
+    "FT%",
+    "3PM",
+    "PTS",
+    "REB",
+    "AST",
+    "STL",
+    "BLK",
+    "TO"
+  ],
+  "teams": [
+    {
+      "id": "2024:dadder",
+      "managerId": "dadder",
+      "name": "BIG papa"
+    },
+    {
+      "id": "2024:jacob-g",
+      "managerId": "jacob-g",
+      "name": "Brunthony Davocolo"
+    },
+    {
+      "id": "2024:eddie",
+      "managerId": "eddie",
+      "name": "Chef Curry"
+    },
+    {
+      "id": "2024:jake",
+      "managerId": "jake",
+      "name": "Daddy Doncic"
+    },
+    {
+      "id": "2024:dylan",
+      "managerId": "dylan",
+      "name": "Dame or Bust (Capt)"
+    },
+    {
+      "id": "2024:jacob-v",
+      "managerId": "jacob-v",
+      "name": "Davis Bertans (JVL)"
+    },
+    {
+      "id": "2024:matt",
+      "managerId": "matt",
+      "name": "Jimmy BUMtler 👑"
+    },
+    {
+      "id": "2024:jordan",
+      "managerId": "jordan",
+      "name": "KD²"
+    },
+    {
+      "id": "2024:michael",
+      "managerId": "michael",
+      "name": "Mikola Colić"
+    },
+    {
+      "id": "2024:najim",
+      "managerId": "najim",
+      "name": "SGA-2"
+    },
+    {
+      "id": "2024:mitchell",
+      "managerId": "mitchell",
+      "name": "Sunday Strangler"
+    },
+    {
+      "id": "2024:benjamin",
+      "managerId": "benjamin",
+      "name": "Tyrese's Pieces"
+    }
+  ],
+  "matchups": [
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2024:matt",
+      "awayTeamId": "2024:mitchell",
+      "homeCats": 8,
+      "awayCats": 1,
+      "tiedCats": 0
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2024:jake",
+      "awayTeamId": "2024:matt",
+      "homeCats": 5,
+      "awayCats": 3,
+      "tiedCats": 1
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2024:matt",
+      "awayTeamId": "2024:benjamin",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2024:matt",
+      "awayTeamId": "2024:najim",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2024:eddie",
+      "awayTeamId": "2024:matt",
+      "homeCats": 1,
+      "awayCats": 7,
+      "tiedCats": 1
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2024:dadder",
+      "awayTeamId": "2024:matt",
+      "homeCats": 2,
+      "awayCats": 6,
+      "tiedCats": 1
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2024:matt",
+      "awayTeamId": "2024:jordan",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2024:dylan",
+      "awayTeamId": "2024:matt",
+      "homeCats": 1,
+      "awayCats": 8,
+      "tiedCats": 0
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-v",
+      "awayTeamId": "2024:matt",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-g",
+      "awayTeamId": "2024:matt",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2024:matt",
+      "awayTeamId": "2024:michael",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2024:matt",
+      "awayTeamId": "2024:mitchell",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2024:jake",
+      "awayTeamId": "2024:matt",
+      "homeCats": 1,
+      "awayCats": 8,
+      "tiedCats": 0
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2024:matt",
+      "awayTeamId": "2024:benjamin",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2024:matt",
+      "awayTeamId": "2024:najim",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2024:eddie",
+      "awayTeamId": "2024:matt",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2024:dadder",
+      "awayTeamId": "2024:matt",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2024:matt",
+      "awayTeamId": "2024:jordan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2024:dadder",
+      "awayTeamId": "2024:jacob-v",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2024:dadder",
+      "awayTeamId": "2024:najim",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2024:dadder",
+      "awayTeamId": "2024:jacob-g",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2024:dadder",
+      "awayTeamId": "2024:eddie",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2024:dadder",
+      "awayTeamId": "2024:michael",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2024:dadder",
+      "awayTeamId": "2024:mitchell",
+      "homeCats": 3,
+      "awayCats": 5,
+      "tiedCats": 1
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2024:dadder",
+      "awayTeamId": "2024:jordan",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2024:dadder",
+      "awayTeamId": "2024:jake",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2024:dadder",
+      "awayTeamId": "2024:dylan",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2024:dadder",
+      "awayTeamId": "2024:benjamin",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2024:dadder",
+      "awayTeamId": "2024:jacob-v",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2024:dadder",
+      "awayTeamId": "2024:najim",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2024:dadder",
+      "awayTeamId": "2024:jacob-g",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2024:dadder",
+      "awayTeamId": "2024:eddie",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2024:dadder",
+      "awayTeamId": "2024:michael",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2024:dadder",
+      "awayTeamId": "2024:mitchell",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2024:eddie",
+      "awayTeamId": "2024:jake",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2024:jake",
+      "awayTeamId": "2024:jordan",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2024:jake",
+      "awayTeamId": "2024:dylan",
+      "homeCats": 1,
+      "awayCats": 7,
+      "tiedCats": 1
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2024:jake",
+      "awayTeamId": "2024:jacob-v",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-g",
+      "awayTeamId": "2024:jake",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2024:jake",
+      "awayTeamId": "2024:michael",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2024:jake",
+      "awayTeamId": "2024:mitchell",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2024:jake",
+      "awayTeamId": "2024:benjamin",
+      "homeCats": 6,
+      "awayCats": 2,
+      "tiedCats": 1
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2024:jake",
+      "awayTeamId": "2024:najim",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2024:eddie",
+      "awayTeamId": "2024:jake",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2024:jake",
+      "awayTeamId": "2024:jordan",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2024:jake",
+      "awayTeamId": "2024:dylan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2024:jake",
+      "awayTeamId": "2024:jacob-v",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-g",
+      "awayTeamId": "2024:jake",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2024:jake",
+      "awayTeamId": "2024:michael",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-g",
+      "awayTeamId": "2024:dylan",
+      "homeCats": 8,
+      "awayCats": 1,
+      "tiedCats": 0
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2024:dylan",
+      "awayTeamId": "2024:michael",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2024:dylan",
+      "awayTeamId": "2024:mitchell",
+      "homeCats": 6,
+      "awayCats": 2,
+      "tiedCats": 1
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2024:dylan",
+      "awayTeamId": "2024:benjamin",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2024:dylan",
+      "awayTeamId": "2024:najim",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2024:eddie",
+      "awayTeamId": "2024:dylan",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2024:dylan",
+      "awayTeamId": "2024:jordan",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2024:dylan",
+      "awayTeamId": "2024:jacob-v",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-g",
+      "awayTeamId": "2024:dylan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2024:dylan",
+      "awayTeamId": "2024:michael",
+      "homeCats": 5,
+      "awayCats": 3,
+      "tiedCats": 1
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2024:dylan",
+      "awayTeamId": "2024:mitchell",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2024:dylan",
+      "awayTeamId": "2024:benjamin",
+      "homeCats": 2,
+      "awayCats": 6,
+      "tiedCats": 1
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2024:dylan",
+      "awayTeamId": "2024:najim",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2024:eddie",
+      "awayTeamId": "2024:dylan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-g",
+      "awayTeamId": "2024:jacob-v",
+      "homeCats": 5,
+      "awayCats": 3,
+      "tiedCats": 1
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-v",
+      "awayTeamId": "2024:michael",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-v",
+      "awayTeamId": "2024:mitchell",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-v",
+      "awayTeamId": "2024:benjamin",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-v",
+      "awayTeamId": "2024:najim",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2024:eddie",
+      "awayTeamId": "2024:jacob-v",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-v",
+      "awayTeamId": "2024:jordan",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-g",
+      "awayTeamId": "2024:jacob-v",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-v",
+      "awayTeamId": "2024:michael",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-v",
+      "awayTeamId": "2024:mitchell",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-v",
+      "awayTeamId": "2024:benjamin",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-v",
+      "awayTeamId": "2024:najim",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2024:najim",
+      "awayTeamId": "2024:benjamin",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2024:eddie",
+      "awayTeamId": "2024:benjamin",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2024:jordan",
+      "awayTeamId": "2024:benjamin",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-g",
+      "awayTeamId": "2024:benjamin",
+      "homeCats": 4,
+      "awayCats": 4,
+      "tiedCats": 1
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2024:michael",
+      "awayTeamId": "2024:benjamin",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2024:mitchell",
+      "awayTeamId": "2024:benjamin",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2024:najim",
+      "awayTeamId": "2024:benjamin",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2024:eddie",
+      "awayTeamId": "2024:benjamin",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2024:jordan",
+      "awayTeamId": "2024:benjamin",
+      "homeCats": 5,
+      "awayCats": 3,
+      "tiedCats": 1
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-g",
+      "awayTeamId": "2024:benjamin",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2024:eddie",
+      "awayTeamId": "2024:najim",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2024:jordan",
+      "awayTeamId": "2024:najim",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-g",
+      "awayTeamId": "2024:najim",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2024:michael",
+      "awayTeamId": "2024:najim",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2024:najim",
+      "awayTeamId": "2024:mitchell",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2024:eddie",
+      "awayTeamId": "2024:najim",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2024:jordan",
+      "awayTeamId": "2024:najim",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-g",
+      "awayTeamId": "2024:michael",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-g",
+      "awayTeamId": "2024:mitchell",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-g",
+      "awayTeamId": "2024:eddie",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-g",
+      "awayTeamId": "2024:jordan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-g",
+      "awayTeamId": "2024:michael",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2024:jacob-g",
+      "awayTeamId": "2024:mitchell",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2024:jordan",
+      "awayTeamId": "2024:mitchell",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2024:michael",
+      "awayTeamId": "2024:mitchell",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2024:eddie",
+      "awayTeamId": "2024:mitchell",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2024:jordan",
+      "awayTeamId": "2024:mitchell",
+      "homeCats": 5,
+      "awayCats": 3,
+      "tiedCats": 1
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2024:michael",
+      "awayTeamId": "2024:mitchell",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2024:eddie",
+      "awayTeamId": "2024:jordan",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2024:eddie",
+      "awayTeamId": "2024:michael",
+      "homeCats": 4,
+      "awayCats": 4,
+      "tiedCats": 1
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2024:eddie",
+      "awayTeamId": "2024:jordan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2024:jordan",
+      "awayTeamId": "2024:michael",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2024:jordan",
+      "awayTeamId": "2024:michael",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 19,
+      "stage": "quarterfinal",
+      "homeTeamId": "2024:matt",
+      "awayTeamId": "2024:benjamin",
+      "homeCats": 5,
+      "awayCats": 3,
+      "tiedCats": 1
+    },
+    {
+      "week": 19,
+      "stage": "quarterfinal",
+      "homeTeamId": "2024:jordan",
+      "awayTeamId": "2024:najim",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 19,
+      "stage": "quarterfinal",
+      "homeTeamId": "2024:jake",
+      "awayTeamId": "2024:dadder",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 19,
+      "stage": "quarterfinal",
+      "homeTeamId": "2024:jacob-g",
+      "awayTeamId": "2024:mitchell",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 20,
+      "stage": "semifinal",
+      "homeTeamId": "2024:matt",
+      "awayTeamId": "2024:mitchell",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 20,
+      "stage": "semifinal",
+      "homeTeamId": "2024:jake",
+      "awayTeamId": "2024:jordan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 21,
+      "stage": "final",
+      "homeTeamId": "2024:matt",
+      "awayTeamId": "2024:jake",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 21,
+      "stage": "third_place",
+      "homeTeamId": "2024:jordan",
+      "awayTeamId": "2024:mitchell",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    }
+  ],
+  "finalRanks": {
+    "2024:matt": 1,
+    "2024:jake": 2,
+    "2024:mitchell": 3,
+    "2024:jordan": 4,
+    "2024:jacob-g": 5,
+    "2024:najim": 6,
+    "2024:benjamin": 7,
+    "2024:dadder": 8,
+    "2024:eddie": 9,
+    "2024:dylan": 10,
+    "2024:michael": 11,
+    "2024:jacob-v": 12
+  },
+  "draft": [
+    {
+      "round": 1,
+      "pick": 1,
+      "overall": 1,
+      "teamId": "2024:michael",
+      "playerId": "5352",
+      "playerName": "Nikola Jokić"
+    },
+    {
+      "round": 1,
+      "pick": 2,
+      "overall": 2,
+      "teamId": "2024:najim",
+      "playerId": "6022",
+      "playerName": "Shai Gilgeous-Alexander"
+    },
+    {
+      "round": 1,
+      "pick": 3,
+      "overall": 3,
+      "teamId": "2024:jacob-v",
+      "playerId": "5294",
+      "playerName": "Joel Embiid"
+    },
+    {
+      "round": 1,
+      "pick": 4,
+      "overall": 4,
+      "teamId": "2024:jake",
+      "playerId": "6014",
+      "playerName": "Luka Dončić"
+    },
+    {
+      "round": 1,
+      "pick": 5,
+      "overall": 5,
+      "teamId": "2024:mitchell",
+      "playerId": "5185",
+      "playerName": "Giannis Antetokounmpo"
+    },
+    {
+      "round": 1,
+      "pick": 6,
+      "overall": 6,
+      "teamId": "2024:matt",
+      "playerId": "5765",
+      "playerName": "Jayson Tatum"
+    },
+    {
+      "round": 1,
+      "pick": 7,
+      "overall": 7,
+      "teamId": "2024:eddie",
+      "playerId": "4612",
+      "playerName": "Stephen Curry"
+    },
+    {
+      "round": 1,
+      "pick": 8,
+      "overall": 8,
+      "teamId": "2024:benjamin",
+      "playerId": "6404",
+      "playerName": "Tyrese Haliburton"
+    },
+    {
+      "round": 1,
+      "pick": 9,
+      "overall": 9,
+      "teamId": "2024:dadder",
+      "playerId": "6395",
+      "playerName": "LaMelo Ball"
+    },
+    {
+      "round": 1,
+      "pick": 10,
+      "overall": 10,
+      "teamId": "2024:jordan",
+      "playerId": "4244",
+      "playerName": "Kevin Durant"
+    },
+    {
+      "round": 1,
+      "pick": 11,
+      "overall": 11,
+      "teamId": "2024:jacob-g",
+      "playerId": "5007",
+      "playerName": "Anthony Davis"
+    },
+    {
+      "round": 1,
+      "pick": 12,
+      "overall": 12,
+      "teamId": "2024:dylan",
+      "playerId": "5012",
+      "playerName": "Damian Lillard"
+    },
+    {
+      "round": 2,
+      "pick": 1,
+      "overall": 13,
+      "teamId": "2024:dylan",
+      "playerId": "6355",
+      "playerName": "Anthony Edwards"
+    },
+    {
+      "round": 2,
+      "pick": 2,
+      "overall": 14,
+      "teamId": "2024:jacob-g",
+      "playerId": "6015",
+      "playerName": "Jaren Jackson Jr."
+    },
+    {
+      "round": 2,
+      "pick": 3,
+      "overall": 15,
+      "teamId": "2024:jordan",
+      "playerId": "5826",
+      "playerName": "Donovan Mitchell"
+    },
+    {
+      "round": 2,
+      "pick": 4,
+      "overall": 16,
+      "teamId": "2024:dadder",
+      "playerId": "5473",
+      "playerName": "Devin Booker"
+    },
+    {
+      "round": 2,
+      "pick": 5,
+      "overall": 17,
+      "teamId": "2024:benjamin",
+      "playerId": "6016",
+      "playerName": "Trae Young"
+    },
+    {
+      "round": 2,
+      "pick": 6,
+      "overall": 18,
+      "teamId": "2024:eddie",
+      "playerId": "6021",
+      "playerName": "Mikal Bridges"
+    },
+    {
+      "round": 2,
+      "pick": 7,
+      "overall": 19,
+      "teamId": "2024:matt",
+      "playerId": "4912",
+      "playerName": "Jimmy Butler III"
+    },
+    {
+      "round": 2,
+      "pick": 8,
+      "overall": 20,
+      "teamId": "2024:mitchell",
+      "playerId": "5642",
+      "playerName": "Domantas Sabonis"
+    },
+    {
+      "round": 2,
+      "pick": 9,
+      "overall": 21,
+      "teamId": "2024:jake",
+      "playerId": "3704",
+      "playerName": "LeBron James"
+    },
+    {
+      "round": 2,
+      "pick": 10,
+      "overall": 22,
+      "teamId": "2024:jacob-v",
+      "playerId": "6422",
+      "playerName": "Desmond Bane"
+    },
+    {
+      "round": 2,
+      "pick": 11,
+      "overall": 23,
+      "teamId": "2024:najim",
+      "playerId": "4563",
+      "playerName": "James Harden"
+    },
+    {
+      "round": 2,
+      "pick": 12,
+      "overall": 24,
+      "teamId": "2024:michael",
+      "playerId": "4840",
+      "playerName": "Kyrie Irving"
+    },
+    {
+      "round": 3,
+      "pick": 1,
+      "overall": 25,
+      "teamId": "2024:michael",
+      "playerId": "5432",
+      "playerName": "Karl-Anthony Towns"
+    },
+    {
+      "round": 3,
+      "pick": 2,
+      "overall": 26,
+      "teamId": "2024:najim",
+      "playerId": "5471",
+      "playerName": "Myles Turner"
+    },
+    {
+      "round": 3,
+      "pick": 3,
+      "overall": 27,
+      "teamId": "2024:jacob-v",
+      "playerId": "5658",
+      "playerName": "Pascal Siakam"
+    },
+    {
+      "round": 3,
+      "pick": 4,
+      "overall": 28,
+      "teamId": "2024:jake",
+      "playerId": "4725",
+      "playerName": "Paul George"
+    },
+    {
+      "round": 3,
+      "pick": 5,
+      "overall": 29,
+      "teamId": "2024:mitchell",
+      "playerId": "4896",
+      "playerName": "Kawhi Leonard"
+    },
+    {
+      "round": 3,
+      "pick": 6,
+      "overall": 30,
+      "teamId": "2024:matt",
+      "playerId": "5660",
+      "playerName": "Dejounte Murray"
+    },
+    {
+      "round": 3,
+      "pick": 7,
+      "overall": 31,
+      "teamId": "2024:eddie",
+      "playerId": "5727",
+      "playerName": "Fred VanVleet"
+    },
+    {
+      "round": 3,
+      "pick": 8,
+      "overall": 32,
+      "teamId": "2024:benjamin",
+      "playerId": "6044",
+      "playerName": "Jalen Brunson"
+    },
+    {
+      "round": 3,
+      "pick": 9,
+      "overall": 33,
+      "teamId": "2024:dadder",
+      "playerId": "5769",
+      "playerName": "Lauri Markkanen"
+    },
+    {
+      "round": 3,
+      "pick": 10,
+      "overall": 34,
+      "teamId": "2024:jordan",
+      "playerId": "10094",
+      "playerName": "Victor Wembanyama"
+    },
+    {
+      "round": 3,
+      "pick": 11,
+      "overall": 35,
+      "teamId": "2024:jacob-g",
+      "playerId": "5464",
+      "playerName": "Kristaps Porziņģis"
+    },
+    {
+      "round": 3,
+      "pick": 12,
+      "overall": 36,
+      "teamId": "2024:dylan",
+      "playerId": "5827",
+      "playerName": "Bam Adebayo"
+    },
+    {
+      "round": 4,
+      "pick": 1,
+      "overall": 37,
+      "teamId": "2024:dylan",
+      "playerId": "6514",
+      "playerName": "Evan Mobley"
+    },
+    {
+      "round": 4,
+      "pick": 2,
+      "overall": 38,
+      "teamId": "2024:jacob-g",
+      "playerId": "4622",
+      "playerName": "Jrue Holiday"
+    },
+    {
+      "round": 4,
+      "pick": 3,
+      "overall": 39,
+      "teamId": "2024:jordan",
+      "playerId": "5767",
+      "playerName": "De'Aaron Fox"
+    },
+    {
+      "round": 4,
+      "pick": 4,
+      "overall": 40,
+      "teamId": "2024:dadder",
+      "playerId": "4897",
+      "playerName": "Nikola Vučević"
+    },
+    {
+      "round": 4,
+      "pick": 5,
+      "overall": 41,
+      "teamId": "2024:benjamin",
+      "playerId": "6515",
+      "playerName": "Scottie Barnes"
+    },
+    {
+      "round": 4,
+      "pick": 6,
+      "overall": 42,
+      "teamId": "2024:eddie",
+      "playerId": "6167",
+      "playerName": "Darius Garland"
+    },
+    {
+      "round": 4,
+      "pick": 7,
+      "overall": 43,
+      "teamId": "2024:matt",
+      "playerId": "4614",
+      "playerName": "DeMar DeRozan"
+    },
+    {
+      "round": 4,
+      "pick": 8,
+      "overall": 44,
+      "teamId": "2024:mitchell",
+      "playerId": "5602",
+      "playerName": "Jaylen Brown"
+    },
+    {
+      "round": 4,
+      "pick": 9,
+      "overall": 45,
+      "teamId": "2024:jake",
+      "playerId": "6512",
+      "playerName": "Cade Cunningham"
+    },
+    {
+      "round": 4,
+      "pick": 10,
+      "overall": 46,
+      "teamId": "2024:jacob-v",
+      "playerId": "5638",
+      "playerName": "Jamal Murray"
+    },
+    {
+      "round": 4,
+      "pick": 11,
+      "overall": 47,
+      "teamId": "2024:najim",
+      "playerId": "5836",
+      "playerName": "OG Anunoby"
+    },
+    {
+      "round": 4,
+      "pick": 12,
+      "overall": 48,
+      "teamId": "2024:michael",
+      "playerId": "5324",
+      "playerName": "Zach LaVine"
+    },
+    {
+      "round": 5,
+      "pick": 1,
+      "overall": 49,
+      "teamId": "2024:michael",
+      "playerId": "6712",
+      "playerName": "Walker Kessler"
+    },
+    {
+      "round": 5,
+      "pick": 2,
+      "overall": 50,
+      "teamId": "2024:najim",
+      "playerId": "6219",
+      "playerName": "Nic Claxton"
+    },
+    {
+      "round": 5,
+      "pick": 3,
+      "overall": 51,
+      "teamId": "2024:jacob-v",
+      "playerId": "5601",
+      "playerName": "Brandon Ingram"
+    },
+    {
+      "round": 5,
+      "pick": 4,
+      "overall": 52,
+      "teamId": "2024:jake",
+      "playerId": "5958",
+      "playerName": "Deandre Ayton"
+    },
+    {
+      "round": 5,
+      "pick": 5,
+      "overall": 53,
+      "teamId": "2024:mitchell",
+      "playerId": "4472",
+      "playerName": "Brook Lopez"
+    },
+    {
+      "round": 5,
+      "pick": 6,
+      "overall": 54,
+      "teamId": "2024:matt",
+      "playerId": "5835",
+      "playerName": "Jarrett Allen"
+    },
+    {
+      "round": 5,
+      "pick": 7,
+      "overall": 55,
+      "teamId": "2024:eddie",
+      "playerId": "6163",
+      "playerName": "Zion Williamson"
+    },
+    {
+      "round": 5,
+      "pick": 8,
+      "overall": 56,
+      "teamId": "2024:benjamin",
+      "playerId": "6548",
+      "playerName": "Josh Giddey"
+    },
+    {
+      "round": 5,
+      "pick": 9,
+      "overall": 57,
+      "teamId": "2024:dadder",
+      "playerId": "5318",
+      "playerName": "Julius Randle"
+    },
+    {
+      "round": 5,
+      "pick": 10,
+      "overall": 58,
+      "teamId": "2024:jordan",
+      "playerId": "6035",
+      "playerName": "Anfernee Simons"
+    },
+    {
+      "round": 5,
+      "pick": 11,
+      "overall": 59,
+      "teamId": "2024:jacob-g",
+      "playerId": "6413",
+      "playerName": "Tyrese Maxey"
+    },
+    {
+      "round": 5,
+      "pick": 12,
+      "overall": 60,
+      "teamId": "2024:dylan",
+      "playerId": "6216",
+      "playerName": "Jordan Poole"
+    },
+    {
+      "round": 6,
+      "pick": 1,
+      "overall": 61,
+      "teamId": "2024:dylan",
+      "playerId": "5197",
+      "playerName": "Rudy Gobert"
+    },
+    {
+      "round": 6,
+      "pick": 2,
+      "overall": 62,
+      "teamId": "2024:jacob-g",
+      "playerId": "6692",
+      "playerName": "Chet Holmgren"
+    },
+    {
+      "round": 6,
+      "pick": 3,
+      "overall": 63,
+      "teamId": "2024:jordan",
+      "playerId": "6558",
+      "playerName": "Alperen Şengün"
+    },
+    {
+      "round": 6,
+      "pick": 4,
+      "overall": 64,
+      "teamId": "2024:dadder",
+      "playerId": "6164",
+      "playerName": "Ja Morant"
+    },
+    {
+      "round": 6,
+      "pick": 5,
+      "overall": 65,
+      "teamId": "2024:benjamin",
+      "playerId": "6702",
+      "playerName": "Jalen Williams"
+    },
+    {
+      "round": 6,
+      "pick": 6,
+      "overall": 66,
+      "teamId": "2024:eddie",
+      "playerId": "6403",
+      "playerName": "Devin Vassell"
+    },
+    {
+      "round": 6,
+      "pick": 7,
+      "overall": 67,
+      "teamId": "2024:matt",
+      "playerId": "6550",
+      "playerName": "Franz Wagner"
+    },
+    {
+      "round": 6,
+      "pick": 8,
+      "overall": 68,
+      "teamId": "2024:mitchell",
+      "playerId": "5640",
+      "playerName": "Jakob Poeltl"
+    },
+    {
+      "round": 6,
+      "pick": 9,
+      "overall": 69,
+      "teamId": "2024:jake",
+      "playerId": "6691",
+      "playerName": "Paolo Banchero"
+    },
+    {
+      "round": 6,
+      "pick": 10,
+      "overall": 70,
+      "teamId": "2024:jacob-v",
+      "playerId": "6173",
+      "playerName": "Cameron Johnson"
+    },
+    {
+      "round": 6,
+      "pick": 11,
+      "overall": 71,
+      "teamId": "2024:najim",
+      "playerId": "5009",
+      "playerName": "Bradley Beal"
+    },
+    {
+      "round": 6,
+      "pick": 12,
+      "overall": 72,
+      "teamId": "2024:michael",
+      "playerId": "6175",
+      "playerName": "Tyler Herro"
+    },
+    {
+      "round": 7,
+      "pick": 1,
+      "overall": 73,
+      "teamId": "2024:michael",
+      "playerId": "5484",
+      "playerName": "Tyus Jones"
+    },
+    {
+      "round": 7,
+      "pick": 2,
+      "overall": 74,
+      "teamId": "2024:najim",
+      "playerId": "5763",
+      "playerName": "Markelle Fultz"
+    },
+    {
+      "round": 7,
+      "pick": 3,
+      "overall": 75,
+      "teamId": "2024:jacob-v",
+      "playerId": "5073",
+      "playerName": "Khris Middleton"
+    },
+    {
+      "round": 7,
+      "pick": 4,
+      "overall": 76,
+      "teamId": "2024:jake",
+      "playerId": "5336",
+      "playerName": "Clint Capela"
+    },
+    {
+      "round": 7,
+      "pick": 5,
+      "overall": 77,
+      "teamId": "2024:mitchell",
+      "playerId": "5637",
+      "playerName": "Buddy Hield"
+    },
+    {
+      "round": 7,
+      "pick": 6,
+      "overall": 78,
+      "teamId": "2024:matt",
+      "playerId": "4901",
+      "playerName": "Tobias Harris"
+    },
+    {
+      "round": 7,
+      "pick": 7,
+      "overall": 79,
+      "teamId": "2024:eddie",
+      "playerId": "5350",
+      "playerName": "Jerami Grant"
+    },
+    {
+      "round": 7,
+      "pick": 8,
+      "overall": 80,
+      "teamId": "2024:benjamin",
+      "playerId": "5842",
+      "playerName": "Derrick White"
+    },
+    {
+      "round": 7,
+      "pick": 9,
+      "overall": 81,
+      "teamId": "2024:dadder",
+      "playerId": "5317",
+      "playerName": "Marcus Smart"
+    },
+    {
+      "round": 7,
+      "pick": 10,
+      "overall": 82,
+      "teamId": "2024:jordan",
+      "playerId": "6705",
+      "playerName": "Mark Williams"
+    },
+    {
+      "round": 7,
+      "pick": 11,
+      "overall": 83,
+      "teamId": "2024:jacob-g",
+      "playerId": "6025",
+      "playerName": "Michael Porter Jr."
+    },
+    {
+      "round": 7,
+      "pick": 12,
+      "overall": 84,
+      "teamId": "2024:dylan",
+      "playerId": "5840",
+      "playerName": "Kyle Kuzma"
+    },
+    {
+      "round": 8,
+      "pick": 1,
+      "overall": 85,
+      "teamId": "2024:dylan",
+      "playerId": "5292",
+      "playerName": "Andrew Wiggins"
+    },
+    {
+      "round": 8,
+      "pick": 2,
+      "overall": 86,
+      "teamId": "2024:jacob-g",
+      "playerId": "4892",
+      "playerName": "Klay Thompson"
+    },
+    {
+      "round": 8,
+      "pick": 3,
+      "overall": 87,
+      "teamId": "2024:jordan",
+      "playerId": "6697",
+      "playerName": "Shaedon Sharpe"
+    },
+    {
+      "round": 8,
+      "pick": 4,
+      "overall": 88,
+      "teamId": "2024:dadder",
+      "playerId": "5476",
+      "playerName": "Terry Rozier"
+    },
+    {
+      "round": 8,
+      "pick": 5,
+      "overall": 89,
+      "teamId": "2024:benjamin",
+      "playerId": "6703",
+      "playerName": "Jalen Duren"
+    },
+    {
+      "round": 8,
+      "pick": 6,
+      "overall": 90,
+      "teamId": "2024:eddie",
+      "playerId": "5069",
+      "playerName": "Draymond Green"
+    },
+    {
+      "round": 8,
+      "pick": 7,
+      "overall": 91,
+      "teamId": "2024:matt",
+      "playerId": "5161",
+      "playerName": "CJ McCollum"
+    },
+    {
+      "round": 8,
+      "pick": 8,
+      "overall": 92,
+      "teamId": "2024:mitchell",
+      "playerId": "6693",
+      "playerName": "Jabari Smith Jr."
+    },
+    {
+      "round": 8,
+      "pick": 9,
+      "overall": 93,
+      "teamId": "2024:jake",
+      "playerId": "6038",
+      "playerName": "Robert Williams III"
+    },
+    {
+      "round": 8,
+      "pick": 10,
+      "overall": 94,
+      "teamId": "2024:jacob-v",
+      "playerId": "6606",
+      "playerName": "Austin Reaves"
+    },
+    {
+      "round": 8,
+      "pick": 11,
+      "overall": 95,
+      "teamId": "2024:najim",
+      "playerId": "3930",
+      "playerName": "Chris Paul"
+    },
+    {
+      "round": 8,
+      "pick": 12,
+      "overall": 96,
+      "teamId": "2024:michael",
+      "playerId": "6420",
+      "playerName": "Jaden McDaniels"
+    },
+    {
+      "round": 9,
+      "pick": 1,
+      "overall": 97,
+      "teamId": "2024:michael",
+      "playerId": "10048",
+      "playerName": "Scoot Henderson"
+    },
+    {
+      "round": 9,
+      "pick": 2,
+      "overall": 98,
+      "teamId": "2024:najim",
+      "playerId": "6559",
+      "playerName": "Trey Murphy III"
+    },
+    {
+      "round": 9,
+      "pick": 3,
+      "overall": 99,
+      "teamId": "2024:jacob-v",
+      "playerId": "6018",
+      "playerName": "Wendell Carter Jr."
+    },
+    {
+      "round": 9,
+      "pick": 4,
+      "overall": 100,
+      "teamId": "2024:jake",
+      "playerId": "6513",
+      "playerName": "Jalen Green"
+    },
+    {
+      "round": 9,
+      "pick": 5,
+      "overall": 101,
+      "teamId": "2024:mitchell",
+      "playerId": "6047",
+      "playerName": "Mitchell Robinson"
+    },
+    {
+      "round": 9,
+      "pick": 6,
+      "overall": 102,
+      "teamId": "2024:matt",
+      "playerId": "6398",
+      "playerName": "Onyeka Okongwu"
+    },
+    {
+      "round": 9,
+      "pick": 7,
+      "overall": 103,
+      "teamId": "2024:eddie",
+      "playerId": "6694",
+      "playerName": "Keegan Murray"
+    },
+    {
+      "round": 9,
+      "pick": 8,
+      "overall": 104,
+      "teamId": "2024:benjamin",
+      "playerId": "4886",
+      "playerName": "Jonas Valančiūnas"
+    },
+    {
+      "round": 9,
+      "pick": 9,
+      "overall": 105,
+      "teamId": "2024:dadder",
+      "playerId": "5832",
+      "playerName": "John Collins"
+    },
+    {
+      "round": 9,
+      "pick": 10,
+      "overall": 106,
+      "teamId": "2024:jordan",
+      "playerId": "5327",
+      "playerName": "Jusuf Nurkić"
+    },
+    {
+      "round": 9,
+      "pick": 11,
+      "overall": 107,
+      "teamId": "2024:jacob-g",
+      "playerId": "6226",
+      "playerName": "Daniel Gafford"
+    },
+    {
+      "round": 9,
+      "pick": 12,
+      "overall": 108,
+      "teamId": "2024:dylan",
+      "playerId": "5433",
+      "playerName": "D'Angelo Russell"
+    },
+    {
+      "round": 10,
+      "pick": 1,
+      "overall": 109,
+      "teamId": "2024:dylan",
+      "playerId": "5357",
+      "playerName": "Jordan Clarkson"
+    },
+    {
+      "round": 10,
+      "pick": 2,
+      "overall": 110,
+      "teamId": "2024:jacob-g",
+      "playerId": "6048",
+      "playerName": "Gary Trent Jr."
+    },
+    {
+      "round": 10,
+      "pick": 3,
+      "overall": 111,
+      "teamId": "2024:jordan",
+      "playerId": "6174",
+      "playerName": "P.J. Washington"
+    },
+    {
+      "round": 10,
+      "pick": 4,
+      "overall": 112,
+      "teamId": "2024:dadder",
+      "playerId": "5482",
+      "playerName": "Bobby Portis Jr."
+    },
+    {
+      "round": 10,
+      "pick": 5,
+      "overall": 113,
+      "teamId": "2024:benjamin",
+      "playerId": "6053",
+      "playerName": "Bruce Brown"
+    },
+    {
+      "round": 10,
+      "pick": 6,
+      "overall": 114,
+      "teamId": "2024:eddie",
+      "playerId": "6057",
+      "playerName": "De'Anthony Melton"
+    },
+    {
+      "round": 10,
+      "pick": 7,
+      "overall": 115,
+      "teamId": "2024:matt",
+      "playerId": "6417",
+      "playerName": "Immanuel Quickley"
+    },
+    {
+      "round": 10,
+      "pick": 8,
+      "overall": 116,
+      "teamId": "2024:mitchell",
+      "playerId": "5295",
+      "playerName": "Aaron Gordon"
+    },
+    {
+      "round": 10,
+      "pick": 9,
+      "overall": 117,
+      "teamId": "2024:jake",
+      "playerId": "5600",
+      "playerName": "Ben Simmons"
+    },
+    {
+      "round": 10,
+      "pick": 10,
+      "overall": 118,
+      "teamId": "2024:jacob-v",
+      "playerId": "6433",
+      "playerName": "Tre Jones"
+    },
+    {
+      "round": 10,
+      "pick": 11,
+      "overall": 119,
+      "teamId": "2024:najim",
+      "playerId": "4245",
+      "playerName": "Al Horford"
+    },
+    {
+      "round": 10,
+      "pick": 12,
+      "overall": 120,
+      "teamId": "2024:michael",
+      "playerId": "6577",
+      "playerName": "Herbert Jones"
+    },
+    {
+      "round": 11,
+      "pick": 1,
+      "overall": 121,
+      "teamId": "2024:michael",
+      "playerId": "4913",
+      "playerName": "Bojan Bogdanović"
+    },
+    {
+      "round": 11,
+      "pick": 2,
+      "overall": 122,
+      "teamId": "2024:najim",
+      "playerId": "5843",
+      "playerName": "Josh Hart"
+    },
+    {
+      "round": 11,
+      "pick": 3,
+      "overall": 123,
+      "teamId": "2024:jacob-v",
+      "playerId": "5823",
+      "playerName": "Zach Collins"
+    },
+    {
+      "round": 11,
+      "pick": 4,
+      "overall": 124,
+      "teamId": "2024:jake",
+      "playerId": "6217",
+      "playerName": "Keldon Johnson"
+    },
+    {
+      "round": 11,
+      "pick": 5,
+      "overall": 125,
+      "teamId": "2024:mitchell",
+      "playerId": "5667",
+      "playerName": "Malcolm Brogdon"
+    },
+    {
+      "round": 11,
+      "pick": 6,
+      "overall": 126,
+      "teamId": "2024:matt",
+      "playerId": "5663",
+      "playerName": "Ivica Zubac"
+    },
+    {
+      "round": 11,
+      "pick": 7,
+      "overall": 127,
+      "teamId": "2024:eddie",
+      "playerId": "6696",
+      "playerName": "Bennedict Mathurin"
+    },
+    {
+      "round": 11,
+      "pick": 8,
+      "overall": 128,
+      "teamId": "2024:benjamin",
+      "playerId": "6165",
+      "playerName": "RJ Barrett"
+    },
+    {
+      "round": 11,
+      "pick": 9,
+      "overall": 129,
+      "teamId": "2024:dadder",
+      "playerId": "4246",
+      "playerName": "Mike Conley"
+    },
+    {
+      "round": 11,
+      "pick": 10,
+      "overall": 130,
+      "teamId": "2024:jordan",
+      "playerId": "5187",
+      "playerName": "Dennis Schröder"
+    },
+    {
+      "round": 11,
+      "pick": 11,
+      "overall": 131,
+      "teamId": "2024:jacob-g",
+      "playerId": "5583",
+      "playerName": "Christian Wood"
+    },
+    {
+      "round": 11,
+      "pick": 12,
+      "overall": 132,
+      "teamId": "2024:dylan",
+      "playerId": "6023",
+      "playerName": "Miles Bridges"
+    },
+    {
+      "round": 12,
+      "pick": 1,
+      "overall": 133,
+      "teamId": "2024:dylan",
+      "playerId": "5349",
+      "playerName": "Spencer Dinwiddie"
+    },
+    {
+      "round": 12,
+      "pick": 2,
+      "overall": 134,
+      "teamId": "2024:jacob-g",
+      "playerId": "5159",
+      "playerName": "Kentavious Caldwell-Pope"
+    },
+    {
+      "round": 12,
+      "pick": 3,
+      "overall": 135,
+      "teamId": "2024:jordan",
+      "playerId": "6030",
+      "playerName": "Kevin Huerter"
+    },
+    {
+      "round": 12,
+      "pick": 4,
+      "overall": 136,
+      "teamId": "2024:dadder",
+      "playerId": "4724",
+      "playerName": "Gordon Hayward"
+    },
+    {
+      "round": 12,
+      "pick": 5,
+      "overall": 137,
+      "teamId": "2024:benjamin",
+      "playerId": "5013",
+      "playerName": "Harrison Barnes"
+    },
+    {
+      "round": 12,
+      "pick": 6,
+      "overall": 138,
+      "teamId": "2024:eddie",
+      "playerId": "10104",
+      "playerName": "Brandon Miller"
+    },
+    {
+      "round": 12,
+      "pick": 7,
+      "overall": 139,
+      "teamId": "2024:matt",
+      "playerId": "5341",
+      "playerName": "Kyle Anderson"
+    },
+    {
+      "round": 12,
+      "pick": 8,
+      "overall": 140,
+      "teamId": "2024:mitchell",
+      "playerId": "6695",
+      "playerName": "Jaden Ivey"
+    },
+    {
+      "round": 12,
+      "pick": 9,
+      "overall": 141,
+      "teamId": "2024:jake",
+      "playerId": "4390",
+      "playerName": "Russell Westbrook"
+    },
+    {
+      "round": 12,
+      "pick": 10,
+      "overall": 142,
+      "teamId": "2024:jacob-v",
+      "playerId": "6400",
+      "playerName": "Obi Toppin"
+    },
+    {
+      "round": 12,
+      "pick": 11,
+      "overall": 143,
+      "teamId": "2024:najim",
+      "playerId": "6019",
+      "playerName": "Collin Sexton"
+    },
+    {
+      "round": 12,
+      "pick": 12,
+      "overall": 144,
+      "teamId": "2024:michael",
+      "playerId": "6408",
+      "playerName": "Isaiah Stewart"
+    },
+    {
+      "round": 13,
+      "pick": 1,
+      "overall": 145,
+      "teamId": "2024:michael",
+      "playerId": "10096",
+      "playerName": "Ausar Thompson"
+    },
+    {
+      "round": 13,
+      "pick": 2,
+      "overall": 146,
+      "teamId": "2024:najim",
+      "playerId": "6707",
+      "playerName": "Tari Eason"
+    },
+    {
+      "round": 13,
+      "pick": 3,
+      "overall": 147,
+      "teamId": "2024:jacob-v",
+      "playerId": "5506",
+      "playerName": "Norman Powell"
+    },
+    {
+      "round": 13,
+      "pick": 4,
+      "overall": 148,
+      "teamId": "2024:jake",
+      "playerId": "6396",
+      "playerName": "Patrick Williams"
+    },
+    {
+      "round": 13,
+      "pick": 5,
+      "overall": 149,
+      "teamId": "2024:mitchell",
+      "playerId": "5163",
+      "playerName": "Steven Adams"
+    },
+    {
+      "round": 13,
+      "pick": 6,
+      "overall": 150,
+      "teamId": "2024:matt",
+      "playerId": "5338",
+      "playerName": "Bogdan Bogdanović"
+    },
+    {
+      "round": 13,
+      "pick": 7,
+      "overall": 151,
+      "teamId": "2024:eddie",
+      "playerId": "5824",
+      "playerName": "Malik Monk"
+    },
+    {
+      "round": 13,
+      "pick": 8,
+      "overall": 152,
+      "teamId": "2024:benjamin",
+      "playerId": "5164",
+      "playerName": "Kelly Olynyk"
+    },
+    {
+      "round": 13,
+      "pick": 9,
+      "overall": 153,
+      "teamId": "2024:dadder",
+      "playerId": "5500",
+      "playerName": "Josh Richardson"
+    },
+    {
+      "round": 13,
+      "pick": 10,
+      "overall": 154,
+      "teamId": "2024:jordan",
+      "playerId": "6401",
+      "playerName": "Deni Avdija"
+    },
+    {
+      "round": 13,
+      "pick": 11,
+      "overall": 155,
+      "teamId": "2024:jacob-g",
+      "playerId": "5475",
+      "playerName": "Kelly Oubre Jr."
+    },
+    {
+      "round": 13,
+      "pick": 12,
+      "overall": 156,
+      "teamId": "2024:dylan",
+      "playerId": "5490",
+      "playerName": "Kevon Looney"
+    }
+  ],
+  "players": [
+    {
+      "playerId": "5352",
+      "name": "Nikola Jokić",
+      "actualRank": 1,
+      "preseasonRank": 2,
+      "gamesPlayed": 79,
+      "teamId": "2024:michael",
+      "stats": {
+        "fgm": 822,
+        "fga": 1411,
+        "ftm": 358,
+        "fta": 438,
+        "threes": 83,
+        "pts": 2085,
+        "reb": 976,
+        "ast": 708,
+        "stl": 108,
+        "blk": 68,
+        "to": 237
+      }
+    },
+    {
+      "playerId": "6022",
+      "name": "Shai Gilgeous-Alexander",
+      "actualRank": 2,
+      "preseasonRank": 1,
+      "gamesPlayed": 75,
+      "teamId": "2024:najim",
+      "stats": {
+        "fgm": 796,
+        "fga": 1487,
+        "ftm": 567,
+        "fta": 649,
+        "threes": 95,
+        "pts": 2254,
+        "reb": 415,
+        "ast": 465,
+        "stl": 150,
+        "blk": 67,
+        "to": 162
+      }
+    },
+    {
+      "playerId": "5007",
+      "name": "Anthony Davis",
+      "actualRank": 3,
+      "preseasonRank": 4,
+      "gamesPlayed": 76,
+      "teamId": "2024:jacob-g",
+      "stats": {
+        "fgm": 713,
+        "fga": 1283,
+        "ftm": 421,
+        "fta": 516,
+        "threes": 29,
+        "pts": 1876,
+        "reb": 961,
+        "ast": 266,
+        "stl": 91,
+        "blk": 178,
+        "to": 159
+      }
+    },
+    {
+      "playerId": "6014",
+      "name": "Luka Dončić",
+      "actualRank": 4,
+      "preseasonRank": 6,
+      "gamesPlayed": 70,
+      "teamId": null
+    },
+    {
+      "playerId": "4896",
+      "name": "Kawhi Leonard",
+      "actualRank": 5,
+      "preseasonRank": 5,
+      "gamesPlayed": 68,
+      "teamId": "2024:mitchell",
+      "stats": {
+        "fgm": 610,
+        "fga": 1162,
+        "ftm": 253,
+        "fta": 286,
+        "threes": 140,
+        "pts": 1613,
+        "reb": 416,
+        "ast": 244,
+        "stl": 111,
+        "blk": 59,
+        "to": 119
+      }
+    },
+    {
+      "playerId": "10094",
+      "name": "Victor Wembanyama",
+      "actualRank": 6,
+      "preseasonRank": 3,
+      "gamesPlayed": 71,
+      "teamId": "2024:jordan",
+      "stats": {
+        "fgm": 551,
+        "fga": 1186,
+        "ftm": 292,
+        "fta": 367,
+        "threes": 128,
+        "pts": 1522,
+        "reb": 755,
+        "ast": 274,
+        "stl": 88,
+        "blk": 254,
+        "to": 260
+      }
+    },
+    {
+      "playerId": "4725",
+      "name": "Paul George",
+      "actualRank": 7,
+      "preseasonRank": 22,
+      "gamesPlayed": 74,
+      "teamId": "2024:jake",
+      "stats": {
+        "fgm": 582,
+        "fga": 1236,
+        "ftm": 264,
+        "fta": 291,
+        "threes": 243,
+        "pts": 1671,
+        "reb": 388,
+        "ast": 262,
+        "stl": 113,
+        "blk": 37,
+        "to": 153
+      }
+    },
+    {
+      "playerId": "6692",
+      "name": "Chet Holmgren",
+      "actualRank": 8,
+      "preseasonRank": 12,
+      "gamesPlayed": 82,
+      "teamId": "2024:jacob-g",
+      "stats": {
+        "fgm": 505,
+        "fga": 953,
+        "ftm": 218,
+        "fta": 275,
+        "threes": 129,
+        "pts": 1357,
+        "reb": 648,
+        "ast": 200,
+        "stl": 53,
+        "blk": 190,
+        "to": 131
+      }
+    },
+    {
+      "playerId": "4244",
+      "name": "Kevin Durant",
+      "actualRank": 9,
+      "preseasonRank": 10,
+      "gamesPlayed": 75,
+      "teamId": "2024:jordan",
+      "stats": {
+        "fgm": 751,
+        "fga": 1436,
+        "ftm": 362,
+        "fta": 423,
+        "threes": 168,
+        "pts": 2032,
+        "reb": 495,
+        "ast": 378,
+        "stl": 69,
+        "blk": 91,
+        "to": 244
+      }
+    },
+    {
+      "playerId": "6404",
+      "name": "Tyrese Haliburton",
+      "actualRank": 10,
+      "preseasonRank": 11,
+      "gamesPlayed": 69,
+      "teamId": "2024:benjamin",
+      "stats": {
+        "fgm": 500,
+        "fga": 1048,
+        "ftm": 194,
+        "fta": 227,
+        "threes": 195,
+        "pts": 1389,
+        "reb": 271,
+        "ast": 752,
+        "stl": 83,
+        "blk": 48,
+        "to": 159
+      }
+    },
+    {
+      "playerId": "5765",
+      "name": "Jayson Tatum",
+      "actualRank": 11,
+      "preseasonRank": 13,
+      "gamesPlayed": 74,
+      "teamId": "2024:matt",
+      "stats": {
+        "fgm": 672,
+        "fga": 1426,
+        "ftm": 414,
+        "fta": 497,
+        "threes": 229,
+        "pts": 1987,
+        "reb": 601,
+        "ast": 364,
+        "stl": 75,
+        "blk": 43,
+        "to": 188
+      }
+    },
+    {
+      "playerId": "5727",
+      "name": "Fred VanVleet",
+      "actualRank": 12,
+      "preseasonRank": 33,
+      "gamesPlayed": 73,
+      "teamId": "2024:eddie",
+      "stats": {
+        "fgm": 423,
+        "fga": 1018,
+        "ftm": 197,
+        "fta": 229,
+        "threes": 227,
+        "pts": 1270,
+        "reb": 278,
+        "ast": 589,
+        "stl": 101,
+        "blk": 59,
+        "to": 126
+      }
+    },
+    {
+      "playerId": "5642",
+      "name": "Domantas Sabonis",
+      "actualRank": 13,
+      "preseasonRank": 8,
+      "gamesPlayed": 82,
+      "teamId": "2024:mitchell",
+      "stats": {
+        "fgm": 634,
+        "fga": 1068,
+        "ftm": 292,
+        "fta": 415,
+        "threes": 33,
+        "pts": 1593,
+        "reb": 1120,
+        "ast": 673,
+        "stl": 74,
+        "blk": 48,
+        "to": 272
+      }
+    },
+    {
+      "playerId": "5767",
+      "name": "De'Aaron Fox",
+      "actualRank": 14,
+      "preseasonRank": 23,
+      "gamesPlayed": 74,
+      "teamId": "2024:jordan",
+      "stats": {
+        "fgm": 720,
+        "fga": 1549,
+        "ftm": 312,
+        "fta": 423,
+        "threes": 214,
+        "pts": 1966,
+        "reb": 340,
+        "ast": 418,
+        "stl": 150,
+        "blk": 31,
+        "to": 194
+      }
+    },
+    {
+      "playerId": "4614",
+      "name": "DeMar DeRozan",
+      "actualRank": 15,
+      "preseasonRank": 15,
+      "gamesPlayed": 79,
+      "teamId": "2024:matt",
+      "stats": {
+        "fgm": 650,
+        "fga": 1355,
+        "ftm": 522,
+        "fta": 612,
+        "threes": 75,
+        "pts": 1897,
+        "reb": 340,
+        "ast": 421,
+        "stl": 90,
+        "blk": 45,
+        "to": 135
+      }
+    },
+    {
+      "playerId": "4612",
+      "name": "Stephen Curry",
+      "actualRank": 16,
+      "preseasonRank": 14,
+      "gamesPlayed": 74,
+      "teamId": "2024:eddie",
+      "stats": {
+        "fgm": 650,
+        "fga": 1445,
+        "ftm": 299,
+        "fta": 324,
+        "threes": 357,
+        "pts": 1956,
+        "reb": 330,
+        "ast": 379,
+        "stl": 54,
+        "blk": 28,
+        "to": 210
+      }
+    },
+    {
+      "playerId": "6044",
+      "name": "Jalen Brunson",
+      "actualRank": 17,
+      "preseasonRank": 21,
+      "gamesPlayed": 77,
+      "teamId": "2024:najim",
+      "stats": {
+        "fgm": 790,
+        "fga": 1648,
+        "ftm": 421,
+        "fta": 497,
+        "threes": 211,
+        "pts": 2212,
+        "reb": 278,
+        "ast": 519,
+        "stl": 70,
+        "blk": 13,
+        "to": 186
+      }
+    },
+    {
+      "playerId": "3704",
+      "name": "LeBron James",
+      "actualRank": 18,
+      "preseasonRank": 32,
+      "gamesPlayed": 71,
+      "teamId": "2024:jake",
+      "stats": {
+        "fgm": 685,
+        "fga": 1269,
+        "ftm": 303,
+        "fta": 404,
+        "threes": 149,
+        "pts": 1822,
+        "reb": 518,
+        "ast": 589,
+        "stl": 89,
+        "blk": 38,
+        "to": 245
+      }
+    },
+    {
+      "playerId": "5012",
+      "name": "Damian Lillard",
+      "actualRank": 19,
+      "preseasonRank": 16,
+      "gamesPlayed": 73,
+      "teamId": "2024:dylan",
+      "stats": {
+        "fgm": 541,
+        "fga": 1277,
+        "ftm": 473,
+        "fta": 514,
+        "threes": 220,
+        "pts": 1775,
+        "reb": 320,
+        "ast": 508,
+        "stl": 72,
+        "blk": 18,
+        "to": 193
+      }
+    },
+    {
+      "playerId": "6413",
+      "name": "Tyrese Maxey",
+      "actualRank": 20,
+      "preseasonRank": 19,
+      "gamesPlayed": 70,
+      "teamId": "2024:jacob-g",
+      "stats": {
+        "fgm": 638,
+        "fga": 1419,
+        "ftm": 328,
+        "fta": 378,
+        "threes": 212,
+        "pts": 1816,
+        "reb": 258,
+        "ast": 433,
+        "stl": 69,
+        "blk": 33,
+        "to": 116
+      }
+    },
+    {
+      "playerId": "6355",
+      "name": "Anthony Edwards",
+      "actualRank": 21,
+      "preseasonRank": 24,
+      "gamesPlayed": 79,
+      "teamId": "2024:dylan",
+      "stats": {
+        "fgm": 718,
+        "fga": 1558,
+        "ftm": 423,
+        "fta": 506,
+        "threes": 190,
+        "pts": 2049,
+        "reb": 430,
+        "ast": 405,
+        "stl": 101,
+        "blk": 42,
+        "to": 241
+      }
+    },
+    {
+      "playerId": "5660",
+      "name": "Dejounte Murray",
+      "actualRank": 22,
+      "preseasonRank": 17,
+      "gamesPlayed": 78,
+      "teamId": "2024:matt",
+      "stats": {
+        "fgm": 672,
+        "fga": 1463,
+        "ftm": 208,
+        "fta": 262,
+        "threes": 201,
+        "pts": 1753,
+        "reb": 416,
+        "ast": 502,
+        "stl": 111,
+        "blk": 24,
+        "to": 201
+      }
+    },
+    {
+      "playerId": "5842",
+      "name": "Derrick White",
+      "actualRank": 23,
+      "preseasonRank": 50,
+      "gamesPlayed": 73,
+      "teamId": "2024:benjamin",
+      "stats": {
+        "fgm": 387,
+        "fga": 839,
+        "ftm": 137,
+        "fta": 152,
+        "threes": 196,
+        "pts": 1107,
+        "reb": 310,
+        "ast": 377,
+        "stl": 74,
+        "blk": 87,
+        "to": 112
+      }
+    },
+    {
+      "playerId": "5473",
+      "name": "Devin Booker",
+      "actualRank": 24,
+      "preseasonRank": 31,
+      "gamesPlayed": 68,
+      "teamId": "2024:dadder",
+      "stats": {
+        "fgm": 642,
+        "fga": 1305,
+        "ftm": 405,
+        "fta": 457,
+        "threes": 152,
+        "pts": 1841,
+        "reb": 308,
+        "ast": 472,
+        "stl": 61,
+        "blk": 28,
+        "to": 178
+      }
+    },
+    {
+      "playerId": "5185",
+      "name": "Giannis Antetokounmpo",
+      "actualRank": 25,
+      "preseasonRank": 7,
+      "gamesPlayed": 73,
+      "teamId": "2024:mitchell",
+      "stats": {
+        "fgm": 837,
+        "fga": 1369,
+        "ftm": 514,
+        "fta": 782,
+        "threes": 34,
+        "pts": 2222,
+        "reb": 841,
+        "ast": 476,
+        "stl": 87,
+        "blk": 79,
+        "to": 250
+      }
+    },
+    {
+      "playerId": "4563",
+      "name": "James Harden",
+      "actualRank": 26,
+      "preseasonRank": 20,
+      "gamesPlayed": 72,
+      "teamId": "2024:najim",
+      "stats": {
+        "fgm": 352,
+        "fga": 822,
+        "ftm": 302,
+        "fta": 344,
+        "threes": 186,
+        "pts": 1192,
+        "reb": 369,
+        "ast": 614,
+        "stl": 77,
+        "blk": 57,
+        "to": 185
+      }
+    },
+    {
+      "playerId": "4840",
+      "name": "Kyrie Irving",
+      "actualRank": 27,
+      "preseasonRank": 9,
+      "gamesPlayed": 58,
+      "teamId": "2024:najim",
+      "stats": {
+        "fgm": 562,
+        "fga": 1131,
+        "ftm": 190,
+        "fta": 210,
+        "threes": 173,
+        "pts": 1487,
+        "reb": 290,
+        "ast": 299,
+        "stl": 74,
+        "blk": 28,
+        "to": 106
+      }
+    },
+    {
+      "playerId": "4472",
+      "name": "Brook Lopez",
+      "actualRank": 28,
+      "preseasonRank": 44,
+      "gamesPlayed": 79,
+      "teamId": "2024:eddie",
+      "stats": {
+        "fgm": 366,
+        "fga": 755,
+        "ftm": 110,
+        "fta": 134,
+        "threes": 148,
+        "pts": 990,
+        "reb": 409,
+        "ast": 127,
+        "stl": 43,
+        "blk": 189,
+        "to": 79
+      }
+    },
+    {
+      "playerId": "5835",
+      "name": "Jarrett Allen",
+      "actualRank": 29,
+      "preseasonRank": 34,
+      "gamesPlayed": 77,
+      "teamId": "2024:matt",
+      "stats": {
+        "fgm": 519,
+        "fga": 819,
+        "ftm": 233,
+        "fta": 314,
+        "threes": 0,
+        "pts": 1271,
+        "reb": 811,
+        "ast": 210,
+        "stl": 53,
+        "blk": 81,
+        "to": 121
+      }
+    },
+    {
+      "playerId": "5826",
+      "name": "Donovan Mitchell",
+      "actualRank": 30,
+      "preseasonRank": 18,
+      "gamesPlayed": 55,
+      "teamId": "2024:jordan",
+      "stats": {
+        "fgm": 503,
+        "fga": 1089,
+        "ftm": 275,
+        "fta": 318,
+        "threes": 182,
+        "pts": 1463,
+        "reb": 280,
+        "ast": 333,
+        "stl": 101,
+        "blk": 30,
+        "to": 154
+      }
+    },
+    {
+      "playerId": "6226",
+      "name": "Daniel Gafford",
+      "actualRank": 31,
+      "preseasonRank": 111,
+      "gamesPlayed": 74,
+      "teamId": "2024:jacob-g",
+      "stats": {
+        "fgm": 348,
+        "fga": 480,
+        "ftm": 118,
+        "fta": 175,
+        "threes": 0,
+        "pts": 814,
+        "reb": 562,
+        "ast": 115,
+        "stl": 65,
+        "blk": 153,
+        "to": 74
+      }
+    },
+    {
+      "playerId": "6028",
+      "name": "Donte DiVincenzo",
+      "actualRank": 32,
+      "preseasonRank": 40,
+      "gamesPlayed": 81,
+      "teamId": "2024:dadder",
+      "stats": {
+        "fgm": 445,
+        "fga": 1004,
+        "ftm": 86,
+        "fta": 114,
+        "threes": 283,
+        "pts": 1259,
+        "reb": 297,
+        "ast": 216,
+        "stl": 107,
+        "blk": 36,
+        "to": 113
+      }
+    },
+    {
+      "playerId": "5338",
+      "name": "Bogdan Bogdanović",
+      "actualRank": 33,
+      "preseasonRank": 53,
+      "gamesPlayed": 79,
+      "teamId": "2024:matt",
+      "stats": {
+        "fgm": 471,
+        "fga": 1100,
+        "ftm": 151,
+        "fta": 164,
+        "threes": 240,
+        "pts": 1333,
+        "reb": 272,
+        "ast": 247,
+        "stl": 96,
+        "blk": 26,
+        "to": 112
+      }
+    },
+    {
+      "playerId": "4897",
+      "name": "Nikola Vučević",
+      "actualRank": 34,
+      "preseasonRank": 30,
+      "gamesPlayed": 76,
+      "teamId": "2024:dadder",
+      "stats": {
+        "fgm": 586,
+        "fga": 1211,
+        "ftm": 106,
+        "fta": 129,
+        "threes": 92,
+        "pts": 1370,
+        "reb": 801,
+        "ast": 254,
+        "stl": 50,
+        "blk": 60,
+        "to": 120
+      }
+    },
+    {
+      "playerId": "6702",
+      "name": "Jalen Williams",
+      "actualRank": 35,
+      "preseasonRank": 35,
+      "gamesPlayed": 71,
+      "teamId": "2024:najim",
+      "stats": {
+        "fgm": 536,
+        "fga": 993,
+        "ftm": 180,
+        "fta": 221,
+        "threes": 103,
+        "pts": 1355,
+        "reb": 282,
+        "ast": 322,
+        "stl": 80,
+        "blk": 45,
+        "to": 123
+      }
+    },
+    {
+      "playerId": "5197",
+      "name": "Rudy Gobert",
+      "actualRank": 36,
+      "preseasonRank": 45,
+      "gamesPlayed": 76,
+      "teamId": "2024:dylan",
+      "stats": {
+        "fgm": 406,
+        "fga": 614,
+        "ftm": 249,
+        "fta": 390,
+        "threes": 0,
+        "pts": 1061,
+        "reb": 982,
+        "ast": 102,
+        "stl": 52,
+        "blk": 162,
+        "to": 118
+      }
+    },
+    {
+      "playerId": "6694",
+      "name": "Keegan Murray",
+      "actualRank": 37,
+      "preseasonRank": 69,
+      "gamesPlayed": 77,
+      "teamId": "2024:eddie",
+      "stats": {
+        "fgm": 443,
+        "fga": 975,
+        "ftm": 103,
+        "fta": 124,
+        "threes": 183,
+        "pts": 1172,
+        "reb": 420,
+        "ast": 129,
+        "stl": 79,
+        "blk": 59,
+        "to": 64
+      }
+    },
+    {
+      "playerId": "5471",
+      "name": "Myles Turner",
+      "actualRank": 38,
+      "preseasonRank": 41,
+      "gamesPlayed": 77,
+      "teamId": "2024:michael",
+      "stats": {
+        "fgm": 476,
+        "fga": 909,
+        "ftm": 245,
+        "fta": 317,
+        "threes": 116,
+        "pts": 1313,
+        "reb": 533,
+        "ast": 100,
+        "stl": 39,
+        "blk": 144,
+        "to": 109
+      }
+    },
+    {
+      "playerId": "6025",
+      "name": "Michael Porter Jr.",
+      "actualRank": 39,
+      "preseasonRank": 59,
+      "gamesPlayed": 81,
+      "teamId": "2024:jacob-g",
+      "stats": {
+        "fgm": 522,
+        "fga": 1079,
+        "ftm": 92,
+        "fta": 110,
+        "threes": 220,
+        "pts": 1356,
+        "reb": 565,
+        "ast": 122,
+        "stl": 42,
+        "blk": 53,
+        "to": 92
+      }
+    },
+    {
+      "playerId": "6577",
+      "name": "Herbert Jones",
+      "actualRank": 40,
+      "preseasonRank": 85,
+      "gamesPlayed": 76,
+      "teamId": "2024:michael",
+      "stats": {
+        "fgm": 293,
+        "fga": 588,
+        "ftm": 137,
+        "fta": 158,
+        "threes": 114,
+        "pts": 837,
+        "reb": 272,
+        "ast": 199,
+        "stl": 105,
+        "blk": 62,
+        "to": 93
+      }
+    },
+    {
+      "playerId": "6032",
+      "name": "Grayson Allen",
+      "actualRank": 41,
+      "preseasonRank": 112,
+      "gamesPlayed": 75,
+      "teamId": "2024:jake",
+      "stats": {
+        "fgm": 340,
+        "fga": 682,
+        "ftm": 129,
+        "fta": 147,
+        "threes": 205,
+        "pts": 1014,
+        "reb": 295,
+        "ast": 227,
+        "stl": 69,
+        "blk": 45,
+        "to": 95
+      }
+    },
+    {
+      "playerId": "5464",
+      "name": "Kristaps Porziņģis",
+      "actualRank": 42,
+      "preseasonRank": 42,
+      "gamesPlayed": 57,
+      "teamId": "2024:jacob-g",
+      "stats": {
+        "fgm": 388,
+        "fga": 752,
+        "ftm": 259,
+        "fta": 302,
+        "threes": 110,
+        "pts": 1145,
+        "reb": 409,
+        "ast": 115,
+        "stl": 42,
+        "blk": 111,
+        "to": 89
+      }
+    },
+    {
+      "playerId": "5754",
+      "name": "Alex Caruso",
+      "actualRank": 43,
+      "preseasonRank": 100,
+      "gamesPlayed": 71,
+      "teamId": "2024:jordan",
+      "stats": {
+        "fgm": 253,
+        "fga": 541,
+        "ftm": 73,
+        "fta": 96,
+        "threes": 136,
+        "pts": 715,
+        "reb": 273,
+        "ast": 247,
+        "stl": 120,
+        "blk": 70,
+        "to": 102
+      }
+    },
+    {
+      "playerId": "5433",
+      "name": "D'Angelo Russell",
+      "actualRank": 44,
+      "preseasonRank": 54,
+      "gamesPlayed": 76,
+      "teamId": "2024:dylan",
+      "stats": {
+        "fgm": 492,
+        "fga": 1080,
+        "ftm": 159,
+        "fta": 192,
+        "threes": 226,
+        "pts": 1369,
+        "reb": 236,
+        "ast": 482,
+        "stl": 69,
+        "blk": 36,
+        "to": 156
+      }
+    },
+    {
+      "playerId": "4246",
+      "name": "Mike Conley",
+      "actualRank": 45,
+      "preseasonRank": 106,
+      "gamesPlayed": 76,
+      "teamId": "2024:dadder",
+      "stats": {
+        "fgm": 294,
+        "fga": 644,
+        "ftm": 102,
+        "fta": 112,
+        "threes": 179,
+        "pts": 869,
+        "reb": 218,
+        "ast": 449,
+        "stl": 88,
+        "blk": 17,
+        "to": 102
+      }
+    },
+    {
+      "playerId": "4901",
+      "name": "Tobias Harris",
+      "actualRank": 46,
+      "preseasonRank": 38,
+      "gamesPlayed": 70,
+      "teamId": "2024:matt",
+      "stats": {
+        "fgm": 463,
+        "fga": 951,
+        "ftm": 187,
+        "fta": 213,
+        "threes": 91,
+        "pts": 1204,
+        "reb": 453,
+        "ast": 217,
+        "stl": 70,
+        "blk": 46,
+        "to": 93
+      }
+    },
+    {
+      "playerId": "5161",
+      "name": "CJ McCollum",
+      "actualRank": 47,
+      "preseasonRank": 49,
+      "gamesPlayed": 66,
+      "teamId": "2024:matt",
+      "stats": {
+        "fgm": 484,
+        "fga": 1055,
+        "ftm": 115,
+        "fta": 139,
+        "threes": 239,
+        "pts": 1322,
+        "reb": 286,
+        "ast": 305,
+        "stl": 62,
+        "blk": 41,
+        "to": 110
+      }
+    },
+    {
+      "playerId": "5658",
+      "name": "Pascal Siakam",
+      "actualRank": 48,
+      "preseasonRank": 67,
+      "gamesPlayed": 80,
+      "teamId": "2024:jacob-v",
+      "stats": {
+        "fgm": 681,
+        "fga": 1271,
+        "ftm": 290,
+        "fta": 396,
+        "threes": 85,
+        "pts": 1737,
+        "reb": 565,
+        "ast": 342,
+        "stl": 63,
+        "blk": 25,
+        "to": 141
+      }
+    },
+    {
+      "playerId": "5769",
+      "name": "Lauri Markkanen",
+      "actualRank": 49,
+      "preseasonRank": 27,
+      "gamesPlayed": 55,
+      "teamId": "2024:dadder",
+      "stats": {
+        "fgm": 427,
+        "fga": 890,
+        "ftm": 249,
+        "fta": 277,
+        "threes": 175,
+        "pts": 1278,
+        "reb": 449,
+        "ast": 110,
+        "stl": 50,
+        "blk": 26,
+        "to": 77
+      }
+    },
+    {
+      "playerId": "5827",
+      "name": "Bam Adebayo",
+      "actualRank": 50,
+      "preseasonRank": 51,
+      "gamesPlayed": 71,
+      "teamId": "2024:dylan",
+      "stats": {
+        "fgm": 530,
+        "fga": 1017,
+        "ftm": 292,
+        "fta": 387,
+        "threes": 15,
+        "pts": 1367,
+        "reb": 737,
+        "ast": 278,
+        "stl": 81,
+        "blk": 66,
+        "to": 162
+      }
+    },
+    {
+      "playerId": "6515",
+      "name": "Scottie Barnes",
+      "actualRank": 51,
+      "preseasonRank": 218,
+      "gamesPlayed": 60,
+      "teamId": "2024:benjamin",
+      "stats": {
+        "fgm": 447,
+        "fga": 942,
+        "ftm": 196,
+        "fta": 251,
+        "threes": 101,
+        "pts": 1191,
+        "reb": 494,
+        "ast": 363,
+        "stl": 75,
+        "blk": 88,
+        "to": 165
+      }
+    },
+    {
+      "playerId": "6606",
+      "name": "Austin Reaves",
+      "actualRank": 52,
+      "preseasonRank": 95,
+      "gamesPlayed": 82,
+      "teamId": "2024:jacob-v",
+      "stats": {
+        "fgm": 457,
+        "fga": 940,
+        "ftm": 232,
+        "fta": 272,
+        "threes": 154,
+        "pts": 1300,
+        "reb": 352,
+        "ast": 450,
+        "stl": 66,
+        "blk": 25,
+        "to": 174
+      }
+    },
+    {
+      "playerId": "5294",
+      "name": "Joel Embiid",
+      "actualRank": 53,
+      "preseasonRank": 215,
+      "gamesPlayed": 39,
+      "teamId": null
+    },
+    {
+      "playerId": "6021",
+      "name": "Mikal Bridges",
+      "actualRank": 54,
+      "preseasonRank": 68,
+      "gamesPlayed": 82,
+      "teamId": "2024:eddie",
+      "stats": {
+        "fgm": 564,
+        "fga": 1294,
+        "ftm": 258,
+        "fta": 317,
+        "threes": 220,
+        "pts": 1606,
+        "reb": 372,
+        "ast": 299,
+        "stl": 81,
+        "blk": 30,
+        "to": 164
+      }
+    },
+    {
+      "playerId": "4912",
+      "name": "Jimmy Butler III",
+      "actualRank": 55,
+      "preseasonRank": 28,
+      "gamesPlayed": 60,
+      "teamId": "2024:matt",
+      "stats": {
+        "fgm": 396,
+        "fga": 793,
+        "ftm": 394,
+        "fta": 459,
+        "threes": 60,
+        "pts": 1246,
+        "reb": 318,
+        "ast": 298,
+        "stl": 79,
+        "blk": 17,
+        "to": 102
+      }
+    },
+    {
+      "playerId": "5856",
+      "name": "Isaiah Hartenstein",
+      "actualRank": 56,
+      "preseasonRank": 82,
+      "gamesPlayed": 75,
+      "teamId": "2024:eddie",
+      "stats": {
+        "fgm": 235,
+        "fga": 365,
+        "ftm": 111,
+        "fta": 157,
+        "threes": 1,
+        "pts": 582,
+        "reb": 626,
+        "ast": 188,
+        "stl": 87,
+        "blk": 85,
+        "to": 93
+      }
+    },
+    {
+      "playerId": "6550",
+      "name": "Franz Wagner",
+      "actualRank": 57,
+      "preseasonRank": 36,
+      "gamesPlayed": 72,
+      "teamId": "2024:matt",
+      "stats": {
+        "fgm": 528,
+        "fga": 1096,
+        "ftm": 271,
+        "fta": 319,
+        "threes": 94,
+        "pts": 1421,
+        "reb": 381,
+        "ast": 269,
+        "stl": 76,
+        "blk": 28,
+        "to": 137
+      }
+    },
+    {
+      "playerId": "6023",
+      "name": "Miles Bridges",
+      "actualRank": 58,
+      "preseasonRank": 29,
+      "gamesPlayed": 69,
+      "teamId": "2024:dylan",
+      "stats": {
+        "fgm": 559,
+        "fga": 1210,
+        "ftm": 174,
+        "fta": 211,
+        "threes": 157,
+        "pts": 1449,
+        "reb": 505,
+        "ast": 231,
+        "stl": 65,
+        "blk": 33,
+        "to": 138
+      }
+    },
+    {
+      "playerId": "5482",
+      "name": "Bobby Portis Jr.",
+      "actualRank": 59,
+      "preseasonRank": 89,
+      "gamesPlayed": 82,
+      "teamId": "2024:dadder",
+      "stats": {
+        "fgm": 466,
+        "fga": 918,
+        "ftm": 98,
+        "fta": 124,
+        "threes": 100,
+        "pts": 1130,
+        "reb": 607,
+        "ast": 104,
+        "stl": 68,
+        "blk": 34,
+        "to": 91
+      }
+    },
+    {
+      "playerId": "6015",
+      "name": "Jaren Jackson Jr.",
+      "actualRank": 60,
+      "preseasonRank": 55,
+      "gamesPlayed": 66,
+      "teamId": "2024:jacob-g",
+      "stats": {
+        "fgm": 516,
+        "fga": 1162,
+        "ftm": 337,
+        "fta": 417,
+        "threes": 117,
+        "pts": 1486,
+        "reb": 365,
+        "ast": 154,
+        "stl": 80,
+        "blk": 106,
+        "to": 160
+      }
+    },
+    {
+      "playerId": "5638",
+      "name": "Jamal Murray",
+      "actualRank": 61,
+      "preseasonRank": 37,
+      "gamesPlayed": 59,
+      "teamId": "2024:jacob-v",
+      "stats": {
+        "fgm": 474,
+        "fga": 986,
+        "ftm": 157,
+        "fta": 184,
+        "threes": 145,
+        "pts": 1250,
+        "reb": 242,
+        "ast": 384,
+        "stl": 57,
+        "blk": 39,
+        "to": 125
+      }
+    },
+    {
+      "playerId": "6169",
+      "name": "Coby White",
+      "actualRank": 62,
+      "preseasonRank": 52,
+      "gamesPlayed": 79,
+      "teamId": "2024:benjamin",
+      "stats": {
+        "fgm": 541,
+        "fga": 1209,
+        "ftm": 218,
+        "fta": 260,
+        "threes": 209,
+        "pts": 1509,
+        "reb": 358,
+        "ast": 405,
+        "stl": 53,
+        "blk": 18,
+        "to": 166
+      }
+    },
+    {
+      "playerId": "6693",
+      "name": "Jabari Smith Jr.",
+      "actualRank": 63,
+      "preseasonRank": 71,
+      "gamesPlayed": 76,
+      "teamId": "2024:mitchell",
+      "stats": {
+        "fgm": 378,
+        "fga": 833,
+        "ftm": 150,
+        "fta": 185,
+        "threes": 138,
+        "pts": 1044,
+        "reb": 616,
+        "ast": 121,
+        "stl": 52,
+        "blk": 61,
+        "to": 89
+      }
+    },
+    {
+      "playerId": "6403",
+      "name": "Devin Vassell",
+      "actualRank": 64,
+      "preseasonRank": 64,
+      "gamesPlayed": 68,
+      "teamId": "2024:mitchell",
+      "stats": {
+        "fgm": 498,
+        "fga": 1056,
+        "ftm": 161,
+        "fta": 201,
+        "threes": 166,
+        "pts": 1323,
+        "reb": 261,
+        "ast": 277,
+        "stl": 73,
+        "blk": 23,
+        "to": 108
+      }
+    },
+    {
+      "playerId": "5637",
+      "name": "Buddy Hield",
+      "actualRank": 65,
+      "preseasonRank": 60,
+      "gamesPlayed": 84,
+      "teamId": "2024:mitchell",
+      "stats": {
+        "fgm": 371,
+        "fga": 850,
+        "ftm": 52,
+        "fta": 59,
+        "threes": 219,
+        "pts": 1013,
+        "reb": 269,
+        "ast": 236,
+        "stl": 70,
+        "blk": 42,
+        "to": 103
+      }
+    },
+    {
+      "playerId": "4892",
+      "name": "Klay Thompson",
+      "actualRank": 66,
+      "preseasonRank": 88,
+      "gamesPlayed": 77,
+      "teamId": "2024:jacob-g",
+      "stats": {
+        "fgm": 490,
+        "fga": 1133,
+        "ftm": 127,
+        "fta": 137,
+        "threes": 268,
+        "pts": 1375,
+        "reb": 254,
+        "ast": 176,
+        "stl": 50,
+        "blk": 35,
+        "to": 117
+      }
+    },
+    {
+      "playerId": "5484",
+      "name": "Tyus Jones",
+      "actualRank": 67,
+      "preseasonRank": 62,
+      "gamesPlayed": 66,
+      "teamId": "2024:michael",
+      "stats": {
+        "fgm": 326,
+        "fga": 666,
+        "ftm": 32,
+        "fta": 40,
+        "threes": 106,
+        "pts": 790,
+        "reb": 179,
+        "ast": 485,
+        "stl": 71,
+        "blk": 18,
+        "to": 66
+      }
+    },
+    {
+      "playerId": "5159",
+      "name": "K. Caldwell-Pope",
+      "actualRank": 68,
+      "preseasonRank": 109,
+      "gamesPlayed": 76,
+      "teamId": "2024:jacob-g",
+      "stats": {
+        "fgm": 270,
+        "fga": 587,
+        "ftm": 101,
+        "fta": 113,
+        "threes": 125,
+        "pts": 766,
+        "reb": 183,
+        "ast": 183,
+        "stl": 98,
+        "blk": 42,
+        "to": 75
+      }
+    },
+    {
+      "playerId": "5432",
+      "name": "Karl-Anthony Towns",
+      "actualRank": 69,
+      "preseasonRank": 39,
+      "gamesPlayed": 62,
+      "teamId": "2024:michael",
+      "stats": {
+        "fgm": 479,
+        "fga": 951,
+        "ftm": 255,
+        "fta": 292,
+        "threes": 136,
+        "pts": 1349,
+        "reb": 515,
+        "ast": 189,
+        "stl": 43,
+        "blk": 41,
+        "to": 177
+      }
+    },
+    {
+      "playerId": "6219",
+      "name": "Nic Claxton",
+      "actualRank": 70,
+      "preseasonRank": 48,
+      "gamesPlayed": 71,
+      "teamId": "2024:najim",
+      "stats": {
+        "fgm": 366,
+        "fga": 582,
+        "ftm": 108,
+        "fta": 196,
+        "threes": 1,
+        "pts": 841,
+        "reb": 706,
+        "ast": 147,
+        "stl": 46,
+        "blk": 146,
+        "to": 93
+      }
+    },
+    {
+      "playerId": "6019",
+      "name": "Collin Sexton",
+      "actualRank": 71,
+      "preseasonRank": 65,
+      "gamesPlayed": 78,
+      "teamId": "2024:jacob-v",
+      "stats": {
+        "fgm": 506,
+        "fga": 1038,
+        "ftm": 318,
+        "fta": 370,
+        "threes": 128,
+        "pts": 1458,
+        "reb": 205,
+        "ast": 383,
+        "stl": 62,
+        "blk": 18,
+        "to": 165
+      }
+    },
+    {
+      "playerId": "4622",
+      "name": "Jrue Holiday",
+      "actualRank": 72,
+      "preseasonRank": 70,
+      "gamesPlayed": 69,
+      "teamId": "2024:jacob-g",
+      "stats": {
+        "fgm": 331,
+        "fga": 689,
+        "ftm": 60,
+        "fta": 72,
+        "threes": 138,
+        "pts": 860,
+        "reb": 373,
+        "ast": 333,
+        "stl": 61,
+        "blk": 53,
+        "to": 124
+      }
+    },
+    {
+      "playerId": "5602",
+      "name": "Jaylen Brown",
+      "actualRank": 73,
+      "preseasonRank": 47,
+      "gamesPlayed": 70,
+      "teamId": "2024:eddie",
+      "stats": {
+        "fgm": 627,
+        "fga": 1256,
+        "ftm": 211,
+        "fta": 300,
+        "threes": 145,
+        "pts": 1610,
+        "reb": 387,
+        "ast": 249,
+        "stl": 83,
+        "blk": 37,
+        "to": 166
+      }
+    },
+    {
+      "playerId": "4886",
+      "name": "Jonas Valančiūnas",
+      "actualRank": 74,
+      "preseasonRank": 76,
+      "gamesPlayed": 82,
+      "teamId": "2024:benjamin",
+      "stats": {
+        "fgm": 402,
+        "fga": 719,
+        "ftm": 161,
+        "fta": 205,
+        "threes": 37,
+        "pts": 1002,
+        "reb": 721,
+        "ast": 173,
+        "stl": 32,
+        "blk": 68,
+        "to": 111
+      }
+    },
+    {
+      "playerId": "6253",
+      "name": "Naz Reid",
+      "actualRank": 75,
+      "preseasonRank": 110,
+      "gamesPlayed": 81,
+      "teamId": "2024:eddie",
+      "stats": {
+        "fgm": 406,
+        "fga": 851,
+        "ftm": 109,
+        "fta": 148,
+        "threes": 169,
+        "pts": 1090,
+        "reb": 423,
+        "ast": 106,
+        "stl": 63,
+        "blk": 73,
+        "to": 111
+      }
+    },
+    {
+      "playerId": "6516",
+      "name": "Jalen Suggs",
+      "actualRank": 76,
+      "preseasonRank": 96,
+      "gamesPlayed": 75,
+      "teamId": null
+    },
+    {
+      "playerId": "5476",
+      "name": "Terry Rozier",
+      "actualRank": 77,
+      "preseasonRank": 86,
+      "gamesPlayed": 61,
+      "teamId": "2024:dadder",
+      "stats": {
+        "fgm": 442,
+        "fga": 998,
+        "ftm": 172,
+        "fta": 198,
+        "threes": 149,
+        "pts": 1205,
+        "reb": 247,
+        "ast": 342,
+        "stl": 63,
+        "blk": 21,
+        "to": 106
+      }
+    },
+    {
+      "playerId": "5843",
+      "name": "Josh Hart",
+      "actualRank": 78,
+      "preseasonRank": 74,
+      "gamesPlayed": 81,
+      "teamId": "2024:dadder",
+      "stats": {
+        "fgm": 295,
+        "fga": 679,
+        "ftm": 91,
+        "fta": 115,
+        "threes": 80,
+        "pts": 761,
+        "reb": 675,
+        "ast": 331,
+        "stl": 75,
+        "blk": 23,
+        "to": 118
+      }
+    },
+    {
+      "playerId": "6433",
+      "name": "Tre Jones",
+      "actualRank": 79,
+      "preseasonRank": 92,
+      "gamesPlayed": 77,
+      "teamId": "2024:jacob-v",
+      "stats": {
+        "fgm": 303,
+        "fga": 600,
+        "ftm": 101,
+        "fta": 118,
+        "threes": 64,
+        "pts": 771,
+        "reb": 289,
+        "ast": 478,
+        "stl": 78,
+        "blk": 9,
+        "to": 116
+      }
+    },
+    {
+      "playerId": "6558",
+      "name": "Alperen Şengün",
+      "actualRank": 80,
+      "preseasonRank": 43,
+      "gamesPlayed": 63,
+      "teamId": "2024:jordan",
+      "stats": {
+        "fgm": 527,
+        "fga": 982,
+        "ftm": 244,
+        "fta": 352,
+        "threes": 33,
+        "pts": 1331,
+        "reb": 589,
+        "ast": 312,
+        "stl": 76,
+        "blk": 46,
+        "to": 162
+      }
+    },
+    {
+      "playerId": "5164",
+      "name": "Kelly Olynyk",
+      "actualRank": 81,
+      "preseasonRank": 87,
+      "gamesPlayed": 78,
+      "teamId": "2024:jacob-g",
+      "stats": {
+        "fgm": 276,
+        "fga": 497,
+        "ftm": 150,
+        "fta": 180,
+        "threes": 60,
+        "pts": 762,
+        "reb": 411,
+        "ast": 347,
+        "stl": 74,
+        "blk": 30,
+        "to": 152
+      }
+    },
+    {
+      "playerId": "5832",
+      "name": "John Collins",
+      "actualRank": 82,
+      "preseasonRank": 91,
+      "gamesPlayed": 68,
+      "teamId": "2024:dadder",
+      "stats": {
+        "fgm": 397,
+        "fga": 746,
+        "ftm": 147,
+        "fta": 185,
+        "threes": 86,
+        "pts": 1027,
+        "reb": 575,
+        "ast": 77,
+        "stl": 40,
+        "blk": 61,
+        "to": 98
+      }
+    },
+    {
+      "playerId": "5336",
+      "name": "Clint Capela",
+      "actualRank": 83,
+      "preseasonRank": 78,
+      "gamesPlayed": 73,
+      "teamId": "2024:jake",
+      "stats": {
+        "fgm": 353,
+        "fga": 618,
+        "ftm": 130,
+        "fta": 206,
+        "threes": 0,
+        "pts": 836,
+        "reb": 776,
+        "ast": 91,
+        "stl": 43,
+        "blk": 106,
+        "to": 74
+      }
+    },
+    {
+      "playerId": "5958",
+      "name": "Deandre Ayton",
+      "actualRank": 84,
+      "preseasonRank": 104,
+      "gamesPlayed": 55,
+      "teamId": "2024:jake",
+      "stats": {
+        "fgm": 427,
+        "fga": 749,
+        "ftm": 65,
+        "fta": 79,
+        "threes": 1,
+        "pts": 920,
+        "reb": 609,
+        "ast": 90,
+        "stl": 56,
+        "blk": 42,
+        "to": 99
+      }
+    },
+    {
+      "playerId": "6016",
+      "name": "Trae Young",
+      "actualRank": 85,
+      "preseasonRank": 209,
+      "gamesPlayed": 54,
+      "teamId": null
+    },
+    {
+      "playerId": "6406",
+      "name": "Aaron Nesmith",
+      "actualRank": 86,
+      "preseasonRank": 101,
+      "gamesPlayed": 72,
+      "teamId": "2024:michael",
+      "stats": {
+        "fgm": 315,
+        "fga": 635,
+        "ftm": 107,
+        "fta": 137,
+        "threes": 140,
+        "pts": 877,
+        "reb": 275,
+        "ast": 108,
+        "stl": 65,
+        "blk": 49,
+        "to": 64
+      }
+    },
+    {
+      "playerId": "5327",
+      "name": "Jusuf Nurkić",
+      "actualRank": 87,
+      "preseasonRank": 58,
+      "gamesPlayed": 76,
+      "teamId": "2024:jordan",
+      "stats": {
+        "fgm": 320,
+        "fga": 627,
+        "ftm": 167,
+        "fta": 261,
+        "threes": 22,
+        "pts": 829,
+        "reb": 837,
+        "ast": 301,
+        "stl": 81,
+        "blk": 80,
+        "to": 175
+      }
+    },
+    {
+      "playerId": "6562",
+      "name": "Jalen Johnson",
+      "actualRank": 88,
+      "preseasonRank": 25,
+      "gamesPlayed": 56,
+      "teamId": "2024:dadder",
+      "stats": {
+        "fgm": 359,
+        "fga": 702,
+        "ftm": 107,
+        "fta": 147,
+        "threes": 71,
+        "pts": 896,
+        "reb": 488,
+        "ast": 203,
+        "stl": 67,
+        "blk": 47,
+        "to": 101
+      }
+    },
+    {
+      "playerId": "6216",
+      "name": "Jordan Poole",
+      "actualRank": 89,
+      "preseasonRank": 98,
+      "gamesPlayed": 78,
+      "teamId": "2024:dylan",
+      "stats": {
+        "fgm": 490,
+        "fga": 1186,
+        "ftm": 192,
+        "fta": 219,
+        "threes": 184,
+        "pts": 1356,
+        "reb": 212,
+        "ast": 343,
+        "stl": 86,
+        "blk": 25,
+        "to": 188
+      }
+    },
+    {
+      "playerId": "10104",
+      "name": "Brandon Miller",
+      "actualRank": 90,
+      "preseasonRank": 66,
+      "gamesPlayed": 74,
+      "teamId": "2024:eddie",
+      "stats": {
+        "fgm": 476,
+        "fga": 1083,
+        "ftm": 143,
+        "fta": 173,
+        "threes": 184,
+        "pts": 1279,
+        "reb": 315,
+        "ast": 175,
+        "stl": 66,
+        "blk": 42,
+        "to": 132
+      }
+    },
+    {
+      "playerId": "6450",
+      "name": "Paul Reed",
+      "actualRank": 91,
+      "preseasonRank": 84,
+      "gamesPlayed": 82,
+      "teamId": "2024:najim",
+      "stats": {
+        "fgm": 259,
+        "fga": 480,
+        "ftm": 61,
+        "fta": 85,
+        "threes": 21,
+        "pts": 600,
+        "reb": 488,
+        "ast": 109,
+        "stl": 67,
+        "blk": 84,
+        "to": 67
+      }
+    },
+    {
+      "playerId": "6513",
+      "name": "Jalen Green",
+      "actualRank": 92,
+      "preseasonRank": 124,
+      "gamesPlayed": 82,
+      "teamId": "2024:jake",
+      "stats": {
+        "fgm": 563,
+        "fga": 1332,
+        "ftm": 283,
+        "fta": 352,
+        "threes": 201,
+        "pts": 1610,
+        "reb": 423,
+        "ast": 291,
+        "stl": 66,
+        "blk": 28,
+        "to": 191
+      }
+    },
+    {
+      "playerId": "6254",
+      "name": "Luguentz Dort",
+      "actualRank": 93,
+      "preseasonRank": 155,
+      "gamesPlayed": 79,
+      "teamId": "2024:dylan",
+      "stats": {
+        "fgm": 288,
+        "fga": 657,
+        "ftm": 128,
+        "fta": 155,
+        "threes": 156,
+        "pts": 860,
+        "reb": 284,
+        "ast": 113,
+        "stl": 72,
+        "blk": 47,
+        "to": 74
+      }
+    },
+    {
+      "playerId": "6417",
+      "name": "Immanuel Quickley",
+      "actualRank": 94,
+      "preseasonRank": 46,
+      "gamesPlayed": 68,
+      "teamId": null
+    },
+    {
+      "playerId": "4245",
+      "name": "Al Horford",
+      "actualRank": 95,
+      "preseasonRank": 154,
+      "gamesPlayed": 65,
+      "teamId": "2024:matt",
+      "stats": {
+        "fgm": 214,
+        "fga": 419,
+        "ftm": 26,
+        "fta": 30,
+        "threes": 108,
+        "pts": 562,
+        "reb": 413,
+        "ast": 168,
+        "stl": 38,
+        "blk": 62,
+        "to": 48
+      }
+    },
+    {
+      "playerId": "6163",
+      "name": "Zion Williamson",
+      "actualRank": 96,
+      "preseasonRank": 72,
+      "gamesPlayed": 70,
+      "teamId": "2024:mitchell",
+      "stats": {
+        "fgm": 624,
+        "fga": 1094,
+        "ftm": 347,
+        "fta": 494,
+        "threes": 6,
+        "pts": 1601,
+        "reb": 406,
+        "ast": 352,
+        "stl": 77,
+        "blk": 47,
+        "to": 193
+      }
+    },
+    {
+      "playerId": "6580",
+      "name": "Ayo Dosunmu",
+      "actualRank": 97,
+      "preseasonRank": 93,
+      "gamesPlayed": 76,
+      "teamId": "2024:michael",
+      "stats": {
+        "fgm": 360,
+        "fga": 719,
+        "ftm": 85,
+        "fta": 105,
+        "threes": 119,
+        "pts": 924,
+        "reb": 216,
+        "ast": 242,
+        "stl": 68,
+        "blk": 36,
+        "to": 103
+      }
+    },
+    {
+      "playerId": "6400",
+      "name": "Obi Toppin",
+      "actualRank": 98,
+      "preseasonRank": 203,
+      "gamesPlayed": 82,
+      "teamId": null
+    },
+    {
+      "playerId": "5187",
+      "name": "Dennis Schröder",
+      "actualRank": 99,
+      "preseasonRank": 103,
+      "gamesPlayed": 80,
+      "teamId": "2024:jordan",
+      "stats": {
+        "fgm": 403,
+        "fga": 927,
+        "ftm": 178,
+        "fta": 213,
+        "threes": 138,
+        "pts": 1122,
+        "reb": 242,
+        "ast": 488,
+        "stl": 63,
+        "blk": 17,
+        "to": 153
+      }
+    },
+    {
+      "playerId": "6548",
+      "name": "Josh Giddey",
+      "actualRank": 100,
+      "preseasonRank": 148,
+      "gamesPlayed": 80,
+      "teamId": "2024:benjamin",
+      "stats": {
+        "fgm": 402,
+        "fga": 847,
+        "ftm": 100,
+        "fta": 124,
+        "threes": 82,
+        "pts": 986,
+        "reb": 514,
+        "ast": 386,
+        "stl": 51,
+        "blk": 44,
+        "to": 168
+      }
+    },
+    {
+      "playerId": "5601",
+      "name": "Brandon Ingram",
+      "actualRank": 101,
+      "preseasonRank": 57,
+      "gamesPlayed": 64,
+      "teamId": "2024:jacob-v",
+      "stats": {
+        "fgm": 500,
+        "fga": 1017,
+        "ftm": 246,
+        "fta": 307,
+        "threes": 86,
+        "pts": 1332,
+        "reb": 324,
+        "ast": 363,
+        "stl": 50,
+        "blk": 40,
+        "to": 163
+      }
+    },
+    {
+      "playerId": "5663",
+      "name": "Ivica Zubac",
+      "actualRank": 102,
+      "preseasonRank": 102,
+      "gamesPlayed": 68,
+      "teamId": "2024:matt",
+      "stats": {
+        "fgm": 337,
+        "fga": 519,
+        "ftm": 120,
+        "fta": 166,
+        "threes": 0,
+        "pts": 794,
+        "reb": 626,
+        "ast": 93,
+        "stl": 22,
+        "blk": 83,
+        "to": 79
+      }
+    },
+    {
+      "playerId": "6401",
+      "name": "Deni Avdija",
+      "actualRank": 103,
+      "preseasonRank": 128,
+      "gamesPlayed": 75,
+      "teamId": "2024:jordan",
+      "stats": {
+        "fgm": 406,
+        "fga": 803,
+        "ftm": 202,
+        "fta": 273,
+        "threes": 88,
+        "pts": 1102,
+        "reb": 540,
+        "ast": 286,
+        "stl": 60,
+        "blk": 36,
+        "to": 160
+      }
+    },
+    {
+      "playerId": "6559",
+      "name": "Trey Murphy III",
+      "actualRank": 104,
+      "preseasonRank": 94,
+      "gamesPlayed": 57,
+      "teamId": "2024:benjamin",
+      "stats": {
+        "fgm": 275,
+        "fga": 621,
+        "ftm": 123,
+        "fta": 151,
+        "threes": 169,
+        "pts": 842,
+        "reb": 280,
+        "ast": 124,
+        "stl": 51,
+        "blk": 28,
+        "to": 34
+      }
+    },
+    {
+      "playerId": "5650",
+      "name": "Malik Beasley",
+      "actualRank": 105,
+      "preseasonRank": 144,
+      "gamesPlayed": 79,
+      "teamId": "2024:jacob-v",
+      "stats": {
+        "fgm": 320,
+        "fga": 722,
+        "ftm": 25,
+        "fta": 35,
+        "threes": 224,
+        "pts": 889,
+        "reb": 290,
+        "ast": 108,
+        "stl": 59,
+        "blk": 9,
+        "to": 54
+      }
+    },
+    {
+      "playerId": "6712",
+      "name": "Walker Kessler",
+      "actualRank": 106,
+      "preseasonRank": 116,
+      "gamesPlayed": 64,
+      "teamId": "2024:michael",
+      "stats": {
+        "fgm": 229,
+        "fga": 350,
+        "ftm": 56,
+        "fta": 93,
+        "threes": 4,
+        "pts": 518,
+        "reb": 481,
+        "ast": 60,
+        "stl": 30,
+        "blk": 154,
+        "to": 66
+      }
+    },
+    {
+      "playerId": "6512",
+      "name": "Cade Cunningham",
+      "actualRank": 107,
+      "preseasonRank": 56,
+      "gamesPlayed": 62,
+      "teamId": "2024:jake",
+      "stats": {
+        "fgm": 524,
+        "fga": 1167,
+        "ftm": 238,
+        "fta": 274,
+        "threes": 119,
+        "pts": 1405,
+        "reb": 268,
+        "ast": 464,
+        "stl": 56,
+        "blk": 22,
+        "to": 212
+      }
+    },
+    {
+      "playerId": "5840",
+      "name": "Kyle Kuzma",
+      "actualRank": 108,
+      "preseasonRank": 80,
+      "gamesPlayed": 70,
+      "teamId": "2024:dylan",
+      "stats": {
+        "fgm": 608,
+        "fga": 1313,
+        "ftm": 186,
+        "fta": 240,
+        "threes": 151,
+        "pts": 1553,
+        "reb": 464,
+        "ast": 296,
+        "stl": 37,
+        "blk": 49,
+        "to": 192
+      }
+    },
+    {
+      "playerId": "6703",
+      "name": "Jalen Duren",
+      "actualRank": 109,
+      "preseasonRank": 61,
+      "gamesPlayed": 61,
+      "teamId": "2024:benjamin",
+      "stats": {
+        "fgm": 349,
+        "fga": 564,
+        "ftm": 143,
+        "fta": 181,
+        "threes": 0,
+        "pts": 841,
+        "reb": 709,
+        "ast": 147,
+        "stl": 33,
+        "blk": 47,
+        "to": 129
+      }
+    },
+    {
+      "playerId": "6691",
+      "name": "Paolo Banchero",
+      "actualRank": 110,
+      "preseasonRank": 77,
+      "gamesPlayed": 80,
+      "teamId": "2024:jake",
+      "stats": {
+        "fgm": 640,
+        "fga": 1407,
+        "ftm": 405,
+        "fta": 559,
+        "threes": 119,
+        "pts": 1804,
+        "reb": 554,
+        "ast": 431,
+        "stl": 71,
+        "blk": 47,
+        "to": 247
+      }
+    },
+    {
+      "playerId": "6267",
+      "name": "Max Strus",
+      "actualRank": 111,
+      "preseasonRank": 143,
+      "gamesPlayed": 70,
+      "teamId": null
+    },
+    {
+      "playerId": "6174",
+      "name": "P.J. Washington",
+      "actualRank": 112,
+      "preseasonRank": 168,
+      "gamesPlayed": 73,
+      "teamId": "2024:mitchell",
+      "stats": {
+        "fgm": 354,
+        "fga": 811,
+        "ftm": 99,
+        "fta": 145,
+        "threes": 132,
+        "pts": 939,
+        "reb": 411,
+        "ast": 141,
+        "stl": 72,
+        "blk": 59,
+        "to": 96
+      }
+    },
+    {
+      "playerId": "6514",
+      "name": "Evan Mobley",
+      "actualRank": 113,
+      "preseasonRank": 26,
+      "gamesPlayed": 50,
+      "teamId": "2024:dylan",
+      "stats": {
+        "fgm": 320,
+        "fga": 552,
+        "ftm": 123,
+        "fta": 171,
+        "threes": 22,
+        "pts": 785,
+        "reb": 468,
+        "ast": 160,
+        "stl": 45,
+        "blk": 72,
+        "to": 90
+      }
+    },
+    {
+      "playerId": "6048",
+      "name": "Gary Trent Jr.",
+      "actualRank": 114,
+      "preseasonRank": 159,
+      "gamesPlayed": 71,
+      "teamId": "2024:najim",
+      "stats": {
+        "fgm": 361,
+        "fga": 847,
+        "ftm": 74,
+        "fta": 96,
+        "threes": 178,
+        "pts": 974,
+        "reb": 188,
+        "ast": 119,
+        "stl": 77,
+        "blk": 10,
+        "to": 47
+      }
+    },
+    {
+      "playerId": "5905",
+      "name": "Royce O'Neale",
+      "actualRank": 115,
+      "preseasonRank": 157,
+      "gamesPlayed": 79,
+      "teamId": null
+    },
+    {
+      "playerId": "6208",
+      "name": "Matisse Thybulle",
+      "actualRank": 116,
+      "preseasonRank": 197,
+      "gamesPlayed": 65,
+      "teamId": "2024:michael",
+      "stats": {
+        "fgm": 126,
+        "fga": 317,
+        "ftm": 22,
+        "fta": 29,
+        "threes": 80,
+        "pts": 354,
+        "reb": 136,
+        "ast": 90,
+        "stl": 113,
+        "blk": 49,
+        "to": 40
+      }
+    },
+    {
+      "playerId": "5651",
+      "name": "Caris LeVert",
+      "actualRank": 117,
+      "preseasonRank": 174,
+      "gamesPlayed": 68,
+      "teamId": "2024:jake",
+      "stats": {
+        "fgm": 345,
+        "fga": 820,
+        "ftm": 154,
+        "fta": 201,
+        "threes": 108,
+        "pts": 952,
+        "reb": 280,
+        "ast": 346,
+        "stl": 76,
+        "blk": 34,
+        "to": 117
+      }
+    },
+    {
+      "playerId": "10107",
+      "name": "Cason Wallace",
+      "actualRank": 118,
+      "preseasonRank": 250,
+      "gamesPlayed": 82,
+      "teamId": null
+    },
+    {
+      "playerId": "5295",
+      "name": "Aaron Gordon",
+      "actualRank": 119,
+      "preseasonRank": 121,
+      "gamesPlayed": 73,
+      "teamId": "2024:mitchell",
+      "stats": {
+        "fgm": 398,
+        "fga": 716,
+        "ftm": 177,
+        "fta": 269,
+        "threes": 40,
+        "pts": 1013,
+        "reb": 471,
+        "ast": 259,
+        "stl": 56,
+        "blk": 45,
+        "to": 105
+      }
+    },
+    {
+      "playerId": "6619",
+      "name": "Sam Hauser",
+      "actualRank": 120,
+      "preseasonRank": 227,
+      "gamesPlayed": 79,
+      "teamId": "2024:mitchell",
+      "stats": {
+        "fgm": 249,
+        "fga": 558,
+        "ftm": 17,
+        "fta": 19,
+        "threes": 197,
+        "pts": 712,
+        "reb": 276,
+        "ast": 82,
+        "stl": 40,
+        "blk": 25,
+        "to": 32
+      }
+    },
+    {
+      "playerId": "5506",
+      "name": "Norman Powell",
+      "actualRank": 121,
+      "preseasonRank": 130,
+      "gamesPlayed": 76,
+      "teamId": null
+    },
+    {
+      "playerId": "5475",
+      "name": "Kelly Oubre Jr.",
+      "actualRank": 122,
+      "preseasonRank": 147,
+      "gamesPlayed": 68,
+      "teamId": "2024:jacob-g",
+      "stats": {
+        "fgm": 387,
+        "fga": 878,
+        "ftm": 174,
+        "fta": 232,
+        "threes": 101,
+        "pts": 1049,
+        "reb": 341,
+        "ast": 101,
+        "stl": 77,
+        "blk": 47,
+        "to": 87
+      }
+    },
+    {
+      "playerId": "5013",
+      "name": "Harrison Barnes",
+      "actualRank": 123,
+      "preseasonRank": 167,
+      "gamesPlayed": 82,
+      "teamId": "2024:dadder",
+      "stats": {
+        "fgm": 347,
+        "fga": 732,
+        "ftm": 157,
+        "fta": 196,
+        "threes": 149,
+        "pts": 1000,
+        "reb": 249,
+        "ast": 99,
+        "stl": 54,
+        "blk": 12,
+        "to": 58
+      }
+    },
+    {
+      "playerId": "5824",
+      "name": "Malik Monk",
+      "actualRank": 124,
+      "preseasonRank": 107,
+      "gamesPlayed": 72,
+      "teamId": "2024:jordan",
+      "stats": {
+        "fgm": 396,
+        "fga": 893,
+        "ftm": 170,
+        "fta": 205,
+        "threes": 148,
+        "pts": 1110,
+        "reb": 212,
+        "ast": 370,
+        "stl": 45,
+        "blk": 39,
+        "to": 150
+      }
+    },
+    {
+      "playerId": "5582",
+      "name": "T.J. McConnell",
+      "actualRank": 125,
+      "preseasonRank": 196,
+      "gamesPlayed": 71,
+      "teamId": "2024:najim",
+      "stats": {
+        "fgm": 330,
+        "fga": 593,
+        "ftm": 49,
+        "fta": 62,
+        "threes": 18,
+        "pts": 727,
+        "reb": 191,
+        "ast": 390,
+        "stl": 72,
+        "blk": 8,
+        "to": 108
+      }
+    },
+    {
+      "playerId": "10092",
+      "name": "Jaime Jaquez Jr.",
+      "actualRank": 126,
+      "preseasonRank": 150,
+      "gamesPlayed": 75,
+      "teamId": null
+    },
+    {
+      "playerId": "6217",
+      "name": "Keldon Johnson",
+      "actualRank": 127,
+      "preseasonRank": 127,
+      "gamesPlayed": 69,
+      "teamId": "2024:jake",
+      "stats": {
+        "fgm": 391,
+        "fga": 862,
+        "ftm": 175,
+        "fta": 221,
+        "threes": 127,
+        "pts": 1084,
+        "reb": 377,
+        "ast": 195,
+        "stl": 51,
+        "blk": 20,
+        "to": 100
+      }
+    },
+    {
+      "playerId": "6418",
+      "name": "Payton Pritchard",
+      "actualRank": 128,
+      "preseasonRank": 207,
+      "gamesPlayed": 82,
+      "teamId": "2024:jake",
+      "stats": {
+        "fgm": 297,
+        "fga": 635,
+        "ftm": 46,
+        "fta": 56,
+        "threes": 147,
+        "pts": 787,
+        "reb": 265,
+        "ast": 281,
+        "stl": 39,
+        "blk": 6,
+        "to": 61
+      }
+    },
+    {
+      "playerId": "6569",
+      "name": "Cam Thomas",
+      "actualRank": 129,
+      "preseasonRank": 138,
+      "gamesPlayed": 66,
+      "teamId": "2024:benjamin",
+      "stats": {
+        "fgm": 526,
+        "fga": 1190,
+        "ftm": 286,
+        "fta": 334,
+        "threes": 144,
+        "pts": 1482,
+        "reb": 214,
+        "ast": 192,
+        "stl": 45,
+        "blk": 16,
+        "to": 124
+      }
+    },
+    {
+      "playerId": "5009",
+      "name": "Bradley Beal",
+      "actualRank": 130,
+      "preseasonRank": 75,
+      "gamesPlayed": 53,
+      "teamId": "2024:benjamin",
+      "stats": {
+        "fgm": 377,
+        "fga": 735,
+        "ftm": 109,
+        "fta": 134,
+        "threes": 101,
+        "pts": 964,
+        "reb": 232,
+        "ast": 265,
+        "stl": 52,
+        "blk": 27,
+        "to": 131
+      }
+    },
+    {
+      "playerId": "3930",
+      "name": "Chris Paul",
+      "actualRank": 131,
+      "preseasonRank": 99,
+      "gamesPlayed": 58,
+      "teamId": "2024:dadder",
+      "stats": {
+        "fgm": 206,
+        "fga": 467,
+        "ftm": 43,
+        "fta": 52,
+        "threes": 78,
+        "pts": 533,
+        "reb": 225,
+        "ast": 393,
+        "stl": 70,
+        "blk": 6,
+        "to": 76
+      }
+    },
+    {
+      "playerId": "6171",
+      "name": "Rui Hachimura",
+      "actualRank": 132,
+      "preseasonRank": 221,
+      "gamesPlayed": 68,
+      "teamId": "2024:eddie",
+      "stats": {
+        "fgm": 363,
+        "fga": 676,
+        "ftm": 99,
+        "fta": 134,
+        "threes": 98,
+        "pts": 923,
+        "reb": 294,
+        "ast": 81,
+        "stl": 41,
+        "blk": 25,
+        "to": 46
+      }
+    },
+    {
+      "playerId": "6205",
+      "name": "N. Alexander-Walker",
+      "actualRank": 133,
+      "preseasonRank": 241,
+      "gamesPlayed": 82,
+      "teamId": null
+    },
+    {
+      "playerId": "6434",
+      "name": "Nick Richards",
+      "actualRank": 134,
+      "preseasonRank": 119,
+      "gamesPlayed": 67,
+      "teamId": "2024:jake",
+      "stats": {
+        "fgm": 260,
+        "fga": 376,
+        "ftm": 132,
+        "fta": 179,
+        "threes": 0,
+        "pts": 652,
+        "reb": 539,
+        "ast": 54,
+        "stl": 26,
+        "blk": 74,
+        "to": 73
+      }
+    },
+    {
+      "playerId": "6407",
+      "name": "Cole Anthony",
+      "actualRank": 135,
+      "preseasonRank": 152,
+      "gamesPlayed": 81,
+      "teamId": "2024:mitchell",
+      "stats": {
+        "fgm": 332,
+        "fga": 763,
+        "ftm": 180,
+        "fta": 218,
+        "threes": 93,
+        "pts": 937,
+        "reb": 311,
+        "ast": 236,
+        "stl": 64,
+        "blk": 37,
+        "to": 126
+      }
+    },
+    {
+      "playerId": "6549",
+      "name": "Jonathan Kuminga",
+      "actualRank": 136,
+      "preseasonRank": 79,
+      "gamesPlayed": 74,
+      "teamId": "2024:jacob-v",
+      "stats": {
+        "fgm": 456,
+        "fga": 862,
+        "ftm": 223,
+        "fta": 299,
+        "threes": 53,
+        "pts": 1188,
+        "reb": 355,
+        "ast": 163,
+        "stl": 55,
+        "blk": 36,
+        "to": 122
+      }
+    },
+    {
+      "playerId": "6073",
+      "name": "Duncan Robinson",
+      "actualRank": 137,
+      "preseasonRank": 188,
+      "gamesPlayed": 68,
+      "teamId": "2024:jacob-v",
+      "stats": {
+        "fgm": 304,
+        "fga": 675,
+        "ftm": 80,
+        "fta": 90,
+        "threes": 187,
+        "pts": 875,
+        "reb": 173,
+        "ast": 192,
+        "stl": 46,
+        "blk": 16,
+        "to": 95
+      }
+    },
+    {
+      "playerId": "5194",
+      "name": "Tim Hardaway Jr.",
+      "actualRank": 138,
+      "preseasonRank": 136,
+      "gamesPlayed": 79,
+      "teamId": null
+    },
+    {
+      "playerId": "6422",
+      "name": "Desmond Bane",
+      "actualRank": 139,
+      "preseasonRank": 213,
+      "gamesPlayed": 42,
+      "teamId": "2024:mitchell",
+      "stats": {
+        "fgm": 360,
+        "fga": 776,
+        "ftm": 140,
+        "fta": 161,
+        "threes": 137,
+        "pts": 997,
+        "reb": 185,
+        "ast": 230,
+        "stl": 43,
+        "blk": 22,
+        "to": 112
+      }
+    },
+    {
+      "playerId": "6411",
+      "name": "Saddiq Bey",
+      "actualRank": 140,
+      "preseasonRank": 113,
+      "gamesPlayed": 63,
+      "teamId": null
+    },
+    {
+      "playerId": "6699",
+      "name": "Jeremy Sochan",
+      "actualRank": 141,
+      "preseasonRank": 120,
+      "gamesPlayed": 74,
+      "teamId": "2024:dylan",
+      "stats": {
+        "fgm": 340,
+        "fga": 776,
+        "ftm": 111,
+        "fta": 144,
+        "threes": 70,
+        "pts": 861,
+        "reb": 476,
+        "ast": 249,
+        "stl": 62,
+        "blk": 40,
+        "to": 140
+      }
+    },
+    {
+      "playerId": "10115",
+      "name": "Brandin Podziemski",
+      "actualRank": 142,
+      "preseasonRank": 145,
+      "gamesPlayed": 74,
+      "teamId": null
+    },
+    {
+      "playerId": "6167",
+      "name": "Darius Garland",
+      "actualRank": 143,
+      "preseasonRank": 63,
+      "gamesPlayed": 57,
+      "teamId": "2024:eddie",
+      "stats": {
+        "fgm": 375,
+        "fga": 841,
+        "ftm": 146,
+        "fta": 175,
+        "threes": 132,
+        "pts": 1028,
+        "reb": 152,
+        "ast": 373,
+        "stl": 74,
+        "blk": 7,
+        "to": 176
+      }
+    },
+    {
+      "playerId": "5836",
+      "name": "OG Anunoby",
+      "actualRank": 144,
+      "preseasonRank": 118,
+      "gamesPlayed": 50,
+      "teamId": "2024:najim",
+      "stats": {
+        "fgm": 282,
+        "fga": 577,
+        "ftm": 67,
+        "fta": 89,
+        "threes": 102,
+        "pts": 733,
+        "reb": 208,
+        "ast": 107,
+        "stl": 68,
+        "blk": 36,
+        "to": 81
+      }
+    },
+    {
+      "playerId": "4469",
+      "name": "Eric Gordon",
+      "actualRank": 145,
+      "preseasonRank": 187,
+      "gamesPlayed": 68,
+      "teamId": null
+    },
+    {
+      "playerId": "5073",
+      "name": "Khris Middleton",
+      "actualRank": 146,
+      "preseasonRank": 139,
+      "gamesPlayed": 55,
+      "teamId": "2024:jacob-v",
+      "stats": {
+        "fgm": 317,
+        "fga": 643,
+        "ftm": 100,
+        "fta": 120,
+        "threes": 94,
+        "pts": 828,
+        "reb": 257,
+        "ast": 292,
+        "stl": 51,
+        "blk": 15,
+        "to": 127
+      }
+    },
+    {
+      "playerId": "6557",
+      "name": "Corey Kispert",
+      "actualRank": 147,
+      "preseasonRank": 156,
+      "gamesPlayed": 80,
+      "teamId": "2024:jordan",
+      "stats": {
+        "fgm": 386,
+        "fga": 794,
+        "ftm": 114,
+        "fta": 157,
+        "threes": 184,
+        "pts": 1070,
+        "reb": 225,
+        "ast": 156,
+        "stl": 41,
+        "blk": 16,
+        "to": 98
+      }
+    },
+    {
+      "playerId": "10108",
+      "name": "Amen Thompson",
+      "actualRank": 148,
+      "preseasonRank": 129,
+      "gamesPlayed": 62,
+      "teamId": "2024:mitchell",
+      "stats": {
+        "fgm": 239,
+        "fga": 446,
+        "ftm": 106,
+        "fta": 155,
+        "threes": 8,
+        "pts": 592,
+        "reb": 409,
+        "ast": 163,
+        "stl": 78,
+        "blk": 38,
+        "to": 90
+      }
+    },
+    {
+      "playerId": "5069",
+      "name": "Draymond Green",
+      "actualRank": 149,
+      "preseasonRank": 83,
+      "gamesPlayed": 55,
+      "teamId": "2024:eddie",
+      "stats": {
+        "fgm": 185,
+        "fga": 372,
+        "ftm": 54,
+        "fta": 74,
+        "threes": 51,
+        "pts": 475,
+        "reb": 398,
+        "ast": 332,
+        "stl": 55,
+        "blk": 47,
+        "to": 135
+      }
+    },
+    {
+      "playerId": "6036",
+      "name": "Moritz Wagner",
+      "actualRank": 150,
+      "preseasonRank": 180,
+      "gamesPlayed": 80,
+      "teamId": "2024:benjamin",
+      "stats": {
+        "fgm": 332,
+        "fga": 552,
+        "ftm": 166,
+        "fta": 204,
+        "threes": 38,
+        "pts": 868,
+        "reb": 347,
+        "ast": 96,
+        "stl": 39,
+        "blk": 21,
+        "to": 97
+      }
+    },
+    {
+      "playerId": "6398",
+      "name": "Onyeka Okongwu",
+      "actualRank": 151,
+      "preseasonRank": 153,
+      "gamesPlayed": 55,
+      "teamId": "2024:jacob-v",
+      "stats": {
+        "fgm": 223,
+        "fga": 365,
+        "ftm": 92,
+        "fta": 116,
+        "threes": 23,
+        "pts": 561,
+        "reb": 376,
+        "ast": 74,
+        "stl": 26,
+        "blk": 60,
+        "to": 45
+      }
+    },
+    {
+      "playerId": "5643",
+      "name": "Taurean Prince",
+      "actualRank": 152,
+      "preseasonRank": 183,
+      "gamesPlayed": 78,
+      "teamId": null
+    },
+    {
+      "playerId": "5858",
+      "name": "Dillon Brooks",
+      "actualRank": 153,
+      "preseasonRank": 165,
+      "gamesPlayed": 72,
+      "teamId": null
+    },
+    {
+      "playerId": "6173",
+      "name": "Cameron Johnson",
+      "actualRank": 154,
+      "preseasonRank": 115,
+      "gamesPlayed": 58,
+      "teamId": "2024:jacob-v",
+      "stats": {
+        "fgm": 276,
+        "fga": 619,
+        "ftm": 86,
+        "fta": 109,
+        "threes": 138,
+        "pts": 776,
+        "reb": 251,
+        "ast": 138,
+        "stl": 49,
+        "blk": 15,
+        "to": 57
+      }
+    },
+    {
+      "playerId": "5349",
+      "name": "Spencer Dinwiddie",
+      "actualRank": 155,
+      "preseasonRank": 191,
+      "gamesPlayed": 76,
+      "teamId": null
+    },
+    {
+      "playerId": "5015",
+      "name": "Andre Drummond",
+      "actualRank": 156,
+      "preseasonRank": 105,
+      "gamesPlayed": 79,
+      "teamId": null
+    },
+    {
+      "playerId": "5693",
+      "name": "Dorian Finney-Smith",
+      "actualRank": 157,
+      "preseasonRank": 169,
+      "gamesPlayed": 68,
+      "teamId": "2024:jordan",
+      "stats": {
+        "fgm": 215,
+        "fga": 511,
+        "ftm": 33,
+        "fta": 46,
+        "threes": 117,
+        "pts": 580,
+        "reb": 317,
+        "ast": 107,
+        "stl": 56,
+        "blk": 38,
+        "to": 59
+      }
+    },
+    {
+      "playerId": "6441",
+      "name": "Isaiah Joe",
+      "actualRank": 158,
+      "preseasonRank": 237,
+      "gamesPlayed": 78,
+      "teamId": null
+    },
+    {
+      "playerId": "6420",
+      "name": "Jaden McDaniels",
+      "actualRank": 159,
+      "preseasonRank": 163,
+      "gamesPlayed": 72,
+      "teamId": null
+    },
+    {
+      "playerId": "6053",
+      "name": "Bruce Brown",
+      "actualRank": 160,
+      "preseasonRank": 137,
+      "gamesPlayed": 67,
+      "teamId": null
+    },
+    {
+      "playerId": "5341",
+      "name": "Kyle Anderson",
+      "actualRank": 161,
+      "preseasonRank": 226,
+      "gamesPlayed": 79,
+      "teamId": null
+    },
+    {
+      "playerId": "10097",
+      "name": "Dereck Lively II",
+      "actualRank": 162,
+      "preseasonRank": 117,
+      "gamesPlayed": 55,
+      "teamId": "2024:najim",
+      "stats": {
+        "fgm": 221,
+        "fga": 296,
+        "ftm": 41,
+        "fta": 81,
+        "threes": 0,
+        "pts": 483,
+        "reb": 378,
+        "ast": 60,
+        "stl": 36,
+        "blk": 77,
+        "to": 50
+      }
+    },
+    {
+      "playerId": "6210",
+      "name": "Grant Williams",
+      "actualRank": 163,
+      "preseasonRank": 132,
+      "gamesPlayed": 76,
+      "teamId": "2024:michael",
+      "stats": {
+        "fgm": 276,
+        "fga": 605,
+        "ftm": 106,
+        "fta": 140,
+        "threes": 126,
+        "pts": 784,
+        "reb": 318,
+        "ast": 174,
+        "stl": 44,
+        "blk": 39,
+        "to": 109
+      }
+    },
+    {
+      "playerId": "6236",
+      "name": "Terance Mann",
+      "actualRank": 164,
+      "preseasonRank": 171,
+      "gamesPlayed": 75,
+      "teamId": null
+    },
+    {
+      "playerId": "6030",
+      "name": "Kevin Huerter",
+      "actualRank": 165,
+      "preseasonRank": 166,
+      "gamesPlayed": 64,
+      "teamId": null
+    },
+    {
+      "playerId": "6766",
+      "name": "Simone Fontecchio",
+      "actualRank": 166,
+      "preseasonRank": 176,
+      "gamesPlayed": 66,
+      "teamId": "2024:benjamin",
+      "stats": {
+        "fgm": 252,
+        "fga": 548,
+        "ftm": 54,
+        "fta": 66,
+        "threes": 134,
+        "pts": 692,
+        "reb": 246,
+        "ast": 101,
+        "stl": 44,
+        "blk": 23,
+        "to": 68
+      }
+    },
+    {
+      "playerId": "4152",
+      "name": "Kyle Lowry",
+      "actualRank": 167,
+      "preseasonRank": 133,
+      "gamesPlayed": 60,
+      "teamId": "2024:eddie",
+      "stats": {
+        "fgm": 163,
+        "fga": 377,
+        "ftm": 63,
+        "fta": 75,
+        "threes": 98,
+        "pts": 487,
+        "reb": 194,
+        "ast": 253,
+        "stl": 59,
+        "blk": 21,
+        "to": 85
+      }
+    },
+    {
+      "playerId": "5350",
+      "name": "Jerami Grant",
+      "actualRank": 168,
+      "preseasonRank": 162,
+      "gamesPlayed": 54,
+      "teamId": "2024:eddie",
+      "stats": {
+        "fgm": 383,
+        "fga": 850,
+        "ftm": 255,
+        "fta": 312,
+        "threes": 111,
+        "pts": 1132,
+        "reb": 191,
+        "ast": 152,
+        "stl": 45,
+        "blk": 34,
+        "to": 116
+      }
+    },
+    {
+      "playerId": "5640",
+      "name": "Jakob Poeltl",
+      "actualRank": 169,
+      "preseasonRank": 97,
+      "gamesPlayed": 50,
+      "teamId": null
+    },
+    {
+      "playerId": "6698",
+      "name": "Dyson Daniels",
+      "actualRank": 170,
+      "preseasonRank": 255,
+      "gamesPlayed": 61,
+      "teamId": null
+    },
+    {
+      "playerId": "6572",
+      "name": "Santi Aldama",
+      "actualRank": 171,
+      "preseasonRank": 160,
+      "gamesPlayed": 61,
+      "teamId": null
+    },
+    {
+      "playerId": "5747",
+      "name": "Derrick Jones Jr.",
+      "actualRank": 172,
+      "preseasonRank": 204,
+      "gamesPlayed": 76,
+      "teamId": null
+    },
+    {
+      "playerId": "5487",
+      "name": "Larry Nance Jr.",
+      "actualRank": 173,
+      "preseasonRank": 198,
+      "gamesPlayed": 61,
+      "teamId": "2024:matt",
+      "stats": {
+        "fgm": 138,
+        "fga": 241,
+        "ftm": 47,
+        "fta": 61,
+        "threes": 27,
+        "pts": 350,
+        "reb": 307,
+        "ast": 113,
+        "stl": 61,
+        "blk": 19,
+        "to": 49
+      }
+    },
+    {
+      "playerId": "6597",
+      "name": "Aaron Wiggins",
+      "actualRank": 174,
+      "preseasonRank": 253,
+      "gamesPlayed": 78,
+      "teamId": null
+    },
+    {
+      "playerId": "6397",
+      "name": "Isaac Okoro",
+      "actualRank": 175,
+      "preseasonRank": 146,
+      "gamesPlayed": 69,
+      "teamId": "2024:najim",
+      "stats": {
+        "fgm": 235,
+        "fga": 480,
+        "ftm": 93,
+        "fta": 137,
+        "threes": 84,
+        "pts": 647,
+        "reb": 206,
+        "ast": 132,
+        "stl": 57,
+        "blk": 34,
+        "to": 54
+      }
+    },
+    {
+      "playerId": "5292",
+      "name": "Andrew Wiggins",
+      "actualRank": 176,
+      "preseasonRank": 149,
+      "gamesPlayed": 71,
+      "teamId": "2024:dylan",
+      "stats": {
+        "fgm": 353,
+        "fga": 780,
+        "ftm": 142,
+        "fta": 189,
+        "threes": 91,
+        "pts": 939,
+        "reb": 321,
+        "ast": 119,
+        "stl": 42,
+        "blk": 41,
+        "to": 87
+      }
+    },
+    {
+      "playerId": "5903",
+      "name": "Luke Kornet",
+      "actualRank": 177,
+      "preseasonRank": 254,
+      "gamesPlayed": 63,
+      "teamId": null
+    },
+    {
+      "playerId": "6166",
+      "name": "De'Andre Hunter",
+      "actualRank": 178,
+      "preseasonRank": 131,
+      "gamesPlayed": 57,
+      "teamId": "2024:jacob-v",
+      "stats": {
+        "fgm": 304,
+        "fga": 663,
+        "ftm": 166,
+        "fta": 196,
+        "threes": 117,
+        "pts": 891,
+        "reb": 222,
+        "ast": 87,
+        "stl": 40,
+        "blk": 16,
+        "to": 83
+      }
+    },
+    {
+      "playerId": "6412",
+      "name": "Precious Achiuwa",
+      "actualRank": 179,
+      "preseasonRank": 141,
+      "gamesPlayed": 74,
+      "teamId": "2024:dadder",
+      "stats": {
+        "fgm": 235,
+        "fga": 469,
+        "ftm": 69,
+        "fta": 112,
+        "threes": 26,
+        "pts": 565,
+        "reb": 487,
+        "ast": 97,
+        "stl": 46,
+        "blk": 68,
+        "to": 83
+      }
+    },
+    {
+      "playerId": "6721",
+      "name": "Andrew Nembhard",
+      "actualRank": 180,
+      "preseasonRank": 173,
+      "gamesPlayed": 68,
+      "teamId": "2024:benjamin",
+      "stats": {
+        "fgm": 260,
+        "fga": 522,
+        "ftm": 45,
+        "fta": 56,
+        "threes": 61,
+        "pts": 626,
+        "reb": 141,
+        "ast": 280,
+        "stl": 63,
+        "blk": 6,
+        "to": 101
+      }
+    },
+    {
+      "playerId": "10096",
+      "name": "Ausar Thompson",
+      "actualRank": 181,
+      "preseasonRank": 140,
+      "gamesPlayed": 63,
+      "teamId": "2024:najim",
+      "stats": {
+        "fgm": 232,
+        "fga": 480,
+        "ftm": 71,
+        "fta": 119,
+        "threes": 21,
+        "pts": 556,
+        "reb": 402,
+        "ast": 120,
+        "stl": 68,
+        "blk": 59,
+        "to": 84
+      }
+    },
+    {
+      "playerId": "5681",
+      "name": "Georges Niang",
+      "actualRank": 182,
+      "preseasonRank": 251,
+      "gamesPlayed": 82,
+      "teamId": null
+    },
+    {
+      "playerId": "5768",
+      "name": "Jonathan Isaac",
+      "actualRank": 183,
+      "preseasonRank": 231,
+      "gamesPlayed": 58,
+      "teamId": "2024:jordan",
+      "stats": {
+        "fgm": 146,
+        "fga": 286,
+        "ftm": 59,
+        "fta": 82,
+        "threes": 42,
+        "pts": 393,
+        "reb": 260,
+        "ast": 30,
+        "stl": 43,
+        "blk": 70,
+        "to": 27
+      }
+    },
+    {
+      "playerId": "5636",
+      "name": "Kris Dunn",
+      "actualRank": 184,
+      "preseasonRank": 185,
+      "gamesPlayed": 66,
+      "teamId": null
+    },
+    {
+      "playerId": "10065",
+      "name": "Toumani Camara",
+      "actualRank": 185,
+      "preseasonRank": 264,
+      "gamesPlayed": 70,
+      "teamId": null
+    },
+    {
+      "playerId": "4487",
+      "name": "Nicolas Batum",
+      "actualRank": 186,
+      "preseasonRank": 240,
+      "gamesPlayed": 60,
+      "teamId": null
+    },
+    {
+      "playerId": "6035",
+      "name": "Anfernee Simons",
+      "actualRank": 187,
+      "preseasonRank": 73,
+      "gamesPlayed": 46,
+      "teamId": "2024:jordan",
+      "stats": {
+        "fgm": 360,
+        "fga": 837,
+        "ftm": 163,
+        "fta": 178,
+        "threes": 156,
+        "pts": 1039,
+        "reb": 167,
+        "ast": 255,
+        "stl": 23,
+        "blk": 5,
+        "to": 126
+      }
+    },
+    {
+      "playerId": "4390",
+      "name": "Russell Westbrook",
+      "actualRank": 188,
+      "preseasonRank": 220,
+      "gamesPlayed": 68,
+      "teamId": null
+    },
+    {
+      "playerId": "6754",
+      "name": "Julian Champagnie",
+      "actualRank": 189,
+      "preseasonRank": 262,
+      "gamesPlayed": 74,
+      "teamId": null
+    },
+    {
+      "playerId": "6737",
+      "name": "Vince Williams Jr.",
+      "actualRank": 190,
+      "preseasonRank": 81,
+      "gamesPlayed": 52,
+      "teamId": "2024:dadder",
+      "stats": {
+        "fgm": 169,
+        "fga": 379,
+        "ftm": 104,
+        "fta": 130,
+        "threes": 79,
+        "pts": 521,
+        "reb": 290,
+        "ast": 175,
+        "stl": 47,
+        "blk": 34,
+        "to": 92
+      }
+    },
+    {
+      "playerId": "6720",
+      "name": "Peyton Watson",
+      "actualRank": 191,
+      "preseasonRank": 201,
+      "gamesPlayed": 80,
+      "teamId": null
+    },
+    {
+      "playerId": "10080",
+      "name": "Trayce Jackson-Davis",
+      "actualRank": 192,
+      "preseasonRank": 206,
+      "gamesPlayed": 68,
+      "teamId": null
+    },
+    {
+      "playerId": "6578",
+      "name": "Miles McBride",
+      "actualRank": 193,
+      "preseasonRank": 261,
+      "gamesPlayed": 68,
+      "teamId": "2024:najim",
+      "stats": {
+        "fgm": 205,
+        "fga": 454,
+        "ftm": 43,
+        "fta": 50,
+        "threes": 109,
+        "pts": 562,
+        "reb": 100,
+        "ast": 114,
+        "stl": 50,
+        "blk": 7,
+        "to": 30
+      }
+    },
+    {
+      "playerId": "6695",
+      "name": "Jaden Ivey",
+      "actualRank": 194,
+      "preseasonRank": 142,
+      "gamesPlayed": 77,
+      "teamId": "2024:michael",
+      "stats": {
+        "fgm": 417,
+        "fga": 973,
+        "ftm": 227,
+        "fta": 303,
+        "threes": 124,
+        "pts": 1185,
+        "reb": 264,
+        "ast": 296,
+        "stl": 57,
+        "blk": 41,
+        "to": 190
+      }
+    },
+    {
+      "playerId": "5823",
+      "name": "Zach Collins",
+      "actualRank": 195,
+      "preseasonRank": 151,
+      "gamesPlayed": 69,
+      "teamId": "2024:mitchell",
+      "stats": {
+        "fgm": 298,
+        "fga": 616,
+        "ftm": 122,
+        "fta": 162,
+        "threes": 58,
+        "pts": 776,
+        "reb": 370,
+        "ast": 194,
+        "stl": 34,
+        "blk": 52,
+        "to": 132
+      }
+    },
+    {
+      "playerId": "6402",
+      "name": "Jalen Smith",
+      "actualRank": 196,
+      "preseasonRank": 257,
+      "gamesPlayed": 61,
+      "teamId": null
+    },
+    {
+      "playerId": "6747",
+      "name": "Jabari Walker",
+      "actualRank": 197,
+      "preseasonRank": 172,
+      "gamesPlayed": 72,
+      "teamId": null
+    },
+    {
+      "playerId": "4906",
+      "name": "Reggie Jackson",
+      "actualRank": 198,
+      "preseasonRank": 219,
+      "gamesPlayed": 82,
+      "teamId": null
+    },
+    {
+      "playerId": "6255",
+      "name": "John Konchar",
+      "actualRank": 199,
+      "preseasonRank": 252,
+      "gamesPlayed": 55,
+      "teamId": "2024:dadder",
+      "stats": {
+        "fgm": 88,
+        "fga": 208,
+        "ftm": 21,
+        "fta": 25,
+        "threes": 38,
+        "pts": 235,
+        "reb": 257,
+        "ast": 110,
+        "stl": 51,
+        "blk": 51,
+        "to": 46
+      }
+    },
+    {
+      "playerId": "6275",
+      "name": "Caleb Martin",
+      "actualRank": 200,
+      "preseasonRank": 200,
+      "gamesPlayed": 64,
+      "teamId": "2024:najim",
+      "stats": {
+        "fgm": 241,
+        "fga": 559,
+        "ftm": 77,
+        "fta": 99,
+        "threes": 81,
+        "pts": 640,
+        "reb": 281,
+        "ast": 143,
+        "stl": 47,
+        "blk": 29,
+        "to": 77
+      }
+    },
+    {
+      "playerId": "6155",
+      "name": "Haywood Highsmith",
+      "actualRank": 201,
+      "preseasonRank": 246,
+      "gamesPlayed": 66,
+      "teamId": null
+    },
+    {
+      "playerId": "4647",
+      "name": "Patrick Beverley",
+      "actualRank": 202,
+      "preseasonRank": 232,
+      "gamesPlayed": 73,
+      "teamId": null
+    },
+    {
+      "playerId": "6175",
+      "name": "Tyler Herro",
+      "actualRank": 203,
+      "preseasonRank": 90,
+      "gamesPlayed": 42,
+      "teamId": "2024:michael",
+      "stats": {
+        "fgm": 324,
+        "fga": 735,
+        "ftm": 95,
+        "fta": 111,
+        "threes": 132,
+        "pts": 875,
+        "reb": 222,
+        "ast": 188,
+        "stl": 30,
+        "blk": 3,
+        "to": 93
+      }
+    },
+    {
+      "playerId": "6018",
+      "name": "Wendell Carter Jr.",
+      "actualRank": 204,
+      "preseasonRank": 123,
+      "gamesPlayed": 55,
+      "teamId": null
+    },
+    {
+      "playerId": "6711",
+      "name": "Christian Braun",
+      "actualRank": 205,
+      "preseasonRank": 235,
+      "gamesPlayed": 82,
+      "teamId": null
+    },
+    {
+      "playerId": "5474",
+      "name": "Cameron Payne",
+      "actualRank": 206,
+      "preseasonRank": 202,
+      "gamesPlayed": 78,
+      "teamId": null
+    },
+    {
+      "playerId": "6165",
+      "name": "RJ Barrett",
+      "actualRank": 207,
+      "preseasonRank": 108,
+      "gamesPlayed": 58,
+      "teamId": "2024:benjamin",
+      "stats": {
+        "fgm": 436,
+        "fga": 880,
+        "ftm": 208,
+        "fta": 291,
+        "threes": 90,
+        "pts": 1170,
+        "reb": 315,
+        "ast": 193,
+        "stl": 31,
+        "blk": 22,
+        "to": 126
+      }
+    },
+    {
+      "playerId": "10164",
+      "name": "Duop Reath",
+      "actualRank": 208,
+      "preseasonRank": 161,
+      "gamesPlayed": 68,
+      "teamId": null
+    },
+    {
+      "playerId": "5501",
+      "name": "Pat Connaughton",
+      "actualRank": 209,
+      "preseasonRank": 259,
+      "gamesPlayed": 76,
+      "teamId": null
+    },
+    {
+      "playerId": "6564",
+      "name": "Isaiah Jackson",
+      "actualRank": 210,
+      "preseasonRank": 247,
+      "gamesPlayed": 60,
+      "teamId": null
+    },
+    {
+      "playerId": "6057",
+      "name": "De'Anthony Melton",
+      "actualRank": 211,
+      "preseasonRank": 186,
+      "gamesPlayed": 38,
+      "teamId": "2024:eddie",
+      "stats": {
+        "fgm": 139,
+        "fga": 360,
+        "ftm": 66,
+        "fta": 79,
+        "threes": 77,
+        "pts": 421,
+        "reb": 141,
+        "ast": 114,
+        "stl": 60,
+        "blk": 16,
+        "to": 39
+      }
+    },
+    {
+      "playerId": "5318",
+      "name": "Julius Randle",
+      "actualRank": 212,
+      "preseasonRank": 208,
+      "gamesPlayed": 46,
+      "teamId": null
+    },
+    {
+      "playerId": "6109",
+      "name": "Drew Eubanks",
+      "actualRank": 213,
+      "preseasonRank": 256,
+      "gamesPlayed": 75,
+      "teamId": null
+    },
+    {
+      "playerId": "10099",
+      "name": "Bilal Coulibaly",
+      "actualRank": 214,
+      "preseasonRank": 181,
+      "gamesPlayed": 63,
+      "teamId": null
+    },
+    {
+      "playerId": "6206",
+      "name": "Goga Bitadze",
+      "actualRank": 215,
+      "preseasonRank": 194,
+      "gamesPlayed": 62,
+      "teamId": null
+    },
+    {
+      "playerId": "6315",
+      "name": "Amir Coffey",
+      "actualRank": 216,
+      "preseasonRank": 273,
+      "gamesPlayed": 70,
+      "teamId": null
+    },
+    {
+      "playerId": "6499",
+      "name": "Naji Marshall",
+      "actualRank": 217,
+      "preseasonRank": 260,
+      "gamesPlayed": 66,
+      "teamId": null
+    },
+    {
+      "playerId": "6034",
+      "name": "Aaron Holiday",
+      "actualRank": 218,
+      "preseasonRank": 266,
+      "gamesPlayed": 78,
+      "teamId": null
+    },
+    {
+      "playerId": "10114",
+      "name": "Marcus Sasser",
+      "actualRank": 219,
+      "preseasonRank": 195,
+      "gamesPlayed": 71,
+      "teamId": null
+    },
+    {
+      "playerId": "6556",
+      "name": "Moses Moody",
+      "actualRank": 220,
+      "preseasonRank": 225,
+      "gamesPlayed": 66,
+      "teamId": null
+    },
+    {
+      "playerId": "6753",
+      "name": "Keon Ellis",
+      "actualRank": 221,
+      "preseasonRank": 278,
+      "gamesPlayed": 57,
+      "teamId": null
+    },
+    {
+      "playerId": "5822",
+      "name": "Dennis Smith Jr.",
+      "actualRank": 222,
+      "preseasonRank": 242,
+      "gamesPlayed": 56,
+      "teamId": null
+    },
+    {
+      "playerId": "5490",
+      "name": "Kevon Looney",
+      "actualRank": 223,
+      "preseasonRank": 212,
+      "gamesPlayed": 74,
+      "teamId": null
+    },
+    {
+      "playerId": "5323",
+      "name": "Dario Šarić",
+      "actualRank": 224,
+      "preseasonRank": 205,
+      "gamesPlayed": 64,
+      "teamId": null
+    },
+    {
+      "playerId": "6256",
+      "name": "Dean Wade",
+      "actualRank": 225,
+      "preseasonRank": 269,
+      "gamesPlayed": 54,
+      "teamId": "2024:jacob-g",
+      "stats": {
+        "fgm": 96,
+        "fga": 232,
+        "ftm": 20,
+        "fta": 26,
+        "threes": 79,
+        "pts": 291,
+        "reb": 218,
+        "ast": 43,
+        "stl": 40,
+        "blk": 25,
+        "to": 20
+      }
+    },
+    {
+      "playerId": "6696",
+      "name": "Bennedict Mathurin",
+      "actualRank": 226,
+      "preseasonRank": 135,
+      "gamesPlayed": 59,
+      "teamId": "2024:michael",
+      "stats": {
+        "fgm": 296,
+        "fga": 663,
+        "ftm": 184,
+        "fta": 224,
+        "threes": 80,
+        "pts": 856,
+        "reb": 234,
+        "ast": 119,
+        "stl": 35,
+        "blk": 14,
+        "to": 97
+      }
+    },
+    {
+      "playerId": "6613",
+      "name": "Jose Alvarado",
+      "actualRank": 227,
+      "preseasonRank": 263,
+      "gamesPlayed": 56,
+      "teamId": null
+    },
+    {
+      "playerId": "5959",
+      "name": "Marvin Bagley III",
+      "actualRank": 228,
+      "preseasonRank": 126,
+      "gamesPlayed": 50,
+      "teamId": null
+    },
+    {
+      "playerId": "5357",
+      "name": "Jordan Clarkson",
+      "actualRank": 229,
+      "preseasonRank": 125,
+      "gamesPlayed": 55,
+      "teamId": "2024:dylan",
+      "stats": {
+        "fgm": 337,
+        "fga": 816,
+        "ftm": 177,
+        "fta": 201,
+        "threes": 91,
+        "pts": 942,
+        "reb": 188,
+        "ast": 277,
+        "stl": 35,
+        "blk": 6,
+        "to": 146
+      }
+    },
+    {
+      "playerId": "6410",
+      "name": "Josh Green",
+      "actualRank": 230,
+      "preseasonRank": 224,
+      "gamesPlayed": 57,
+      "teamId": "2024:michael",
+      "stats": {
+        "fgm": 179,
+        "fga": 374,
+        "ftm": 39,
+        "fta": 57,
+        "threes": 72,
+        "pts": 469,
+        "reb": 184,
+        "ast": 130,
+        "stl": 47,
+        "blk": 9,
+        "to": 60
+      }
+    },
+    {
+      "playerId": "5491",
+      "name": "Cedi Osman",
+      "actualRank": 231,
+      "preseasonRank": 267,
+      "gamesPlayed": 72,
+      "teamId": null
+    },
+    {
+      "playerId": "5667",
+      "name": "Malcolm Brogdon",
+      "actualRank": 232,
+      "preseasonRank": 170,
+      "gamesPlayed": 39,
+      "teamId": null
+    },
+    {
+      "playerId": "10100",
+      "name": "Keyonte George",
+      "actualRank": 233,
+      "preseasonRank": 114,
+      "gamesPlayed": 75,
+      "teamId": null
+    },
+    {
+      "playerId": "6452",
+      "name": "Sam Merrill",
+      "actualRank": 234,
+      "preseasonRank": 282,
+      "gamesPlayed": 61,
+      "teamId": null
+    },
+    {
+      "playerId": "5880",
+      "name": "Daniel Theis",
+      "actualRank": 235,
+      "preseasonRank": 283,
+      "gamesPlayed": 60,
+      "teamId": null
+    },
+    {
+      "playerId": "5330",
+      "name": "Gary Harris",
+      "actualRank": 236,
+      "preseasonRank": 268,
+      "gamesPlayed": 54,
+      "teamId": null
+    },
+    {
+      "playerId": "4391",
+      "name": "Kevin Love",
+      "actualRank": 237,
+      "preseasonRank": 233,
+      "gamesPlayed": 55,
+      "teamId": null
+    },
+    {
+      "playerId": "4893",
+      "name": "Alec Burks",
+      "actualRank": 238,
+      "preseasonRank": 192,
+      "gamesPlayed": 66,
+      "teamId": null
+    },
+    {
+      "playerId": "6704",
+      "name": "Ochai Agbaji",
+      "actualRank": 239,
+      "preseasonRank": 177,
+      "gamesPlayed": 78,
+      "teamId": null
+    },
+    {
+      "playerId": "6408",
+      "name": "Isaiah Stewart",
+      "actualRank": 240,
+      "preseasonRank": 134,
+      "gamesPlayed": 46,
+      "teamId": "2024:dylan",
+      "stats": {
+        "fgm": 186,
+        "fga": 382,
+        "ftm": 64,
+        "fta": 85,
+        "threes": 67,
+        "pts": 503,
+        "reb": 305,
+        "ast": 73,
+        "stl": 17,
+        "blk": 38,
+        "to": 66
+      }
+    },
+    {
+      "playerId": "5393",
+      "name": "Joe Ingles",
+      "actualRank": 241,
+      "preseasonRank": 272,
+      "gamesPlayed": 68,
+      "teamId": null
+    },
+    {
+      "playerId": "6724",
+      "name": "Jaylin Williams",
+      "actualRank": 242,
+      "preseasonRank": 274,
+      "gamesPlayed": 69,
+      "teamId": null
+    },
+    {
+      "playerId": "6060",
+      "name": "Chimezie Metu",
+      "actualRank": 243,
+      "preseasonRank": 275,
+      "gamesPlayed": 51,
+      "teamId": null
+    },
+    {
+      "playerId": "6396",
+      "name": "Patrick Williams",
+      "actualRank": 244,
+      "preseasonRank": 228,
+      "gamesPlayed": 43,
+      "teamId": null
+    },
+    {
+      "playerId": "6076",
+      "name": "Kenrich Williams",
+      "actualRank": 245,
+      "preseasonRank": 271,
+      "gamesPlayed": 69,
+      "teamId": null
+    },
+    {
+      "playerId": "4913",
+      "name": "Bojan Bogdanović",
+      "actualRank": 246,
+      "preseasonRank": 122,
+      "gamesPlayed": 57,
+      "teamId": "2024:jacob-v",
+      "stats": {
+        "fgm": 309,
+        "fga": 681,
+        "ftm": 117,
+        "fta": 149,
+        "threes": 133,
+        "pts": 868,
+        "reb": 152,
+        "ast": 97,
+        "stl": 30,
+        "blk": 5,
+        "to": 101
+      }
+    },
+    {
+      "playerId": "6560",
+      "name": "Tre Mann",
+      "actualRank": 247,
+      "preseasonRank": 164,
+      "gamesPlayed": 41,
+      "teamId": null
+    },
+    {
+      "playerId": "6234",
+      "name": "Talen Horton-Tucker",
+      "actualRank": 248,
+      "preseasonRank": 245,
+      "gamesPlayed": 51,
+      "teamId": null
+    },
+    {
+      "playerId": "5480",
+      "name": "Delon Wright",
+      "actualRank": 249,
+      "preseasonRank": 243,
+      "gamesPlayed": 47,
+      "teamId": null
+    },
+    {
+      "playerId": "6616",
+      "name": "Jordan Goodwin",
+      "actualRank": 250,
+      "preseasonRank": 270,
+      "gamesPlayed": 57,
+      "teamId": null
+    },
+    {
+      "playerId": "6395",
+      "name": "LaMelo Ball",
+      "actualRank": 251,
+      "preseasonRank": 214,
+      "gamesPlayed": 22,
+      "teamId": null
+    },
+    {
+      "playerId": "5500",
+      "name": "Josh Richardson",
+      "actualRank": 252,
+      "preseasonRank": 238,
+      "gamesPlayed": 43,
+      "teamId": null
+    },
+    {
+      "playerId": "6029",
+      "name": "Lonnie Walker IV",
+      "actualRank": 253,
+      "preseasonRank": 223,
+      "gamesPlayed": 58,
+      "teamId": null
+    },
+    {
+      "playerId": "6427",
+      "name": "Xavier Tillman",
+      "actualRank": 254,
+      "preseasonRank": 239,
+      "gamesPlayed": 54,
+      "teamId": null
+    },
+    {
+      "playerId": "5316",
+      "name": "Danté Exum",
+      "actualRank": 255,
+      "preseasonRank": 303,
+      "gamesPlayed": 55,
+      "teamId": null
+    },
+    {
+      "playerId": "10070",
+      "name": "GG Jackson",
+      "actualRank": 256,
+      "preseasonRank": 182,
+      "gamesPlayed": 48,
+      "teamId": null
+    },
+    {
+      "playerId": "4724",
+      "name": "Gordon Hayward",
+      "actualRank": 257,
+      "preseasonRank": 190,
+      "gamesPlayed": 51,
+      "teamId": null
+    },
+    {
+      "playerId": "10119",
+      "name": "Kris Murray",
+      "actualRank": 258,
+      "preseasonRank": 301,
+      "gamesPlayed": 62,
+      "teamId": null
+    },
+    {
+      "playerId": "5893",
+      "name": "Torrey Craig",
+      "actualRank": 259,
+      "preseasonRank": 265,
+      "gamesPlayed": 53,
+      "teamId": null
+    },
+    {
+      "playerId": "10110",
+      "name": "Taylor Hendricks",
+      "actualRank": 260,
+      "preseasonRank": 304,
+      "gamesPlayed": 40,
+      "teamId": "2024:jake",
+      "stats": {
+        "fgm": 108,
+        "fga": 240,
+        "ftm": 23,
+        "fta": 29,
+        "threes": 53,
+        "pts": 292,
+        "reb": 185,
+        "ast": 32,
+        "stl": 28,
+        "blk": 30,
+        "to": 27
+      }
+    },
+    {
+      "playerId": "6017",
+      "name": "Mo Bamba",
+      "actualRank": 261,
+      "preseasonRank": 281,
+      "gamesPlayed": 57,
+      "teamId": null
+    },
+    {
+      "playerId": "6710",
+      "name": "Malaki Branham",
+      "actualRank": 262,
+      "preseasonRank": 236,
+      "gamesPlayed": 75,
+      "teamId": null
+    },
+    {
+      "playerId": "5825",
+      "name": "Luke Kennard",
+      "actualRank": 263,
+      "preseasonRank": 178,
+      "gamesPlayed": 39,
+      "teamId": null
+    },
+    {
+      "playerId": "4247",
+      "name": "Jeff Green",
+      "actualRank": 264,
+      "preseasonRank": 284,
+      "gamesPlayed": 78,
+      "teamId": null
+    },
+    {
+      "playerId": "5472",
+      "name": "Trey Lyles",
+      "actualRank": 265,
+      "preseasonRank": 199,
+      "gamesPlayed": 58,
+      "teamId": null
+    },
+    {
+      "playerId": "5068",
+      "name": "Jae Crowder",
+      "actualRank": 266,
+      "preseasonRank": 248,
+      "gamesPlayed": 50,
+      "teamId": null
+    },
+    {
+      "playerId": "6571",
+      "name": "Day'Ron Sharpe",
+      "actualRank": 267,
+      "preseasonRank": 234,
+      "gamesPlayed": 61,
+      "teamId": null
+    },
+    {
+      "playerId": "6356",
+      "name": "James Wiseman",
+      "actualRank": 268,
+      "preseasonRank": 288,
+      "gamesPlayed": 63,
+      "teamId": "2024:matt",
+      "stats": {
+        "fgm": 187,
+        "fga": 305,
+        "ftm": 72,
+        "fta": 102,
+        "threes": 0,
+        "pts": 446,
+        "reb": 336,
+        "ast": 54,
+        "stl": 12,
+        "blk": 39,
+        "to": 66
+      }
+    },
+    {
+      "playerId": "10101",
+      "name": "Gradey Dick",
+      "actualRank": 269,
+      "preseasonRank": 307,
+      "gamesPlayed": 60,
+      "teamId": null
+    },
+    {
+      "playerId": "6031",
+      "name": "Josh Okogie",
+      "actualRank": 270,
+      "preseasonRank": 280,
+      "gamesPlayed": 60,
+      "teamId": null
+    },
+    {
+      "playerId": "6170",
+      "name": "Jaxson Hayes",
+      "actualRank": 271,
+      "preseasonRank": 305,
+      "gamesPlayed": 70,
+      "teamId": null
+    },
+    {
+      "playerId": "6463",
+      "name": "Jae'Sean Tate",
+      "actualRank": 272,
+      "preseasonRank": 299,
+      "gamesPlayed": 65,
+      "teamId": null
+    },
+    {
+      "playerId": "5142",
+      "name": "Justin Holiday",
+      "actualRank": 273,
+      "preseasonRank": 296,
+      "gamesPlayed": 58,
+      "teamId": null
+    },
+    {
+      "playerId": "6717",
+      "name": "Nikola Jović",
+      "actualRank": 274,
+      "preseasonRank": 312,
+      "gamesPlayed": 46,
+      "teamId": null
+    },
+    {
+      "playerId": "5739",
+      "name": "Gary Payton II",
+      "actualRank": 275,
+      "preseasonRank": 302,
+      "gamesPlayed": 44,
+      "teamId": null
+    },
+    {
+      "playerId": "6604",
+      "name": "Trendon Watford",
+      "actualRank": 276,
+      "preseasonRank": 285,
+      "gamesPlayed": 63,
+      "teamId": null
+    },
+    {
+      "playerId": "6133",
+      "name": "Jordan McLaughlin",
+      "actualRank": 277,
+      "preseasonRank": 293,
+      "gamesPlayed": 56,
+      "teamId": null
+    },
+    {
+      "playerId": "10118",
+      "name": "Cam Whitmore",
+      "actualRank": 278,
+      "preseasonRank": 158,
+      "gamesPlayed": 47,
+      "teamId": null
+    },
+    {
+      "playerId": "5324",
+      "name": "Zach LaVine",
+      "actualRank": 279,
+      "preseasonRank": 258,
+      "gamesPlayed": 25,
+      "teamId": null
+    },
+    {
+      "playerId": "6614",
+      "name": "Jock Landale",
+      "actualRank": 280,
+      "preseasonRank": 289,
+      "gamesPlayed": 56,
+      "teamId": null
+    },
+    {
+      "playerId": "5763",
+      "name": "Markelle Fultz",
+      "actualRank": 281,
+      "preseasonRank": 193,
+      "gamesPlayed": 43,
+      "teamId": null
+    },
+    {
+      "playerId": "6588",
+      "name": "Dalano Banton",
+      "actualRank": 282,
+      "preseasonRank": 309,
+      "gamesPlayed": 54,
+      "teamId": "2024:jake",
+      "stats": {
+        "fgm": 202,
+        "fga": 500,
+        "ftm": 94,
+        "fta": 120,
+        "threes": 59,
+        "pts": 557,
+        "reb": 178,
+        "ast": 127,
+        "stl": 33,
+        "blk": 20,
+        "to": 77
+      }
+    },
+    {
+      "playerId": "10098",
+      "name": "Jordan Hawkins",
+      "actualRank": 283,
+      "preseasonRank": 175,
+      "gamesPlayed": 67,
+      "teamId": null
+    },
+    {
+      "playerId": "6259",
+      "name": "Garrison Mathews",
+      "actualRank": 284,
+      "preseasonRank": 300,
+      "gamesPlayed": 66,
+      "teamId": null
+    },
+    {
+      "playerId": "5356",
+      "name": "Dwight Powell",
+      "actualRank": 285,
+      "preseasonRank": 287,
+      "gamesPlayed": 63,
+      "teamId": null
+    },
+    {
+      "playerId": "6399",
+      "name": "Killian Hayes",
+      "actualRank": 286,
+      "preseasonRank": 277,
+      "gamesPlayed": 42,
+      "teamId": null
+    },
+    {
+      "playerId": "6043",
+      "name": "Jevon Carter",
+      "actualRank": 287,
+      "preseasonRank": 276,
+      "gamesPlayed": 72,
+      "teamId": null
+    },
+    {
+      "playerId": "10048",
+      "name": "Scoot Henderson",
+      "actualRank": 288,
+      "preseasonRank": 179,
+      "gamesPlayed": 62,
+      "teamId": null
+    },
+    {
+      "playerId": "5253",
+      "name": "Robert Covington",
+      "actualRank": 289,
+      "preseasonRank": 290,
+      "gamesPlayed": 29,
+      "teamId": null
+    },
+    {
+      "playerId": "6567",
+      "name": "Quentin Grimes",
+      "actualRank": 290,
+      "preseasonRank": 222,
+      "gamesPlayed": 51,
+      "teamId": null
+    },
+    {
+      "playerId": "6172",
+      "name": "Cam Reddish",
+      "actualRank": 291,
+      "preseasonRank": 297,
+      "gamesPlayed": 48,
+      "teamId": null
+    },
+    {
+      "playerId": "6552",
+      "name": "Ziaire Williams",
+      "actualRank": 292,
+      "preseasonRank": 314,
+      "gamesPlayed": 51,
+      "teamId": null
+    },
+    {
+      "playerId": "4926",
+      "name": "Dāvis Bertāns",
+      "actualRank": 293,
+      "preseasonRank": 311,
+      "gamesPlayed": 43,
+      "teamId": null
+    },
+    {
+      "playerId": "5894",
+      "name": "Chris Boucher",
+      "actualRank": 294,
+      "preseasonRank": 279,
+      "gamesPlayed": 50,
+      "teamId": null
+    },
+    {
+      "playerId": "6421",
+      "name": "Malachi Flynn",
+      "actualRank": 295,
+      "preseasonRank": 315,
+      "gamesPlayed": 69,
+      "teamId": null
+    },
+    {
+      "playerId": "6437",
+      "name": "Jordan Nwora",
+      "actualRank": 296,
+      "preseasonRank": 295,
+      "gamesPlayed": 52,
+      "teamId": null
+    },
+    {
+      "playerId": "6779",
+      "name": "Jacob Gilyard",
+      "actualRank": 297,
+      "preseasonRank": 327,
+      "gamesPlayed": 41,
+      "teamId": null
+    },
+    {
+      "playerId": "5363",
+      "name": "Vasilije Micić",
+      "actualRank": 298,
+      "preseasonRank": 329,
+      "gamesPlayed": 60,
+      "teamId": "2024:benjamin",
+      "stats": {
+        "fgm": 159,
+        "fga": 370,
+        "ftm": 61,
+        "fta": 75,
+        "threes": 43,
+        "pts": 422,
+        "reb": 88,
+        "ast": 262,
+        "stl": 31,
+        "blk": 7,
+        "to": 99
+      }
+    },
+    {
+      "playerId": "6697",
+      "name": "Shaedon Sharpe",
+      "actualRank": 299,
+      "preseasonRank": 211,
+      "gamesPlayed": 32,
+      "teamId": null
+    },
+    {
+      "playerId": "10113",
+      "name": "Ben Sheppard",
+      "actualRank": 300,
+      "preseasonRank": 330,
+      "gamesPlayed": 57,
+      "teamId": null
+    }
+  ],
+  "activity": {
+    "2024:dadder": {
+      "moves": 47,
+      "trades": 0
+    },
+    "2024:jacob-g": {
+      "moves": 53,
+      "trades": 0
+    },
+    "2024:eddie": {
+      "moves": 24,
+      "trades": 1
+    },
+    "2024:jake": {
+      "moves": 65,
+      "trades": 0
+    },
+    "2024:dylan": {
+      "moves": 26,
+      "trades": 0
+    },
+    "2024:jacob-v": {
+      "moves": 50,
+      "trades": 0
+    },
+    "2024:matt": {
+      "moves": 57,
+      "trades": 0
+    },
+    "2024:jordan": {
+      "moves": 56,
+      "trades": 0
+    },
+    "2024:michael": {
+      "moves": 51,
+      "trades": 1
+    },
+    "2024:najim": {
+      "moves": 77,
+      "trades": 2
+    },
+    "2024:mitchell": {
+      "moves": 61,
+      "trades": 1
+    },
+    "2024:benjamin": {
+      "moves": 55,
+      "trades": 1
+    }
+  },
+  "trades": [
+    {
+      "date": "2023-12-05",
+      "status": "completed",
+      "sides": [
+        {
+          "teamId": "2024:michael",
+          "receives": [
+            "Myles Turner"
+          ]
+        },
+        {
+          "teamId": "2024:najim",
+          "receives": [
+            "Kyrie Irving"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2023-11-10",
+      "status": "completed",
+      "sides": [
+        {
+          "teamId": "2024:najim",
+          "receives": [
+            "Jalen Brunson",
+            "Jalen Williams",
+            "Bruce Brown"
+          ]
+        },
+        {
+          "teamId": "2024:benjamin",
+          "receives": [
+            "Trey Murphy III",
+            "Cam Thomas",
+            "Bradley Beal"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2023-11-03",
+      "status": "completed",
+      "sides": [
+        {
+          "teamId": "2024:eddie",
+          "receives": [
+            "Jaylen Brown",
+            "Brook Lopez"
+          ]
+        },
+        {
+          "teamId": "2024:mitchell",
+          "receives": [
+            "Devin Vassell",
+            "Zion Williamson"
+          ]
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source": "https://basketball.fantasysports.yahoo.com/2023/nba/2884",
+    "categoryRecords": {
+      "2024:matt": "101-58-3",
+      "2024:jake": "89-70-3",
+      "2024:mitchell": "76-83-3",
+      "2024:jordan": "83-77-2",
+      "2024:jacob-g": "90-70-2",
+      "2024:najim": "79-83-0",
+      "2024:benjamin": "75-83-4",
+      "2024:dadder": "77-83-2",
+      "2024:eddie": "74-86-2",
+      "2024:dylan": "72-86-4",
+      "2024:michael": "73-87-2",
+      "2024:jacob-v": "69-92-1"
+    },
+    "playoffSeeds": [
+      "2024:matt",
+      "2024:jacob-g",
+      "2024:jake",
+      "2024:jordan",
+      "2024:najim",
+      "2024:dadder",
+      "2024:mitchell",
+      "2024:benjamin"
+    ],
+    "champion": "2024:matt"
+  }
+}
