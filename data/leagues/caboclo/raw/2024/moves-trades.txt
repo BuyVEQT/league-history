@@ -1,0 +1,16 @@
+# managers page: team | moves | trades
+BACK to BACK|52|0
+Ball Don’t Lie|66|0
+Glass Cannon|62|0
+Nikosus Chrokic|56|0
+P Giddey|44|0
+Slim Shai'dy|55|0
+Sunday Strangler|44|0
+The Real Splash Bros|56|1
+Trigga Trae|60|0
+Two Time 🥈|60|1
+We did it WE DID ITTTTTTTTTTTT|49|0
+WemBangYaMama|64|0
+# trades: date | status | team receives: players
+2025-03-01|vetoed|Nikosus Chrokic: DeMar DeRozan ;; BACK to BACK: Rudy Gobert
+2025-02-06|completed|Two Time 🥈: Walker Kessler, Tobias Harris, Cameron Johnson, Stephen Curry ;; The Real Splash Bros: Malik Beasley, Mikal Bridges, Austin Reaves, Luka Dončić
