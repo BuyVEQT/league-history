@@ -1,0 +1,208 @@
+import type { League, ManagerId, Season, TeamId, Trade } from "../types";
+import { seasonOutcome, teamIndex } from "./season";
+
+/**
+ * Trade value is "value above replacement" from each player's end-of-season
+ * rank. Replacement level = roughly how many players are rostered (teams ×
+ * draft rounds, e.g. 156 in a 12-team, 13-round league): a player ranked r is
+ * worth max(0, replacement + 1 − r). Fringe players add nothing, so a side
+ * can't "win" just by receiving more bodies. Ranks cover the full NBA season,
+ * not just the weeks after the trade — an approximation, labelled in the UI.
+ */
+export const playerValue = (rank: number | null, replacementRank: number) =>
+  rank === null ? 0 : Math.max(0, replacementRank + 1 - rank);
+
+/** Teams × draft rounds (13 rounds assumed when the draft is unknown). */
+export const replacementRank = (season: Season) =>
+  season.teams.length * (season.draft?.length ? Math.max(...season.draft.map((d) => d.round)) : 13);
+
+export interface TradeSideView {
+  teamId: TeamId;
+  managerId: ManagerId;
+  teamName: string;
+  players: { name: string; actualRank: number | null }[];
+  value: number;
+}
+
+export interface TradeView {
+  year: number;
+  label: string;
+  date: string;
+  status: Trade["status"];
+  sides: TradeSideView[];
+  /** Manager whose incoming players were worth more; null for a dead-even trade. */
+  winnerManagerId: ManagerId | null;
+  margin: number;
+}
+
+export const hasTradeData = (league: League) => league.seasons.some((s) => s.activity);
+
+export function seasonTrades(season: Season): TradeView[] {
+  const teams = teamIndex(season);
+  const rankByName = new Map((season.players ?? []).map((p) => [p.name.toLowerCase(), p.actualRank]));
+  const replacement = replacementRank(season);
+  return (season.trades ?? []).map((t) => {
+    const sides = t.sides.map((s) => {
+      const team = teams.get(s.teamId)!;
+      const players = s.receives.map((name) => ({ name, actualRank: rankByName.get(name.toLowerCase()) ?? null }));
+      return {
+        teamId: s.teamId,
+        managerId: team.managerId,
+        teamName: team.name,
+        players,
+        value: players.reduce((sum, p) => sum + playerValue(p.actualRank, replacement), 0),
+      };
+    });
+    const [a, b] = sides;
+    const margin = Math.abs(a.value - b.value);
+    return {
+      year: season.year,
+      label: season.label,
+      date: t.date,
+      status: t.status,
+      sides,
+      winnerManagerId: margin === 0 ? null : a.value > b.value ? a.managerId : b.managerId,
+      margin,
+    };
+  });
+}
+
+export const leagueTrades = (league: League): TradeView[] =>
+  league.seasons.flatMap(seasonTrades).sort((x, y) => y.date.localeCompare(x.date));
+
+export interface ManagerActivityRow {
+  managerId: ManagerId;
+  seasons: number;
+  moves: number;
+  movesPerSeason: number;
+  /** Completed trades. */
+  trades: number;
+  vetoed: number;
+  tradeWins: number;
+  tradeLosses: number;
+  /** Sum over completed trades of (value received − value given). */
+  netValue: number;
+  favoritePartner: { managerId: ManagerId; count: number } | null;
+}
+
+export function managerActivity(league: League): ManagerActivityRow[] {
+  const trades = leagueTrades(league);
+  const rows = new Map<ManagerId, ManagerActivityRow & { partners: Map<ManagerId, number> }>();
+  const row = (id: ManagerId) => {
+    if (!rows.has(id)) {
+      rows.set(id, {
+        managerId: id,
+        seasons: 0,
+        moves: 0,
+        movesPerSeason: 0,
+        trades: 0,
+        vetoed: 0,
+        tradeWins: 0,
+        tradeLosses: 0,
+        netValue: 0,
+        favoritePartner: null,
+        partners: new Map(),
+      });
+    }
+    return rows.get(id)!;
+  };
+
+  for (const season of league.seasons) {
+    if (!season.activity) continue;
+    const teams = teamIndex(season);
+    for (const [teamId, a] of Object.entries(season.activity)) {
+      const r = row(teams.get(teamId)!.managerId);
+      r.seasons++;
+      r.moves += a.moves;
+    }
+  }
+
+  for (const t of trades) {
+    const [a, b] = t.sides;
+    for (const [me, other] of [
+      [a, b],
+      [b, a],
+    ]) {
+      const r = row(me.managerId);
+      if (t.status === "vetoed") {
+        r.vetoed++;
+        continue;
+      }
+      r.trades++;
+      r.netValue += me.value - other.value;
+      if (t.winnerManagerId === me.managerId) r.tradeWins++;
+      else if (t.winnerManagerId === other.managerId) r.tradeLosses++;
+      r.partners.set(other.managerId, (r.partners.get(other.managerId) ?? 0) + 1);
+    }
+  }
+
+  return [...rows.values()]
+    .map(({ partners, ...r }) => {
+      const [top] = [...partners.entries()].sort((x, y) => y[1] - x[1]);
+      return { ...r, movesPerSeason: r.seasons ? r.moves / r.seasons : 0, favoritePartner: top ? { managerId: top[0], count: top[1] } : null };
+    })
+    .sort((x, y) => y.trades - x.trades || y.moves - x.moves);
+}
+
+export interface UndraftedGem {
+  year: number;
+  label: string;
+  playerName: string;
+  actualRank: number;
+  managerId: ManagerId;
+  teamName: string;
+}
+
+/**
+ * Players nobody drafted who finished inside the top N and were on a fantasy
+ * roster at season end. "Owned at season end" — not necessarily who added them.
+ */
+export function undraftedGems(league: League, maxRank = 75): UndraftedGem[] {
+  return league.seasons
+    .flatMap((season) => {
+      if (!season.draft?.length || !season.players) return [];
+      const drafted = new Set(season.draft.map((d) => d.playerId));
+      const teams = teamIndex(season);
+      return season.players
+        .filter((p) => p.teamId && !drafted.has(p.playerId) && p.actualRank <= maxRank)
+        .map((p) => ({
+          year: season.year,
+          label: season.label,
+          playerName: p.name,
+          actualRank: p.actualRank,
+          managerId: teams.get(p.teamId!)!.managerId,
+          teamName: teams.get(p.teamId!)!.name,
+        }));
+    })
+    .sort((a, b) => a.actualRank - b.actualRank);
+}
+
+export interface ActivityVsFinish {
+  /** Average moves per team-season. */
+  leagueAvg: number;
+  championsAvg: number;
+  /** Teams that finished in the top third vs the bottom third of their league. */
+  topThirdAvg: number;
+  bottomThirdAvg: number;
+  seasons: number;
+}
+
+export function activityVsFinish(league: League): ActivityVsFinish | null {
+  const rows: { moves: number; finish: number; teams: number; champ: boolean }[] = [];
+  for (const season of league.seasons) {
+    if (!season.activity) continue;
+    const o = seasonOutcome(season);
+    for (const [teamId, a] of Object.entries(season.activity)) {
+      rows.push({ moves: a.moves, finish: o.finalRank.get(teamId)!, teams: season.teams.length, champ: o.championTeamId === teamId });
+    }
+  }
+  if (!rows.length) return null;
+  const avg = (xs: { moves: number }[]) => xs.reduce((s, r) => s + r.moves, 0) / xs.length;
+  return {
+    leagueAvg: avg(rows),
+    championsAvg: avg(rows.filter((r) => r.champ)),
+    topThirdAvg: avg(rows.filter((r) => r.finish <= r.teams / 3)),
+    bottomThirdAvg: avg(rows.filter((r) => r.finish > (2 * r.teams) / 3)),
+    seasons: new Set(league.seasons.filter((s) => s.activity).map((s) => s.year)).size,
+  };
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import { CalendarDays, ClipboardList, LayoutDashboard, ListOrdered, Swords } from "lucide-react";
+import { ArrowLeftRight, CalendarDays, ClipboardList, LayoutDashboard, ListOrdered, Swords } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLeagueBase } from "./useLeagueBase";
@@ -8,6 +8,7 @@ import { useLeagueBase } from "./useLeagueBase";
 /** Sections that only exist when the league has the data behind them. */
 export interface NavFeatures {
   draft?: boolean;
+  trades?: boolean;
 }
 
 const LINKS: { href: string; label: string; icon: typeof Swords; needs?: keyof NavFeatures }[] = [
@@ -16,6 +17,7 @@ const LINKS: { href: string; label: string; icon: typeof Swords; needs?: keyof N
   { href: "/seasons", label: "Seasons", icon: CalendarDays },
   { href: "/rivalries", label: "Rivalries", icon: Swords },
   { href: "/draft", label: "Draft", icon: ClipboardList, needs: "draft" },
+  { href: "/trades", label: "Trades & moves", icon: ArrowLeftRight, needs: "trades" },
 ];
 
 export function Nav({ features = {} }: { features?: NavFeatures }) {

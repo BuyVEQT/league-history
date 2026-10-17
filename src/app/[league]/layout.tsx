@@ -5,6 +5,7 @@ import { Nav } from "@/components/Nav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SITE_NAME } from "@/lib/config";
 import { hasDraftData } from "@/lib/analytics/draft";
+import { hasTradeData } from "@/lib/analytics/trades";
 import { getLeague, leagueSlugs } from "@/lib/data";
 
 // Every league page is prerendered per slug; opt out of the dev-only instant-navigation check
@@ -30,7 +31,7 @@ export default async function LeagueLayout({ children, params }: LayoutProps<"/[
         <div className="mb-2 hidden px-3 text-[11px] font-medium uppercase tracking-wider text-muted/70 md:block">
           League
         </div>
-        <Nav features={{ draft: hasDraftData(league) }} />
+        <Nav features={{ draft: hasDraftData(league), trades: hasTradeData(league) }} />
       </aside>
       <div className="flex min-w-0 flex-1 flex-col">
         <header className="flex flex-wrap items-center gap-x-3 gap-y-1.5 border-b border-border px-4 py-3 md:px-8">
