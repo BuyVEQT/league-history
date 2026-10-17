@@ -1,6 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { Download, RotateCcw, Search } from "lucide-react";
+import { Avatar } from "@/components/ui";
+import { colorForManager } from "@/lib/colors";
 import { useMemo, useState } from "react";
 import { careerStats, defaultCompare, type CareerRow } from "@/lib/analytics/career";
 import { DASH, formatNumber, formatPct, formatRecord } from "@/lib/analytics/format";
@@ -65,20 +68,40 @@ export function LeaderboardTable({ league }: { league: League }) {
         : { key: col.key, dir: col.best === "high" ? "desc" : "asc" },
     );
 
-  const select = "rounded-md border border-border bg-surface-2 px-2 py-1 text-sm";
+  const filtered = query !== "" || from !== years[0] || to !== years.at(-1) || sort !== null;
+  const reset = () => { setQuery(""); setFrom(years[0]); setTo(years.at(-1)!); setSort(null); };
+  const exportCsv = () => {
+    const escape = (value: string) => {
+      const safe = /^[=+\-@\t\r]/.test(value) ? `'${value}` : value;
+      return `"${safe.replaceAll('"', '""')}"`;
+    };
+    const csv = [["Manager", ...COLUMNS.map(c => c.label)], ...rows.map(r => [r.name, ...COLUMNS.map(c => c.render(r))])]
+      .map(row => row.map(escape).join(",")).join("\r\n");
+    const url = URL.createObjectURL(new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" }));
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `${base.slice(1)}-leaderboard.csv`;
+    document.body.append(link);
+    link.click();
+    link.remove();
+    // Give the browser time to begin reading the blob before releasing it.
+    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+  };
+  const select = "rounded-lg border border-border bg-surface px-3 py-2 text-sm";
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap items-end gap-3">
+      <div className="panel flex flex-wrap items-end gap-3 p-4">
         <div className="flex flex-col gap-1">
           <label htmlFor="lb-search" className="text-xs text-muted">Search managers</label>
+          <div className="relative"><Search size={15} className="pointer-events-none absolute left-3 top-3 text-muted" aria-hidden />
           <input
             id="lb-search"
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Name…"
-            className={`${select} w-48`}
-          />
+            placeholder="Find a manager…"
+            className={`${select} w-full pl-9 sm:w-52`}
+          /></div>
         </div>
         <div className="flex flex-col gap-1">
           <label htmlFor="lb-from" className="text-xs text-muted">From season</label>
@@ -96,14 +119,17 @@ export function LeaderboardTable({ league }: { league: League }) {
             ))}
           </select>
         </div>
-        {sort && (
-          <button type="button" onClick={() => setSort(null)} className="text-sm text-accent hover:underline">
-            Reset sort
-          </button>
-        )}
+        <div className="ml-auto flex items-center gap-3">
+          {filtered && <button type="button" onClick={reset} className="inline-flex min-h-10 items-center gap-1.5 text-xs font-semibold text-accent"><RotateCcw size={14} />Reset filters</button>}
+          <button type="button" onClick={exportCsv} disabled={!rows.length} className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-border px-3 text-xs font-semibold hover:bg-surface-2 disabled:opacity-40"><Download size={14} />Export CSV</button>
+        </div>
       </div>
 
-      <div className="overflow-x-auto rounded-xl border border-border bg-surface/80 shadow-[inset_0_1px_0_0_rgb(255_255_255/0.03)]">
+      <div className="flex flex-wrap items-center justify-between gap-2 px-1 text-xs text-muted">
+        <p role="status">{rows.length} manager{rows.length === 1 ? "" : "s"} · {Math.min(from, to) - 1}–{String(Math.max(from, to)).slice(2)}</p>
+        <p>Click a column to sort · swipe to see more</p>
+      </div>
+      <div className="panel overflow-x-auto">
         <table className="w-full text-sm">
           <caption className="sr-only">All-time manager leaderboard</caption>
           <thead>
@@ -133,9 +159,9 @@ export function LeaderboardTable({ league }: { league: League }) {
           <tbody className="divide-y divide-border">
             {rows.map((r) => (
               <tr key={r.managerId} className="transition-colors hover:bg-surface-2/60">
-                <td className="whitespace-nowrap px-3 py-2">
-                  <Link href={`${base}/managers/${r.managerId}`} className="font-medium hover:text-accent hover:underline">
-                    {r.name}
+                <td className="sticky left-0 z-10 whitespace-nowrap bg-surface px-3 py-3">
+                  <Link href={`${base}/managers/${r.managerId}`} className="inline-flex items-center gap-2 font-semibold hover:text-accent hover:underline">
+                    <Avatar name={r.name} color={colorForManager(league, r.managerId)} size="sm" />{r.name}
                   </Link>
                 </td>
                 {COLUMNS.map((c) => (
@@ -148,7 +174,9 @@ export function LeaderboardTable({ league }: { league: League }) {
             {rows.length === 0 && (
               <tr>
                 <td colSpan={COLUMNS.length + 1} className="px-3 py-8 text-center text-muted">
-                  No managers match these filters.
+                  <p className="font-semibold text-foreground">No managers found.</p>
+                  <p className="mt-1">Try another name or season range.</p>
+                  <button className="mt-3 text-accent underline" onClick={reset}>Clear all filters</button>
                 </td>
               </tr>
             )}

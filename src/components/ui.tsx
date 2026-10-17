@@ -4,7 +4,7 @@ export function PageTitle({ title, subtitle, eyebrow }: { title: string; subtitl
   return (
     <div>
       {eyebrow && <div className="mb-1 text-xs font-medium uppercase tracking-widest text-accent">{eyebrow}</div>}
-      <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">{title}</h1>
+      <h1 className="page-title">{title}</h1>
       {subtitle && <p className="mt-1.5 max-w-3xl text-sm text-muted">{subtitle}</p>}
     </div>
   );
@@ -23,7 +23,7 @@ export function Section({ title, children, aside }: { title: string; children: R
 }
 
 export const cardClass =
-  "rounded-xl border border-border bg-surface/80 shadow-[inset_0_1px_0_0_rgb(255_255_255/0.03)] backdrop-blur-sm";
+  "panel";
 
 export function StatCard({
   label,
@@ -37,13 +37,13 @@ export function StatCard({
   icon?: ReactNode;
 }) {
   return (
-    <div className={`${cardClass} p-4`}>
+    <div className={`${cardClass} stat-card p-5`}>
       <div className="flex items-center justify-between text-xs font-medium uppercase tracking-wide text-muted">
         {label}
-        {icon && <span className="text-muted/70 [&_svg]:size-4">{icon}</span>}
+        {icon && <span className="rounded-md bg-accent/10 p-1.5 text-accent [&_svg]:size-4">{icon}</span>}
       </div>
-      <div className="mt-2 text-2xl font-semibold tabular-nums tracking-tight">{value}</div>
-      {detail && <div className="mt-1 truncate text-sm text-muted">{detail}</div>}
+      <div className="mt-3 break-words text-2xl font-bold tabular-nums tracking-tight">{value}</div>
+      {detail && <div className="mt-1 text-xs leading-5 text-muted">{detail}</div>}
     </div>
   );
 }

@@ -76,13 +76,13 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
     <>
       <PageTitle
         eyebrow="League overview"
-        title="Your league, all-time"
-        subtitle={`${summary.seasons} seasons · ${summary.managers} managers · every number below is derived from the same matchup-level data.`}
+        title="The league. The legends."
+        subtitle={`${summary.seasons} seasons · ${summary.managers} managers · a whole lot of bragging rights.`}
       />
 
       {/* Hero: reigning champion + headline numbers */}
       <div className="grid gap-3 lg:grid-cols-5">
-        <div className={`${cardClass} relative overflow-hidden p-6 lg:col-span-2`}>
+        <div className={`${cardClass} champion-hero relative overflow-hidden p-6 lg:col-span-2`}>
           <div className="pointer-events-none absolute -right-10 -top-10 size-48 rounded-full bg-accent/15 blur-3xl" />
           <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-accent">
             <Crown className="size-4" aria-hidden /> Reigning champion · {reigning.label}
@@ -195,7 +195,7 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
                       </div>
                       <div className="ml-6 mt-1.5 h-1 overflow-hidden rounded-full bg-surface-2">
                         <div
-                          className="h-full rounded-full"
+                          className="rank-bar h-full rounded-full"
                           style={{ width: `${(value / max) * 100}%`, background: colorForManager(league, c.managerId) }}
                         />
                       </div>
