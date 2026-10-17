@@ -42,12 +42,13 @@ export interface ManagerSeasonRow {
   regularRank: number;
   finalRank: number;
   teamCount: number;
-  playoffResult: "Champion" | "Runner-up" | "3rd place" | "4th place" | "Missed playoffs";
+  playoffResult: "Champion" | "Runner-up" | "3rd place" | "4th place" | "Quarterfinalist" | "Missed playoffs";
 }
 
 function playoffResult(finalRank: number, madePlayoffs: boolean): ManagerSeasonRow["playoffResult"] {
   if (!madePlayoffs) return "Missed playoffs";
-  return (["Champion", "Runner-up", "3rd place", "4th place"] as const)[finalRank - 1] ?? "Missed playoffs";
+  // Playoff teams placed 5th or lower lost in a round before the semifinals (8-team brackets).
+  return (["Champion", "Runner-up", "3rd place", "4th place"] as const)[finalRank - 1] ?? "Quarterfinalist";
 }
 
 function inRange(year: number, range: YearRange): boolean {

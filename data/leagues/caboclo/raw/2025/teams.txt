@@ -1,0 +1,13 @@
+# idx|team name (as on the Managers page)|manager id (see ../../.identities.local.json)
+0|Mad Maxey|matt
+1|Big Papa|dadder
+2|Baby-Faced Assassin|najim
+3|Vagiannis|dylan
+4|Anteaters|jake
+5|Sweet Home Wembanyama|benjamin
+6|Sunday Strangler|mitchell
+7|Dončić Corleone|michael
+8|Ain't No Jokic|eddie
+9|Melo and the Silver Seekers|jacob-g
+10|After all that🤪|jacob-v
+11|Day to Davis|jordan

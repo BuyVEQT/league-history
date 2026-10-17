@@ -1,0 +1,9 @@
+scoring|categories
+categories|FG%,FT%,3PM,PTS,REB,AST,STL,BLK,TO
+teams|12
+playoffTeams|8
+playoffWeeks|20,21,22
+playoffTiebreak|higher seed
+draft|Live Standard Draft (snake), 2025-10-09
+keepers|no
+tradeReview|commissioner

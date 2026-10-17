@@ -1,0 +1,15 @@
+# Standings tab after playoffs: team idx|category W-L-T|final rank
+2|87-82-2|1
+0|109-58-4|2
+8|84-83-4|3
+3|81-87-3|4
+10|94-73-4|5
+7|76-92-3|6
+4|91-77-3|7
+6|99-72-0|8
+1|73-92-6|9
+9|74-93-4|10
+5|70-99-2|11
+11|69-99-3|12
+# playoff seeds 1..8 (team idx), from the bracket
+seeds|0,6,10,4,2,8,3,7

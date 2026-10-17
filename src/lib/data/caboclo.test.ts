@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { managerSeasons } from "../analytics/career";
 import { seasonOutcome, seasonStandings } from "../analytics/season";
 import type { Season } from "../types";
 
@@ -9,7 +10,7 @@ import type { Season } from "../types";
  * pages, so a misread scoreboard fails here instead of skewing the site.
  */
 const dir = join(process.cwd(), "data", "leagues", "caboclo");
-const files = readdirSync(dir).filter((f) => f.endsWith(".json"));
+const files = readdirSync(dir).filter((f) => /^\d{4}\.json$/.test(f));
 
 interface Verification {
   categoryRecords: Record<string, string>;
@@ -47,6 +48,37 @@ describe.each(files)("caboclo %s", (file) => {
   it("derived regular-season order matches Yahoo's playoff seeds", () => {
     const seeds = seasonStandings(season).slice(0, check.playoffSeeds.length).map((r) => r.teamId);
     expect(seeds).toEqual(check.playoffSeeds);
+  });
+
+  it("labels every playoff team's result, including quarterfinal exits", () => {
+    const league = { name: "t", source: "yahoo" as const, managers: season.teams.map((t) => ({ id: t.managerId, name: t.managerId })), seasons: [season] };
+    const results = season.teams.map((t) => managerSeasons(league, t.managerId)[0].playoffResult);
+    expect(results.filter((r) => r !== "Missed playoffs")).toHaveLength(check.playoffSeeds.length);
+  });
+
+  it("draft: every team picks exactly once per round", () => {
+    if (!season.draft) return;
+    const rounds = new Set(season.draft.map((p) => p.round));
+    for (const r of rounds) {
+      const ids = season.draft.filter((p) => p.round === r).map((p) => p.teamId).sort();
+      expect(ids, `round ${r}`).toEqual(season.teams.map((t) => t.id).sort());
+    }
+    expect(new Set(season.draft.map((p) => p.playerId)).size).toBe(season.draft.length);
+  });
+
+  it("player ranks are unique and only reference real teams", () => {
+    if (!season.players) return;
+    const teamIds = new Set(season.teams.map((t) => t.id));
+    expect(new Set(season.players.map((p) => p.actualRank)).size).toBe(season.players.length);
+    for (const p of season.players) if (p.teamId) expect(teamIds.has(p.teamId)).toBe(true);
+  });
+
+  it("each team's trade count matches the completed trades it was part of", () => {
+    if (!season.activity || !season.trades) return;
+    for (const [teamId, a] of Object.entries(season.activity)) {
+      const inTrades = season.trades.filter((t) => t.status === "completed" && t.sides.some((s) => s.teamId === teamId)).length;
+      expect(inTrades, teamId).toBe(a.trades);
+    }
   });
 
   it("the bracket's champion matches Yahoo and holds final rank 1", () => {
