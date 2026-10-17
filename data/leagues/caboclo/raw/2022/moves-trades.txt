@@ -1,0 +1,22 @@
+# managers page: team | moves | trades
+BIG papa|44|0
+Daddy Doncic|63|1
+Day to Day|43|0
+Glass Cannon|55|2
+jacob's Ingeneous Team|51|0
+James James|41|1
+King & Giannis|80|2
+Lamelo Boled Ankle|52|5
+Sunday Strangler|32|0
+Tatum or Leave 'Em|35|1
+Towns Syndrome|42|2
+Trae Way|52|0
+# trades: date | status | team receives: players
+2022-12-10|completed|Lamelo Boled Ankle: Grant Williams, De'Anthony Melton, Kevin Porter Jr., Jalen Brunson ;; King & Giannis: Nikola Vučević, Bradley Beal
+2022-12-10|vetoed|King & Giannis: Nikola Vučević, Bradley Beal ;; Lamelo Boled Ankle: Grant Williams, De'Anthony Melton, Kevin Porter Jr., Jalen Brunson
+2022-12-02|completed|Towns Syndrome: Julius Randle ;; Lamelo Boled Ankle: Karl-Anthony Towns
+2022-11-28|completed|Glass Cannon: Mikal Bridges, Zach LaVine ;; Lamelo Boled Ankle: John Collins, Bol Bol, Kawhi Leonard
+2022-11-28|completed|King & Giannis: LeBron James, Clint Capela ;; James James: Kyle Kuzma, Paul George
+2022-11-26|completed|Daddy Doncic: Domantas Sabonis, RJ Barrett ;; Tatum or Leave 'Em: Buddy Hield, Anthony Edwards
+2022-11-24|completed|Lamelo Boled Ankle: Damian Lillard, Devin Vassell ;; Towns Syndrome: Ja Morant, Santi Aldama
+2022-10-22|completed|Glass Cannon: Robert Williams III, Keldon Johnson ;; Lamelo Boled Ankle: Zach LaVine

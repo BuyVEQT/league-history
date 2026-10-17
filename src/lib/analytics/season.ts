@@ -28,8 +28,9 @@ export function teamIndex(season: Season): Map<TeamId, Team> {
 
 /**
  * Regular-season standings, derived purely from regular-season matchups.
- * Rank order: win% (tie = half a win), then category differential, then
- * category wins, then team id (so the order is always deterministic).
+ * "most_categories" leagues rank by matchup win%; "categories" leagues rank by
+ * category win% (Yahoo's Head-to-Head - Categories). Ties in either fall back
+ * to category differential, category wins, then team id (always deterministic).
  */
 export function seasonStandings(season: Season): StandingRow[] {
   const rows = new Map<TeamId, StandingRow>(
@@ -75,11 +76,18 @@ export function seasonStandings(season: Season): StandingRow[] {
 
   const list = [...rows.values()];
   for (const r of list) r.winPct = winPct(r.wins, r.losses, r.ties);
+  const rankPct = (r: StandingRow) =>
+    (season.scoring === "categories" ? winPct(r.catWins, r.catLosses, r.catTies) : r.winPct) ?? -1;
+  const seed = (id: TeamId) => {
+    const i = season.sourceSeedOrder?.indexOf(id) ?? -1;
+    return i < 0 ? Number.MAX_SAFE_INTEGER : i;
+  };
   list.sort(
     (a, b) =>
-      (b.winPct ?? -1) - (a.winPct ?? -1) ||
+      rankPct(b) - rankPct(a) ||
       b.catWins - b.catLosses - (a.catWins - a.catLosses) ||
       b.catWins - a.catWins ||
+      seed(a.teamId) - seed(b.teamId) ||
       a.teamId.localeCompare(b.teamId),
   );
   list.forEach((r, i) => (r.rank = i + 1));
@@ -92,7 +100,11 @@ export interface SeasonOutcome {
   championTeamId: TeamId | null;
   runnerUpTeamId: TeamId | null;
   playoffTeamIds: Set<TeamId>;
-  /** Final placement for every team: playoff games decide 1-4, the rest keep their regular-season rank. */
+  /**
+   * Final placement for every team. Uses the source's official ranks when the
+   * season has them; otherwise playoff games decide 1-4 and the rest keep their
+   * regular-season rank.
+   */
   finalRank: Map<TeamId, number>;
 }
 
@@ -119,6 +131,9 @@ export function seasonOutcome(season: Season): SeasonOutcome {
       finalRank.set(winner, 3);
       finalRank.set(loser, 4);
     }
+  }
+  if (season.finalRanks) {
+    for (const [teamId, rank] of Object.entries(season.finalRanks)) finalRank.set(teamId, rank);
   }
   return { standings, championTeamId, runnerUpTeamId, playoffTeamIds, finalRank };
 }

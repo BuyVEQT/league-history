@@ -45,3 +45,6 @@ next-env.d.ts
 .vercel
 .env*
 !.env.example
+
+# private extraction helpers (emails etc.)
+*.local.json

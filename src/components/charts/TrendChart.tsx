@@ -28,7 +28,7 @@ export function TrendChart({ rows, series, reversed, domain, valueLabel, formatV
       <div className="h-72 w-full" role="img" aria-label={`${valueLabel} by season, ${series.map((s) => s.name).join(", ")}`}>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={rows} margin={{ top: 8, right: 16, bottom: 0, left: -16 }}>
-            <CartesianGrid stroke="#262e3f" strokeDasharray="3 3" />
+            <CartesianGrid stroke="#222b3a" strokeDasharray="3 3" />
             <XAxis dataKey="year" stroke="#8b95a8" tick={{ fontSize: 12 }} />
             <YAxis
               stroke="#8b95a8"
@@ -40,7 +40,7 @@ export function TrendChart({ rows, series, reversed, domain, valueLabel, formatV
               tickFormatter={(v: number) => formatValue(v)}
             />
             <Tooltip
-              contentStyle={{ background: "#131822", border: "1px solid #262e3f", borderRadius: 8 }}
+              contentStyle={{ background: "#11161f", border: "1px solid #222b3a", borderRadius: 10, boxShadow: "0 8px 24px rgb(0 0 0 / 0.4)" }}
               labelStyle={{ color: "#e6e9ef" }}
               formatter={(v) => (typeof v === "number" ? formatValue(v) : "—")}
             />

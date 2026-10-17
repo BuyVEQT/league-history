@@ -1,0 +1,4828 @@
+{
+  "year": 2019,
+  "label": "2018-19",
+  "scoring": "categories",
+  "categories": [
+    "FG%",
+    "FT%",
+    "3PM",
+    "PTS",
+    "REB",
+    "AST",
+    "STL",
+    "BLK",
+    "TO"
+  ],
+  "teams": [
+    {
+      "id": "2019:mitchell",
+      "managerId": "mitchell",
+      "name": "35.2 PPG"
+    },
+    {
+      "id": "2019:dadder",
+      "managerId": "dadder",
+      "name": "Daddy Dong"
+    },
+    {
+      "id": "2019:michael",
+      "managerId": "michael",
+      "name": "Jordan Over LeBum"
+    },
+    {
+      "id": "2019:matt",
+      "managerId": "matt",
+      "name": "Klaw Leonard"
+    },
+    {
+      "id": "2019:jordan",
+      "managerId": "jordan",
+      "name": "Knicks 2.0"
+    },
+    {
+      "id": "2019:brendan",
+      "managerId": "brendan",
+      "name": "notoriousBMG"
+    },
+    {
+      "id": "2019:jacob-g",
+      "managerId": "jacob-g",
+      "name": "Skip"
+    },
+    {
+      "id": "2019:najim",
+      "managerId": "najim",
+      "name": "Suck my Doncic"
+    },
+    {
+      "id": "2019:benjamin",
+      "managerId": "benjamin",
+      "name": "Underdog"
+    },
+    {
+      "id": "2019:eddie",
+      "managerId": "eddie",
+      "name": "Vince Carter's Nuts"
+    }
+  ],
+  "matchups": [
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2019:matt",
+      "awayTeamId": "2019:najim",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2019:michael",
+      "awayTeamId": "2019:matt",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:matt",
+      "homeCats": 3,
+      "awayCats": 5,
+      "tiedCats": 1
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2019:matt",
+      "awayTeamId": "2019:eddie",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2019:matt",
+      "awayTeamId": "2019:jordan",
+      "homeCats": 5,
+      "awayCats": 3,
+      "tiedCats": 1
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2019:matt",
+      "awayTeamId": "2019:jacob-g",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2019:dadder",
+      "awayTeamId": "2019:matt",
+      "homeCats": 2,
+      "awayCats": 6,
+      "tiedCats": 1
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2019:matt",
+      "awayTeamId": "2019:najim",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2019:michael",
+      "awayTeamId": "2019:matt",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2019:matt",
+      "awayTeamId": "2019:jordan",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:matt",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2019:matt",
+      "awayTeamId": "2019:eddie",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2019:matt",
+      "awayTeamId": "2019:brendan",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2019:matt",
+      "awayTeamId": "2019:benjamin",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2019:matt",
+      "awayTeamId": "2019:jacob-g",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2019:dadder",
+      "awayTeamId": "2019:matt",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2019:matt",
+      "awayTeamId": "2019:brendan",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2019:michael",
+      "awayTeamId": "2019:matt",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 20,
+      "stage": "regular",
+      "homeTeamId": "2019:matt",
+      "awayTeamId": "2019:jordan",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 21,
+      "stage": "regular",
+      "homeTeamId": "2019:matt",
+      "awayTeamId": "2019:benjamin",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2019:najim",
+      "awayTeamId": "2019:benjamin",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2019:michael",
+      "awayTeamId": "2019:najim",
+      "homeCats": 1,
+      "awayCats": 7,
+      "tiedCats": 1
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:najim",
+      "homeCats": 8,
+      "awayCats": 1,
+      "tiedCats": 0
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2019:najim",
+      "awayTeamId": "2019:eddie",
+      "homeCats": 4,
+      "awayCats": 4,
+      "tiedCats": 1
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2019:brendan",
+      "awayTeamId": "2019:najim",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2019:najim",
+      "awayTeamId": "2019:benjamin",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2019:dadder",
+      "awayTeamId": "2019:najim",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2019:jacob-g",
+      "awayTeamId": "2019:najim",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2019:michael",
+      "awayTeamId": "2019:najim",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2019:jordan",
+      "awayTeamId": "2019:najim",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:najim",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2019:najim",
+      "awayTeamId": "2019:eddie",
+      "homeCats": 8,
+      "awayCats": 1,
+      "tiedCats": 0
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2019:brendan",
+      "awayTeamId": "2019:najim",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2019:najim",
+      "awayTeamId": "2019:benjamin",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2019:jordan",
+      "awayTeamId": "2019:najim",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:najim",
+      "homeCats": 8,
+      "awayCats": 1,
+      "tiedCats": 0
+    },
+    {
+      "week": 20,
+      "stage": "regular",
+      "homeTeamId": "2019:jacob-g",
+      "awayTeamId": "2019:najim",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 21,
+      "stage": "regular",
+      "homeTeamId": "2019:michael",
+      "awayTeamId": "2019:najim",
+      "homeCats": 2,
+      "awayCats": 6,
+      "tiedCats": 1
+    },
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2019:michael",
+      "awayTeamId": "2019:brendan",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2019:michael",
+      "awayTeamId": "2019:benjamin",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:michael",
+      "homeCats": 7,
+      "awayCats": 1,
+      "tiedCats": 1
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2019:michael",
+      "awayTeamId": "2019:eddie",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2019:michael",
+      "awayTeamId": "2019:brendan",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2019:michael",
+      "awayTeamId": "2019:benjamin",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2019:dadder",
+      "awayTeamId": "2019:michael",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2019:michael",
+      "awayTeamId": "2019:jacob-g",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2019:michael",
+      "awayTeamId": "2019:jordan",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:michael",
+      "homeCats": 5,
+      "awayCats": 3,
+      "tiedCats": 1
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2019:michael",
+      "awayTeamId": "2019:eddie",
+      "homeCats": 9,
+      "awayCats": 0,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2019:michael",
+      "awayTeamId": "2019:brendan",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2019:michael",
+      "awayTeamId": "2019:benjamin",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 20,
+      "stage": "regular",
+      "homeTeamId": "2019:dadder",
+      "awayTeamId": "2019:michael",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:dadder",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:brendan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:jordan",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:jacob-g",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:eddie",
+      "homeCats": 8,
+      "awayCats": 1,
+      "tiedCats": 0
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:brendan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:benjamin",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:dadder",
+      "homeCats": 7,
+      "awayCats": 1,
+      "tiedCats": 1
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:jordan",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:jacob-g",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:eddie",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 20,
+      "stage": "regular",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:benjamin",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 21,
+      "stage": "regular",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:eddie",
+      "homeCats": 6,
+      "awayCats": 2,
+      "tiedCats": 1
+    },
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2019:jacob-g",
+      "awayTeamId": "2019:eddie",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2019:dadder",
+      "awayTeamId": "2019:eddie",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2019:brendan",
+      "awayTeamId": "2019:eddie",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2019:jordan",
+      "awayTeamId": "2019:eddie",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2019:jacob-g",
+      "awayTeamId": "2019:eddie",
+      "homeCats": 5,
+      "awayCats": 3,
+      "tiedCats": 1
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2019:brendan",
+      "awayTeamId": "2019:eddie",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2019:benjamin",
+      "awayTeamId": "2019:eddie",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2019:dadder",
+      "awayTeamId": "2019:eddie",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2019:jordan",
+      "awayTeamId": "2019:eddie",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2019:jacob-g",
+      "awayTeamId": "2019:eddie",
+      "homeCats": 6,
+      "awayCats": 2,
+      "tiedCats": 1
+    },
+    {
+      "week": 20,
+      "stage": "regular",
+      "homeTeamId": "2019:brendan",
+      "awayTeamId": "2019:eddie",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2019:jordan",
+      "awayTeamId": "2019:benjamin",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2019:jordan",
+      "awayTeamId": "2019:jacob-g",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2019:dadder",
+      "awayTeamId": "2019:jordan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2019:jordan",
+      "awayTeamId": "2019:brendan",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2019:jordan",
+      "awayTeamId": "2019:brendan",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2019:jordan",
+      "awayTeamId": "2019:benjamin",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2019:dadder",
+      "awayTeamId": "2019:jordan",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2019:jordan",
+      "awayTeamId": "2019:jacob-g",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2019:jordan",
+      "awayTeamId": "2019:benjamin",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 21,
+      "stage": "regular",
+      "homeTeamId": "2019:dadder",
+      "awayTeamId": "2019:jordan",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2019:jacob-g",
+      "awayTeamId": "2019:benjamin",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2019:dadder",
+      "awayTeamId": "2019:jacob-g",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2019:brendan",
+      "awayTeamId": "2019:jacob-g",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2019:dadder",
+      "awayTeamId": "2019:jacob-g",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2019:brendan",
+      "awayTeamId": "2019:jacob-g",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2019:jacob-g",
+      "awayTeamId": "2019:benjamin",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2019:dadder",
+      "awayTeamId": "2019:jacob-g",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 21,
+      "stage": "regular",
+      "homeTeamId": "2019:brendan",
+      "awayTeamId": "2019:jacob-g",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2019:dadder",
+      "awayTeamId": "2019:benjamin",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2019:dadder",
+      "awayTeamId": "2019:benjamin",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2019:dadder",
+      "awayTeamId": "2019:brendan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2019:dadder",
+      "awayTeamId": "2019:benjamin",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2019:dadder",
+      "awayTeamId": "2019:brendan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2019:brendan",
+      "awayTeamId": "2019:benjamin",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 22,
+      "stage": "quarterfinal",
+      "homeTeamId": "2019:jacob-g",
+      "awayTeamId": "2019:dadder",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 22,
+      "stage": "quarterfinal",
+      "homeTeamId": "2019:najim",
+      "awayTeamId": "2019:jordan",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 23,
+      "stage": "semifinal",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:jacob-g",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 23,
+      "stage": "semifinal",
+      "homeTeamId": "2019:matt",
+      "awayTeamId": "2019:najim",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 24,
+      "stage": "final",
+      "homeTeamId": "2019:matt",
+      "awayTeamId": "2019:jacob-g",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 24,
+      "stage": "third_place",
+      "homeTeamId": "2019:mitchell",
+      "awayTeamId": "2019:najim",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    }
+  ],
+  "finalRanks": {
+    "2019:matt": 1,
+    "2019:jacob-g": 2,
+    "2019:najim": 3,
+    "2019:mitchell": 4,
+    "2019:jordan": 5,
+    "2019:dadder": 6,
+    "2019:eddie": 7,
+    "2019:brendan": 8,
+    "2019:benjamin": 9,
+    "2019:michael": 10
+  },
+  "sourceSeedOrder": [
+    "2019:mitchell",
+    "2019:matt",
+    "2019:najim",
+    "2019:jacob-g",
+    "2019:dadder",
+    "2019:jordan"
+  ],
+  "draft": [
+    {
+      "round": 1,
+      "pick": 1,
+      "overall": 1,
+      "teamId": "2019:brendan",
+      "playerId": "4563",
+      "playerName": "James Harden"
+    },
+    {
+      "round": 1,
+      "pick": 2,
+      "overall": 2,
+      "teamId": "2019:mitchell",
+      "playerId": "5007",
+      "playerName": "Anthony Davis"
+    },
+    {
+      "round": 1,
+      "pick": 3,
+      "overall": 3,
+      "teamId": "2019:dadder",
+      "playerId": "3704",
+      "playerName": "LeBron James"
+    },
+    {
+      "round": 1,
+      "pick": 4,
+      "overall": 4,
+      "teamId": "2019:michael",
+      "playerId": "5185",
+      "playerName": "Giannis Antetokounmpo"
+    },
+    {
+      "round": 1,
+      "pick": 5,
+      "overall": 5,
+      "teamId": "2019:benjamin",
+      "playerId": "4244",
+      "playerName": "Kevin Durant"
+    },
+    {
+      "round": 1,
+      "pick": 6,
+      "overall": 6,
+      "teamId": "2019:najim",
+      "playerId": "5432",
+      "playerName": "Karl-Anthony Towns"
+    },
+    {
+      "round": 1,
+      "pick": 7,
+      "overall": 7,
+      "teamId": "2019:jacob-g",
+      "playerId": "4612",
+      "playerName": "Stephen Curry"
+    },
+    {
+      "round": 1,
+      "pick": 8,
+      "overall": 8,
+      "teamId": "2019:eddie",
+      "playerId": "5352",
+      "playerName": "Nikola Jokić"
+    },
+    {
+      "round": 1,
+      "pick": 9,
+      "overall": 9,
+      "teamId": "2019:matt",
+      "playerId": "4896",
+      "playerName": "Kawhi Leonard"
+    },
+    {
+      "round": 1,
+      "pick": 10,
+      "overall": 10,
+      "teamId": "2019:jordan",
+      "playerId": "4390",
+      "playerName": "Russell Westbrook"
+    },
+    {
+      "round": 2,
+      "pick": 1,
+      "overall": 11,
+      "teamId": "2019:jordan",
+      "playerId": "5600",
+      "playerName": "Ben Simmons"
+    },
+    {
+      "round": 2,
+      "pick": 2,
+      "overall": 12,
+      "teamId": "2019:matt",
+      "playerId": "5012",
+      "playerName": "Damian Lillard"
+    },
+    {
+      "round": 2,
+      "pick": 3,
+      "overall": 13,
+      "teamId": "2019:eddie",
+      "playerId": "5826",
+      "playerName": "Donovan Mitchell"
+    },
+    {
+      "round": 2,
+      "pick": 4,
+      "overall": 14,
+      "teamId": "2019:jacob-g",
+      "playerId": "5294",
+      "playerName": "Joel Embiid"
+    },
+    {
+      "round": 2,
+      "pick": 5,
+      "overall": 15,
+      "teamId": "2019:najim",
+      "playerId": "4716",
+      "playerName": "John Wall"
+    },
+    {
+      "round": 2,
+      "pick": 6,
+      "overall": 16,
+      "teamId": "2019:benjamin",
+      "playerId": "3930",
+      "playerName": "Chris Paul"
+    },
+    {
+      "round": 2,
+      "pick": 7,
+      "overall": 17,
+      "teamId": "2019:michael",
+      "playerId": "4725",
+      "playerName": "Paul George"
+    },
+    {
+      "round": 2,
+      "pick": 8,
+      "overall": 18,
+      "teamId": "2019:dadder",
+      "playerId": "4840",
+      "playerName": "Kyrie Irving"
+    },
+    {
+      "round": 2,
+      "pick": 9,
+      "overall": 19,
+      "teamId": "2019:mitchell",
+      "playerId": "5153",
+      "playerName": "Victor Oladipo"
+    },
+    {
+      "round": 2,
+      "pick": 10,
+      "overall": 20,
+      "teamId": "2019:brendan",
+      "playerId": "4892",
+      "playerName": "Klay Thompson"
+    },
+    {
+      "round": 3,
+      "pick": 1,
+      "overall": 21,
+      "teamId": "2019:brendan",
+      "playerId": "4890",
+      "playerName": "Kemba Walker"
+    },
+    {
+      "round": 3,
+      "pick": 2,
+      "overall": 22,
+      "teamId": "2019:mitchell",
+      "playerId": "4622",
+      "playerName": "Jrue Holiday"
+    },
+    {
+      "round": 3,
+      "pick": 3,
+      "overall": 23,
+      "teamId": "2019:dadder",
+      "playerId": "5015",
+      "playerName": "Andre Drummond"
+    },
+    {
+      "round": 3,
+      "pick": 4,
+      "overall": 24,
+      "teamId": "2019:michael",
+      "playerId": "5197",
+      "playerName": "Rudy Gobert"
+    },
+    {
+      "round": 3,
+      "pick": 5,
+      "overall": 25,
+      "teamId": "2019:benjamin",
+      "playerId": "5161",
+      "playerName": "CJ McCollum"
+    },
+    {
+      "round": 3,
+      "pick": 6,
+      "overall": 26,
+      "teamId": "2019:najim",
+      "playerId": "4614",
+      "playerName": "DeMar DeRozan"
+    },
+    {
+      "round": 3,
+      "pick": 7,
+      "overall": 27,
+      "teamId": "2019:jacob-g",
+      "playerId": "4391",
+      "playerName": "Kevin Love"
+    },
+    {
+      "round": 3,
+      "pick": 8,
+      "overall": 28,
+      "teamId": "2019:eddie",
+      "playerId": "5069",
+      "playerName": "Draymond Green"
+    },
+    {
+      "round": 3,
+      "pick": 9,
+      "overall": 29,
+      "teamId": "2019:matt",
+      "playerId": "4130",
+      "playerName": "LaMarcus Aldridge"
+    },
+    {
+      "round": 3,
+      "pick": 10,
+      "overall": 30,
+      "teamId": "2019:jordan",
+      "playerId": "4152",
+      "playerName": "Kyle Lowry"
+    },
+    {
+      "round": 4,
+      "pick": 1,
+      "overall": 31,
+      "teamId": "2019:jordan",
+      "playerId": "5473",
+      "playerName": "Devin Booker"
+    },
+    {
+      "round": 4,
+      "pick": 2,
+      "overall": 32,
+      "teamId": "2019:matt",
+      "playerId": "5336",
+      "playerName": "Clint Capela"
+    },
+    {
+      "round": 4,
+      "pick": 3,
+      "overall": 33,
+      "teamId": "2019:eddie",
+      "playerId": "5295",
+      "playerName": "Aaron Gordon"
+    },
+    {
+      "round": 4,
+      "pick": 4,
+      "overall": 34,
+      "teamId": "2019:jacob-g",
+      "playerId": "5009",
+      "playerName": "Bradley Beal"
+    },
+    {
+      "round": 4,
+      "pick": 5,
+      "overall": 35,
+      "teamId": "2019:najim",
+      "playerId": "4561",
+      "playerName": "Blake Griffin"
+    },
+    {
+      "round": 4,
+      "pick": 6,
+      "overall": 36,
+      "teamId": "2019:benjamin",
+      "playerId": "5471",
+      "playerName": "Myles Turner"
+    },
+    {
+      "round": 4,
+      "pick": 7,
+      "overall": 37,
+      "teamId": "2019:michael",
+      "playerId": "4912",
+      "playerName": "Jimmy Butler III"
+    },
+    {
+      "round": 4,
+      "pick": 8,
+      "overall": 38,
+      "teamId": "2019:dadder",
+      "playerId": "5638",
+      "playerName": "Jamal Murray"
+    },
+    {
+      "round": 4,
+      "pick": 9,
+      "overall": 39,
+      "teamId": "2019:mitchell",
+      "playerId": "5073",
+      "playerName": "Khris Middleton"
+    },
+    {
+      "round": 4,
+      "pick": 10,
+      "overall": 40,
+      "teamId": "2019:brendan",
+      "playerId": "4325",
+      "playerName": "Marc Gasol"
+    },
+    {
+      "round": 5,
+      "pick": 1,
+      "overall": 41,
+      "teamId": "2019:brendan",
+      "playerId": "4901",
+      "playerName": "Tobias Harris"
+    },
+    {
+      "round": 5,
+      "pick": 2,
+      "overall": 42,
+      "teamId": "2019:mitchell",
+      "playerId": "4245",
+      "playerName": "Al Horford"
+    },
+    {
+      "round": 5,
+      "pick": 3,
+      "overall": 43,
+      "teamId": "2019:dadder",
+      "playerId": "5765",
+      "playerName": "Jayson Tatum"
+    },
+    {
+      "round": 5,
+      "pick": 4,
+      "overall": 44,
+      "teamId": "2019:michael",
+      "playerId": "4246",
+      "playerName": "Mike Conley"
+    },
+    {
+      "round": 5,
+      "pick": 5,
+      "overall": 45,
+      "teamId": "2019:benjamin",
+      "playerId": "5835",
+      "playerName": "Jarrett Allen"
+    },
+    {
+      "round": 5,
+      "pick": 6,
+      "overall": 46,
+      "teamId": "2019:najim",
+      "playerId": "6014",
+      "playerName": "Luka Dončić"
+    },
+    {
+      "round": 5,
+      "pick": 7,
+      "overall": 47,
+      "teamId": "2019:jacob-g",
+      "playerId": "4749",
+      "playerName": "Eric Bledsoe"
+    },
+    {
+      "round": 5,
+      "pick": 8,
+      "overall": 48,
+      "teamId": "2019:eddie",
+      "playerId": "4724",
+      "playerName": "Gordon Hayward"
+    },
+    {
+      "round": 5,
+      "pick": 9,
+      "overall": 49,
+      "teamId": "2019:matt",
+      "playerId": "5074",
+      "playerName": "Will Barton"
+    },
+    {
+      "round": 5,
+      "pick": 10,
+      "overall": 50,
+      "teamId": "2019:jordan",
+      "playerId": "4497",
+      "playerName": "DeAndre Jordan"
+    },
+    {
+      "round": 6,
+      "pick": 1,
+      "overall": 51,
+      "teamId": "2019:jordan",
+      "playerId": "5958",
+      "playerName": "Deandre Ayton"
+    },
+    {
+      "round": 6,
+      "pick": 2,
+      "overall": 52,
+      "teamId": "2019:matt",
+      "playerId": "4507",
+      "playerName": "Goran Dragić"
+    },
+    {
+      "round": 6,
+      "pick": 3,
+      "overall": 53,
+      "teamId": "2019:eddie",
+      "playerId": "3971",
+      "playerName": "Lou Williams"
+    },
+    {
+      "round": 6,
+      "pick": 4,
+      "overall": 54,
+      "teamId": "2019:jacob-g",
+      "playerId": "3818",
+      "playerName": "Dwight Howard"
+    },
+    {
+      "round": 6,
+      "pick": 5,
+      "overall": 55,
+      "teamId": "2019:najim",
+      "playerId": "4175",
+      "playerName": "Paul Millsap"
+    },
+    {
+      "round": 6,
+      "pick": 6,
+      "overall": 56,
+      "teamId": "2019:benjamin",
+      "playerId": "4897",
+      "playerName": "Nikola Vučević"
+    },
+    {
+      "round": 6,
+      "pick": 7,
+      "overall": 57,
+      "teamId": "2019:michael",
+      "playerId": "5154",
+      "playerName": "Otto Porter Jr."
+    },
+    {
+      "round": 6,
+      "pick": 8,
+      "overall": 58,
+      "teamId": "2019:dadder",
+      "playerId": "5324",
+      "playerName": "Zach LaVine"
+    },
+    {
+      "round": 6,
+      "pick": 9,
+      "overall": 59,
+      "teamId": "2019:mitchell",
+      "playerId": "4764",
+      "playerName": "Hassan Whiteside"
+    },
+    {
+      "round": 6,
+      "pick": 10,
+      "overall": 60,
+      "teamId": "2019:brendan",
+      "playerId": "5253",
+      "playerName": "Robert Covington"
+    },
+    {
+      "round": 7,
+      "pick": 1,
+      "overall": 61,
+      "teamId": "2019:brendan",
+      "playerId": "5330",
+      "playerName": "Gary Harris"
+    },
+    {
+      "round": 7,
+      "pick": 2,
+      "overall": 62,
+      "teamId": "2019:mitchell",
+      "playerId": "5643",
+      "playerName": "Taurean Prince"
+    },
+    {
+      "round": 7,
+      "pick": 3,
+      "overall": 63,
+      "teamId": "2019:dadder",
+      "playerId": "5163",
+      "playerName": "Steven Adams"
+    },
+    {
+      "round": 7,
+      "pick": 4,
+      "overall": 64,
+      "teamId": "2019:michael",
+      "playerId": "5832",
+      "playerName": "John Collins"
+    },
+    {
+      "round": 7,
+      "pick": 5,
+      "overall": 65,
+      "teamId": "2019:benjamin",
+      "playerId": "6018",
+      "playerName": "Wendell Carter Jr."
+    },
+    {
+      "round": 7,
+      "pick": 6,
+      "overall": 66,
+      "teamId": "2019:najim",
+      "playerId": "4139",
+      "playerName": "JJ Redick"
+    },
+    {
+      "round": 7,
+      "pick": 7,
+      "overall": 67,
+      "teamId": "2019:jacob-g",
+      "playerId": "5292",
+      "playerName": "Andrew Wiggins"
+    },
+    {
+      "round": 7,
+      "pick": 8,
+      "overall": 68,
+      "teamId": "2019:eddie",
+      "playerId": "4486",
+      "playerName": "Serge Ibaka"
+    },
+    {
+      "round": 7,
+      "pick": 9,
+      "overall": 69,
+      "teamId": "2019:matt",
+      "playerId": "4487",
+      "playerName": "Nicolas Batum"
+    },
+    {
+      "round": 7,
+      "pick": 10,
+      "overall": 70,
+      "teamId": "2019:jordan",
+      "playerId": "5293",
+      "playerName": "Jabari Parker"
+    },
+    {
+      "round": 8,
+      "pick": 1,
+      "overall": 71,
+      "teamId": "2019:jordan",
+      "playerId": "5318",
+      "playerName": "Julius Randle"
+    },
+    {
+      "round": 8,
+      "pick": 2,
+      "overall": 72,
+      "teamId": "2019:matt",
+      "playerId": "4899",
+      "playerName": "Enes Freedom"
+    },
+    {
+      "round": 8,
+      "pick": 3,
+      "overall": 73,
+      "teamId": "2019:eddie",
+      "playerId": "4480",
+      "playerName": "JaVale McGee"
+    },
+    {
+      "round": 8,
+      "pick": 4,
+      "overall": 74,
+      "teamId": "2019:jacob-g",
+      "playerId": "4886",
+      "playerName": "Jonas Valančiūnas"
+    },
+    {
+      "round": 8,
+      "pick": 5,
+      "overall": 75,
+      "teamId": "2019:najim",
+      "playerId": "4564",
+      "playerName": "Tyreke Evans"
+    },
+    {
+      "round": 8,
+      "pick": 6,
+      "overall": 76,
+      "teamId": "2019:benjamin",
+      "playerId": "4624",
+      "playerName": "Jeff Teague"
+    },
+    {
+      "round": 8,
+      "pick": 7,
+      "overall": 77,
+      "teamId": "2019:michael",
+      "playerId": "5822",
+      "playerName": "Dennis Smith Jr."
+    },
+    {
+      "round": 8,
+      "pick": 8,
+      "overall": 78,
+      "teamId": "2019:dadder",
+      "playerId": "5636",
+      "playerName": "Kris Dunn"
+    },
+    {
+      "round": 8,
+      "pick": 9,
+      "overall": 79,
+      "teamId": "2019:mitchell",
+      "playerId": "4626",
+      "playerName": "Darren Collison"
+    },
+    {
+      "round": 8,
+      "pick": 10,
+      "overall": 80,
+      "teamId": "2019:brendan",
+      "playerId": "4149",
+      "playerName": "Rajon Rondo"
+    },
+    {
+      "round": 9,
+      "pick": 1,
+      "overall": 81,
+      "teamId": "2019:brendan",
+      "playerId": "5769",
+      "playerName": "Lauri Markkanen"
+    },
+    {
+      "round": 9,
+      "pick": 2,
+      "overall": 82,
+      "teamId": "2019:mitchell",
+      "playerId": "5327",
+      "playerName": "Jusuf Nurkić"
+    },
+    {
+      "round": 9,
+      "pick": 3,
+      "overall": 83,
+      "teamId": "2019:dadder",
+      "playerId": "4610",
+      "playerName": "Ricky Rubio"
+    },
+    {
+      "round": 9,
+      "pick": 4,
+      "overall": 84,
+      "teamId": "2019:michael",
+      "playerId": "5601",
+      "playerName": "Brandon Ingram"
+    },
+    {
+      "round": 9,
+      "pick": 5,
+      "overall": 85,
+      "teamId": "2019:benjamin",
+      "playerId": "5194",
+      "playerName": "Tim Hardaway Jr."
+    },
+    {
+      "round": 9,
+      "pick": 6,
+      "overall": 86,
+      "teamId": "2019:najim",
+      "playerId": "5840",
+      "playerName": "Kyle Kuzma"
+    },
+    {
+      "round": 9,
+      "pick": 7,
+      "overall": 87,
+      "teamId": "2019:jacob-g",
+      "playerId": "5433",
+      "playerName": "D'Angelo Russell"
+    },
+    {
+      "round": 9,
+      "pick": 8,
+      "overall": 88,
+      "teamId": "2019:eddie",
+      "playerId": "5727",
+      "playerName": "Fred VanVleet"
+    },
+    {
+      "round": 9,
+      "pick": 9,
+      "overall": 89,
+      "teamId": "2019:matt",
+      "playerId": "4905",
+      "playerName": "Nikola Mirotić"
+    },
+    {
+      "round": 9,
+      "pick": 10,
+      "overall": 90,
+      "teamId": "2019:jordan",
+      "playerId": "5483",
+      "playerName": "Rondae Hollis-Jefferson"
+    },
+    {
+      "round": 10,
+      "pick": 1,
+      "overall": 91,
+      "teamId": "2019:jordan",
+      "playerId": "5602",
+      "playerName": "Jaylen Brown"
+    },
+    {
+      "round": 10,
+      "pick": 2,
+      "overall": 92,
+      "teamId": "2019:matt",
+      "playerId": "5637",
+      "playerName": "Buddy Hield"
+    },
+    {
+      "round": 10,
+      "pick": 3,
+      "overall": 93,
+      "teamId": "2019:eddie",
+      "playerId": "3252",
+      "playerName": "Dirk Nowitzki"
+    },
+    {
+      "round": 10,
+      "pick": 4,
+      "overall": 94,
+      "teamId": "2019:jacob-g",
+      "playerId": "4469",
+      "playerName": "Eric Gordon"
+    },
+    {
+      "round": 10,
+      "pick": 5,
+      "overall": 95,
+      "teamId": "2019:najim",
+      "playerId": "5660",
+      "playerName": "Dejounte Murray"
+    },
+    {
+      "round": 10,
+      "pick": 6,
+      "overall": 96,
+      "teamId": "2019:benjamin",
+      "playerId": "5054",
+      "playerName": "Evan Fournier"
+    },
+    {
+      "round": 10,
+      "pick": 7,
+      "overall": 97,
+      "teamId": "2019:michael",
+      "playerId": "5393",
+      "playerName": "Joe Ingles"
+    },
+    {
+      "round": 10,
+      "pick": 8,
+      "overall": 98,
+      "teamId": "2019:dadder",
+      "playerId": "5487",
+      "playerName": "Larry Nance Jr."
+    },
+    {
+      "round": 10,
+      "pick": 9,
+      "overall": 99,
+      "teamId": "2019:mitchell",
+      "playerId": "3860",
+      "playerName": "Trevor Ariza"
+    },
+    {
+      "round": 10,
+      "pick": 10,
+      "overall": 100,
+      "teamId": "2019:brendan",
+      "playerId": "3706",
+      "playerName": "Carmelo Anthony"
+    },
+    {
+      "round": 11,
+      "pick": 1,
+      "overall": 101,
+      "teamId": "2019:brendan",
+      "playerId": "4720",
+      "playerName": "DeMarcus Cousins"
+    },
+    {
+      "round": 11,
+      "pick": 2,
+      "overall": 102,
+      "teamId": "2019:mitchell",
+      "playerId": "5323",
+      "playerName": "Dario Šarić"
+    },
+    {
+      "round": 11,
+      "pick": 3,
+      "overall": 103,
+      "teamId": "2019:dadder",
+      "playerId": "5013",
+      "playerName": "Harrison Barnes"
+    },
+    {
+      "round": 11,
+      "pick": 4,
+      "overall": 104,
+      "teamId": "2019:michael",
+      "playerId": "6017",
+      "playerName": "Mo Bamba"
+    },
+    {
+      "round": 11,
+      "pick": 5,
+      "overall": 105,
+      "teamId": "2019:benjamin",
+      "playerId": "5851",
+      "playerName": "Jordan Bell"
+    },
+    {
+      "round": 11,
+      "pick": 6,
+      "overall": 106,
+      "teamId": "2019:najim",
+      "playerId": "5102",
+      "playerName": "Kent Bazemore"
+    },
+    {
+      "round": 11,
+      "pick": 7,
+      "overall": 107,
+      "teamId": "2019:jacob-g",
+      "playerId": "6016",
+      "playerName": "Trae Young"
+    },
+    {
+      "round": 11,
+      "pick": 8,
+      "overall": 108,
+      "teamId": "2019:eddie",
+      "playerId": "5500",
+      "playerName": "Josh Richardson"
+    },
+    {
+      "round": 11,
+      "pick": 9,
+      "overall": 109,
+      "teamId": "2019:matt",
+      "playerId": "5642",
+      "playerName": "Domantas Sabonis"
+    },
+    {
+      "round": 11,
+      "pick": 10,
+      "overall": 110,
+      "teamId": "2019:jordan",
+      "playerId": "5466",
+      "playerName": "Willie Cauley-Stein"
+    },
+    {
+      "round": 12,
+      "pick": 1,
+      "overall": 111,
+      "teamId": "2019:jordan",
+      "playerId": "5766",
+      "playerName": "Josh Jackson"
+    },
+    {
+      "round": 12,
+      "pick": 2,
+      "overall": 112,
+      "teamId": "2019:matt",
+      "playerId": "5764",
+      "playerName": "Lonzo Ball"
+    },
+    {
+      "round": 12,
+      "pick": 3,
+      "overall": 113,
+      "teamId": "2019:eddie",
+      "playerId": "4472",
+      "playerName": "Brook Lopez"
+    },
+    {
+      "round": 12,
+      "pick": 4,
+      "overall": 114,
+      "teamId": "2019:jacob-g",
+      "playerId": "5159",
+      "playerName": "Kentavious Caldwell-Pope"
+    },
+    {
+      "round": 12,
+      "pick": 5,
+      "overall": 115,
+      "teamId": "2019:najim",
+      "playerId": "4718",
+      "playerName": "Derrick Favors"
+    },
+    {
+      "round": 12,
+      "pick": 6,
+      "overall": 116,
+      "teamId": "2019:benjamin",
+      "playerId": "5201",
+      "playerName": "Allen Crabbe III"
+    },
+    {
+      "round": 12,
+      "pick": 7,
+      "overall": 117,
+      "teamId": "2019:michael",
+      "playerId": "6015",
+      "playerName": "Jaren Jackson Jr."
+    },
+    {
+      "round": 12,
+      "pick": 8,
+      "overall": 118,
+      "teamId": "2019:dadder",
+      "playerId": "5341",
+      "playerName": "Kyle Anderson"
+    },
+    {
+      "round": 12,
+      "pick": 9,
+      "overall": 119,
+      "teamId": "2019:mitchell",
+      "playerId": "5325",
+      "playerName": "T.J. Warren"
+    },
+    {
+      "round": 12,
+      "pick": 10,
+      "overall": 120,
+      "teamId": "2019:brendan",
+      "playerId": "4942",
+      "playerName": "Isaiah Thomas"
+    },
+    {
+      "round": 13,
+      "pick": 1,
+      "overall": 121,
+      "teamId": "2019:brendan",
+      "playerId": "5768",
+      "playerName": "Jonathan Isaac"
+    },
+    {
+      "round": 13,
+      "pick": 2,
+      "overall": 122,
+      "teamId": "2019:mitchell",
+      "playerId": "5349",
+      "playerName": "Spencer Dinwiddie"
+    },
+    {
+      "round": 13,
+      "pick": 3,
+      "overall": 123,
+      "teamId": "2019:dadder",
+      "playerId": "5640",
+      "playerName": "Jakob Poeltl"
+    },
+    {
+      "round": 13,
+      "pick": 4,
+      "overall": 124,
+      "teamId": "2019:michael",
+      "playerId": "5763",
+      "playerName": "Markelle Fultz"
+    },
+    {
+      "round": 13,
+      "pick": 5,
+      "overall": 125,
+      "teamId": "2019:benjamin",
+      "playerId": "5843",
+      "playerName": "Josh Hart"
+    },
+    {
+      "round": 13,
+      "pick": 6,
+      "overall": 126,
+      "teamId": "2019:najim",
+      "playerId": "5187",
+      "playerName": "Dennis Schröder"
+    },
+    {
+      "round": 13,
+      "pick": 7,
+      "overall": 127,
+      "teamId": "2019:jacob-g",
+      "playerId": "5256",
+      "playerName": "Dewayne Dedmon"
+    },
+    {
+      "round": 13,
+      "pick": 8,
+      "overall": 128,
+      "teamId": "2019:eddie",
+      "playerId": "4290",
+      "playerName": "Thaddeus Young"
+    },
+    {
+      "round": 13,
+      "pick": 9,
+      "overall": 129,
+      "teamId": "2019:matt",
+      "playerId": "4136",
+      "playerName": "Rudy Gay"
+    },
+    {
+      "round": 13,
+      "pick": 10,
+      "overall": 130,
+      "teamId": "2019:jordan",
+      "playerId": "4621",
+      "playerName": "James Johnson"
+    }
+  ],
+  "players": [
+    {
+      "playerId": "4563",
+      "name": "James Harden",
+      "actualRank": 1,
+      "preseasonRank": 1,
+      "gamesPlayed": null,
+      "teamId": "2019:jacob-g"
+    },
+    {
+      "playerId": "4725",
+      "name": "Paul George",
+      "actualRank": 2,
+      "preseasonRank": 12,
+      "gamesPlayed": null,
+      "teamId": "2019:michael"
+    },
+    {
+      "playerId": "5432",
+      "name": "Karl-Anthony Towns",
+      "actualRank": 3,
+      "preseasonRank": 5,
+      "gamesPlayed": null,
+      "teamId": "2019:najim"
+    },
+    {
+      "playerId": "4244",
+      "name": "Kevin Durant",
+      "actualRank": 4,
+      "preseasonRank": 6,
+      "gamesPlayed": null,
+      "teamId": "2019:benjamin"
+    },
+    {
+      "playerId": "4897",
+      "name": "Nikola Vučević",
+      "actualRank": 5,
+      "preseasonRank": 59,
+      "gamesPlayed": null,
+      "teamId": "2019:benjamin"
+    },
+    {
+      "playerId": "5185",
+      "name": "Giannis Antetokounmpo",
+      "actualRank": 6,
+      "preseasonRank": 3,
+      "gamesPlayed": null,
+      "teamId": "2019:jacob-g"
+    },
+    {
+      "playerId": "5352",
+      "name": "Nikola Jokić",
+      "actualRank": 7,
+      "preseasonRank": 8,
+      "gamesPlayed": null,
+      "teamId": "2019:najim"
+    },
+    {
+      "playerId": "4612",
+      "name": "Stephen Curry",
+      "actualRank": 8,
+      "preseasonRank": 4,
+      "gamesPlayed": null,
+      "teamId": "2019:brendan"
+    },
+    {
+      "playerId": "5012",
+      "name": "Damian Lillard",
+      "actualRank": 9,
+      "preseasonRank": 9,
+      "gamesPlayed": null,
+      "teamId": "2019:matt"
+    },
+    {
+      "playerId": "5009",
+      "name": "Bradley Beal",
+      "actualRank": 10,
+      "preseasonRank": 21,
+      "gamesPlayed": null,
+      "teamId": "2019:mitchell"
+    },
+    {
+      "playerId": "5007",
+      "name": "Anthony Davis",
+      "actualRank": 11,
+      "preseasonRank": 2,
+      "gamesPlayed": null,
+      "teamId": "2019:mitchell"
+    },
+    {
+      "playerId": "5197",
+      "name": "Rudy Gobert",
+      "actualRank": 12,
+      "preseasonRank": 27,
+      "gamesPlayed": null,
+      "teamId": "2019:michael"
+    },
+    {
+      "playerId": "4890",
+      "name": "Kemba Walker",
+      "actualRank": 13,
+      "preseasonRank": 15,
+      "gamesPlayed": null,
+      "teamId": "2019:michael"
+    },
+    {
+      "playerId": "5015",
+      "name": "Andre Drummond",
+      "actualRank": 14,
+      "preseasonRank": 25,
+      "gamesPlayed": null,
+      "teamId": "2019:dadder"
+    },
+    {
+      "playerId": "4840",
+      "name": "Kyrie Irving",
+      "actualRank": 15,
+      "preseasonRank": 18,
+      "gamesPlayed": null,
+      "teamId": "2019:dadder"
+    },
+    {
+      "playerId": "4130",
+      "name": "LaMarcus Aldridge",
+      "actualRank": 16,
+      "preseasonRank": 36,
+      "gamesPlayed": null,
+      "teamId": "2019:matt"
+    },
+    {
+      "playerId": "5294",
+      "name": "Joel Embiid",
+      "actualRank": 17,
+      "preseasonRank": 19,
+      "gamesPlayed": null,
+      "teamId": "2019:najim"
+    },
+    {
+      "playerId": "4896",
+      "name": "Kawhi Leonard",
+      "actualRank": 18,
+      "preseasonRank": 13,
+      "gamesPlayed": null,
+      "teamId": "2019:matt"
+    },
+    {
+      "playerId": "4472",
+      "name": "Brook Lopez",
+      "actualRank": 19,
+      "preseasonRank": 75,
+      "gamesPlayed": null,
+      "teamId": "2019:eddie"
+    },
+    {
+      "playerId": "4901",
+      "name": "Tobias Harris",
+      "actualRank": 20,
+      "preseasonRank": 33,
+      "gamesPlayed": null,
+      "teamId": "2019:brendan"
+    },
+    {
+      "playerId": "5471",
+      "name": "Myles Turner",
+      "actualRank": 21,
+      "preseasonRank": 42,
+      "gamesPlayed": null,
+      "teamId": "2019:benjamin"
+    },
+    {
+      "playerId": "4892",
+      "name": "Klay Thompson",
+      "actualRank": 22,
+      "preseasonRank": 32,
+      "gamesPlayed": null,
+      "teamId": "2019:brendan"
+    },
+    {
+      "playerId": "5637",
+      "name": "Buddy Hield",
+      "actualRank": 23,
+      "preseasonRank": 85,
+      "gamesPlayed": null,
+      "teamId": "2019:matt"
+    },
+    {
+      "playerId": "4912",
+      "name": "Jimmy Butler III",
+      "actualRank": 24,
+      "preseasonRank": 22,
+      "gamesPlayed": null,
+      "teamId": "2019:jacob-g"
+    },
+    {
+      "playerId": "4390",
+      "name": "Russell Westbrook",
+      "actualRank": 25,
+      "preseasonRank": 10,
+      "gamesPlayed": null,
+      "teamId": "2019:jordan"
+    },
+    {
+      "playerId": "5658",
+      "name": "Pascal Siakam",
+      "actualRank": 26,
+      "preseasonRank": 140,
+      "gamesPlayed": null,
+      "teamId": "2019:jordan"
+    },
+    {
+      "playerId": "4622",
+      "name": "Jrue Holiday",
+      "actualRank": 27,
+      "preseasonRank": 20,
+      "gamesPlayed": null,
+      "teamId": "2019:mitchell"
+    },
+    {
+      "playerId": "4246",
+      "name": "Mike Conley",
+      "actualRank": 28,
+      "preseasonRank": 47,
+      "gamesPlayed": null,
+      "teamId": "2019:michael"
+    },
+    {
+      "playerId": "5336",
+      "name": "Clint Capela",
+      "actualRank": 29,
+      "preseasonRank": 39,
+      "gamesPlayed": null,
+      "teamId": "2019:matt"
+    },
+    {
+      "playerId": "4325",
+      "name": "Marc Gasol",
+      "actualRank": 30,
+      "preseasonRank": 34,
+      "gamesPlayed": null,
+      "teamId": "2019:brendan"
+    },
+    {
+      "playerId": "4749",
+      "name": "Eric Bledsoe",
+      "actualRank": 31,
+      "preseasonRank": 38,
+      "gamesPlayed": null,
+      "teamId": "2019:najim"
+    },
+    {
+      "playerId": "4245",
+      "name": "Al Horford",
+      "actualRank": 32,
+      "preseasonRank": 43,
+      "gamesPlayed": null,
+      "teamId": "2019:jacob-g"
+    },
+    {
+      "playerId": "5433",
+      "name": "D'Angelo Russell",
+      "actualRank": 33,
+      "preseasonRank": 90,
+      "gamesPlayed": null,
+      "teamId": "2019:brendan"
+    },
+    {
+      "playerId": "4468",
+      "name": "Danilo Gallinari",
+      "actualRank": 34,
+      "preseasonRank": 151,
+      "gamesPlayed": null,
+      "teamId": "2019:eddie"
+    },
+    {
+      "playerId": "4614",
+      "name": "DeMar DeRozan",
+      "actualRank": 35,
+      "preseasonRank": 37,
+      "gamesPlayed": null,
+      "teamId": "2019:eddie"
+    },
+    {
+      "playerId": "5327",
+      "name": "Jusuf Nurkić",
+      "actualRank": 36,
+      "preseasonRank": 101,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5958",
+      "name": "Deandre Ayton",
+      "actualRank": 37,
+      "preseasonRank": 63,
+      "gamesPlayed": null,
+      "teamId": "2019:jordan"
+    },
+    {
+      "playerId": "5018",
+      "name": "Jeremy Lamb",
+      "actualRank": 38,
+      "preseasonRank": 148,
+      "gamesPlayed": null,
+      "teamId": "2019:brendan"
+    },
+    {
+      "playerId": "5767",
+      "name": "De'Aaron Fox",
+      "actualRank": 39,
+      "preseasonRank": 127,
+      "gamesPlayed": null,
+      "teamId": "2019:mitchell"
+    },
+    {
+      "playerId": "5765",
+      "name": "Jayson Tatum",
+      "actualRank": 40,
+      "preseasonRank": 50,
+      "gamesPlayed": null,
+      "teamId": "2019:dadder"
+    },
+    {
+      "playerId": "5492",
+      "name": "Montrezl Harrell",
+      "actualRank": 41,
+      "preseasonRank": 143,
+      "gamesPlayed": null,
+      "teamId": "2019:eddie"
+    },
+    {
+      "playerId": "5826",
+      "name": "Donovan Mitchell",
+      "actualRank": 42,
+      "preseasonRank": 17,
+      "gamesPlayed": null,
+      "teamId": "2019:eddie"
+    },
+    {
+      "playerId": "4290",
+      "name": "Thaddeus Young",
+      "actualRank": 43,
+      "preseasonRank": 102,
+      "gamesPlayed": null,
+      "teamId": "2019:eddie"
+    },
+    {
+      "playerId": "5600",
+      "name": "Ben Simmons",
+      "actualRank": 44,
+      "preseasonRank": 14,
+      "gamesPlayed": null,
+      "teamId": "2019:jordan"
+    },
+    {
+      "playerId": "4480",
+      "name": "JaVale McGee",
+      "actualRank": 45,
+      "preseasonRank": 120,
+      "gamesPlayed": null,
+      "teamId": "2019:eddie"
+    },
+    {
+      "playerId": "5073",
+      "name": "Khris Middleton",
+      "actualRank": 46,
+      "preseasonRank": 26,
+      "gamesPlayed": null,
+      "teamId": "2019:mitchell"
+    },
+    {
+      "playerId": "5350",
+      "name": "Jerami Grant",
+      "actualRank": 47,
+      "preseasonRank": 114,
+      "gamesPlayed": null,
+      "teamId": "2019:jacob-g"
+    },
+    {
+      "playerId": "3930",
+      "name": "Chris Paul",
+      "actualRank": 48,
+      "preseasonRank": 16,
+      "gamesPlayed": null,
+      "teamId": "2019:benjamin"
+    },
+    {
+      "playerId": "4152",
+      "name": "Kyle Lowry",
+      "actualRank": 49,
+      "preseasonRank": 24,
+      "gamesPlayed": null,
+      "teamId": "2019:jordan"
+    },
+    {
+      "playerId": "4163",
+      "name": "P.J. Tucker",
+      "actualRank": 50,
+      "preseasonRank": 183,
+      "gamesPlayed": null,
+      "teamId": "2019:jordan"
+    },
+    {
+      "playerId": "5317",
+      "name": "Marcus Smart",
+      "actualRank": 51,
+      "preseasonRank": 176,
+      "gamesPlayed": null,
+      "teamId": "2019:mitchell"
+    },
+    {
+      "playerId": "5163",
+      "name": "Steven Adams",
+      "actualRank": 52,
+      "preseasonRank": 77,
+      "gamesPlayed": null,
+      "teamId": "2019:dadder"
+    },
+    {
+      "playerId": "5835",
+      "name": "Jarrett Allen",
+      "actualRank": 53,
+      "preseasonRank": 46,
+      "gamesPlayed": null,
+      "teamId": "2019:benjamin"
+    },
+    {
+      "playerId": "4561",
+      "name": "Blake Griffin",
+      "actualRank": 54,
+      "preseasonRank": 48,
+      "gamesPlayed": null,
+      "teamId": "2019:michael"
+    },
+    {
+      "playerId": "4651",
+      "name": "Danny Green",
+      "actualRank": 55,
+      "preseasonRank": 157,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4486",
+      "name": "Serge Ibaka",
+      "actualRank": 56,
+      "preseasonRank": 78,
+      "gamesPlayed": null,
+      "teamId": "2019:najim"
+    },
+    {
+      "playerId": "4718",
+      "name": "Derrick Favors",
+      "actualRank": 57,
+      "preseasonRank": 146,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4626",
+      "name": "Darren Collison",
+      "actualRank": 58,
+      "preseasonRank": 68,
+      "gamesPlayed": null,
+      "teamId": "2019:jacob-g"
+    },
+    {
+      "playerId": "5393",
+      "name": "Joe Ingles",
+      "actualRank": 59,
+      "preseasonRank": 54,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5500",
+      "name": "Josh Richardson",
+      "actualRank": 60,
+      "preseasonRank": 56,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5014",
+      "name": "Terrence Ross",
+      "actualRank": 61,
+      "preseasonRank": 264,
+      "gamesPlayed": null,
+      "teamId": "2019:jordan"
+    },
+    {
+      "playerId": "6021",
+      "name": "Mikal Bridges",
+      "actualRank": 62,
+      "preseasonRank": 265,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4913",
+      "name": "Bojan Bogdanović",
+      "actualRank": 63,
+      "preseasonRank": 132,
+      "gamesPlayed": null,
+      "teamId": "2019:brendan"
+    },
+    {
+      "playerId": "5638",
+      "name": "Jamal Murray",
+      "actualRank": 64,
+      "preseasonRank": 40,
+      "gamesPlayed": null,
+      "teamId": "2019:dadder"
+    },
+    {
+      "playerId": "5161",
+      "name": "CJ McCollum",
+      "actualRank": 65,
+      "preseasonRank": 28,
+      "gamesPlayed": null,
+      "teamId": "2019:benjamin"
+    },
+    {
+      "playerId": "6047",
+      "name": "Mitchell Robinson",
+      "actualRank": 66,
+      "preseasonRank": 266,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "3704",
+      "name": "LeBron James",
+      "actualRank": 67,
+      "preseasonRank": 7,
+      "gamesPlayed": null,
+      "teamId": "2019:dadder"
+    },
+    {
+      "playerId": "5142",
+      "name": "Justin Holiday",
+      "actualRank": 68,
+      "preseasonRank": 192,
+      "gamesPlayed": null,
+      "teamId": "2019:jacob-g"
+    },
+    {
+      "playerId": "5487",
+      "name": "Larry Nance Jr.",
+      "actualRank": 69,
+      "preseasonRank": 96,
+      "gamesPlayed": null,
+      "teamId": "2019:eddie"
+    },
+    {
+      "playerId": "5473",
+      "name": "Devin Booker",
+      "actualRank": 70,
+      "preseasonRank": 29,
+      "gamesPlayed": null,
+      "teamId": "2019:jordan"
+    },
+    {
+      "playerId": "5466",
+      "name": "Willie Cauley-Stein",
+      "actualRank": 71,
+      "preseasonRank": 118,
+      "gamesPlayed": null,
+      "teamId": "2019:matt"
+    },
+    {
+      "playerId": "4497",
+      "name": "DeAndre Jordan",
+      "actualRank": 72,
+      "preseasonRank": 65,
+      "gamesPlayed": null,
+      "teamId": "2019:dadder"
+    },
+    {
+      "playerId": "4139",
+      "name": "JJ Redick",
+      "actualRank": 73,
+      "preseasonRank": 82,
+      "gamesPlayed": null,
+      "teamId": "2019:najim"
+    },
+    {
+      "playerId": "5256",
+      "name": "Dewayne Dedmon",
+      "actualRank": 74,
+      "preseasonRank": 97,
+      "gamesPlayed": null,
+      "teamId": "2019:mitchell"
+    },
+    {
+      "playerId": "5295",
+      "name": "Aaron Gordon",
+      "actualRank": 75,
+      "preseasonRank": 41,
+      "gamesPlayed": null,
+      "teamId": "2019:eddie"
+    },
+    {
+      "playerId": "4723",
+      "name": "Al-Farouq Aminu",
+      "actualRank": 76,
+      "preseasonRank": 152,
+      "gamesPlayed": null,
+      "teamId": "2019:benjamin"
+    },
+    {
+      "playerId": "5318",
+      "name": "Julius Randle",
+      "actualRank": 77,
+      "preseasonRank": 72,
+      "gamesPlayed": null,
+      "teamId": "2019:jordan"
+    },
+    {
+      "playerId": "5069",
+      "name": "Draymond Green",
+      "actualRank": 78,
+      "preseasonRank": 31,
+      "gamesPlayed": null,
+      "teamId": "2019:eddie"
+    },
+    {
+      "playerId": "5827",
+      "name": "Bam Adebayo",
+      "actualRank": 79,
+      "preseasonRank": 201,
+      "gamesPlayed": null,
+      "teamId": "2019:mitchell"
+    },
+    {
+      "playerId": "3928",
+      "name": "Marvin Williams",
+      "actualRank": 80,
+      "preseasonRank": 124,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6016",
+      "name": "Trae Young",
+      "actualRank": 81,
+      "preseasonRank": 106,
+      "gamesPlayed": null,
+      "teamId": "2019:jacob-g"
+    },
+    {
+      "playerId": "4175",
+      "name": "Paul Millsap",
+      "actualRank": 82,
+      "preseasonRank": 60,
+      "gamesPlayed": null,
+      "teamId": "2019:najim"
+    },
+    {
+      "playerId": "4487",
+      "name": "Nicolas Batum",
+      "actualRank": 83,
+      "preseasonRank": 70,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "3971",
+      "name": "Lou Williams",
+      "actualRank": 84,
+      "preseasonRank": 55,
+      "gamesPlayed": null,
+      "teamId": "2019:najim"
+    },
+    {
+      "playerId": "5667",
+      "name": "Malcolm Brogdon",
+      "actualRank": 85,
+      "preseasonRank": 105,
+      "gamesPlayed": null,
+      "teamId": "2019:michael"
+    },
+    {
+      "playerId": "5832",
+      "name": "John Collins",
+      "actualRank": 86,
+      "preseasonRank": 45,
+      "gamesPlayed": null,
+      "teamId": "2019:michael"
+    },
+    {
+      "playerId": "5768",
+      "name": "Jonathan Isaac",
+      "actualRank": 87,
+      "preseasonRank": 86,
+      "gamesPlayed": null,
+      "teamId": "2019:brendan"
+    },
+    {
+      "playerId": "4136",
+      "name": "Rudy Gay",
+      "actualRank": 88,
+      "preseasonRank": 142,
+      "gamesPlayed": null,
+      "teamId": "2019:jacob-g"
+    },
+    {
+      "playerId": "3860",
+      "name": "Trevor Ariza",
+      "actualRank": 89,
+      "preseasonRank": 104,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5855",
+      "name": "Thomas Bryant",
+      "actualRank": 90,
+      "preseasonRank": 268,
+      "gamesPlayed": null,
+      "teamId": "2019:matt"
+    },
+    {
+      "playerId": "5864",
+      "name": "Monté Morris",
+      "actualRank": 91,
+      "preseasonRank": 267,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4766",
+      "name": "Nemanja Bjelica",
+      "actualRank": 92,
+      "preseasonRank": 213,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4471",
+      "name": "D.J. Augustin",
+      "actualRank": 93,
+      "preseasonRank": 131,
+      "gamesPlayed": null,
+      "teamId": "2019:benjamin"
+    },
+    {
+      "playerId": "6014",
+      "name": "Luka Dončić",
+      "actualRank": 94,
+      "preseasonRank": 92,
+      "gamesPlayed": null,
+      "teamId": "2019:najim"
+    },
+    {
+      "playerId": "5642",
+      "name": "Domantas Sabonis",
+      "actualRank": 95,
+      "preseasonRank": 190,
+      "gamesPlayed": null,
+      "teamId": "2019:matt"
+    },
+    {
+      "playerId": "5475",
+      "name": "Kelly Oubre Jr.",
+      "actualRank": 96,
+      "preseasonRank": 136,
+      "gamesPlayed": null,
+      "teamId": "2019:mitchell"
+    },
+    {
+      "playerId": "5324",
+      "name": "Zach LaVine",
+      "actualRank": 97,
+      "preseasonRank": 62,
+      "gamesPlayed": null,
+      "teamId": "2019:dadder"
+    },
+    {
+      "playerId": "5154",
+      "name": "Otto Porter Jr.",
+      "actualRank": 98,
+      "preseasonRank": 30,
+      "gamesPlayed": null,
+      "teamId": "2019:michael"
+    },
+    {
+      "playerId": "5356",
+      "name": "Dwight Powell",
+      "actualRank": 99,
+      "preseasonRank": 239,
+      "gamesPlayed": null,
+      "teamId": "2019:mitchell"
+    },
+    {
+      "playerId": "4647",
+      "name": "Patrick Beverley",
+      "actualRank": 100,
+      "preseasonRank": 147,
+      "gamesPlayed": null,
+      "teamId": "2019:benjamin"
+    },
+    {
+      "playerId": "4764",
+      "name": "Hassan Whiteside",
+      "actualRank": 101,
+      "preseasonRank": 81,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5066",
+      "name": "Tomáš Satoranský",
+      "actualRank": 102,
+      "preseasonRank": 257,
+      "gamesPlayed": null,
+      "teamId": "2019:michael"
+    },
+    {
+      "playerId": "6022",
+      "name": "Shai Gilgeous-Alexander",
+      "actualRank": 103,
+      "preseasonRank": 195,
+      "gamesPlayed": null,
+      "teamId": "2019:najim"
+    },
+    {
+      "playerId": "4895",
+      "name": "Marcus Morris Sr.",
+      "actualRank": 104,
+      "preseasonRank": 223,
+      "gamesPlayed": null,
+      "teamId": "2019:mitchell"
+    },
+    {
+      "playerId": "5344",
+      "name": "Joe Harris",
+      "actualRank": 105,
+      "preseasonRank": 128,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4906",
+      "name": "Reggie Jackson",
+      "actualRank": 106,
+      "preseasonRank": 130,
+      "gamesPlayed": null,
+      "teamId": "2019:jordan"
+    },
+    {
+      "playerId": "4247",
+      "name": "Jeff Green",
+      "actualRank": 107,
+      "preseasonRank": 254,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5159",
+      "name": "K. Caldwell-Pope",
+      "actualRank": 108,
+      "preseasonRank": 93,
+      "gamesPlayed": null,
+      "teamId": "2019:benjamin"
+    },
+    {
+      "playerId": "5054",
+      "name": "Evan Fournier",
+      "actualRank": 109,
+      "preseasonRank": 79,
+      "gamesPlayed": null,
+      "teamId": "2019:benjamin"
+    },
+    {
+      "playerId": "5357",
+      "name": "Jordan Clarkson",
+      "actualRank": 110,
+      "preseasonRank": 217,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5013",
+      "name": "Harrison Barnes",
+      "actualRank": 111,
+      "preseasonRank": 74,
+      "gamesPlayed": null,
+      "teamId": "2019:dadder"
+    },
+    {
+      "playerId": "4724",
+      "name": "Gordon Hayward",
+      "actualRank": 112,
+      "preseasonRank": 58,
+      "gamesPlayed": null,
+      "teamId": "2019:eddie"
+    },
+    {
+      "playerId": "5769",
+      "name": "Lauri Markkanen",
+      "actualRank": 113,
+      "preseasonRank": 89,
+      "gamesPlayed": null,
+      "teamId": "2019:brendan"
+    },
+    {
+      "playerId": "5650",
+      "name": "Malik Beasley",
+      "actualRank": 114,
+      "preseasonRank": 271,
+      "gamesPlayed": null,
+      "teamId": "2019:benjamin"
+    },
+    {
+      "playerId": "4899",
+      "name": "Enes Freedom",
+      "actualRank": 115,
+      "preseasonRank": 91,
+      "gamesPlayed": null,
+      "teamId": "2019:mitchell"
+    },
+    {
+      "playerId": "5726",
+      "name": "Bryn Forbes",
+      "actualRank": 116,
+      "preseasonRank": 269,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4631",
+      "name": "Taj Gibson",
+      "actualRank": 117,
+      "preseasonRank": 161,
+      "gamesPlayed": null,
+      "teamId": "2019:dadder"
+    },
+    {
+      "playerId": "5338",
+      "name": "Bogdan Bogdanović",
+      "actualRank": 118,
+      "preseasonRank": 108,
+      "gamesPlayed": null,
+      "teamId": "2019:brendan"
+    },
+    {
+      "playerId": "5480",
+      "name": "Delon Wright",
+      "actualRank": 119,
+      "preseasonRank": 170,
+      "gamesPlayed": null,
+      "teamId": "2019:mitchell"
+    },
+    {
+      "playerId": "5164",
+      "name": "Kelly Olynyk",
+      "actualRank": 120,
+      "preseasonRank": 154,
+      "gamesPlayed": null,
+      "teamId": "2019:jordan"
+    },
+    {
+      "playerId": "5192",
+      "name": "Mason Plumlee",
+      "actualRank": 121,
+      "preseasonRank": 270,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5157",
+      "name": "Nerlens Noel",
+      "actualRank": 122,
+      "preseasonRank": 229,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5068",
+      "name": "Jae Crowder",
+      "actualRank": 123,
+      "preseasonRank": 164,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4911",
+      "name": "Cory Joseph",
+      "actualRank": 124,
+      "preseasonRank": 200,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5842",
+      "name": "Derrick White",
+      "actualRank": 125,
+      "preseasonRank": 145,
+      "gamesPlayed": null,
+      "teamId": "2019:matt"
+    },
+    {
+      "playerId": "4610",
+      "name": "Ricky Rubio",
+      "actualRank": 126,
+      "preseasonRank": 51,
+      "gamesPlayed": null,
+      "teamId": "2019:mitchell"
+    },
+    {
+      "playerId": "5840",
+      "name": "Kyle Kuzma",
+      "actualRank": 127,
+      "preseasonRank": 80,
+      "gamesPlayed": null,
+      "teamId": "2019:jacob-g"
+    },
+    {
+      "playerId": "5323",
+      "name": "Dario Šarić",
+      "actualRank": 128,
+      "preseasonRank": 87,
+      "gamesPlayed": null,
+      "teamId": "2019:eddie"
+    },
+    {
+      "playerId": "6015",
+      "name": "Jaren Jackson Jr.",
+      "actualRank": 129,
+      "preseasonRank": 88,
+      "gamesPlayed": null,
+      "teamId": "2019:michael"
+    },
+    {
+      "playerId": "5476",
+      "name": "Terry Rozier",
+      "actualRank": 130,
+      "preseasonRank": 115,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5497",
+      "name": "Richaun Holmes",
+      "actualRank": 131,
+      "preseasonRank": 193,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4926",
+      "name": "Dāvis Bertāns",
+      "actualRank": 132,
+      "preseasonRank": 177,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5187",
+      "name": "Dennis Schröder",
+      "actualRank": 133,
+      "preseasonRank": 135,
+      "gamesPlayed": null,
+      "teamId": "2019:brendan"
+    },
+    {
+      "playerId": "5491",
+      "name": "Cedi Osman",
+      "actualRank": 134,
+      "preseasonRank": 179,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5695",
+      "name": "Ryan Arcidiacono",
+      "actualRank": 135,
+      "preseasonRank": 274,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5490",
+      "name": "Kevon Looney",
+      "actualRank": 136,
+      "preseasonRank": 272,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6023",
+      "name": "Miles Bridges",
+      "actualRank": 137,
+      "preseasonRank": 275,
+      "gamesPlayed": null,
+      "teamId": "2019:jacob-g"
+    },
+    {
+      "playerId": "4660",
+      "name": "Patty Mills",
+      "actualRank": 138,
+      "preseasonRank": 175,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5727",
+      "name": "Fred VanVleet",
+      "actualRank": 139,
+      "preseasonRank": 103,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5652",
+      "name": "DeAndre' Bembry",
+      "actualRank": 140,
+      "preseasonRank": 276,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5892",
+      "name": "Maxi Kleber",
+      "actualRank": 141,
+      "preseasonRank": 253,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5292",
+      "name": "Andrew Wiggins",
+      "actualRank": 142,
+      "preseasonRank": 99,
+      "gamesPlayed": null,
+      "teamId": "2019:eddie"
+    },
+    {
+      "playerId": "5320",
+      "name": "Noah Vonleh",
+      "actualRank": 143,
+      "preseasonRank": 273,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "3826",
+      "name": "Andre Iguodala",
+      "actualRank": 144,
+      "preseasonRank": 247,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4469",
+      "name": "Eric Gordon",
+      "actualRank": 145,
+      "preseasonRank": 100,
+      "gamesPlayed": null,
+      "teamId": "2019:jordan"
+    },
+    {
+      "playerId": "5693",
+      "name": "Dorian Finney-Smith",
+      "actualRank": 146,
+      "preseasonRank": 277,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6030",
+      "name": "Kevin Huerter",
+      "actualRank": 147,
+      "preseasonRank": 228,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4905",
+      "name": "Nikola Mirotić",
+      "actualRank": 148,
+      "preseasonRank": 67,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5194",
+      "name": "Tim Hardaway Jr.",
+      "actualRank": 149,
+      "preseasonRank": 69,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5349",
+      "name": "Spencer Dinwiddie",
+      "actualRank": 150,
+      "preseasonRank": 129,
+      "gamesPlayed": null,
+      "teamId": "2019:michael"
+    },
+    {
+      "playerId": "4886",
+      "name": "Jonas Valančiūnas",
+      "actualRank": 151,
+      "preseasonRank": 76,
+      "gamesPlayed": null,
+      "teamId": "2019:mitchell"
+    },
+    {
+      "playerId": "5334",
+      "name": "Rodney Hood",
+      "actualRank": 152,
+      "preseasonRank": 197,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5484",
+      "name": "Tyus Jones",
+      "actualRank": 153,
+      "preseasonRank": 171,
+      "gamesPlayed": null,
+      "teamId": "2019:dadder"
+    },
+    {
+      "playerId": "5325",
+      "name": "T.J. Warren",
+      "actualRank": 154,
+      "preseasonRank": 168,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5602",
+      "name": "Jaylen Brown",
+      "actualRank": 155,
+      "preseasonRank": 123,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5253",
+      "name": "Robert Covington",
+      "actualRank": 156,
+      "preseasonRank": 52,
+      "gamesPlayed": null,
+      "teamId": "2019:brendan"
+    },
+    {
+      "playerId": "5102",
+      "name": "Kent Bazemore",
+      "actualRank": 157,
+      "preseasonRank": 126,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5021",
+      "name": "Maurice Harkless",
+      "actualRank": 158,
+      "preseasonRank": 189,
+      "gamesPlayed": null,
+      "teamId": "2019:najim"
+    },
+    {
+      "playerId": "5582",
+      "name": "T.J. McConnell",
+      "actualRank": 159,
+      "preseasonRank": 237,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5262",
+      "name": "JaMychal Green",
+      "actualRank": 160,
+      "preseasonRank": 169,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5470",
+      "name": "Justise Winslow",
+      "actualRank": 161,
+      "preseasonRank": 180,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4682",
+      "name": "Garrett Temple",
+      "actualRank": 162,
+      "preseasonRank": 256,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4728",
+      "name": "Ed Davis",
+      "actualRank": 163,
+      "preseasonRank": 238,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5156",
+      "name": "Alex Len",
+      "actualRank": 164,
+      "preseasonRank": 191,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5959",
+      "name": "Marvin Bagley III",
+      "actualRank": 165,
+      "preseasonRank": 137,
+      "gamesPlayed": null,
+      "teamId": "2019:matt"
+    },
+    {
+      "playerId": "3708",
+      "name": "Dwyane Wade",
+      "actualRank": 166,
+      "preseasonRank": 261,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5640",
+      "name": "Jakob Poeltl",
+      "actualRank": 167,
+      "preseasonRank": 138,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5857",
+      "name": "Damyean Dotson",
+      "actualRank": 168,
+      "preseasonRank": 280,
+      "gamesPlayed": null,
+      "teamId": "2019:benjamin"
+    },
+    {
+      "playerId": "5293",
+      "name": "Jabari Parker",
+      "actualRank": 169,
+      "preseasonRank": 112,
+      "gamesPlayed": null,
+      "teamId": "2019:matt"
+    },
+    {
+      "playerId": "4694",
+      "name": "Wesley Matthews",
+      "actualRank": 170,
+      "preseasonRank": 156,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4296",
+      "name": "Marco Belinelli",
+      "actualRank": 171,
+      "preseasonRank": 158,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6037",
+      "name": "Landry Shamet",
+      "actualRank": 172,
+      "preseasonRank": 285,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6019",
+      "name": "Collin Sexton",
+      "actualRank": 173,
+      "preseasonRank": 153,
+      "gamesPlayed": null,
+      "teamId": "2019:michael"
+    },
+    {
+      "playerId": "5191",
+      "name": "Gorgui Dieng",
+      "actualRank": 174,
+      "preseasonRank": 207,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4387",
+      "name": "Derrick Rose",
+      "actualRank": 175,
+      "preseasonRank": 282,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5643",
+      "name": "Taurean Prince",
+      "actualRank": 176,
+      "preseasonRank": 53,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5843",
+      "name": "Josh Hart",
+      "actualRank": 177,
+      "preseasonRank": 125,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5155",
+      "name": "Cody Zeller",
+      "actualRank": 178,
+      "preseasonRank": 279,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5905",
+      "name": "Royce O'Neale",
+      "actualRank": 179,
+      "preseasonRank": 263,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5195",
+      "name": "Reggie Bullock Jr.",
+      "actualRank": 180,
+      "preseasonRank": 163,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4477",
+      "name": "Robin Lopez",
+      "actualRank": 181,
+      "preseasonRank": 252,
+      "gamesPlayed": null,
+      "teamId": "2019:michael"
+    },
+    {
+      "playerId": "5482",
+      "name": "Bobby Portis Jr.",
+      "actualRank": 182,
+      "preseasonRank": 181,
+      "gamesPlayed": null,
+      "teamId": "2019:najim"
+    },
+    {
+      "playerId": "6031",
+      "name": "Josh Okogie",
+      "actualRank": 183,
+      "preseasonRank": 293,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5746",
+      "name": "Shaquille Harrison",
+      "actualRank": 184,
+      "preseasonRank": 286,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "3248",
+      "name": "Vince Carter",
+      "actualRank": 185,
+      "preseasonRank": 278,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5330",
+      "name": "Gary Harris",
+      "actualRank": 186,
+      "preseasonRank": 44,
+      "gamesPlayed": null,
+      "teamId": "2019:brendan"
+    },
+    {
+      "playerId": "5636",
+      "name": "Kris Dunn",
+      "actualRank": 187,
+      "preseasonRank": 73,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5766",
+      "name": "Josh Jackson",
+      "actualRank": 188,
+      "preseasonRank": 144,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5501",
+      "name": "Pat Connaughton",
+      "actualRank": 189,
+      "preseasonRank": 281,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5388",
+      "name": "Langston Galloway",
+      "actualRank": 190,
+      "preseasonRank": 283,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "3944",
+      "name": "Gerald Green",
+      "actualRank": 191,
+      "preseasonRank": 232,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5376",
+      "name": "Tyler Johnson",
+      "actualRank": 192,
+      "preseasonRank": 133,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5663",
+      "name": "Ivica Zubac",
+      "actualRank": 193,
+      "preseasonRank": 290,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5828",
+      "name": "Justin Jackson",
+      "actualRank": 194,
+      "preseasonRank": 259,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5823",
+      "name": "Zach Collins",
+      "actualRank": 195,
+      "preseasonRank": 202,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4898",
+      "name": "Iman Shumpert",
+      "actualRank": 196,
+      "preseasonRank": 295,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5893",
+      "name": "Torrey Craig",
+      "actualRank": 197,
+      "preseasonRank": 294,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5080",
+      "name": "Darius Miller",
+      "actualRank": 198,
+      "preseasonRank": 186,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5153",
+      "name": "Victor Oladipo",
+      "actualRank": 199,
+      "preseasonRank": 11,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4795",
+      "name": "Jeremy Lin",
+      "actualRank": 200,
+      "preseasonRank": 220,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4633",
+      "name": "Wayne Ellington",
+      "actualRank": 201,
+      "preseasonRank": 150,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5341",
+      "name": "Kyle Anderson",
+      "actualRank": 202,
+      "preseasonRank": 71,
+      "gamesPlayed": null,
+      "teamId": "2019:eddie"
+    },
+    {
+      "playerId": "5764",
+      "name": "Lonzo Ball",
+      "actualRank": 203,
+      "preseasonRank": 64,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4644",
+      "name": "Jonas Jerebko",
+      "actualRank": 204,
+      "preseasonRank": 284,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6018",
+      "name": "Wendell Carter Jr.",
+      "actualRank": 205,
+      "preseasonRank": 84,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5664",
+      "name": "Cheick Diallo",
+      "actualRank": 206,
+      "preseasonRank": 241,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5678",
+      "name": "Jake Layman",
+      "actualRank": 207,
+      "preseasonRank": 299,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5467",
+      "name": "Emmanuel Mudiay",
+      "actualRank": 208,
+      "preseasonRank": 291,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4720",
+      "name": "DeMarcus Cousins",
+      "actualRank": 209,
+      "preseasonRank": 172,
+      "gamesPlayed": null,
+      "teamId": "2019:dadder"
+    },
+    {
+      "playerId": "5214",
+      "name": "Mike Muscala",
+      "actualRank": 210,
+      "preseasonRank": 227,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4149",
+      "name": "Rajon Rondo",
+      "actualRank": 211,
+      "preseasonRank": 184,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4488",
+      "name": "George Hill",
+      "actualRank": 212,
+      "preseasonRank": 182,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4893",
+      "name": "Alec Burks",
+      "actualRank": 213,
+      "preseasonRank": 288,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5825",
+      "name": "Luke Kennard",
+      "actualRank": 214,
+      "preseasonRank": 160,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4937",
+      "name": "E'Twaun Moore",
+      "actualRank": 215,
+      "preseasonRank": 149,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4624",
+      "name": "Jeff Teague",
+      "actualRank": 216,
+      "preseasonRank": 61,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5245",
+      "name": "Seth Curry",
+      "actualRank": 217,
+      "preseasonRank": 196,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "3962",
+      "name": "Ersan İlyasova",
+      "actualRank": 218,
+      "preseasonRank": 167,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5880",
+      "name": "Daniel Theis",
+      "actualRank": 219,
+      "preseasonRank": 289,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4894",
+      "name": "Markieff Morris",
+      "actualRank": 220,
+      "preseasonRank": 141,
+      "gamesPlayed": null,
+      "teamId": "2019:brendan"
+    },
+    {
+      "playerId": "4632",
+      "name": "DeMarre Carroll",
+      "actualRank": 221,
+      "preseasonRank": 166,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5190",
+      "name": "Tony Snell",
+      "actualRank": 222,
+      "preseasonRank": 210,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5321",
+      "name": "Elfrid Payton",
+      "actualRank": 223,
+      "preseasonRank": 119,
+      "gamesPlayed": null,
+      "teamId": "2019:jacob-g"
+    },
+    {
+      "playerId": "6044",
+      "name": "Jalen Brunson",
+      "actualRank": 224,
+      "preseasonRank": 305,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "3754",
+      "name": "Kyle Korver",
+      "actualRank": 225,
+      "preseasonRank": 199,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5834",
+      "name": "Terrance Ferguson",
+      "actualRank": 226,
+      "preseasonRank": 298,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5506",
+      "name": "Norman Powell",
+      "actualRank": 227,
+      "preseasonRank": 296,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5008",
+      "name": "Michael Kidd-Gilchrist",
+      "actualRank": 228,
+      "preseasonRank": 250,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5646",
+      "name": "Juancho Hernangómez",
+      "actualRank": 229,
+      "preseasonRank": 302,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6051",
+      "name": "Rodions Kurucs",
+      "actualRank": 230,
+      "preseasonRank": 310,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4750",
+      "name": "Avery Bradley",
+      "actualRank": 231,
+      "preseasonRank": 173,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5824",
+      "name": "Malik Monk",
+      "actualRank": 232,
+      "preseasonRank": 216,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4884",
+      "name": "Tristan Thompson",
+      "actualRank": 233,
+      "preseasonRank": 301,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4717",
+      "name": "Evan Turner",
+      "actualRank": 234,
+      "preseasonRank": 224,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4716",
+      "name": "John Wall",
+      "actualRank": 235,
+      "preseasonRank": 23,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5220",
+      "name": "James Ennis III",
+      "actualRank": 236,
+      "preseasonRank": 292,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5160",
+      "name": "Trey Burke",
+      "actualRank": 237,
+      "preseasonRank": 155,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5747",
+      "name": "Derrick Jones Jr.",
+      "actualRank": 238,
+      "preseasonRank": 317,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5434",
+      "name": "Jahlil Okafor",
+      "actualRank": 239,
+      "preseasonRank": 311,
+      "gamesPlayed": null,
+      "teamId": "2019:najim"
+    },
+    {
+      "playerId": "5322",
+      "name": "Doug McDermott",
+      "actualRank": 240,
+      "preseasonRank": 233,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5077",
+      "name": "Mike Scott",
+      "actualRank": 241,
+      "preseasonRank": 297,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6057",
+      "name": "De'Anthony Melton",
+      "actualRank": 242,
+      "preseasonRank": 316,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5335",
+      "name": "Shabazz Napier",
+      "actualRank": 243,
+      "preseasonRank": 287,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5016",
+      "name": "Austin Rivers",
+      "actualRank": 244,
+      "preseasonRank": 194,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5720",
+      "name": "Yogi Ferrell",
+      "actualRank": 245,
+      "preseasonRank": 234,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5468",
+      "name": "Stanley Johnson",
+      "actualRank": 246,
+      "preseasonRank": 198,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6076",
+      "name": "Kenrich Williams",
+      "actualRank": 247,
+      "preseasonRank": 319,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5903",
+      "name": "Luke Kornet",
+      "actualRank": 248,
+      "preseasonRank": 209,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5836",
+      "name": "OG Anunoby",
+      "actualRank": 249,
+      "preseasonRank": 215,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5270",
+      "name": "Rodney McGruder",
+      "actualRank": 250,
+      "preseasonRank": 315,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5017",
+      "name": "Meyers Leonard",
+      "actualRank": 251,
+      "preseasonRank": 313,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6020",
+      "name": "Kevin Knox II",
+      "actualRank": 252,
+      "preseasonRank": 162,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5601",
+      "name": "Brandon Ingram",
+      "actualRank": 253,
+      "preseasonRank": 83,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5588",
+      "name": "Quinn Cook",
+      "actualRank": 254,
+      "preseasonRank": 304,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5524",
+      "name": "Boban Marjanović",
+      "actualRank": 255,
+      "preseasonRank": 314,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5822",
+      "name": "Dennis Smith Jr.",
+      "actualRank": 256,
+      "preseasonRank": 95,
+      "gamesPlayed": null,
+      "teamId": "2019:michael"
+    },
+    {
+      "playerId": "4564",
+      "name": "Tyreke Evans",
+      "actualRank": 257,
+      "preseasonRank": 98,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4621",
+      "name": "James Johnson",
+      "actualRank": 258,
+      "preseasonRank": 107,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4771",
+      "name": "Lance Stephenson",
+      "actualRank": 259,
+      "preseasonRank": 205,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5465",
+      "name": "Mario Hezonja",
+      "actualRank": 260,
+      "preseasonRank": 110,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6053",
+      "name": "Bruce Brown",
+      "actualRank": 261,
+      "preseasonRank": 326,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6140",
+      "name": "Allonzo Trier",
+      "actualRank": 262,
+      "preseasonRank": 327,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5414",
+      "name": "Tim Frazier",
+      "actualRank": 263,
+      "preseasonRank": 309,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4800",
+      "name": "Ish Smith",
+      "actualRank": 264,
+      "preseasonRank": 206,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5651",
+      "name": "Caris LeVert",
+      "actualRank": 265,
+      "preseasonRank": 134,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "3407",
+      "name": "Jamal Crawford",
+      "actualRank": 266,
+      "preseasonRank": 246,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5641",
+      "name": "Thon Maker",
+      "actualRank": 267,
+      "preseasonRank": 303,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4301",
+      "name": "Wilson Chandler",
+      "actualRank": 268,
+      "preseasonRank": 203,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5150",
+      "name": "Aron Baynes",
+      "actualRank": 269,
+      "preseasonRank": 300,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "3821",
+      "name": "Shaun Livingston",
+      "actualRank": 270,
+      "preseasonRank": 306,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6017",
+      "name": "Mo Bamba",
+      "actualRank": 271,
+      "preseasonRank": 122,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5728",
+      "name": "Danuel House Jr.",
+      "actualRank": 272,
+      "preseasonRank": 325,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5472",
+      "name": "Trey Lyles",
+      "actualRank": 273,
+      "preseasonRank": 165,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4300",
+      "name": "Jared Dudley",
+      "actualRank": 274,
+      "preseasonRank": 323,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5074",
+      "name": "Will Barton",
+      "actualRank": 275,
+      "preseasonRank": 49,
+      "gamesPlayed": null,
+      "teamId": "2019:matt"
+    },
+    {
+      "playerId": "5654",
+      "name": "Ante Žižić",
+      "actualRank": 276,
+      "preseasonRank": 243,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5846",
+      "name": "Wes Iwundu",
+      "actualRank": 277,
+      "preseasonRank": 320,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5762",
+      "name": "David Nwaba",
+      "actualRank": 278,
+      "preseasonRank": 208,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5859",
+      "name": "Sterling Brown",
+      "actualRank": 279,
+      "preseasonRank": 321,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5851",
+      "name": "Jordan Bell",
+      "actualRank": 280,
+      "preseasonRank": 109,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4904",
+      "name": "Kenneth Faried",
+      "actualRank": 281,
+      "preseasonRank": 329,
+      "gamesPlayed": null,
+      "teamId": "2019:dadder"
+    },
+    {
+      "playerId": "4638",
+      "name": "Dante Cunningham",
+      "actualRank": 282,
+      "preseasonRank": 308,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4371",
+      "name": "Anthony Tolliver",
+      "actualRank": 283,
+      "preseasonRank": 230,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5010",
+      "name": "Dion Waiters",
+      "actualRank": 284,
+      "preseasonRank": 245,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4287",
+      "name": "Joakim Noah",
+      "actualRank": 285,
+      "preseasonRank": 340,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5331",
+      "name": "Bruno Caboclo",
+      "actualRank": 286,
+      "preseasonRank": 335,
+      "gamesPlayed": null,
+      "teamId": "2019:jacob-g"
+    },
+    {
+      "playerId": "3822",
+      "name": "Devin Harris",
+      "actualRank": 287,
+      "preseasonRank": 307,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5495",
+      "name": "Willy Hernangómez",
+      "actualRank": 288,
+      "preseasonRank": 204,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4507",
+      "name": "Goran Dragić",
+      "actualRank": 289,
+      "preseasonRank": 57,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6041",
+      "name": "Omari Spellman",
+      "actualRank": 290,
+      "preseasonRank": 339,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4916",
+      "name": "Shelvin Mack",
+      "actualRank": 291,
+      "preseasonRank": 255,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "3745",
+      "name": "Zaza Pachulia",
+      "actualRank": 292,
+      "preseasonRank": 312,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5479",
+      "name": "Jerian Grant",
+      "actualRank": 293,
+      "preseasonRank": 187,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5390",
+      "name": "Khem Birch",
+      "actualRank": 294,
+      "preseasonRank": 328,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5904",
+      "name": "Alfonzo McKinnie",
+      "actualRank": 295,
+      "preseasonRank": 345,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5319",
+      "name": "Nik Stauskas",
+      "actualRank": 296,
+      "preseasonRank": 330,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5483",
+      "name": "Rondae Hollis-Jefferson",
+      "actualRank": 297,
+      "preseasonRank": 111,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4141",
+      "name": "Thabo Sefolosha",
+      "actualRank": 298,
+      "preseasonRank": 322,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4391",
+      "name": "Kevin Love",
+      "actualRank": 299,
+      "preseasonRank": 35,
+      "gamesPlayed": null,
+      "teamId": "2019:michael"
+    },
+    {
+      "playerId": "5708",
+      "name": "Wayne Selden Jr.",
+      "actualRank": 300,
+      "preseasonRank": 332,
+      "gamesPlayed": null,
+      "teamId": null
+    }
+  ],
+  "activity": {
+    "2019:mitchell": {
+      "moves": 27,
+      "trades": 1
+    },
+    "2019:dadder": {
+      "moves": 40,
+      "trades": 1
+    },
+    "2019:michael": {
+      "moves": 18,
+      "trades": 1
+    },
+    "2019:matt": {
+      "moves": 56,
+      "trades": 1
+    },
+    "2019:jordan": {
+      "moves": 42,
+      "trades": 1
+    },
+    "2019:brendan": {
+      "moves": 4,
+      "trades": 1
+    },
+    "2019:jacob-g": {
+      "moves": 36,
+      "trades": 6
+    },
+    "2019:najim": {
+      "moves": 73,
+      "trades": 4
+    },
+    "2019:benjamin": {
+      "moves": 18,
+      "trades": 0
+    },
+    "2019:eddie": {
+      "moves": 10,
+      "trades": 2
+    }
+  },
+  "trades": [
+    {
+      "date": "2019-02-08",
+      "status": "vetoed",
+      "sides": [
+        {
+          "teamId": "2019:jordan",
+          "receives": [
+            "Jamal Murray",
+            "Zach LaVine",
+            "Harrison Barnes",
+            "DeMarcus Cousins"
+          ]
+        },
+        {
+          "teamId": "2019:dadder",
+          "receives": [
+            "Ben Simmons",
+            "Pascal Siakam",
+            "Jayson Tatum"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2019-02-06",
+      "status": "vetoed",
+      "sides": [
+        {
+          "teamId": "2019:jordan",
+          "receives": [
+            "Zach LaVine",
+            "Jamal Murray",
+            "Harrison Barnes",
+            "DeMarcus Cousins",
+            "Steven Adams"
+          ]
+        },
+        {
+          "teamId": "2019:dadder",
+          "receives": [
+            "Ben Simmons",
+            "Pascal Siakam",
+            "Deandre Ayton",
+            "Jayson Tatum"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2019-01-31",
+      "status": "completed",
+      "sides": [
+        {
+          "teamId": "2019:dadder",
+          "receives": [
+            "DeAndre Jordan"
+          ]
+        },
+        {
+          "teamId": "2019:jordan",
+          "receives": [
+            "Jayson Tatum"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2019-01-12",
+      "status": "vetoed",
+      "sides": [
+        {
+          "teamId": "2019:jacob-g",
+          "receives": [
+            "DeMarcus Cousins"
+          ]
+        },
+        {
+          "teamId": "2019:dadder",
+          "receives": [
+            "Al Horford"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2019-01-02",
+      "status": "completed",
+      "sides": [
+        {
+          "teamId": "2019:michael",
+          "receives": [
+            "Kemba Walker",
+            "Kevin Love",
+            "Blake Griffin"
+          ]
+        },
+        {
+          "teamId": "2019:jacob-g",
+          "receives": [
+            "Joe Ingles",
+            "Jimmy Butler III",
+            "Giannis Antetokounmpo"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2019-01-01",
+      "status": "completed",
+      "sides": [
+        {
+          "teamId": "2019:jacob-g",
+          "receives": [
+            "Jeff Teague",
+            "Enes Freedom"
+          ]
+        },
+        {
+          "teamId": "2019:matt",
+          "receives": [
+            "T.J. Warren",
+            "Dennis Schröder"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2018-12-30",
+      "status": "completed",
+      "sides": [
+        {
+          "teamId": "2019:eddie",
+          "receives": [
+            "Larry Nance Jr.",
+            "Kyle Anderson",
+            "DeMar DeRozan"
+          ]
+        },
+        {
+          "teamId": "2019:najim",
+          "receives": [
+            "Nikola Jokić",
+            "Serge Ibaka",
+            "Lou Williams"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2018-12-26",
+      "status": "vetoed",
+      "sides": [
+        {
+          "teamId": "2019:eddie",
+          "receives": [
+            "Kyle Anderson",
+            "Larry Nance Jr.",
+            "DeMar DeRozan"
+          ]
+        },
+        {
+          "teamId": "2019:najim",
+          "receives": [
+            "Nikola Jokić",
+            "Serge Ibaka",
+            "Lou Williams"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2018-12-22",
+      "status": "completed",
+      "sides": [
+        {
+          "teamId": "2019:eddie",
+          "receives": [
+            "Andrew Wiggins",
+            "Danilo Gallinari"
+          ]
+        },
+        {
+          "teamId": "2019:najim",
+          "receives": [
+            "Josh Richardson"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2018-12-01",
+      "status": "completed",
+      "sides": [
+        {
+          "teamId": "2019:mitchell",
+          "receives": [
+            "Kent Bazemore",
+            "Marcus Morris Sr.",
+            "Bradley Beal",
+            "Jonas Valančiūnas"
+          ]
+        },
+        {
+          "teamId": "2019:jacob-g",
+          "receives": [
+            "Trevor Ariza",
+            "T.J. Warren",
+            "Al Horford",
+            "Hassan Whiteside"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2018-11-28",
+      "status": "completed",
+      "sides": [
+        {
+          "teamId": "2019:najim",
+          "receives": [
+            "Joel Embiid",
+            "Dwight Howard",
+            "Eric Bledsoe"
+          ]
+        },
+        {
+          "teamId": "2019:jacob-g",
+          "receives": [
+            "John Wall",
+            "Blake Griffin"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2018-11-22",
+      "status": "completed",
+      "sides": [
+        {
+          "teamId": "2019:jacob-g",
+          "receives": [
+            "Kyle Kuzma"
+          ]
+        },
+        {
+          "teamId": "2019:najim",
+          "receives": [
+            "Andrew Wiggins"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2018-11-02",
+      "status": "completed",
+      "sides": [
+        {
+          "teamId": "2019:jacob-g",
+          "receives": [
+            "James Harden",
+            "Kemba Walker"
+          ]
+        },
+        {
+          "teamId": "2019:brendan",
+          "receives": [
+            "Stephen Curry",
+            "D'Angelo Russell"
+          ]
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source": "https://basketball.fantasysports.yahoo.com/2018/nba/127746",
+    "categoryRecords": {
+      "2019:matt": "97-80-3",
+      "2019:jacob-g": "93-85-2",
+      "2019:najim": "94-83-3",
+      "2019:mitchell": "108-67-5",
+      "2019:jordan": "87-92-1",
+      "2019:dadder": "93-85-2",
+      "2019:eddie": "68-108-4",
+      "2019:brendan": "81-99-0",
+      "2019:benjamin": "87-93-0",
+      "2019:michael": "80-96-4"
+    },
+    "playoffSeeds": [
+      "2019:mitchell",
+      "2019:matt",
+      "2019:najim",
+      "2019:jacob-g",
+      "2019:dadder",
+      "2019:jordan"
+    ],
+    "champion": "2019:matt"
+  }
+}

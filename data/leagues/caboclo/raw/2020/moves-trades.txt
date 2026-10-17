@@ -1,0 +1,26 @@
+# managers page: team | moves | trades
+Alex Honnold|64|9
+BIG papa|62|2
+Jimmy Buckets|45|1
+Joe|70|0
+Masai Jr|72|2
+Scrap Heap|63|4
+Skyfuckers|31|2
+SSJ3 Lebron|57|0
+Sunday Strangler|49|1
+The Twin Towers 2.0|74|3
+# trades: date | status | team receives: players
+2021-03-28|completed|BIG papa: Ben Simmons ;; The Twin Towers 2.0: Deandre Ayton
+2021-03-28|completed|Scrap Heap: Kyle Anderson, Kemba Walker, Gordon Hayward ;; Masai Jr: Chris Boucher, Paul George
+2021-03-28|completed|Sunday Strangler: Bradley Beal, John Collins, Kristaps Porziņģis, Zach LaVine ;; Alex Honnold: Devin Booker, Jayson Tatum, Clint Capela, OG Anunoby, Jerami Grant
+2021-03-25|completed|Alex Honnold: Bradley Beal, Will Barton ;; The Twin Towers 2.0: Jaylen Brown, LeBron James
+2021-02-26|completed|Jimmy Buckets: John Wall, Chris Paul, Myles Turner ;; Alex Honnold: Lonzo Ball, Kyle Lowry, Anthony Davis
+2021-02-18|completed|Alex Honnold: Myles Turner ;; Scrap Heap: Zion Williamson
+2021-02-03|completed|Scrap Heap: Harrison Barnes, Evan Fournier ;; BIG papa: Michael Porter Jr.
+2021-01-30|completed|The Twin Towers 2.0: Ben Simmons, Rudy Gobert ;; Alex Honnold: Zach LaVine, John Collins
+2021-01-29|completed|Scrap Heap: Chris Boucher, Myles Turner ;; Alex Honnold: Jaylen Brown, John Wall
+2021-01-27|vetoed|Scrap Heap: De'Aaron Fox, Robert Covington ;; SSJ3 Lebron: Andrew Wiggins, Michael Porter Jr.
+2021-01-25|vetoed|Scrap Heap: Giannis Antetokounmpo ;; SSJ3 Lebron: Luka Dončić
+2021-01-20|completed|Alex Honnold: D'Angelo Russell ;; Skyfuckers: Richaun Holmes
+2021-01-13|completed|Skyfuckers: Trae Young, Tyler Herro ;; Alex Honnold: Chris Paul, Rudy Gobert
+2021-01-09|completed|Alex Honnold: Zion Williamson ;; Masai Jr: Pascal Siakam

@@ -1,0 +1,9 @@
+leagueName|Bowmanville Mandem
+scoring|categories
+categories|FG%,FT%,3PM,PTS,REB,AST,STL,BLK,TO
+teams|10
+playoffTeams|6 (seeds 1-2 bye in week 18)
+playoffWeeks|18,19,20
+playoffTiebreak|higher seed
+draft|Live Standard Draft (snake), 2020-12-21 (COVID-delayed season)
+leagueId|2093

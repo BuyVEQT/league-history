@@ -1,0 +1,8 @@
+# week|stage|higher seed idx|lower seed idx|cats higher|cats lower   (championship bracket only)
+# 6-team bracket: seeds 1 (Masai Jr) and 2 (SSJ3 Lebron) had byes in week 19. 5th-place game not stored.
+19|quarterfinal|2|5|7|2
+19|quarterfinal|0|9|6|3
+20|semifinal|3|2|6|3
+20|semifinal|7|0|3|6
+21|final|3|0|2|7
+21|third_place|7|2|5|3

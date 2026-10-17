@@ -1,0 +1,25 @@
+# managers page: team | moves | trades
+35.2 PPG|27|1
+Daddy Dong|40|1
+Jordan Over LeBum|18|1
+Klaw Leonard|56|1
+Knicks 2.0|42|1
+notoriousBMG|4|1
+Skip|36|6
+Suck my Doncic|73|4
+Underdog|18|0
+Vince Carter's Nuts|10|2
+# trades: date | status | team receives: players
+2019-02-08|vetoed|Knicks 2.0: Jamal Murray, Zach LaVine, Harrison Barnes, DeMarcus Cousins ;; Daddy Dong: Ben Simmons, Pascal Siakam, Jayson Tatum
+2019-02-06|vetoed|Knicks 2.0: Zach LaVine, Jamal Murray, Harrison Barnes, DeMarcus Cousins, Steven Adams ;; Daddy Dong: Ben Simmons, Pascal Siakam, Deandre Ayton, Jayson Tatum
+2019-01-31|completed|Daddy Dong: DeAndre Jordan ;; Knicks 2.0: Jayson Tatum
+2019-01-12|vetoed|Skip: DeMarcus Cousins ;; Daddy Dong: Al Horford
+2019-01-02|completed|Jordan Over LeBum: Kemba Walker, Kevin Love, Blake Griffin ;; Skip: Joe Ingles, Jimmy Butler III, Giannis Antetokounmpo
+2019-01-01|completed|Skip: Jeff Teague, Enes Freedom ;; Klaw Leonard: T.J. Warren, Dennis Schröder
+2018-12-30|completed|Vince Carter's Nuts: Larry Nance Jr., Kyle Anderson, DeMar DeRozan ;; Suck my Doncic: Nikola Jokić, Serge Ibaka, Lou Williams
+2018-12-26|vetoed|Vince Carter's Nuts: Kyle Anderson, Larry Nance Jr., DeMar DeRozan ;; Suck my Doncic: Nikola Jokić, Serge Ibaka, Lou Williams
+2018-12-22|completed|Vince Carter's Nuts: Andrew Wiggins, Danilo Gallinari ;; Suck my Doncic: Josh Richardson
+2018-12-01|completed|35.2 PPG: Kent Bazemore, Marcus Morris Sr., Bradley Beal, Jonas Valančiūnas ;; Skip: Trevor Ariza, T.J. Warren, Al Horford, Hassan Whiteside
+2018-11-28|completed|Suck my Doncic: Joel Embiid, Dwight Howard, Eric Bledsoe ;; Skip: John Wall, Blake Griffin
+2018-11-22|completed|Skip: Kyle Kuzma ;; Suck my Doncic: Andrew Wiggins
+2018-11-02|completed|Skip: James Harden, Kemba Walker ;; notoriousBMG: Stephen Curry, D'Angelo Russell

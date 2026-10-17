@@ -1,0 +1,19 @@
+# managers page: team | moves | trades
+After all that🤪|43|1
+Ain't No Jokic|62|0
+Anteaters|56|0
+Baby-Faced Assassin|81|0
+Big Papa|72|1
+Day to Davis|66|2
+Dončić Corleone|64|2
+Mad Maxey|77|0
+Melo and the Silver Seekers|41|2
+Sunday Strangler|48|0
+Sweet Home Wembanyama|23|0
+Vagiannis|48|0
+# trades (transactions page, trade filter). date | status | team receives: players
+2026-03-04|vetoed|Anteaters: Kevin Durant ;; Big Papa: Russell Westbrook
+2026-01-22|completed|Day to Davis: Peyton Watson ;; After all that🤪: Jalen Williams
+2026-01-07|completed|Dončić Corleone: Ja Morant ;; Big Papa: Mark Williams
+2025-12-31|completed|Melo and the Silver Seekers: Amen Thompson, LaMelo Ball, Kristaps Porziņģis, Kon Knueppel ;; Dončić Corleone: Devin Booker, Cason Wallace, Andrew Wiggins, Payton Pritchard, Joel Embiid
+2025-12-31|completed|Melo and the Silver Seekers: Myles Turner ;; Day to Davis: Dillon Brooks

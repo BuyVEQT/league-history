@@ -1,0 +1,13 @@
+# idx|team name (as on the Managers page)|manager id
+0|BACK to BACK|dadder
+1|Ball Don’t Lie|najim
+2|Glass Cannon|matt
+3|Nikosus Chrokic|dylan
+4|P Giddey|jake
+5|Slim Shai'dy|benjamin
+6|Sunday Strangler|mitchell
+7|The Real Splash Bros|michael
+8|Trigga Trae|eddie
+9|Two Time 🥈|jacob-g
+10|We did it WE DID ITTTTTTTTTTTT|jacob-v
+11|WemBangYaMama|jordan

@@ -1,0 +1,8 @@
+scoring|categories
+categories|FG%,FT%,3PM,PTS,REB,AST,STL,BLK,TO
+teams|12
+playoffTeams|8
+playoffWeeks|18,19,20
+playoffTiebreak|higher seed
+draft|Live Standard Draft (snake), 2024-10-19
+leagueId|5173

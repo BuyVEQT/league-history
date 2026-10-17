@@ -1,0 +1,13 @@
+# idx|team name (as on the Managers page)|manager id
+0|BIG papa|dadder
+1|Daddy Doncic|jake
+2|Day to Day|dylan
+3|Glass Cannon|matt
+4|jacob's Ingeneous Team|jacob-v
+5|James James|benjamin
+6|King & Giannis|najim
+7|Lamelo Boled Ankle|jacob-g
+8|Sunday Strangler|mitchell
+9|Tatum or Leave 'Em|eddie
+10|Towns Syndrome|michael
+11|Trae Way|jordan

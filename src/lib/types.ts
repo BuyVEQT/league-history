@@ -22,7 +22,7 @@ export interface Team {
   name: string;
 }
 
-export type Stage = "regular" | "semifinal" | "final" | "third_place";
+export type Stage = "regular" | "quarterfinal" | "semifinal" | "final" | "third_place";
 
 /** One head-to-head weekly matchup in a categories league. */
 export interface Matchup {
@@ -38,12 +38,83 @@ export interface Matchup {
   tiebreakWinnerTeamId?: TeamId;
 }
 
+/**
+ * How regular-season standings are ranked:
+ * - "categories": Yahoo "Head-to-Head - Categories"; every category counts, ranked by category win %.
+ * - "most_categories": one win/loss/tie per weekly matchup, ranked by matchup win %.
+ */
+export type ScoringType = "categories" | "most_categories";
+
 export interface Season {
   year: number; // season end year (2025 = the 2024-25 season)
   label: string;
+  /** Defaults to "most_categories" when absent. */
+  scoring?: ScoringType;
   categories: string[];
   teams: Team[];
   matchups: Matchup[];
+  /**
+   * Official final placement from the source, when known. Leagues with
+   * consolation brackets decide 5th place and below in games we may not store.
+   */
+  finalRanks?: Record<TeamId, number>;
+  /**
+   * The source's playoff seeding, best first. Only used to break exact
+   * standings ties our data cannot resolve (identical records and head-to-head).
+   */
+  sourceSeedOrder?: TeamId[];
+  /** Optional extras, present when the source provides them. */
+  draft?: DraftPick[];
+  players?: PlayerSeason[];
+  /** Season totals per team from the source's managers page. */
+  activity?: Record<TeamId, { moves: number; trades: number }>;
+  trades?: Trade[];
+}
+
+export interface DraftPick {
+  round: number;
+  /** Pick within the round. */
+  pick: number;
+  overall: number;
+  teamId: TeamId;
+  playerId: string;
+  playerName: string;
+}
+
+/** Category totals for a player's whole NBA season. */
+export interface PlayerStats {
+  fgm: number;
+  fga: number;
+  ftm: number;
+  fta: number;
+  threes: number;
+  pts: number;
+  reb: number;
+  ast: number;
+  stl: number;
+  blk: number;
+  to: number;
+}
+
+/**
+ * A player's season by the source's own ranking. `teamId` is who rostered them
+ * at season end (null = free agent). Stats are full NBA-season totals, not what
+ * that fantasy team actually received.
+ */
+export interface PlayerSeason {
+  playerId: string;
+  name: string;
+  actualRank: number;
+  preseasonRank: number | null;
+  gamesPlayed: number | null;
+  teamId: TeamId | null;
+  stats?: PlayerStats;
+}
+
+export interface Trade {
+  date: string; // YYYY-MM-DD
+  status: "completed" | "vetoed";
+  sides: { teamId: TeamId; receives: string[] }[];
 }
 
 export interface League {

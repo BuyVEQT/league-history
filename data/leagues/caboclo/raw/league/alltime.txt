@@ -1,0 +1,22 @@
+# Standings > All Time tab (captured from 2025 page). yahooYear | 1st | 2nd | 3rd | Matt's finish
+2025|Baby-Faced Assassin|Mad Maxey|Ain't No Jokic|2nd
+2024|WemBangYaMama|Two Time 🥈|We did it WE DID ITTTTTTTTTTTT|9th
+2023|Jimmy BUMtler 👑|Daddy Doncic|Sunday Strangler|1st
+2022|King & Giannis|James James|Tatum or Leave 'Em|6th
+2021|BIG papa|Masai Jr|SSJ3 Lebron|3rd
+2020|BIG papa|SSJ3 Lebron|Joe|2nd
+2018|Klaw Leonard|Skip|Suck my Doncic|1st
+# settings 2025: Live Standard Draft (snake), Oct 9 2025, no keepers, no draft-pick trades, trade review: commissioner, 4 adds/week, 8-team playoffs wk 20-22, higher seed wins ties, reseeding yes
+# Ratings & Levels (captured 2026-10-17, Yahoo manager rating as of then): rank|manager|team|rating|level
+1|Matt|Mad Maxey|962|Diamond
+2|Najim|Baby-Faced Assassin|928|Diamond
+3|Dylan|Vagiannis|823|Platinum
+4|Jake|Anteaters|819|Platinum
+5|Eddie|Ain't No Jokic|808|Platinum
+6|michael|Dončić Corleone|772|Gold
+7|jacob|After all that🤪|768|Gold
+8|Mitchell|Sunday Strangler|725|Gold
+9|dadder|Big Papa|675|Silver
+10|Jacob|Melo and the Silver Seekers|660|Silver
+11|Benjamin|Sweet Home Wembanyama|646|Silver
+12|Jordan|Day to Davis|606|Silver
