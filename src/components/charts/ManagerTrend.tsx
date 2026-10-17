@@ -68,6 +68,7 @@ export function ManagerTrend({ managers, finishRows, winPctRows, initialSelected
           series={series}
           reversed
           domain={[1, teamCount]}
+          yTicks={Array.from({ length: Math.ceil(teamCount / 2) }, (_, i) => 1 + i * 2)}
           valueLabel="Final finish"
           formatValue={(v) => String(v)}
         />

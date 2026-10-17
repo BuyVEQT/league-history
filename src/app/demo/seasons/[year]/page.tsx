@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ManagerLink, PageTitle, Section, StatCard, TableWrap, td, th } from "@/components/ui";
+import { ManagerLink, PageTitle, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
 import { formatPct, formatRecord } from "@/lib/analytics/format";
 import { seasonRecords } from "@/lib/analytics/overview";
 import { matchupWinner, seasonOutcome, teamIndex } from "@/lib/analytics/season";
@@ -86,7 +86,7 @@ export default async function SeasonPage(props: PageProps<"/demo/seasons/[year]"
                 const final = outcome.finalRank.get(r.teamId)!;
                 const inPlayoffs = outcome.playoffTeamIds.has(r.teamId);
                 return (
-                  <tr key={r.teamId}>
+                  <tr key={r.teamId} className={tr}>
                     <td className={td}>{r.rank}</td>
                     <td className={td}>{r.teamName}</td>
                     <td className={td}><ManagerLink id={r.managerId} name={managerName(r.managerId)} /></td>
@@ -125,7 +125,7 @@ export default async function SeasonPage(props: PageProps<"/demo/seasons/[year]"
                   const away = teams.get(m.awayTeamId)!;
                   const winner = teams.get(matchupWinner(m)!)!;
                   return (
-                    <tr key={`${m.stage}-${m.homeTeamId}`}>
+                    <tr key={`${m.stage}-${m.homeTeamId}`} className={tr}>
                       <td className={td}>{STAGE_LABEL[m.stage]}</td>
                       <td className={td}>{home.name} vs {away.name}</td>
                       <td className={`${td} tabular-nums`}>

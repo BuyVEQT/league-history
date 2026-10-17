@@ -3,13 +3,14 @@
 /* Design tokens — dark-first. Change the look here, not in components. */
 :root {
   color-scheme: dark;
-  --background: #0b0e14;
-  --foreground: #e6e9ef;
-  --surface: #131822;
-  --surface-2: #1a2130;
-  --border: #262e3f;
-  --muted: #8b95a8;
+  --background: #090c12;
+  --foreground: #e8ebf1;
+  --surface: #11161f;
+  --surface-2: #18202c;
+  --border: #222b3a;
+  --muted: #8a94a7;
   --accent: #f59e0b;
+  --accent-2: #fb923c;
   --positive: #34d399;
   --negative: #f87171;
 }
@@ -22,6 +23,7 @@
   --color-border: var(--border);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
   --color-positive: var(--positive);
   --color-negative: var(--negative);
   --font-sans: var(--font-geist-sans);
@@ -29,7 +31,11 @@
 }
 
 body {
-  background: var(--background);
+  /* A single soft glow behind the top of the page; everything else stays flat. */
+  background:
+    radial-gradient(1100px 520px at 15% -12%, rgb(245 158 11 / 0.07), transparent 60%),
+    var(--background);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
 }

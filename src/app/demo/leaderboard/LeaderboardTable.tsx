@@ -101,7 +101,7 @@ export function LeaderboardTable({ league }: { league: League }) {
         )}
       </div>
 
-      <div className="overflow-x-auto rounded-lg border border-border bg-surface">
+      <div className="overflow-x-auto rounded-xl border border-border bg-surface/80 shadow-[inset_0_1px_0_0_rgb(255_255_255/0.03)]">
         <table className="w-full text-sm">
           <caption className="sr-only">All-time manager leaderboard</caption>
           <thead>
@@ -130,7 +130,7 @@ export function LeaderboardTable({ league }: { league: League }) {
           </thead>
           <tbody className="divide-y divide-border">
             {rows.map((r) => (
-              <tr key={r.managerId}>
+              <tr key={r.managerId} className="transition-colors hover:bg-surface-2/60">
                 <td className="whitespace-nowrap px-3 py-2">
                   <Link href={`/demo/managers/${r.managerId}`} className="font-medium hover:text-accent hover:underline">
                     {r.name}

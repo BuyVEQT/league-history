@@ -60,7 +60,7 @@ export function RivalryExplorer({ league, defaultA, defaultB }: { league: League
         </div>
       ) : (
         <>
-          <div className="rounded-lg border border-border bg-surface p-4">
+          <div className="rounded-xl border border-border bg-surface/80 shadow-[inset_0_1px_0_0_rgb(255_255_255/0.03)] p-4">
             <div className="flex items-baseline justify-between gap-4">
               <div>
                 <div className="text-3xl font-semibold tabular-nums">{h.aWins}</div>
@@ -95,7 +95,7 @@ export function RivalryExplorer({ league, defaultA, defaultB }: { league: League
 
           <div>
             <h2 className="mb-2 text-lg font-medium">By season</h2>
-            <div className="overflow-x-auto rounded-lg border border-border bg-surface">
+            <div className="overflow-x-auto rounded-xl border border-border bg-surface/80 shadow-[inset_0_1px_0_0_rgb(255_255_255/0.03)]">
               <table className="w-full text-sm">
                 <caption className="sr-only">Season-by-season head-to-head</caption>
                 <thead>
@@ -108,7 +108,7 @@ export function RivalryExplorer({ league, defaultA, defaultB }: { league: League
                 </thead>
                 <tbody className="divide-y divide-border">
                   {h.byYear.map((y) => (
-                    <tr key={y.year}>
+                    <tr key={y.year} className="transition-colors hover:bg-surface-2/60">
                       <td className="px-3 py-2">{y.year - 1}-{String(y.year).slice(2)}</td>
                       <td className="px-3 py-2 tabular-nums">{y.aWins}</td>
                       <td className="px-3 py-2 tabular-nums">{y.bWins}</td>
@@ -122,7 +122,7 @@ export function RivalryExplorer({ league, defaultA, defaultB }: { league: League
 
           <details>
             <summary className="cursor-pointer text-sm text-accent">All {total} matchups</summary>
-            <div className="mt-2 overflow-x-auto rounded-lg border border-border bg-surface">
+            <div className="mt-2 overflow-x-auto rounded-xl border border-border bg-surface/80 shadow-[inset_0_1px_0_0_rgb(255_255_255/0.03)]">
               <table className="w-full text-sm">
                 <caption className="sr-only">Every head-to-head matchup</caption>
                 <thead>
@@ -135,7 +135,7 @@ export function RivalryExplorer({ league, defaultA, defaultB }: { league: League
                 </thead>
                 <tbody className="divide-y divide-border">
                   {[...h.games].reverse().map((g, i) => (
-                    <tr key={i}>
+                    <tr key={i} className="transition-colors hover:bg-surface-2/60">
                       <td className="whitespace-nowrap px-3 py-2">{g.year - 1}-{String(g.year).slice(2)}</td>
                       <td className="whitespace-nowrap px-3 py-2">{g.stage === "regular" ? `Week ${g.week}` : STAGE_LABEL[g.stage]}</td>
                       <td className="whitespace-nowrap px-3 py-2 tabular-nums">{g.aCats}-{g.bCats}{g.tiedCats ? `-${g.tiedCats}` : ""}</td>
@@ -154,7 +154,7 @@ export function RivalryExplorer({ league, defaultA, defaultB }: { league: League
 
 function Mini({ label, value, note }: { label: string; value: string; note?: string }) {
   return (
-    <div className="rounded-lg border border-border bg-surface p-4">
+    <div className="rounded-xl border border-border bg-surface/80 shadow-[inset_0_1px_0_0_rgb(255_255_255/0.03)] p-4">
       <div className="text-xs uppercase tracking-wide text-muted">{label}</div>
       <div className="mt-1 text-xl font-semibold tabular-nums">{value}</div>
       {note && <div className="mt-1 text-xs text-muted">{note}</div>}

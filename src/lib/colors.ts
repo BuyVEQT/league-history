@@ -1,3 +1,5 @@
+import type { League } from "./types";
+
 /** Chart colors, assigned per manager by their position in the league's manager list. */
 const PALETTE = [
   "#f59e0b",
@@ -15,3 +17,6 @@ const PALETTE = [
 ];
 
 export const managerColor = (index: number) => PALETTE[index % PALETTE.length];
+
+export const colorForManager = (league: League, managerId: string) =>
+  managerColor(Math.max(0, league.managers.findIndex((m) => m.id === managerId)));

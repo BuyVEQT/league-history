@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { TrendChart } from "@/components/charts/TrendChart";
-import { ManagerLink, PageTitle, Section, StatCard, TableWrap, td, th } from "@/components/ui";
+import { Avatar, ManagerLink, PageTitle, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
+import { colorForManager } from "@/lib/colors";
 import { careerFromSeasons, managerSeasons } from "@/lib/analytics/career";
 import { formatNumber, formatPct, formatRecord } from "@/lib/analytics/format";
 import { opponentRecords } from "@/lib/analytics/headToHead";
@@ -43,10 +44,14 @@ export default async function ManagerPage(props: PageProps<"/demo/managers/[mana
 
   return (
     <>
-      <PageTitle
-        title={manager.name}
-        subtitle={`${career.firstYear! - 1}-${String(career.firstYear).slice(2)} to ${career.lastYear! - 1}-${String(career.lastYear).slice(2)} · Teams: ${aliases.join(", ")}.${ratesNote}`}
-      />
+      <div className="flex items-center gap-4">
+        <Avatar size="lg" name={manager.name} color={colorForManager(league, manager.id)} />
+        <PageTitle
+          eyebrow="Manager profile"
+          title={manager.name}
+          subtitle={`${career.firstYear! - 1}-${String(career.firstYear).slice(2)} to ${career.lastYear! - 1}-${String(career.lastYear).slice(2)} · Teams: ${aliases.join(", ")}.${ratesNote}`}
+        />
+      </div>
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         <StatCard label="Championships" value={career.titles} detail={`${finals} finals appearance${finals === 1 ? "" : "s"}`} />
@@ -59,7 +64,7 @@ export default async function ManagerPage(props: PageProps<"/demo/managers/[mana
       </div>
 
       <Section title="Finish by season">
-        <div className="rounded-lg border border-border bg-surface p-4">
+        <div className="rounded-xl border border-border bg-surface/80 shadow-[inset_0_1px_0_0_rgb(255_255_255/0.03)] p-4">
           <TrendChart
             rows={chartRows}
             series={[
@@ -90,7 +95,7 @@ export default async function ManagerPage(props: PageProps<"/demo/managers/[mana
             </thead>
             <tbody className="divide-y divide-border">
               {[...seasons].reverse().map((s) => (
-                <tr key={s.year}>
+                <tr key={s.year} className={tr}>
                   <td className={td}>
                     <Link href={`/demo/seasons/${s.year}`} className="text-accent hover:underline">{s.label}</Link>
                   </td>
@@ -115,7 +120,7 @@ export default async function ManagerPage(props: PageProps<"/demo/managers/[mana
               { title: "Dominates", list: bestRivals },
               { title: "Struggles against", list: worstRivals },
             ].map((g) => (
-              <div key={g.title} className="rounded-lg border border-border bg-surface p-4">
+              <div key={g.title} className="rounded-xl border border-border bg-surface/80 shadow-[inset_0_1px_0_0_rgb(255_255_255/0.03)] p-4">
                 <h3 className="mb-2 text-sm font-medium text-muted">{g.title}</h3>
                 <ul className="space-y-1.5 text-sm">
                   {g.list.map((r) => (
