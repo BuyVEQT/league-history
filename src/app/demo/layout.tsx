@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Nav } from "@/components/Nav";
+import { SiteFooter } from "@/components/SiteFooter";
 import { SITE_NAME } from "@/lib/config";
 import { provider } from "@/lib/data";
 
@@ -26,6 +27,7 @@ export default async function DemoLayout({ children }: LayoutProps<"/demo">) {
           </span>
         </header>
         <main className="flex-1 space-y-8 px-4 py-6 md:px-8">{children}</main>
+        <SiteFooter source={league.source} />
       </div>
     </div>
   );

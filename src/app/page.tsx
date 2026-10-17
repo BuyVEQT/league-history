@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { SiteFooter } from "@/components/SiteFooter";
 import { SITE_NAME, SITE_TAGLINE } from "@/lib/config";
 
 export default function Home() {
   return (
+    <>
     <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col justify-center gap-6 px-4 py-16">
       <h1 className="text-4xl font-semibold tracking-tight">{SITE_NAME}</h1>
       <p className="text-lg text-muted">
@@ -28,5 +30,7 @@ export default function Home() {
         The demo uses a fictional league with generated data. Connecting a real Yahoo league is not available yet.
       </p>
     </main>
+    <SiteFooter />
+    </>
   );
 }
