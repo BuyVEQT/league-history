@@ -58,6 +58,11 @@ export interface Season {
    * consolation brackets decide 5th place and below in games we may not store.
    */
   finalRanks?: Record<TeamId, number>;
+  /**
+   * The source's playoff seeding, best first. Only used to break exact
+   * standings ties our data cannot resolve (identical records and head-to-head).
+   */
+  sourceSeedOrder?: TeamId[];
   /** Optional extras, present when the source provides them. */
   draft?: DraftPick[];
   players?: PlayerSeason[];

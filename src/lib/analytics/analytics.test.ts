@@ -111,6 +111,25 @@ describe("mini league: standings and outcomes", () => {
     expect(seasonOutcome(incomplete).championTeamId).toBeNull();
   });
 
+  it("uses the source seed order only to break exact ties", () => {
+    const tied: typeof mini.seasons[0] = {
+      ...mini.seasons[0],
+      scoring: "categories",
+      matchups: [m(1, "regular", "2023:A", "2023:B", 4, 4, 1), m(2, "regular", "2023:C", "2023:A", 2, 7)],
+    };
+    // A is clearly first on records; B and C are not tied, so the seed order must not override them.
+    expect(seasonStandings({ ...tied, sourceSeedOrder: ["2023:C", "2023:B", "2023:A"] }).map((r) => r.teamId)).toEqual([
+      "2023:A",
+      "2023:B",
+      "2023:C",
+    ]);
+    const exact = { ...tied, matchups: [m(1, "regular", "2023:B", "2023:C", 4, 4, 1)] };
+    expect(seasonStandings({ ...exact, sourceSeedOrder: ["2023:C", "2023:B"] }).slice(0, 2).map((r) => r.teamId)).toEqual([
+      "2023:C",
+      "2023:B",
+    ]);
+  });
+
   it("treats a regular-season tie as a tie", () => {
     expect(matchupWinner(mini.seasons[0].matchups[1])).toBeNull();
   });

@@ -1,0 +1,8 @@
+# week|stage|higher seed idx|lower seed idx|cats higher|cats lower   (championship bracket only)
+# 6-team bracket: seeds 1 (SSJ3 Lebron) and 2 (BIG papa) had byes in week 18. 5th-place game not stored.
+18|quarterfinal|9|4|5|4
+18|quarterfinal|8|3|2|7
+19|semifinal|7|3|5|4
+19|semifinal|1|9|6|3
+20|final|7|1|4|5
+20|third_place|9|3|3|5

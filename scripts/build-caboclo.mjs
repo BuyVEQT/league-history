@@ -56,6 +56,7 @@ function build(yahooYear) {
     teams,
     matchups,
     finalRanks,
+    sourceSeedOrder: seedsLine.split("|")[1].split(",").map(id),
   };
 
   const draft = lines(yahooYear, "draft.txt");

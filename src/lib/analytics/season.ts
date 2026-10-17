@@ -78,11 +78,16 @@ export function seasonStandings(season: Season): StandingRow[] {
   for (const r of list) r.winPct = winPct(r.wins, r.losses, r.ties);
   const rankPct = (r: StandingRow) =>
     (season.scoring === "categories" ? winPct(r.catWins, r.catLosses, r.catTies) : r.winPct) ?? -1;
+  const seed = (id: TeamId) => {
+    const i = season.sourceSeedOrder?.indexOf(id) ?? -1;
+    return i < 0 ? Number.MAX_SAFE_INTEGER : i;
+  };
   list.sort(
     (a, b) =>
       rankPct(b) - rankPct(a) ||
       b.catWins - b.catLosses - (a.catWins - a.catLosses) ||
       b.catWins - a.catWins ||
+      seed(a.teamId) - seed(b.teamId) ||
       a.teamId.localeCompare(b.teamId),
   );
   list.forEach((r, i) => (r.rank = i + 1));
