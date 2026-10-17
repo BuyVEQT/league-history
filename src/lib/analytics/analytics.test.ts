@@ -3,7 +3,7 @@ import { generateDemoLeague } from "../data/demo/generate";
 import type { League, Matchup } from "../types";
 import { careerStats, defaultCompare, managerSeasons } from "./career";
 import { winPct } from "./format";
-import { headToHead, opponentRecords } from "./headToHead";
+import { h2hMatrix, headToHead, opponentRecords } from "./headToHead";
 import { matchupWinner, seasonOutcome, seasonStandings } from "./season";
 
 const demo = generateDemoLeague();
@@ -312,5 +312,19 @@ describe("demo league: internal consistency", () => {
     const h = headToHead(demo, "devon", "priya");
     expect(h.games.every((g) => g.year >= 2021 || g.year >= 2019)).toBe(true);
     expect(h.byYear.some((y) => y.year === 2019 || y.year === 2020)).toBe(false);
+  });
+});
+
+describe("h2hMatrix", () => {
+  it("matches headToHead for every pair", () => {
+    const { ids, cells } = h2hMatrix(demo);
+    for (const a of ids) {
+      for (const b of ids) {
+        if (a === b) continue;
+        const h = headToHead(demo, a, b);
+        const c = cells[a]?.[b] ?? { wins: 0, losses: 0, ties: 0 };
+        expect([c.wins, c.losses, c.ties]).toEqual([h.aWins, h.bWins, h.ties]);
+      }
+    }
   });
 });

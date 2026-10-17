@@ -136,3 +136,35 @@ export function opponentRecords(league: League, managerId: ManagerId): RivalReco
   }
   return out;
 }
+
+export interface H2HCell {
+  wins: number;
+  losses: number;
+  ties: number;
+}
+
+/**
+ * Every pair's head-to-head record in one pass, from the row manager's side
+ * (regular season and playoffs). Only managers who played appear.
+ */
+export function h2hMatrix(league: League): { ids: ManagerId[]; cells: Record<ManagerId, Record<ManagerId, H2HCell>> } {
+  const cells: Record<ManagerId, Record<ManagerId, H2HCell>> = {};
+  const cell = (a: ManagerId, b: ManagerId) => ((cells[a] ??= {})[b] ??= { wins: 0, losses: 0, ties: 0 });
+  for (const season of league.seasons) {
+    const teams = teamIndex(season);
+    for (const m of season.matchups) {
+      const home = teams.get(m.homeTeamId)!.managerId;
+      const away = teams.get(m.awayTeamId)!.managerId;
+      const w = matchupWinner(m);
+      if (w === null) {
+        cell(home, away).ties++;
+        cell(away, home).ties++;
+      } else {
+        const [winner, loser] = w === m.homeTeamId ? [home, away] : [away, home];
+        cell(winner, loser).wins++;
+        cell(loser, winner).losses++;
+      }
+    }
+  }
+  return { ids: league.managers.map((m) => m.id).filter((id) => cells[id]), cells };
+}
