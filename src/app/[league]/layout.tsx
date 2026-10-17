@@ -8,8 +8,9 @@ import { hasDraftData } from "@/lib/analytics/draft";
 import { hasTradeData } from "@/lib/analytics/trades";
 import { getLeague, leagueSlugs } from "@/lib/data";
 
-// Every league page is prerendered per slug; opt out of the dev-only instant-navigation check
-// (https://nextjs.org/docs/messages/instant-shell-url-data) until pages stream their params behind Suspense.
+// Opts this layout segment out of the dev-only instant-navigation check
+// (https://nextjs.org/docs/messages/instant-shell-url-data). Pages that read params can still show that
+// dev hint; it never affects builds. Every league page is prerendered per slug.
 export const instant = false;
 
 export function generateStaticParams() {

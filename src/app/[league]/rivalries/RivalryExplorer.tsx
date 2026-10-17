@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { formatRecord } from "@/lib/analytics/format";
-import { headToHead } from "@/lib/analytics/headToHead";
+import { h2hMatrix, headToHead } from "@/lib/analytics/headToHead";
 import type { League, Stage } from "@/lib/types";
 
 const STAGE_LABEL: Record<Stage, string> = {
@@ -22,9 +22,20 @@ export function RivalryExplorer({ league, defaultA, defaultB }: { league: League
   const select = "rounded-md border border-border bg-surface-2 px-2 py-1.5 text-sm";
   const pct = (n: number) => (total === 0 ? 0 : (n / total) * 100);
   const catTotal = h.aCatWins + h.bCatWins + h.catTies;
+  const matrix = useMemo(() => h2hMatrix(league), [league]);
+  const topRef = useRef<HTMLDivElement>(null);
+  const initials = (id: string) =>
+    nameOf(id)
+      .split(/[s.]+/)
+      .filter(Boolean)
+      .map((w) => w[0])
+      .join("")
+      .slice(0, 2);
+  const tone = (p: number) =>
+    p >= 0.65 ? "bg-positive/35" : p >= 0.55 ? "bg-positive/20" : p > 0.45 ? "" : p > 0.35 ? "bg-negative/20" : "bg-negative/35";
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6" ref={topRef}>
       <div className="flex flex-wrap items-end gap-3">
         <div className="flex flex-col gap-1">
           <label htmlFor="rv-a" className="text-xs text-muted">Manager A</label>
@@ -149,6 +160,67 @@ export function RivalryExplorer({ league, defaultA, defaultB }: { league: League
           </details>
         </>
       )}
+      <div>
+        <h2 className="mb-1 text-lg font-medium">Everyone vs everyone</h2>
+        <p className="mb-2 text-xs text-muted">
+          Each row manager&apos;s record against each column manager (W-L, regular season and playoffs). Click a cell to compare them above.
+        </p>
+        <div className="overflow-x-auto rounded-xl border border-border bg-surface/80">
+          <table className="border-collapse text-xs">
+            <caption className="sr-only">Head-to-head records between every pair of managers</caption>
+            <thead>
+              <tr>
+                <th className="sticky left-0 bg-surface px-2 py-2" />
+                {matrix.ids.map((id) => (
+                  <th key={id} scope="col" title={nameOf(id)} className="min-w-11 px-1 py-2 text-center font-medium text-muted">
+                    {initials(id)}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {matrix.ids.map((r) => (
+                <tr key={r} className="border-t border-border">
+                  <th scope="row" className="sticky left-0 whitespace-nowrap bg-surface px-2 py-1 text-left font-medium">
+                    {nameOf(r)}
+                  </th>
+                  {matrix.ids.map((c) => {
+                    if (r === c) return <td key={c} className="bg-surface-2" />;
+                    const x = matrix.cells[r]?.[c];
+                    const games = x ? x.wins + x.losses + x.ties : 0;
+                    if (!x || !games) {
+                      return (
+                        <td key={c} className="text-center text-muted">
+                          ·
+                        </td>
+                      );
+                    }
+                    const p = (x.wins + 0.5 * x.ties) / games;
+                    return (
+                      <td key={c} className={`border-l border-border ${tone(p)}`}>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setA(r);
+                            setB(c);
+                            topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+                          }}
+                          title={`${nameOf(r)} vs ${nameOf(c)}: ${x.wins}-${x.losses}-${x.ties}`}
+                          aria-label={`Compare ${nameOf(r)} and ${nameOf(c)}: ${x.wins} wins, ${x.losses} losses, ${x.ties} ties`}
+                          className="w-full px-1.5 py-1.5 tabular-nums hover:outline hover:outline-1 hover:outline-accent"
+                        >
+                          {x.wins}-{x.losses}
+                          {x.ties ? `-${x.ties}` : ""}
+                        </button>
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 }

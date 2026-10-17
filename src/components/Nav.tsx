@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeftRight, CalendarDays, ClipboardList, LayoutDashboard, ListOrdered, Swords } from "lucide-react";
+import { ArrowLeftRight, Award, CalendarDays, ClipboardList, LayoutDashboard, ListOrdered, Swords } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLeagueBase } from "./useLeagueBase";
@@ -16,6 +16,7 @@ const LINKS: { href: string; label: string; icon: typeof Swords; needs?: keyof N
   { href: "/leaderboard", label: "Leaderboard", icon: ListOrdered },
   { href: "/seasons", label: "Seasons", icon: CalendarDays },
   { href: "/rivalries", label: "Rivalries", icon: Swords },
+  { href: "/records", label: "Records", icon: Award },
   { href: "/draft", label: "Draft", icon: ClipboardList, needs: "draft" },
   { href: "/trades", label: "Trades & moves", icon: ArrowLeftRight, needs: "trades" },
 ];
