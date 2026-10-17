@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* Design tokens — dark-first. Change the look here, not in components. */
+:root {
+  color-scheme: dark;
+  --background: #0b0e14;
+  --foreground: #e6e9ef;
+  --surface: #131822;
+  --surface-2: #1a2130;
+  --border: #262e3f;
+  --muted: #8b95a8;
+  --accent: #f59e0b;
+  --positive: #34d399;
+  --negative: #f87171;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-positive: var(--positive);
+  --color-negative: var(--negative);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
