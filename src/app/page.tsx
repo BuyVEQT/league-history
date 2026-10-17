@@ -18,6 +18,9 @@ export default function Home() {
         >
           Explore the demo league
         </Link>
+        <Link href="/caboclo" className="rounded-md border border-border px-4 py-2 font-medium hover:bg-surface">
+          The Caboclo Cup · members
+        </Link>
         <button
           disabled
           className="cursor-not-allowed rounded-md border border-border px-4 py-2 text-muted"
