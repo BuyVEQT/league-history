@@ -1,0 +1,9 @@
+leagueName|Bowmanville NBA Championship
+scoring|categories
+categories|FG%,FT%,3PM,PTS,REB,AST,STL,BLK,TO
+teams|12
+playoffTeams|8
+playoffWeeks|19,20,21
+playoffTiebreak|higher seed
+draft|Live Standard Draft (snake), 2022-10-08
+leagueId|8072
