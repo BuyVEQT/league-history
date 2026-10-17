@@ -8,7 +8,9 @@ Yahoo no longer provisions the Fantasy Sports API self-serve. Submit a request a
 <https://sports.yahoo.com/developer/access/>. Incomplete requests are closed without reply, so prepare:
 
 - [ ] A live site on a real domain (the demo deployed to Vercel)
-- [ ] Privacy policy and terms pages
+- [x] Privacy policy and terms pages (`/privacy`, `/terms`) — set `CONTACT_EMAIL` in `src/lib/config.ts`
+- [x] Attribution footer ("Fantasy data provided by Yahoo Fantasy" + link), shown when `league.source === "yahoo"`
+- [ ] Read Yahoo's API terms on caching/retention and make the privacy policy match
 - [ ] A clear description: read-only multi-season league history/analytics, what data is read, who uses it
 - [ ] The OAuth redirect URI you will register (e.g. `https://<domain>/api/auth/yahoo/callback`)
 - [ ] A data-retention/caching plan (check Yahoo's current developer terms before persisting Yahoo data)
