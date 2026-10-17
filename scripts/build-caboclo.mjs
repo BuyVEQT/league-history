@@ -72,8 +72,9 @@ function build(yahooYear) {
     season.players = ranks.map((l) => {
       const f = l.split(",");
       const [pid, cur, pre, gp, teamIdx, name] = f;
-      const p = { playerId: pid, name, actualRank: num(cur), preseasonRank: pre && pre !== "-" ? num(pre) : null, gamesPlayed: num(gp), teamId: num(teamIdx) >= 0 ? id(teamIdx) : null };
-      if (f.length >= 17) {
+      const p = { playerId: pid, name, actualRank: num(cur), preseasonRank: pre && pre !== "-" ? num(pre) : null, gamesPlayed: gp === "-" ? null : num(gp), teamId: num(teamIdx) >= 0 ? id(teamIdx) : null };
+      // Older seasons show "-" instead of stats; keep the ranks, skip the stats.
+      if (f.length >= 17 && f[10] !== "-") {
         const [fg, , ft, , threes, pts, reb, ast, stl, blk, to] = f.slice(6);
         const [fgm, fga] = fg.split("/").map(num);
         const [ftm, fta] = ft.split("/").map(num);

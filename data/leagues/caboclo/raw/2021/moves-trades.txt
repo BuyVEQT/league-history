@@ -1,0 +1,19 @@
+# managers page: team | moves | trades
+BIG papa|60|0
+Bruno Caboclo|66|3
+De'Aaron Fox and the Hound|41|0
+Masai Jr|61|1
+Masai Jr .|69|1
+Redemption SZN|55|1
+Russell WestBrick|30|1
+SSJ3 Lebron|54|0
+Sunday Strangler|43|1
+The Golden Jokic's|16|0
+# trades: date | status | team receives: players
+2021-12-15|completed|Bruno Caboclo: Deandre Ayton, Jonathan Isaac ;; Masai Jr: Jrue Holiday
+2021-12-09|completed|Redemption SZN: Bradley Beal ;; Masai Jr .: Derrick White, Scottie Barnes
+2021-12-09|vetoed|Masai Jr .: Derrick White, Scottie Barnes ;; Redemption SZN: Bradley Beal
+2021-12-07|vetoed|Redemption SZN: Bradley Beal ;; Masai Jr .: Derrick White, Scottie Barnes
+2021-12-07|completed|Bruno Caboclo: Clint Capela ;; Sunday Strangler: Khris Middleton
+2021-12-04|vetoed|Masai Jr .: Kevin Porter Jr. ;; Russell WestBrick: DeMar DeRozan
+2021-11-14|completed|Russell WestBrick: Jonas Valančiūnas, Dennis Schröder ;; Bruno Caboclo: Jimmy Butler III

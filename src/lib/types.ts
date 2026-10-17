@@ -101,7 +101,7 @@ export interface PlayerSeason {
   name: string;
   actualRank: number;
   preseasonRank: number | null;
-  gamesPlayed: number;
+  gamesPlayed: number | null;
   teamId: TeamId | null;
   stats?: PlayerStats;
 }

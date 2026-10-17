@@ -1,0 +1,4589 @@
+{
+  "year": 2022,
+  "label": "2021-22",
+  "scoring": "categories",
+  "categories": [
+    "FG%",
+    "FT%",
+    "3PM",
+    "PTS",
+    "REB",
+    "AST",
+    "STL",
+    "BLK",
+    "TO"
+  ],
+  "teams": [
+    {
+      "id": "2022:dadder",
+      "managerId": "dadder",
+      "name": "BIG papa"
+    },
+    {
+      "id": "2022:jacob-g",
+      "managerId": "jacob-g",
+      "name": "Bruno Caboclo"
+    },
+    {
+      "id": "2022:michael",
+      "managerId": "michael",
+      "name": "De'Aaron Fox and the Hound"
+    },
+    {
+      "id": "2022:najim",
+      "managerId": "najim",
+      "name": "Masai Jr"
+    },
+    {
+      "id": "2022:jordan",
+      "managerId": "jordan",
+      "name": "Masai Jr ."
+    },
+    {
+      "id": "2022:jake",
+      "managerId": "jake",
+      "name": "Redemption SZN"
+    },
+    {
+      "id": "2022:eddie",
+      "managerId": "eddie",
+      "name": "Russell WestBrick"
+    },
+    {
+      "id": "2022:matt",
+      "managerId": "matt",
+      "name": "SSJ3 Lebron"
+    },
+    {
+      "id": "2022:mitchell",
+      "managerId": "mitchell",
+      "name": "Sunday Strangler"
+    },
+    {
+      "id": "2022:benjamin",
+      "managerId": "benjamin",
+      "name": "The Golden Jokic's"
+    }
+  ],
+  "matchups": [
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2022:jacob-g",
+      "awayTeamId": "2022:matt",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2022:dadder",
+      "awayTeamId": "2022:matt",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2022:eddie",
+      "awayTeamId": "2022:matt",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2022:jordan",
+      "awayTeamId": "2022:matt",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2022:najim",
+      "awayTeamId": "2022:matt",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2022:jake",
+      "awayTeamId": "2022:matt",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2022:matt",
+      "awayTeamId": "2022:benjamin",
+      "homeCats": 6,
+      "awayCats": 2,
+      "tiedCats": 1
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2022:matt",
+      "awayTeamId": "2022:mitchell",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2022:michael",
+      "awayTeamId": "2022:matt",
+      "homeCats": 6,
+      "awayCats": 2,
+      "tiedCats": 1
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2022:jacob-g",
+      "awayTeamId": "2022:matt",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2022:dadder",
+      "awayTeamId": "2022:matt",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2022:eddie",
+      "awayTeamId": "2022:matt",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2022:jordan",
+      "awayTeamId": "2022:matt",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2022:najim",
+      "awayTeamId": "2022:matt",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2022:jake",
+      "awayTeamId": "2022:matt",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2022:matt",
+      "awayTeamId": "2022:benjamin",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2022:matt",
+      "awayTeamId": "2022:mitchell",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2022:michael",
+      "awayTeamId": "2022:matt",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2022:jacob-g",
+      "awayTeamId": "2022:michael",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2022:dadder",
+      "awayTeamId": "2022:jacob-g",
+      "homeCats": 8,
+      "awayCats": 1,
+      "tiedCats": 0
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2022:jacob-g",
+      "awayTeamId": "2022:eddie",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2022:jacob-g",
+      "awayTeamId": "2022:jordan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2022:jacob-g",
+      "awayTeamId": "2022:najim",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2022:jacob-g",
+      "awayTeamId": "2022:jake",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2022:jacob-g",
+      "awayTeamId": "2022:benjamin",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2022:jacob-g",
+      "awayTeamId": "2022:mitchell",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2022:jacob-g",
+      "awayTeamId": "2022:michael",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2022:dadder",
+      "awayTeamId": "2022:jacob-g",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2022:jacob-g",
+      "awayTeamId": "2022:eddie",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2022:jacob-g",
+      "awayTeamId": "2022:jordan",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2022:jacob-g",
+      "awayTeamId": "2022:najim",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2022:jacob-g",
+      "awayTeamId": "2022:jake",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2022:jacob-g",
+      "awayTeamId": "2022:benjamin",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2022:jacob-g",
+      "awayTeamId": "2022:mitchell",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2022:dadder",
+      "awayTeamId": "2022:mitchell",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2022:dadder",
+      "awayTeamId": "2022:michael",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2022:dadder",
+      "awayTeamId": "2022:eddie",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2022:dadder",
+      "awayTeamId": "2022:jordan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2022:dadder",
+      "awayTeamId": "2022:najim",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2022:dadder",
+      "awayTeamId": "2022:jake",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2022:dadder",
+      "awayTeamId": "2022:benjamin",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2022:dadder",
+      "awayTeamId": "2022:mitchell",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2022:dadder",
+      "awayTeamId": "2022:michael",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2022:dadder",
+      "awayTeamId": "2022:eddie",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2022:dadder",
+      "awayTeamId": "2022:jordan",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2022:dadder",
+      "awayTeamId": "2022:najim",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2022:dadder",
+      "awayTeamId": "2022:jake",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2022:dadder",
+      "awayTeamId": "2022:benjamin",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2022:eddie",
+      "awayTeamId": "2022:benjamin",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2022:eddie",
+      "awayTeamId": "2022:mitchell",
+      "homeCats": 4,
+      "awayCats": 4,
+      "tiedCats": 1
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2022:michael",
+      "awayTeamId": "2022:eddie",
+      "homeCats": 1,
+      "awayCats": 6,
+      "tiedCats": 2
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2022:jordan",
+      "awayTeamId": "2022:eddie",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2022:najim",
+      "awayTeamId": "2022:eddie",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2022:jake",
+      "awayTeamId": "2022:eddie",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2022:eddie",
+      "awayTeamId": "2022:benjamin",
+      "homeCats": 1,
+      "awayCats": 8,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2022:eddie",
+      "awayTeamId": "2022:mitchell",
+      "homeCats": 1,
+      "awayCats": 7,
+      "tiedCats": 1
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2022:michael",
+      "awayTeamId": "2022:eddie",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2022:jordan",
+      "awayTeamId": "2022:eddie",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2022:najim",
+      "awayTeamId": "2022:eddie",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2022:jake",
+      "awayTeamId": "2022:eddie",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2022:jordan",
+      "awayTeamId": "2022:jake",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2022:jordan",
+      "awayTeamId": "2022:benjamin",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2022:jordan",
+      "awayTeamId": "2022:mitchell",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 8,
+      "stage": "regular",
+      "homeTeamId": "2022:michael",
+      "awayTeamId": "2022:jordan",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 9,
+      "stage": "regular",
+      "homeTeamId": "2022:najim",
+      "awayTeamId": "2022:jordan",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2022:jordan",
+      "awayTeamId": "2022:jake",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2022:jordan",
+      "awayTeamId": "2022:benjamin",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2022:jordan",
+      "awayTeamId": "2022:mitchell",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 17,
+      "stage": "regular",
+      "homeTeamId": "2022:michael",
+      "awayTeamId": "2022:jordan",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 18,
+      "stage": "regular",
+      "homeTeamId": "2022:najim",
+      "awayTeamId": "2022:jordan",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 1,
+      "stage": "regular",
+      "homeTeamId": "2022:michael",
+      "awayTeamId": "2022:najim",
+      "homeCats": 4,
+      "awayCats": 4,
+      "tiedCats": 1
+    },
+    {
+      "week": 2,
+      "stage": "regular",
+      "homeTeamId": "2022:najim",
+      "awayTeamId": "2022:jake",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2022:najim",
+      "awayTeamId": "2022:benjamin",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2022:najim",
+      "awayTeamId": "2022:mitchell",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 10,
+      "stage": "regular",
+      "homeTeamId": "2022:michael",
+      "awayTeamId": "2022:najim",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 11,
+      "stage": "regular",
+      "homeTeamId": "2022:najim",
+      "awayTeamId": "2022:jake",
+      "homeCats": 9,
+      "awayCats": 0,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2022:najim",
+      "awayTeamId": "2022:benjamin",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2022:najim",
+      "awayTeamId": "2022:mitchell",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 3,
+      "stage": "regular",
+      "homeTeamId": "2022:michael",
+      "awayTeamId": "2022:jake",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 4,
+      "stage": "regular",
+      "homeTeamId": "2022:jake",
+      "awayTeamId": "2022:benjamin",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2022:jake",
+      "awayTeamId": "2022:mitchell",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 12,
+      "stage": "regular",
+      "homeTeamId": "2022:michael",
+      "awayTeamId": "2022:jake",
+      "homeCats": 4,
+      "awayCats": 4,
+      "tiedCats": 1
+    },
+    {
+      "week": 13,
+      "stage": "regular",
+      "homeTeamId": "2022:jake",
+      "awayTeamId": "2022:benjamin",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2022:jake",
+      "awayTeamId": "2022:mitchell",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 5,
+      "stage": "regular",
+      "homeTeamId": "2022:michael",
+      "awayTeamId": "2022:benjamin",
+      "homeCats": 4,
+      "awayCats": 5,
+      "tiedCats": 0
+    },
+    {
+      "week": 6,
+      "stage": "regular",
+      "homeTeamId": "2022:mitchell",
+      "awayTeamId": "2022:benjamin",
+      "homeCats": 5,
+      "awayCats": 4,
+      "tiedCats": 0
+    },
+    {
+      "week": 14,
+      "stage": "regular",
+      "homeTeamId": "2022:michael",
+      "awayTeamId": "2022:benjamin",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 15,
+      "stage": "regular",
+      "homeTeamId": "2022:mitchell",
+      "awayTeamId": "2022:benjamin",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 7,
+      "stage": "regular",
+      "homeTeamId": "2022:michael",
+      "awayTeamId": "2022:mitchell",
+      "homeCats": 8,
+      "awayCats": 1,
+      "tiedCats": 0
+    },
+    {
+      "week": 16,
+      "stage": "regular",
+      "homeTeamId": "2022:michael",
+      "awayTeamId": "2022:mitchell",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 19,
+      "stage": "quarterfinal",
+      "homeTeamId": "2022:michael",
+      "awayTeamId": "2022:jake",
+      "homeCats": 7,
+      "awayCats": 2,
+      "tiedCats": 0
+    },
+    {
+      "week": 19,
+      "stage": "quarterfinal",
+      "homeTeamId": "2022:dadder",
+      "awayTeamId": "2022:benjamin",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 20,
+      "stage": "semifinal",
+      "homeTeamId": "2022:najim",
+      "awayTeamId": "2022:michael",
+      "homeCats": 6,
+      "awayCats": 3,
+      "tiedCats": 0
+    },
+    {
+      "week": 20,
+      "stage": "semifinal",
+      "homeTeamId": "2022:matt",
+      "awayTeamId": "2022:dadder",
+      "homeCats": 3,
+      "awayCats": 6,
+      "tiedCats": 0
+    },
+    {
+      "week": 21,
+      "stage": "final",
+      "homeTeamId": "2022:najim",
+      "awayTeamId": "2022:dadder",
+      "homeCats": 2,
+      "awayCats": 7,
+      "tiedCats": 0
+    },
+    {
+      "week": 21,
+      "stage": "third_place",
+      "homeTeamId": "2022:matt",
+      "awayTeamId": "2022:michael",
+      "homeCats": 5,
+      "awayCats": 3,
+      "tiedCats": 1
+    }
+  ],
+  "finalRanks": {
+    "2022:dadder": 1,
+    "2022:najim": 2,
+    "2022:matt": 3,
+    "2022:michael": 4,
+    "2022:benjamin": 5,
+    "2022:jake": 6,
+    "2022:jordan": 7,
+    "2022:eddie": 8,
+    "2022:jacob-g": 9,
+    "2022:mitchell": 10
+  },
+  "draft": [
+    {
+      "round": 1,
+      "pick": 1,
+      "overall": 1,
+      "teamId": "2022:benjamin",
+      "playerId": "5352",
+      "playerName": "Nikola Jokić"
+    },
+    {
+      "round": 1,
+      "pick": 2,
+      "overall": 2,
+      "teamId": "2022:mitchell",
+      "playerId": "4563",
+      "playerName": "James Harden"
+    },
+    {
+      "round": 1,
+      "pick": 3,
+      "overall": 3,
+      "teamId": "2022:najim",
+      "playerId": "4612",
+      "playerName": "Stephen Curry"
+    },
+    {
+      "round": 1,
+      "pick": 4,
+      "overall": 4,
+      "teamId": "2022:eddie",
+      "playerId": "6014",
+      "playerName": "Luka Dončić"
+    },
+    {
+      "round": 1,
+      "pick": 5,
+      "overall": 5,
+      "teamId": "2022:matt",
+      "playerId": "5185",
+      "playerName": "Giannis Antetokounmpo"
+    },
+    {
+      "round": 1,
+      "pick": 6,
+      "overall": 6,
+      "teamId": "2022:jordan",
+      "playerId": "5432",
+      "playerName": "Karl-Anthony Towns"
+    },
+    {
+      "round": 1,
+      "pick": 7,
+      "overall": 7,
+      "teamId": "2022:jake",
+      "playerId": "4244",
+      "playerName": "Kevin Durant"
+    },
+    {
+      "round": 1,
+      "pick": 8,
+      "overall": 8,
+      "teamId": "2022:michael",
+      "playerId": "5294",
+      "playerName": "Joel Embiid"
+    },
+    {
+      "round": 1,
+      "pick": 9,
+      "overall": 9,
+      "teamId": "2022:dadder",
+      "playerId": "5012",
+      "playerName": "Damian Lillard"
+    },
+    {
+      "round": 1,
+      "pick": 10,
+      "overall": 10,
+      "teamId": "2022:jacob-g",
+      "playerId": "5765",
+      "playerName": "Jayson Tatum"
+    },
+    {
+      "round": 2,
+      "pick": 1,
+      "overall": 11,
+      "teamId": "2022:jacob-g",
+      "playerId": "4725",
+      "playerName": "Paul George"
+    },
+    {
+      "round": 2,
+      "pick": 2,
+      "overall": 12,
+      "teamId": "2022:dadder",
+      "playerId": "5007",
+      "playerName": "Anthony Davis"
+    },
+    {
+      "round": 2,
+      "pick": 3,
+      "overall": 13,
+      "teamId": "2022:michael",
+      "playerId": "5827",
+      "playerName": "Bam Adebayo"
+    },
+    {
+      "round": 2,
+      "pick": 4,
+      "overall": 14,
+      "teamId": "2022:jake",
+      "playerId": "6016",
+      "playerName": "Trae Young"
+    },
+    {
+      "round": 2,
+      "pick": 5,
+      "overall": 15,
+      "teamId": "2022:jordan",
+      "playerId": "5009",
+      "playerName": "Bradley Beal"
+    },
+    {
+      "round": 2,
+      "pick": 6,
+      "overall": 16,
+      "teamId": "2022:matt",
+      "playerId": "4897",
+      "playerName": "Nikola Vučević"
+    },
+    {
+      "round": 2,
+      "pick": 7,
+      "overall": 17,
+      "teamId": "2022:eddie",
+      "playerId": "4912",
+      "playerName": "Jimmy Butler III"
+    },
+    {
+      "round": 2,
+      "pick": 8,
+      "overall": 18,
+      "teamId": "2022:najim",
+      "playerId": "5727",
+      "playerName": "Fred VanVleet"
+    },
+    {
+      "round": 2,
+      "pick": 9,
+      "overall": 19,
+      "teamId": "2022:mitchell",
+      "playerId": "6025",
+      "playerName": "Michael Porter Jr."
+    },
+    {
+      "round": 2,
+      "pick": 10,
+      "overall": 20,
+      "teamId": "2022:benjamin",
+      "playerId": "5473",
+      "playerName": "Devin Booker"
+    },
+    {
+      "round": 3,
+      "pick": 1,
+      "overall": 21,
+      "teamId": "2022:benjamin",
+      "playerId": "5197",
+      "playerName": "Rudy Gobert"
+    },
+    {
+      "round": 3,
+      "pick": 2,
+      "overall": 22,
+      "teamId": "2022:mitchell",
+      "playerId": "5642",
+      "playerName": "Domantas Sabonis"
+    },
+    {
+      "round": 3,
+      "pick": 3,
+      "overall": 23,
+      "teamId": "2022:najim",
+      "playerId": "3930",
+      "playerName": "Chris Paul"
+    },
+    {
+      "round": 3,
+      "pick": 4,
+      "overall": 24,
+      "teamId": "2022:eddie",
+      "playerId": "5324",
+      "playerName": "Zach LaVine"
+    },
+    {
+      "round": 3,
+      "pick": 5,
+      "overall": 25,
+      "teamId": "2022:matt",
+      "playerId": "3704",
+      "playerName": "LeBron James"
+    },
+    {
+      "round": 3,
+      "pick": 6,
+      "overall": 26,
+      "teamId": "2022:jordan",
+      "playerId": "6022",
+      "playerName": "Shai Gilgeous-Alexander"
+    },
+    {
+      "round": 3,
+      "pick": 7,
+      "overall": 27,
+      "teamId": "2022:jake",
+      "playerId": "6395",
+      "playerName": "LaMelo Ball"
+    },
+    {
+      "round": 3,
+      "pick": 8,
+      "overall": 28,
+      "teamId": "2022:michael",
+      "playerId": "5826",
+      "playerName": "Donovan Mitchell"
+    },
+    {
+      "round": 3,
+      "pick": 9,
+      "overall": 29,
+      "teamId": "2022:dadder",
+      "playerId": "5601",
+      "playerName": "Brandon Ingram"
+    },
+    {
+      "round": 3,
+      "pick": 10,
+      "overall": 30,
+      "teamId": "2022:jacob-g",
+      "playerId": "5073",
+      "playerName": "Khris Middleton"
+    },
+    {
+      "round": 4,
+      "pick": 1,
+      "overall": 31,
+      "teamId": "2022:jacob-g",
+      "playerId": "4622",
+      "playerName": "Jrue Holiday"
+    },
+    {
+      "round": 4,
+      "pick": 2,
+      "overall": 32,
+      "teamId": "2022:dadder",
+      "playerId": "4901",
+      "playerName": "Tobias Harris"
+    },
+    {
+      "round": 4,
+      "pick": 3,
+      "overall": 33,
+      "teamId": "2022:michael",
+      "playerId": "5767",
+      "playerName": "De'Aaron Fox"
+    },
+    {
+      "round": 4,
+      "pick": 4,
+      "overall": 34,
+      "teamId": "2022:jake",
+      "playerId": "5318",
+      "playerName": "Julius Randle"
+    },
+    {
+      "round": 4,
+      "pick": 5,
+      "overall": 35,
+      "teamId": "2022:jordan",
+      "playerId": "5836",
+      "playerName": "OG Anunoby"
+    },
+    {
+      "round": 4,
+      "pick": 6,
+      "overall": 36,
+      "teamId": "2022:matt",
+      "playerId": "5583",
+      "playerName": "Christian Wood"
+    },
+    {
+      "round": 4,
+      "pick": 7,
+      "overall": 37,
+      "teamId": "2022:eddie",
+      "playerId": "4390",
+      "playerName": "Russell Westbrook"
+    },
+    {
+      "round": 4,
+      "pick": 8,
+      "overall": 38,
+      "teamId": "2022:najim",
+      "playerId": "5958",
+      "playerName": "Deandre Ayton"
+    },
+    {
+      "round": 4,
+      "pick": 9,
+      "overall": 39,
+      "teamId": "2022:mitchell",
+      "playerId": "5602",
+      "playerName": "Jaylen Brown"
+    },
+    {
+      "round": 4,
+      "pick": 10,
+      "overall": 40,
+      "teamId": "2022:benjamin",
+      "playerId": "5471",
+      "playerName": "Myles Turner"
+    },
+    {
+      "round": 5,
+      "pick": 1,
+      "overall": 41,
+      "teamId": "2022:benjamin",
+      "playerId": "6164",
+      "playerName": "Ja Morant"
+    },
+    {
+      "round": 5,
+      "pick": 2,
+      "overall": 42,
+      "teamId": "2022:mitchell",
+      "playerId": "5336",
+      "playerName": "Clint Capela"
+    },
+    {
+      "round": 5,
+      "pick": 3,
+      "overall": 43,
+      "teamId": "2022:najim",
+      "playerId": "6015",
+      "playerName": "Jaren Jackson Jr."
+    },
+    {
+      "round": 5,
+      "pick": 4,
+      "overall": 44,
+      "teamId": "2022:eddie",
+      "playerId": "6163",
+      "playerName": "Zion Williamson"
+    },
+    {
+      "round": 5,
+      "pick": 5,
+      "overall": 45,
+      "teamId": "2022:matt",
+      "playerId": "5832",
+      "playerName": "John Collins"
+    },
+    {
+      "round": 5,
+      "pick": 6,
+      "overall": 46,
+      "teamId": "2022:jordan",
+      "playerId": "5497",
+      "playerName": "Richaun Holmes"
+    },
+    {
+      "round": 5,
+      "pick": 7,
+      "overall": 47,
+      "teamId": "2022:jake",
+      "playerId": "6355",
+      "playerName": "Anthony Edwards"
+    },
+    {
+      "round": 5,
+      "pick": 8,
+      "overall": 48,
+      "teamId": "2022:michael",
+      "playerId": "5764",
+      "playerName": "Lonzo Ball"
+    },
+    {
+      "round": 5,
+      "pick": 9,
+      "overall": 49,
+      "teamId": "2022:dadder",
+      "playerId": "5161",
+      "playerName": "CJ McCollum"
+    },
+    {
+      "round": 5,
+      "pick": 10,
+      "overall": 50,
+      "teamId": "2022:jacob-g",
+      "playerId": "5464",
+      "playerName": "Kristaps Porziņģis"
+    },
+    {
+      "round": 6,
+      "pick": 1,
+      "overall": 51,
+      "teamId": "2022:jacob-g",
+      "playerId": "4886",
+      "playerName": "Jonas Valančiūnas"
+    },
+    {
+      "round": 6,
+      "pick": 2,
+      "overall": 52,
+      "teamId": "2022:dadder",
+      "playerId": "5660",
+      "playerName": "Dejounte Murray"
+    },
+    {
+      "round": 6,
+      "pick": 3,
+      "overall": 53,
+      "teamId": "2022:michael",
+      "playerId": "6021",
+      "playerName": "Mikal Bridges"
+    },
+    {
+      "round": 6,
+      "pick": 4,
+      "overall": 54,
+      "teamId": "2022:jake",
+      "playerId": "5327",
+      "playerName": "Jusuf Nurkić"
+    },
+    {
+      "round": 6,
+      "pick": 5,
+      "overall": 55,
+      "teamId": "2022:jordan",
+      "playerId": "4614",
+      "playerName": "DeMar DeRozan"
+    },
+    {
+      "round": 6,
+      "pick": 6,
+      "overall": 56,
+      "teamId": "2022:matt",
+      "playerId": "4152",
+      "playerName": "Kyle Lowry"
+    },
+    {
+      "round": 6,
+      "pick": 7,
+      "overall": 57,
+      "teamId": "2022:eddie",
+      "playerId": "4840",
+      "playerName": "Kyrie Irving"
+    },
+    {
+      "round": 6,
+      "pick": 8,
+      "overall": 58,
+      "teamId": "2022:najim",
+      "playerId": "5069",
+      "playerName": "Draymond Green"
+    },
+    {
+      "round": 6,
+      "pick": 9,
+      "overall": 59,
+      "teamId": "2022:mitchell",
+      "playerId": "6038",
+      "playerName": "Robert Williams III"
+    },
+    {
+      "round": 6,
+      "pick": 10,
+      "overall": 60,
+      "teamId": "2022:benjamin",
+      "playerId": "6019",
+      "playerName": "Collin Sexton"
+    },
+    {
+      "round": 7,
+      "pick": 1,
+      "overall": 61,
+      "teamId": "2022:benjamin",
+      "playerId": "5506",
+      "playerName": "Norman Powell"
+    },
+    {
+      "round": 7,
+      "pick": 2,
+      "overall": 62,
+      "teamId": "2022:mitchell",
+      "playerId": "6404",
+      "playerName": "Tyrese Haliburton"
+    },
+    {
+      "round": 7,
+      "pick": 3,
+      "overall": 63,
+      "teamId": "2022:najim",
+      "playerId": "5658",
+      "playerName": "Pascal Siakam"
+    },
+    {
+      "round": 7,
+      "pick": 4,
+      "overall": 64,
+      "teamId": "2022:eddie",
+      "playerId": "6408",
+      "playerName": "Isaiah Stewart"
+    },
+    {
+      "round": 7,
+      "pick": 5,
+      "overall": 65,
+      "teamId": "2022:matt",
+      "playerId": "5667",
+      "playerName": "Malcolm Brogdon"
+    },
+    {
+      "round": 7,
+      "pick": 6,
+      "overall": 66,
+      "teamId": "2022:jordan",
+      "playerId": "5476",
+      "playerName": "Terry Rozier"
+    },
+    {
+      "round": 7,
+      "pick": 7,
+      "overall": 67,
+      "teamId": "2022:jake",
+      "playerId": "5835",
+      "playerName": "Jarrett Allen"
+    },
+    {
+      "round": 7,
+      "pick": 8,
+      "overall": 68,
+      "teamId": "2022:michael",
+      "playerId": "6218",
+      "playerName": "Kevin Porter Jr."
+    },
+    {
+      "round": 7,
+      "pick": 9,
+      "overall": 69,
+      "teamId": "2022:dadder",
+      "playerId": "5253",
+      "playerName": "Robert Covington"
+    },
+    {
+      "round": 7,
+      "pick": 10,
+      "overall": 70,
+      "teamId": "2022:jacob-g",
+      "playerId": "4724",
+      "playerName": "Gordon Hayward"
+    },
+    {
+      "round": 8,
+      "pick": 1,
+      "overall": 71,
+      "teamId": "2022:jacob-g",
+      "playerId": "5894",
+      "playerName": "Chris Boucher"
+    },
+    {
+      "round": 8,
+      "pick": 2,
+      "overall": 72,
+      "teamId": "2022:dadder",
+      "playerId": "6174",
+      "playerName": "P.J. Washington"
+    },
+    {
+      "round": 8,
+      "pick": 3,
+      "overall": 73,
+      "teamId": "2022:michael",
+      "playerId": "6047",
+      "playerName": "Mitchell Robinson"
+    },
+    {
+      "round": 8,
+      "pick": 4,
+      "overall": 74,
+      "teamId": "2022:jake",
+      "playerId": "5842",
+      "playerName": "Derrick White"
+    },
+    {
+      "round": 8,
+      "pick": 5,
+      "overall": 75,
+      "teamId": "2022:jordan",
+      "playerId": "5640",
+      "playerName": "Jakob Poeltl"
+    },
+    {
+      "round": 8,
+      "pick": 6,
+      "overall": 76,
+      "teamId": "2022:matt",
+      "playerId": "5350",
+      "playerName": "Jerami Grant"
+    },
+    {
+      "round": 8,
+      "pick": 7,
+      "overall": 77,
+      "teamId": "2022:eddie",
+      "playerId": "6167",
+      "playerName": "Darius Garland"
+    },
+    {
+      "round": 8,
+      "pick": 8,
+      "overall": 78,
+      "teamId": "2022:najim",
+      "playerId": "5317",
+      "playerName": "Marcus Smart"
+    },
+    {
+      "round": 8,
+      "pick": 9,
+      "overall": 79,
+      "teamId": "2022:mitchell",
+      "playerId": "5338",
+      "playerName": "Bogdan Bogdanović"
+    },
+    {
+      "round": 8,
+      "pick": 10,
+      "overall": 80,
+      "teamId": "2022:benjamin",
+      "playerId": "5292",
+      "playerName": "Andrew Wiggins"
+    },
+    {
+      "round": 9,
+      "pick": 1,
+      "overall": 81,
+      "teamId": "2022:benjamin",
+      "playerId": "6514",
+      "playerName": "Evan Mobley"
+    },
+    {
+      "round": 9,
+      "pick": 2,
+      "overall": 82,
+      "teamId": "2022:mitchell",
+      "playerId": "5600",
+      "playerName": "Ben Simmons"
+    },
+    {
+      "round": 9,
+      "pick": 3,
+      "overall": 83,
+      "teamId": "2022:najim",
+      "playerId": "5637",
+      "playerName": "Buddy Hield"
+    },
+    {
+      "round": 9,
+      "pick": 4,
+      "overall": 84,
+      "teamId": "2022:eddie",
+      "playerId": "5651",
+      "playerName": "Caris LeVert"
+    },
+    {
+      "round": 9,
+      "pick": 5,
+      "overall": 85,
+      "teamId": "2022:matt",
+      "playerId": "4246",
+      "playerName": "Mike Conley"
+    },
+    {
+      "round": 9,
+      "pick": 6,
+      "overall": 86,
+      "teamId": "2022:jordan",
+      "playerId": "5164",
+      "playerName": "Kelly Olynyk"
+    },
+    {
+      "round": 9,
+      "pick": 7,
+      "overall": 87,
+      "teamId": "2022:jake",
+      "playerId": "5433",
+      "playerName": "D'Angelo Russell"
+    },
+    {
+      "round": 9,
+      "pick": 8,
+      "overall": 88,
+      "teamId": "2022:michael",
+      "playerId": "6512",
+      "playerName": "Cade Cunningham"
+    },
+    {
+      "round": 9,
+      "pick": 9,
+      "overall": 89,
+      "teamId": "2022:dadder",
+      "playerId": "6023",
+      "playerName": "Miles Bridges"
+    },
+    {
+      "round": 9,
+      "pick": 10,
+      "overall": 90,
+      "teamId": "2022:jacob-g",
+      "playerId": "4890",
+      "playerName": "Kemba Walker"
+    },
+    {
+      "round": 10,
+      "pick": 1,
+      "overall": 91,
+      "teamId": "2022:jacob-g",
+      "playerId": "4472",
+      "playerName": "Brook Lopez"
+    },
+    {
+      "round": 10,
+      "pick": 2,
+      "overall": 92,
+      "teamId": "2022:dadder",
+      "playerId": "5013",
+      "playerName": "Harrison Barnes"
+    },
+    {
+      "round": 10,
+      "pick": 3,
+      "overall": 93,
+      "teamId": "2022:michael",
+      "playerId": "5341",
+      "playerName": "Kyle Anderson"
+    },
+    {
+      "round": 10,
+      "pick": 4,
+      "overall": 94,
+      "teamId": "2022:jake",
+      "playerId": "6165",
+      "playerName": "RJ Barrett"
+    },
+    {
+      "round": 10,
+      "pick": 5,
+      "overall": 95,
+      "teamId": "2022:jordan",
+      "playerId": "6513",
+      "playerName": "Jalen Green"
+    },
+    {
+      "round": 10,
+      "pick": 6,
+      "overall": 96,
+      "teamId": "2022:matt",
+      "playerId": "4892",
+      "playerName": "Klay Thompson"
+    },
+    {
+      "round": 10,
+      "pick": 7,
+      "overall": 97,
+      "teamId": "2022:eddie",
+      "playerId": "4245",
+      "playerName": "Al Horford"
+    },
+    {
+      "round": 10,
+      "pick": 8,
+      "overall": 98,
+      "teamId": "2022:najim",
+      "playerId": "6205",
+      "playerName": "Nickeil Alexander-Walker"
+    },
+    {
+      "round": 10,
+      "pick": 9,
+      "overall": 99,
+      "teamId": "2022:mitchell",
+      "playerId": "6226",
+      "playerName": "Daniel Gafford"
+    },
+    {
+      "round": 10,
+      "pick": 10,
+      "overall": 100,
+      "teamId": "2022:benjamin",
+      "playerId": "5054",
+      "playerName": "Evan Fournier"
+    },
+    {
+      "round": 11,
+      "pick": 1,
+      "overall": 101,
+      "teamId": "2022:benjamin",
+      "playerId": "6045",
+      "playerName": "Devonte' Graham"
+    },
+    {
+      "round": 11,
+      "pick": 2,
+      "overall": 102,
+      "teamId": "2022:mitchell",
+      "playerId": "5015",
+      "playerName": "Andre Drummond"
+    },
+    {
+      "round": 11,
+      "pick": 3,
+      "overall": 103,
+      "teamId": "2022:najim",
+      "playerId": "5768",
+      "playerName": "Jonathan Isaac"
+    },
+    {
+      "round": 11,
+      "pick": 4,
+      "overall": 104,
+      "teamId": "2022:eddie",
+      "playerId": "6018",
+      "playerName": "Wendell Carter Jr."
+    },
+    {
+      "round": 11,
+      "pick": 5,
+      "overall": 105,
+      "teamId": "2022:matt",
+      "playerId": "6217",
+      "playerName": "Keldon Johnson"
+    },
+    {
+      "round": 11,
+      "pick": 6,
+      "overall": 106,
+      "teamId": "2022:jordan",
+      "playerId": "6175",
+      "playerName": "Tyler Herro"
+    },
+    {
+      "round": 11,
+      "pick": 7,
+      "overall": 107,
+      "teamId": "2022:jake",
+      "playerId": "5769",
+      "playerName": "Lauri Markkanen"
+    },
+    {
+      "round": 11,
+      "pick": 8,
+      "overall": 108,
+      "teamId": "2022:michael",
+      "playerId": "6216",
+      "playerName": "Jordan Poole"
+    },
+    {
+      "round": 11,
+      "pick": 9,
+      "overall": 109,
+      "teamId": "2022:dadder",
+      "playerId": "6463",
+      "playerName": "Jae'Sean Tate"
+    },
+    {
+      "round": 11,
+      "pick": 10,
+      "overall": 110,
+      "teamId": "2022:jacob-g",
+      "playerId": "5582",
+      "playerName": "T.J. McConnell"
+    },
+    {
+      "round": 12,
+      "pick": 1,
+      "overall": 111,
+      "teamId": "2022:jacob-g",
+      "playerId": "6396",
+      "playerName": "Patrick Williams"
+    },
+    {
+      "round": 12,
+      "pick": 2,
+      "overall": 112,
+      "teamId": "2022:dadder",
+      "playerId": "6411",
+      "playerName": "Saddiq Bey"
+    },
+    {
+      "round": 12,
+      "pick": 3,
+      "overall": 113,
+      "teamId": "2022:michael",
+      "playerId": "6017",
+      "playerName": "Mo Bamba"
+    },
+    {
+      "round": 12,
+      "pick": 4,
+      "overall": 114,
+      "teamId": "2022:jake",
+      "playerId": "5349",
+      "playerName": "Spencer Dinwiddie"
+    },
+    {
+      "round": 12,
+      "pick": 5,
+      "overall": 115,
+      "teamId": "2022:jordan",
+      "playerId": "6166",
+      "playerName": "De'Andre Hunter"
+    },
+    {
+      "round": 12,
+      "pick": 6,
+      "overall": 116,
+      "teamId": "2022:matt",
+      "playerId": "5357",
+      "playerName": "Jordan Clarkson"
+    },
+    {
+      "round": 12,
+      "pick": 7,
+      "overall": 117,
+      "teamId": "2022:eddie",
+      "playerId": "6516",
+      "playerName": "Jalen Suggs"
+    },
+    {
+      "round": 12,
+      "pick": 8,
+      "overall": 118,
+      "teamId": "2022:najim",
+      "playerId": "5344",
+      "playerName": "Joe Harris"
+    },
+    {
+      "round": 12,
+      "pick": 9,
+      "overall": 119,
+      "teamId": "2022:mitchell",
+      "playerId": "6073",
+      "playerName": "Duncan Robinson"
+    },
+    {
+      "round": 12,
+      "pick": 10,
+      "overall": 120,
+      "teamId": "2022:benjamin",
+      "playerId": "5157",
+      "playerName": "Nerlens Noel"
+    },
+    {
+      "round": 13,
+      "pick": 1,
+      "overall": 121,
+      "teamId": "2022:benjamin",
+      "playerId": "4913",
+      "playerName": "Bojan Bogdanović"
+    },
+    {
+      "round": 13,
+      "pick": 2,
+      "overall": 122,
+      "teamId": "2022:mitchell",
+      "playerId": "5393",
+      "playerName": "Joe Ingles"
+    },
+    {
+      "round": 13,
+      "pick": 3,
+      "overall": 123,
+      "teamId": "2022:najim",
+      "playerId": "5492",
+      "playerName": "Montrezl Harrell"
+    },
+    {
+      "round": 13,
+      "pick": 4,
+      "overall": 124,
+      "teamId": "2022:eddie",
+      "playerId": "6420",
+      "playerName": "Jaden McDaniels"
+    },
+    {
+      "round": 13,
+      "pick": 5,
+      "overall": 125,
+      "teamId": "2022:matt",
+      "playerId": "5663",
+      "playerName": "Ivica Zubac"
+    },
+    {
+      "round": 13,
+      "pick": 6,
+      "overall": 126,
+      "teamId": "2022:jordan",
+      "playerId": "5192",
+      "playerName": "Mason Plumlee"
+    },
+    {
+      "round": 13,
+      "pick": 7,
+      "overall": 127,
+      "teamId": "2022:jake",
+      "playerId": "6515",
+      "playerName": "Scottie Barnes"
+    },
+    {
+      "round": 13,
+      "pick": 8,
+      "overall": 128,
+      "teamId": "2022:michael",
+      "playerId": "4290",
+      "playerName": "Thaddeus Young"
+    },
+    {
+      "round": 13,
+      "pick": 9,
+      "overall": 129,
+      "teamId": "2022:dadder",
+      "playerId": "5194",
+      "playerName": "Tim Hardaway Jr."
+    },
+    {
+      "round": 13,
+      "pick": 10,
+      "overall": 130,
+      "teamId": "2022:jacob-g",
+      "playerId": "6548",
+      "playerName": "Josh Giddey"
+    }
+  ],
+  "players": [
+    {
+      "playerId": "5352",
+      "name": "Nikola Jokić",
+      "actualRank": 1,
+      "preseasonRank": 1,
+      "gamesPlayed": null,
+      "teamId": "2022:benjamin"
+    },
+    {
+      "playerId": "5294",
+      "name": "Joel Embiid",
+      "actualRank": 2,
+      "preseasonRank": 2,
+      "gamesPlayed": null,
+      "teamId": "2022:michael"
+    },
+    {
+      "playerId": "5432",
+      "name": "Karl-Anthony Towns",
+      "actualRank": 3,
+      "preseasonRank": 5,
+      "gamesPlayed": null,
+      "teamId": "2022:jordan"
+    },
+    {
+      "playerId": "5765",
+      "name": "Jayson Tatum",
+      "actualRank": 4,
+      "preseasonRank": 8,
+      "gamesPlayed": null,
+      "teamId": "2022:jacob-g"
+    },
+    {
+      "playerId": "6016",
+      "name": "Trae Young",
+      "actualRank": 5,
+      "preseasonRank": 7,
+      "gamesPlayed": null,
+      "teamId": "2022:jake"
+    },
+    {
+      "playerId": "5660",
+      "name": "Dejounte Murray",
+      "actualRank": 6,
+      "preseasonRank": 20,
+      "gamesPlayed": null,
+      "teamId": "2022:dadder"
+    },
+    {
+      "playerId": "6404",
+      "name": "Tyrese Haliburton",
+      "actualRank": 7,
+      "preseasonRank": 45,
+      "gamesPlayed": null,
+      "teamId": "2022:mitchell"
+    },
+    {
+      "playerId": "6395",
+      "name": "LaMelo Ball",
+      "actualRank": 8,
+      "preseasonRank": 21,
+      "gamesPlayed": null,
+      "teamId": "2022:jake"
+    },
+    {
+      "playerId": "5185",
+      "name": "Giannis Antetokounmpo",
+      "actualRank": 9,
+      "preseasonRank": 3,
+      "gamesPlayed": null,
+      "teamId": "2022:matt"
+    },
+    {
+      "playerId": "6023",
+      "name": "Miles Bridges",
+      "actualRank": 10,
+      "preseasonRank": 25,
+      "gamesPlayed": null,
+      "teamId": "2022:dadder"
+    },
+    {
+      "playerId": "4612",
+      "name": "Stephen Curry",
+      "actualRank": 11,
+      "preseasonRank": 4,
+      "gamesPlayed": null,
+      "teamId": "2022:najim"
+    },
+    {
+      "playerId": "4614",
+      "name": "DeMar DeRozan",
+      "actualRank": 12,
+      "preseasonRank": 12,
+      "gamesPlayed": null,
+      "teamId": "2022:jordan"
+    },
+    {
+      "playerId": "4244",
+      "name": "Kevin Durant",
+      "actualRank": 13,
+      "preseasonRank": 67,
+      "gamesPlayed": null,
+      "teamId": "2022:jake"
+    },
+    {
+      "playerId": "6015",
+      "name": "Jaren Jackson Jr.",
+      "actualRank": 14,
+      "preseasonRank": 36,
+      "gamesPlayed": null,
+      "teamId": "2022:najim"
+    },
+    {
+      "playerId": "5473",
+      "name": "Devin Booker",
+      "actualRank": 15,
+      "preseasonRank": 31,
+      "gamesPlayed": null,
+      "teamId": "2022:benjamin"
+    },
+    {
+      "playerId": "3704",
+      "name": "LeBron James",
+      "actualRank": 16,
+      "preseasonRank": 6,
+      "gamesPlayed": null,
+      "teamId": "2022:matt"
+    },
+    {
+      "playerId": "4897",
+      "name": "Nikola Vučević",
+      "actualRank": 17,
+      "preseasonRank": 23,
+      "gamesPlayed": null,
+      "teamId": "2022:matt"
+    },
+    {
+      "playerId": "5476",
+      "name": "Terry Rozier",
+      "actualRank": 18,
+      "preseasonRank": 49,
+      "gamesPlayed": null,
+      "teamId": "2022:jordan"
+    },
+    {
+      "playerId": "6422",
+      "name": "Desmond Bane",
+      "actualRank": 19,
+      "preseasonRank": 52,
+      "gamesPlayed": null,
+      "teamId": "2022:michael"
+    },
+    {
+      "playerId": "4563",
+      "name": "James Harden",
+      "actualRank": 20,
+      "preseasonRank": 9,
+      "gamesPlayed": null,
+      "teamId": "2022:mitchell"
+    },
+    {
+      "playerId": "5727",
+      "name": "Fred VanVleet",
+      "actualRank": 21,
+      "preseasonRank": 19,
+      "gamesPlayed": null,
+      "teamId": "2022:najim"
+    },
+    {
+      "playerId": "5197",
+      "name": "Rudy Gobert",
+      "actualRank": 22,
+      "preseasonRank": 11,
+      "gamesPlayed": null,
+      "teamId": "2022:benjamin"
+    },
+    {
+      "playerId": "3930",
+      "name": "Chris Paul",
+      "actualRank": 23,
+      "preseasonRank": 17,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6021",
+      "name": "Mikal Bridges",
+      "actualRank": 24,
+      "preseasonRank": 59,
+      "gamesPlayed": null,
+      "teamId": "2022:michael"
+    },
+    {
+      "playerId": "6038",
+      "name": "Robert Williams III",
+      "actualRank": 25,
+      "preseasonRank": 42,
+      "gamesPlayed": null,
+      "teamId": "2022:mitchell"
+    },
+    {
+      "playerId": "5826",
+      "name": "Donovan Mitchell",
+      "actualRank": 26,
+      "preseasonRank": 13,
+      "gamesPlayed": null,
+      "teamId": "2022:michael"
+    },
+    {
+      "playerId": "4886",
+      "name": "Jonas Valančiūnas",
+      "actualRank": 27,
+      "preseasonRank": 24,
+      "gamesPlayed": null,
+      "teamId": "2022:eddie"
+    },
+    {
+      "playerId": "6014",
+      "name": "Luka Dončić",
+      "actualRank": 28,
+      "preseasonRank": 14,
+      "gamesPlayed": null,
+      "teamId": "2022:eddie"
+    },
+    {
+      "playerId": "6355",
+      "name": "Anthony Edwards",
+      "actualRank": 29,
+      "preseasonRank": 27,
+      "gamesPlayed": null,
+      "teamId": "2022:jake"
+    },
+    {
+      "playerId": "4622",
+      "name": "Jrue Holiday",
+      "actualRank": 30,
+      "preseasonRank": 41,
+      "gamesPlayed": null,
+      "teamId": "2022:najim"
+    },
+    {
+      "playerId": "5658",
+      "name": "Pascal Siakam",
+      "actualRank": 31,
+      "preseasonRank": 28,
+      "gamesPlayed": null,
+      "teamId": "2022:najim"
+    },
+    {
+      "playerId": "6167",
+      "name": "Darius Garland",
+      "actualRank": 32,
+      "preseasonRank": 34,
+      "gamesPlayed": null,
+      "teamId": "2022:eddie"
+    },
+    {
+      "playerId": "6048",
+      "name": "Gary Trent Jr.",
+      "actualRank": 33,
+      "preseasonRank": 93,
+      "gamesPlayed": null,
+      "teamId": "2022:eddie"
+    },
+    {
+      "playerId": "4912",
+      "name": "Jimmy Butler III",
+      "actualRank": 34,
+      "preseasonRank": 10,
+      "gamesPlayed": null,
+      "teamId": "2022:jacob-g"
+    },
+    {
+      "playerId": "4245",
+      "name": "Al Horford",
+      "actualRank": 35,
+      "preseasonRank": 66,
+      "gamesPlayed": null,
+      "teamId": "2022:eddie"
+    },
+    {
+      "playerId": "6413",
+      "name": "Tyrese Maxey",
+      "actualRank": 36,
+      "preseasonRank": 72,
+      "gamesPlayed": null,
+      "teamId": "2022:dadder"
+    },
+    {
+      "playerId": "5253",
+      "name": "Robert Covington",
+      "actualRank": 37,
+      "preseasonRank": 77,
+      "gamesPlayed": null,
+      "teamId": "2022:jacob-g"
+    },
+    {
+      "playerId": "6216",
+      "name": "Jordan Poole",
+      "actualRank": 38,
+      "preseasonRank": 100,
+      "gamesPlayed": null,
+      "teamId": "2022:dadder"
+    },
+    {
+      "playerId": "6017",
+      "name": "Mo Bamba",
+      "actualRank": 39,
+      "preseasonRank": 78,
+      "gamesPlayed": null,
+      "teamId": "2022:michael"
+    },
+    {
+      "playerId": "6577",
+      "name": "Herbert Jones",
+      "actualRank": 40,
+      "preseasonRank": 192,
+      "gamesPlayed": null,
+      "teamId": "2022:najim"
+    },
+    {
+      "playerId": "5073",
+      "name": "Khris Middleton",
+      "actualRank": 41,
+      "preseasonRank": 32,
+      "gamesPlayed": null,
+      "teamId": "2022:mitchell"
+    },
+    {
+      "playerId": "5324",
+      "name": "Zach LaVine",
+      "actualRank": 42,
+      "preseasonRank": 18,
+      "gamesPlayed": null,
+      "teamId": "2022:eddie"
+    },
+    {
+      "playerId": "4901",
+      "name": "Tobias Harris",
+      "actualRank": 43,
+      "preseasonRank": 37,
+      "gamesPlayed": null,
+      "teamId": "2022:dadder"
+    },
+    {
+      "playerId": "5336",
+      "name": "Clint Capela",
+      "actualRank": 44,
+      "preseasonRank": 44,
+      "gamesPlayed": null,
+      "teamId": "2022:jacob-g"
+    },
+    {
+      "playerId": "5482",
+      "name": "Bobby Portis Jr.",
+      "actualRank": 45,
+      "preseasonRank": 58,
+      "gamesPlayed": null,
+      "teamId": "2022:matt"
+    },
+    {
+      "playerId": "6515",
+      "name": "Scottie Barnes",
+      "actualRank": 46,
+      "preseasonRank": 90,
+      "gamesPlayed": null,
+      "teamId": "2022:jordan"
+    },
+    {
+      "playerId": "6411",
+      "name": "Saddiq Bey",
+      "actualRank": 47,
+      "preseasonRank": 84,
+      "gamesPlayed": null,
+      "teamId": "2022:dadder"
+    },
+    {
+      "playerId": "5637",
+      "name": "Buddy Hield",
+      "actualRank": 48,
+      "preseasonRank": 83,
+      "gamesPlayed": null,
+      "teamId": "2022:najim"
+    },
+    {
+      "playerId": "5642",
+      "name": "Domantas Sabonis",
+      "actualRank": 49,
+      "preseasonRank": 16,
+      "gamesPlayed": null,
+      "teamId": "2022:mitchell"
+    },
+    {
+      "playerId": "5693",
+      "name": "Dorian Finney-Smith",
+      "actualRank": 50,
+      "preseasonRank": 136,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6044",
+      "name": "Jalen Brunson",
+      "actualRank": 51,
+      "preseasonRank": 60,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4246",
+      "name": "Mike Conley",
+      "actualRank": 52,
+      "preseasonRank": 68,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5464",
+      "name": "Kristaps Porziņģis",
+      "actualRank": 53,
+      "preseasonRank": 30,
+      "gamesPlayed": null,
+      "teamId": "2022:jacob-g"
+    },
+    {
+      "playerId": "5842",
+      "name": "Derrick White",
+      "actualRank": 54,
+      "preseasonRank": 62,
+      "gamesPlayed": null,
+      "teamId": "2022:jordan"
+    },
+    {
+      "playerId": "6550",
+      "name": "Franz Wagner",
+      "actualRank": 55,
+      "preseasonRank": 109,
+      "gamesPlayed": null,
+      "teamId": "2022:michael"
+    },
+    {
+      "playerId": "4893",
+      "name": "Alec Burks",
+      "actualRank": 56,
+      "preseasonRank": 159,
+      "gamesPlayed": null,
+      "teamId": "2022:mitchell"
+    },
+    {
+      "playerId": "5835",
+      "name": "Jarrett Allen",
+      "actualRank": 57,
+      "preseasonRank": 38,
+      "gamesPlayed": null,
+      "teamId": "2022:jake"
+    },
+    {
+      "playerId": "5013",
+      "name": "Harrison Barnes",
+      "actualRank": 58,
+      "preseasonRank": 55,
+      "gamesPlayed": null,
+      "teamId": "2022:dadder"
+    },
+    {
+      "playerId": "6022",
+      "name": "Shai Gilgeous-Alexander",
+      "actualRank": 59,
+      "preseasonRank": 63,
+      "gamesPlayed": null,
+      "teamId": "2022:jordan"
+    },
+    {
+      "playerId": "6047",
+      "name": "Mitchell Robinson",
+      "actualRank": 60,
+      "preseasonRank": 92,
+      "gamesPlayed": null,
+      "teamId": "2022:michael"
+    },
+    {
+      "playerId": "5958",
+      "name": "Deandre Ayton",
+      "actualRank": 61,
+      "preseasonRank": 33,
+      "gamesPlayed": null,
+      "teamId": "2022:jacob-g"
+    },
+    {
+      "playerId": "5317",
+      "name": "Marcus Smart",
+      "actualRank": 62,
+      "preseasonRank": 75,
+      "gamesPlayed": null,
+      "teamId": "2022:najim"
+    },
+    {
+      "playerId": "5159",
+      "name": "K. Caldwell-Pope",
+      "actualRank": 63,
+      "preseasonRank": 153,
+      "gamesPlayed": null,
+      "teamId": "2022:jordan"
+    },
+    {
+      "playerId": "5602",
+      "name": "Jaylen Brown",
+      "actualRank": 64,
+      "preseasonRank": 39,
+      "gamesPlayed": null,
+      "teamId": "2022:mitchell"
+    },
+    {
+      "playerId": "5640",
+      "name": "Jakob Poeltl",
+      "actualRank": 65,
+      "preseasonRank": 74,
+      "gamesPlayed": null,
+      "teamId": "2022:jordan"
+    },
+    {
+      "playerId": "5827",
+      "name": "Bam Adebayo",
+      "actualRank": 66,
+      "preseasonRank": 26,
+      "gamesPlayed": null,
+      "teamId": "2022:michael"
+    },
+    {
+      "playerId": "6514",
+      "name": "Evan Mobley",
+      "actualRank": 67,
+      "preseasonRank": 46,
+      "gamesPlayed": null,
+      "teamId": "2022:benjamin"
+    },
+    {
+      "playerId": "6217",
+      "name": "Keldon Johnson",
+      "actualRank": 68,
+      "preseasonRank": 108,
+      "gamesPlayed": null,
+      "teamId": "2022:jake"
+    },
+    {
+      "playerId": "5161",
+      "name": "CJ McCollum",
+      "actualRank": 69,
+      "preseasonRank": 51,
+      "gamesPlayed": null,
+      "teamId": "2022:dadder"
+    },
+    {
+      "playerId": "5583",
+      "name": "Christian Wood",
+      "actualRank": 70,
+      "preseasonRank": 47,
+      "gamesPlayed": null,
+      "teamId": "2022:matt"
+    },
+    {
+      "playerId": "6403",
+      "name": "Devin Vassell",
+      "actualRank": 71,
+      "preseasonRank": 158,
+      "gamesPlayed": null,
+      "teamId": "2022:najim"
+    },
+    {
+      "playerId": "6052",
+      "name": "Jarred Vanderbilt",
+      "actualRank": 72,
+      "preseasonRank": 146,
+      "gamesPlayed": null,
+      "teamId": "2022:jake"
+    },
+    {
+      "playerId": "5864",
+      "name": "Monté Morris",
+      "actualRank": 73,
+      "preseasonRank": 149,
+      "gamesPlayed": null,
+      "teamId": "2022:benjamin"
+    },
+    {
+      "playerId": "5905",
+      "name": "Royce O'Neale",
+      "actualRank": 74,
+      "preseasonRank": 102,
+      "gamesPlayed": null,
+      "teamId": "2022:mitchell"
+    },
+    {
+      "playerId": "4152",
+      "name": "Kyle Lowry",
+      "actualRank": 75,
+      "preseasonRank": 50,
+      "gamesPlayed": null,
+      "teamId": "2022:matt"
+    },
+    {
+      "playerId": "6164",
+      "name": "Ja Morant",
+      "actualRank": 76,
+      "preseasonRank": 15,
+      "gamesPlayed": null,
+      "teamId": "2022:benjamin"
+    },
+    {
+      "playerId": "5824",
+      "name": "Malik Monk",
+      "actualRank": 77,
+      "preseasonRank": 225,
+      "gamesPlayed": null,
+      "teamId": "2022:eddie"
+    },
+    {
+      "playerId": "5663",
+      "name": "Ivica Zubac",
+      "actualRank": 78,
+      "preseasonRank": 88,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5433",
+      "name": "D'Angelo Russell",
+      "actualRank": 79,
+      "preseasonRank": 57,
+      "gamesPlayed": null,
+      "teamId": "2022:jake"
+    },
+    {
+      "playerId": "6057",
+      "name": "De'Anthony Melton",
+      "actualRank": 80,
+      "preseasonRank": 154,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6208",
+      "name": "Matisse Thybulle",
+      "actualRank": 81,
+      "preseasonRank": 119,
+      "gamesPlayed": null,
+      "teamId": "2022:jacob-g"
+    },
+    {
+      "playerId": "5894",
+      "name": "Chris Boucher",
+      "actualRank": 82,
+      "preseasonRank": 134,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6204",
+      "name": "Chuma Okeke",
+      "actualRank": 83,
+      "preseasonRank": 141,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5068",
+      "name": "Jae Crowder",
+      "actualRank": 84,
+      "preseasonRank": 133,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4391",
+      "name": "Kevin Love",
+      "actualRank": 85,
+      "preseasonRank": 94,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5338",
+      "name": "Bogdan Bogdanović",
+      "actualRank": 86,
+      "preseasonRank": 117,
+      "gamesPlayed": null,
+      "teamId": "2022:benjamin"
+    },
+    {
+      "playerId": "5074",
+      "name": "Will Barton",
+      "actualRank": 87,
+      "preseasonRank": 101,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5832",
+      "name": "John Collins",
+      "actualRank": 88,
+      "preseasonRank": 29,
+      "gamesPlayed": null,
+      "teamId": "2022:matt"
+    },
+    {
+      "playerId": "6053",
+      "name": "Bruce Brown",
+      "actualRank": 89,
+      "preseasonRank": 229,
+      "gamesPlayed": null,
+      "teamId": "2022:matt"
+    },
+    {
+      "playerId": "5054",
+      "name": "Evan Fournier",
+      "actualRank": 90,
+      "preseasonRank": 132,
+      "gamesPlayed": null,
+      "teamId": "2022:benjamin"
+    },
+    {
+      "playerId": "5295",
+      "name": "Aaron Gordon",
+      "actualRank": 91,
+      "preseasonRank": 114,
+      "gamesPlayed": null,
+      "teamId": "2022:mitchell"
+    },
+    {
+      "playerId": "5292",
+      "name": "Andrew Wiggins",
+      "actualRank": 92,
+      "preseasonRank": 53,
+      "gamesPlayed": null,
+      "teamId": "2022:benjamin"
+    },
+    {
+      "playerId": "6226",
+      "name": "Daniel Gafford",
+      "actualRank": 93,
+      "preseasonRank": 107,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6173",
+      "name": "Cameron Johnson",
+      "actualRank": 94,
+      "preseasonRank": 144,
+      "gamesPlayed": null,
+      "teamId": "2022:jacob-g"
+    },
+    {
+      "playerId": "6175",
+      "name": "Tyler Herro",
+      "actualRank": 95,
+      "preseasonRank": 61,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "3706",
+      "name": "Carmelo Anthony",
+      "actualRank": 96,
+      "preseasonRank": 135,
+      "gamesPlayed": null,
+      "teamId": "2022:mitchell"
+    },
+    {
+      "playerId": "5475",
+      "name": "Kelly Oubre Jr.",
+      "actualRank": 97,
+      "preseasonRank": 103,
+      "gamesPlayed": null,
+      "teamId": "2022:benjamin"
+    },
+    {
+      "playerId": "5318",
+      "name": "Julius Randle",
+      "actualRank": 98,
+      "preseasonRank": 35,
+      "gamesPlayed": null,
+      "teamId": "2022:jake"
+    },
+    {
+      "playerId": "5007",
+      "name": "Anthony Davis",
+      "actualRank": 99,
+      "preseasonRank": 22,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5769",
+      "name": "Lauri Markkanen",
+      "actualRank": 100,
+      "preseasonRank": 152,
+      "gamesPlayed": null,
+      "teamId": "2022:najim"
+    },
+    {
+      "playerId": "5357",
+      "name": "Jordan Clarkson",
+      "actualRank": 101,
+      "preseasonRank": 120,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5840",
+      "name": "Kyle Kuzma",
+      "actualRank": 102,
+      "preseasonRank": 81,
+      "gamesPlayed": null,
+      "teamId": "2022:matt"
+    },
+    {
+      "playerId": "5245",
+      "name": "Seth Curry",
+      "actualRank": 103,
+      "preseasonRank": 80,
+      "gamesPlayed": null,
+      "teamId": "2022:eddie"
+    },
+    {
+      "playerId": "6018",
+      "name": "Wendell Carter Jr.",
+      "actualRank": 104,
+      "preseasonRank": 64,
+      "gamesPlayed": null,
+      "teamId": "2022:eddie"
+    },
+    {
+      "playerId": "6174",
+      "name": "P.J. Washington",
+      "actualRank": 105,
+      "preseasonRank": 96,
+      "gamesPlayed": null,
+      "teamId": "2022:mitchell"
+    },
+    {
+      "playerId": "6236",
+      "name": "Terance Mann",
+      "actualRank": 106,
+      "preseasonRank": 180,
+      "gamesPlayed": null,
+      "teamId": "2022:jordan"
+    },
+    {
+      "playerId": "6512",
+      "name": "Cade Cunningham",
+      "actualRank": 107,
+      "preseasonRank": 54,
+      "gamesPlayed": null,
+      "teamId": "2022:michael"
+    },
+    {
+      "playerId": "6030",
+      "name": "Kevin Huerter",
+      "actualRank": 108,
+      "preseasonRank": 143,
+      "gamesPlayed": null,
+      "teamId": "2022:najim"
+    },
+    {
+      "playerId": "6463",
+      "name": "Jae'Sean Tate",
+      "actualRank": 109,
+      "preseasonRank": 105,
+      "gamesPlayed": null,
+      "teamId": "2022:matt"
+    },
+    {
+      "playerId": "5471",
+      "name": "Myles Turner",
+      "actualRank": 110,
+      "preseasonRank": 111,
+      "gamesPlayed": null,
+      "teamId": "2022:benjamin"
+    },
+    {
+      "playerId": "5356",
+      "name": "Dwight Powell",
+      "actualRank": 111,
+      "preseasonRank": 197,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4913",
+      "name": "Bojan Bogdanović",
+      "actualRank": 112,
+      "preseasonRank": 89,
+      "gamesPlayed": null,
+      "teamId": "2022:benjamin"
+    },
+    {
+      "playerId": "5825",
+      "name": "Luke Kennard",
+      "actualRank": 113,
+      "preseasonRank": 176,
+      "gamesPlayed": null,
+      "teamId": "2022:michael"
+    },
+    {
+      "playerId": "5154",
+      "name": "Otto Porter Jr.",
+      "actualRank": 114,
+      "preseasonRank": 127,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5015",
+      "name": "Andre Drummond",
+      "actualRank": 115,
+      "preseasonRank": 157,
+      "gamesPlayed": null,
+      "teamId": "2022:jake"
+    },
+    {
+      "playerId": "6209",
+      "name": "Brandon Clarke",
+      "actualRank": 116,
+      "preseasonRank": 194,
+      "gamesPlayed": null,
+      "teamId": "2022:jacob-g"
+    },
+    {
+      "playerId": "6224",
+      "name": "Cody Martin",
+      "actualRank": 117,
+      "preseasonRank": 217,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5856",
+      "name": "Isaiah Hartenstein",
+      "actualRank": 118,
+      "preseasonRank": 209,
+      "gamesPlayed": null,
+      "teamId": "2022:eddie"
+    },
+    {
+      "playerId": "6045",
+      "name": "Devonte' Graham",
+      "actualRank": 119,
+      "preseasonRank": 130,
+      "gamesPlayed": null,
+      "teamId": "2022:benjamin"
+    },
+    {
+      "playerId": "5739",
+      "name": "Gary Payton II",
+      "actualRank": 120,
+      "preseasonRank": 232,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6210",
+      "name": "Grant Williams",
+      "actualRank": 121,
+      "preseasonRank": 235,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4660",
+      "name": "Patty Mills",
+      "actualRank": 122,
+      "preseasonRank": 186,
+      "gamesPlayed": null,
+      "teamId": "2022:jacob-g"
+    },
+    {
+      "playerId": "5492",
+      "name": "Montrezl Harrell",
+      "actualRank": 123,
+      "preseasonRank": 95,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5501",
+      "name": "Pat Connaughton",
+      "actualRank": 124,
+      "preseasonRank": 185,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5601",
+      "name": "Brandon Ingram",
+      "actualRank": 125,
+      "preseasonRank": 40,
+      "gamesPlayed": null,
+      "teamId": "2022:dadder"
+    },
+    {
+      "playerId": "6401",
+      "name": "Deni Avdija",
+      "actualRank": 126,
+      "preseasonRank": 237,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5163",
+      "name": "Steven Adams",
+      "actualRank": 127,
+      "preseasonRank": 126,
+      "gamesPlayed": null,
+      "teamId": "2022:dadder"
+    },
+    {
+      "playerId": "5650",
+      "name": "Malik Beasley",
+      "actualRank": 128,
+      "preseasonRank": 155,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5767",
+      "name": "De'Aaron Fox",
+      "actualRank": 129,
+      "preseasonRank": 56,
+      "gamesPlayed": null,
+      "teamId": "2022:michael"
+    },
+    {
+      "playerId": "6032",
+      "name": "Grayson Allen",
+      "actualRank": 130,
+      "preseasonRank": 165,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6407",
+      "name": "Cole Anthony",
+      "actualRank": 131,
+      "preseasonRank": 73,
+      "gamesPlayed": null,
+      "teamId": "2022:mitchell"
+    },
+    {
+      "playerId": "5490",
+      "name": "Kevon Looney",
+      "actualRank": 132,
+      "preseasonRank": 240,
+      "gamesPlayed": null,
+      "teamId": "2022:jordan"
+    },
+    {
+      "playerId": "4906",
+      "name": "Reggie Jackson",
+      "actualRank": 133,
+      "preseasonRank": 98,
+      "gamesPlayed": null,
+      "teamId": "2022:dadder"
+    },
+    {
+      "playerId": "5843",
+      "name": "Josh Hart",
+      "actualRank": 134,
+      "preseasonRank": 123,
+      "gamesPlayed": null,
+      "teamId": "2022:dadder"
+    },
+    {
+      "playerId": "6408",
+      "name": "Isaiah Stewart",
+      "actualRank": 135,
+      "preseasonRank": 87,
+      "gamesPlayed": null,
+      "teamId": "2022:eddie"
+    },
+    {
+      "playerId": "6417",
+      "name": "Immanuel Quickley",
+      "actualRank": 136,
+      "preseasonRank": 206,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6073",
+      "name": "Duncan Robinson",
+      "actualRank": 137,
+      "preseasonRank": 148,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5480",
+      "name": "Delon Wright",
+      "actualRank": 138,
+      "preseasonRank": 251,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5484",
+      "name": "Tyus Jones",
+      "actualRank": 139,
+      "preseasonRank": 252,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5836",
+      "name": "OG Anunoby",
+      "actualRank": 140,
+      "preseasonRank": 43,
+      "gamesPlayed": null,
+      "teamId": "2022:jordan"
+    },
+    {
+      "playerId": "4647",
+      "name": "Patrick Beverley",
+      "actualRank": 141,
+      "preseasonRank": 156,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6269",
+      "name": "Javonte Green",
+      "actualRank": 142,
+      "preseasonRank": 254,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4487",
+      "name": "Nicolas Batum",
+      "actualRank": 143,
+      "preseasonRank": 151,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6211",
+      "name": "Darius Bazley",
+      "actualRank": 144,
+      "preseasonRank": 172,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4480",
+      "name": "JaVale McGee",
+      "actualRank": 145,
+      "preseasonRank": 179,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5142",
+      "name": "Justin Holiday",
+      "actualRank": 146,
+      "preseasonRank": 191,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5327",
+      "name": "Jusuf Nurkić",
+      "actualRank": 147,
+      "preseasonRank": 48,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6420",
+      "name": "Jaden McDaniels",
+      "actualRank": 148,
+      "preseasonRank": 128,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4764",
+      "name": "Hassan Whiteside",
+      "actualRank": 149,
+      "preseasonRank": 170,
+      "gamesPlayed": null,
+      "teamId": "2022:mitchell"
+    },
+    {
+      "playerId": "4163",
+      "name": "P.J. Tucker",
+      "actualRank": 150,
+      "preseasonRank": 167,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4468",
+      "name": "Danilo Gallinari",
+      "actualRank": 151,
+      "preseasonRank": 160,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5341",
+      "name": "Kyle Anderson",
+      "actualRank": 152,
+      "preseasonRank": 129,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5500",
+      "name": "Josh Richardson",
+      "actualRank": 153,
+      "preseasonRank": 181,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6580",
+      "name": "Ayo Dosunmu",
+      "actualRank": 154,
+      "preseasonRank": 234,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4390",
+      "name": "Russell Westbrook",
+      "actualRank": 155,
+      "preseasonRank": 76,
+      "gamesPlayed": null,
+      "teamId": "2022:eddie"
+    },
+    {
+      "playerId": "5350",
+      "name": "Jerami Grant",
+      "actualRank": 156,
+      "preseasonRank": 70,
+      "gamesPlayed": null,
+      "teamId": "2022:matt"
+    },
+    {
+      "playerId": "6170",
+      "name": "Jaxson Hayes",
+      "actualRank": 157,
+      "preseasonRank": 198,
+      "gamesPlayed": null,
+      "teamId": "2022:jacob-g"
+    },
+    {
+      "playerId": "4724",
+      "name": "Gordon Hayward",
+      "actualRank": 158,
+      "preseasonRank": 65,
+      "gamesPlayed": null,
+      "teamId": "2022:jacob-g"
+    },
+    {
+      "playerId": "5349",
+      "name": "Spencer Dinwiddie",
+      "actualRank": 159,
+      "preseasonRank": 106,
+      "gamesPlayed": null,
+      "teamId": "2022:eddie"
+    },
+    {
+      "playerId": "4840",
+      "name": "Kyrie Irving",
+      "actualRank": 160,
+      "preseasonRank": 91,
+      "gamesPlayed": null,
+      "teamId": "2022:jacob-g"
+    },
+    {
+      "playerId": "6253",
+      "name": "Naz Reid",
+      "actualRank": 161,
+      "preseasonRank": 166,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6035",
+      "name": "Anfernee Simons",
+      "actualRank": 162,
+      "preseasonRank": 118,
+      "gamesPlayed": null,
+      "teamId": "2022:michael"
+    },
+    {
+      "playerId": "6513",
+      "name": "Jalen Green",
+      "actualRank": 163,
+      "preseasonRank": 125,
+      "gamesPlayed": null,
+      "teamId": "2022:michael"
+    },
+    {
+      "playerId": "6259",
+      "name": "Garrison Mathews",
+      "actualRank": 164,
+      "preseasonRank": 239,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6558",
+      "name": "Alperen Şengün",
+      "actualRank": 165,
+      "preseasonRank": 121,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5472",
+      "name": "Trey Lyles",
+      "actualRank": 166,
+      "preseasonRank": 245,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5764",
+      "name": "Lonzo Ball",
+      "actualRank": 167,
+      "preseasonRank": 150,
+      "gamesPlayed": null,
+      "teamId": "2022:michael"
+    },
+    {
+      "playerId": "6275",
+      "name": "Caleb Martin",
+      "actualRank": 168,
+      "preseasonRank": 259,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6267",
+      "name": "Max Strus",
+      "actualRank": 169,
+      "preseasonRank": 261,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5651",
+      "name": "Caris LeVert",
+      "actualRank": 170,
+      "preseasonRank": 69,
+      "gamesPlayed": null,
+      "teamId": "2022:eddie"
+    },
+    {
+      "playerId": "5187",
+      "name": "Dennis Schröder",
+      "actualRank": 171,
+      "preseasonRank": 140,
+      "gamesPlayed": null,
+      "teamId": "2022:eddie"
+    },
+    {
+      "playerId": "5069",
+      "name": "Draymond Green",
+      "actualRank": 172,
+      "preseasonRank": 85,
+      "gamesPlayed": null,
+      "teamId": "2022:najim"
+    },
+    {
+      "playerId": "4247",
+      "name": "Jeff Green",
+      "actualRank": 173,
+      "preseasonRank": 233,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6315",
+      "name": "Amir Coffey",
+      "actualRank": 174,
+      "preseasonRank": 265,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6568",
+      "name": "Bones Hyland",
+      "actualRank": 175,
+      "preseasonRank": 271,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4725",
+      "name": "Paul George",
+      "actualRank": 176,
+      "preseasonRank": 139,
+      "gamesPlayed": null,
+      "teamId": "2022:jacob-g"
+    },
+    {
+      "playerId": "5506",
+      "name": "Norman Powell",
+      "actualRank": 177,
+      "preseasonRank": 82,
+      "gamesPlayed": null,
+      "teamId": "2022:benjamin"
+    },
+    {
+      "playerId": "5330",
+      "name": "Gary Harris",
+      "actualRank": 178,
+      "preseasonRank": 244,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5681",
+      "name": "Georges Niang",
+      "actualRank": 179,
+      "preseasonRank": 256,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5893",
+      "name": "Torrey Craig",
+      "actualRank": 180,
+      "preseasonRank": 257,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6557",
+      "name": "Corey Kispert",
+      "actualRank": 181,
+      "preseasonRank": 273,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6218",
+      "name": "Kevin Porter Jr.",
+      "actualRank": 182,
+      "preseasonRank": 110,
+      "gamesPlayed": null,
+      "teamId": "2022:jordan"
+    },
+    {
+      "playerId": "4895",
+      "name": "Marcus Morris Sr.",
+      "actualRank": 183,
+      "preseasonRank": 116,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6060",
+      "name": "Chimezie Metu",
+      "actualRank": 184,
+      "preseasonRank": 263,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6169",
+      "name": "Coby White",
+      "actualRank": 185,
+      "preseasonRank": 169,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6254",
+      "name": "Luguentz Dort",
+      "actualRank": 186,
+      "preseasonRank": 104,
+      "gamesPlayed": null,
+      "teamId": "2022:jacob-g"
+    },
+    {
+      "playerId": "6444",
+      "name": "KJ Martin",
+      "actualRank": 187,
+      "preseasonRank": 258,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5195",
+      "name": "Reggie Bullock Jr.",
+      "actualRank": 188,
+      "preseasonRank": 207,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6399",
+      "name": "Killian Hayes",
+      "actualRank": 189,
+      "preseasonRank": 177,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6109",
+      "name": "Drew Eubanks",
+      "actualRank": 190,
+      "preseasonRank": 260,
+      "gamesPlayed": null,
+      "teamId": "2022:matt"
+    },
+    {
+      "playerId": "6398",
+      "name": "Onyeka Okongwu",
+      "actualRank": 191,
+      "preseasonRank": 264,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5892",
+      "name": "Maxi Kleber",
+      "actualRank": 192,
+      "preseasonRank": 164,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6551",
+      "name": "Davion Mitchell",
+      "actualRank": 193,
+      "preseasonRank": 190,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4130",
+      "name": "LaMarcus Aldridge",
+      "actualRank": 194,
+      "preseasonRank": 99,
+      "gamesPlayed": null,
+      "teamId": "2022:mitchell"
+    },
+    {
+      "playerId": "6397",
+      "name": "Isaac Okoro",
+      "actualRank": 195,
+      "preseasonRank": 168,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4651",
+      "name": "Danny Green",
+      "actualRank": 196,
+      "preseasonRank": 145,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4911",
+      "name": "Cory Joseph",
+      "actualRank": 197,
+      "preseasonRank": 255,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6353",
+      "name": "Gabe Vincent",
+      "actualRank": 198,
+      "preseasonRank": 269,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6400",
+      "name": "Obi Toppin",
+      "actualRank": 199,
+      "preseasonRank": 268,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6548",
+      "name": "Josh Giddey",
+      "actualRank": 200,
+      "preseasonRank": 86,
+      "gamesPlayed": null,
+      "teamId": "2022:jake"
+    },
+    {
+      "playerId": "6255",
+      "name": "John Konchar",
+      "actualRank": 201,
+      "preseasonRank": 266,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5192",
+      "name": "Mason Plumlee",
+      "actualRank": 202,
+      "preseasonRank": 137,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6029",
+      "name": "Lonnie Walker IV",
+      "actualRank": 203,
+      "preseasonRank": 210,
+      "gamesPlayed": null,
+      "teamId": "2022:jake"
+    },
+    {
+      "playerId": "5009",
+      "name": "Bradley Beal",
+      "actualRank": 204,
+      "preseasonRank": 253,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6555",
+      "name": "Chris Duarte",
+      "actualRank": 205,
+      "preseasonRank": 142,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6165",
+      "name": "RJ Barrett",
+      "actualRank": 206,
+      "preseasonRank": 113,
+      "gamesPlayed": null,
+      "teamId": "2022:jake"
+    },
+    {
+      "playerId": "5262",
+      "name": "JaMychal Green",
+      "actualRank": 207,
+      "preseasonRank": 262,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5667",
+      "name": "Malcolm Brogdon",
+      "actualRank": 208,
+      "preseasonRank": 97,
+      "gamesPlayed": null,
+      "teamId": "2022:najim"
+    },
+    {
+      "playerId": "6234",
+      "name": "Talen Horton-Tucker",
+      "actualRank": 209,
+      "preseasonRank": 223,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5497",
+      "name": "Richaun Holmes",
+      "actualRank": 210,
+      "preseasonRank": 71,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6056",
+      "name": "Hamidou Diallo",
+      "actualRank": 211,
+      "preseasonRank": 275,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6290",
+      "name": "Oshae Brissett",
+      "actualRank": 212,
+      "preseasonRank": 276,
+      "gamesPlayed": null,
+      "teamId": "2022:jordan"
+    },
+    {
+      "playerId": "5256",
+      "name": "Dewayne Dedmon",
+      "actualRank": 213,
+      "preseasonRank": 214,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5643",
+      "name": "Taurean Prince",
+      "actualRank": 214,
+      "preseasonRank": 272,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5474",
+      "name": "Cameron Payne",
+      "actualRank": 215,
+      "preseasonRank": 230,
+      "gamesPlayed": null,
+      "teamId": "2022:najim"
+    },
+    {
+      "playerId": "4766",
+      "name": "Nemanja Bjelica",
+      "actualRank": 216,
+      "preseasonRank": 226,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5661",
+      "name": "Damian Jones",
+      "actualRank": 217,
+      "preseasonRank": 282,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4749",
+      "name": "Eric Bledsoe",
+      "actualRank": 218,
+      "preseasonRank": 163,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6412",
+      "name": "Precious Achiuwa",
+      "actualRank": 219,
+      "preseasonRank": 187,
+      "gamesPlayed": null,
+      "teamId": "2022:jordan"
+    },
+    {
+      "playerId": "5754",
+      "name": "Alex Caruso",
+      "actualRank": 220,
+      "preseasonRank": 270,
+      "gamesPlayed": null,
+      "teamId": "2022:benjamin"
+    },
+    {
+      "playerId": "4469",
+      "name": "Eric Gordon",
+      "actualRank": 221,
+      "preseasonRank": 147,
+      "gamesPlayed": null,
+      "teamId": "2022:michael"
+    },
+    {
+      "playerId": "5491",
+      "name": "Cedi Osman",
+      "actualRank": 222,
+      "preseasonRank": 218,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6468",
+      "name": "Facundo Campazzo",
+      "actualRank": 223,
+      "preseasonRank": 196,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6606",
+      "name": "Austin Reaves",
+      "actualRank": 224,
+      "preseasonRank": 298,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5158",
+      "name": "Ben McLemore",
+      "actualRank": 225,
+      "preseasonRank": 281,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6402",
+      "name": "Jalen Smith",
+      "actualRank": 226,
+      "preseasonRank": 300,
+      "gamesPlayed": null,
+      "teamId": "2022:mitchell"
+    },
+    {
+      "playerId": "6409",
+      "name": "Aleksej Pokuševski",
+      "actualRank": 227,
+      "preseasonRank": 224,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5733",
+      "name": "Damion Lee",
+      "actualRank": 228,
+      "preseasonRank": 274,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6036",
+      "name": "Moritz Wagner",
+      "actualRank": 229,
+      "preseasonRank": 284,
+      "gamesPlayed": null,
+      "teamId": "2022:dadder"
+    },
+    {
+      "playerId": "6219",
+      "name": "Nic Claxton",
+      "actualRank": 230,
+      "preseasonRank": 183,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4892",
+      "name": "Klay Thompson",
+      "actualRank": 231,
+      "preseasonRank": 79,
+      "gamesPlayed": null,
+      "teamId": "2022:matt"
+    },
+    {
+      "playerId": "5487",
+      "name": "Larry Nance Jr.",
+      "actualRank": 232,
+      "preseasonRank": 161,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6233",
+      "name": "Isaiah Roby",
+      "actualRank": 233,
+      "preseasonRank": 220,
+      "gamesPlayed": null,
+      "teamId": "2022:jake"
+    },
+    {
+      "playerId": "6433",
+      "name": "Tre Jones",
+      "actualRank": 234,
+      "preseasonRank": 299,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5012",
+      "name": "Damian Lillard",
+      "actualRank": 235,
+      "preseasonRank": 250,
+      "gamesPlayed": null,
+      "teamId": "2022:dadder"
+    },
+    {
+      "playerId": "6566",
+      "name": "Josh Christopher",
+      "actualRank": 236,
+      "preseasonRank": 306,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4750",
+      "name": "Avery Bradley",
+      "actualRank": 237,
+      "preseasonRank": 295,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6037",
+      "name": "Landry Shamet",
+      "actualRank": 238,
+      "preseasonRank": 277,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5217",
+      "name": "Raul Neto",
+      "actualRank": 239,
+      "preseasonRank": 267,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5726",
+      "name": "Bryn Forbes",
+      "actualRank": 240,
+      "preseasonRank": 278,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6613",
+      "name": "Jose Alvarado",
+      "actualRank": 241,
+      "preseasonRank": 308,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "3818",
+      "name": "Dwight Howard",
+      "actualRank": 242,
+      "preseasonRank": 205,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6418",
+      "name": "Payton Pritchard",
+      "actualRank": 243,
+      "preseasonRank": 279,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6560",
+      "name": "Tre Mann",
+      "actualRank": 244,
+      "preseasonRank": 309,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6166",
+      "name": "De'Andre Hunter",
+      "actualRank": 245,
+      "preseasonRank": 122,
+      "gamesPlayed": null,
+      "teamId": "2022:matt"
+    },
+    {
+      "playerId": "5652",
+      "name": "DeAndre' Bembry",
+      "actualRank": 246,
+      "preseasonRank": 287,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6205",
+      "name": "N. Alexander-Walker",
+      "actualRank": 247,
+      "preseasonRank": 171,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6172",
+      "name": "Cam Reddish",
+      "actualRank": 248,
+      "preseasonRank": 182,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6213",
+      "name": "Nassir Little",
+      "actualRank": 249,
+      "preseasonRank": 297,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6231",
+      "name": "Jaylen Nowell",
+      "actualRank": 250,
+      "preseasonRank": 291,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5194",
+      "name": "Tim Hardaway Jr.",
+      "actualRank": 251,
+      "preseasonRank": 188,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4488",
+      "name": "George Hill",
+      "actualRank": 252,
+      "preseasonRank": 247,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4800",
+      "name": "Ish Smith",
+      "actualRank": 253,
+      "preseasonRank": 289,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6133",
+      "name": "Jordan McLaughlin",
+      "actualRank": 254,
+      "preseasonRank": 286,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6552",
+      "name": "Ziaire Williams",
+      "actualRank": 255,
+      "preseasonRank": 314,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5495",
+      "name": "Willy Hernangómez",
+      "actualRank": 256,
+      "preseasonRank": 294,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4610",
+      "name": "Ricky Rubio",
+      "actualRank": 257,
+      "preseasonRank": 202,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5959",
+      "name": "Marvin Bagley III",
+      "actualRank": 258,
+      "preseasonRank": 193,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4631",
+      "name": "Taj Gibson",
+      "actualRank": 259,
+      "preseasonRank": 285,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5657",
+      "name": "Furkan Korkmaz",
+      "actualRank": 260,
+      "preseasonRank": 288,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6034",
+      "name": "Aaron Holiday",
+      "actualRank": 261,
+      "preseasonRank": 293,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4136",
+      "name": "Rudy Gay",
+      "actualRank": 262,
+      "preseasonRank": 216,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5014",
+      "name": "Terrence Ross",
+      "actualRank": 263,
+      "preseasonRank": 173,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6065",
+      "name": "Shake Milton",
+      "actualRank": 264,
+      "preseasonRank": 283,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4290",
+      "name": "Thaddeus Young",
+      "actualRank": 265,
+      "preseasonRank": 189,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5214",
+      "name": "Mike Muscala",
+      "actualRank": 266,
+      "preseasonRank": 301,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5018",
+      "name": "Jeremy Lamb",
+      "actualRank": 267,
+      "preseasonRank": 227,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5016",
+      "name": "Austin Rivers",
+      "actualRank": 268,
+      "preseasonRank": 305,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6549",
+      "name": "Jonathan Kuminga",
+      "actualRank": 269,
+      "preseasonRank": 327,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6410",
+      "name": "Josh Green",
+      "actualRank": 270,
+      "preseasonRank": 316,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6028",
+      "name": "Donte DiVincenzo",
+      "actualRank": 271,
+      "preseasonRank": 162,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6574",
+      "name": "Jeremiah Robinson-Earl",
+      "actualRank": 272,
+      "preseasonRank": 323,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5747",
+      "name": "Derrick Jones Jr.",
+      "actualRank": 273,
+      "preseasonRank": 292,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6604",
+      "name": "Trendon Watford",
+      "actualRank": 274,
+      "preseasonRank": 325,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4486",
+      "name": "Serge Ibaka",
+      "actualRank": 275,
+      "preseasonRank": 201,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6437",
+      "name": "Jordan Nwora",
+      "actualRank": 276,
+      "preseasonRank": 312,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5858",
+      "name": "Dillon Brooks",
+      "actualRank": 277,
+      "preseasonRank": 178,
+      "gamesPlayed": null,
+      "teamId": "2022:jake"
+    },
+    {
+      "playerId": "5322",
+      "name": "Doug McDermott",
+      "actualRank": 278,
+      "preseasonRank": 221,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6569",
+      "name": "Cam Thomas",
+      "actualRank": 279,
+      "preseasonRank": 324,
+      "gamesPlayed": null,
+      "teamId": "2022:benjamin"
+    },
+    {
+      "playerId": "4720",
+      "name": "DeMarcus Cousins",
+      "actualRank": 280,
+      "preseasonRank": 303,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6076",
+      "name": "Kenrich Williams",
+      "actualRank": 281,
+      "preseasonRank": 290,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5468",
+      "name": "Stanley Johnson",
+      "actualRank": 282,
+      "preseasonRank": 302,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4621",
+      "name": "James Johnson",
+      "actualRank": 283,
+      "preseasonRank": 304,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5880",
+      "name": "Daniel Theis",
+      "actualRank": 284,
+      "preseasonRank": 195,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5164",
+      "name": "Kelly Olynyk",
+      "actualRank": 285,
+      "preseasonRank": 115,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4561",
+      "name": "Blake Griffin",
+      "actualRank": 286,
+      "preseasonRank": 212,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6026",
+      "name": "Troy Brown Jr.",
+      "actualRank": 287,
+      "preseasonRank": 320,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4682",
+      "name": "Garrett Temple",
+      "actualRank": 288,
+      "preseasonRank": 296,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6240",
+      "name": "Jalen McDaniels",
+      "actualRank": 289,
+      "preseasonRank": 310,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5390",
+      "name": "Khem Birch",
+      "actualRank": 290,
+      "preseasonRank": 175,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "4890",
+      "name": "Kemba Walker",
+      "actualRank": 291,
+      "preseasonRank": 138,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6171",
+      "name": "Rui Hachimura",
+      "actualRank": 292,
+      "preseasonRank": 184,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5844",
+      "name": "Frank Jackson",
+      "actualRank": 293,
+      "preseasonRank": 313,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6206",
+      "name": "Goga Bitadze",
+      "actualRank": 294,
+      "preseasonRank": 311,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6559",
+      "name": "Trey Murphy III",
+      "actualRank": 295,
+      "preseasonRank": 337,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "5393",
+      "name": "Joe Ingles",
+      "actualRank": 296,
+      "preseasonRank": 280,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6059",
+      "name": "Keita Bates-Diop",
+      "actualRank": 297,
+      "preseasonRank": 331,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6564",
+      "name": "Isaiah Jackson",
+      "actualRank": 298,
+      "preseasonRank": 346,
+      "gamesPlayed": null,
+      "teamId": "2022:jake"
+    },
+    {
+      "playerId": "6329",
+      "name": "Juan Toscano-Anderson",
+      "actualRank": 299,
+      "preseasonRank": 246,
+      "gamesPlayed": null,
+      "teamId": null
+    },
+    {
+      "playerId": "6586",
+      "name": "Kessler Edwards",
+      "actualRank": 300,
+      "preseasonRank": 343,
+      "gamesPlayed": null,
+      "teamId": null
+    }
+  ],
+  "activity": {
+    "2022:dadder": {
+      "moves": 60,
+      "trades": 0
+    },
+    "2022:jacob-g": {
+      "moves": 66,
+      "trades": 3
+    },
+    "2022:michael": {
+      "moves": 41,
+      "trades": 0
+    },
+    "2022:najim": {
+      "moves": 61,
+      "trades": 1
+    },
+    "2022:jordan": {
+      "moves": 69,
+      "trades": 1
+    },
+    "2022:jake": {
+      "moves": 55,
+      "trades": 1
+    },
+    "2022:eddie": {
+      "moves": 30,
+      "trades": 1
+    },
+    "2022:matt": {
+      "moves": 54,
+      "trades": 0
+    },
+    "2022:mitchell": {
+      "moves": 43,
+      "trades": 1
+    },
+    "2022:benjamin": {
+      "moves": 16,
+      "trades": 0
+    }
+  },
+  "trades": [
+    {
+      "date": "2021-12-15",
+      "status": "completed",
+      "sides": [
+        {
+          "teamId": "2022:jacob-g",
+          "receives": [
+            "Deandre Ayton",
+            "Jonathan Isaac"
+          ]
+        },
+        {
+          "teamId": "2022:najim",
+          "receives": [
+            "Jrue Holiday"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2021-12-09",
+      "status": "completed",
+      "sides": [
+        {
+          "teamId": "2022:jake",
+          "receives": [
+            "Bradley Beal"
+          ]
+        },
+        {
+          "teamId": "2022:jordan",
+          "receives": [
+            "Derrick White",
+            "Scottie Barnes"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2021-12-09",
+      "status": "vetoed",
+      "sides": [
+        {
+          "teamId": "2022:jordan",
+          "receives": [
+            "Derrick White",
+            "Scottie Barnes"
+          ]
+        },
+        {
+          "teamId": "2022:jake",
+          "receives": [
+            "Bradley Beal"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2021-12-07",
+      "status": "vetoed",
+      "sides": [
+        {
+          "teamId": "2022:jake",
+          "receives": [
+            "Bradley Beal"
+          ]
+        },
+        {
+          "teamId": "2022:jordan",
+          "receives": [
+            "Derrick White",
+            "Scottie Barnes"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2021-12-07",
+      "status": "completed",
+      "sides": [
+        {
+          "teamId": "2022:jacob-g",
+          "receives": [
+            "Clint Capela"
+          ]
+        },
+        {
+          "teamId": "2022:mitchell",
+          "receives": [
+            "Khris Middleton"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2021-12-04",
+      "status": "vetoed",
+      "sides": [
+        {
+          "teamId": "2022:jordan",
+          "receives": [
+            "Kevin Porter Jr."
+          ]
+        },
+        {
+          "teamId": "2022:eddie",
+          "receives": [
+            "DeMar DeRozan"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2021-11-14",
+      "status": "completed",
+      "sides": [
+        {
+          "teamId": "2022:eddie",
+          "receives": [
+            "Jonas Valančiūnas",
+            "Dennis Schröder"
+          ]
+        },
+        {
+          "teamId": "2022:jacob-g",
+          "receives": [
+            "Jimmy Butler III"
+          ]
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "source": "https://basketball.fantasysports.yahoo.com/2021/nba/4933",
+    "categoryRecords": {
+      "2022:dadder": "89-73-0",
+      "2022:najim": "95-66-1",
+      "2022:matt": "90-70-2",
+      "2022:michael": "85-72-5",
+      "2022:benjamin": "81-80-1",
+      "2022:jake": "86-75-1",
+      "2022:jordan": "76-86-0",
+      "2022:eddie": "64-94-4",
+      "2022:jacob-g": "72-90-0",
+      "2022:mitchell": "64-96-2"
+    },
+    "playoffSeeds": [
+      "2022:najim",
+      "2022:matt",
+      "2022:dadder",
+      "2022:michael",
+      "2022:jake",
+      "2022:benjamin"
+    ],
+    "champion": "2022:dadder"
+  }
+}

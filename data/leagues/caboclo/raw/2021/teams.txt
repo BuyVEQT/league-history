@@ -1,0 +1,11 @@
+# idx|team name (as on the Managers page)|manager id     (10-team season)
+0|BIG papa|dadder
+1|Bruno Caboclo|jacob-g
+2|De'Aaron Fox and the Hound|michael
+3|Masai Jr|najim
+4|Masai Jr .|jordan
+5|Redemption SZN|jake
+6|Russell WestBrick|eddie
+7|SSJ3 Lebron|matt
+8|Sunday Strangler|mitchell
+9|The Golden Jokic's|benjamin
