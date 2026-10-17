@@ -64,3 +64,25 @@ window.__matchups = [...seen.entries()].map(([k, v]) => k + '=' + v[0] + '-' + v
 
 Navigating: the league page has a site-wide "Standings" link too. Click the tab inside the league's standings
 module, not the header link.
+
+## What we learned extracting 2018-19 through 2025-26
+
+- **Raw files, then build.** Each season's captures live in `data/leagues/caboclo/raw/<yahooYear>/`
+  (`teams`, `settings`, `regular`, `playoffs`, `standings`, `draft`, `ranks`, `moves-trades`).
+  `node scripts/build-caboclo.mjs [yahooYear]` writes `<endYear>.json`. Never hand-edit the JSON.
+- **Faster capture.** Everything except the Schedule tab can be `fetch`ed same-origin and parsed with
+  `DOMParser`, one page about every second. Write the combined output into a `<pre>` and read it back with
+  `get_page_text`: that avoids the ~2,000-character limit on script return values. Keep each script
+  under ~40 s (split schedule / settings+standings+draft+trades / player ranks).
+- **Player ranks:** `/<Y>/nba/<id>/players?status=ALL&pos=P&stat1=S_S_<Y>&sort=AR&sdir=1&count=<offset>`
+  gives Current (actual) rank, Pre-Season rank, season stats and the fantasy owner at season end.
+  2018, 2020 and 2021 show "-" for games played and stats; keep the ranks only.
+- **League shape changed:** 10 teams with 6-team playoffs (seeds 1-2 bye) in 2018, 2020 and 2021;
+  12 teams with 8-team playoffs from 2022. The bracket text shows `Bye` for byes; the 5th-place game
+  is not stored (Yahoo's final ranks are).
+- **Ties:** if two teams tie on category record and every derived tiebreaker, Yahoo's seed order
+  (`sourceSeedOrder`) breaks it (2020-21: Sunday Strangler over The Twin Towers 2.0).
+- **Record book quirk:** Yahoo counts a first-round bye as a matchup victory.
+- **Identities:** match managers by Yahoo email (local, gitignored); team names change every year.
+  2018-19 had two managers not seen since: "Brendon" (Daddy Dong) and "Brendan" (notoriousBMG), on
+  different email accounts.

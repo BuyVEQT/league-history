@@ -1,0 +1,12 @@
+# idx|team name (as on the Managers page)|manager id     (10-team season)
+# brendon / brendan: two different Yahoo accounts (different email providers); confirm with the commissioner.
+0|35.2 PPG|mitchell
+1|Daddy Dong|brendon
+2|Jordan Over LeBum|michael
+3|Klaw Leonard|matt
+4|Knicks 2.0|jordan
+5|notoriousBMG|brendan
+6|Skip|jacob-g
+7|Suck my Doncic|najim
+8|Underdog|benjamin
+9|Vince Carter's Nuts|eddie

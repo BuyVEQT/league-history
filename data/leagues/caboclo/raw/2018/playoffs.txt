@@ -1,0 +1,8 @@
+# week|stage|higher seed idx|lower seed idx|cats higher|cats lower   (championship bracket only)
+# 6-team bracket: seeds 1 (35.2 PPG) and 2 (Klaw Leonard) had byes in week 22. 5th-place game not stored.
+22|quarterfinal|6|1|5|4
+22|quarterfinal|7|4|6|3
+23|semifinal|0|6|4|5
+23|semifinal|3|7|5|4
+24|final|3|6|5|4
+24|third_place|0|7|2|7
