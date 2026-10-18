@@ -121,7 +121,7 @@ export default async function DraftBoardPage(props: PageProps<"/[league]/draft/[
                   return (
                     <td key={c.teamId} className="p-0 align-top">
                       {live ? (
-                        <div className="pick plain" tabIndex={0} data-tt={tt(p.playerName, [["Pick", `Rd ${p.round}, #${p.overall} overall`], ["Drafted by", nameOf(p.managerId)]])}>
+                        <div className="pick plain" tabIndex={0} data-panel={`player:${p.playerId}`} data-tt={tt(p.playerName, [["Pick", `Rd ${p.round}, #${p.overall} overall`], ["Drafted by", nameOf(p.managerId)]])}>
                           <div className="pn">{p.playerName}</div>
                           <div className="pm">#{p.overall}</div>
                         </div>
@@ -129,6 +129,7 @@ export default async function DraftBoardPage(props: PageProps<"/[league]/draft/[
                         <div
                           className={`pick ${pickTone(p.value)}`}
                           tabIndex={0}
+                          data-panel={`player:${p.playerId}`}
                           data-tt={tt(p.playerName, [
                             ["Pick", `Rd ${p.round}, #${p.overall} overall`],
                             ["Drafted by", nameOf(p.managerId)],

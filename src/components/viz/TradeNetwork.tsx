@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { openPanel } from "@/components/panel/openPanel";
 import { monograms } from "./monograms";
 import { tt } from "./tt";
 
@@ -14,7 +15,7 @@ type Edge = { a: string; b: string; trades: number };
 /**
  * Managers who traded on a circle, a curve through the middle for each pair that dealt.
  * Wider curve = more trades. Links draw on when the chart appears (CSS, so reduced motion shows them at rest).
- * Hover a manager to light up their partners; click to open their page.
+ * Hover a manager to light up their partners; click for their side panel (Cmd/Ctrl-click for their page).
  */
 export function TradeNetwork({ ids, edges, names, slug }: { ids: string[]; edges: Edge[]; names: Record<string, string>; slug: string }) {
   const router = useRouter();
@@ -82,11 +83,11 @@ export function TradeNetwork({ ids, edges, names, slug }: { ids: string[]; edges
             onPointerLeave={() => setActive(null)}
             onFocus={() => setActive(id)}
             onBlur={() => setActive(null)}
-            onClick={() => go(id)}
+            onClick={(ev) => (ev.metaKey || ev.ctrlKey ? go(id) : openPanel("manager", id))}
             onKeyDown={(ev) => {
-              if (ev.key === "Enter") go(id);
+              if (ev.key === "Enter") openPanel("manager", id);
             }}
-            data-tt={tt(`${names[id]} · ${deg.get(id)} trade${deg.get(id) === 1 ? "" : "s"}`, partners, "Click to open their page")}
+            data-tt={tt(`${names[id]} · ${deg.get(id)} trade${deg.get(id) === 1 ? "" : "s"}`, partners, "Click for details")}
           >
             <g className="tx-tn-node" style={{ animationDelay: `${150 + i * 40}ms` }}>
               <circle r={r} fill="var(--band)" stroke={active === id ? "var(--accent)" : "var(--surface)"} strokeWidth={3} />

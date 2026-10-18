@@ -375,7 +375,7 @@ export default async function ManagerPage(props: PageProps<"/[league]/managers/[
                 return (
                   <tr key={s.year} className={tr}>
                     <td className={td}>
-                      <Link href={`/${slug}/seasons/${s.year}`} className="font-semibold text-accent hover:underline">
+                      <Link href={`/${slug}/seasons/${s.year}`} data-panel={`season:${s.year}`} className="font-semibold text-accent hover:underline">
                         {s.label}
                       </Link>
                     </td>

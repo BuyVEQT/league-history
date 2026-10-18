@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { CountUp } from "@/components/CountUp";
 import { signed } from "@/components/draft";
 import { InfoTip } from "@/components/InfoTip";
+import { PlayerName } from "@/components/panel/PlayerName";
 import { ShowMore } from "@/components/ShowMore";
 import { TradeLog, type TradeLogEntry } from "@/components/TradeLog";
 import { TradePanelHead } from "@/components/TradePanelHead";
@@ -12,6 +13,7 @@ import { tt } from "@/components/viz/tt";
 import { UnownedTrack } from "@/components/viz/UnownedTrack";
 import { WireCharts } from "@/components/viz/WireCharts";
 import { formatNumber } from "@/lib/analytics/format";
+import { playerIdLookup } from "@/lib/analytics/panelView";
 import { unownedStars } from "@/lib/analytics/players";
 import { activityVsFinish, hasTradeData, leagueTrades, managerActivity, tradeEdges, undraftedGems, wireSeasons } from "@/lib/analytics/trades";
 import { activityBars, tradeLogSeasons, tradeSideShares } from "@/lib/analytics/tradesView";
@@ -33,6 +35,7 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
   const vetoed = trades.filter((t) => t.status === "vetoed");
   const activity = activityBars(managerActivity(league));
   const gems = undraftedGems(league);
+  const pid = playerIdLookup(league);
   const unowned = unownedStars(league);
   const vsFinish = activityVsFinish(league);
   const edges = tradeEdges(league);
@@ -70,6 +73,7 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
         players: s.players.map((p, j) => ({
           key: `${p.playerId ?? p.name}-${j}`,
           name: p.name,
+          id: p.playerId,
           actualRank: p.actualRank,
           afterRank: p.afterRank ?? null,
           afterGames: p.afterGames ?? null,
@@ -263,7 +267,9 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
                       #{g.actualRank}
                     </div>
                     <div className="min-w-0">
-                      <div className="tx-und-nm">{g.playerName}</div>
+                      <div className="tx-und-nm">
+                        <PlayerName id={pid(g.year, g.playerName)} name={g.playerName} />
+                      </div>
                       <div className="tx-und-d">
                         {g.label} · on {g.teamName} (<ManagerLink id={g.managerId} name={nameOf(g.managerId)} />) at season end
                       </div>

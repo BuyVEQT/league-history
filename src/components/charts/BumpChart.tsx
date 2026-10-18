@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { formatPct, ordinal } from "@/lib/analytics/format";
 import type { FinishPoint } from "@/lib/analytics/leaderboardView";
+import { openPanel } from "@/components/panel/openPanel";
 import { useLeagueBase } from "@/components/useLeagueBase";
 import { tt } from "@/components/viz/tt";
 import { useD3Chart } from "@/components/viz/useD3Chart";
@@ -23,7 +24,7 @@ type P = FinishPoint & { id: string };
 /**
  * Where everyone finished: one line per manager, final finish by season (1st at the top). Everyone is a
  * thin gray line; up to three pinned managers are drawn in color and labelled. Hovering finds the nearest
- * point and lights up that manager's line; clicking opens their profile.
+ * point and lights up that manager's line; clicking opens their side panel (Cmd/Ctrl-click: profile).
  */
 export function BumpChart({ series, years, maxTeams, initialPins }: { series: BumpSeries[]; years: { year: number; label: string }[]; maxTeams: number; initialPins: string[] }) {
   const [pins, setPins] = useState<string[]>(initialPins.slice(0, MAX_PINS));
@@ -198,7 +199,7 @@ export function BumpChart({ series, years, maxTeams, initialPins }: { series: Bu
                 ["Result", d.result],
                 ["Category win %", formatPct(d.catPct)],
               ],
-              "Click to open · pin names above",
+              "Click for details · pin names above",
             ),
           );
         })
@@ -207,8 +208,10 @@ export function BumpChart({ series, years, maxTeams, initialPins }: { series: Bu
           this.removeAttribute("data-tt");
           render(false);
         })
-        .on("click", () => {
-          if (hoverId) router.push(`${base}/managers/${hoverId}`);
+        .on("click", (e: MouseEvent) => {
+          if (!hoverId) return;
+          if (e.metaKey || e.ctrlKey) router.push(`${base}/managers/${hoverId}`);
+          else openPanel("manager", hoverId);
         });
 
       render(first && !reduced);

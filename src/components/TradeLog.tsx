@@ -3,6 +3,7 @@
 import { monograms } from "@/components/viz/monograms";
 import { useState } from "react";
 import { rankLabel, signed } from "./draft";
+import { PlayerName } from "./panel/PlayerName";
 import { Avatar, ManagerLink } from "./ui";
 import { tt } from "./viz/tt";
 
@@ -12,7 +13,7 @@ export type TradeLogSide = {
   value: number;
   /** Value as a share of the bigger side in the same trade (0..1). */
   share: number;
-  players: { key: string; name: string; actualRank: number | null; afterRank: number | null; afterGames: number | null }[];
+  players: { key: string; name: string; id?: string | null; actualRank: number | null; afterRank: number | null; afterGames: number | null }[];
 };
 
 export type TradeLogEntry = {
@@ -98,7 +99,7 @@ export function TradeLog({
                     <ul>
                       {s.players.map((p) => (
                         <li key={p.key}>
-                          <span>{p.name}</span>
+                          <PlayerName id={p.id} name={p.name} />
                           {t.basis === "after" ? (
                             <span
                               className="num text-muted"

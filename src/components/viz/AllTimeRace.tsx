@@ -91,6 +91,7 @@ export function AllTimeRace({ frames, names }: { frames: { label: string; rows: 
             <div
               key={id}
               className="race-row"
+              data-panel={`manager:${id}`}
               style={{ transform: `translateY(${(r ? i : order.length + everyone.indexOf(id)) * ROW}px)`, opacity: r ? 1 : 0 }}
               data-tt={
                 r

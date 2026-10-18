@@ -1,11 +1,19 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Nav } from "@/components/Nav";
+import { DrawerProvider } from "@/components/panel/DrawerProvider";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ChartTooltip } from "@/components/viz/ChartTooltip";
 import { hasDraftData } from "@/lib/analytics/draft";
 import { hasTradeData } from "@/lib/analytics/trades";
 import { getLeague, leagueSlugs } from "@/lib/data";
+import { panelData, type PanelData } from "@/lib/analytics/panelView";
+import { managerBadges } from "./managers/managerBadges";
+import type { League } from "@/lib/types";
+
+/** Side-panel data, built once per league per build worker (every page renders this layout). */
+const panelCache = new WeakMap<League, PanelData>();
+const panelFor = (league: League) => panelCache.get(league) ?? panelCache.set(league, panelData(league, managerBadges(league))).get(league)!;
 
 // Opts this layout segment out of the dev-only instant-navigation check
 // (https://nextjs.org/docs/messages/instant-shell-url-data). Pages that read params can still show that
@@ -23,6 +31,7 @@ export default async function LeagueLayout({ children, params }: LayoutProps<"/[
   const last = league.seasons.at(-1)!;
   const managers = new Set(league.seasons.flatMap((s) => s.teams.map((t) => t.managerId))).size;
   return (
+    <DrawerProvider data={panelFor(league)}>
     <div className="flex min-h-screen flex-col">
       <a href="#league-content" className="skip-link">Skip to league content</a>
       <header className="band">
@@ -52,5 +61,6 @@ export default async function LeagueLayout({ children, params }: LayoutProps<"/[
       <SiteFooter source={league.source} />
       <ChartTooltip />
     </div>
+    </DrawerProvider>
   );
 }
