@@ -6,6 +6,7 @@
 @import "./styles/draft.css";
 @import "./styles/trades.css";
 @import "./styles/explore.css";
+@import "./styles/spotlight.css";
 
 /* "Caboclo Cup" design: a navy arena band over a cool scorebook-gray floor, white panels, ball-orange accents. */
 :root {

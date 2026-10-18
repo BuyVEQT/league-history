@@ -15,6 +15,7 @@ export function WireCharts({ vf, rows, nameOf }: { vf: ActivityVsFinish; rows: T
         <WireScatter
           rows={rows.map((d) => ({
             key: `${d.year}-${d.teamName}-${d.managerId}`,
+            managerId: d.managerId,
             teamName: d.teamName,
             manager: nameOf(d.managerId),
             label: d.label,

@@ -100,6 +100,7 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
               spots={race.spots}
               lines={race.lines.map((l) => ({
                 teamId: l.teamId,
+                managerId: l.managerId,
                 teamName: l.teamName,
                 managerName: managerName(l.managerId),
                 ranks: l.ranks,
@@ -262,7 +263,7 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
                 const inPlayoffs = outcome.playoffTeamIds.has(r.teamId);
                 const p = pctOf(r);
                 return (
-                  <tr key={r.teamId} className={`${tr} ${r.rank === spots && spots < outcome.standings.length ? "cutline" : ""}`}>
+                  <tr key={r.teamId} data-m={r.managerId} className={`${tr} ${r.rank === spots && spots < outcome.standings.length ? "cutline" : ""}`}>
                     <td className={`${td} text-muted`}>{r.rank}</td>
                     <td className={`${td} font-semibold`}>{r.teamName}</td>
                     <td className={td}>

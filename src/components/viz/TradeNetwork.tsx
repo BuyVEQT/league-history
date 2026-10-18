@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useSpotlight } from "@/components/spotlight/SpotlightProvider";
 import { monograms } from "./monograms";
 import { tt } from "./tt";
 
@@ -19,6 +20,9 @@ type Edge = { a: string; b: string; trades: number };
 export function TradeNetwork({ ids, edges, names, slug }: { ids: string[]; edges: Edge[]; names: Record<string, string>; slug: string }) {
   const router = useRouter();
   const [active, setActive] = useState<string | null>(null);
+  // An edge belongs to both ends: tag it with whichever end is spotlit so it stays lit for either.
+  const { spot } = useSpotlight();
+  const edgeM = (e: Edge) => (spot === e.b ? e.b : e.a);
   const initials = monograms(Object.entries(names).map(([id, name]) => ({ id, name })));
   const maxN = Math.max(1, ...edges.map((e) => e.trades));
   const deg = new Map(ids.map((id) => [id, edges.filter((e) => e.a === id || e.b === id).reduce((s, e) => s + e.trades, 0)]));
@@ -43,6 +47,7 @@ export function TradeNetwork({ ids, edges, names, slug }: { ids: string[]; edges
           <path
             key={`${e.a}|${e.b}`}
             className="tx-tn-edge"
+            data-m={edgeM(e)}
             style={{ animationDelay: `${(i * 137) % 300}ms` }}
             pathLength={1}
             d={edgePath(e)}
@@ -58,7 +63,7 @@ export function TradeNetwork({ ids, edges, names, slug }: { ids: string[]; edges
       {/* The active manager's links, on top in orange. */}
       <g pointerEvents="none">
         {edges.filter(touches).map((e) => (
-          <path key={`${e.a}|${e.b}`} d={edgePath(e)} fill="none" stroke="var(--accent)" strokeOpacity={0.85} strokeLinecap="round" strokeWidth={width(e)} />
+          <path key={`${e.a}|${e.b}`} data-m={edgeM(e)} d={edgePath(e)} fill="none" stroke="var(--accent)" strokeOpacity={0.85} strokeLinecap="round" strokeWidth={width(e)} />
         ))}
       </g>
       {ids.map((id, i) => {
@@ -73,6 +78,7 @@ export function TradeNetwork({ ids, edges, names, slug }: { ids: string[]; edges
         return (
           <g
             key={id}
+            data-m={id}
             transform={`translate(${x},${y})`}
             role="link"
             tabIndex={0}

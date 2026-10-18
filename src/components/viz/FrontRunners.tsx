@@ -22,6 +22,7 @@ export function FrontRunners({ rows, names }: { rows: FrontRunnerRecord[]; names
         .selectAll("g")
         .data(rows)
         .join("g")
+        .attr("data-m", (r) => r.managerId)
         .attr("transform", (_, i) => `translate(0,${m.t + i * rh})`)
         .attr("data-tt", (r) =>
           tt(r.teamName, [

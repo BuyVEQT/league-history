@@ -11,6 +11,8 @@ import { SeasonReplay } from "./SeasonReplay";
 
 export interface RaceLineData {
   teamId: string;
+  /** Tags the line for the Spotlight. */
+  managerId?: string;
   teamName: string;
   managerName: string;
   /** Rank after each week in `weeks`. */
@@ -98,7 +100,7 @@ export function RaceChart({ weeks, lines, spots, stories, replay, managerNames }
         .x((_, i) => x(weeks[i])!)
         .y((d) => y(d))
         .curve(d3.curveBumpX);
-      const g = svg.append("g").selectAll("g").data(lines).join("g");
+      const g = svg.append("g").selectAll("g").data(lines).join("g").attr("data-m", (l) => l.managerId ?? null);
       const paths = g.append("path").attr("class", "rl").attr("d", (l) => line(l.ranks)).attr("fill", "none").attr("stroke-linecap", "round");
       const lastX = x(weeks.at(-1)!)!;
       const dots = g.append("circle").attr("cx", lastX).attr("cy", (l) => y(l.ranks.at(-1)!)).attr("r", 4.5);
@@ -252,7 +254,7 @@ export function RaceChart({ weeks, lines, spots, stories, replay, managerNames }
             </thead>
             <tbody>
               {lines.map((s) => (
-                <tr key={s.teamId}>
+                <tr key={s.teamId} data-m={s.managerId}>
                   <td className="whitespace-nowrap px-2 py-1">
                     {s.teamName} <span className="text-muted">· {s.managerName}</span>
                   </td>

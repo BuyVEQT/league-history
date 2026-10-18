@@ -5,7 +5,7 @@ import { ordinal as ord } from "@/lib/analytics/format";
 import { tt } from "./tt";
 import { useD3Chart } from "./useD3Chart";
 
-export type WireScatterRow = { key: string; teamName: string; manager: string; label: string; moves: number; final: number; finalLabel: string; teams: number };
+export type WireScatterRow = { key: string; managerId?: string; teamName: string; manager: string; label: string; moves: number; final: number; finalLabel: string; teams: number };
 
 /** Every team-season: adds & drops (x) against final finish (y, 1st at top). Champions in gold. Drawn at the container's width. */
 export function WireScatter({ rows }: { rows: WireScatterRow[] }) {
@@ -68,6 +68,7 @@ export function WireScatter({ rows }: { rows: WireScatterRow[] }) {
         .selectAll("circle")
         .data(data)
         .join("circle")
+        .attr("data-m", (d) => d.managerId ?? null)
         .attr("cx", (d) => x(d.moves))
         .attr("cy", (d) => y(d.final))
         .attr("fill", (d) => (d.final === 1 ? "var(--gold)" : "var(--s1)"))

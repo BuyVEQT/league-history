@@ -103,6 +103,7 @@ export function PickScatter({
           return (
             <circle
               key={`${p.y}-${p.ov}`}
+              data-m={p.m}
               cx={x(p.ov)}
               // Unranked picks get a small deterministic jitter so they don't stack into one line.
               cy={p.ar === null ? y(UNRANKED) + (((p.ov * 37 + p.y) % 11) - 5) : y(p.ar)}

@@ -334,7 +334,7 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
                 const k = keepOf.get(id);
                 const f = favOf(id);
                 return (
-                  <tr key={id}>
+                  <tr key={id} data-m={id}>
                     <td>{who(id)}</td>
                     <td>
                       {r ? (

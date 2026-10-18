@@ -165,7 +165,7 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
             </thead>
             <tbody className="divide-y divide-border">
               {activity.map((r, i) => (
-                <tr key={r.managerId} className={tr}>
+                <tr key={r.managerId} data-m={r.managerId} className={tr}>
                   <td className={td}>
                     <span className="flex items-center gap-2">
                       <Avatar size="sm" name={nameOf(r.managerId)} initials={mono.get(r.managerId)} />

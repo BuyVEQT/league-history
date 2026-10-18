@@ -27,17 +27,19 @@ export function DroughtStrip({
         {rows.map((r, ri) => {
           const mine = finishes[r.managerId] ?? {};
           const lastWin = Math.max(-Infinity, ...Object.entries(mine).filter(([, f]) => f.final === 1).map(([y]) => Number(y)));
+          const spot = { "data-m": r.managerId, "data-m-mark": "" };
           return (
             <div key={r.managerId} className="contents">
-              <span className="truncate pr-2 text-right font-semibold">{nameOf(r.managerId)}</span>
+              <span className="truncate pr-2 text-right font-semibold" {...spot}>{nameOf(r.managerId)}</span>
               {seasons.map((s) => {
                 const f = mine[s.year];
-                if (!f) return <span key={s.year} className="h-4 rounded-[3px] border border-dashed border-border" style={{ ["--i" as string]: ri }} data-tt={tt(s.label, [], "Not in the league")} />;
+                if (!f) return <span key={s.year} className="h-4 rounded-[3px] border border-dashed border-border" {...spot} style={{ ["--i" as string]: ri }} data-tt={tt(s.label, [], "Not in the league")} />;
                 const bg = f.final === 1 ? "var(--gold)" : s.year > lastWin ? "var(--neg-wash)" : "var(--surface-2)";
                 return (
                   <span
                     key={s.year}
                     className="rec-cell h-4 rounded-[3px]"
+                    {...spot}
                     style={{ ["--i" as string]: ri, background: bg, boxShadow: f.final === 1 ? undefined : "inset 0 0 0 1px var(--border)" }}
                     data-tt={tt(`${nameOf(r.managerId)} · ${s.label}`, [
                       ["Team", f.teamName],
@@ -46,7 +48,7 @@ export function DroughtStrip({
                   />
                 );
               })}
-              <span className="whitespace-nowrap pl-2 font-semibold tabular-nums">
+              <span className="whitespace-nowrap pl-2 font-semibold tabular-nums" {...spot}>
                 {r.current === 0 ? "Reigning 👑" : `${r.current} season${r.current === 1 ? "" : "s"}`}
                 {!r.titles && <span className="font-normal text-muted"> · never</span>}
               </span>

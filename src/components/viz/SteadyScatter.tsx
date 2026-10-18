@@ -62,6 +62,7 @@ export function SteadyScatter({ rows, titles, names }: { rows: ConsistencyRow[];
           .selectAll("path")
           .data(labs)
           .join("path")
+          .attr("data-m", (l) => l.r.managerId)
           .attr("fill", "none")
           .attr("stroke", "var(--border-2)")
           .attr("d", (l) => `M${l.x0 + 8},${l.y0}C${colX - 30},${l.y0} ${colX - 30},${l.y} ${colX - 4},${l.y}`),
@@ -74,6 +75,7 @@ export function SteadyScatter({ rows, titles, names }: { rows: ConsistencyRow[];
         .data(labs)
         .join("text")
         .attr("class", "ink")
+        .attr("data-m", (l) => l.r.managerId)
         .attr("x", colX)
         .attr("y", (l) => l.y)
         .attr("dy", ".35em")
@@ -84,6 +86,7 @@ export function SteadyScatter({ rows, titles, names }: { rows: ConsistencyRow[];
           .selectAll("circle")
           .data(rows)
           .join("circle")
+          .attr("data-m", (r) => r.managerId)
           .attr("cx", (r) => x(r.avgPercentile))
           .attr("cy", (r) => y(r.spread))
           .attr("fill", (r) => (titles[r.managerId] ? "var(--gold)" : "var(--s1)"))

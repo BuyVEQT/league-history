@@ -65,6 +65,7 @@ export function DraftPositionStrip({ rows, slots, maxSlot }: { rows: PositionStr
         .selectAll("g")
         .data(rows)
         .join("g")
+        .attr("data-m", (r) => r.managerId)
         .attr("transform", (_, i) => `translate(0,${m.t + i * rh})`);
       g.append("text").attr("class", "ink").attr("x", m.l - 6).attr("y", rh / 2).attr("dy", ".35em").attr("text-anchor", "end").text((r) => r.name);
       g.append("line").attr("x1", x(1)).attr("x2", x(maxSlot)).attr("y1", rh / 2).attr("y2", rh / 2).attr("stroke", "var(--border-2)");

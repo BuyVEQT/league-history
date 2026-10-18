@@ -80,6 +80,7 @@ export function SeasonReplay({
           .enter()
           .append("g")
           .attr("class", "rp")
+          .attr("data-m", (d) => d.managerId)
           .attr("transform", (_, k) => `translate(0,${m.t + k * ROW})`);
         ent.append("text").attr("class", "lbl num rk").attr("x", 0).attr("y", ROW / 2).attr("dy", ".35em");
         ent.append("text").attr("class", "ink tm").attr("x", 22).attr("y", ROW / 2).attr("dy", ".35em");

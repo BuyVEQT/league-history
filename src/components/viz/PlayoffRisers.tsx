@@ -46,6 +46,7 @@ export function PlayoffRisers({ rows, names }: { rows: PlayoffRow[]; names: Reco
         .selectAll("g")
         .data(sorted)
         .join("g")
+        .attr("data-m", (r) => r.managerId)
         .attr("transform", (_, i) => `translate(0,${m.t + i * rh})`)
         .attr("data-tt", (r) =>
           tt(names[r.managerId] ?? r.managerId, [
