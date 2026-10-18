@@ -4,12 +4,13 @@ import { Sparkline } from "@/components/Sparkline";
 import { Avatar, PageTitle } from "@/components/ui";
 import { careerStats, managerSeasons } from "@/lib/analytics/career";
 import { managerDraftStats } from "@/lib/analytics/draft";
-import { GOAT_RULE, goatScores } from "@/lib/analytics/goat";
+import { goatScores } from "@/lib/analytics/goat";
 import { formatNumber, formatPct } from "@/lib/analytics/format";
 import { marginRecords, playoffRecords } from "@/lib/analytics/records";
 import { managerActivity } from "@/lib/analytics/trades";
 import { careerLuck } from "@/lib/analytics/whatIf";
 import { getLeague } from "@/lib/data";
+import { TIPS } from "@/lib/explain";
 
 export const metadata = { title: "Managers" };
 
@@ -27,16 +28,16 @@ export default async function ManagersPage(props: PageProps<"/[league]/managers"
   const give = (id: string | undefined, name: string, tone: "gold" | "orange" | "", rule: string) => {
     if (id) badges.set(id, [...(badges.get(id) ?? []), { name, tone, rule }]);
   };
-  give(goatScores(league)[0]?.managerId, "GOAT", "gold", `Highest ${GOAT_RULE}`);
+  give(goatScores(league)[0]?.managerId, "GOAT", "gold", `Highest GOAT score. ${TIPS.goat}`);
   for (const c of careers.filter((c) => c.titles >= 2)) give(c.managerId, "Dynasty", "gold", "Two or more titles.");
   const best = <T,>(xs: T[], f: (x: T) => number) => [...xs].sort((a, b) => f(b) - f(a))[0];
-  give(best(managerDraftStats(league), (r) => r.vsLeague)?.managerId, "Draft guru", "orange", "Best average draft value per pick vs the league.");
+  give(best(managerDraftStats(league), (r) => r.vsLeague)?.managerId, "Draft guru", "orange", `Best average draft value per pick vs the league. ${TIPS.draftVsAvg}`);
   const act = managerActivity(league);
   give(best(act.filter((a) => a.seasons), (a) => a.movesPerSeason)?.managerId, "Wire hawk", "", "Most adds and drops per season.");
-  give(best(act.filter((a) => a.trades), (a) => a.netValue)?.managerId, "Trade shark", "", "Best net value from trades.");
-  give(careerLuck(league)[0]?.managerId, "Horseshoe", "", "Most career matchup luck.");
-  give(best(playoffRecords(league).filter((r) => r.appearances >= 3), (r) => r.avgOverSeed)?.managerId, "Playoff riser", "", "Gains the most places on their seed in the playoffs (3+ appearances).");
-  give(best(marginRecords(league).filter((r) => r.closeWins + r.closeLosses >= 10), (r) => r.closeWins / (r.closeWins + r.closeLosses))?.managerId, "Ice in veins", "", "Best record in one-category matchups (10+).");
+  give(best(act.filter((a) => a.trades), (a) => a.netValue)?.managerId, "Trade shark", "", `Best net value from trades. ${TIPS.netTrade}`);
+  give(careerLuck(league)[0]?.managerId, "Horseshoe", "", `Most career matchup luck. ${TIPS.matchupLuck}`);
+  give(best(playoffRecords(league).filter((r) => r.appearances >= 3), (r) => r.avgOverSeed)?.managerId, "Playoff riser", "", `Gains the most places on their seed in the playoffs (3+ appearances). ${TIPS.vsSeed}`);
+  give(best(marginRecords(league).filter((r) => r.closeWins + r.closeLosses >= 10), (r) => r.closeWins / (r.closeWins + r.closeLosses))?.managerId, "Ice in veins", "", `Best record in one-category matchups (10+). ${TIPS.closeGames}`);
 
   return (
     <>
@@ -89,7 +90,7 @@ export default async function ManagersPage(props: PageProps<"/[league]/managers"
           );
         })}
       </div>
-      <p className="-mt-3 text-xs text-muted">The line on each card is final finish by season (higher = better); gold dots are titles.</p>
+      <p className="-mt-3 text-xs text-muted">The line on each card is final finish by season (higher = better); gold dots are titles. {TIPS.managerCards}</p>
     </>
   );
 }

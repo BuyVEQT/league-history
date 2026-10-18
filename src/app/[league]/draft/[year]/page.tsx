@@ -7,6 +7,8 @@ import { seasonPicks, topBusts, topSteals } from "@/lib/analytics/draft";
 import { ordinal } from "@/lib/analytics/format";
 import { seasonOutcome } from "@/lib/analytics/season";
 import { getLeague } from "@/lib/data";
+import { TIPS } from "@/lib/explain";
+import { InfoTip } from "@/components/InfoTip";
 
 export async function generateStaticParams({ params }: { params: { league: string } }) {
   const league = await getLeague(params.league);
@@ -139,13 +141,13 @@ export default async function DraftBoardPage(props: PageProps<"/[league]/draft/[
               <i style={{ background: "var(--neg)" }} />
               Big bust
             </span>
-            <span>Hover a pick for the details.</span>
+            <span className="inline-flex items-center gap-1.5">Hover a pick for the details. <InfoTip text={TIPS.draftBoard} end /></span>
           </div>
         )}
       </div>
 
       {!live && <div className="grid gap-3 lg:grid-cols-2">
-        <Section title="Steals of the draft">
+        <Section title="Steals of the draft" tip={TIPS.draftValue}>
           <Card className="py-1">
             <ul className="divide-y divide-border">
               {topSteals(picks, 5).map((p) => (

@@ -6,6 +6,8 @@ import { unownedStars } from "@/lib/analytics/players";
 import { activityVsFinish, hasTradeData, leagueTrades, managerActivity, tradeEdges, undraftedGems, wireSeasons } from "@/lib/analytics/trades";
 import { colorForManager } from "@/lib/colors";
 import { getLeague } from "@/lib/data";
+import { TIPS } from "@/lib/explain";
+import { InfoTip } from "@/components/InfoTip";
 import { TradeNetwork } from "@/components/viz/TradeNetwork";
 import { WireCharts } from "@/components/viz/WireCharts";
 
@@ -62,6 +64,7 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
         />
         <StatCard
           label="Most lopsided trade"
+          tip={TIPS.tradeMargin}
           value={signed(lopsided.margin, 1)}
           detail={`${nameOf(lopsided.winnerManagerId!)} won, ${lopsided.label}`}
         />
@@ -70,7 +73,7 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
       {(traders.length > 1 || vsFinish) && (
         <div className="grid gap-3 lg:grid-cols-2">
           {traders.length > 1 && (
-            <Section title="Who trades with whom">
+            <Section title="Who trades with whom" tip="Each line is completed trades between two managers; the thicker the line, the more often they've dealt. Bigger circles = managers who trade more. Vetoed trades aren't drawn.">
               <Card className="space-y-2">
                 <p className="text-sm text-muted">Hover a manager to see their trade partners; click to open their page. Wider line = more trades.</p>
                 <TradeNetwork ids={traders} edges={edges} names={names} slug={slug} />
@@ -78,7 +81,10 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
             </Section>
           )}
           {vsFinish && (
-            <Section title="Does working the wire pay off?">
+            <Section
+              title="Does working the wire pay off?"
+              tip="Average adds and drops per team-season, split by how teams finished. If champions and top teams make more moves than the bottom third, grinding the waiver wire pays."
+            >
               <Card className="space-y-2">
                 <p className="text-sm text-muted">Average adds/drops per team-season across {vsFinish.seasons} seasons, by how the team finished.</p>
                 <WireCharts vf={vsFinish} rows={wireSeasons(league)} nameOf={nameOf} />
@@ -88,7 +94,7 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
         </div>
       )}
 
-      <Section title="Activity by manager">
+      <Section title="Activity by manager" tip={TIPS.netTrade}>
         <TableWrap>
           <table className="w-full text-sm">
             <caption className="sr-only">Moves and trades by manager, all seasons</caption>
@@ -98,8 +104,16 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
                 <th className={th}>Moves</th>
                 <th className={th}>Per season</th>
                 <th className={th}>Trades</th>
-                <th className={th}>Trade W-L</th>
-                <th className={th}>Net value</th>
+                <th className={th}>
+                  <span className="inline-flex items-center gap-1.5">
+                    Trade W-L <InfoTip down text={TIPS.tradeRecord} />
+                  </span>
+                </th>
+                <th className={th}>
+                  <span className="inline-flex items-center gap-1.5">
+                    Net value <InfoTip down text={TIPS.netTrade} />
+                  </span>
+                </th>
                 <th className={th}>Vetoed</th>
                 <th className={th}>Favorite partner</th>
               </tr>
@@ -139,7 +153,7 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
         </p>
       </Section>
 
-      <Section title="Trade log">
+      <Section title="Trade log" tip={TIPS.tradeMargin}>
         <div className="space-y-6">
           {seasonsWithTrades.map((year) => {
             const list = trades.filter((t) => t.year === year);

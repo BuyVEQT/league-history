@@ -25,6 +25,8 @@ import { PlayoffRisers } from "@/components/viz/PlayoffRisers";
 import { SteadyScatter } from "@/components/viz/SteadyScatter";
 import { careerStats, managerSeasons } from "@/lib/analytics/career";
 import { getLeague } from "@/lib/data";
+import { TIPS } from "@/lib/explain";
+import { InfoTip } from "@/components/InfoTip";
 
 const SECTIONS = [
   ["playoffs", "Playoffs"],
@@ -105,7 +107,7 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
         ))}
       </nav>
 
-      <Section id="playoffs" title="Playoff risers & fallers">
+      <Section id="playoffs" title="Playoff risers & fallers" tip={TIPS.vsSeed}>
         <Card className="space-y-2 p-5">
           <PlayoffRisers rows={playoffs} nameOf={nameOf} />
           <div className="viz-legend">
@@ -126,7 +128,11 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
                 <th className={th}>Playoffs</th>
                 <th className={th}>Avg seed</th>
                 <th className={th}>Avg finish</th>
-                <th className={th}>vs seed</th>
+                <th className={th}>
+                  <span className="inline-flex items-center gap-1.5">
+                    vs seed <InfoTip down text={TIPS.vsSeed} />
+                  </span>
+                </th>
                 <th className={th}>Playoff W-L</th>
                 <th className={th}>Finals</th>
                 <th className={th}>Titles</th>
@@ -155,7 +161,8 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
           </div>
         </details>
         <p className="text-xs text-muted">
-          vs seed = average places gained (+) or lost (−) between regular-season seed and final finish, in seasons they made the playoffs.
+          vs seed = average places gained (+) or lost (−) between regular-season seed and final finish, in seasons they made the playoffs. +1.5 = they
+          typically finish a place or two better than seeded; −1.0 = about a place worse.
         </p>
       </Section>
 
@@ -169,6 +176,7 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
             />
             <StatCard
               label="Higher seed wins"
+              tip={TIPS.higherSeed}
               value={formatPct(seeds.bracketGames ? seeds.higherSeedWins / seeds.bracketGames : null, 0)}
               detail={`${seeds.higherSeedWins} of ${seeds.bracketGames} championship-bracket games`}
             />
@@ -182,6 +190,7 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
             />
             <StatCard
               label="Average champion seed"
+              tip={TIPS.avgChampSeed}
               value={formatNumber(
                 seeds.seasons.reduce((a, x) => a + (x.championSeed ?? 0), 0) / Math.max(1, seeds.seasons.filter((x) => x.championSeed).length),
               )}
@@ -234,7 +243,7 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
           </Card>
         </Section>
 
-        <Section title="Coin-flip weeks">
+        <Section title="Coin-flip weeks" tip={TIPS.closeGames}>
           <Card className="p-5">
             <CoinFlip rows={margins} names={Object.fromEntries(league.managers.map((m) => [m.id, m.name]))} />
           </Card>
@@ -377,7 +386,7 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
         </Section>
       )}
 
-      <Section id="luck" title="Matchup luck">
+      <Section id="luck" title="Matchup luck" tip={TIPS.matchupLuck}>
         <div className="grid gap-3 lg:grid-cols-2">
           <TableWrap>
             <table className="w-full text-sm">
@@ -386,7 +395,11 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
                 <tr>
                   <th className={th}>Manager</th>
                   <th className={th}>Seasons</th>
-                  <th className={th}>Wins vs expected</th>
+                  <th className={th}>
+                    <span className="inline-flex items-center gap-1.5">
+                      Wins vs expected <InfoTip down end text={TIPS.matchupLuck} />
+                    </span>
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
@@ -426,7 +439,7 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
         <p className="text-xs text-muted">
           Expected wins treat each category as a coin flip weighted by both teams&apos; season category win % (log5), then count how often that
           wins the majority of categories. Regular season only; ties count half. A big positive number means winning a lot of close matchups
-          with an ordinary category record. Over a career, it mostly evens out.
+          with an ordinary category record: +2.0 = about two more weekly wins than their categories usually earn. Over a career, it mostly evens out.
         </p>
       </Section>
 
@@ -484,7 +497,7 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
                   </li>
                 ))}
               </ol>
-              <p className="mt-1 text-xs text-muted">Average categories won by in matchups won (5+ wins, playoffs included).</p>
+              <p className="mt-1 text-xs text-muted">Average categories won by in matchups won (5+ wins, playoffs included). {TIPS.winMargin}</p>
             </div>
           </Card>
         </div>
@@ -505,7 +518,7 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
       <p className="-mt-6 text-xs text-muted">Ranked by regular-season {pctLabel}, the number the league&apos;s standings use.</p>
 
       <div id="consistency" className="grid scroll-mt-32 gap-3 lg:grid-cols-2">
-        <Section title="Steady or streaky?">
+        <Section title="Steady or streaky?" tip={TIPS.swing}>
           <Card className="space-y-2 p-5">
             <SteadyScatter rows={steady} titles={titles} nameOf={nameOf} />
             <div className="viz-legend">
@@ -524,8 +537,16 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
                 <tr>
                   <th className={th}>Manager</th>
                   <th className={th}>Seasons</th>
-                  <th className={th}>Typical finish</th>
-                  <th className={th}>Swing</th>
+                  <th className={th}>
+                    <span className="inline-flex items-center gap-1.5">
+                      Typical finish <InfoTip down text={TIPS.typicalFinish} />
+                    </span>
+                  </th>
+                  <th className={th}>
+                    <span className="inline-flex items-center gap-1.5">
+                      Swing <InfoTip down end text={TIPS.swing} />
+                    </span>
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
@@ -548,17 +569,25 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
           </p>
         </Section>
 
-        <Section title="Parity by season">
+        <Section title="Parity by season" tip={TIPS.parity}>
           <TableWrap>
             <table className="w-full text-sm">
               <caption className="sr-only">How even each season was</caption>
               <thead>
                 <tr>
                   <th className={th}>Season</th>
-                  <th className={th}>Spread</th>
+                  <th className={th}>
+                    <span className="inline-flex items-center gap-1.5">
+                      Spread <InfoTip down text={TIPS.parity} />
+                    </span>
+                  </th>
                   <th className={th}>Best</th>
                   <th className={th}>Worst</th>
-                  <th className={th}>1st to last seed</th>
+                  <th className={th}>
+                    <span className="inline-flex items-center gap-1.5">
+                      1st to last seed <InfoTip down end text={TIPS.bubbleGap} />
+                    </span>
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">

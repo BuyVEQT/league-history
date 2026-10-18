@@ -4,7 +4,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { formatRecord } from "@/lib/analytics/format";
 import { h2hMatrix, headToHead, type H2HGame } from "@/lib/analytics/headToHead";
 import type { League, Stage } from "@/lib/types";
+import { InfoTip } from "@/components/InfoTip";
 import { monograms } from "@/components/viz/monograms";
+import { TIPS } from "@/lib/explain";
 import { tt } from "@/components/viz/tt";
 
 const STAGE_LABEL: Record<Stage, string> = {
@@ -115,7 +117,7 @@ export function RivalryExplorer({ league, defaultA, defaultB }: { league: League
               <Mini label="Regular season" value={formatRecord(h.regular.aWins, h.regular.bWins, h.regular.ties)} note={`${nameOf(a)}'s W-L-T`} />
               <Mini label="Playoff meetings" value={String(h.playoffMeetings)} note={`${h.playoff.aWins}-${h.playoff.bWins} for ${nameOf(a)}`} />
               <Mini label="Finals meetings" value={String(h.finalMeetings)} />
-              <Mini label="Category totals" value={`${h.aCatWins}-${h.bCatWins}`} note={`${h.catTies} tied · of ${catTotal}`} />
+              <Mini label="Category totals" value={`${h.aCatWins}-${h.bCatWins}`} note={`${h.catTies} tied · of ${catTotal}`} tip={TIPS.catTotals} />
             </div>
 
             <div>
@@ -194,7 +196,9 @@ export function RivalryExplorer({ league, defaultA, defaultB }: { league: League
       </div>
 
       <section className="space-y-3">
-        <h2 className="sec-title">Everyone vs everyone</h2>
+        <h2 className="sec-title flex items-center gap-2">
+          Everyone vs everyone <InfoTip down text={TIPS.h2hGrid} />
+        </h2>
         <div className="panel space-y-3 p-5">
           <p className="text-sm text-[color:var(--ink-2)]">
             Each row&apos;s record against each column, regular season and playoffs. Blue = the row manager leads the series, red = trails. Click a
@@ -328,10 +332,13 @@ function Timeline({ games, seasons, aId, a, b }: { games: H2HGame[]; seasons: Le
   );
 }
 
-function Mini({ label, value, note }: { label: string; value: string; note?: string }) {
+function Mini({ label, value, note, tip }: { label: string; value: string; note?: string; tip?: string }) {
   return (
-    <div className="tile">
-      <div className="text-[12.5px] font-semibold text-[color:var(--ink-2)]">{label}</div>
+    <div className="tile relative">
+      <div className="flex items-center gap-1.5 text-[12.5px] font-semibold text-[color:var(--ink-2)]">
+        {label}
+        {tip && <InfoTip box text={tip} />}
+      </div>
       <div className="font-display text-[28px] font-extrabold leading-tight tabular-nums">{value}</div>
       {note && <div className="text-xs text-muted">{note}</div>}
     </div>
