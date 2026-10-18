@@ -30,7 +30,7 @@ export function ReachBars({ groups }: { groups: ReachGroup[] }) {
             {g.picks} picks
           </text>
           <rect x={m.l} y={rh / 2 - 11} height={22} rx={5} width={x(0.6)} fill="var(--surface-2)" />
-          <rect x={m.l} y={rh / 2 - 11} height={22} rx={5} width={x(g.beatRate)} fill={COLORS[i % COLORS.length]} />
+          <rect className="dr-grow" style={{ animationDelay: `${i * 120}ms` }} x={m.l} y={rh / 2 - 11} height={22} rx={5} width={x(g.beatRate)} fill={COLORS[i % COLORS.length]} />
           <text
             className="num"
             x={m.l + x(g.beatRate) + 8}
