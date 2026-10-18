@@ -143,12 +143,12 @@ export default async function ManagerPage(props: PageProps<"/[league]/managers/[
       )}
 
       <Section title="Finish by season">
-        <div className="rounded-xl border border-border bg-surface/80 shadow-[inset_0_1px_0_0_rgb(255_255_255/0.03)] p-4">
+        <div className="panel p-4">
           <TrendChart
             rows={chartRows}
             series={[
-              { key: "final", name: "Final finish", color: "#f59e0b" },
-              { key: "regular", name: "Regular-season rank", color: "#38bdf8" },
+              { key: "final", name: "Final finish", color: "var(--s2)" },
+              { key: "regular", name: "Regular-season rank", color: "var(--s1)" },
             ]}
             reversed
             domain={[1, maxTeams]}

@@ -8,7 +8,7 @@ import type { League } from "@/lib/types";
  */
 export function SiteFooter({ source }: { source?: League["source"] }) {
   return (
-    <footer className="border-t border-border px-4 py-6 text-xs text-muted md:px-8">
+    <footer className="mx-auto w-full max-w-[1200px] border-t border-border px-4 pb-10 pt-6 text-[12.5px] text-muted">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="space-y-1">
           {source === "yahoo" && (

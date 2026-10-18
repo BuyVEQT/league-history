@@ -28,11 +28,11 @@ export function TrendChart({ rows, series, reversed, domain, valueLabel, formatV
       <div className="h-72 w-full" role="img" aria-label={`${valueLabel} by season, ${series.map((s) => s.name).join(", ")}`}>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={rows} margin={{ top: 8, right: 16, bottom: 0, left: -16 }}>
-            <CartesianGrid stroke="#d9dfd2" strokeDasharray="3 3" />
-            <XAxis dataKey="year" stroke="#62736b" tick={{ fontSize: 12 }} />
+            <CartesianGrid stroke="var(--border)" vertical={false} />
+            <XAxis dataKey="year" stroke="var(--border-2)" tick={{ fontSize: 12, fill: "var(--muted)" }} />
             <YAxis
-              stroke="#62736b"
-              tick={{ fontSize: 12 }}
+              stroke="var(--border-2)"
+              tick={{ fontSize: 12, fill: "var(--muted)" }}
               reversed={reversed}
               domain={domain}
               ticks={yTicks}
@@ -40,8 +40,8 @@ export function TrendChart({ rows, series, reversed, domain, valueLabel, formatV
               tickFormatter={(v: number) => formatValue(v)}
             />
             <Tooltip
-              contentStyle={{ background: "#fffefa", border: "1px solid #d9dfd2", borderRadius: 10, boxShadow: "0 8px 24px rgb(23 59 51 / 0.12)" }}
-              labelStyle={{ color: "#173b33" }}
+              contentStyle={{ background: "var(--surface)", border: "1px solid var(--border)", borderRadius: 8, boxShadow: "var(--shadow)" }}
+              labelStyle={{ color: "var(--foreground)", fontWeight: 700 }}
               formatter={(v) => (typeof v === "number" ? formatValue(v) : "—")}
             />
             <Legend wrapperStyle={{ fontSize: 12 }} />
@@ -52,7 +52,7 @@ export function TrendChart({ rows, series, reversed, domain, valueLabel, formatV
                 name={s.name}
                 stroke={s.color}
                 strokeWidth={2}
-                dot={{ r: 3 }}
+                dot={{ r: 3, strokeWidth: 0, fill: s.color }}
                 connectNulls={false}
                 isAnimationActive={false}
               />

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useSyncExternalStore } from "react";
+import { MUTED_SERIES, SERIES } from "@/lib/colors";
 import { CartesianGrid, LabelList, Line, LineChart, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 export interface RaceSeries {
@@ -21,7 +22,7 @@ interface Props {
 }
 
 const MAX_SELECTED = 4;
-const MUTED = "#c3cbc0";
+const MUTED = MUTED_SERIES;
 const NARROW = "(max-width: 640px)";
 
 /** Phones get a slimmer label margin so the plot keeps most of the width. */
@@ -48,6 +49,7 @@ export function RaceChart({ weeks, series, spots, initialSelected }: Props) {
   const labelChars = narrow ? 10 : 18;
   const toggle = (id: string) =>
     setSelected((cur) => (cur.includes(id) ? cur.filter((x) => x !== id) : [...cur, id].slice(-MAX_SELECTED)));
+  const colorOf = (id: string) => SERIES[selected.indexOf(id)] ?? MUTED;
 
   const rows = weeks.map((week, i) => ({ week, ...Object.fromEntries(series.map((s) => [s.teamId, s.ranks[i]])) }));
   const byId = new Map(series.map((s) => [s.teamId, s]));
@@ -67,9 +69,9 @@ export function RaceChart({ weeks, series, spots, initialSelected }: Props) {
               type="button"
               aria-pressed={on}
               onClick={() => toggle(s.teamId)}
-              className={`flex items-center gap-2 rounded-full border px-3 py-1 text-xs ${on ? "border-foreground/40 bg-surface-2" : "border-border text-muted"}`}
+              className="pill"
             >
-              <span className="size-2 rounded-full" style={{ background: on ? s.color : MUTED }} />
+              <span className="size-2 rounded-full" style={{ background: on ? colorOf(s.teamId) : MUTED }} />
               {s.teamName}
             </button>
           );
@@ -78,12 +80,12 @@ export function RaceChart({ weeks, series, spots, initialSelected }: Props) {
       <div className="h-80 w-full" role="img" aria-label={`Standings rank after each week for ${teams} teams; highlighted: ${selected.map((id) => byId.get(id)?.teamName).join(", ") || "none"}`}>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={rows} margin={{ top: 12, right: narrow ? 72 : 120, bottom: 4, left: -20 }}>
-            <CartesianGrid stroke="#e3e7dd" vertical={false} />
-            <XAxis dataKey="week" stroke="#62736b" tick={{ fontSize: 12 }} tickFormatter={(w: number) => `Wk ${w}`} interval="preserveStartEnd" />
+            <CartesianGrid stroke="var(--border)" vertical={false} />
+            <XAxis dataKey="week" stroke="var(--border-2)" tick={{ fontSize: 12, fill: "var(--muted)" }} tickFormatter={(w: number) => `Wk ${w}`} interval="preserveStartEnd" />
             <YAxis
               reversed
-              stroke="#62736b"
-              tick={{ fontSize: 12 }}
+              stroke="var(--border-2)"
+              tick={{ fontSize: 12, fill: "var(--muted)" }}
               domain={[1, teams]}
               ticks={Array.from({ length: teams }, (_, i) => i + 1)}
               allowDecimals={false}
@@ -92,13 +94,13 @@ export function RaceChart({ weeks, series, spots, initialSelected }: Props) {
             {spots > 0 && spots < teams && (
               <ReferenceLine
                 y={spots + 0.5}
-                stroke="#62736b"
+                stroke="var(--accent)"
                 strokeDasharray="4 4"
-                label={{ value: narrow ? "Playoffs" : "Playoff line", position: "right", fill: "#62736b", fontSize: 11 }}
+                label={{ value: narrow ? "Playoffs" : "Playoff line", position: "right", fill: "var(--accent-ink)", fontSize: 11 }}
               />
             )}
             <Tooltip
-              cursor={{ stroke: "#62736b", strokeDasharray: "3 3" }}
+              cursor={{ stroke: "var(--border-2)", strokeDasharray: "3 3" }}
               content={({ active, label, payload }) => {
                 if (!active || !payload?.length) return null;
                 const ranks = payload
@@ -111,7 +113,7 @@ export function RaceChart({ weeks, series, spots, initialSelected }: Props) {
                     <div className="mb-1 font-medium">After week {label}</div>
                     {shown.map(({ s, rank }) => (
                       <div key={s.teamId} className="flex items-center gap-2">
-                        <span className="size-2 rounded-full" style={{ background: selected.includes(s.teamId) ? s.color : MUTED }} />
+                        <span className="size-2 rounded-full" style={{ background: colorOf(s.teamId) }} />
                         <span className="tabular-nums">{rank}.</span>
                         <span className={selected.includes(s.teamId) ? "font-medium" : "text-muted"}>{s.teamName}</span>
                       </div>
@@ -127,10 +129,10 @@ export function RaceChart({ weeks, series, spots, initialSelected }: Props) {
                   key={s.teamId}
                   dataKey={s.teamId}
                   name={s.teamName}
-                  stroke={on ? s.color : MUTED}
+                  stroke={colorOf(s.teamId)}
                   strokeWidth={on ? 2.5 : 1.25}
                   strokeOpacity={on ? 1 : 0.8}
-                  dot={on ? { r: 3, strokeWidth: 0, fill: s.color } : false}
+                  dot={on ? { r: 3, strokeWidth: 0, fill: colorOf(s.teamId) } : false}
                   activeDot={on ? { r: 5 } : false}
                   isAnimationActive={false}
                 >
@@ -139,7 +141,7 @@ export function RaceChart({ weeks, series, spots, initialSelected }: Props) {
                       dataKey={s.teamId}
                       content={(p) =>
                         p.index === last ? (
-                          <text x={Number(p.x) + 8} y={Number(p.y) + 4} fontSize={11} fill="#173b33">
+                          <text x={Number(p.x) + 8} y={Number(p.y) + 4} fontSize={11} fill="var(--foreground)" fontWeight={600}>
                             {s.teamName.length > labelChars ? `${s.teamName.slice(0, labelChars - 1)}…` : s.teamName}
                           </text>
                         ) : null

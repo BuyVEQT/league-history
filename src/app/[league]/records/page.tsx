@@ -85,9 +85,9 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
         subtitle="Playoff over- and under-achievers, streaks, comebacks, luck, the best and worst seasons ever, and more."
       />
 
-      <nav aria-label="Jump to a record" className="flex flex-wrap gap-2">
+      <nav aria-label="Jump to a record" className="jump-bar flex flex-wrap gap-1.5">
         {SECTIONS.filter(([id]) => id !== "namesakes" || names.length > 0).map(([id, label]) => (
-          <a key={id} href={`#${id}`} className="rounded-full border border-border px-3 py-1 text-sm text-muted hover:border-accent/50 hover:text-foreground">
+          <a key={id} href={`#${id}`} className="pill">
             {label}
           </a>
         ))}
@@ -197,7 +197,7 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
         </Section>
       )}
 
-      <div id="droughts" className="grid scroll-mt-6 gap-3 lg:grid-cols-2">
+      <div id="droughts" className="grid scroll-mt-32 gap-3 lg:grid-cols-2">
         <Section title="Title droughts">
           <TableWrap>
             <table className="w-full text-sm">
@@ -256,7 +256,7 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
         </Section>
       </div>
 
-      <div id="streaks" className="grid scroll-mt-6 gap-3 lg:grid-cols-2">
+      <div id="streaks" className="grid scroll-mt-32 gap-3 lg:grid-cols-2">
         <Section title="Longest winning streaks">
           <Card className="py-1">
             <StreakList rows={winStreaks} slug={slug} nameOf={nameOf} />
@@ -504,7 +504,7 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
         </div>
       </Section>
 
-      <div id="seasons" className="grid scroll-mt-6 gap-3 lg:grid-cols-2">
+      <div id="seasons" className="grid scroll-mt-32 gap-3 lg:grid-cols-2">
         <Section title="Best regular seasons ever">
           <Card className="py-1">
             <SeasonList rows={seasons.slice(0, 8)} slug={slug} nameOf={nameOf} />
@@ -518,7 +518,7 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
       </div>
       <p className="-mt-6 text-xs text-muted">Ranked by regular-season {pctLabel}, the number the league&apos;s standings use.</p>
 
-      <div id="consistency" className="grid scroll-mt-6 gap-3 lg:grid-cols-2">
+      <div id="consistency" className="grid scroll-mt-32 gap-3 lg:grid-cols-2">
         <Section title="Consistency">
           <TableWrap>
             <table className="w-full text-sm">
