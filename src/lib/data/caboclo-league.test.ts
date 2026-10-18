@@ -121,3 +121,20 @@ describe("Caboclo Cup, all seasons", () => {
     expect(top("avgLossMargin", -1, "2025-26").teamName).toBe("Sunday Strangler");
   });
 });
+
+describe("Caboclo Cup, upcoming season", () => {
+  const upcoming: Season = JSON.parse(readFileSync(join(dir, "upcoming.json"), "utf8"));
+
+  it("is the season after the last one played, drafted with no games yet", () => {
+    expect(upcoming.year).toBe(seasons.at(-1)!.year + 1);
+    expect(upcoming.matchups).toEqual([]);
+  });
+
+  it("has a known manager on every team and one round-one pick per team, in slot order", () => {
+    const ids = new Set(managers.map((m) => m.id));
+    expect(upcoming.teams.every((t) => ids.has(t.managerId))).toBe(true);
+    const r1 = upcoming.draft!.filter((d) => d.round === 1);
+    expect(r1.map((d) => d.pick)).toEqual(upcoming.teams.map((_, i) => i + 1));
+    expect(new Set(r1.map((d) => d.teamId)).size).toBe(upcoming.teams.length);
+  });
+});

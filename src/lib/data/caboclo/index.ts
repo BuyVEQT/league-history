@@ -1,6 +1,7 @@
 import type { League, LeagueProvider, Manager, Season } from "../../types";
 import managers from "../../../../data/leagues/caboclo/managers.json";
 import leagueWide from "../../../../data/leagues/caboclo/league.json";
+import upcoming from "../../../../data/leagues/caboclo/upcoming.json";
 import s2019 from "../../../../data/leagues/caboclo/2019.json";
 import s2021 from "../../../../data/leagues/caboclo/2021.json";
 import s2022 from "../../../../data/leagues/caboclo/2022.json";
@@ -21,6 +22,7 @@ const league: League = {
   managers: managers as Manager[],
   seasons: [...seasons].sort((a, b) => a.year - b.year),
   ratings: leagueWide.ratings,
+  upcoming: upcoming as unknown as Season,
 };
 
 export const cabocloProvider: LeagueProvider = {

@@ -144,6 +144,11 @@ export interface League {
   managers: Manager[];
   seasons: Season[]; // ascending by year
   ratings?: { asOf: string; rows: ManagerRating[] };
+  /**
+   * The next season once it is drafted but before any games: teams and the draft so far, no matchups.
+   * Kept apart from `seasons` so standings and careers only ever count played seasons.
+   */
+  upcoming?: Season;
 }
 
 /** The seam where a Yahoo implementation plugs in later. */

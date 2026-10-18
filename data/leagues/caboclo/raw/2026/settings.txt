@@ -1,0 +1,4 @@
+status|upcoming
+scoring|categories
+categories|FG%,FT%,3PM,PTS,REB,AST,STL,BLK,TO
+teams|12

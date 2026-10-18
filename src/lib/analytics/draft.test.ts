@@ -12,6 +12,7 @@ import {
   managerDraftStats,
   reachStats,
   seasonPicks,
+  slotCapital,
   topBusts,
   topSteals,
 } from "./draft";
@@ -169,9 +170,19 @@ describe("draft habits", () => {
   it("counts first, second and top-three draft slots, and top-three finishers drafted", () => {
     // A picks 1st every year and drafts Fav (finished 3rd); B picks 2nd and drafts X (finished 10th).
     expect(draftPositions(three)).toEqual([
-      { managerId: "a", drafts: 3, firstPicks: 3, secondPicks: 0, topThreePicks: 3, avgSlot: 1, avgSlotShare: 0, topThreeFinishers: 3 },
-      { managerId: "b", drafts: 3, firstPicks: 0, secondPicks: 3, topThreePicks: 3, avgSlot: 2, avgSlotShare: 1, topThreeFinishers: 0 },
+      expect.objectContaining({ managerId: "a", drafts: 3, firstPicks: 3, secondPicks: 0, topThreePicks: 3, avgSlot: 1, avgSlotShare: 0, topThreeFinishers: 3 }),
+      expect.objectContaining({ managerId: "b", drafts: 3, firstPicks: 0, secondPicks: 3, topThreePicks: 3, avgSlot: 2, avgSlotShare: 1, topThreeFinishers: 0 }),
     ]);
+    const [a, b] = draftPositions(three);
+    expect(a.slotLuck).toBeCloseTo(-b.slotLuck); // two slots: one's luck is the other's bad luck
+    expect(a.slotLuck).toBeGreaterThan(0);
+  });
+
+  it("values a snake-draft slot: earlier is luckier, and slots average to zero", () => {
+    const lucks = Array.from({ length: 12 }, (_, i) => slotCapital(i + 1, 12));
+    expect(lucks.reduce((x, y) => x + y, 0)).toBeCloseTo(0);
+    expect(lucks).toEqual([...lucks].sort((x, y) => y - x));
+    expect(lucks[0]).toBeGreaterThan(0);
   });
 
   it("correlates drafted value with the standings", () => {

@@ -60,6 +60,7 @@ function rankByValue(totals, poolSize) {
 }
 
 async function capture(yahooYear) {
+  if (lines(yahooYear, "settings.txt").includes("status|upcoming")) return console.log(`${yahooYear}: not started, skipped`);
   // Yahoo players for the season: ranked (pid,rank,pre,gp,team,name,...) and drafted (round.pick.team.pid.name).
   const yahoo = new Map();
   for (const l of lines(yahooYear, "ranks.txt")) {

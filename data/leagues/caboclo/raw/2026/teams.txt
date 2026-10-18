@@ -1,0 +1,14 @@
+# idx|team name (as on the draft results page)|manager id|namesake player (optional)   (2026-27, upcoming: drafted, no games yet)
+# From the commissioner: Big Papa = Brendon D. (dadder), Anteaters = Jacob S. (jake), The Silver Seekers = Jacob G.
+0|Big Papa|dadder
+1|Dončić Corleone|michael|Luka Dončić
+2|Bron & Don|dylan
+3|Shai Butter|eddie|Shai Gilgeous-Alexander
+4|Day to Davis|jordan|Anthony Davis
+5|Mad Maxey|matt|Tyrese Maxey
+6|Sweet Home Wembanyama|benjamin|Victor Wembanyama
+7|After all that🤪|jacob-v
+8|Baby-Faced Assassin|najim
+9|Anteaters|jake
+10|Sunday Strangler|mitchell
+11|The Silver Seekers|jacob-g

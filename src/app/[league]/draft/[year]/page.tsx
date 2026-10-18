@@ -7,7 +7,8 @@ import { getLeague } from "@/lib/data";
 
 export async function generateStaticParams({ params }: { params: { league: string } }) {
   const league = await getLeague(params.league);
-  const years = (league?.seasons ?? []).filter((s) => s.draft?.length).map((s) => ({ year: String(s.year) }));
+  const drafted = [...(league?.seasons ?? []), ...(league?.upcoming ? [league.upcoming] : [])];
+  const years = drafted.filter((s) => s.draft?.length).map((s) => ({ year: String(s.year) }));
   // Cache Components requires at least one param per league; leagues without
   // drafts (the demo) get a placeholder that the page turns into a 404.
   return years.length ? years : [{ year: "none" }];
@@ -17,8 +18,10 @@ export default async function DraftBoardPage(props: PageProps<"/[league]/draft/[
   const { league: slug, year } = await props.params;
   const league = await getLeague(slug);
   if (!league) notFound();
-  const season = league.seasons.find((s) => String(s.year) === year);
+  const season = [...league.seasons, ...(league.upcoming ? [league.upcoming] : [])].find((s) => String(s.year) === year);
   if (!season?.draft?.length) notFound();
+  // A drafted season with no games yet: show the picks, values come once it's played.
+  const live = season === league.upcoming;
 
   const nameOf = (id: string) => league.managers.find((m) => m.id === id)?.name ?? id;
   const picks = seasonPicks(season);
@@ -26,14 +29,18 @@ export default async function DraftBoardPage(props: PageProps<"/[league]/draft/[
   // Columns follow round-one order; snake drafts reverse each even round.
   const columns = picks.filter((p) => p.round === 1).sort((a, b) => a.pick - b.pick);
   const cell = (teamId: string, round: number) => picks.find((p) => p.teamId === teamId && p.round === round);
-  const draftSeasons = league.seasons.filter((s) => s.draft?.length);
+  const draftSeasons = [...league.seasons, ...(league.upcoming ? [league.upcoming] : [])].filter((s) => s.draft?.length);
 
   return (
     <>
       <PageTitle
         eyebrow="Draft board"
         title={`${season.label} draft`}
-        subtitle={`${season.teams.length} teams · ${rounds} rounds · each cell shows the player's end-of-season rank and value vs his draft slot (z-score points above replacement; see the draft overview).`}
+        subtitle={
+          live
+            ? `Drafted, not yet played · ${season.teams.length} teams · ${rounds} round${rounds === 1 ? "" : "s"} captured so far. Ranks and draft value appear once the season is played.`
+            : `${season.teams.length} teams · ${rounds} rounds · each cell shows the player's end-of-season rank and value vs his draft slot (z-score points above replacement; see the draft overview).`
+        }
       />
 
       <nav aria-label="Select draft" className="flex flex-wrap gap-2">
@@ -73,8 +80,14 @@ export default async function DraftBoardPage(props: PageProps<"/[league]/draft/[
                 {columns.map((c) => {
                   const p = cell(c.teamId, round);
                   return (
-                    <td key={c.teamId} className={`border-b border-l border-border px-1.5 py-1.5 align-top ${p ? valueTone(p.value) : ""}`}>
-                      {p && (
+                    <td key={c.teamId} className={`border-b border-l border-border px-1.5 py-1.5 align-top ${p && !live ? valueTone(p.value) : ""}`}>
+                      {p && live && (
+                        <div title={`${p.playerName}: pick #${p.overall}`}>
+                          <div className="truncate font-medium">{p.playerName}</div>
+                          <div className="tabular-nums text-muted">#{p.overall}</div>
+                        </div>
+                      )}
+                      {p && !live && (
                         <div title={`${p.playerName}: pick #${p.overall}, finished ${rankLabel(p.actualRank)} (${signed(p.value, 1)})`}>
                           <div className="truncate font-medium">{p.playerName}</div>
                           <div className="flex justify-between gap-1 tabular-nums text-muted">
@@ -91,9 +104,9 @@ export default async function DraftBoardPage(props: PageProps<"/[league]/draft/[
           </tbody>
         </table>
       </div>
-      <p className="-mt-6 text-xs text-muted">Green = finished better than drafted, red = worse. Hover a cell for details.</p>
+      {!live && <p className="-mt-6 text-xs text-muted">Green = finished better than drafted, red = worse. Hover a cell for details.</p>}
 
-      <div className="grid gap-3 lg:grid-cols-2">
+      {!live && <div className="grid gap-3 lg:grid-cols-2">
         <Section title="Steals of the draft">
           <Card className="py-1">
             <ul className="divide-y divide-border">
@@ -112,7 +125,7 @@ export default async function DraftBoardPage(props: PageProps<"/[league]/draft/[
             </ul>
           </Card>
         </Section>
-      </div>
+      </div>}
     </>
   );
 }

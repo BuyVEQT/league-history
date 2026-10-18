@@ -1,0 +1,197 @@
+{
+  "year": 2027,
+  "label": "2026-27",
+  "scoring": "categories",
+  "categories": [
+    "FG%",
+    "FT%",
+    "3PM",
+    "PTS",
+    "REB",
+    "AST",
+    "STL",
+    "BLK",
+    "TO"
+  ],
+  "teams": [
+    {
+      "id": "2027:dadder",
+      "managerId": "dadder",
+      "name": "Big Papa"
+    },
+    {
+      "id": "2027:michael",
+      "managerId": "michael",
+      "name": "Dončić Corleone",
+      "namesake": {
+        "name": "Luka Dončić",
+        "playerId": "6014"
+      }
+    },
+    {
+      "id": "2027:dylan",
+      "managerId": "dylan",
+      "name": "Bron & Don"
+    },
+    {
+      "id": "2027:eddie",
+      "managerId": "eddie",
+      "name": "Shai Butter",
+      "namesake": {
+        "name": "Shai Gilgeous-Alexander",
+        "playerId": "6022"
+      }
+    },
+    {
+      "id": "2027:jordan",
+      "managerId": "jordan",
+      "name": "Day to Davis",
+      "namesake": {
+        "name": "Anthony Davis",
+        "playerId": null
+      }
+    },
+    {
+      "id": "2027:matt",
+      "managerId": "matt",
+      "name": "Mad Maxey",
+      "namesake": {
+        "name": "Tyrese Maxey",
+        "playerId": "6413"
+      }
+    },
+    {
+      "id": "2027:benjamin",
+      "managerId": "benjamin",
+      "name": "Sweet Home Wembanyama",
+      "namesake": {
+        "name": "Victor Wembanyama",
+        "playerId": "10094"
+      }
+    },
+    {
+      "id": "2027:jacob-v",
+      "managerId": "jacob-v",
+      "name": "After all that🤪"
+    },
+    {
+      "id": "2027:najim",
+      "managerId": "najim",
+      "name": "Baby-Faced Assassin"
+    },
+    {
+      "id": "2027:jake",
+      "managerId": "jake",
+      "name": "Anteaters"
+    },
+    {
+      "id": "2027:mitchell",
+      "managerId": "mitchell",
+      "name": "Sunday Strangler"
+    },
+    {
+      "id": "2027:jacob-g",
+      "managerId": "jacob-g",
+      "name": "The Silver Seekers"
+    }
+  ],
+  "matchups": [],
+  "draft": [
+    {
+      "round": 1,
+      "pick": 1,
+      "overall": 1,
+      "teamId": "2027:dadder",
+      "playerId": "5352",
+      "playerName": "Nikola Jokić"
+    },
+    {
+      "round": 1,
+      "pick": 2,
+      "overall": 2,
+      "teamId": "2027:michael",
+      "playerId": "10094",
+      "playerName": "Victor Wembanyama"
+    },
+    {
+      "round": 1,
+      "pick": 3,
+      "overall": 3,
+      "teamId": "2027:dylan",
+      "playerId": "6014",
+      "playerName": "Luka Dončić"
+    },
+    {
+      "round": 1,
+      "pick": 4,
+      "overall": 4,
+      "teamId": "2027:eddie",
+      "playerId": "6022",
+      "playerName": "Shai Gilgeous-Alexander"
+    },
+    {
+      "round": 1,
+      "pick": 5,
+      "overall": 5,
+      "teamId": "2027:jordan",
+      "playerId": "6512",
+      "playerName": "Cade Cunningham"
+    },
+    {
+      "round": 1,
+      "pick": 6,
+      "overall": 6,
+      "teamId": "2027:matt",
+      "playerId": "5765",
+      "playerName": "Jayson Tatum"
+    },
+    {
+      "round": 1,
+      "pick": 7,
+      "overall": 7,
+      "teamId": "2027:benjamin",
+      "playerId": "6413",
+      "playerName": "Tyrese Maxey"
+    },
+    {
+      "round": 1,
+      "pick": 8,
+      "overall": 8,
+      "teamId": "2027:jacob-v",
+      "playerId": "6355",
+      "playerName": "Anthony Edwards"
+    },
+    {
+      "round": 1,
+      "pick": 9,
+      "overall": 9,
+      "teamId": "2027:najim",
+      "playerId": "5185",
+      "playerName": "Giannis Antetokounmpo"
+    },
+    {
+      "round": 1,
+      "pick": 10,
+      "overall": 10,
+      "teamId": "2027:jake",
+      "playerId": "6562",
+      "playerName": "Jalen Johnson"
+    },
+    {
+      "round": 1,
+      "pick": 11,
+      "overall": 11,
+      "teamId": "2027:mitchell",
+      "playerId": "10468",
+      "playerName": "Cooper Flagg"
+    },
+    {
+      "round": 1,
+      "pick": 12,
+      "overall": 12,
+      "teamId": "2027:jacob-g",
+      "playerId": "5826",
+      "playerName": "Donovan Mitchell"
+    }
+  ]
+}
