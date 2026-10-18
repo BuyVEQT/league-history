@@ -58,7 +58,7 @@ export const TIPS = {
   higherSeed: "How often the better-seeded team won a playoff game. 50% would mean seeding doesn't matter at all; 75% means the favourite usually wins.",
   avgChampSeed: "The champion's regular-season rank, averaged over every season. 1.0 would mean the top seed always wins it all; higher = more playoff upsets.",
   catTotals: "Every individual category across all their matchups added up. Shows whether a lopsided head-to-head record was actually close underneath.",
-  h2hGrid: "Green = the row manager has won most of their meetings (55%+), red = lost most (45% or less), blank = about even. Read across a row for one manager's record against everyone.",
+  h2hGrid: "Blue = the row manager leads the series against that column, red = trails, gray = about even; the stronger the color, the more one-sided. Read across a row for one manager's record against everyone.",
   reaching:
     "How far ahead of the pre-season rankings they take players in rounds 1-8, on average. +10 = usually 10 spots before the rankings say; negative = they let players fall to them.",
   picksKept: "How many of their own draft picks were still on the roster when the season ended. Low = they churn the roster through trades and waivers.",
