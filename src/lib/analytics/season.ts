@@ -27,12 +27,27 @@ export function teamIndex(season: Season): Map<TeamId, Team> {
 }
 
 /**
+ * What standings are ranked by: category win % ("categories") or matchup win % ("matchups").
+ * A season's own method follows its scoring type.
+ */
+export type RankMethod = "categories" | "matchups";
+export const rankMethod = (season: Season): RankMethod => (season.scoring === "categories" ? "categories" : "matchups");
+
+export interface StandingsOptions {
+  /** Only count regular-season weeks up to and including this one (the standings as they stood then). */
+  throughWeek?: number;
+  /** Rank by a method other than the season's own (for "what if" comparisons). */
+  method?: RankMethod;
+}
+
+/**
  * Regular-season standings, derived purely from regular-season matchups.
  * "most_categories" leagues rank by matchup win%; "categories" leagues rank by
  * category win% (Yahoo's Head-to-Head - Categories). Ties in either fall back
- * to category differential, category wins, then team id (always deterministic).
+ * to category differential, category wins, the source's seed order, then team id
+ * (always deterministic).
  */
-export function seasonStandings(season: Season): StandingRow[] {
+export function seasonStandings(season: Season, { throughWeek = Infinity, method = rankMethod(season) }: StandingsOptions = {}): StandingRow[] {
   const rows = new Map<TeamId, StandingRow>(
     season.teams.map((t) => [
       t.id,
@@ -53,7 +68,7 @@ export function seasonStandings(season: Season): StandingRow[] {
   );
 
   for (const m of season.matchups) {
-    if (m.stage !== "regular") continue;
+    if (m.stage !== "regular" || m.week > throughWeek) continue;
     const home = rows.get(m.homeTeamId)!;
     const away = rows.get(m.awayTeamId)!;
     home.catWins += m.homeCats;
@@ -76,8 +91,7 @@ export function seasonStandings(season: Season): StandingRow[] {
 
   const list = [...rows.values()];
   for (const r of list) r.winPct = winPct(r.wins, r.losses, r.ties);
-  const rankPct = (r: StandingRow) =>
-    (season.scoring === "categories" ? winPct(r.catWins, r.catLosses, r.catTies) : r.winPct) ?? -1;
+  const rankPct = (r: StandingRow) => (method === "categories" ? winPct(r.catWins, r.catLosses, r.catTies) : r.winPct) ?? -1;
   const seed = (id: TeamId) => {
     const i = season.sourceSeedOrder?.indexOf(id) ?? -1;
     return i < 0 ? Number.MAX_SAFE_INTEGER : i;

@@ -22,7 +22,11 @@
     {
       "id": "2023:jake",
       "managerId": "jake",
-      "name": "Daddy Doncic"
+      "name": "Daddy Doncic",
+      "namesake": {
+        "name": "Luka Dončić",
+        "playerId": "6014"
+      }
     },
     {
       "id": "2023:dylan",
@@ -42,17 +46,29 @@
     {
       "id": "2023:benjamin",
       "managerId": "benjamin",
-      "name": "James James"
+      "name": "James James",
+      "namesake": {
+        "name": "LeBron James",
+        "playerId": "3704"
+      }
     },
     {
       "id": "2023:najim",
       "managerId": "najim",
-      "name": "King & Giannis"
+      "name": "King & Giannis",
+      "namesake": {
+        "name": "Giannis Antetokounmpo",
+        "playerId": "5185"
+      }
     },
     {
       "id": "2023:jacob-g",
       "managerId": "jacob-g",
-      "name": "Lamelo Boled Ankle"
+      "name": "Lamelo Boled Ankle",
+      "namesake": {
+        "name": "LaMelo Ball",
+        "playerId": "6395"
+      }
     },
     {
       "id": "2023:mitchell",
@@ -62,17 +78,29 @@
     {
       "id": "2023:eddie",
       "managerId": "eddie",
-      "name": "Tatum or Leave 'Em"
+      "name": "Tatum or Leave 'Em",
+      "namesake": {
+        "name": "Jayson Tatum",
+        "playerId": "5765"
+      }
     },
     {
       "id": "2023:michael",
       "managerId": "michael",
-      "name": "Towns Syndrome"
+      "name": "Towns Syndrome",
+      "namesake": {
+        "name": "Karl-Anthony Towns",
+        "playerId": "5432"
+      }
     },
     {
       "id": "2023:jordan",
       "managerId": "jordan",
-      "name": "Trae Way"
+      "name": "Trae Way",
+      "namesake": {
+        "name": "Trae Young",
+        "playerId": "6016"
+      }
     }
   ],
   "matchups": [
@@ -7013,17 +7041,35 @@
         {
           "teamId": "2023:jacob-g",
           "receives": [
-            "Grant Williams",
-            "De'Anthony Melton",
-            "Kevin Porter Jr.",
-            "Jalen Brunson"
+            {
+              "name": "Grant Williams",
+              "playerId": "6210"
+            },
+            {
+              "name": "De'Anthony Melton",
+              "playerId": "6057"
+            },
+            {
+              "name": "Kevin Porter Jr.",
+              "playerId": "6218"
+            },
+            {
+              "name": "Jalen Brunson",
+              "playerId": "6044"
+            }
           ]
         },
         {
           "teamId": "2023:najim",
           "receives": [
-            "Nikola Vučević",
-            "Bradley Beal"
+            {
+              "name": "Nikola Vučević",
+              "playerId": "4897"
+            },
+            {
+              "name": "Bradley Beal",
+              "playerId": "5009"
+            }
           ]
         }
       ]
@@ -7035,17 +7081,35 @@
         {
           "teamId": "2023:najim",
           "receives": [
-            "Nikola Vučević",
-            "Bradley Beal"
+            {
+              "name": "Nikola Vučević",
+              "playerId": "4897"
+            },
+            {
+              "name": "Bradley Beal",
+              "playerId": "5009"
+            }
           ]
         },
         {
           "teamId": "2023:jacob-g",
           "receives": [
-            "Grant Williams",
-            "De'Anthony Melton",
-            "Kevin Porter Jr.",
-            "Jalen Brunson"
+            {
+              "name": "Grant Williams",
+              "playerId": "6210"
+            },
+            {
+              "name": "De'Anthony Melton",
+              "playerId": "6057"
+            },
+            {
+              "name": "Kevin Porter Jr.",
+              "playerId": "6218"
+            },
+            {
+              "name": "Jalen Brunson",
+              "playerId": "6044"
+            }
           ]
         }
       ]
@@ -7057,13 +7121,19 @@
         {
           "teamId": "2023:michael",
           "receives": [
-            "Julius Randle"
+            {
+              "name": "Julius Randle",
+              "playerId": "5318"
+            }
           ]
         },
         {
           "teamId": "2023:jacob-g",
           "receives": [
-            "Karl-Anthony Towns"
+            {
+              "name": "Karl-Anthony Towns",
+              "playerId": "5432"
+            }
           ]
         }
       ]
@@ -7075,16 +7145,31 @@
         {
           "teamId": "2023:matt",
           "receives": [
-            "Mikal Bridges",
-            "Zach LaVine"
+            {
+              "name": "Mikal Bridges",
+              "playerId": "6021"
+            },
+            {
+              "name": "Zach LaVine",
+              "playerId": "5324"
+            }
           ]
         },
         {
           "teamId": "2023:jacob-g",
           "receives": [
-            "John Collins",
-            "Bol Bol",
-            "Kawhi Leonard"
+            {
+              "name": "John Collins",
+              "playerId": "5832"
+            },
+            {
+              "name": "Bol Bol",
+              "playerId": "6232"
+            },
+            {
+              "name": "Kawhi Leonard",
+              "playerId": "4896"
+            }
           ]
         }
       ]
@@ -7096,15 +7181,27 @@
         {
           "teamId": "2023:najim",
           "receives": [
-            "LeBron James",
-            "Clint Capela"
+            {
+              "name": "LeBron James",
+              "playerId": "3704"
+            },
+            {
+              "name": "Clint Capela",
+              "playerId": "5336"
+            }
           ]
         },
         {
           "teamId": "2023:benjamin",
           "receives": [
-            "Kyle Kuzma",
-            "Paul George"
+            {
+              "name": "Kyle Kuzma",
+              "playerId": "5840"
+            },
+            {
+              "name": "Paul George",
+              "playerId": "4725"
+            }
           ]
         }
       ]
@@ -7116,15 +7213,27 @@
         {
           "teamId": "2023:jake",
           "receives": [
-            "Domantas Sabonis",
-            "RJ Barrett"
+            {
+              "name": "Domantas Sabonis",
+              "playerId": "5642"
+            },
+            {
+              "name": "RJ Barrett",
+              "playerId": "6165"
+            }
           ]
         },
         {
           "teamId": "2023:eddie",
           "receives": [
-            "Buddy Hield",
-            "Anthony Edwards"
+            {
+              "name": "Buddy Hield",
+              "playerId": "5637"
+            },
+            {
+              "name": "Anthony Edwards",
+              "playerId": "6355"
+            }
           ]
         }
       ]
@@ -7136,15 +7245,27 @@
         {
           "teamId": "2023:jacob-g",
           "receives": [
-            "Damian Lillard",
-            "Devin Vassell"
+            {
+              "name": "Damian Lillard",
+              "playerId": "5012"
+            },
+            {
+              "name": "Devin Vassell",
+              "playerId": "6403"
+            }
           ]
         },
         {
           "teamId": "2023:michael",
           "receives": [
-            "Ja Morant",
-            "Santi Aldama"
+            {
+              "name": "Ja Morant",
+              "playerId": "6164"
+            },
+            {
+              "name": "Santi Aldama",
+              "playerId": "6572"
+            }
           ]
         }
       ]
@@ -7156,14 +7277,23 @@
         {
           "teamId": "2023:matt",
           "receives": [
-            "Robert Williams III",
-            "Keldon Johnson"
+            {
+              "name": "Robert Williams III",
+              "playerId": "6038"
+            },
+            {
+              "name": "Keldon Johnson",
+              "playerId": "6217"
+            }
           ]
         },
         {
           "teamId": "2023:jacob-g",
           "receives": [
-            "Zach LaVine"
+            {
+              "name": "Zach LaVine",
+              "playerId": "5324"
+            }
           ]
         }
       ]

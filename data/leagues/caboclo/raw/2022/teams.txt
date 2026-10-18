@@ -1,13 +1,13 @@
-# idx|team name (as on the Managers page)|manager id
+# idx|team name (as on the Managers page)|manager id|namesake player (optional; a clear player reference in the team name)
 0|BIG papa|dadder
-1|Daddy Doncic|jake
+1|Daddy Doncic|jake|Luka Dončić
 2|Day to Day|dylan
 3|Glass Cannon|matt
 4|jacob's Ingeneous Team|jacob-v
-5|James James|benjamin
-6|King & Giannis|najim
-7|Lamelo Boled Ankle|jacob-g
+5|James James|benjamin|LeBron James
+6|King & Giannis|najim|Giannis Antetokounmpo
+7|Lamelo Boled Ankle|jacob-g|LaMelo Ball
 8|Sunday Strangler|mitchell
-9|Tatum or Leave 'Em|eddie
-10|Towns Syndrome|michael
-11|Trae Way|jordan
+9|Tatum or Leave 'Em|eddie|Jayson Tatum
+10|Towns Syndrome|michael|Karl-Anthony Towns
+11|Trae Way|jordan|Trae Young

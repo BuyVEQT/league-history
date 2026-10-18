@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { League, Matchup, Season } from "../types";
-import { consistency, marginRecords, playoffRecords, schedules, teamSeasons, titleDroughts } from "./records";
+import { consistency, marginRecords, playoffRecords, teamSeasons, titleDroughts } from "./records";
 
 const g = (week: number, stage: Matchup["stage"], h: string, a: string, hc: number, ac: number): Matchup => ({
   week,
@@ -70,11 +70,9 @@ describe("records", () => {
     expect(rows.c).toMatchObject({ closeWins: 1, closeLosses: 1, blowoutLosses: 1 });
   });
 
-  it("ranks team-seasons and measures schedule strength", () => {
+  it("ranks team-seasons by the standings win %", () => {
     const best = teamSeasons(league)[0];
     expect(best).toMatchObject({ teamName: "A2023", record: "2-0-0", finalRank: 2 });
-    // A2023 faced B (1-1) and C (0-2): average opponent win % = 0.25.
-    expect(schedules(league).find((s) => s.teamName === "A2023")!.oppPct).toBeCloseTo(0.25);
   });
 
   it("measures consistency on finish percentiles", () => {

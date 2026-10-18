@@ -1,26 +1,20 @@
 import type { League, ManagerId, Season, TeamId, Trade } from "../types";
 import { seasonOutcome, teamIndex } from "./season";
+import { rankValue, replacementRank } from "./value";
 
 /**
- * Trade value is "value above replacement" from each player's end-of-season
- * rank. Replacement level = roughly how many players are rostered (teams ×
- * draft rounds, e.g. 156 in a 12-team, 13-round league): a player ranked r is
- * worth max(0, replacement + 1 − r). Fringe players add nothing, so a side
- * can't "win" just by receiving more bodies. Ranks cover the full NBA season,
- * not just the weeks after the trade — an approximation, labelled in the UI.
+ * Trade value is each player's end-of-season rank on the same value-above-
+ * replacement curve as the draft (see ./value): replacement level is roughly
+ * how many players are rostered (teams × draft rounds, e.g. 156 in a 12-team,
+ * 13-round league), and fringe players add nothing, so a side can't "win" just
+ * by receiving more bodies. Ranks cover the full NBA season, not just the
+ * weeks after the trade — an approximation, labelled in the UI.
  */
-export const playerValue = (rank: number | null, replacementRank: number) =>
-  rank === null ? 0 : Math.max(0, replacementRank + 1 - rank);
-
-/** Teams × draft rounds (13 rounds assumed when the draft is unknown). */
-export const replacementRank = (season: Season) =>
-  season.teams.length * (season.draft?.length ? Math.max(...season.draft.map((d) => d.round)) : 13);
-
 export interface TradeSideView {
   teamId: TeamId;
   managerId: ManagerId;
   teamName: string;
-  players: { name: string; actualRank: number | null }[];
+  players: { name: string; playerId: string | null; actualRank: number | null }[];
   value: number;
 }
 
@@ -39,18 +33,18 @@ export const hasTradeData = (league: League) => league.seasons.some((s) => s.act
 
 export function seasonTrades(season: Season): TradeView[] {
   const teams = teamIndex(season);
-  const rankByName = new Map((season.players ?? []).map((p) => [p.name.toLowerCase(), p.actualRank]));
+  const rankById = new Map((season.players ?? []).map((p) => [p.playerId, p.actualRank]));
   const replacement = replacementRank(season);
   return (season.trades ?? []).map((t) => {
     const sides = t.sides.map((s) => {
       const team = teams.get(s.teamId)!;
-      const players = s.receives.map((name) => ({ name, actualRank: rankByName.get(name.toLowerCase()) ?? null }));
+      const players = s.receives.map((r) => ({ ...r, actualRank: r.playerId ? (rankById.get(r.playerId) ?? null) : null }));
       return {
         teamId: s.teamId,
         managerId: team.managerId,
         teamName: team.name,
         players,
-        value: players.reduce((sum, p) => sum + playerValue(p.actualRank, replacement), 0),
+        value: players.reduce((sum, p) => sum + rankValue(p.actualRank, replacement), 0),
       };
     });
     const [a, b] = sides;

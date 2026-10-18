@@ -8,14 +8,16 @@ interface Props {
   managers: { id: string; name: string; color: string }[];
   finishRows: TrendRow[];
   winPctRows: TrendRow[];
+  /** Season-end power rating (Elo). */
+  ratingRows: TrendRow[];
   initialSelected: string[];
   teamCount: number;
 }
 
-type Metric = "finish" | "winPct";
+type Metric = "finish" | "winPct" | "rating";
 
 /** Overview chart: pick any managers and either metric. */
-export function ManagerTrend({ managers, finishRows, winPctRows, initialSelected, teamCount }: Props) {
+export function ManagerTrend({ managers, finishRows, winPctRows, ratingRows, initialSelected, teamCount }: Props) {
   const [selected, setSelected] = useState<string[]>(initialSelected);
   const [metric, setMetric] = useState<Metric>("finish");
 
@@ -37,6 +39,7 @@ export function ManagerTrend({ managers, finishRows, winPctRows, initialSelected
         >
           <option value="finish">Final finish</option>
           <option value="winPct">Regular-season win %</option>
+          <option value="rating">Power rating (season end)</option>
         </select>
       </div>
       <div className="flex flex-wrap gap-2" role="group" aria-label="Managers shown on chart">
@@ -72,13 +75,21 @@ export function ManagerTrend({ managers, finishRows, winPctRows, initialSelected
           valueLabel="Final finish"
           formatValue={(v) => String(v)}
         />
-      ) : (
+      ) : metric === "winPct" ? (
         <TrendChart
           rows={winPctRows}
           series={series}
           domain={[0, 1]}
           valueLabel="Regular-season win %"
           formatValue={(v) => formatPct(v, 0)}
+        />
+      ) : (
+        <TrendChart
+          rows={ratingRows}
+          series={series}
+          domain={["auto", "auto"]}
+          valueLabel="Power rating at season end"
+          formatValue={(v) => v.toFixed(0)}
         />
       )}
     </div>

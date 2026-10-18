@@ -1,13 +1,13 @@
-# idx|team name (as on the Managers page)|manager id (see ../../.identities.local.json)
-0|Mad Maxey|matt
+# idx|team name (as on the Managers page)|manager id|namesake player (optional; a clear player reference in the team name) (see ../../.identities.local.json)
+0|Mad Maxey|matt|Tyrese Maxey
 1|Big Papa|dadder
 2|Baby-Faced Assassin|najim
-3|Vagiannis|dylan
+3|Vagiannis|dylan|Giannis Antetokounmpo
 4|Anteaters|jake
-5|Sweet Home Wembanyama|benjamin
+5|Sweet Home Wembanyama|benjamin|Victor Wembanyama
 6|Sunday Strangler|mitchell
-7|Dončić Corleone|michael
-8|Ain't No Jokic|eddie
+7|Dončić Corleone|michael|Luka Dončić
+8|Ain't No Jokic|eddie|Nikola Jokić
 9|Melo and the Silver Seekers|jacob-g
 10|After all that🤪|jacob-v
-11|Day to Davis|jordan
+11|Day to Davis|jordan|Anthony Davis

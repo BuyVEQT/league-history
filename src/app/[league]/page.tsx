@@ -1,8 +1,9 @@
-import { Crown, Flame, Medal, Swords, Trophy } from "lucide-react";
+import { Crown, Flame, Gauge, Medal, Swords, Trophy } from "lucide-react";
 import Link from "next/link";
 import { ManagerTrend } from "@/components/charts/ManagerTrend";
 import { Avatar, Card, cardClass, ManagerLink, PageTitle, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
 import { careerStats, defaultCompare, managerSeasons, type CareerRow } from "@/lib/analytics/career";
+import { ELO, eloRatings } from "@/lib/analytics/elo";
 import { formatPct, formatRecord } from "@/lib/analytics/format";
 import { championHistory, leagueSummary, MIN_SEASONS_FOR_RATES, seasonRecords } from "@/lib/analytics/overview";
 import { seasonOutcome } from "@/lib/analytics/season";
@@ -47,6 +48,13 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
     return row;
   });
   const maxTeams = Math.max(...league.seasons.map((s) => s.teams.length));
+  const elo = eloRatings(league);
+  const ratingRows = league.seasons.map((season) => {
+    const row: { year: number } & Record<string, number | null> = { year: season.year };
+    for (const m of league.managers) row[m.id] = elo.seasonEnd[season.year][m.id] ?? null;
+    return row;
+  });
+  const ratingSpan = Math.max(1, ...elo.current.map((c) => Math.abs(c.rating - ELO.start)));
 
   const previews: { title: string; icon: React.ReactNode; rows: { c: CareerRow; label: string; value: number }[] }[] = [
     {
@@ -208,12 +216,60 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
         </div>
       </Section>
 
+      <Section title="Power ratings">
+        <Card className="p-5">
+          <ol className="space-y-2">
+            {elo.current.map((c, i) => {
+              const delta = c.rating - ELO.start;
+              const peak = elo.peak[c.managerId];
+              return (
+                <li key={c.managerId} className="grid grid-cols-[1.25rem_minmax(0,9rem)_1fr_auto] items-center gap-3 text-sm">
+                  <span className="text-xs text-muted">{i + 1}</span>
+                  <span className="flex min-w-0 items-center gap-2">
+                    <Avatar size="sm" name={nameOf(c.managerId)} color={colorForManager(league, c.managerId)} />
+                    <span className="truncate">
+                      <ManagerLink id={c.managerId} name={nameOf(c.managerId)} />
+                    </span>
+                  </span>
+                  {/* Bars grow left or right from the 1500 starting rating. */}
+                  <span className="relative h-2 rounded-full bg-surface-2" aria-hidden>
+                    <span className="absolute inset-y-0 left-1/2 w-px bg-muted/50" />
+                    <span
+                      className={`absolute inset-y-0 rounded-full ${delta >= 0 ? "bg-accent" : "bg-muted/60"}`}
+                      style={delta >= 0 ? { left: "50%", width: `${(delta / ratingSpan) * 50}%` } : { right: "50%", width: `${(-delta / ratingSpan) * 50}%` }}
+                    />
+                  </span>
+                  <span className="text-right tabular-nums">
+                    <span className="font-medium">{c.rating.toFixed(0)}</span>
+                    {peak && (
+                      <span className="block text-xs text-muted">
+                        peak {peak.rating.toFixed(0)}, {peak.label}
+                      </span>
+                    )}
+                  </span>
+                </li>
+              );
+            })}
+          </ol>
+          <p className="mt-4 text-xs text-muted">
+            <Gauge className="mr-1 inline size-3.5 align-[-2px]" aria-hidden />
+            Elo ratings chained across every season, scored on the share of categories won each week (a 6-3 win scores 0.67). Everyone starts
+            at {ELO.start}; a 100-point gap means the higher-rated side is expected to take about 64% of the categories. Ratings move halfway back
+            to {ELO.start} each new season.{" "}
+            {elo.predictiveSkill > 0
+              ? `Week to week they predict the category split ${formatPct(elo.predictiveSkill, 1)} better than a coin flip${elo.predictiveSkill < 0.05 ? ": in this league, one week tells you very little about the next." : "."}`
+              : "Week to week they predict the category split no better than a coin flip."}
+          </p>
+        </Card>
+      </Section>
+
       <Section title="Performance over time">
         <Card className="p-5">
           <ManagerTrend
             managers={managerOptions}
             finishRows={finishRows}
             winPctRows={winPctRows}
+            ratingRows={ratingRows}
             initialSelected={ranked.slice(0, 4).map((c) => c.managerId)}
             teamCount={maxTeams}
           />

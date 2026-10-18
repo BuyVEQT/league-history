@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { League, Season } from "../types";
-import { activityVsFinish, leagueTrades, managerActivity, playerValue, replacementRank, undraftedGems } from "./trades";
+import { activityVsFinish, leagueTrades, managerActivity, undraftedGems } from "./trades";
+import { rankValue, replacementRank } from "./value";
 
 const season: Season = {
   year: 2025,
@@ -20,8 +21,15 @@ const season: Season = {
   ],
   activity: { "t:a": { moves: 10, trades: 1 }, "t:b": { moves: 30, trades: 1 }, "t:c": { moves: 50, trades: 0 } },
   trades: [
-    { date: "2025-01-02", status: "completed", sides: [{ teamId: "t:a", receives: ["Star"] }, { teamId: "t:b", receives: ["Role", "Unknown Guy"] }] },
-    { date: "2025-01-01", status: "vetoed", sides: [{ teamId: "t:c", receives: ["Star"] }, { teamId: "t:b", receives: ["Pickup"] }] },
+    {
+      date: "2025-01-02",
+      status: "completed",
+      sides: [
+        { teamId: "t:a", receives: [{ name: "Star", playerId: "p1" }] },
+        { teamId: "t:b", receives: [{ name: "Role", playerId: "p2" }, { name: "Unknown Guy", playerId: null }] },
+      ],
+    },
+    { date: "2025-01-01", status: "vetoed", sides: [{ teamId: "t:c", receives: [{ name: "Star", playerId: "p1" }] }, { teamId: "t:b", receives: [{ name: "Pickup", playerId: "p3" }] }] },
   ],
 };
 const league: League = {
@@ -32,27 +40,23 @@ const league: League = {
 };
 
 describe("trades", () => {
-  it("values players above replacement level; fringe and unranked players are worth 0", () => {
-    expect(playerValue(1, 156)).toBe(156);
-    expect(playerValue(156, 156)).toBe(1);
-    expect(playerValue(200, 156)).toBe(0);
-    expect(playerValue(null, 156)).toBe(0);
+  it("uses teams × draft rounds as replacement level", () => {
     expect(replacementRank(season)).toBe(3); // 3 teams x 1 draft round
   });
 
-  it("scores each side and picks the winner", () => {
+  it("scores each side by player id on the shared value curve and picks the winner", () => {
     const [completed] = leagueTrades(league);
-    // Replacement rank 3: Star (#1) = 3, Role (#101) and the unranked player = 0.
-    expect(completed.sides.map((s) => s.value)).toEqual([3, 0]);
+    // Replacement rank 3: Star (#1) = 3 × ln 3; Role (#101) and the unranked player = 0.
+    expect(completed.sides.map((s) => s.value)).toEqual([rankValue(1, 3), 0]);
     expect(completed.winnerManagerId).toBe("a");
-    expect(completed.margin).toBe(3);
-    expect(completed.sides[1].players[1]).toEqual({ name: "Unknown Guy", actualRank: null });
+    expect(completed.margin).toBeCloseTo(3 * Math.log(3));
+    expect(completed.sides[1].players[1]).toEqual({ name: "Unknown Guy", playerId: null, actualRank: null });
   });
 
   it("tallies activity, trade record and vetoes per manager", () => {
     const rows = Object.fromEntries(managerActivity(league).map((r) => [r.managerId, r]));
-    expect(rows.a).toMatchObject({ trades: 1, tradeWins: 1, netValue: 3, vetoed: 0, moves: 10 });
-    expect(rows.b).toMatchObject({ trades: 1, tradeLosses: 1, netValue: -3, vetoed: 1 });
+    expect(rows.a).toMatchObject({ trades: 1, tradeWins: 1, netValue: rankValue(1, 3), vetoed: 0, moves: 10 });
+    expect(rows.b).toMatchObject({ trades: 1, tradeLosses: 1, netValue: -rankValue(1, 3), vetoed: 1 });
     expect(rows.b.favoritePartner).toEqual({ managerId: "a", count: 1 });
     expect(rows.c).toMatchObject({ trades: 0, vetoed: 1, moves: 50 });
   });

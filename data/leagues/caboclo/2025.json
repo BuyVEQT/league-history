@@ -22,7 +22,11 @@
     {
       "id": "2025:najim",
       "managerId": "najim",
-      "name": "Ball Don’t Lie"
+      "name": "Ball Don’t Lie",
+      "namesake": {
+        "name": "LaMelo Ball",
+        "playerId": "6395"
+      }
     },
     {
       "id": "2025:matt",
@@ -32,17 +36,29 @@
     {
       "id": "2025:dylan",
       "managerId": "dylan",
-      "name": "Nikosus Chrokic"
+      "name": "Nikosus Chrokic",
+      "namesake": {
+        "name": "Nikola Jokić",
+        "playerId": "5352"
+      }
     },
     {
       "id": "2025:jake",
       "managerId": "jake",
-      "name": "P Giddey"
+      "name": "P Giddey",
+      "namesake": {
+        "name": "Josh Giddey",
+        "playerId": "6548"
+      }
     },
     {
       "id": "2025:benjamin",
       "managerId": "benjamin",
-      "name": "Slim Shai'dy"
+      "name": "Slim Shai'dy",
+      "namesake": {
+        "name": "Shai Gilgeous-Alexander",
+        "playerId": "6022"
+      }
     },
     {
       "id": "2025:mitchell",
@@ -57,7 +73,11 @@
     {
       "id": "2025:eddie",
       "managerId": "eddie",
-      "name": "Trigga Trae"
+      "name": "Trigga Trae",
+      "namesake": {
+        "name": "Trae Young",
+        "playerId": "6016"
+      }
     },
     {
       "id": "2025:jacob-g",
@@ -72,7 +92,11 @@
     {
       "id": "2025:jordan",
       "managerId": "jordan",
-      "name": "WemBangYaMama"
+      "name": "WemBangYaMama",
+      "namesake": {
+        "name": "Victor Wembanyama",
+        "playerId": "10094"
+      }
     }
   ],
   "matchups": [
@@ -6998,13 +7022,19 @@
         {
           "teamId": "2025:dylan",
           "receives": [
-            "DeMar DeRozan"
+            {
+              "name": "DeMar DeRozan",
+              "playerId": "4614"
+            }
           ]
         },
         {
           "teamId": "2025:dadder",
           "receives": [
-            "Rudy Gobert"
+            {
+              "name": "Rudy Gobert",
+              "playerId": "5197"
+            }
           ]
         }
       ]
@@ -7016,19 +7046,43 @@
         {
           "teamId": "2025:jacob-g",
           "receives": [
-            "Walker Kessler",
-            "Tobias Harris",
-            "Cameron Johnson",
-            "Stephen Curry"
+            {
+              "name": "Walker Kessler",
+              "playerId": "6712"
+            },
+            {
+              "name": "Tobias Harris",
+              "playerId": "4901"
+            },
+            {
+              "name": "Cameron Johnson",
+              "playerId": "6173"
+            },
+            {
+              "name": "Stephen Curry",
+              "playerId": "4612"
+            }
           ]
         },
         {
           "teamId": "2025:michael",
           "receives": [
-            "Malik Beasley",
-            "Mikal Bridges",
-            "Austin Reaves",
-            "Luka Dončić"
+            {
+              "name": "Malik Beasley",
+              "playerId": "5650"
+            },
+            {
+              "name": "Mikal Bridges",
+              "playerId": "6021"
+            },
+            {
+              "name": "Austin Reaves",
+              "playerId": "6606"
+            },
+            {
+              "name": "Luka Dončić",
+              "playerId": "6014"
+            }
           ]
         }
       ]

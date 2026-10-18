@@ -1,7 +1,7 @@
 import type { League, ManagerId, Matchup, Season, TeamId } from "../types";
 import { managerSeasons } from "./career";
 import { winPct } from "./format";
-import { matchupWinner, seasonOutcome, seasonStandings, teamIndex, type StandingRow } from "./season";
+import { matchupWinner, seasonOutcome, teamIndex, type StandingRow } from "./season";
 
 /** The win % a season's standings are ranked by (category % in categories leagues). */
 export const standingPct = (season: Season, r: StandingRow): number | null =>
@@ -171,32 +171,82 @@ export function consistency(league: League, minSeasons = 3): ConsistencyRow[] {
     .sort((a, b) => a.spread - b.spread);
 }
 
-export interface ScheduleRow {
+export interface SeedSeasonRow {
   year: number;
   label: string;
-  managerId: ManagerId;
-  teamName: string;
-  /** Average standings win % of the opponents faced in the regular season. */
-  oppPct: number;
+  /** The champion's regular-season rank (its playoff seed). Null before a champion is decided. */
+  championSeed: number | null;
+  championManagerId: ManagerId | null;
+  topSeedManagerId: ManagerId;
+  topSeedTeam: string;
+  topSeedFinish: number;
 }
 
-export function schedules(league: League): ScheduleRow[] {
-  return league.seasons
-    .flatMap((season) => {
-      const standings = seasonStandings(season);
-      const pct = new Map(standings.map((r) => [r.teamId, standingPct(season, r) ?? 0]));
-      return standings.map((r) => {
-        const opps = season.matchups
-          .filter((g) => g.stage === "regular" && (g.homeTeamId === r.teamId || g.awayTeamId === r.teamId))
-          .map((g) => pct.get(g.homeTeamId === r.teamId ? g.awayTeamId : g.homeTeamId)!);
-        return {
-          year: season.year,
-          label: season.label,
-          managerId: r.managerId,
-          teamName: r.teamName,
-          oppPct: opps.reduce((a, b) => a + b, 0) / (opps.length || 1),
-        };
-      });
-    })
-    .sort((a, b) => b.oppPct - a.oppPct);
+export interface SeedHistory {
+  seasons: SeedSeasonRow[];
+  /** Championship-bracket games (quarterfinals, semifinals, finals) won by the higher seed. */
+  higherSeedWins: number;
+  bracketGames: number;
+  topSeedTitles: number;
+}
+
+/** Seeds are regular-season ranks, which match the source's playoff seeding. */
+export function seedHistory(league: League): SeedHistory {
+  let higherSeedWins = 0;
+  let bracketGames = 0;
+  const seasons: SeedSeasonRow[] = [];
+  for (const season of league.seasons) {
+    const outcome = seasonOutcome(season);
+    if (!outcome.playoffTeamIds.size) continue;
+    const seed = new Map(outcome.standings.map((r) => [r.teamId, r.rank]));
+    for (const g of season.matchups) {
+      if (g.stage === "regular" || g.stage === "third_place") continue;
+      const higher = seed.get(g.homeTeamId)! < seed.get(g.awayTeamId)! ? g.homeTeamId : g.awayTeamId;
+      bracketGames++;
+      if (matchupWinner(g) === higher) higherSeedWins++;
+    }
+    const top = outcome.standings[0];
+    const champ = outcome.championTeamId;
+    seasons.push({
+      year: season.year,
+      label: season.label,
+      championSeed: champ ? seed.get(champ)! : null,
+      championManagerId: champ ? managerOf(season)(champ) : null,
+      topSeedManagerId: top.managerId,
+      topSeedTeam: top.teamName,
+      topSeedFinish: outcome.finalRank.get(top.teamId)!,
+    });
+  }
+  return { seasons, higherSeedWins, bracketGames, topSeedTitles: seasons.filter((s) => s.championSeed === 1).length };
+}
+
+export interface ParityRow {
+  year: number;
+  label: string;
+  teams: number;
+  /** Standard deviation of the standings win %: lower = more even league. */
+  spread: number;
+  best: number;
+  worst: number;
+  /** Win % gap between first place and the last playoff seed. */
+  bubbleGap: number | null;
+}
+
+/** How even each season was, by the win % its standings are ranked on. */
+export function parity(league: League): ParityRow[] {
+  return league.seasons.map((season) => {
+    const outcome = seasonOutcome(season);
+    const pcts = outcome.standings.map((r) => standingPct(season, r) ?? 0);
+    const mean = pcts.reduce((a, b) => a + b, 0) / pcts.length;
+    const spots = outcome.playoffTeamIds.size;
+    return {
+      year: season.year,
+      label: season.label,
+      teams: season.teams.length,
+      spread: Math.sqrt(pcts.reduce((a, p) => a + (p - mean) ** 2, 0) / pcts.length),
+      best: pcts[0],
+      worst: pcts.at(-1)!,
+      bubbleGap: spots ? pcts[0] - pcts[spots - 1] : null,
+    };
+  });
 }

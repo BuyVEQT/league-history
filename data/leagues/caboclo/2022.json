@@ -22,12 +22,20 @@
     {
       "id": "2022:jacob-g",
       "managerId": "jacob-g",
-      "name": "Bruno Caboclo"
+      "name": "Bruno Caboclo",
+      "namesake": {
+        "name": "Bruno Caboclo",
+        "playerId": null
+      }
     },
     {
       "id": "2022:michael",
       "managerId": "michael",
-      "name": "De'Aaron Fox and the Hound"
+      "name": "De'Aaron Fox and the Hound",
+      "namesake": {
+        "name": "De'Aaron Fox",
+        "playerId": "5767"
+      }
     },
     {
       "id": "2022:najim",
@@ -47,12 +55,20 @@
     {
       "id": "2022:eddie",
       "managerId": "eddie",
-      "name": "Russell WestBrick"
+      "name": "Russell WestBrick",
+      "namesake": {
+        "name": "Russell Westbrook",
+        "playerId": "4390"
+      }
     },
     {
       "id": "2022:matt",
       "managerId": "matt",
-      "name": "SSJ3 Lebron"
+      "name": "SSJ3 Lebron",
+      "namesake": {
+        "name": "LeBron James",
+        "playerId": "3704"
+      }
     },
     {
       "id": "2022:mitchell",
@@ -62,7 +78,11 @@
     {
       "id": "2022:benjamin",
       "managerId": "benjamin",
-      "name": "The Golden Jokic's"
+      "name": "The Golden Jokic's",
+      "namesake": {
+        "name": "Nikola Jokić",
+        "playerId": "5352"
+      }
     }
   ],
   "matchups": [
@@ -4445,14 +4465,23 @@
         {
           "teamId": "2022:jacob-g",
           "receives": [
-            "Deandre Ayton",
-            "Jonathan Isaac"
+            {
+              "name": "Deandre Ayton",
+              "playerId": "5958"
+            },
+            {
+              "name": "Jonathan Isaac",
+              "playerId": "5768"
+            }
           ]
         },
         {
           "teamId": "2022:najim",
           "receives": [
-            "Jrue Holiday"
+            {
+              "name": "Jrue Holiday",
+              "playerId": "4622"
+            }
           ]
         }
       ]
@@ -4464,14 +4493,23 @@
         {
           "teamId": "2022:jake",
           "receives": [
-            "Bradley Beal"
+            {
+              "name": "Bradley Beal",
+              "playerId": "5009"
+            }
           ]
         },
         {
           "teamId": "2022:jordan",
           "receives": [
-            "Derrick White",
-            "Scottie Barnes"
+            {
+              "name": "Derrick White",
+              "playerId": "5842"
+            },
+            {
+              "name": "Scottie Barnes",
+              "playerId": "6515"
+            }
           ]
         }
       ]
@@ -4483,14 +4521,23 @@
         {
           "teamId": "2022:jordan",
           "receives": [
-            "Derrick White",
-            "Scottie Barnes"
+            {
+              "name": "Derrick White",
+              "playerId": "5842"
+            },
+            {
+              "name": "Scottie Barnes",
+              "playerId": "6515"
+            }
           ]
         },
         {
           "teamId": "2022:jake",
           "receives": [
-            "Bradley Beal"
+            {
+              "name": "Bradley Beal",
+              "playerId": "5009"
+            }
           ]
         }
       ]
@@ -4502,14 +4549,23 @@
         {
           "teamId": "2022:jake",
           "receives": [
-            "Bradley Beal"
+            {
+              "name": "Bradley Beal",
+              "playerId": "5009"
+            }
           ]
         },
         {
           "teamId": "2022:jordan",
           "receives": [
-            "Derrick White",
-            "Scottie Barnes"
+            {
+              "name": "Derrick White",
+              "playerId": "5842"
+            },
+            {
+              "name": "Scottie Barnes",
+              "playerId": "6515"
+            }
           ]
         }
       ]
@@ -4521,13 +4577,19 @@
         {
           "teamId": "2022:jacob-g",
           "receives": [
-            "Clint Capela"
+            {
+              "name": "Clint Capela",
+              "playerId": "5336"
+            }
           ]
         },
         {
           "teamId": "2022:mitchell",
           "receives": [
-            "Khris Middleton"
+            {
+              "name": "Khris Middleton",
+              "playerId": "5073"
+            }
           ]
         }
       ]
@@ -4539,13 +4601,19 @@
         {
           "teamId": "2022:jordan",
           "receives": [
-            "Kevin Porter Jr."
+            {
+              "name": "Kevin Porter Jr.",
+              "playerId": "6218"
+            }
           ]
         },
         {
           "teamId": "2022:eddie",
           "receives": [
-            "DeMar DeRozan"
+            {
+              "name": "DeMar DeRozan",
+              "playerId": "4614"
+            }
           ]
         }
       ]
@@ -4557,14 +4625,23 @@
         {
           "teamId": "2022:eddie",
           "receives": [
-            "Jonas Valančiūnas",
-            "Dennis Schröder"
+            {
+              "name": "Jonas Valančiūnas",
+              "playerId": "4886"
+            },
+            {
+              "name": "Dennis Schröder",
+              "playerId": "5187"
+            }
           ]
         },
         {
           "teamId": "2022:jacob-g",
           "receives": [
-            "Jimmy Butler III"
+            {
+              "name": "Jimmy Butler III",
+              "playerId": "4912"
+            }
           ]
         }
       ]

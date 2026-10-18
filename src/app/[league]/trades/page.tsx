@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { rankLabel, signed } from "@/components/draft";
 import { Avatar, Card, cardClass, ManagerLink, PageTitle, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
 import { formatNumber } from "@/lib/analytics/format";
+import { unownedStars } from "@/lib/analytics/players";
 import { activityVsFinish, hasTradeData, leagueTrades, managerActivity, undraftedGems } from "@/lib/analytics/trades";
 import { colorForManager } from "@/lib/colors";
 import { getLeague } from "@/lib/data";
@@ -22,6 +23,7 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
   const vetoed = trades.filter((t) => t.status === "vetoed");
   const activity = managerActivity(league);
   const gems = undraftedGems(league);
+  const unowned = unownedStars(league);
   const vsFinish = activityVsFinish(league);
   const mostTrades = activity[0];
   const busiestSeason = league.seasons
@@ -54,7 +56,7 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
         />
         <StatCard
           label="Most lopsided trade"
-          value={signed(lopsided.margin)}
+          value={signed(lopsided.margin, 1)}
           detail={`${nameOf(lopsided.winnerManagerId!)} won, ${lopsided.label}`}
         />
       </div>
@@ -89,7 +91,7 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
                   <td className={`${td} tabular-nums`}>{r.trades}</td>
                   <td className={`${td} tabular-nums`}>{r.trades ? `${r.tradeWins}-${r.tradeLosses}` : "—"}</td>
                   <td className={`${td} tabular-nums ${r.netValue > 0 ? "text-positive" : r.netValue < 0 ? "text-negative" : ""}`}>
-                    {r.trades ? signed(r.netValue) : "—"}
+                    {r.trades ? signed(r.netValue, 1) : "—"}
                   </td>
                   <td className={`${td} tabular-nums`}>{r.vetoed || "—"}</td>
                   <td className={td}>
@@ -101,11 +103,11 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
           </table>
         </TableWrap>
         <p className="text-xs text-muted">
-          Trade value is value above replacement: only players good enough to be rostered count (top teams × draft rounds,
-          about 156 in a 12-team league), worth 157 minus their end-of-season rank. Fringe players add nothing, so getting more
-          bodies doesn&apos;t win a trade. Ranks cover the whole NBA season, not just the weeks after the trade, so treat winners as
-          a rough guide. Moves are Yahoo&apos;s
-          season count of adds/drops.
+          Trade value uses the same scale as the draft: each player&apos;s end-of-season rank in 9-category z-score points above a
+          replacement-level player (roughly the last rostered player, teams × draft rounds, about 156 in a 12-team league). The scale is
+          steep at the top, so one star outweighs several solid players, and fringe players add nothing: getting more bodies doesn&apos;t
+          win a trade. Ranks cover the whole NBA season, not just the weeks after the trade, so treat winners as a rough guide. Moves
+          are the season count of adds and drops.
         </p>
       </Section>
 
@@ -139,7 +141,7 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
                           <span className="rounded-full border border-negative/40 px-2 py-0.5 text-negative">Vetoed</span>
                         ) : t.winnerManagerId ? (
                           <span>
-                            Edge: {nameOf(t.winnerManagerId)} ({signed(t.margin)})
+                            Edge: {nameOf(t.winnerManagerId)} ({signed(t.margin, 1)})
                           </span>
                         ) : (
                           <span>Even</span>
@@ -154,12 +156,12 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
                                 <span className={`block truncate font-medium ${t.winnerManagerId === s.managerId && t.status === "completed" ? "text-positive" : ""}`}>
                                   {s.teamName}
                                 </span>
-                                <span className="block text-xs text-muted">gets · worth {s.value}</span>
+                                <span className="block text-xs text-muted">gets · worth {s.value.toFixed(1)}</span>
                               </span>
                             </div>
                             <ul className="space-y-0.5 text-sm">
                               {s.players.map((p) => (
-                                <li key={p.name} className="flex justify-between gap-2">
+                                <li key={p.playerId ?? p.name} className="flex justify-between gap-2">
                                   <span className="truncate">{p.name}</span>
                                   <span className="shrink-0 tabular-nums text-muted">{rankLabel(p.actualRank)}</span>
                                 </li>
@@ -210,6 +212,40 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
           </TableWrap>
         </Card>
       </Section>
+
+      {unowned.length > 0 && (
+        <Section title={`Stars nobody owned (${unowned.length})`}>
+          <Card className="space-y-2">
+            <p className="text-xs text-muted">
+              Top-60 players who were free agents when the season ended: usually injured stars who were dropped, or late-season breakouts
+              nobody picked up in time.
+            </p>
+            <TableWrap>
+              <table className="w-full text-sm">
+                <caption className="sr-only">Top-60 players unowned at season end</caption>
+                <thead>
+                  <tr>
+                    <th className={th}>Player</th>
+                    <th className={th}>Season</th>
+                    <th className={th}>Finished</th>
+                    <th className={th}>Drafted by</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {unowned.map((u) => (
+                    <tr key={`${u.year}-${u.playerName}`} className={tr}>
+                      <td className={`${td} font-medium`}>{u.playerName}</td>
+                      <td className={td}>{u.label}</td>
+                      <td className={`${td} tabular-nums`}>#{u.actualRank}</td>
+                      <td className={td}>{u.draftedBy ? <ManagerLink id={u.draftedBy} name={nameOf(u.draftedBy)} /> : <span className="text-muted">Undrafted</span>}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </TableWrap>
+          </Card>
+        </Section>
+      )}
     </>
   );
 }

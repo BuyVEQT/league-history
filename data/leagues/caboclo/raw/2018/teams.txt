@@ -1,12 +1,12 @@
-# idx|team name (as on the Managers page)|manager id     (10-team season)
+# idx|team name (as on the Managers page)|manager id|namesake player (optional; a clear player reference in the team name)     (10-team season)
 # Daddy Dong = Brendon. The commissioner says Brendon is a long-time manager; matched to dadder (the b.dadson account). notoriousBMG = Brendan, a one-season manager.
 0|35.2 PPG|mitchell
 1|Daddy Dong|dadder
 2|Jordan Over LeBum|michael
-3|Klaw Leonard|matt
+3|Klaw Leonard|matt|Kawhi Leonard
 4|Knicks 2.0|jordan
 5|notoriousBMG|brendan
 6|Skip|jacob-g
-7|Suck my Doncic|najim
+7|Suck my Doncic|najim|Luka Dončić
 8|Underdog|benjamin
-9|Vince Carter's Nuts|eddie
+9|Vince Carter's Nuts|eddie|Vince Carter

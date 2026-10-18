@@ -33,7 +33,7 @@ export default async function DraftBoardPage(props: PageProps<"/[league]/draft/[
       <PageTitle
         eyebrow="Draft board"
         title={`${season.label} draft`}
-        subtitle={`${season.teams.length} teams · ${rounds} rounds · each cell shows the player's end-of-season rank and value (slot − finish).`}
+        subtitle={`${season.teams.length} teams · ${rounds} rounds · each cell shows the player's end-of-season rank and value vs his draft slot (z-score points above replacement; see the draft overview).`}
       />
 
       <nav aria-label="Select draft" className="flex flex-wrap gap-2">
@@ -77,11 +77,11 @@ export default async function DraftBoardPage(props: PageProps<"/[league]/draft/[
                   return (
                     <td key={c.teamId} className={`border-b border-l border-border px-1.5 py-1.5 align-top ${p ? valueTone(p.value) : ""}`}>
                       {p && (
-                        <div title={`${p.playerName}: pick #${p.overall}, finished ${rankLabel(p.actualRank)} (${signed(p.value)})`}>
+                        <div title={`${p.playerName}: pick #${p.overall}, finished ${rankLabel(p.actualRank)} (${signed(p.value, 1)})`}>
                           <div className="truncate font-medium">{p.playerName}</div>
                           <div className="flex justify-between gap-1 tabular-nums text-muted">
                             <span>{rankLabel(p.actualRank)}</span>
-                            <span>{signed(p.value)}</span>
+                            <span>{signed(p.value, 1)}</span>
                           </div>
                         </div>
                       )}
