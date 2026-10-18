@@ -113,7 +113,7 @@
       const lead = rows[0]?.[metric] ?? 0;
 
       const sel = g.selectAll("g.row").data(rows, (d) => d.managerId);
-      const ent = sel.enter().append("g").attr("class", "row").attr("transform", `translate(0,${H})`).style("opacity", 0);
+      const ent = sel.enter().append("g").attr("class", "row").attr("data-m", (d) => d.managerId).attr("transform", `translate(0,${H})`).style("opacity", 0);
       ent.append("text").attr("class", "lbl-ink nm").attr("x", m.l - 10).attr("y", rowH / 2).attr("dy", ".35em").attr("text-anchor", "end");
       ent.append("path").attr("class", "bar");
       ent.append("text").attr("class", "lbl-2 vl num").attr("y", rowH / 2).attr("dy", ".35em");
@@ -128,7 +128,7 @@
       all.select(".vl").transition().duration(dur).ease(d3.easeCubicInOut)
         .attr("x", (d) => m.l + x(d[metric]) + 6)
         .tween("text", function (d) { const i = d3.interpolateRound(+this.textContent || 0, d[metric]); return (t) => (this.textContent = i(t)); });
-      all.select(".hit").attr("x", 0).attr("width", W);
+      all.select(".hit").attr("x", 0).attr("width", W).style("cursor", "pointer").on("click", (e, d) => App.openPanel("manager", d.managerId));
       App.hover(all.select(".hit"), (d) => App.tt(App.name(d.managerId), [["Category wins", d.catWins], ["Matchup wins", d.wins], ["Titles", d.titles], ["Podiums (top 3)", d.podiums], ["Seasons played", d.seasons]], `Through ${frame.label}`));
       sel.exit().transition().duration(dur).style("opacity", 0).remove();
     };
@@ -164,7 +164,7 @@
         const sx = d3.scaleLinear().domain([0, Math.max(1, s.length - 1)]).range([2, 68]), sy = d3.scaleLinear().domain(d3.extent(s, (p) => p.r)).range([18, 2]);
         const path = s.length ? "M" + s.map((p, j) => `${sx(j).toFixed(1)},${sy(p.r).toFixed(1)}`).join("L") : "";
         const delta = s.length > 1 ? s[s.length - 1].r - s[0].r : 0;
-        return `<li><button type="button" data-id="${c.m}" aria-pressed="${k >= 0}">
+        return `<li data-m="${c.m}"><button type="button" data-id="${c.m}" aria-pressed="${k >= 0}">
           <span class="pw-rk num">${i + 1}</span>${App.mono(c.m)}<span class="pw-nm">${esc(App.name(c.m))}</span>
           <svg class="pw-spark" viewBox="0 0 70 20" aria-hidden="true"><path d="${path}" fill="none" stroke="${k >= 0 ? SLOTS[k] : "var(--line-2)"}" stroke-width="1.6"/></svg>
           <span class="pw-r num">${c.r}</span><span class="pw-d num ${delta >= 0 ? "pos" : "neg"}">${delta >= 0 ? "▲" : "▼"}${Math.abs(delta)}</span>
@@ -277,10 +277,10 @@
       sorted.forEach((s) => {
         const on = active(s.id);
         runs(s.pts).forEach((r) => {
-          const p = lg.append("path").attr("d", line(r)).attr("fill", "none").attr("stroke", color(s.id)).attr("stroke-width", on ? 3 : 1.6).attr("stroke-linecap", "round").attr("opacity", hoverId && !on ? 0.5 : 1);
+          const p = lg.append("path").attr("data-m", s.id).attr("d", line(r)).attr("fill", "none").attr("stroke", color(s.id)).attr("stroke-width", on ? 3 : 1.6).attr("stroke-linecap", "round").attr("opacity", hoverId && !on ? 0.5 : 1);
           if (on && animate && pins.includes(s.id)) { const L = p.node().getTotalLength(); p.attr("stroke-dasharray", `${L} ${L}`).attr("stroke-dashoffset", L).transition().duration(700).ease(d3.easeCubicOut).attr("stroke-dashoffset", 0); }
         });
-        lg.append("g").selectAll("circle").data(s.pts).join("circle")
+        lg.append("g").attr("data-m", s.id).selectAll("circle").data(s.pts).join("circle")
           .attr("cx", (d) => x(d.year)).attr("cy", (d) => y(d.final)).attr("r", (d) => (d.final === 1 ? 6.5 : on ? 4.5 : 3))
           .attr("fill", (d) => (d.final === 1 ? "var(--gold)" : color(s.id))).attr("stroke", "var(--panel)").attr("stroke-width", 2);
       });
@@ -300,9 +300,10 @@
           const [mx, my] = d3.pointer(e);
           const d = geo.pts[geo.delaunay.find(mx, my)];
           if (d.id !== hoverId) { hoverId = d.id; render(); }
-          App.showTip(App.tt(`${App.name(d.id)} · ${App.label(d.year)}`, [["Team", d.team], ["Final finish", `${App.ord(d.final)} of ${d.n}`], ["Result", d.result], ["Category win %", App.pct(d.catPct)]], "Tap the name above to pin"), e.clientX, e.clientY);
+          App.showTip(App.tt(`${App.name(d.id)} · ${App.label(d.year)}`, [["Team", d.team], ["Final finish", `${App.ord(d.final)} of ${d.n}`], ["Result", d.result], ["Category win %", App.pct(d.catPct)]], "Click to open · tap a name above to pin"), e.clientX, e.clientY);
         })
-        .on("pointerleave", () => { hoverId = null; App.hideTip(); render(); });
+        .on("pointerleave", () => { hoverId = null; App.hideTip(); render(); })
+        .on("click", () => hoverId && App.openPanel("manager", hoverId));
     renderPins(); render(true);
     App.onResize(() => render());
   }

@@ -15,6 +15,7 @@
       <div><div class="eyebrow">Season</div><h1 class="title">${esc(season.label)}</h1>
         <p class="lede">${season.teamCount} teams · ${weeks.length} regular-season weeks · ${season.playoffTeams}-team playoff · nine categories: ${season.categories.map(esc).join(", ")}.</p></div>
       <nav class="pills" aria-label="Choose season">${D.seasons.map((s) => `<a class="pill" href="#season-${s.year}" aria-current="${s.year === season.year ? "page" : "false"}">${esc(s.label)}</a>`).join("")}</nav>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span class="sub-h" style="margin:0">Open a week</span><nav class="weekstrip" aria-label="Weeks">${[...new Set(season.matchups.map((m) => m.wk))].sort((a, b) => a - b).map((w) => { const st = season.matchups.find((m) => m.wk === w).st; return `<a href="#week-${season.year}-${w}" class="${st !== "regular" ? "po" : ""}" title="${st === "regular" ? `Week ${w}` : `Playoffs, week ${w}`}">${st === "regular" ? w : "P"}</a>`; }).join("")}</nav></div>
       <div class="grid g4">
         ${App.tile("Champion", esc(team(season.champion).team), `${esc(App.name(season.champion))}`, App.TIP.titles)}
         ${App.tile("Runner-up", esc(team(season.runnerUp).team), esc(App.name(season.runnerUp)))}
@@ -54,7 +55,7 @@
       </section>
 
       <section class="panel">
-        ${App.secHead("Every week, every team", "Categories won in each weekly matchup. Hover a cell for the full score.", App.TIP.weekGrid)}
+        ${App.secHead("Every week, every team", "Categories won in each weekly matchup. Hover a cell for the full score; click it (or a week number) to open that week.", App.TIP.weekGrid)}
         <div class="scroll-x"><div class="chart" id="wgrid" style="min-width:680px"></div></div>
         <div class="legend"><span><i class="sq" style="background:var(--pos)"></i>Won the week</span><span><i class="sq" style="background:var(--neg)"></i>Lost</span><span><i class="sq" style="background:var(--mid)"></i>Tied</span><span>Darker = bigger margin · P = playoff week</span></div>
       </section>
@@ -62,8 +63,8 @@
       <section class="panel" style="padding:0">
         <div style="padding:16px 18px 0">${App.secHead("Final standings", "Regular-season order, with where each team finished after the playoffs.")}</div>
         <div class="scroll-x"><table class="t">
-          <thead><tr><th>Seed</th><th>Team</th><th>Manager</th><th>Category W-L-T ${App.info(App.TIP.catRec)}</th><th>Category win % ${App.info(App.TIP.catPct)}</th><th>Matchups ${App.info(App.TIP.matchPct)}</th><th>Moves ${App.info(App.TIP.moves)}</th><th>Final ${App.info(App.TIP.finish)}</th></tr></thead>
-          <tbody>${season.standings.map((r) => `<tr><td class="muted">${r.rank}</td><td><b>${esc(r.team)}</b></td><td>${App.who(r.managerId)}</td><td>${App.rec(r.cw, r.cl, r.ct)}</td><td>${App.pct(r.catPct)}</td><td>${App.rec(r.w, r.l, r.t)}</td><td>${r.moves ?? "—"}</td><td>${finalBadge(r)}</td></tr>`).join("")}</tbody>
+          <thead><tr><th>Seed</th><th>Team</th><th>Manager</th><th>Category win % ${App.info(App.TIP.catPct)}</th><th>Category W-L-T ${App.info(App.TIP.catRec)}</th><th>Matchups ${App.info(App.TIP.matchPct)}</th><th>Last 5 weeks</th><th>Seed → final ${App.info(App.TIP.overSeed)}</th><th>Moves ${App.info(App.TIP.moves)}</th><th>Final ${App.info(App.TIP.finish)}</th></tr></thead>
+          <tbody>${season.standings.map((r) => `<tr data-m="${r.managerId}" class="${r.rank === season.playoffTeams ? "cutline" : ""}"><td class="muted">${r.rank}</td><td><b>${esc(r.team)}</b></td><td>${App.who(r.managerId)}</td><td>${App.pctBar(r.catPct)}</td><td>${App.rec(r.cw, r.cl, r.ct)}</td><td>${App.rec(r.w, r.l, r.t)}</td><td>${App.formChips(season, r.managerId)}</td><td>${r.playoffs ? App.seedArrow(r.rank, r.final) : '<span class="muted small">missed</span>'}</td><td>${r.moves ?? "—"}</td><td>${finalBadge(r)}</td></tr>`).join("")}</tbody>
         </table></div>
       </section>`;
 
@@ -93,10 +94,10 @@
     svg.append("rect").attr("x", m.l - 8).attr("width", W - m.r - m.l + 16).attr("y", m.t).attr("height", y(R.spots + 0.5) - m.t).attr("fill", "var(--pos-wash)").attr("opacity", 0.45).attr("rx", 6);
     svg.append("text").attr("class", "lbl").attr("x", W - m.r - 4).attr("y", y(R.spots + 0.5) - 5).attr("text-anchor", "end").text(`playoff line · top ${R.spots}`).style("fill", "var(--accent-ink)").style("font-weight", 700);
     d3.range(1, n + 1).forEach((k) => svg.append("text").attr("class", "lbl num").attr("x", m.l - 14).attr("y", y(k)).attr("dy", ".35em").attr("text-anchor", "end").text(k));
-    R.weeks.forEach((w, i) => { if (i % 2 === 0 || i === R.weeks.length - 1) svg.append("text").attr("class", "lbl num").attr("x", x(w)).attr("y", H - 6).attr("text-anchor", "middle").text(`wk ${w}`); });
+    R.weeks.forEach((w, i) => { if (i % 2 === 0 || i === R.weeks.length - 1) svg.append("a").attr("href", `#week-${season.year}-${w}`).append("text").attr("class", "lbl num weeklink").attr("x", x(w)).attr("y", H - 6).attr("text-anchor", "middle").text(`wk ${w}`); });
     const line = d3.line().x((d, i) => x(R.weeks[i])).y((d) => y(d)).curve(d3.curveBumpX);
     let focus = null;
-    const g = svg.append("g").selectAll("g").data(R.lines).join("g");
+    const g = svg.append("g").selectAll("g").data(R.lines).join("g").attr("data-m", (l) => l.m);
     g.append("path").attr("class", "rl").attr("d", (l) => line(l.ranks)).attr("fill", "none").attr("stroke-linecap", "round");
     g.append("circle").attr("cx", x(R.weeks.at(-1))).attr("cy", (l) => y(l.seed)).attr("r", 4.5);
     g.append("text").attr("class", "lbl-ink").attr("x", W - m.r + 10).attr("y", (l) => y(l.seed)).attr("dy", ".35em").text((l) => `${l.team.length > 20 ? l.team.slice(0, 19) + "…" : l.team}`);
@@ -228,7 +229,7 @@
       gAxis.append("text").attr("class", "lbl").attr("x", W - m.r).attr("text-anchor", "end").attr("y", m.t + cut * rowH - 5).attr("fill", "var(--accent-ink)").style("fill", "var(--accent-ink)").text(`Playoff line · top ${cut} make it`);
 
       const sel = g.selectAll("g.r").data(f.rows, (d) => d.id);
-      const ent = sel.enter().append("g").attr("class", "r");
+      const ent = sel.enter().append("g").attr("class", "r").attr("data-m", (d) => d.id);
       ent.append("text").attr("class", "lbl num rk").attr("x", 0).attr("y", rowH / 2).attr("dy", ".35em");
       ent.append("text").attr("class", "lbl-ink tm").attr("x", 22).attr("y", rowH / 2).attr("dy", ".35em");
       ent.append("rect").attr("class", "bar").attr("height", 16).attr("y", (rowH - 16) / 2).attr("rx", 3);
@@ -311,19 +312,19 @@
       const H = 20 + ids.length * ch;
       d3.select(el).selectAll("*").remove();
       const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("role", "img").attr("aria-label", "Weekly results grid");
-      svg.selectAll("text.wk").data(wks).join("text").attr("class", "lbl num").attr("x", (d, i) => lw + i * cw + cw / 2).attr("y", 12).attr("text-anchor", "middle")
+      svg.selectAll("a.wk").data(wks).join("a").attr("class", "wk").attr("href", (d) => `#week-${season.year}-${d}`).append("text").attr("class", "lbl num weeklink").attr("x", (d, i) => lw + i * cw + cw / 2).attr("y", 12).attr("text-anchor", "middle")
         .text((d) => { const st = season.matchups.find((m) => m.wk === d)?.st; return st !== "regular" ? "P" : d; });
       svg.selectAll("text.tm").data(ids).join("text").attr("class", "lbl-ink").attr("x", lw - 8).attr("y", (d, i) => 20 + i * ch + ch / 2).attr("dy", ".35em").attr("text-anchor", "end")
         .text((d) => { const t = team(d).team; return t.length > 24 ? t.slice(0, 23) + "…" : t; });
       const data = ids.flatMap((id, r) => wks.map((wk, c) => ({ r, c, d: cell.get(`${id}|${wk}`) })));
-      const cells = svg.append("g").selectAll("g").data(data.filter((x) => x.d)).join("g").attr("transform", (x) => `translate(${lw + x.c * cw + 1},${20 + x.r * ch + 1})`);
+      const cells = svg.append("g").selectAll("g").data(data.filter((x) => x.d)).join("g").attr("transform", (x) => `translate(${lw + x.c * cw + 1},${20 + x.r * ch + 1})`).attr("data-m", (x) => x.d.me).style("cursor", "pointer").on("click", (e, x) => App.go(`week-${season.year}-${x.d.wk}`));
       const margin = (d) => Math.abs(d.my - d.their);
       cells.append("rect").attr("width", cw - 2).attr("height", ch - 2).attr("rx", 3)
         .attr("fill", (x) => (x.d.win === null ? "var(--mid)" : x.d.win === x.d.me ? posC(margin(x.d) || 1) : negC(margin(x.d) || 1)))
         .attr("stroke", (x) => (x.d.st !== "regular" ? "var(--gold)" : "none")).attr("stroke-width", 1.5);
       cells.append("text").attr("x", (cw - 2) / 2).attr("y", (ch - 2) / 2).attr("dy", ".35em").attr("text-anchor", "middle").attr("font-size", 11.5).attr("font-weight", 600)
         .attr("fill", (x) => (x.d.win !== null && margin(x.d) >= 5 ? "#fff" : "var(--ink)")).text((x) => x.d.my);
-      App.hover(cells, (x) => App.tt(`Week ${x.d.wk}${x.d.st !== "regular" ? " · playoffs" : ""}`, [[team(x.d.me).team, x.d.my], [team(x.d.opp).team, x.d.their], ["Tied categories", x.d.tc]], x.d.win === null ? "Tied week" : `${App.name(x.d.win)} won the week`));
+      App.hover(cells, (x) => App.tt(`Week ${x.d.wk}${x.d.st !== "regular" ? " · playoffs" : ""}`, [[team(x.d.me).team, x.d.my], [team(x.d.opp).team, x.d.their], ["Tied categories", x.d.tc]], x.d.win === null ? "Tied week · click for the week" : `${App.name(x.d.win)} won the week · click for the week`));
     };
     draw();
     App.onResize(draw);

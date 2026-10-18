@@ -210,10 +210,12 @@
     else if (h.startsWith("season-")) { key = "seasons"; arg = h.slice(7); }
     else if (h.startsWith("draft-")) { key = "draft"; arg = h.slice(6); }
     else if (h.startsWith("awards-")) { key = "awards"; arg = h.slice(7); }
+    else if (h.startsWith("week-")) { key = "week"; arg = h.slice(5); }
     if (!App.pages[key]) key = "overview";
     redraws.clear();
     App.hideTip();
-    document.querySelectorAll("#tabs a").forEach((a) => a.setAttribute("aria-current", a.dataset.k === key ? "page" : "false"));
+    const tabKey = App.pages[key].tab || key;
+    document.querySelectorAll("#tabs a").forEach((a) => a.setAttribute("aria-current", a.dataset.k === tabKey ? "page" : "false"));
     const app = document.getElementById("app");
     app.innerHTML = "";
     const page = document.createElement("div");
@@ -230,6 +232,7 @@
     document.getElementById("tabs").innerHTML = App.order
       .map((k) => `<a href="#${k}" data-k="${k}">${App.pages[k].label}${App.pages[k].isNew ? '<span class="new">New</span>' : ""}</a>`)
       .join("");
+    if (App.mountExplore) App.mountExplore();
     window.addEventListener("hashchange", route);
     route();
   };

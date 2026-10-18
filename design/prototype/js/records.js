@@ -92,7 +92,7 @@
 
     root.querySelector(".jump").addEventListener("click", (e) => { const a = e.target.closest("[data-jump]"); if (!a) return; e.preventDefault(); root.querySelector("#g-" + a.dataset.jump).scrollIntoView({ behavior: "smooth", block: "start" }); });
 
-    const seasonRow = (r, i) => `<div><span class="rk">${i + 1}</span><div class="l"><div class="t1">${esc(r.teamName)}</div><div class="t2">${esc(App.name(r.managerId))} · <a href="#season-${r.year}">${esc(r.label)}</a> · finished ${App.ord(r.finalRank)}</div></div>
+    const seasonRow = (r, i) => `<div><span class="rk">${i + 1}</span><div class="l"><div class="t1">${esc(r.teamName)}</div><div class="t2">${esc(App.name(r.managerId))} · <a href="#season-${r.year}" data-panel="season:${r.year}">${esc(r.label)}</a> · finished ${App.ord(r.finalRank)}</div></div>
       <div class="rv"><b>${App.pct(r.pct)}</b><div class="t2">${r.record}</div></div></div>`;
     root.querySelector("#best").innerHTML = ts.slice(0, 8).map(seasonRow).join("");
     root.querySelector("#worst").innerHTML = [...ts].reverse().slice(0, 8).map(seasonRow).join("");
@@ -156,7 +156,7 @@
     const y = d3.scaleLinear().domain([1, maxSeed]).range([m.t + 8, H - m.b - 8]);
     d3.range(1, maxSeed + 1).forEach((k) => { svg.append("text").attr("class", "lbl num").attr("x", m.l - 12).attr("y", y(k)).attr("dy", ".35em").attr("text-anchor", "end").text(`#${k}`); });
     svg.append("text").attr("class", "lbl").attr("x", 0).attr("y", m.t - 2).text("SEED").style("font-weight", 700);
-    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("transform", (r) => `translate(${x(r.year) + x.bandwidth() / 2},0)`);
+    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("data-m", (r) => r.managerId ?? r.championManagerId ?? null).attr("transform", (r) => `translate(${x(r.year) + x.bandwidth() / 2},0)`);
     g.append("line").attr("y1", y(1)).attr("y2", (r) => y(D.seasons.find((s) => s.year === r.year).playoffTeams)).attr("stroke", "var(--line)").attr("stroke-width", 10).attr("stroke-linecap", "round");
     g.each(function (r) { const n = D.seasons.find((s) => s.year === r.year).playoffTeams; d3.select(this).selectAll("circle.s").data(d3.range(1, n + 1)).join("circle").attr("class", "s").attr("cy", y).attr("r", 3).attr("fill", "var(--line-2)"); });
     g.filter((r) => r.championSeed).append("circle").attr("cy", y(1)).attr("r", 11).attr("fill", "var(--gold)").attr("stroke", "var(--panel)").attr("stroke-width", 3)
@@ -175,7 +175,7 @@
     const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("role", "img").attr("aria-label", "Longest streaks");
     const x = d3.scaleLinear().domain([1, maxWk + 1]).range([m.l, W - m.r]);
     [1, 5, 10, 15, 20].forEach((w) => svg.append("text").attr("class", "lbl num").attr("x", x(w)).attr("y", 10).attr("text-anchor", "middle").text(`wk ${w}`));
-    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("transform", (r, i) => `translate(0,${m.t + i * rh})`);
+    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("data-m", (r) => r.managerId ?? r.championManagerId ?? null).attr("transform", (r, i) => `translate(0,${m.t + i * rh})`);
     g.append("text").attr("class", "lbl-ink").attr("x", m.l - 10).attr("y", rh / 2 - 6).attr("dy", ".35em").attr("text-anchor", "end").text((r) => App.name(r.managerId));
     g.append("text").attr("class", "lbl").attr("x", m.l - 10).attr("y", rh / 2 + 8).attr("dy", ".35em").attr("text-anchor", "end").text((r) => r.label);
     g.append("rect").attr("x", m.l).attr("width", W - m.l - m.r).attr("y", rh / 2 - 9).attr("height", 18).attr("rx", 4).attr("fill", "var(--panel-2)");
@@ -191,7 +191,7 @@
     const W = App.w(el), rh = 30, m = { t: 4, r: 90, l: 170 }, H = m.t + rows.length * rh;
     const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("role", "img").attr("aria-label", "Most weeks in first place");
     const x = d3.scaleLinear().domain([0, 1]).range([0, W - m.l - m.r]);
-    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("transform", (r, i) => `translate(0,${m.t + i * rh})`);
+    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("data-m", (r) => r.managerId ?? r.championManagerId ?? null).attr("transform", (r, i) => `translate(0,${m.t + i * rh})`);
     g.append("text").attr("class", "lbl-ink").attr("x", m.l - 10).attr("y", rh / 2 - 6).attr("dy", ".35em").attr("text-anchor", "end").text((r) => (r.teamName.length > 20 ? r.teamName.slice(0, 19) + "…" : r.teamName));
     g.append("text").attr("class", "lbl").attr("x", m.l - 10).attr("y", rh / 2 + 7).attr("dy", ".35em").attr("text-anchor", "end").text((r) => `${App.name(r.managerId)}, ${r.label}`);
     g.append("rect").attr("x", m.l).attr("y", 7).attr("height", rh - 14).attr("width", x(1)).attr("rx", 3).attr("fill", "var(--panel-2)");
@@ -214,7 +214,7 @@
     svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(6));
     svg.append("text").attr("class", "lbl").attr("x", W - m.r).attr("y", H - 6).attr("text-anchor", "end").text("weeks they should have won →");
     svg.append("text").attr("class", "lbl").attr("x", m.l).attr("y", m.t - 2).text("weeks won ↑");
-    const c = svg.append("g").selectAll("circle").data(rows).join("circle").attr("cx", (r) => x(r.expected)).attr("cy", (r) => y(r.actual)).attr("r", 0)
+    const c = svg.append("g").selectAll("circle").data(rows).join("circle").attr("data-m", (r) => r.m).attr("cx", (r) => x(r.expected)).attr("cy", (r) => y(r.actual)).attr("r", 0)
       .attr("fill", (r) => (r.luck >= 0 ? "var(--pos)" : "var(--neg)")).attr("fill-opacity", (r) => 0.35 + Math.min(0.6, Math.abs(r.luck) / 3)).attr("stroke", "var(--panel)");
     c.transition().duration(500).delay((r, i) => i * 6).attr("r", 5.5);
     App.hover(c, (r) => App.tt(`${r.team} · ${r.label}`, [["Manager", App.name(r.m)], ["Weeks won", r.actual], ["Expected", r.expected.toFixed(1)], ["Luck", App.signed(r.luck, 1)]]));
@@ -228,7 +228,7 @@
     const mx = d3.max(rows, (r) => Math.abs(r.luck));
     const x = d3.scaleLinear().domain([-mx, mx]).range([m.l, W - m.r]);
     svg.append("line").attr("x1", x(0)).attr("x2", x(0)).attr("y1", 0).attr("y2", H).attr("stroke", "var(--line-2)");
-    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("transform", (r, i) => `translate(0,${m.t + i * rh})`);
+    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("data-m", (r) => r.managerId ?? r.championManagerId ?? null).attr("transform", (r, i) => `translate(0,${m.t + i * rh})`);
     g.append("text").attr("class", "lbl-ink").attr("x", m.l - 8).attr("y", rh / 2).attr("dy", ".35em").attr("text-anchor", "end").text((r) => App.name(r.managerId));
     g.append("rect").attr("y", 5).attr("height", rh - 10).attr("rx", 3).attr("fill", (r) => (r.luck >= 0 ? "var(--pos)" : "var(--neg)")).attr("x", x(0)).attr("width", 0)
       .transition().duration(600).attr("x", (r) => Math.min(x(0), x(r.luck))).attr("width", (r) => Math.abs(x(r.luck) - x(0)));
@@ -246,7 +246,7 @@
     const y = d3.scaleLinear().domain([0, d3.max(rows, (r) => r.count)]).range([H - m.b, m.t]);
     const margin = (s) => { const [a, b] = s.split("-").map(Number); return a - b; };
     const col = (s) => (margin(s) === 9 ? "var(--gold)" : margin(s) <= 1 ? "var(--accent)" : margin(s) >= 7 ? "var(--ink)" : "var(--s1)");
-    const g = svg.append("g").selectAll("g").data(rows).join("g");
+    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("data-m", (r) => r.managerId ?? r.championManagerId ?? null);
     g.append("rect").attr("x", (r) => x(r.score)).attr("width", x.bandwidth()).attr("rx", 4).attr("y", H - m.b).attr("height", 0).attr("fill", (r) => col(r.score))
       .transition().duration(700).delay((r, i) => i * 40).attr("y", (r) => y(r.count)).attr("height", (r) => H - m.b - y(r.count));
     g.append("text").attr("class", "lbl-2 num").attr("x", (r) => x(r.score) + x.bandwidth() / 2).attr("y", (r) => y(r.count) - 6).attr("text-anchor", "middle").text((r) => App.pct(r.share, 0));
@@ -262,7 +262,7 @@
     const x = d3.scaleLinear().domain([d3.min(rows, (r) => r.worst) - 0.02, d3.max(rows, (r) => r.best) + 0.02]).range([m.l, W - m.r]);
     [0.4, 0.5, 0.6].forEach((v) => { svg.append("line").attr("x1", x(v)).attr("x2", x(v)).attr("y1", m.t - 6).attr("y2", H).attr("stroke", v === 0.5 ? "var(--line-2)" : "var(--line)"); svg.append("text").attr("class", "lbl num").attr("x", x(v)).attr("y", 12).attr("text-anchor", "middle").text(`${v * 100}%`); });
     const tight = d3.min(rows, (r) => r.spread);
-    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("transform", (r, i) => `translate(0,${m.t + i * rh})`);
+    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("data-m", (r) => r.managerId ?? r.championManagerId ?? null).attr("transform", (r, i) => `translate(0,${m.t + i * rh})`);
     g.append("text").attr("class", "lbl-ink").attr("x", m.l - 10).attr("y", rh / 2).attr("dy", ".35em").attr("text-anchor", "end").text((r) => r.label);
     g.append("line").attr("y1", rh / 2).attr("y2", rh / 2).attr("x1", (r) => x((r.best + r.worst) / 2)).attr("x2", (r) => x((r.best + r.worst) / 2)).attr("stroke", (r) => (r.spread === tight ? "var(--s1)" : "var(--line-2)")).attr("stroke-width", 10).attr("stroke-linecap", "round")
       .transition().duration(700).attr("x1", (r) => x(r.worst)).attr("x2", (r) => x(r.best));
@@ -282,7 +282,7 @@
       svg.append("text").attr("class", "lbl num").attr("x", x(v)).attr("y", 12).attr("text-anchor", "middle").text(App.ord(v));
     });
     svg.append("defs").html(`<marker id="ar-p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="var(--pos)"/></marker><marker id="ar-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="var(--neg)"/></marker>`);
-    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("transform", (d, i) => `translate(0,${m.t + i * rh})`);
+    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("data-m", (r) => r.managerId ?? r.championManagerId ?? null).attr("transform", (d, i) => `translate(0,${m.t + i * rh})`);
     g.append("text").attr("class", "lbl-ink").attr("x", m.l - 12).attr("y", rh / 2).attr("dy", ".35em").attr("text-anchor", "end").text((d) => App.name(d.managerId));
     g.append("circle").attr("cx", (d) => x(d.avgSeed)).attr("cy", rh / 2).attr("r", 4).attr("fill", "var(--panel)").attr("stroke", "var(--ink-2)").attr("stroke-width", 1.5);
     g.append("line").attr("x1", (d) => x(d.avgSeed)).attr("x2", (d) => x(d.avgSeed)).attr("y1", rh / 2).attr("y2", rh / 2)
@@ -303,7 +303,7 @@
     const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("role", "img").attr("aria-label", "Seasons played and titles by manager");
     const x = d3.scaleBand().domain(years).range([m.l, W - m.r]).padding(0.18);
     years.forEach((y) => svg.append("text").attr("class", "lbl").attr("x", x(y) + x.bandwidth() / 2).attr("y", 12).attr("text-anchor", "middle").text(`'${String(y - 1).slice(2)}`));
-    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("transform", (d, i) => `translate(0,${m.t + i * rh})`);
+    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("data-m", (r) => r.managerId ?? r.championManagerId ?? null).attr("transform", (d, i) => `translate(0,${m.t + i * rh})`);
     g.append("text").attr("class", "lbl-ink").attr("x", m.l - 10).attr("y", rh / 2).attr("dy", ".35em").attr("text-anchor", "end").text((d) => App.name(d.managerId));
     g.each(function (d) {
       const list = App.career(d.managerId).seasonsList;
@@ -330,7 +330,7 @@
     svg.append("text").attr("class", "lbl").attr("x", cx - 6).attr("y", 11).attr("text-anchor", "end").text("◀ losses");
     svg.append("text").attr("class", "lbl").attr("x", cx + 6).attr("y", 11).text("wins ▶");
     svg.append("line").attr("x1", cx).attr("x2", cx).attr("y1", m.t - 2).attr("y2", H).attr("stroke", "var(--line-2)");
-    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("transform", (d, i) => `translate(0,${m.t + i * rh})`);
+    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("data-m", (r) => r.managerId ?? r.championManagerId ?? null).attr("transform", (d, i) => `translate(0,${m.t + i * rh})`);
     g.append("text").attr("class", "lbl-ink").attr("x", m.l - 10).attr("y", rh / 2).attr("dy", ".35em").attr("text-anchor", "end").text((d) => App.name(d.managerId));
     g.append("rect").attr("y", 5).attr("height", rh - 10).attr("rx", 3).attr("fill", "var(--pos)").attr("x", cx + 1).attr("width", 0).transition().duration(600).attr("width", (d) => x(d[w]));
     g.append("rect").attr("y", 5).attr("height", rh - 10).attr("rx", 3).attr("fill", "var(--neg)").attr("x", cx - 1).attr("width", 0).transition().duration(600).attr("x", (d) => cx - 1 - x(d[l])).attr("width", (d) => x(d[l]));
@@ -351,7 +351,7 @@
     svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(5).tickFormat((v) => (v === 0 ? "1st" : `top ${Math.round(v * 100)}%`)));
     svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickFormat((v) => `±${Math.round(v * 100)}%`));
     svg.append("text").attr("class", "lbl").attr("x", W - m.r).attr("y", H - 6).attr("text-anchor", "end").text("typical finish →");
-    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("transform", (d) => `translate(${x(d.avgPercentile)},${y(d.spread)})`);
+    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("data-m", (r) => r.managerId ?? r.championManagerId ?? null).attr("transform", (d) => `translate(${x(d.avgPercentile)},${y(d.spread)})`);
     g.append("circle").attr("r", 0).attr("fill", (d) => (App.career(d.managerId).titles ? "var(--gold)" : "var(--s1)")).attr("stroke", "var(--panel)").attr("stroke-width", 2).transition().duration(500).delay((d, i) => i * 40).attr("r", 7);
     // Labels: start beside each dot, then nudge vertically apart so none overlap; a thin leader shows any shift.
     // Names sit in a column on the right, in the dots' vertical order, 15px apart, with leader lines to each dot.

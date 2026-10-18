@@ -26,7 +26,9 @@
     if (lk && lk.managerId === id) out.push(["", "star", "Horseshoe", "Most career matchup luck: wins more weeks than their categories deserve. " + App.TIP.luck]);
     return out;
   }
+  App.badgesFor = (id) => badgesFor(id);
   const badgeHtml = (b) => `<span class="badge ${b[0]}" data-tip="${esc(b[3])}" tabindex="0">${App.icon(b[1])}${esc(b[2])}</span>`;
+  App.badgeHtml = (b) => badgeHtml(b);
 
   function miniPath(c) {
     const years = D.seasons.map((s) => s.year), w = 140, h = 34, maxN = 12;
@@ -43,7 +45,7 @@
       <div><div class="eyebrow">The managers</div><h1 class="title">Thirteen managers, one cup</h1>
         <p class="lede">Every manager who has played in the Caboclo Cup. Badges are earned from the numbers; hover one to see the rule.</p></div>
       <div class="mcards">${list.map((c) => `
-        <a class="mcard" href="#m-${c.managerId}">
+        <a class="mcard" href="#m-${c.managerId}" data-m="${c.managerId}">
           <div class="top">${App.mono(c.managerId, "md")}<div><div class="nm">${esc(c.name)}</div><div class="meta">${c.seasons} season${c.seasons > 1 ? "s" : ""} · ${esc(App.label(c.firstYear))}${c.firstYear !== c.lastYear ? " – " + esc(App.label(c.lastYear)) : ""}</div></div></div>
           ${miniPath(c)}
           <div class="stats"><div><b>${c.titles}</b>titles</div><div><b>${App.pct(c.catPct, 1)}</b>cat. win</div><div><b>${c.avgFinish.toFixed(1)}</b>avg finish</div></div>
@@ -127,8 +129,8 @@
       </div>
 
       <section class="panel" style="padding:0"><div style="padding:16px 18px 0">${App.secHead("Season by season")}</div><div class="scroll-x"><table class="t">
-        <thead><tr><th>Season</th><th>Team</th><th>Category W-L-T</th><th>Cat. win %</th><th>Seed</th><th>Final</th><th>Result</th></tr></thead>
-        <tbody>${[...c.seasonsList].reverse().map((x) => `<tr><td><a href="#season-${x.year}" style="color:var(--accent-ink);font-weight:600">${esc(App.label(x.year))}</a></td><td>${esc(x.team)}</td><td>${App.rec(x.cw, x.cl, x.ct)}</td><td>${App.pct(x.catPct)}</td><td>${x.rank} / ${x.n}</td><td>${App.ord(x.final)}</td><td>${x.final === 1 ? `<span class="badge gold">${App.icon("trophy")}Champion</span>` : esc(x.result)}</td></tr>`).join("")}</tbody></table></div></section>
+        <thead><tr><th>Season</th><th>Team</th><th>Cat. win % ${App.info(App.TIP.catPct)}</th><th>Category W-L-T</th><th>Seed → final ${App.info(App.TIP.overSeed)}</th><th>Last 5 weeks</th><th>Result</th></tr></thead>
+        <tbody>${[...c.seasonsList].reverse().map((x) => `<tr><td><a href="#season-${x.year}" data-panel="season:${x.year}" style="color:var(--accent-ink);font-weight:600">${esc(App.label(x.year))}</a></td><td>${esc(x.team)}</td><td>${App.pctBar(x.catPct)}</td><td>${App.rec(x.cw, x.cl, x.ct)}</td><td>${App.seedArrow(x.rank, x.final)}</td><td>${App.formChips(App.seasonByYear(x.year), c.managerId)}</td><td>${x.final === 1 ? `<span class="badge gold">${App.icon("trophy")}Champion</span>` : esc(x.result)}</td></tr>`).join("")}</tbody></table></div></section>
 
       <nav class="pills" aria-label="Other managers">${others.map((o) => `<a class="pill" href="#m-${o.managerId}">${esc(o.name)}</a>`).join("")}</nav>`;
 

@@ -38,7 +38,7 @@
       </section>
 
       <section class="panel">
-        ${App.secHead("Every pick, ever", "Across: where they were drafted. Up: how well they finished. Above the line beat their slot.", App.TIP.scatter,
+        ${App.secHead("Every pick, ever", "Across: where they were drafted. Up: how well they finished. Above the line beat their slot. Click any dot for that player's draft history.", App.TIP.scatter,
           `<div class="controls"><label class="field">Highlight manager<select id="sc-m"><option value="">Everyone</option>${App.played.filter((id) => grades.some((g) => g.managerId === id)).map((id) => `<option value="${id}">${esc(App.name(id))}</option>`).join("")}</select></label>
            <label class="field">Season<select id="sc-y"><option value="">All seasons</option>${yrs.map((y) => `<option value="${y}">${esc(App.label(y))}</option>`).join("")}</select></label></div>`)}
         <div class="chart" id="scatter"></div>
@@ -71,7 +71,7 @@
       </section>
 
       <section class="panel" id="board-sec">
-        ${App.secHead("Draft boards", "The full board, colored by how each pick turned out. Hover a pick for the details.", App.TIP.draftValue)}
+        ${App.secHead("Draft boards", "The full board, colored by how each pick turned out. Replay draft night pick by pick, or click any player for his draft history.", App.TIP.draftValue)}
         <div class="pills" id="board-years">${yrs.map((y) => `<a class="pill" href="#draft-${y}" ${y === boardYear ? 'aria-current="page"' : ""}>${esc(App.label(y))}</a>`).join("")}</div>
         <div class="scroll-x" style="margin-top:14px"><div id="board"></div></div>
         <div class="legend"><span><i class="sq" style="background:var(--pos)"></i>Big steal</span><span><i class="sq" style="background:var(--pos-wash)"></i>Beat the slot</span><span><i class="sq" style="background:var(--neg-wash)"></i>Below the slot</span><span><i class="sq" style="background:var(--neg)"></i>Big bust</span></div>
@@ -92,11 +92,11 @@
       <td>${esc(g.best.p)} <span class="muted small">${esc(g.best.y)} · ${App.val(g.best.v)}</span></td></tr>`).join("");
     root.querySelector("#grades").insertAdjacentHTML("afterend", `<p class="note" style="padding:0 18px 14px">Grade: A = +0.30 or more value per pick above the league average, B = +0.10, C = within ±0.10, D = −0.10 or worse, F = −0.30 or worse. Placeholder cut-offs for the league to tune.</p>`);
 
-    const pickRow = (p) => `<div><div class="l"><div class="t1">${esc(p.p)}</div><div class="t2">${esc(App.label(p.y))} · Rd ${p.rd}, #${p.ov} overall · ${esc(App.name(p.m))}</div></div>
+    const pickRow = (p) => `<div><div class="l"><div class="t1"><a class="plink" href="#draft" data-panel="player:${esc(p.p)}">${esc(p.p)}</a></div><div class="t2">${esc(App.label(p.y))} · Rd ${p.rd}, #${p.ov} overall · ${esc(App.name(p.m))}</div></div>
       <div class="rv"><b class="${p.v >= 0 ? "pos" : "neg"}">${App.val(p.v)}</b><div class="t2">finished ${App.rankLabel(p.ar)}</div></div></div>`;
     root.querySelector("#steals").innerHTML = steals.map(pickRow).join("");
     root.querySelector("#busts").innerHTML = busts.map(pickRow).join("");
-    root.querySelector("#gems").innerHTML = gems.map((p) => `<div><div class="l"><div class="t1">${esc(p.p)}</div><div class="t2">${esc(App.label(p.y))} · Rd ${p.rd} (#${p.ov}) · ${esc(App.name(p.m))}</div></div><div class="rv"><b class="pos">#${p.ar}</b></div></div>`).join("");
+    root.querySelector("#gems").innerHTML = gems.map((p) => `<div><div class="l"><div class="t1"><a class="plink" href="#draft" data-panel="player:${esc(p.p)}">${esc(p.p)}</a></div><div class="t2">${esc(App.label(p.y))} · Rd ${p.rd} (#${p.ov}) · ${esc(App.name(p.m))}</div></div><div class="rv"><b class="pos">#${p.ar}</b></div></div>`).join("");
 
     // Scatter + controls
     const scEl = root.querySelector("#scatter"), selM = root.querySelector("#sc-m"), selY = root.querySelector("#sc-y");
@@ -117,7 +117,7 @@
     const H = D.draft.reach.rows, maxE = d3.max(H, (r) => Math.abs(r.avgEarly));
     root.querySelector("#habits").innerHTML = H.map((r) => {
       const k = D.draft.keeps.rows.find((x) => x.managerId === r.managerId), f = D.draft.favourites.find((x) => x.m === r.managerId);
-      return `<tr><td>${App.who(r.managerId)}</td>
+      return `<tr data-m="${r.managerId}"><td>${App.who(r.managerId)}</td>
         <td><div class="inbar" style="min-width:180px"><span class="num" style="width:44px">${App.signed(r.avgEarly, 1)}</span><div class="tr" style="position:relative"><div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--line-2)"></div><div style="position:absolute;top:0;bottom:0;border-radius:3px;background:${r.avgEarly >= 0 ? "var(--accent)" : "var(--s1)"};${r.avgEarly >= 0 ? `left:50%;width:${(r.avgEarly / maxE) * 50}%` : `right:50%;width:${(-r.avgEarly / maxE) * 50}%`}"></div></div></div></td>
         <td class="r">${App.pct(r.reachShare, 0)}</td>
         <td>${k ? `<div class="inbar" style="min-width:150px"><span class="num" style="width:58px">${k.avgKept.toFixed(1)}/draft</span><div class="tr"><div class="fl" style="width:${k.keptShare * 100}%"></div></div></div>` : "—"}</td>
@@ -126,13 +126,13 @@
     root.querySelector("#habits").closest("section").insertAdjacentHTML("beforeend", `<p class="note" style="padding:0 18px 14px">Orange = drafts ahead of the pre-season rankings (reaches); blue = waits for players to fall.</p>`);
     root.querySelectorAll("button.more").forEach((b) => b.addEventListener("click", () => { const el = root.querySelector("#" + b.dataset.more); const open = el.classList.toggle("capped") === false; b.textContent = open ? "Show fewer" : b.textContent.replace("Show fewer", "Show all"); if (!open) b.textContent = `Show all ${el.children.length}`; }));
     // Favourites
-    root.querySelector("#favs").innerHTML = D.draft.favourites.map((f) => `<div class="fav"><div class="fav-h">${App.mono(f.m)}<div><b>${esc(f.p)}</b><div class="small muted">${esc(App.name(f.m))} · drafted ${f.picks.length} times</div></div></div>
+    root.querySelector("#favs").innerHTML = D.draft.favourites.map((f) => `<div class="fav"><div class="fav-h">${App.mono(f.m)}<div><a class="plink" href="#draft" data-panel="player:${esc(f.p)}"><b>${esc(f.p)}</b></a><div class="small muted">${esc(App.name(f.m))} · drafted ${f.picks.length} times</div></div></div>
       <div class="fav-yrs">${f.picks.map((x) => `<span class="fy ${x.v >= 0 ? "up" : "down"}" data-tip="${esc(`${App.label(x.y)}: round ${x.rd}, #${x.ov} overall, finished ${App.rankLabel(x.ar)} (${App.val(x.v)})`)}"><span>${esc(App.label(x.y))}</span><b>Rd ${x.rd}</b><i>${App.val(x.v)}</i></span>`).join("")}</div></div>`).join("");
     // Got away
-    root.querySelector("#away").innerHTML = D.draft.gotAway.map((g) => `<div><div class="l"><div class="t1">${esc(g.playerName)} <span class="badge ${g.how === "traded" ? "orange" : ""}" style="margin-left:4px">${g.how}</span></div>
+    root.querySelector("#away").innerHTML = D.draft.gotAway.map((g) => `<div><div class="l"><div class="t1"><a class="plink" href="#draft" data-panel="player:${esc(g.playerName)}">${esc(g.playerName)}</a> <span class="badge ${g.how === "traded" ? "orange" : ""}" style="margin-left:4px">${g.how}</span></div>
       <div class="t2">${esc(App.name(g.drafterManagerId))} took him #${g.overall} (rd ${g.round}), ${esc(g.label)} → ${g.endManagerId ? `ended on ${esc(g.endTeam)} (${esc(App.name(g.endManagerId))})` : "a free agent at season end"}</div></div><div class="rv"><b class="pos num">#${g.actualRank}</b><div class="t2">finished</div></div></div>`).join("");
     // First overall picks timeline
-    root.querySelector("#firsts").innerHTML = D.draft.slotHistory.map((h) => `<div class="first"><div class="fy-l">${esc(h.label)}</div><div class="fp">${esc(h.first.p)}</div>
+    root.querySelector("#firsts").innerHTML = D.draft.slotHistory.map((h) => `<div class="first"><div class="fy-l">${esc(h.label)}</div><a class="fp plink" href="#draft" data-panel="player:${esc(h.first.p)}">${esc(h.first.p)}</a>
       <div class="small muted">${esc(App.name(h.first.m))} · ${h.n} teams</div>
       <div class="fstats"><div><span>Player finished</span><b class="num ${h.first.ar && h.first.ar <= 12 ? "pos" : "neg"}">${App.rankLabel(h.first.ar)}</b></div><div><span>Team finished</span><b class="num">${h.firstTeamFinish === 1 ? "🏆 1st" : App.ord(h.firstTeamFinish)}</b></div></div>
       <div class="small muted">Champion drafted from #${h.champSlot ?? "—"}</div></div>`).join("");
@@ -164,7 +164,7 @@
       svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).tickValues([1, 50, 100, 150, 200, 250, 300]).tickFormat((v) => (v === 300 ? "300+" : `#${v}`)));
       svg.append("text").attr("class", "lbl").attr("x", W - m.r).attr("y", H - 6).attr("text-anchor", "end").text("overall pick →");
       svg.append("text").attr("class", "lbl").attr("x", m.l).attr("y", 10).text("finish rank ↓ (1 = best)");
-      dots = svg.append("g").selectAll("circle").data(picks).join("circle")
+      dots = svg.append("g").selectAll("circle").data(picks).join("circle").attr("data-m", (d) => d.m).style("cursor", "pointer").on("click", (e, d) => App.openPanel("player", d.p))
         .attr("cx", (d) => x(d.ov)).attr("cy", (d) => y(d.ar ?? 301) + (d.ar == null ? (((d.ov * 37 + d.y) % 11) - 5) : 0)).attr("r", 3.2)
         .attr("fill", (d) => (d.ar == null ? "var(--line-2)" : d.v >= 0 ? "var(--pos)" : "var(--neg)")).attr("fill-opacity", 0.55);
       App.hover(dots, (d) => App.tt(d.p, [["Season", App.label(d.y)], ["Drafted by", App.name(d.m)], ["Pick", `Rd ${d.rd}, #${d.ov}`], ["Finished", App.rankLabel(d.ar)], ["Preseason rank", d.pr ? `#${d.pr}` : "—"], ["Value", App.val(d.v)]]));
@@ -222,7 +222,7 @@
     const x = d3.scaleLinear().domain([1, 12]).range([m.l + 10, W - m.r - 10]);
     d3.range(1, 13).forEach((k) => { svg.append("line").attr("x1", x(k)).attr("x2", x(k)).attr("y1", m.t - 4).attr("y2", H).attr("stroke", "var(--line)"); svg.append("text").attr("class", "lbl num").attr("x", x(k)).attr("y", 12).attr("text-anchor", "middle").text(`#${k}`); });
     svg.append("text").attr("class", "lbl").attr("x", W - m.r + 16).attr("y", 12).text("#1 · #2 · top-3 finishers drafted").style("font-weight", 700);
-    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("transform", (r, i) => `translate(0,${m.t + i * rh})`);
+    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("data-m", (r) => r.managerId).attr("transform", (r, i) => `translate(0,${m.t + i * rh})`);
     g.append("text").attr("class", "lbl-ink").attr("x", m.l - 6).attr("y", rh / 2).attr("dy", ".35em").attr("text-anchor", "end").text((r) => App.name(r.managerId));
     g.append("line").attr("x1", x(1)).attr("x2", x(12)).attr("y1", rh / 2).attr("y2", rh / 2).attr("stroke", "var(--line-2)");
     g.each(function (r) {
@@ -259,24 +259,67 @@
   }
 
   function drawBoard(el, year) {
-    const picks = D.draft.picks.filter((p) => p.y === year);
+    const picks = D.draft.picks.filter((p) => p.y === year).sort((a, b) => a.ov - b.ov);
     const season = App.seasonByYear(year);
     const teamOf = (m) => season.standings.find((s) => s.managerId === m);
     const cols = picks.filter((p) => p.rd === 1).sort((a, b) => a.pk - b.pk);
     const rounds = d3.max(picks, (p) => p.rd);
     const tone = (v) => (v >= 3 ? "var(--pos)" : v >= 0 ? "var(--pos-wash)" : v > -3 ? "var(--neg-wash)" : "var(--neg)");
     const ink = (v) => (v >= 3 || v <= -3 ? "#fff" : "var(--ink)");
-    el.innerHTML = `<table class="t" style="table-layout:fixed;min-width:${cols.length * 104 + 40}px"><thead><tr><th style="width:40px">Rd</th>${cols
-      .map((c) => { const t = teamOf(c.m); return `<th style="white-space:normal;text-transform:none;letter-spacing:0"><div style="color:var(--ink);font-size:12.5px">${esc(App.name(c.m))}</div><div style="font-weight:500;font-size:11px">${t ? App.ord(t.final) : ""} place</div></th>`; })
+    const steal = [...picks].sort((a, b) => b.v - a.v)[0], bust = [...picks].filter((p) => p.rd <= 3).sort((a, b) => a.v - b.v)[0];
+    el.innerHTML = `
+      <div class="replay-bar">
+        <button class="btn primary" type="button" id="dr-play">${App.icon("play")}<span>Replay draft night</span></button>
+        <div class="seg" role="group" id="dr-speed"><button type="button" data-v="420" aria-pressed="true">1×</button><button type="button" data-v="140" aria-pressed="false">3×</button></div>
+        <button class="btn" type="button" id="dr-skip" hidden>Skip to the end</button>
+        <div class="ticker" id="dr-ticker" aria-live="polite"><span class="tk-k">${esc(season.label)} draft</span><span class="tk-t">${picks.length} picks · ${cols.length} teams · ${rounds} rounds. Press play to relive it pick by pick.</span></div>
+      </div>
+      <table class="t board" style="table-layout:fixed;min-width:${cols.length * 92 + 40}px"><thead><tr><th style="width:40px">Rd</th>${cols
+      .map((c) => { const t = teamOf(c.m); return `<th data-col="${c.m}" style="white-space:normal;text-transform:none;letter-spacing:0"><div style="color:var(--ink);font-size:12.5px">${esc(App.name(c.m))}</div><div style="font-weight:500;font-size:11px">${t ? App.ord(t.final) : ""} place</div></th>`; })
       .join("")}</tr></thead><tbody>${d3.range(1, rounds + 1)
       .map((r) => `<tr><td class="muted">${r}</td>${cols
         .map((c) => {
           const p = picks.find((x) => x.rd === r && x.m === c.m);
           if (!p) return "<td></td>";
-          return `<td style="padding:3px"><div data-tip="${esc(`${p.p} · Rd ${p.rd}, #${p.ov} overall · finished ${App.rankLabel(p.ar)} · value ${App.val(p.v)}`)}" style="background:${tone(p.v)};color:${ink(p.v)};border-radius:6px;padding:5px 7px;font-size:12px;line-height:1.25">
-            <div style="font-weight:700;overflow:hidden;text-overflow:ellipsis">${esc(p.p)}</div><div style="display:flex;justify-content:space-between;opacity:.85"><span>${App.rankLabel(p.ar)}</span><span>${App.val(p.v)}</span></div></div></td>`;
+          return `<td style="padding:3px"><div class="pk res" data-ov="${p.ov}" data-m="${p.m}" data-panel="player:${esc(p.p)}" data-tip="${esc(`${p.p} · Rd ${p.rd}, #${p.ov} overall · finished ${App.rankLabel(p.ar)} · value ${App.val(p.v)} · click for his draft history`)}" style="--tone:${tone(p.v)};--tink:${ink(p.v)}">
+            <span class="pk-no num">#${p.ov}</span><div class="pk-nm">${esc(p.p)}</div><div class="pk-rs"><span>${App.rankLabel(p.ar)}</span><span>${App.val(p.v)}</span></div></div></td>`;
         })
         .join("")}</tr>`)
       .join("")}</tbody></table>`;
+
+    const cells = new Map([...el.querySelectorAll(".pk")].map((c) => [+c.dataset.ov, c]));
+    const ticker = el.querySelector("#dr-ticker"), play = el.querySelector("#dr-play"), skip = el.querySelector("#dr-skip");
+    let speed = 420, i = 0, timer = null, phase = "idle";
+    const say = (k, t) => (ticker.innerHTML = `<span class="tk-k">${k}</span><span class="tk-t">${t}</span>`);
+    const onClock = (p) => { el.querySelectorAll("th[data-col]").forEach((th) => th.classList.toggle("clock", !!p && th.dataset.col === p.m)); };
+    const setBtn = (label, icon) => (play.innerHTML = `${App.icon(icon)}<span>${label}</span>`);
+    const stop = () => { clearInterval(timer); timer = null; };
+    const reveal = () => {
+      phase = "reveal"; stop(); onClock(null); skip.hidden = true;
+      say("Season's over", "Here's how every pick turned out…");
+      picks.forEach((p, k) => setTimeout(() => { const c = cells.get(p.ov); c.classList.remove("drafted"); c.classList.add("res", "flip"); }, 30 + k * 12));
+      setTimeout(() => { phase = "done"; setBtn("Replay draft night", "play");
+        say("Verdict", `Steal: <b>${esc(steal.p)}</b> (#${steal.ov} → ${App.rankLabel(steal.ar)}, ${App.val(steal.v)}, ${esc(App.name(steal.m))}) · Bust: <b>${esc(bust.p)}</b> (#${bust.ov} → ${App.rankLabel(bust.ar)}, ${App.val(bust.v)}, ${esc(App.name(bust.m))})`); }, 60 + picks.length * 12 + 400);
+    };
+    const step = () => {
+      if (!document.body.contains(el)) return stop();
+      if (i >= picks.length) { stop(); phase = "drafted"; onClock(null); say("Draft complete", "Every roster is set. Now skip to the end of the season…"); setBtn("Reveal how it went", "bolt"); return; }
+      const p = picks[i++], c = cells.get(p.ov);
+      c.classList.remove("hid"); c.classList.add("drafted", "pop");
+      onClock(picks[i] || null);
+      say(`Round ${p.rd} · Pick ${p.pk} (#${p.ov})`, `<b>${esc(App.name(p.m))}</b> selects <b>${esc(p.p)}</b>${picks[i] ? ` · <span class="muted">${esc(App.name(picks[i].m))} is on the clock</span>` : ""}`);
+    };
+    const start = () => { phase = "drafting"; skip.hidden = false; setBtn("Pause", "pause"); stop(); timer = setInterval(step, speed); };
+    play.addEventListener("click", () => {
+      if (phase === "idle" || phase === "done") {
+        i = 0; cells.forEach((c) => { c.classList.remove("res", "drafted", "pop", "flip"); c.classList.add("hid"); });
+        say("Draft night", `<b>${esc(App.name(picks[0].m))}</b> is on the clock with the first pick.`); onClock(picks[0]); start();
+      } else if (phase === "drafting") { stop(); phase = "paused"; setBtn("Resume", "play"); }
+      else if (phase === "paused") start();
+      else if (phase === "drafted") reveal();
+    });
+    skip.addEventListener("click", () => { stop(); while (i < picks.length) { const c = cells.get(picks[i++].ov); c.classList.remove("hid"); c.classList.add("drafted"); } reveal(); });
+    App.bindSeg(el, "dr-speed", (v) => { speed = +v; if (timer) start(); });
   }
+
 })();

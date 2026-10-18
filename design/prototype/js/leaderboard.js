@@ -73,7 +73,7 @@
         const on = sort?.k === c.k;
         return `<th aria-sort="${on ? (sort.dir === "asc" ? "ascending" : "descending") : "none"}"><span style="display:inline-flex;gap:5px;align-items:center"><button type="button" class="sort" data-k="${c.k}">${esc(c.l)}${on ? (sort.dir === "asc" ? " ▲" : " ▼") : ""}</button>${c.tip ? App.info(c.tip) : ""}</span></th>`;
       }).join("")}<th>Finish history</th></tr></thead>
-      <tbody>${rows.map((r, i) => `<tr><td class="muted">${i + 1}</td><td>${App.who(r.id)}</td>${COLS.map((c) => `<td>${c.r(r, maxPct)}</td>`).join("")}<td>${spark(r, ys, maxN)}</td></tr>`).join("")}</tbody>`;
+      <tbody>${rows.map((r, i) => `<tr data-m="${r.id}"><td class="muted">${i + 1}</td><td>${App.who(r.id)}</td>${COLS.map((c) => `<td>${c.r(r, maxPct)}</td>`).join("")}<td>${spark(r, ys, maxN)}</td></tr>`).join("")}</tbody>`;
     };
     table.addEventListener("click", (e) => {
       const b = e.target.closest("button.sort");

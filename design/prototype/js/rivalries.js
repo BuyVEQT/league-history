@@ -160,7 +160,8 @@
     g.append("circle").attr("cx", x).attr("cy", mid).attr("r", (d) => (d.st === "regular" ? 4.5 : 6)).attr("fill", col)
       .attr("stroke", (d) => (d.st === "regular" ? "var(--panel)" : "var(--gold)")).attr("stroke-width", (d) => (d.st === "regular" ? 1.5 : 2.5))
       .transition().duration(600).delay((d, i) => i * 18).attr("cy", (d) => y(d.ac - d.bc));
-    App.hover(g, (d) => App.tt(`${d.label} · ${d.st === "regular" ? `Week ${d.wk}` : STAGE[d.st]}`, [[App.name(a), d.ac], [App.name(b), d.bc], ["Tied categories", d.tc]], d.win ? `${App.name(d.win)} won${d.st !== "regular" && d.ac === d.bc ? " on seed tiebreak" : ""}` : "Tied week"));
+    g.style("cursor", "pointer").on("click", (e, d) => App.go(`week-${d.year}-${d.wk}`));
+    App.hover(g, (d) => App.tt(`${d.label} · ${d.st === "regular" ? `Week ${d.wk}` : STAGE[d.st]}`, [[App.name(a), d.ac], [App.name(b), d.bc], ["Tied categories", d.tc]], (d.win ? `${App.name(d.win)} won${d.st !== "regular" && d.ac === d.bc ? " on seed tiebreak" : ""}` : "Tied week") + " · click for the week"));
   }
 
   function drawMatrix(el, selA, selB, set) {

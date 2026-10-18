@@ -53,7 +53,7 @@
 
     // Activity table
     const maxMoves = d3.max(act, (r) => r.moves), maxNet = d3.max(act, (r) => Math.abs(r.netValue)) || 1;
-    root.querySelector("#act").innerHTML = act.map((r) => `<tr><td>${App.who(r.managerId)}</td>
+    root.querySelector("#act").innerHTML = act.map((r) => `<tr data-m="${r.managerId}"><td>${App.who(r.managerId)}</td>
       <td><div class="inbar" style="min-width:150px"><span class="num" style="width:34px">${r.moves}</span><div class="tr"><div class="fl" style="width:${(r.moves / maxMoves) * 100}%"></div></div></div></td>
       <td class="r">${Math.round(r.movesPerSeason)}</td><td class="r">${r.trades}</td><td class="r">${r.trades ? `${r.tradeWins}-${r.tradeLosses}` : "—"}</td>
       <td>${r.trades ? `<div class="inbar" style="min-width:150px"><span class="num ${r.netValue >= 0 ? "pos" : "neg"}" style="width:46px">${App.val(r.netValue)}</span><div class="tr" style="position:relative"><div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--line-2)"></div><div style="position:absolute;top:0;bottom:0;border-radius:3px;background:${r.netValue >= 0 ? "var(--pos)" : "var(--neg)"};${r.netValue >= 0 ? `left:50%;width:${(r.netValue / maxNet) * 50}%` : `right:50%;width:${(-r.netValue / maxNet) * 50}%`}"></div></div></div>` : "—"}</td>
@@ -69,7 +69,7 @@
         return `<div class="trade panel ${t.status === "vetoed" ? "vetoed" : ""}" style="box-shadow:none">
           <div class="hd"><span>${dateLabel(t.date)} · ${esc(t.label)}</span>${t.status === "vetoed" ? '<span class="badge" style="color:var(--bad-ink)">Vetoed</span>' : win ? `<span class="badge orange">Edge: ${esc(App.name(win))} (${App.val(t.margin)})</span>` : '<span class="badge">Even</span>'}</div>
           <div class="sides">${t.sides.map((s) => `<div class="sd">${App.who(s.m)}<div class="small muted">${esc(s.team)} received</div>
-            <ul>${s.players.map((p) => `<li><span>${esc(p.n)}</span><span class="muted num">${App.rankLabel(p.r)}</span></li>`).join("")}</ul>
+            <ul>${s.players.map((p) => `<li><a class="plink" href="#trades" data-panel="player:${esc(p.n)}">${esc(p.n)}</a><span class="muted num">${App.rankLabel(p.r)}</span></li>`).join("")}</ul>
             <div class="vbar ${win === s.m ? "win" : ""}" style="width:0" data-w="${(s.value / max) * 100}"></div><div class="small muted num" style="margin-top:3px">value ${s.value.toFixed(1)}</div></div>`).join("")}</div></div>`;
       }).join("");
       requestAnimationFrame(() => logEl.querySelectorAll(".vbar").forEach((b) => (b.style.width = Math.max(2, +b.dataset.w) + "%")));
@@ -78,7 +78,7 @@
     App.bindSeg(root, "tl-y", renderLog);
 
     root.querySelector("#und").innerHTML = T.undrafted.map((g) => `<div class="award"><div class="ic" style="font-family:var(--font-display);font-weight:900;font-size:18px;color:var(--good-ink)">#${g.actualRank}</div>
-      <div><div class="aw" style="font-size:19px">${esc(g.playerName)}</div><div class="ad">${esc(g.label)} · on ${esc(g.teamName)} (${esc(App.name(g.managerId))}) at season end</div></div></div>`).join("");
+      <div><a class="aw plink" href="#trades" data-panel="player:${esc(g.playerName)}" style="font-size:19px;display:block">${esc(g.playerName)}</a><div class="ad">${esc(g.label)} · on ${esc(g.teamName)} (${esc(App.name(g.managerId))}) at season end</div></div></div>`).join("");
 
     const undEl = root.querySelector("#und"), undMore = root.querySelector("#und-more");
     undMore.addEventListener("click", () => { const capped = undEl.classList.toggle("capped"); undMore.textContent = capped ? `Show all ${T.undrafted.length}` : "Show fewer"; });
@@ -104,7 +104,7 @@
       .attr("stroke-width", (e) => 1.5 + (e.n / maxN) * 9);
     link.each(function () { const L = this.getTotalLength(); d3.select(this).attr("stroke-dasharray", `${L} ${L}`).attr("stroke-dashoffset", L).transition().duration(900).delay(Math.random() * 300).attr("stroke-dashoffset", 0); });
     App.hover(link, (e) => App.tt(`${App.name(e.a)} ↔ ${App.name(e.b)}`, [["Trades", e.n]]));
-    const node = svg.append("g").selectAll("g").data(ids).join("g").attr("transform", (id) => `translate(${pos(id)[0]},${pos(id)[1]})`).style("cursor", "pointer");
+    const node = svg.append("g").selectAll("g").data(ids).join("g").attr("data-m", (id) => id).attr("transform", (id) => `translate(${pos(id)[0]},${pos(id)[1]})`).style("cursor", "pointer");
     node.append("circle").attr("r", (id) => 12 + deg.get(id) * 0.6).attr("fill", "var(--band)").attr("stroke", "var(--panel)").attr("stroke-width", 3);
     node.append("text").attr("text-anchor", "middle").attr("dy", ".35em").style("fill", "var(--band-ink)").style("font-family", "var(--font-display)").style("font-weight", 800).style("font-size", "13px").text((id) => App.initials(id));
     node.append("text").attr("class", "lbl-ink").attr("text-anchor", (id) => (Math.cos(pos(id)[2]) > 0.2 ? "start" : Math.cos(pos(id)[2]) < -0.2 ? "end" : "middle"))
@@ -114,7 +114,7 @@
       const partners = E.filter((l) => l.a === id || l.b === id).sort((x, y) => y.n - x.n).map((l) => [App.name(l.a === id ? l.b : l.a), l.n]);
       App.showTip(App.tt(`${App.name(id)} · ${deg.get(id)} trades`, partners), e.clientX, e.clientY);
     }).on("pointerleave", () => { link.transition().duration(150).attr("stroke-opacity", 0.35).attr("stroke", "var(--s1)"); App.hideTip(); })
-      .on("click", (e, id) => App.go(`m-${id}`));
+      .on("click", (e, id) => App.openPanel("manager", id));
   }
 
   /** Unowned stars: one row per player, a rank track from #1 to #60, dot at the finish. */
@@ -155,7 +155,7 @@
     svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(6));
     svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).tickValues([1, 4, 8, 12]).tickFormat(App.ord));
     svg.append("text").attr("class", "lbl").attr("x", W - m.r).attr("y", H - 4).attr("text-anchor", "end").text("adds & drops that season →");
-    const c = svg.append("g").selectAll("circle").data(rows).join("circle").attr("cx", (d) => x(d.moves)).attr("cy", (d) => y(d.final)).attr("r", 4.5)
+    const c = svg.append("g").selectAll("circle").data(rows).join("circle").attr("data-m", (d) => d.managerId).attr("cx", (d) => x(d.moves)).attr("cy", (d) => y(d.final)).attr("r", 4.5)
       .attr("fill", (d) => (d.final === 1 ? "var(--gold)" : "var(--s1)")).attr("fill-opacity", 0.7).attr("stroke", "var(--panel)");
     App.hover(c, (d) => App.tt(d.team, [["Manager", App.name(d.managerId)], ["Season", d.label], ["Moves", d.moves], ["Final finish", `${App.ord(d.final)} of ${d.n}`]]));
   }
