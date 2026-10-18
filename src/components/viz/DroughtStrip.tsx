@@ -16,7 +16,7 @@ export function DroughtStrip({
 }) {
   return (
     <div className="overflow-x-auto">
-      <div className="grid items-center gap-x-1 gap-y-1.5 text-[12.5px]" style={{ gridTemplateColumns: `minmax(70px, max-content) repeat(${seasons.length}, minmax(22px, 1fr)) max-content` }}>
+      <div className="grid items-center gap-x-1 gap-y-1.5 text-[12.5px]" style={{ gridTemplateColumns: `minmax(70px, max-content) repeat(${seasons.length}, minmax(12px, 1fr)) max-content` }}>
         <span />
         {seasons.map((s) => (
           <span key={s.year} className="text-center text-[11px] text-muted">
