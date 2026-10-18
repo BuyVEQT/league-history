@@ -8,6 +8,8 @@ import { useLeagueBase } from "./useLeagueBase";
 export interface NavFeatures {
   draft?: boolean;
   trades?: boolean;
+  /** The story behind the league's name (only the real Caboclo Cup has one). */
+  story?: boolean;
 }
 
 const LINKS: { href: string; label: string; needs?: keyof NavFeatures; isNew?: boolean }[] = [
@@ -19,7 +21,8 @@ const LINKS: { href: string; label: string; needs?: keyof NavFeatures; isNew?: b
   { href: "/records", label: "Records" },
   { href: "/draft", label: "Draft", needs: "draft" },
   { href: "/trades", label: "Trades & moves", needs: "trades" },
-  { href: "/awards", label: "Awards", isNew: true },
+  { href: "/awards", label: "Awards" },
+  { href: "/caboclo-cup", label: "The Cup", needs: "story", isNew: true },
 ];
 
 /** The tab row in the arena band. */

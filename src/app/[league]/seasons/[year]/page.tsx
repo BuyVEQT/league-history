@@ -18,6 +18,7 @@ import { raceStorylines, replayFrames } from "@/lib/analytics/seasonView";
 import { alternateStandings } from "@/lib/analytics/whatIf";
 import { seasonWeeks, teamForm } from "@/lib/analytics/weeksView";
 import { getLeague } from "@/lib/data";
+import { cabocloFinalFor } from "@/lib/data/cabocloFinal";
 import { TIPS } from "@/lib/explain";
 import { SEASON_TIPS } from "@/lib/explain/seasons";
 
@@ -63,6 +64,14 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
         title={season.label}
         subtitle={`${season.teams.length} teams · ${weeks} regular-season weeks · ${spots}-team playoff · ${season.categories.length} categories: ${season.categories.join(", ")}.`}
       />
+
+      {cabocloFinalFor(slug) && season === league.seasons[0] && (
+        <Link href={`/${slug}/caboclo-cup`} className="cf-teaser">
+          <span className="cf-teaser-k">The final that named the league</span>
+          <span className="cf-teaser-v">Both teams shot .469; the title was decided at the fourth decimal by Bruno Caboclo&apos;s last shot.</span>
+          <span className="cf-teaser-go">Why it&apos;s the Caboclo Cup →</span>
+        </Link>
+      )}
 
       <nav aria-label="Select season" className="flex flex-wrap gap-2">
         {league.seasons.map((s) => (
