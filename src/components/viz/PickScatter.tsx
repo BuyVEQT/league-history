@@ -18,12 +18,19 @@ export function PickScatter({
   picks,
   names,
   seasons,
+  manager: controlled,
+  onManager,
 }: {
   picks: ScatterPick[];
   names: Record<string, string>;
   seasons: { year: number; label: string }[];
+  /** Highlighted manager, when a parent owns it (the draft report card); "" = everyone. */
+  manager?: string;
+  onManager?: (id: string) => void;
 }) {
-  const [manager, setManager] = useState("");
+  const [own, setOwn] = useState("");
+  const manager = controlled ?? own;
+  const setManager = onManager ?? setOwn;
   const [year, setYear] = useState("");
   const maxOv = Math.max(...picks.map((p) => p.ov));
   const x = (v: number) => m.l + ((v - 1) / (maxOv - 1 || 1)) * (W - m.l - m.r);
@@ -90,6 +97,7 @@ export function PickScatter({
         <text className="lbl" x={m.l + 4} y={m.t - 6}>
           finish rank ↓ (1 = best)
         </text>
+        <g className="dr-sweep">
         {ordered.map((p) => {
           const lit = any && on(p);
           return (
@@ -114,6 +122,7 @@ export function PickScatter({
             />
           );
         })}
+        </g>
       </svg>
       <div className="viz-legend">
         <span>
