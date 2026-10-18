@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Static design prototype (plain browser JS) and agent worktrees.
+    "design/**",
+    ".claude/**",
   ]),
 ]);
 
