@@ -1,159 +1,240 @@
 "use client";
 
-import { useState, useSyncExternalStore } from "react";
-import { MUTED_SERIES, SERIES } from "@/lib/colors";
-import { CartesianGrid, LabelList, Line, LineChart, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import * as d3 from "d3";
+import { Crown, HeartCrack, Rocket, TrendingDown } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ordinal as ord } from "@/lib/analytics/format";
+import type { ReplayFrame, Storyline, StoryKind } from "@/lib/analytics/seasonView";
+import { tt } from "@/components/viz/tt";
+import { useD3Chart } from "@/components/viz/useD3Chart";
+import { SeasonReplay } from "./SeasonReplay";
 
-export interface RaceSeries {
+export interface RaceLineData {
   teamId: string;
   teamName: string;
   managerName: string;
-  color: string;
   /** Rank after each week in `weeks`. */
   ranks: number[];
+  seed: number;
+  finalRank: number;
+  madePlayoffs: boolean;
+  weeksInFirst: number;
 }
 
 interface Props {
   weeks: number[];
-  series: RaceSeries[];
-  /** Playoff spots; draws the cut line. 0 = none. */
+  lines: RaceLineData[];
+  /** Playoff spots; draws the shaded playoff zone. 0 = none. */
   spots: number;
-  initialSelected: string[];
+  stories: Storyline[];
+  replay: { method: "categories" | "matchups"; frames: ReplayFrame[] };
+  managerNames: Record<string, string>;
 }
 
-const MAX_SELECTED = 4;
-const MUTED = MUTED_SERIES;
-const NARROW = "(max-width: 640px)";
+const ICON: Record<StoryKind, typeof Crown> = {
+  "Front-runner": Crown,
+  Comeback: Rocket,
+  Collapse: TrendingDown,
+  "Final-week knockout": HeartCrack,
+};
 
-/** Phones get a slimmer label margin so the plot keeps most of the width. */
-function useNarrow() {
-  return useSyncExternalStore(
-    (onChange) => {
-      const m = window.matchMedia(NARROW);
-      m.addEventListener("change", onChange);
-      return () => m.removeEventListener("change", onChange);
-    },
-    () => window.matchMedia(NARROW).matches,
-    () => false,
-  );
-}
+const clip = (s: string, n: number) => (s.length > n ? `${s.slice(0, n - 1)}…` : s);
 
 /**
- * The standings race as a bump chart. Every team is a thin gray line; up to
- * four picked teams are drawn in their manager's color and labelled at the
- * end of their line, so identity never relies on color alone.
+ * The standings race. "Every week": every team's place after each week as a bump chart, with storyline
+ * cards that light up the teams they're about. "Replay": the table itself, played back week by week.
  */
-export function RaceChart({ weeks, series, spots, initialSelected }: Props) {
-  const [selected, setSelected] = useState<string[]>(initialSelected);
-  const narrow = useNarrow();
-  const labelChars = narrow ? 10 : 18;
-  const toggle = (id: string) =>
-    setSelected((cur) => (cur.includes(id) ? cur.filter((x) => x !== id) : [...cur, id].slice(-MAX_SELECTED)));
-  const colorOf = (id: string) => SERIES[selected.indexOf(id)] ?? MUTED;
+export function RaceChart({ weeks, lines, spots, stories, replay, managerNames }: Props) {
+  const [mode, setMode] = useState<"lines" | "replay">("lines");
+  const [story, setStory] = useState<number | null>(null);
+  const focusRef = useRef<string[] | null>(null);
+  const storyRef = useRef(false);
+  const paintRef = useRef<(() => void) | null>(null);
 
-  const rows = weeks.map((week, i) => ({ week, ...Object.fromEntries(series.map((s) => [s.teamId, s.ranks[i]])) }));
-  const byId = new Map(series.map((s) => [s.teamId, s]));
-  // Draw picked teams last so they sit on top of the gray field.
-  const ordered = [...series].sort((a, b) => Number(selected.includes(a.teamId)) - Number(selected.includes(b.teamId)));
-  const teams = series.length;
-  const last = weeks.length - 1;
+  const ref = useD3Chart(
+    (root, { width, reduced, first }) => {
+      root.selectAll("*").remove();
+      const n = lines.length;
+      const narrow = width < 560;
+      const W = width;
+      const H = 26 * n + 40;
+      const m = { t: 10, r: narrow ? 100 : 150, b: 26, l: 30 };
+      const svg = root
+        .append("svg")
+        .attr("class", "viz")
+        .attr("viewBox", `0 0 ${W} ${H}`)
+        .attr("role", "img")
+        .attr("aria-label", `Standings place of all ${n} teams after each of ${weeks.length} weeks; the shaded band is the playoff zone`);
+      const x = d3.scalePoint<number>().domain(weeks).range([m.l, W - m.r]);
+      const y = d3.scaleLinear().domain([1, Math.max(2, n)]).range([m.t + 8, H - m.b - 8]);
+      if (spots > 0 && spots < n) {
+        svg
+          .append("rect")
+          .attr("x", m.l - 8)
+          .attr("width", W - m.r - m.l + 16)
+          .attr("y", m.t)
+          .attr("height", y(spots + 0.5) - m.t)
+          .attr("fill", "var(--pos-wash)")
+          .attr("opacity", 0.45)
+          .attr("rx", 6);
+        svg
+          .append("text")
+          .attr("class", "lbl")
+          .attr("x", W - m.r - 4)
+          .attr("y", y(spots + 0.5) - 5)
+          .attr("text-anchor", "end")
+          .style("fill", "var(--accent-ink)")
+          .style("font-weight", 700)
+          .text(narrow ? `top ${spots}` : `playoff line · top ${spots}`);
+      }
+      for (let k = 1; k <= n; k++) svg.append("text").attr("class", "lbl num").attr("x", m.l - 14).attr("y", y(k)).attr("dy", ".35em").attr("text-anchor", "end").text(k);
+      const every = narrow ? 4 : 2;
+      weeks.forEach((w, i) => {
+        if ((i % every === 0 && i <= weeks.length - 1 - every) || i === weeks.length - 1)
+          svg.append("text").attr("class", "lbl num").attr("x", x(w)!).attr("y", H - 6).attr("text-anchor", "middle").text(`wk ${w}`);
+      });
+      const line = d3
+        .line<number>()
+        .x((_, i) => x(weeks[i])!)
+        .y((d) => y(d))
+        .curve(d3.curveBumpX);
+      const g = svg.append("g").selectAll("g").data(lines).join("g");
+      const paths = g.append("path").attr("class", "rl").attr("d", (l) => line(l.ranks)).attr("fill", "none").attr("stroke-linecap", "round");
+      const lastX = x(weeks.at(-1)!)!;
+      const dots = g.append("circle").attr("cx", lastX).attr("cy", (l) => y(l.ranks.at(-1)!)).attr("r", 4.5);
+      // End labels, nudged apart only when the chart is cramped.
+      const labs = g
+        .append("text")
+        .attr("class", "ink")
+        .attr("x", W - m.r + 10)
+        .attr("y", (l) => y(l.ranks.at(-1)!))
+        .attr("dy", ".35em")
+        .text((l) => clip(l.teamName, narrow ? 12 : 20));
+
+      const paint = () => {
+        const focus = focusRef.current;
+        const on = (l: RaceLineData) => !focus || focus.includes(l.teamId);
+        const hi = (l: RaceLineData) => !!focus && focus.includes(l.teamId);
+        paths
+          .attr("stroke", (l) =>
+            hi(l) ? (l.madePlayoffs ? "var(--s1)" : "var(--s2)") : l.finalRank === 1 ? "var(--gold)" : !focus ? (l.madePlayoffs ? "var(--ink-2)" : "var(--border-2)") : "var(--border)",
+          )
+          .attr("stroke-width", (l) => (hi(l) ? 3.4 : l.finalRank === 1 ? 2.6 : 1.6));
+        dots.attr("fill", (l) => (l.finalRank === 1 ? "var(--gold)" : hi(l) ? (l.madePlayoffs ? "var(--s1)" : "var(--s2)") : "var(--border-2)"));
+        labs.style("opacity", (l) => (on(l) ? 1 : 0.35)).style("font-weight", (l) => (hi(l) ? 800 : 600));
+        g.filter((l) => hi(l) || (!focus && l.finalRank === 1)).raise();
+      };
+      paintRef.current = paint;
+      paint();
+
+      if (first && !reduced) {
+        paths.each(function (_, i) {
+          const L = this.getTotalLength();
+          d3.select(this)
+            .attr("stroke-dasharray", `${L} ${L}`)
+            .attr("stroke-dashoffset", L)
+            .transition()
+            .delay(i * 25)
+            .duration(1000)
+            .ease(d3.easeCubicOut)
+            .attr("stroke-dashoffset", 0)
+            .on("end", function () {
+              d3.select(this).attr("stroke-dasharray", null).attr("stroke-dashoffset", null);
+            });
+        });
+        dots.style("opacity", 0).transition().delay(900).duration(300).style("opacity", 1);
+        labs.attr("opacity", 0).transition().delay(900).duration(300).attr("opacity", 1);
+      }
+
+      // Wide invisible hit lines: hover highlights a team and the tooltip follows the week under the pointer.
+      g.append("path")
+        .attr("d", (l) => line(l.ranks))
+        .attr("fill", "none")
+        .attr("stroke", "transparent")
+        .attr("stroke-width", 14)
+        .style("cursor", "default")
+        .on("pointerenter", (_, l) => {
+          if (storyRef.current) return;
+          focusRef.current = [l.teamId];
+          paint();
+        })
+        .on("pointermove", function (e, l) {
+          const [mx] = d3.pointer(e, svg.node());
+          const i = d3.minIndex(weeks, (w) => Math.abs(x(w)! - mx));
+          this.setAttribute(
+            "data-tt",
+            tt(
+              `${l.teamName} · week ${weeks[i]}`,
+              [
+                ["Place", ord(l.ranks[i])],
+                ["Weeks in first", l.weeksInFirst],
+                ["Seed", ord(l.seed)],
+                ["Final finish", ord(l.finalRank)],
+              ],
+              l.managerName,
+            ),
+          );
+        })
+        .on("pointerleave", () => {
+          if (storyRef.current) return;
+          focusRef.current = null;
+          paint();
+        });
+      return () => {
+        paintRef.current = null;
+      };
+    },
+    [weeks, lines, spots],
+  );
+
+  useEffect(() => {
+    storyRef.current = story !== null;
+    focusRef.current = story === null ? null : stories[story]?.teamIds ?? null;
+    paintRef.current?.();
+  }, [story, stories]);
 
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap gap-2" role="group" aria-label="Teams highlighted on the chart">
-        {series.map((s) => {
-          const on = selected.includes(s.teamId);
-          return (
-            <button
-              key={s.teamId}
-              type="button"
-              aria-pressed={on}
-              onClick={() => toggle(s.teamId)}
-              className="pill"
-            >
-              <span className="size-2 rounded-full" style={{ background: on ? colorOf(s.teamId) : MUTED }} />
-              {s.teamName}
-            </button>
-          );
-        })}
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <p className="max-w-[70ch] text-sm text-[color:var(--ink-2)]">
+          {mode === "lines"
+            ? "Every team's place after every week; the shaded band is the playoff zone. Follow a storyline, or switch to Replay and press play."
+            : `Bars run from .500: right of center is a winning ${replay.method === "categories" ? "category" : "matchup"} record.`}
+        </p>
+        <div className="seg" role="group" aria-label="Chart view">
+          <button type="button" aria-pressed={mode === "lines"} onClick={() => setMode("lines")}>
+            Every week
+          </button>
+          <button type="button" aria-pressed={mode === "replay"} onClick={() => setMode("replay")}>
+            Replay
+          </button>
+        </div>
       </div>
-      <div className="h-80 w-full" role="img" aria-label={`Standings rank after each week for ${teams} teams; highlighted: ${selected.map((id) => byId.get(id)?.teamName).join(", ") || "none"}`}>
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={rows} margin={{ top: 12, right: narrow ? 72 : 120, bottom: 4, left: -20 }}>
-            <CartesianGrid stroke="var(--border)" vertical={false} />
-            <XAxis dataKey="week" stroke="var(--border-2)" tick={{ fontSize: 12, fill: "var(--muted)" }} tickFormatter={(w: number) => `Wk ${w}`} interval="preserveStartEnd" />
-            <YAxis
-              reversed
-              stroke="var(--border-2)"
-              tick={{ fontSize: 12, fill: "var(--muted)" }}
-              domain={[1, teams]}
-              ticks={Array.from({ length: teams }, (_, i) => i + 1)}
-              allowDecimals={false}
-              interval={0}
-            />
-            {spots > 0 && spots < teams && (
-              <ReferenceLine
-                y={spots + 0.5}
-                stroke="var(--accent)"
-                strokeDasharray="4 4"
-                label={{ value: narrow ? "Playoffs" : "Playoff line", position: "right", fill: "var(--accent-ink)", fontSize: 11 }}
-              />
-            )}
-            <Tooltip
-              cursor={{ stroke: "var(--border-2)", strokeDasharray: "3 3" }}
-              content={({ active, label, payload }) => {
-                if (!active || !payload?.length) return null;
-                const ranks = payload
-                  .map((p) => ({ s: byId.get(String(p.dataKey))!, rank: Number(p.value) }))
-                  .filter((x) => x.s)
-                  .sort((a, b) => a.rank - b.rank);
-                const shown = ranks.filter((x) => x.rank === 1 || selected.includes(x.s.teamId));
-                return (
-                  <div className="rounded-lg border border-border bg-surface px-3 py-2 text-xs shadow-lg">
-                    <div className="mb-1 font-medium">After week {label}</div>
-                    {shown.map(({ s, rank }) => (
-                      <div key={s.teamId} className="flex items-center gap-2">
-                        <span className="size-2 rounded-full" style={{ background: colorOf(s.teamId) }} />
-                        <span className="tabular-nums">{rank}.</span>
-                        <span className={selected.includes(s.teamId) ? "font-medium" : "text-muted"}>{s.teamName}</span>
-                      </div>
-                    ))}
-                  </div>
-                );
-              }}
-            />
-            {ordered.map((s) => {
-              const on = selected.includes(s.teamId);
+      <div className="race-wrap" hidden={mode !== "lines"}>
+          <div className="min-w-0">
+            <div ref={ref} />
+          </div>
+          <aside className="stories" aria-label="Storylines">
+            <div className="stories-k">Storylines</div>
+            {stories.map((s, i) => {
+              const Icon = ICON[s.kind];
               return (
-                <Line
-                  key={s.teamId}
-                  dataKey={s.teamId}
-                  name={s.teamName}
-                  stroke={colorOf(s.teamId)}
-                  strokeWidth={on ? 2.5 : 1.25}
-                  strokeOpacity={on ? 1 : 0.8}
-                  dot={on ? { r: 3, strokeWidth: 0, fill: colorOf(s.teamId) } : false}
-                  activeDot={on ? { r: 5 } : false}
-                  isAnimationActive={false}
-                >
-                  {on && (
-                    <LabelList
-                      dataKey={s.teamId}
-                      content={(p) =>
-                        p.index === last ? (
-                          <text x={Number(p.x) + 8} y={Number(p.y) + 4} fontSize={11} fill="var(--foreground)" fontWeight={600}>
-                            {s.teamName.length > labelChars ? `${s.teamName.slice(0, labelChars - 1)}…` : s.teamName}
-                          </text>
-                        ) : null
-                      }
-                    />
-                  )}
-                </Line>
+                <button key={`${s.kind}-${i}`} type="button" className="story" aria-pressed={story === i} onClick={() => setStory((cur) => (cur === i ? null : i))}>
+                  <span className="ic">
+                    <Icon aria-hidden />
+                  </span>
+                  <span>
+                    <b>{s.kind}</b>
+                    <span className="st">{s.title}</span>
+                    <span className="sd">{s.detail}</span>
+                  </span>
+                </button>
               );
             })}
-          </LineChart>
-        </ResponsiveContainer>
+            {stories.length <= 1 && <p className="text-sm text-muted">No comebacks, collapses or final-week knockouts this season.</p>}
+          </aside>
       </div>
+      {mode === "replay" && <SeasonReplay frames={replay.frames} spots={spots} method={replay.method} managerNames={managerNames} />}
       <details className="text-sm text-muted">
         <summary className="cursor-pointer">View the race as a table</summary>
         <div className="mt-2 overflow-x-auto">
@@ -170,7 +251,7 @@ export function RaceChart({ weeks, series, spots, initialSelected }: Props) {
               </tr>
             </thead>
             <tbody>
-              {series.map((s) => (
+              {lines.map((s) => (
                 <tr key={s.teamId}>
                   <td className="whitespace-nowrap px-2 py-1">
                     {s.teamName} <span className="text-muted">· {s.managerName}</span>

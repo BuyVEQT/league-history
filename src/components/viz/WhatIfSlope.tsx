@@ -60,13 +60,14 @@ export function WhatIfSlope({
             ])}
           >
             <rect x={0} y={y(r.rank) - rowH / 2} width={colL + 8} height={rowH} fill="transparent" />
-            <line x1={colL + 8} x2={colR - 8} y1={y(r.rank)} y2={y(a)} stroke={stroke} strokeWidth={moved ? 3 : 1.5} />
+            <rect x={colR - 8} y={y(a) - rowH / 2} width={W - colR + 8} height={rowH} fill="transparent" />
+            <line className="slope-line" pathLength={1} x1={colL + 8} x2={colR - 8} y1={y(r.rank)} y2={y(a)} stroke={stroke} strokeWidth={moved ? 3 : 1.5} strokeLinecap="round" />
             <circle cx={colL + 8} cy={y(r.rank)} r={3} fill={stroke} />
-            <circle cx={colR - 8} cy={y(a)} r={3} fill={stroke} />
+            <circle className="slope-end" cx={colR - 8} cy={y(a)} r={3} fill={stroke} />
             <text className="ink" x={colL} y={y(r.rank)} dy=".35em" textAnchor="end" fontWeight={moved ? 800 : 500}>
               {r.rank}. {short(r.teamName)}
             </text>
-            <text className="ink" x={colR} y={y(a)} dy=".35em" fontWeight={moved ? 800 : 500} style={{ fill: "var(--ink-2)" }}>
+            <text className="ink slope-end" x={colR} y={y(a)} dy=".35em" fontWeight={moved ? 800 : 500} style={{ fill: "var(--ink-2)" }}>
               {a}. {managerName(r.managerId)} · {rec}
             </text>
           </g>

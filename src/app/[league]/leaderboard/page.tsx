@@ -1,10 +1,9 @@
-import { Crown } from "lucide-react";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { InfoTip } from "@/components/InfoTip";
+import { GoatBanner } from "@/components/GoatBanner";
 import { PageTitle } from "@/components/ui";
 import { careerStats } from "@/lib/analytics/career";
-import { formatNumber, formatPct } from "@/lib/analytics/format";
+import { winPct } from "@/lib/analytics/format";
+import { goatStack } from "@/lib/analytics/leaderboardView";
 import { goatScores } from "@/lib/analytics/goat";
 import { coreLeague, getLeague } from "@/lib/data";
 import { TIPS } from "@/lib/explain";
@@ -16,9 +15,11 @@ export default async function LeaderboardPage(props: PageProps<"/[league]/leader
   const { league: slug } = await props.params;
   const league = await getLeague(slug);
   if (!league) notFound();
-  const [goat, second] = goatScores(league);
+  const scores = goatScores(league);
+  const [goat] = scores;
+  const top3 = scores.slice(0, 3);
   const career = goat ? careerStats(league).find((c) => c.managerId === goat.managerId)! : null;
-  const catPct = career ? (career.catWins + career.catTies / 2) / Math.max(1, career.catWins + career.catLosses + career.catTies) : 0;
+  const catPct = career ? (winPct(career.catWins, career.catLosses, career.catTies) ?? 0) : 0;
 
   return (
     <>
@@ -28,34 +29,19 @@ export default async function LeaderboardPage(props: PageProps<"/[league]/leader
         subtitle="Ranked by GOAT score, which weighs titles, finishes, category win %, finals and playoff success. Click any column to re-sort, and hover or tap the i on a column for what it means. Records are regular season only; a tie counts as half a win."
       />
       {goat && career && (
-        <div className="hero-card">
-          <div className="eyebrow-accent flex items-center gap-2 !text-accent">
-            <Crown className="size-4" aria-hidden /> The GOAT · all {league.seasons.length} seasons
-            <InfoTip text={TIPS.goat} down />
-          </div>
-          <div className="big">
-            <Link href={`/${slug}/managers/${goat.managerId}`} className="hover:underline">
-              {goat.name}
-            </Link>
-          </div>
-          <div className="sub">
-            GOAT score <b>{goat.score.toFixed(0)}</b> of 100{second && <> · next best {second.name}, {second.score.toFixed(0)}</>}.
-          </div>
-          <div className="mt-2 grid grid-cols-2 gap-3 sm:grid-cols-5">
-            {[
-              ["Titles", String(career.titles)],
-              ["Finals", String(career.titles + career.runnerUps)],
-              ["Category win %", formatPct(catPct)],
-              ["Avg finish", formatNumber(career.avgFinish)],
-              ["Playoffs made", `${career.playoffApps} of ${career.seasons}`],
-            ].map(([k, v]) => (
-              <div key={k}>
-                <div className="font-display text-3xl font-extrabold leading-none">{v}</div>
-                <div className="mt-1 text-xs text-[color:var(--band-muted)]">{k}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <GoatBanner
+          slug={slug}
+          seasons={league.seasons.length}
+          tip={TIPS.goat}
+          top={top3.map((g) => ({ managerId: g.managerId, name: g.name, score: g.score, stack: goatStack(g) }))}
+          stats={[
+            { label: "Titles", value: career.titles },
+            { label: "Finals", value: career.titles + career.runnerUps },
+            { label: "Category win %", value: catPct * 100, decimals: 1, suffix: "%" },
+            { label: "Avg finish", value: career.avgFinish ?? 0, decimals: 1 },
+            { label: "Playoffs made", value: career.playoffApps, detail: `of ${career.seasons}` },
+          ]}
+        />
       )}
       <LeaderboardTable league={coreLeague(league)} />
     </>
