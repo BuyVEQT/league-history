@@ -1484,7 +1484,8 @@
       "overall": 54,
       "teamId": "2019:jacob-g",
       "playerId": "3818",
-      "playerName": "Dwight Howard"
+      "playerName": "Dwight Howard",
+      "gamesPlayed": 9
     },
     {
       "round": 6,
@@ -1796,7 +1797,8 @@
       "overall": 93,
       "teamId": "2019:eddie",
       "playerId": "3252",
-      "playerName": "Dirk Nowitzki"
+      "playerName": "Dirk Nowitzki",
+      "gamesPlayed": 51
     },
     {
       "round": 10,
@@ -1812,7 +1814,8 @@
       "overall": 95,
       "teamId": "2019:najim",
       "playerId": "5660",
-      "playerName": "Dejounte Murray"
+      "playerName": "Dejounte Murray",
+      "gamesPlayed": 0
     },
     {
       "round": 10,
@@ -1852,7 +1855,8 @@
       "overall": 100,
       "teamId": "2019:brendan",
       "playerId": "3706",
-      "playerName": "Carmelo Anthony"
+      "playerName": "Carmelo Anthony",
+      "gamesPlayed": 10
     },
     {
       "round": 11,
@@ -1980,7 +1984,8 @@
       "overall": 116,
       "teamId": "2019:benjamin",
       "playerId": "5201",
-      "playerName": "Allen Crabbe III"
+      "playerName": "Allen Crabbe III",
+      "gamesPlayed": 43
     },
     {
       "round": 12,
@@ -2012,7 +2017,8 @@
       "overall": 120,
       "teamId": "2019:brendan",
       "playerId": "4942",
-      "playerName": "Isaiah Thomas"
+      "playerName": "Isaiah Thomas",
+      "gamesPlayed": 12
     },
     {
       "round": 13,
@@ -2044,7 +2050,8 @@
       "overall": 124,
       "teamId": "2019:michael",
       "playerId": "5763",
-      "playerName": "Markelle Fultz"
+      "playerName": "Markelle Fultz",
+      "gamesPlayed": 19
     },
     {
       "round": 13,

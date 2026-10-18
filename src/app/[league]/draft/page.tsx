@@ -376,6 +376,13 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
         </Section>
       </div>
 
+      <p className="dr-note -mt-1">
+        Some busts are just injuries.{" "}
+        <Link href={`/${slug}/injuries`} className="font-semibold text-accent hover:underline">
+          See whose early picks got hurt on Injury luck →
+        </Link>
+      </p>
+
       <Section title="Draft habits">
         <div className="panel overflow-x-auto">
           <p className="dr-sub px-4 pt-3">How each manager drafts: ahead of or behind the rankings, and how many of their picks they keep.</p>

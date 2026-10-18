@@ -104,3 +104,14 @@ a.dr-first:hover, a.dr-first:focus-visible { transform: translateY(-3px); }
 .top3-pick.n1 .top3-n { color: var(--gold); }
 @media (max-width: 560px) { .top3-years li { grid-template-columns: 1fr; gap: 2px; } }
 .dr-h3 { font-family: var(--font-display); font-weight: 800; font-size: 20px; text-transform: uppercase; line-height: 1.1; }
+
+/* Injury luck page. */
+.inj-seasons { display: grid; gap: 6px; font-size: 13.5px; }
+.inj-seasons li { display: grid; grid-template-columns: 64px 1fr; gap: 10px; align-items: baseline; }
+.inj-seasons .k { font-weight: 700; font-variant-numeric: tabular-nums; }
+.inj-buckets { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.inj-bucket { border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; display: grid; gap: 6px; align-content: start; }
+.inj-bucket .k { font-weight: 700; }
+.inj-bucket dl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 4px 0 0; }
+.inj-bucket dt { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.inj-bucket dd { margin: 0; font-family: var(--font-display); font-size: 26px; font-weight: 800; font-variant-numeric: tabular-nums; }

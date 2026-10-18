@@ -1318,7 +1318,8 @@
       "overall": 12,
       "teamId": "2026:dadder",
       "playerId": "6016",
-      "playerName": "Trae Young"
+      "playerName": "Trae Young",
+      "gamesPlayed": 15
     },
     {
       "round": 2,
@@ -1334,7 +1335,8 @@
       "overall": 14,
       "teamId": "2026:jacob-g",
       "playerId": "5642",
-      "playerName": "Domantas Sabonis"
+      "playerName": "Domantas Sabonis",
+      "gamesPlayed": 19
     },
     {
       "round": 2,
@@ -1510,7 +1512,8 @@
       "overall": 36,
       "teamId": "2026:dadder",
       "playerId": "6164",
-      "playerName": "Ja Morant"
+      "playerName": "Ja Morant",
+      "gamesPlayed": 20
     },
     {
       "round": 4,
@@ -1702,7 +1705,8 @@
       "overall": 60,
       "teamId": "2026:dadder",
       "playerId": "6712",
-      "playerName": "Walker Kessler"
+      "playerName": "Walker Kessler",
+      "gamesPlayed": 5
     },
     {
       "round": 6,
@@ -1798,7 +1802,8 @@
       "overall": 72,
       "teamId": "2026:eddie",
       "playerId": "6216",
-      "playerName": "Jordan Poole"
+      "playerName": "Jordan Poole",
+      "gamesPlayed": 39
     },
     {
       "round": 7,
@@ -1806,7 +1811,8 @@
       "overall": 73,
       "teamId": "2026:eddie",
       "playerId": "6513",
-      "playerName": "Jalen Green"
+      "playerName": "Jalen Green",
+      "gamesPlayed": 32
     },
     {
       "round": 7,
@@ -1902,7 +1908,8 @@
       "overall": 85,
       "teamId": "2026:dadder",
       "playerId": "6569",
-      "playerName": "Cam Thomas"
+      "playerName": "Cam Thomas",
+      "gamesPlayed": 42
     },
     {
       "round": 8,
@@ -2014,7 +2021,8 @@
       "overall": 99,
       "teamId": "2026:mitchell",
       "playerId": "5433",
-      "playerName": "D'Angelo Russell"
+      "playerName": "D'Angelo Russell",
+      "gamesPlayed": 26
     },
     {
       "round": 9,
@@ -2030,7 +2038,8 @@
       "overall": 101,
       "teamId": "2026:dylan",
       "playerId": "6695",
-      "playerName": "Jaden Ivey"
+      "playerName": "Jaden Ivey",
+      "gamesPlayed": 37
     },
     {
       "round": 9,
@@ -2038,7 +2047,8 @@
       "overall": 102,
       "teamId": "2026:jordan",
       "playerId": "5009",
-      "playerName": "Bradley Beal"
+      "playerName": "Bradley Beal",
+      "gamesPlayed": 6
     },
     {
       "round": 9,
@@ -2086,7 +2096,8 @@
       "overall": 108,
       "teamId": "2026:dadder",
       "playerId": "6694",
-      "playerName": "Keegan Murray"
+      "playerName": "Keegan Murray",
+      "gamesPlayed": 23
     },
     {
       "round": 10,
@@ -2198,7 +2209,8 @@
       "overall": 122,
       "teamId": "2026:benjamin",
       "playerId": "3930",
-      "playerName": "Chris Paul"
+      "playerName": "Chris Paul",
+      "gamesPlayed": 16
     },
     {
       "round": 11,
@@ -2206,7 +2218,8 @@
       "overall": 123,
       "teamId": "2026:mitchell",
       "playerId": "10097",
-      "playerName": "Dereck Lively II"
+      "playerName": "Dereck Lively II",
+      "gamesPlayed": 7
     },
     {
       "round": 11,
@@ -2246,7 +2259,8 @@
       "overall": 128,
       "teamId": "2026:jake",
       "playerId": "6549",
-      "playerName": "Jonathan Kuminga"
+      "playerName": "Jonathan Kuminga",
+      "gamesPlayed": 36
     },
     {
       "round": 11,
@@ -2334,7 +2348,8 @@
       "overall": 139,
       "teamId": "2026:jordan",
       "playerId": "4840",
-      "playerName": "Kyrie Irving"
+      "playerName": "Kyrie Irving",
+      "gamesPlayed": 0
     },
     {
       "round": 12,
@@ -2366,7 +2381,8 @@
       "overall": 143,
       "teamId": "2026:benjamin",
       "playerId": "5660",
-      "playerName": "Dejounte Murray"
+      "playerName": "Dejounte Murray",
+      "gamesPlayed": 14
     },
     {
       "round": 12,
@@ -2374,7 +2390,8 @@
       "overall": 144,
       "teamId": "2026:eddie",
       "playerId": "6757",
-      "playerName": "Scotty Pippen Jr."
+      "playerName": "Scotty Pippen Jr.",
+      "gamesPlayed": 10
     }
   ],
   "players": [
