@@ -18,7 +18,8 @@
       "stl": 32,
       "blk": 33,
       "to": 64,
-      "categoriesWon": 5
+      "categoriesWon": 5,
+      "yahooFtPct": 0.757
     },
     {
       "managerId": "jacob-g",
@@ -33,7 +34,8 @@
       "stl": 33,
       "blk": 28,
       "to": 74,
-      "categoriesWon": 4
+      "categoriesWon": 4,
+      "yahooFtPct": 0.816
     }
   ],
   "winners": {
@@ -118,6 +120,32 @@
           "pts": 9
         }
       ]
+    }
+  ],
+  "adds": [
+    {
+      "time": "2019-03-30T19:47:00-04:00",
+      "managerId": "jacob-g",
+      "teamName": "Skip",
+      "player": "Bruno Caboclo"
+    },
+    {
+      "time": "2019-03-30T19:56:00-04:00",
+      "managerId": "jacob-g",
+      "teamName": "Skip",
+      "player": "Justin Holiday"
+    },
+    {
+      "time": "2019-03-31T03:00:00-04:00",
+      "managerId": "matt",
+      "teamName": "Klaw Leonard",
+      "player": "Christian Wood"
+    },
+    {
+      "time": "2019-03-31T10:45:00-04:00",
+      "managerId": "jacob-g",
+      "teamName": "Skip",
+      "player": "Miles Bridges"
     }
   ],
   "sunday": [
@@ -318,6 +346,10 @@
   "sources": [
     {
       "label": "Yahoo Fantasy matchup page, 2018-19 week 24 (captured by Matt)",
+      "url": null
+    },
+    {
+      "label": "Yahoo transaction log, free-agent adds Mar 30-31, 2019 (screenshot from Matt; times shown in Eastern)",
       "url": null
     },
     {

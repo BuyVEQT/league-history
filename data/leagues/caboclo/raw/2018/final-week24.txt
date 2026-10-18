@@ -5,9 +5,17 @@ dates|2019-03-25|2019-03-31
 # team|managerId|FGM|FGA|FG% (Yahoo's tiebreaker value)|3PTM|PTS|REB|AST|ST|BLK|TO|categories won
 team|matt|275|586|0.46928328|46|711|322|124|32|33|64|5
 team|jacob-g|266|567|0.46913580|67|710|244|185|33|28|74|4
-# Category winners as Yahoo highlights them. FT% sat under the tiebreaker box in the capture; it is Skip's by elimination (5-4).
+# FT% for the week (Yahoo, 3 decimals): managerId|FT%
+ftpct|matt|.757
+ftpct|jacob-g|.816
+# Category winners as Yahoo highlights them.
 winners|FG%:matt|FT%:jacob-g|3PTM:jacob-g|PTS:matt|REB:matt|AST:jacob-g|ST:jacob-g|BLK:matt|TO:matt
 # Week lines of Skip's players who played on the final Sunday: player|FG%|FT%|3PTM|PTS|REB|AST|ST|BLK|TO
 week|Bruno Caboclo|.462|.667|4|20|8|4|1|3|3
 week|Justin Holiday|.421|1.000|3|23|4|1|5|1|4
 week|Miles Bridges|.400|-|1|9|5|0|0|0|2
+# Free-agent adds that weekend (Yahoo transaction log screenshot from Matt, times Eastern): time|managerId|player
+add|2019-03-30T19:47:00-04:00|jacob-g|Bruno Caboclo
+add|2019-03-30T19:56:00-04:00|jacob-g|Justin Holiday
+add|2019-03-31T03:00:00-04:00|matt|Christian Wood
+add|2019-03-31T10:45:00-04:00|jacob-g|Miles Bridges

@@ -63,6 +63,11 @@ const teams = raw
     to: +to,
     categoriesWon: +won,
   }));
+const ftPct = Object.fromEntries(raw.filter((r) => r[0] === "ftpct").map(([, id, v]) => [id, +v]));
+for (const t of teams) t.yahooFtPct = ftPct[t.managerId] ?? null;
+const adds = raw
+  .filter((r) => r[0] === "add")
+  .map(([, time, managerId, player]) => ({ time, managerId, teamName: teamName(managerId), player }));
 const winners = Object.fromEntries(raw.find((r) => r[0] === "winners").slice(1).map((w) => w.split(":")));
 const weekLines = raw
   .filter((r) => r[0] === "week")
@@ -140,10 +145,12 @@ const out = {
   teams,
   winners,
   activeDays,
+  adds,
   sunday: sunday.map((g) => ({ ...g, lengthMin: g.game === "WSH @ DEN" ? lengths["201903310DEN"] : g.game === "CHA @ GS" ? lengths["201903310GSW"] : g.game === "MEM @ LAC" ? lengths[LAST_GAME] : null })),
   lastGame: { id: LAST_GAME, game: "MEM @ LAC", pbpUrl, shots },
   sources: [
     { label: "Yahoo Fantasy matchup page, 2018-19 week 24 (captured by Matt)", url: null },
+    { label: "Yahoo transaction log, free-agent adds Mar 30-31, 2019 (screenshot from Matt; times shown in Eastern)", url: null },
     { label: "Basketball-Reference play-by-play, Grizzlies at Clippers, March 31, 2019", url: pbpUrl },
     { label: "Basketball-Reference box scores for the late Sunday games", url: "https://www.basketball-reference.com/boxscores/?month=3&day=31&year=2019" },
     { label: "ESPN scoreboard, Sunday March 31, 2019", url: "https://www.espn.com/nba/scoreboard/_/date/20190331" },
