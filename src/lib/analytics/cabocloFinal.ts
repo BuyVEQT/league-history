@@ -40,6 +40,8 @@ export interface CabocloFinal {
   activeDays: { name: string; yahoo: { fgPct: string; pts: number; tpm: number }; games: { date: string; game: string; fgm: number; fga: number; pts: number }[] }[];
   sunday: { tip: string; game: string; espnId: string; lengthMin: number | null }[];
   lastGame: { id: string; game: string; pbpUrl: string; shots: FinalShot[] };
+  /** Free-agent adds before the last games, from Yahoo's transaction log (Eastern time). Optional, entered by hand. */
+  adds?: { time: string; managerId: string; teamName: string; player: string }[];
   sources: { label: string; url: string | null }[];
 }
 
