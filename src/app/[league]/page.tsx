@@ -2,13 +2,15 @@ import { Trophy } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AwardGrid } from "@/components/AwardsView";
-import { ManagerTrend } from "@/components/charts/ManagerTrend";
+import { BumpChart } from "@/components/charts/BumpChart";
+import { CountUp } from "@/components/CountUp";
 import { rankLabel, signed } from "@/components/draft";
 import { InfoTip } from "@/components/InfoTip";
 import { AllTimeRace } from "@/components/viz/AllTimeRace";
 import { Avatar, Card, ManagerLink, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
 import { allTimeAwards, seasonAwards } from "@/lib/analytics/awards";
-import { careerStats, defaultCompare, managerSeasons } from "@/lib/analytics/career";
+import { careerStats, defaultCompare } from "@/lib/analytics/career";
+import { finishHistory } from "@/lib/analytics/leaderboardView";
 import { hasDraftData, leaguePicks, topSteals } from "@/lib/analytics/draft";
 import { formatPct, formatRecord, ordinal } from "@/lib/analytics/format";
 import { goatScores } from "@/lib/analytics/goat";
@@ -21,6 +23,8 @@ import { hasTradeData, leagueTrades } from "@/lib/analytics/trades";
 import { careerLuck } from "@/lib/analytics/whatIf";
 import { allTimeRace } from "@/lib/analytics/weekly";
 import { getLeague } from "@/lib/data";
+import { monograms } from "@/components/viz/monograms";
+import { SEASON_TIPS } from "@/lib/explain/seasons";
 import { AWARD_RULES, TIPS } from "@/lib/explain";
 
 /** Season awards shown on the overview, in this order, when the season has them. The champion is already in the hero. */
@@ -59,24 +63,8 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
   const [hot] = longestStreaks(league, "W", 1);
   const [cold] = longestStreaks(league, "L", 1);
 
-  // Everyone who ever played, in league order; chart colors follow the order they're picked.
-  const managerOptions = careers.map((c) => ({ id: c.managerId, name: c.name }));
-  const finishRows = league.seasons.map((season) => {
-    const o = seasonOutcome(season);
-    const row: { year: number } & Record<string, number | null> = { year: season.year };
-    for (const m of league.managers) {
-      const team = season.teams.find((t) => t.managerId === m.id);
-      row[m.id] = team ? o.finalRank.get(team.id)! : null;
-    }
-    return row;
-  });
-  const winPctRows = league.seasons.map((season) => {
-    const row: { year: number } & Record<string, number | null> = { year: season.year };
-    for (const m of league.managers) {
-      row[m.id] = managerSeasons(league, m.id, { from: season.year, to: season.year })[0]?.winPct ?? null;
-    }
-    return row;
-  });
+  // Everyone who ever played, best careers first, with one point per season played.
+  const bumpSeries = ranked.map((c) => ({ id: c.managerId, name: c.name, pts: finishHistory(league, c.managerId) }));
   const maxTeams = Math.max(...league.seasons.map((s) => s.teams.length));
 
   // Bragging rights: 9-0 weeks and categories won per week.
@@ -150,7 +138,7 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
               <div className="big">{reigning.championTeamName}</div>
               <div className="flex items-center gap-2.5">
                 <span className="mono size-10 !bg-accent text-[17px]" aria-hidden>
-                  {nameOf(reigning.championManagerId).slice(0, 2).toUpperCase()}
+                  {monograms(league.managers).get(reigning.championManagerId) ?? nameOf(reigning.championManagerId).slice(0, 2).toUpperCase()}
                 </span>
                 <div className="sub">
                   <b>{nameOf(reigning.championManagerId)}</b> · title #{titlesOf(reigning.championManagerId)}
@@ -166,10 +154,20 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
           </Link>
         </div>
         <div className="grid grid-cols-2 gap-3">
-          <StatCard label="Most titles" value={summary.mostTitles.count} detail={`${summary.mostTitles.rows.map((r) => r.name).join(", ")}${summary.mostTitles.rows.length > 1 ? " (tied)" : ""}`} />
-          <StatCard label="Longest win streak" value={hot?.length ?? "—"} detail={hot && `${nameOf(hot.managerId)} · ${hot.label}, weeks ${hot.fromWeek}–${hot.toWeek}`} />
-          <StatCard label="Seasons" value={summary.seasons} detail={`${league.seasons[0].label} to ${recent.label}`} />
-          <StatCard label="Matchups played" value={summary.completedMatchups.toLocaleString()} detail="weekly head-to-heads, playoffs included" />
+          <StatCard
+            label="Most titles"
+            value={<CountUp value={summary.mostTitles.count} />}
+            detail={`${summary.mostTitles.rows.map((r) => r.name).join(", ")}${summary.mostTitles.rows.length > 1 ? " (tied)" : ""}`}
+            tip={SEASON_TIPS.titles}
+          />
+          <StatCard
+            label="Longest win streak"
+            value={hot ? <CountUp value={hot.length} /> : "—"}
+            detail={hot && `${nameOf(hot.managerId)} · ${hot.label}, weeks ${hot.fromWeek}–${hot.toWeek}`}
+            tip={SEASON_TIPS.streak}
+          />
+          <StatCard label="Seasons" value={<CountUp value={summary.seasons} />} detail={`${league.seasons[0].label} to ${recent.label}`} />
+          <StatCard label="Matchups played" value={<CountUp value={summary.completedMatchups} />} detail="weekly head-to-heads, playoffs included" />
         </div>
       </div>
 
@@ -261,23 +259,21 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
         </Section>
       )}
 
-      <Section title="The all-time race">
-        <p className="-mt-1 text-sm text-[color:var(--ink-2)]">
-          Watch the all-time standings take shape, season by season. Category wins are regular-season categories won; podiums are top-3 finishes.
-        </p>
+      <Section title="The all-time race" tip={SEASON_TIPS.race}>
+        <p className="-mt-1 text-sm text-[color:var(--ink-2)]">Watch the all-time standings take shape, season by season.</p>
         <Card className="p-5">
           <AllTimeRace frames={allTimeRace(league).map(({ label, rows }) => ({ label, rows }))} names={Object.fromEntries(league.managers.map((m) => [m.id, m.name]))} />
         </Card>
       </Section>
 
-      <Section title="Where everyone finished">
+      <Section title="Where everyone finished" tip={SEASON_TIPS.bump}>
+        <p className="-mt-1 text-sm text-[color:var(--ink-2)]">Final finish by season. Hover any line; tap names to pin up to three.</p>
         <Card className="p-5">
-          <ManagerTrend
-            managers={managerOptions}
-            finishRows={finishRows}
-            winPctRows={winPctRows}
-            initialSelected={[...new Set([reigning.championManagerId, ...ranked.map((c) => c.managerId)].filter((x): x is string => !!x))].slice(0, 2)}
-            teamCount={maxTeams}
+          <BumpChart
+            series={bumpSeries}
+            years={league.seasons.map((s) => ({ year: s.year, label: s.label }))}
+            maxTeams={maxTeams}
+            initialPins={[...new Set([reigning.championManagerId, ...ranked.map((c) => c.managerId)].filter((x): x is string => !!x))].slice(0, 2)}
           />
         </Card>
       </Section>
@@ -286,19 +282,20 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
         <p className="-mt-1 text-sm text-[color:var(--ink-2)]">The streaks and weeks people still bring up in the group chat.</p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            hot && { k: "Hottest streak", v: String(hot.length), unit: "straight wins", who: hot.managerId, d: `${hot.teamName}, ${hot.label}, weeks ${hot.fromWeek}–${hot.toWeek}` },
-            cold && { k: "Coldest streak", v: String(cold.length), unit: "straight losses", who: cold.managerId, d: `${cold.teamName}, ${cold.label}, weeks ${cold.fromWeek}–${cold.toWeek}` },
-            sweepKing && { k: "9-0 sweeps", v: String(sweepKing[1]), unit: sweepKing[1] === 1 ? "perfect week" : "perfect weeks", who: sweepKing[0], d: "most in league history", tip: "A sweep is a week where one team wins every single category against its opponent." },
+            hot && { k: "Hottest streak", v: hot.length, dec: 0, unit: "straight wins", who: hot.managerId, d: `${hot.teamName}, ${hot.label}, weeks ${hot.fromWeek}–${hot.toWeek}`, tip: SEASON_TIPS.streak },
+            cold && { k: "Coldest streak", v: cold.length, dec: 0, unit: "straight losses", who: cold.managerId, d: `${cold.teamName}, ${cold.label}, weeks ${cold.fromWeek}–${cold.toWeek}`, tip: SEASON_TIPS.streak },
+            sweepKing && { k: "9-0 sweeps", v: sweepKing[1], dec: 0, unit: sweepKing[1] === 1 ? "perfect week" : "perfect weeks", who: sweepKing[0], d: "most in league history", tip: "A sweep is a week where one team wins every single category against its opponent." },
             perWeek && {
               k: "Categories per week",
-              v: perWeek.avg.toFixed(2),
+              v: perWeek.avg,
+              dec: 2,
               unit: `of ${recent.categories.length || 9}`,
               who: perWeek.c.managerId,
               d: `best average, ${perWeek.weeks} weeks`,
               tip: `How many categories they win in a typical week, averaged over every matchup they've played (3+ seasons). Half of ${recent.categories.length || 9} is average; anything above 5 is a team that usually wins its week.`,
             },
           ]
-            .filter((x): x is { k: string; v: string; unit: string; who: string; d: string; tip?: string } => !!x)
+            .filter((x): x is { k: string; v: number; dec: number; unit: string; who: string; d: string; tip: string } => !!x)
             .map((r) => (
               <div key={r.k} className="panel rec relative p-4">
                 <div className="rec-k flex items-center gap-1.5">
@@ -306,7 +303,7 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
                   {r.tip && <InfoTip box text={r.tip} />}
                 </div>
                 <div className="rec-v">
-                  {r.v}
+                  <CountUp value={r.v} decimals={r.dec} />
                   <small>{r.unit}</small>
                 </div>
                 <div className="mt-1 flex items-center gap-2 text-[13.5px] text-[color:var(--ink-2)]">
