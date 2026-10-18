@@ -6,7 +6,8 @@ import { Avatar } from "@/components/ui";
 import { useMemo, useState } from "react";
 import { InfoTip } from "@/components/InfoTip";
 import { careerStats, defaultCompare, type CareerRow } from "@/lib/analytics/career";
-import { GOAT_RULE, goatScores } from "@/lib/analytics/goat";
+import { goatScores } from "@/lib/analytics/goat";
+import { TIPS } from "@/lib/explain";
 import { DASH, formatNumber, formatPct, formatRecord } from "@/lib/analytics/format";
 import type { League } from "@/lib/types";
 import { useLeagueBase } from "@/components/useLeagueBase";
@@ -28,12 +29,12 @@ const COLUMNS: Column[] = [
   { key: "runnerUps", label: "Runner-ups", value: (r) => r.runnerUps, render: (r) => String(r.runnerUps), best: "high" },
   { key: "seasons", label: "Seasons", value: (r) => r.seasons, render: (r) => String(r.seasons), best: "high" },
   { key: "record", label: "W-L-T", value: (r) => r.wins, render: (r) => formatRecord(r.wins, r.losses, r.ties), best: "high" },
-  { key: "winPct", label: "Win %", value: (r) => r.winPct, render: (r) => formatPct(r.winPct), best: "high" },
-  { key: "avgFinish", label: "Avg finish", value: (r) => r.avgFinish, render: (r) => formatNumber(r.avgFinish), best: "low" },
+  { key: "winPct", label: "Win %", value: (r) => r.winPct, render: (r) => formatPct(r.winPct), best: "high", tip: TIPS.winPct },
+  { key: "avgFinish", label: "Avg finish", value: (r) => r.avgFinish, render: (r) => formatNumber(r.avgFinish), best: "low", tip: TIPS.avgFinish },
   { key: "bestFinish", label: "Best finish", value: (r) => r.bestFinish, render: (r) => (r.bestFinish === null ? DASH : String(r.bestFinish)), best: "low" },
   { key: "playoffApps", label: "Playoffs", value: (r) => r.playoffApps, render: (r) => String(r.playoffApps), best: "high" },
-  { key: "playoffPct", label: "Playoff %", value: (r) => r.playoffPct, render: (r) => formatPct(r.playoffPct, 0), best: "high" },
-  { key: "cats", label: "Category W-L-T", value: (r) => r.catWins, render: (r) => formatRecord(r.catWins, r.catLosses, r.catTies), best: "high" },
+  { key: "playoffPct", label: "Playoff %", value: (r) => r.playoffPct, render: (r) => formatPct(r.playoffPct, 0), best: "high", tip: TIPS.playoffPct },
+  { key: "cats", label: "Category W-L-T", value: (r) => r.catWins, render: (r) => formatRecord(r.catWins, r.catLosses, r.catTies), best: "high", tip: TIPS.catRecord },
 ];
 
 export function LeaderboardTable({ league }: { league: League }) {
@@ -56,7 +57,7 @@ export function LeaderboardTable({ league }: { league: League }) {
         value: (r) => goat.get(r.managerId) ?? null,
         render: (r) => (goat.has(r.managerId) ? goat.get(r.managerId)!.toFixed(0) : DASH),
         best: "high",
-        tip: GOAT_RULE,
+        tip: TIPS.goat,
       },
       ...COLUMNS,
     ],

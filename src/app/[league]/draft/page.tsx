@@ -21,6 +21,7 @@ import {
 } from "@/lib/analytics/draft";
 import { formatNumber, formatPct } from "@/lib/analytics/format";
 import { InfoTip } from "@/components/InfoTip";
+import { TIPS } from "@/lib/explain";
 
 const SLOT_LUCK_RULE =
   "Slot luck = what a draft slot is worth: the value of every pick it gets across a 13-round snake draft, minus the average slot's, averaged over their drafts. + means lucky (early slots), − unlucky. Picking 1st is worth about +4.6 a draft in a 12-team league, picking last about −1.8. Draft value already compares each pick with its slot, so this is the luck that value doesn't count.";
@@ -85,7 +86,7 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
         ) : null}
       </nav>
 
-      <Section title="Draft report card">
+      <Section title="Draft report card" tip={TIPS.draftValue}>
         <TableWrap>
           <table className="w-full text-sm">
             <caption className="sr-only">Draft performance by manager, all seasons</caption>
@@ -93,14 +94,26 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
               <tr>
                 <th className={th}>Manager</th>
                 <th className={th}>Drafts</th>
-                <th className={th}>Value vs avg</th>
                 <th className={th}>
                   <span className="inline-flex items-center gap-1.5">
-                    Slot luck <InfoTip down text={SLOT_LUCK_RULE} />
+                    Value vs avg <InfoTip down text={TIPS.draftVsAvg} />
                   </span>
                 </th>
-                <th className={th}>Hit rate</th>
-                <th className={th}>Rds 1-3: slot → finish</th>
+                <th className={th}>
+                  <span className="inline-flex items-center gap-1.5">
+                    Slot luck <InfoTip down text={`${TIPS.slotLuck} ${SLOT_LUCK_RULE}`} />
+                  </span>
+                </th>
+                <th className={th}>
+                  <span className="inline-flex items-center gap-1.5">
+                    Hit rate <InfoTip down text={TIPS.hitRate} />
+                  </span>
+                </th>
+                <th className={th}>
+                  <span className="inline-flex items-center gap-1.5">
+                    Rds 1-3: slot → finish <InfoTip down text={TIPS.coreSlotFinish} />
+                  </span>
+                </th>
                 <th className={th}>Late gems</th>
                 <th className={th}>Best pick</th>
               </tr>
@@ -131,13 +144,13 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
           </table>
         </TableWrap>
         <p className="text-xs text-muted">
-          Value vs avg = average value per pick compared with the league as a whole (0 = average drafter; drafted players finish below their slot on average). Hit rate = share of picks that finished at or better than their draft slot. Late gems = round 8+ picks who finished top 75.
+          Value vs avg = average value per pick compared with the league as a whole (0 = average drafter; drafted players finish below their slot on average). In everyday terms, +0.5 a pick adds up to about +6 a draft: like turning two mid-round picks into 2nd-round-quality players. Hit rate = share of picks that finished at or better than their draft slot. Late gems = round 8+ picks who finished top 75.
           The value scale was fitted to this league&apos;s own seasons: the end-of-season ranks match a 9-category z-score ranking almost exactly, and z-score value falls off like the logarithm of rank.
           Ranks are for the full NBA season, so an injury or a trade away counts against the pick.
         </p>
       </Section>
 
-      <Section title="Draft position: who got the early picks?">
+      <Section title="Draft position: who got the early picks?" tip={TIPS.slotLuck}>
         <TableWrap>
           <table className="w-full text-sm">
             <caption className="sr-only">How often each manager picked first, second or in the top three</caption>
@@ -150,7 +163,11 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
                 <th className={th}>Top 3</th>
                 <th className={th}>Avg slot</th>
                 <th className={th}>Top-3 finisher drafted</th>
-                <th className={th}>Slot luck</th>
+                <th className={th}>
+                  <span className="inline-flex items-center gap-1.5">
+                    Slot luck <InfoTip down end text={`${TIPS.slotLuck} ${SLOT_LUCK_RULE}`} />
+                  </span>
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -189,6 +206,7 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
           {impact && (
             <StatCard
               label="Explained by the draft"
+              tip={TIPS.explainedByDraft}
               value={formatPct(impact.correlation ** 2, 0)}
               detail={`of the variation in regular-season win % (r = ${impact.correlation.toFixed(2)}, ${impact.teamSeasons} team-seasons). The rest is decided after draft day.`}
             />
@@ -196,15 +214,17 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
           {reaches && (
             <StatCard
               label="Reaches that beat the rankings"
+              tip={TIPS.reaches}
               value={formatPct(reaches.beatRate, 0)}
               detail={`of ${reaches.picks} picks taken ${reach!.threshold}+ spots ahead of pre-season rank finished better than that rank — vs ${formatPct(steady.beatRate, 0)} of other picks`}
             />
           )}
           {fallers && (
-            <StatCard label="Fallers that beat the rankings" value={formatPct(fallers.beatRate, 0)} detail={`of ${fallers.picks} players taken ${reach!.threshold}+ spots after their pre-season rank`} />
+            <StatCard label="Fallers that beat the rankings" tip={TIPS.fallers} value={formatPct(fallers.beatRate, 0)} detail={`of ${fallers.picks} players taken ${reach!.threshold}+ spots after their pre-season rank`} />
           )}
           <StatCard
             label="Keeping your picks"
+            tip={TIPS.keepPicks}
             value={keepLink === null ? "—" : signed(keepLink, 2)}
             detail={`correlation between the share of their own picks a team kept all season and finishing higher: ${relation(keepLink)}`}
           />
@@ -222,9 +242,17 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
             <thead>
               <tr>
                 <th className={th}>Manager</th>
-                <th className={th}>Spots early</th>
+                <th className={th}>
+                  <span className="inline-flex items-center gap-1.5">
+                    Spots early <InfoTip down text={TIPS.spotsEarly} />
+                  </span>
+                </th>
                 <th className={th}>Reaches</th>
-                <th className={th}>Picks kept</th>
+                <th className={th}>
+                  <span className="inline-flex items-center gap-1.5">
+                    Picks kept <InfoTip down text={TIPS.picksKept} />
+                  </span>
+                </th>
                 <th className={th}>Favourite player</th>
               </tr>
             </thead>
@@ -259,7 +287,7 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
       </Section>
 
       <div className="grid gap-3 lg:grid-cols-2">
-        <Section title="Biggest steals, all time">
+        <Section title="Biggest steals, all time" tip={TIPS.draftValue}>
           <Card className="py-1">
             <ul className="divide-y divide-border">
               {topSteals(picks, 10).map((p) => (
@@ -268,7 +296,7 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
             </ul>
           </Card>
         </Section>
-        <Section title="Biggest busts, rounds 1-3">
+        <Section title="Biggest busts, rounds 1-3" tip="Early picks (rounds 1-3) who fell furthest short of their draft slot, by draft value. A first-round flop costs far more than a late-round miss: −10 ≈ a top-5 pick who finished outside the top 150.">
           <Card className="py-1">
             <ul className="divide-y divide-border">
               {topBusts(picks, 10).map((p) => (

@@ -11,6 +11,8 @@ import { seasonOutcome, teamIndex } from "@/lib/analytics/season";
 import { alternateStandings } from "@/lib/analytics/whatIf";
 import { colorForManager } from "@/lib/colors";
 import { getLeague } from "@/lib/data";
+import { TIPS } from "@/lib/explain";
+import { InfoTip } from "@/components/InfoTip";
 
 const METHOD_LABEL = { categories: "category record", matchups: "matchup record" } as const;
 
@@ -110,7 +112,10 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
         />
       </div>
 
-      <Section title="Standings">
+      <Section
+        title="Standings"
+        tip="Reg. rank = where the team finished the regular season, which sets its playoff seed. Final = where it ended up after the playoffs. Category W-L-T counts every single category won, lost and tied, not just weekly wins."
+      >
         <TableWrap>
           <table className="w-full text-sm">
             <caption className="sr-only">{season.label} regular-season standings and final placement</caption>
@@ -121,7 +126,11 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
                 <th className={th}>Manager</th>
                 <th className={th}>W-L-T</th>
                 <th className={th}>Win %</th>
-                <th className={th}>Category W-L-T</th>
+                <th className={th}>
+                  <span className="inline-flex items-center gap-1.5">
+                    Category W-L-T <InfoTip down end text={TIPS.catRecord} />
+                  </span>
+                </th>
                 <th className={th}>Final</th>
               </tr>
             </thead>
@@ -148,7 +157,10 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
         </TableWrap>
       </Section>
 
-      <Section title="Standings race">
+      <Section
+        title="Standings race"
+        tip="Where every team sat in the standings after each week of the regular season. Below the playoff line = outside the playoff places at that point. Pick teams to compare their paths; 1st is at the top."
+      >
         <Card className="p-5">
           <RaceChart
             weeks={race.weeks}
@@ -194,7 +206,7 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
       </Section>
 
       {builds && (
-        <Section title="Roster builds (approximate)">
+        <Section title="Roster builds (approximate)" tip={TIPS.roster}>
           <TableWrap>
             <table className="w-full text-sm">
               <caption className="sr-only">Each team&apos;s season-end roster, category by category, compared with the league</caption>

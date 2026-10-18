@@ -6,6 +6,8 @@ import { unownedStars } from "@/lib/analytics/players";
 import { activityVsFinish, hasTradeData, leagueTrades, managerActivity, undraftedGems } from "@/lib/analytics/trades";
 import { colorForManager } from "@/lib/colors";
 import { getLeague } from "@/lib/data";
+import { TIPS } from "@/lib/explain";
+import { InfoTip } from "@/components/InfoTip";
 
 export const metadata = { title: "Trades & moves" };
 
@@ -56,12 +58,13 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
         />
         <StatCard
           label="Most lopsided trade"
+          tip={TIPS.tradeMargin}
           value={signed(lopsided.margin, 1)}
           detail={`${nameOf(lopsided.winnerManagerId!)} won, ${lopsided.label}`}
         />
       </div>
 
-      <Section title="Activity by manager">
+      <Section title="Activity by manager" tip={TIPS.netTrade}>
         <TableWrap>
           <table className="w-full text-sm">
             <caption className="sr-only">Moves and trades by manager, all seasons</caption>
@@ -71,8 +74,16 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
                 <th className={th}>Moves</th>
                 <th className={th}>Per season</th>
                 <th className={th}>Trades</th>
-                <th className={th}>Trade W-L</th>
-                <th className={th}>Net value</th>
+                <th className={th}>
+                  <span className="inline-flex items-center gap-1.5">
+                    Trade W-L <InfoTip down text={TIPS.tradeRecord} />
+                  </span>
+                </th>
+                <th className={th}>
+                  <span className="inline-flex items-center gap-1.5">
+                    Net value <InfoTip down text={TIPS.netTrade} />
+                  </span>
+                </th>
                 <th className={th}>Vetoed</th>
                 <th className={th}>Favorite partner</th>
               </tr>
@@ -113,7 +124,10 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
       </Section>
 
       {vsFinish && (
-        <Section title="Does working the wire pay off?">
+        <Section
+          title="Does working the wire pay off?"
+          tip="Average adds and drops per team-season, split by how teams finished. If champions and top teams make more moves than the bottom third, grinding the waiver wire pays."
+        >
           <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
             <StatCard label="League average" value={formatNumber(vsFinish.leagueAvg, 0)} detail="moves per team-season" />
             <StatCard label="Champions" value={formatNumber(vsFinish.championsAvg, 0)} detail={`across ${vsFinish.seasons} seasons`} />
@@ -123,7 +137,7 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
         </Section>
       )}
 
-      <Section title="Trade log">
+      <Section title="Trade log" tip={TIPS.tradeMargin}>
         <div className="space-y-6">
           {seasonsWithTrades.map((year) => {
             const list = trades.filter((t) => t.year === year);

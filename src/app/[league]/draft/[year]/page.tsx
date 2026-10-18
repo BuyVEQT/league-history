@@ -4,6 +4,8 @@ import { PickLine, rankLabel, signed, valueTone } from "@/components/draft";
 import { Card, PageTitle, Section } from "@/components/ui";
 import { seasonPicks, topBusts, topSteals } from "@/lib/analytics/draft";
 import { getLeague } from "@/lib/data";
+import { TIPS } from "@/lib/explain";
+import { InfoTip } from "@/components/InfoTip";
 
 export async function generateStaticParams({ params }: { params: { league: string } }) {
   const league = await getLeague(params.league);
@@ -104,10 +106,14 @@ export default async function DraftBoardPage(props: PageProps<"/[league]/draft/[
           </tbody>
         </table>
       </div>
-      {!live && <p className="-mt-6 text-xs text-muted">Green = finished better than drafted, red = worse. Hover a cell for details.</p>}
+      {!live && (
+        <p className="-mt-6 flex flex-wrap items-center gap-1.5 text-xs text-muted">
+          Green = finished better than drafted, red = worse. Hover a cell for details. <InfoTip text={TIPS.draftBoard} down />
+        </p>
+      )}
 
       {!live && <div className="grid gap-3 lg:grid-cols-2">
-        <Section title="Steals of the draft">
+        <Section title="Steals of the draft" tip={TIPS.draftValue}>
           <Card className="py-1">
             <ul className="divide-y divide-border">
               {topSteals(picks, 5).map((p) => (

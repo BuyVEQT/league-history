@@ -3,6 +3,8 @@
 import { useMemo, useRef, useState } from "react";
 import { formatRecord } from "@/lib/analytics/format";
 import { h2hMatrix, headToHead } from "@/lib/analytics/headToHead";
+import { InfoTip } from "@/components/InfoTip";
+import { TIPS } from "@/lib/explain";
 import type { League, Stage } from "@/lib/types";
 
 const STAGE_LABEL: Record<Stage, string> = {
@@ -102,7 +104,7 @@ export function RivalryExplorer({ league, defaultA, defaultB }: { league: League
             <Mini label="Regular season" value={formatRecord(h.regular.aWins, h.regular.bWins, h.regular.ties)} note={`${nameOf(a)}'s W-L-T`} />
             <Mini label="Playoff meetings" value={String(h.playoffMeetings)} note={`${h.playoff.aWins}-${h.playoff.bWins} for ${nameOf(a)}`} />
             <Mini label="Finals meetings" value={String(h.finalMeetings)} />
-            <Mini label="Category totals" value={`${h.aCatWins}-${h.bCatWins}`} note={`${h.catTies} tied · of ${catTotal}`} />
+            <Mini label="Category totals" value={`${h.aCatWins}-${h.bCatWins}`} note={`${h.catTies} tied · of ${catTotal}`} tip={TIPS.catTotals} />
           </div>
 
           <div>
@@ -161,7 +163,9 @@ export function RivalryExplorer({ league, defaultA, defaultB }: { league: League
         </>
       )}
       <div>
-        <h2 className="mb-1 text-lg font-medium">Everyone vs everyone</h2>
+        <h2 className="mb-1 flex items-center gap-2 text-lg font-medium">
+          Everyone vs everyone <InfoTip down text={TIPS.h2hGrid} />
+        </h2>
         <p className="mb-2 text-xs text-muted">
           Each row manager&apos;s record against each column manager (W-L, regular season and playoffs). Click a cell to compare them above.
         </p>
@@ -225,10 +229,13 @@ export function RivalryExplorer({ league, defaultA, defaultB }: { league: League
   );
 }
 
-function Mini({ label, value, note }: { label: string; value: string; note?: string }) {
+function Mini({ label, value, note, tip }: { label: string; value: string; note?: string; tip?: string }) {
   return (
-    <div className="rounded-xl border border-border bg-surface/80 shadow-[inset_0_1px_0_0_rgb(255_255_255/0.03)] p-4">
-      <div className="text-xs uppercase tracking-wide text-muted">{label}</div>
+    <div className="relative rounded-xl border border-border bg-surface/80 shadow-[inset_0_1px_0_0_rgb(255_255_255/0.03)] p-4">
+      <div className="flex items-center gap-1.5 text-xs uppercase tracking-wide text-muted">
+        {label}
+        {tip && <InfoTip box text={tip} />}
+      </div>
       <div className="mt-1 text-xl font-semibold tabular-nums">{value}</div>
       {note && <div className="mt-1 text-xs text-muted">{note}</div>}
     </div>

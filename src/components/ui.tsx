@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { InfoTip } from "./InfoTip";
 
 export function PageTitle({ title, subtitle, eyebrow }: { title: string; subtitle?: string; eyebrow?: string }) {
   return (
@@ -10,11 +11,19 @@ export function PageTitle({ title, subtitle, eyebrow }: { title: string; subtitl
   );
 }
 
-export function Section({ title, children, aside, id }: { title: string; children: ReactNode; aside?: ReactNode; id?: string }) {
+/** `tip` adds an info tip beside the title that explains the section in plain words. */
+export function Section({ title, children, aside, id, tip }: { title: string; children: ReactNode; aside?: ReactNode; id?: string; tip?: string }) {
   return (
     <section id={id} className="scroll-mt-32 space-y-3">
       <div className="flex flex-wrap items-end justify-between gap-x-5 gap-y-2">
-        <h2 className="sec-title">{title}</h2>
+        {tip ? (
+          <div className="flex items-center gap-2">
+            <h2 className="sec-title">{title}</h2>
+            <InfoTip down text={tip} />
+          </div>
+        ) : (
+          <h2 className="sec-title">{title}</h2>
+        )}
         {aside}
       </div>
       {children}
@@ -30,16 +39,26 @@ export function StatCard({
   value,
   detail,
   icon,
+  tip,
 }: {
   label: string;
   value: ReactNode;
   detail?: ReactNode;
   icon?: ReactNode;
+  /** Plain-language note on what the number means, shown in an info tip beside the label. */
+  tip?: string;
 }) {
   return (
-    <div className="tile">
+    <div className="tile relative">
       <div className="flex items-center justify-between gap-2 text-[12.5px] font-semibold text-[color:var(--ink-2)]">
-        {label}
+        {tip ? (
+          <span className="inline-flex items-center gap-1.5">
+            {label}
+            <InfoTip box text={tip} />
+          </span>
+        ) : (
+          label
+        )}
         {icon && <span className="text-accent [&_svg]:size-4">{icon}</span>}
       </div>
       <div className="tile-val tabular-nums">{value}</div>

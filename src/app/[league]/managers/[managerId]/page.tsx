@@ -13,6 +13,7 @@ import { MIN_SEASONS_FOR_RATES } from "@/lib/analytics/overview";
 import { managerStreaks } from "@/lib/analytics/streaks";
 import { careerLuck } from "@/lib/analytics/whatIf";
 import { getLeague } from "@/lib/data";
+import { TIPS } from "@/lib/explain";
 
 const MIN_RIVAL_GAMES = 4;
 
@@ -77,13 +78,14 @@ export default async function ManagerPage(props: PageProps<"/[league]/managers/[
         <StatCard label="Championships" value={career.titles} detail={`${finals} finals appearance${finals === 1 ? "" : "s"}`} />
         <StatCard label="Seasons" value={career.seasons} detail={`${career.playoffApps} playoff appearances (${formatPct(career.playoffPct, 0)})`} />
         <StatCard label="Regular season" value={formatRecord(career.wins, career.losses, career.ties)} detail={`${formatPct(career.winPct)} win`} />
-        <StatCard label="Average finish" value={formatNumber(career.avgFinish)} detail={`best ${career.bestFinish ?? "—"}`} />
+        <StatCard label="Average finish" value={formatNumber(career.avgFinish)} detail={`best ${career.bestFinish ?? "—"}`} tip={TIPS.avgFinish} />
         <StatCard label="Best season" value={best ? best.label : "—"} detail={best ? `${best.playoffResult} · ${best.teamName}` : undefined} />
         <StatCard label="Worst season" value={worst ? worst.label : "—"} detail={worst ? `finished ${worst.finalRank} of ${worst.teamCount}` : undefined} />
-        <StatCard label="Category record" value={formatRecord(career.catWins, career.catLosses, career.catTies)} />
+        <StatCard label="Category record" value={formatRecord(career.catWins, career.catLosses, career.catTies)} tip={TIPS.catRecord} />
         {lastRating && (
           <StatCard
             label="Power rating"
+            tip={TIPS.power}
             value={lastRating.rating.toFixed(0)}
             detail={`${lastRating.label === league.seasons.at(-1)!.label ? "now" : `after ${lastRating.label}`} · peak ${peak.rating.toFixed(0)} (${peak.label}, wk ${peak.week})`}
           />
@@ -93,6 +95,7 @@ export default async function ManagerPage(props: PageProps<"/[league]/managers/[
         {luck && (
           <StatCard
             label="Matchup luck"
+            tip={TIPS.matchupLuck}
             value={signed(luck.luck, 1)}
             detail={`matchup wins vs what their category results predicted, ${luck.seasons} season${luck.seasons === 1 ? "" : "s"}`}
           />
@@ -112,6 +115,7 @@ export default async function ManagerPage(props: PageProps<"/[league]/managers/[
             {reach && (
               <StatCard
                 label="Reaching"
+                tip={TIPS.reaching}
                 value={`${reach.avgEarly >= 0 ? "" : "−"}${Math.abs(reach.avgEarly).toFixed(1)} spots`}
                 detail={`${reach.avgEarly >= 0 ? "ahead of" : "after"} the pre-season rank on average (rounds 1-8); ${formatPct(reach.reachShare, 0)} of picks were 15+ spots early`}
               />
@@ -119,6 +123,7 @@ export default async function ManagerPage(props: PageProps<"/[league]/managers/[
             {keep && (
               <StatCard
                 label="Picks kept"
+                tip={TIPS.picksKept}
                 value={`${keep.avgKept.toFixed(1)} per draft`}
                 detail={`${formatPct(keep.keptShare, 0)} of their own picks were still on the roster at season end`}
               />

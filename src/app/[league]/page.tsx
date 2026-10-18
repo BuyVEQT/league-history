@@ -1,15 +1,29 @@
 import { Trophy } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { AwardGrid } from "@/components/AwardsView";
 import { ManagerTrend } from "@/components/charts/ManagerTrend";
+import { rankLabel, signed } from "@/components/draft";
+import { InfoTip } from "@/components/InfoTip";
 import { Avatar, Card, ManagerLink, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
+import { allTimeAwards, seasonAwards } from "@/lib/analytics/awards";
 import { careerStats, defaultCompare, managerSeasons } from "@/lib/analytics/career";
-import { formatRecord, ordinal } from "@/lib/analytics/format";
+import { hasDraftData, leaguePicks, topSteals } from "@/lib/analytics/draft";
+import { formatPct, formatRecord, ordinal } from "@/lib/analytics/format";
+import { goatScores } from "@/lib/analytics/goat";
+import { h2hMatrix } from "@/lib/analytics/headToHead";
 import { championHistory, leagueSummary, seasonRecords } from "@/lib/analytics/overview";
 import { sweeps } from "@/lib/analytics/scorelines";
 import { seasonOutcome } from "@/lib/analytics/season";
 import { longestStreaks } from "@/lib/analytics/streaks";
+import { hasTradeData, leagueTrades } from "@/lib/analytics/trades";
+import { careerLuck } from "@/lib/analytics/whatIf";
 import { getLeague } from "@/lib/data";
+import { AWARD_RULES, TIPS } from "@/lib/explain";
+
+/** Season awards shown on the overview, in this order, when the season has them. The champion is already in the hero. */
+const HEADLINE_AWARDS = ["Regular-season MVP", "Cinderella", "Steal of the draft", "Heist of the year", "Horseshoe", "Comeback of the year", "Front-runner", "Broom award"];
+const HEADLINE_ALL_TIME = ["The GOAT", "Most decorated", "Category machine", "Draft guru", "Trade shark", "Horseshoe", "Mr. Steady", "Still waiting"];
 
 export const metadata = { title: "League overview" };
 
@@ -72,6 +86,57 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
     .map((c) => ({ c, avg: c.catWins / (c.wins + c.losses + c.ties), weeks: c.wins + c.losses + c.ties }))
     .sort((a, b) => b.avg - a.avg)[0];
 
+  // Awards: the latest season's headline superlatives and the all-time ones, linking to the awards pages.
+  const latestAwards = seasonAwards(league, recent);
+  const headline = HEADLINE_AWARDS.map((t) => latestAwards.find((a) => a.title === t)).filter((a) => !!a).slice(0, 6);
+  const allTime = allTimeAwards(league);
+  const allTimeHeadline = HEADLINE_ALL_TIME.map((t) => allTime.find((a) => a.title === t)).filter((a) => !!a);
+
+  // Explore: one real teaser per deeper page, so nothing interesting stays hidden behind the nav.
+  const [goat] = goatScores(league);
+  const [luckiest] = careerLuck(league);
+  const [steal] = hasDraftData(league) ? topSteals(leaguePicks(league), 1) : [];
+  const heist = hasTradeData(league)
+    ? leagueTrades(league)
+        .filter((t) => t.status === "completed" && t.winnerManagerId)
+        .sort((a, b) => b.margin - a.margin)[0]
+    : undefined;
+  const matrix = h2hMatrix(league);
+  const rivalry = matrix.ids
+    .flatMap((a) => matrix.ids.filter((b) => b !== a).map((b) => ({ a, b, cell: matrix.cells[a]?.[b] })))
+    .flatMap(({ a, b, cell }) => {
+      const games = cell ? cell.wins + cell.losses + cell.ties : 0;
+      return cell && games >= 6 ? [{ a, b, cell, pct: (cell.wins + cell.ties / 2) / games }] : [];
+    })
+    .sort((x, y) => y.pct - x.pct || y.cell.wins - x.cell.wins)[0];
+  const explore = [
+    goat && { href: "leaderboard", k: "Leaderboard", line: `${goat.name} leads the all-time GOAT rankings at ${goat.score.toFixed(0)} out of 100.`, tip: TIPS.goat },
+    luckiest && {
+      href: "records#luck",
+      k: "Records",
+      line: `Luckiest manager: ${nameOf(luckiest.managerId)}, ${signed(luckiest.luck, 1)} more matchup wins than their category results usually earn. Plus streaks, droughts and upsets.`,
+      tip: TIPS.matchupLuck,
+    },
+    steal && {
+      href: "draft",
+      k: "Draft",
+      line: `Best pick ever: ${steal.playerName}, taken #${steal.overall} in ${steal.label} by ${nameOf(steal.managerId)}, finished ${rankLabel(steal.actualRank)} (${signed(steal.value, 1)} draft value).`,
+      tip: TIPS.draftValue,
+    },
+    heist && {
+      href: "trades",
+      k: "Trades",
+      line: `Most lopsided trade: ${nameOf(heist.winnerManagerId!)} came out ${signed(heist.margin, 1)} ahead in ${heist.label}. Every deal is graded.`,
+      tip: TIPS.tradeMargin,
+    },
+    rivalry && {
+      href: "rivalries",
+      k: "Rivalries",
+      line: `${nameOf(rivalry.a)} is ${formatRecord(rivalry.cell.wins, rivalry.cell.losses, rivalry.cell.ties)} all time against ${nameOf(rivalry.b)} (${formatPct(rivalry.pct, 0)}). Compare any two managers.`,
+      tip: undefined,
+    },
+  ].filter((x) => !!x);
+
   return (
     <>
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
@@ -123,6 +188,77 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
         </div>
       </Section>
 
+      <Section
+        title="Awards"
+        tip="Superlatives handed out every season and for all time, from MVP and Cinderella to steal of the draft and heist of the year. Nobody votes: each winner is picked by a fixed rule from the numbers. Hover or tap the i on a card to see how."
+        aside={
+          <Link href={`/${slug}/awards`} className="text-sm font-semibold text-accent hover:underline">
+            All awards →
+          </Link>
+        }
+      >
+        <p className="-mt-1 text-sm text-[color:var(--ink-2)]">
+          Highlights from the {recent.label} hardware.{" "}
+          <Link href={`/${slug}/awards/${recent.year}`} className="font-semibold text-accent hover:underline">
+            See all {latestAwards.length} {recent.label} awards →
+          </Link>
+        </p>
+        {headline.length > 0 && <AwardGrid awards={headline} league={league} scope="season" />}
+        {allTimeHeadline.length > 0 && (
+          <div className="panel p-4">
+            <div className="mb-2 flex items-center gap-2">
+              <span className="award-k">All-time honours</span>
+              <InfoTip down text="Career awards, counting every season in the league's history. Hover or tap the i beside an award to see how its winner is picked." />
+            </div>
+            <ul className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
+              {allTimeHeadline.map((a) => (
+                <li key={a.title} className="flex items-center justify-between gap-3 border-b border-border pb-2 text-sm">
+                  <span className="flex shrink-0 items-center gap-1.5">
+                    <span className="font-semibold">{a.title}</span>
+                    {AWARD_RULES.allTime[a.title] && <InfoTip down text={AWARD_RULES.allTime[a.title]} />}
+                  </span>
+                  <span className="min-w-0 text-right text-[color:var(--ink-2)]">
+                    {a.winners.map((id, i) => (
+                      <span key={id}>
+                        {i > 0 && ", "}
+                        <ManagerLink id={id} name={nameOf(id)} />
+                      </span>
+                    ))}{" "}
+                    · <span className="tabular-nums">{a.value}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        <nav aria-label="Awards by season" className="flex flex-wrap gap-1.5">
+          {league.seasons.map((s) => (
+            <Link key={s.year} href={`/${slug}/awards/${s.year}`} className="pill">
+              {s.label} awards
+            </Link>
+          ))}
+        </nav>
+      </Section>
+
+      {explore.length > 0 && (
+        <Section title="Explore the league" tip="A taste of what's on the other pages, pulled from the real numbers. Click a card to dig in.">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {explore.map((x) => (
+              <div key={x.k} className="panel relative grid content-start gap-1.5 p-4">
+                <span className="award-k flex items-center gap-1.5">
+                  {x.k}
+                  {x.tip && <InfoTip box text={x.tip} />}
+                </span>
+                <span className="text-sm text-[color:var(--ink-2)]">{x.line}</span>
+                <Link href={`/${slug}/${x.href}`} className="text-sm font-semibold text-accent hover:underline">
+                  Open {x.k.toLowerCase()} →
+                </Link>
+              </div>
+            ))}
+          </div>
+        </Section>
+      )}
+
       <Section title="Where everyone finished">
         <Card className="p-5">
           <ManagerTrend
@@ -141,13 +277,23 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
           {[
             hot && { k: "Hottest streak", v: String(hot.length), unit: "straight wins", who: hot.managerId, d: `${hot.teamName}, ${hot.label}, weeks ${hot.fromWeek}–${hot.toWeek}` },
             cold && { k: "Coldest streak", v: String(cold.length), unit: "straight losses", who: cold.managerId, d: `${cold.teamName}, ${cold.label}, weeks ${cold.fromWeek}–${cold.toWeek}` },
-            sweepKing && { k: "9-0 sweeps", v: String(sweepKing[1]), unit: sweepKing[1] === 1 ? "perfect week" : "perfect weeks", who: sweepKing[0], d: "most in league history" },
-            perWeek && { k: "Categories per week", v: perWeek.avg.toFixed(2), unit: `of ${recent.categories.length || 9}`, who: perWeek.c.managerId, d: `best average, ${perWeek.weeks} weeks` },
+            sweepKing && { k: "9-0 sweeps", v: String(sweepKing[1]), unit: sweepKing[1] === 1 ? "perfect week" : "perfect weeks", who: sweepKing[0], d: "most in league history", tip: "A sweep is a week where one team wins every single category against its opponent." },
+            perWeek && {
+              k: "Categories per week",
+              v: perWeek.avg.toFixed(2),
+              unit: `of ${recent.categories.length || 9}`,
+              who: perWeek.c.managerId,
+              d: `best average, ${perWeek.weeks} weeks`,
+              tip: `How many categories they win in a typical week, averaged over every matchup they've played (3+ seasons). Half of ${recent.categories.length || 9} is average; anything above 5 is a team that usually wins its week.`,
+            },
           ]
-            .filter((x): x is { k: string; v: string; unit: string; who: string; d: string } => !!x)
+            .filter((x): x is { k: string; v: string; unit: string; who: string; d: string; tip?: string } => !!x)
             .map((r) => (
-              <div key={r.k} className="panel rec p-4">
-                <div className="rec-k">{r.k}</div>
+              <div key={r.k} className="panel rec relative p-4">
+                <div className="rec-k flex items-center gap-1.5">
+                  {r.k}
+                  {r.tip && <InfoTip box text={r.tip} />}
+                </div>
                 <div className="rec-v">
                   {r.v}
                   <small>{r.unit}</small>
