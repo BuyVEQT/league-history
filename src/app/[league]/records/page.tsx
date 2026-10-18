@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { rankLabel, signed } from "@/components/draft";
 import { Avatar, Card, ManagerLink, PageTitle, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
-import { formatNumber, formatPct, ordinal, winPct } from "@/lib/analytics/format";
+import { formatNumber, formatPct, ordinal } from "@/lib/analytics/format";
 import { namesakes, type NamesakeRow } from "@/lib/analytics/players";
 import { raceRecords } from "@/lib/analytics/race";
 import {
@@ -19,6 +19,11 @@ import { marginAverages, scorelines, sweeps } from "@/lib/analytics/scorelines";
 import { longestStreaks, type StreakRow } from "@/lib/analytics/streaks";
 import { careerLuck, leagueAlternates, matchupLuck } from "@/lib/analytics/whatIf";
 import { colorForManager } from "@/lib/colors";
+import { CoinFlip } from "@/components/viz/CoinFlip";
+import { DroughtStrip } from "@/components/viz/DroughtStrip";
+import { PlayoffRisers } from "@/components/viz/PlayoffRisers";
+import { SteadyScatter } from "@/components/viz/SteadyScatter";
+import { careerStats, managerSeasons } from "@/lib/analytics/career";
 import { getLeague } from "@/lib/data";
 import { TIPS } from "@/lib/explain";
 import { InfoTip } from "@/components/InfoTip";
@@ -78,6 +83,13 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
     .slice(0, 5);
   const parityRows = parity(league);
   const names = namesakes(league);
+  const titles = Object.fromEntries(careerStats(league).map((c) => [c.managerId, c.titles]));
+  const finishes = Object.fromEntries(
+    league.managers.map((m) => [
+      m.id,
+      Object.fromEntries(managerSeasons(league, m.id).map((s) => [s.year, { final: s.finalRank, teams: s.teamCount, teamName: s.teamName }])),
+    ]),
+  );
 
   return (
     <>
@@ -95,7 +107,18 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
         ))}
       </nav>
 
-      <Section id="playoffs" title="Playoff performers" tip={TIPS.vsSeed}>
+      <Section id="playoffs" title="Playoff risers & fallers" tip={TIPS.vsSeed}>
+        <Card className="space-y-2 p-5">
+          <PlayoffRisers rows={playoffs} nameOf={nameOf} />
+          <div className="viz-legend">
+            <span><i className="dot" style={{ boxShadow: "inset 0 0 0 1.5px var(--ink-2)" }} />Average playoff seed</span>
+            <span><i className="line" style={{ background: "var(--pos)" }} />Finishes better than seeded</span>
+            <span><i className="line" style={{ background: "var(--neg)" }} />Falls below the seed</span>
+          </div>
+        </Card>
+        <details>
+          <summary className="text-sm text-accent">The full table</summary>
+          <div className="mt-2">
         <TableWrap>
           <table className="w-full text-sm">
             <caption className="sr-only">Playoff results compared with regular-season seed</caption>
@@ -135,6 +158,8 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
             </tbody>
           </table>
         </TableWrap>
+          </div>
+        </details>
         <p className="text-xs text-muted">
           vs seed = average places gained (+) or lost (−) between regular-season seed and final finish, in seasons they made the playoffs. +1.5 = they
           typically finish a place or two better than seeded; −1.0 = about a place worse.
@@ -208,60 +233,21 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
 
       <div id="droughts" className="grid scroll-mt-32 gap-3 lg:grid-cols-2">
         <Section title="Title droughts">
-          <TableWrap>
-            <table className="w-full text-sm">
-              <caption className="sr-only">Seasons since each manager last won the title</caption>
-              <thead>
-                <tr>
-                  <th className={th}>Manager</th>
-                  <th className={th}>Drought</th>
-                  <th className={th}>Last title</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                {droughts.map((r) => (
-                  <tr key={r.managerId} className={tr}>
-                    <td className={td}>{who(r.managerId)}</td>
-                    <td className={`${td} tabular-nums`}>
-                      {r.current === 0 ? "Reigning" : `${r.current} season${r.current === 1 ? "" : "s"}`}
-                    </td>
-                    <td className={td}>{r.lastTitle ?? <span className="text-muted">Never ({r.seasonsPlayed} {r.seasonsPlayed === 1 ? "try" : "tries"})</span>}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </TableWrap>
+          <Card className="space-y-3 p-5">
+            <DroughtStrip rows={droughts} seasons={league.seasons} finishes={finishes} nameOf={nameOf} />
+            <div className="viz-legend">
+              <span><i style={{ background: "var(--gold)" }} />Title</span>
+              <span><i style={{ background: "var(--neg-wash)" }} />Since the last title</span>
+              <span><i style={{ border: "1px dashed var(--border-2)" }} />Not in the league</span>
+            </div>
+          </Card>
         </Section>
 
-        <Section title="Clutch: one-category games" tip={TIPS.closeGames}>
-          <TableWrap>
-            <table className="w-full text-sm">
-              <caption className="sr-only">Record in matchups decided by one category, and blowouts</caption>
-              <thead>
-                <tr>
-                  <th className={th}>Manager</th>
-                  <th className={th}>Close W-L</th>
-                  <th className={th}>Close %</th>
-                  <th className={th}>Blowouts W-L</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                {margins.map((r) => (
-                  <tr key={r.managerId} className={tr}>
-                    <td className={td}>{who(r.managerId)}</td>
-                    <td className={`${td} tabular-nums`}>
-                      {r.closeWins}-{r.closeLosses}
-                    </td>
-                    <td className={`${td} tabular-nums`}>{formatPct(winPct(r.closeWins, r.closeLosses, 0), 0)}</td>
-                    <td className={`${td} tabular-nums`}>
-                      {r.blowoutWins}-{r.blowoutLosses}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </TableWrap>
-          <p className="text-xs text-muted">Close = decided by exactly one category (e.g. 5-4). Blowout = won by 7+ categories. Playoffs included.</p>
+        <Section title="Coin-flip weeks" tip={TIPS.closeGames}>
+          <Card className="p-5">
+            <CoinFlip rows={margins} names={Object.fromEntries(league.managers.map((m) => [m.id, m.name]))} />
+          </Card>
+          <p className="text-xs text-muted">Close = decided by exactly one category (e.g. 5-4). Blowout = won by 7+ categories. Playoffs included. Best net record first.</p>
         </Section>
       </div>
 
@@ -532,7 +518,18 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
       <p className="-mt-6 text-xs text-muted">Ranked by regular-season {pctLabel}, the number the league&apos;s standings use.</p>
 
       <div id="consistency" className="grid scroll-mt-32 gap-3 lg:grid-cols-2">
-        <Section title="Consistency" tip={TIPS.swing}>
+        <Section title="Steady or streaky?" tip={TIPS.swing}>
+          <Card className="space-y-2 p-5">
+            <SteadyScatter rows={steady} titles={titles} nameOf={nameOf} />
+            <div className="viz-legend">
+              <span><i className="dot" style={{ background: "var(--gold)" }} />Has won a title</span>
+              <span><i className="dot" style={{ background: "var(--s1)" }} />Hasn&apos;t</span>
+              <span>Bottom-left = always good</span>
+            </div>
+          </Card>
+          <details>
+            <summary className="text-sm text-accent">The table</summary>
+            <div className="mt-2">
           <TableWrap>
             <table className="w-full text-sm">
               <caption className="sr-only">How much each manager&apos;s finish varies from year to year</caption>
@@ -564,6 +561,8 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
               </tbody>
             </table>
           </TableWrap>
+            </div>
+          </details>
           <p className="text-xs text-muted">
             Finish as a share of the league (top 0% = always first), so 10- and 12-team seasons compare fairly. Swing = standard
             deviation; steadiest first. Minimum 3 seasons.

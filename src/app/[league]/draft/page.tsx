@@ -27,6 +27,8 @@ const SLOT_LUCK_RULE =
   "Slot luck = what a draft slot is worth: the value of every pick it gets across a 13-round snake draft, minus the average slot's, averaged over their drafts. + means lucky (early slots), − unlucky. Picking 1st is worth about +4.6 a draft in a 12-team league, picking last about −1.8. Draft value already compares each pick with its slot, so this is the luck that value doesn't count.";
 import { colorForManager } from "@/lib/colors";
 import { getLeague } from "@/lib/data";
+import { PickScatter, type ScatterPick } from "@/components/viz/PickScatter";
+import { ReachBars } from "@/components/viz/ReachBars";
 
 export const metadata = { title: "Draft history" };
 
@@ -55,9 +57,20 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
   const reachOf = new Map(reach?.rows.map((r) => [r.managerId, r]));
   const keepOf = new Map(keep.rows.map((r) => [r.managerId, r]));
   const favOf = (id: string) => favourites.find((f) => f.managerId === id);
-  const [reaches, steady, fallers] = reach?.groups ?? [];
   // keepRates correlates with finish percentile (0 = first), so flip it: positive = keepers finish higher.
   const keepLink = keep.correlation === null ? null : -keep.correlation;
+  // The scatter is a client component: hand it only the fields it draws.
+  const scatterPicks: ScatterPick[] = picks.map((p) => ({
+    y: p.year,
+    ov: p.overall,
+    rd: p.round,
+    ar: p.actualRank,
+    pr: p.preseasonRank,
+    v: Math.round(p.value * 10) / 10,
+    m: p.managerId,
+    p: p.playerName,
+  }));
+  const names = Object.fromEntries(league.managers.map((m) => [m.id, m.name]));
   const relation = (r: number | null) =>
     r === null ? "not enough data" : Math.abs(r) < 0.1 ? "no real relationship" : `${Math.abs(r) < 0.3 ? "a weak" : "a clear"} link (r = ${r.toFixed(2)})`;
 
@@ -201,33 +214,42 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
         </p>
       </Section>
 
+      <Section title="Every pick, ever">
+        <Card className="space-y-2">
+          <p className="text-sm text-muted">Across: where they were drafted. Up: how well they finished. Above the line beat their slot. Hover a dot for the pick.</p>
+          <PickScatter picks={scatterPicks} names={names} seasons={draftSeasons.map((s) => ({ year: s.year, label: s.label }))} />
+        </Card>
+      </Section>
+
       <Section title="How much does draft day decide?">
-        <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-          {impact && (
+        <div className="grid gap-3 lg:grid-cols-3">
+          {reach && (
+            <Card className="space-y-2 lg:col-span-2">
+              <h3 className="flex items-center gap-1.5 font-semibold">
+                Does reaching pay off? <InfoTip down text={TIPS.reaches} />
+              </h3>
+              <p className="text-sm text-muted">
+                Picks in rounds 1-{reach.maxRound} grouped by how far ahead of the pre-season rankings they were taken. Bars show how often each group finished better than its pre-season rank.
+              </p>
+              <ReachBars groups={reach.groups} />
+            </Card>
+          )}
+          <div className={`grid gap-3 ${reach ? "grid-cols-2 lg:grid-cols-1" : "grid-cols-2 lg:col-span-3"}`}>
+            {impact && (
+              <StatCard
+                label="Explained by the draft"
+                tip={TIPS.explainedByDraft}
+                value={formatPct(impact.correlation ** 2, 0)}
+                detail={`of the variation in regular-season win % (r = ${impact.correlation.toFixed(2)}, ${impact.teamSeasons} team-seasons). The rest is decided after draft day.`}
+              />
+            )}
             <StatCard
-              label="Explained by the draft"
-              tip={TIPS.explainedByDraft}
-              value={formatPct(impact.correlation ** 2, 0)}
-              detail={`of the variation in regular-season win % (r = ${impact.correlation.toFixed(2)}, ${impact.teamSeasons} team-seasons). The rest is decided after draft day.`}
+              label="Keeping your picks"
+              tip={TIPS.keepPicks}
+              value={keepLink === null ? "—" : signed(keepLink, 2)}
+              detail={`correlation between the share of their own picks a team kept all season and finishing higher: ${relation(keepLink)}`}
             />
-          )}
-          {reaches && (
-            <StatCard
-              label="Reaches that beat the rankings"
-              tip={TIPS.reaches}
-              value={formatPct(reaches.beatRate, 0)}
-              detail={`of ${reaches.picks} picks taken ${reach!.threshold}+ spots ahead of pre-season rank finished better than that rank — vs ${formatPct(steady.beatRate, 0)} of other picks`}
-            />
-          )}
-          {fallers && (
-            <StatCard label="Fallers that beat the rankings" tip={TIPS.fallers} value={formatPct(fallers.beatRate, 0)} detail={`of ${fallers.picks} players taken ${reach!.threshold}+ spots after their pre-season rank`} />
-          )}
-          <StatCard
-            label="Keeping your picks"
-            tip={TIPS.keepPicks}
-            value={keepLink === null ? "—" : signed(keepLink, 2)}
-            detail={`correlation between the share of their own picks a team kept all season and finishing higher: ${relation(keepLink)}`}
-          />
+          </div>
         </div>
         <p className="text-xs text-muted">
           Pre-season ranks come from the same top-300 list as the final ranks, so players who finished outside the top 300 have none: the worst

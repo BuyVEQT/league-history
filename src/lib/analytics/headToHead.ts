@@ -168,3 +168,43 @@ export function h2hMatrix(league: League): { ids: ManagerId[]; cells: Record<Man
   }
   return { ids: league.managers.map((m) => m.id).filter((id) => cells[id]), cells };
 }
+
+export interface RivalryPair {
+  a: ManagerId;
+  b: ManagerId;
+  /** From a's side. */
+  wins: number;
+  losses: number;
+  ties: number;
+  games: number;
+  /** a's win %, a tie counting half. */
+  pct: number;
+  playoffMeetings: number;
+  finalMeetings: number;
+}
+
+/** Every pair of managers who have met, once each (a before b in league order). */
+export function rivalryPairs(league: League): RivalryPair[] {
+  const { ids, cells } = h2hMatrix(league);
+  const playoff = new Map<string, { po: number; fin: number }>();
+  for (const season of league.seasons) {
+    const teams = teamIndex(season);
+    for (const m of season.matchups) {
+      if (m.stage === "regular") continue;
+      const key = [teams.get(m.homeTeamId)!.managerId, teams.get(m.awayTeamId)!.managerId].sort().join("|");
+      const p = playoff.get(key) ?? { po: 0, fin: 0 };
+      playoff.set(key, { po: p.po + 1, fin: p.fin + (m.stage === "final" ? 1 : 0) });
+    }
+  }
+  const out: RivalryPair[] = [];
+  ids.forEach((a, i) =>
+    ids.slice(i + 1).forEach((b) => {
+      const c = cells[a]?.[b];
+      const games = c ? c.wins + c.losses + c.ties : 0;
+      if (!c || !games) return;
+      const p = playoff.get([a, b].sort().join("|"));
+      out.push({ a, b, ...c, games, pct: (c.wins + c.ties / 2) / games, playoffMeetings: p?.po ?? 0, finalMeetings: p?.fin ?? 0 });
+    }),
+  );
+  return out;
+}
