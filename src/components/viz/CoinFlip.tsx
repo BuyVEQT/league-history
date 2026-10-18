@@ -37,10 +37,10 @@ export function CoinFlip({ rows, names }: { rows: MarginRow[]; names: Record<str
             <span className="truncate pr-3 text-right font-semibold">{names[r.managerId]}</span>
             <span className="flex h-[18px] items-center justify-end gap-1.5 border-r border-[color:var(--border-2)] pr-px">
               <span className="text-muted tabular-nums">{r[l]}</span>
-              <span className="h-full rounded-l-[4px] transition-[width] duration-500" style={{ width: `calc(${(r[l] / max) * 100}% - 28px)`, background: "var(--neg)", minWidth: r[l] ? 2 : 0 }} />
+              <span className="rec-grow-l h-full rounded-l-[4px] transition-[width] duration-500" style={{ width: `calc(${(r[l] / max) * 100}% - 28px)`, background: "var(--neg)", minWidth: r[l] ? 2 : 0 }} />
             </span>
             <span className="flex h-[18px] items-center gap-1.5 pl-px">
-              <span className="h-full rounded-r-[4px] transition-[width] duration-500" style={{ width: `calc(${(r[w] / max) * 100}% - 28px)`, background: "var(--pos)", minWidth: r[w] ? 2 : 0 }} />
+              <span className="rec-grow-r h-full rounded-r-[4px] transition-[width] duration-500" style={{ width: `calc(${(r[w] / max) * 100}% - 28px)`, background: "var(--pos)", minWidth: r[w] ? 2 : 0 }} />
               <span className="text-muted tabular-nums">{r[w]}</span>
             </span>
           </div>
