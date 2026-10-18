@@ -1962,2400 +1962,6300 @@
       "name": "Nikola Jokić",
       "actualRank": 1,
       "preseasonRank": 7,
-      "gamesPlayed": null,
-      "teamId": "2021:michael"
+      "gamesPlayed": 72,
+      "teamId": "2021:michael",
+      "stats": {
+        "fgm": 732,
+        "fga": 1293,
+        "ftm": 342,
+        "fta": 394,
+        "threes": 92,
+        "pts": 1898,
+        "reb": 780,
+        "ast": 599,
+        "stl": 95,
+        "blk": 48,
+        "to": 222
+      }
     },
     {
       "playerId": "4612",
       "name": "Stephen Curry",
       "actualRank": 2,
       "preseasonRank": 5,
-      "gamesPlayed": null,
-      "teamId": "2021:benjamin"
+      "gamesPlayed": 63,
+      "teamId": "2021:benjamin",
+      "stats": {
+        "fgm": 658,
+        "fga": 1365,
+        "ftm": 362,
+        "fta": 395,
+        "threes": 337,
+        "pts": 2015,
+        "reb": 345,
+        "ast": 363,
+        "stl": 77,
+        "blk": 8,
+        "to": 213
+      }
     },
     {
       "playerId": "4897",
       "name": "Nikola Vučević",
       "actualRank": 3,
       "preseasonRank": 29,
-      "gamesPlayed": null,
-      "teamId": "2021:matt"
+      "gamesPlayed": 70,
+      "teamId": "2021:matt",
+      "stats": {
+        "fgm": 666,
+        "fga": 1396,
+        "ftm": 131,
+        "fta": 156,
+        "threes": 176,
+        "pts": 1639,
+        "reb": 817,
+        "ast": 269,
+        "stl": 65,
+        "blk": 48,
+        "to": 126
+      }
     },
     {
       "playerId": "5012",
       "name": "Damian Lillard",
       "actualRank": 4,
       "preseasonRank": 8,
-      "gamesPlayed": null,
-      "teamId": "2021:najim"
+      "gamesPlayed": 67,
+      "teamId": "2021:najim",
+      "stats": {
+        "fgm": 602,
+        "fga": 1334,
+        "ftm": 449,
+        "fta": 484,
+        "threes": 275,
+        "pts": 1928,
+        "reb": 283,
+        "ast": 505,
+        "stl": 62,
+        "blk": 17,
+        "to": 203
+      }
     },
     {
       "playerId": "3930",
       "name": "Chris Paul",
       "actualRank": 5,
       "preseasonRank": 33,
-      "gamesPlayed": null,
-      "teamId": "2021:eddie"
+      "gamesPlayed": 70,
+      "teamId": "2021:eddie",
+      "stats": {
+        "fgm": 439,
+        "fga": 879,
+        "ftm": 169,
+        "fta": 181,
+        "threes": 102,
+        "pts": 1149,
+        "reb": 312,
+        "ast": 622,
+        "stl": 99,
+        "blk": 19,
+        "to": 156
+      }
     },
     {
       "playerId": "4840",
       "name": "Kyrie Irving",
       "actualRank": 6,
       "preseasonRank": 24,
-      "gamesPlayed": null,
-      "teamId": "2021:eddie"
+      "gamesPlayed": 54,
+      "teamId": "2021:eddie",
+      "stats": {
+        "fgm": 549,
+        "fga": 1086,
+        "ftm": 201,
+        "fta": 218,
+        "threes": 152,
+        "pts": 1451,
+        "reb": 257,
+        "ast": 324,
+        "stl": 76,
+        "blk": 37,
+        "to": 130
+      }
     },
     {
       "playerId": "5197",
       "name": "Rudy Gobert",
       "actualRank": 7,
       "preseasonRank": 28,
-      "gamesPlayed": null,
-      "teamId": "2021:michael"
+      "gamesPlayed": 71,
+      "teamId": "2021:michael",
+      "stats": {
+        "fgm": 391,
+        "fga": 579,
+        "ftm": 233,
+        "fta": 374,
+        "threes": 0,
+        "pts": 1015,
+        "reb": 960,
+        "ast": 89,
+        "stl": 40,
+        "blk": 190,
+        "to": 118
+      }
     },
     {
       "playerId": "5765",
       "name": "Jayson Tatum",
       "actualRank": 8,
       "preseasonRank": 11,
-      "gamesPlayed": null,
-      "teamId": "2021:jacob-g"
+      "gamesPlayed": 64,
+      "teamId": "2021:jacob-g",
+      "stats": {
+        "fgm": 605,
+        "fga": 1318,
+        "ftm": 295,
+        "fta": 340,
+        "threes": 187,
+        "pts": 1692,
+        "reb": 472,
+        "ast": 276,
+        "stl": 75,
+        "blk": 31,
+        "to": 171
+      }
     },
     {
       "playerId": "6021",
       "name": "Mikal Bridges",
       "actualRank": 9,
       "preseasonRank": 84,
-      "gamesPlayed": null,
-      "teamId": "2021:michael"
+      "gamesPlayed": 72,
+      "teamId": "2021:michael",
+      "stats": {
+        "fgm": 363,
+        "fga": 669,
+        "ftm": 110,
+        "fta": 131,
+        "threes": 134,
+        "pts": 970,
+        "reb": 309,
+        "ast": 152,
+        "stl": 76,
+        "blk": 63,
+        "to": 57
+      }
     },
     {
       "playerId": "4896",
       "name": "Kawhi Leonard",
       "actualRank": 10,
       "preseasonRank": 13,
-      "gamesPlayed": null,
-      "teamId": "2021:benjamin"
+      "gamesPlayed": 52,
+      "teamId": "2021:benjamin",
+      "stats": {
+        "fgm": 465,
+        "fga": 908,
+        "ftm": 261,
+        "fta": 295,
+        "threes": 101,
+        "pts": 1292,
+        "reb": 337,
+        "ast": 269,
+        "stl": 81,
+        "blk": 21,
+        "to": 105
+      }
     },
     {
       "playerId": "4912",
       "name": "Jimmy Butler III",
       "actualRank": 11,
       "preseasonRank": 18,
-      "gamesPlayed": null,
-      "teamId": "2021:eddie"
+      "gamesPlayed": 52,
+      "teamId": "2021:eddie",
+      "stats": {
+        "fgm": 366,
+        "fga": 736,
+        "ftm": 359,
+        "fta": 416,
+        "threes": 25,
+        "pts": 1116,
+        "reb": 359,
+        "ast": 369,
+        "stl": 108,
+        "blk": 18,
+        "to": 109
+      }
     },
     {
       "playerId": "5827",
       "name": "Bam Adebayo",
       "actualRank": 12,
       "preseasonRank": 17,
-      "gamesPlayed": null,
-      "teamId": "2021:jordan"
+      "gamesPlayed": 64,
+      "teamId": "2021:jordan",
+      "stats": {
+        "fgm": 456,
+        "fga": 800,
+        "ftm": 283,
+        "fta": 354,
+        "threes": 2,
+        "pts": 1197,
+        "reb": 573,
+        "ast": 346,
+        "stl": 75,
+        "blk": 66,
+        "to": 169
+      }
     },
     {
       "playerId": "5185",
       "name": "Giannis Antetokounmpo",
       "actualRank": 13,
       "preseasonRank": 6,
-      "gamesPlayed": null,
-      "teamId": "2021:matt"
+      "gamesPlayed": 61,
+      "teamId": "2021:matt",
+      "stats": {
+        "fgm": 626,
+        "fga": 1100,
+        "ftm": 398,
+        "fta": 581,
+        "threes": 67,
+        "pts": 1717,
+        "reb": 671,
+        "ast": 357,
+        "stl": 72,
+        "blk": 73,
+        "to": 207
+      }
     },
     {
       "playerId": "5009",
       "name": "Bradley Beal",
       "actualRank": 14,
       "preseasonRank": 16,
-      "gamesPlayed": null,
-      "teamId": "2021:mitchell"
+      "gamesPlayed": 60,
+      "teamId": "2021:mitchell",
+      "stats": {
+        "fgm": 670,
+        "fga": 1382,
+        "ftm": 408,
+        "fta": 459,
+        "threes": 130,
+        "pts": 1878,
+        "reb": 283,
+        "ast": 265,
+        "stl": 69,
+        "blk": 22,
+        "to": 187
+      }
     },
     {
       "playerId": "5476",
       "name": "Terry Rozier",
       "actualRank": 15,
       "preseasonRank": 144,
-      "gamesPlayed": null,
-      "teamId": "2021:dadder"
+      "gamesPlayed": 69,
+      "teamId": "2021:dadder",
+      "stats": {
+        "fgm": 510,
+        "fga": 1134,
+        "ftm": 165,
+        "fta": 202,
+        "threes": 222,
+        "pts": 1407,
+        "reb": 302,
+        "ast": 293,
+        "stl": 87,
+        "blk": 26,
+        "to": 128
+      }
     },
     {
       "playerId": "5318",
       "name": "Julius Randle",
       "actualRank": 16,
       "preseasonRank": 80,
-      "gamesPlayed": null,
-      "teamId": "2021:jordan"
+      "gamesPlayed": 71,
+      "teamId": "2021:jordan",
+      "stats": {
+        "fgm": 602,
+        "fga": 1321,
+        "ftm": 348,
+        "fta": 429,
+        "threes": 160,
+        "pts": 1712,
+        "reb": 724,
+        "ast": 427,
+        "stl": 64,
+        "blk": 18,
+        "to": 241
+      }
     },
     {
       "playerId": "5294",
       "name": "Joel Embiid",
       "actualRank": 17,
       "preseasonRank": 15,
-      "gamesPlayed": null,
-      "teamId": "2021:matt"
+      "gamesPlayed": 51,
+      "teamId": "2021:matt",
+      "stats": {
+        "fgm": 461,
+        "fga": 899,
+        "ftm": 471,
+        "fta": 548,
+        "threes": 58,
+        "pts": 1451,
+        "reb": 539,
+        "ast": 145,
+        "stl": 50,
+        "blk": 69,
+        "to": 159
+      }
     },
     {
       "playerId": "5073",
       "name": "Khris Middleton",
       "actualRank": 18,
       "preseasonRank": 42,
-      "gamesPlayed": null,
-      "teamId": "2021:dadder"
+      "gamesPlayed": 68,
+      "teamId": "2021:dadder",
+      "stats": {
+        "fgm": 511,
+        "fga": 1074,
+        "ftm": 212,
+        "fta": 236,
+        "threes": 151,
+        "pts": 1385,
+        "reb": 406,
+        "ast": 370,
+        "stl": 74,
+        "blk": 9,
+        "to": 178
+      }
     },
     {
       "playerId": "5253",
       "name": "Robert Covington",
       "actualRank": 19,
       "preseasonRank": 65,
-      "gamesPlayed": null,
-      "teamId": "2021:matt"
+      "gamesPlayed": 70,
+      "teamId": "2021:matt",
+      "stats": {
+        "fgm": 204,
+        "fga": 509,
+        "ftm": 50,
+        "fta": 62,
+        "threes": 135,
+        "pts": 593,
+        "reb": 466,
+        "ast": 117,
+        "stl": 101,
+        "blk": 84,
+        "to": 64
+      }
     },
     {
       "playerId": "5958",
       "name": "Deandre Ayton",
       "actualRank": 20,
       "preseasonRank": 19,
-      "gamesPlayed": null,
-      "teamId": "2021:michael"
+      "gamesPlayed": 69,
+      "teamId": "2021:michael",
+      "stats": {
+        "fgm": 430,
+        "fga": 687,
+        "ftm": 133,
+        "fta": 173,
+        "threes": 4,
+        "pts": 997,
+        "reb": 727,
+        "ast": 99,
+        "stl": 41,
+        "blk": 81,
+        "to": 103
+      }
     },
     {
       "playerId": "4901",
       "name": "Tobias Harris",
       "actualRank": 21,
       "preseasonRank": 62,
-      "gamesPlayed": null,
-      "teamId": "2021:dadder"
+      "gamesPlayed": 62,
+      "teamId": "2021:dadder",
+      "stats": {
+        "fgm": 473,
+        "fga": 924,
+        "ftm": 182,
+        "fta": 204,
+        "threes": 82,
+        "pts": 1210,
+        "reb": 419,
+        "ast": 220,
+        "stl": 55,
+        "blk": 51,
+        "to": 107
+      }
     },
     {
       "playerId": "4622",
       "name": "Jrue Holiday",
       "actualRank": 22,
       "preseasonRank": 43,
-      "gamesPlayed": null,
-      "teamId": "2021:matt"
+      "gamesPlayed": 59,
+      "teamId": "2021:matt",
+      "stats": {
+        "fgm": 414,
+        "fga": 823,
+        "ftm": 107,
+        "fta": 136,
+        "threes": 111,
+        "pts": 1046,
+        "reb": 268,
+        "ast": 357,
+        "stl": 96,
+        "blk": 37,
+        "to": 127
+      }
     },
     {
       "playerId": "5642",
       "name": "Domantas Sabonis",
       "actualRank": 23,
       "preseasonRank": 44,
-      "gamesPlayed": null,
-      "teamId": "2021:eddie"
+      "gamesPlayed": 62,
+      "teamId": "2021:eddie",
+      "stats": {
+        "fgm": 484,
+        "fga": 904,
+        "ftm": 240,
+        "fta": 328,
+        "threes": 52,
+        "pts": 1260,
+        "reb": 742,
+        "ast": 415,
+        "stl": 76,
+        "blk": 33,
+        "to": 213
+      }
     },
     {
       "playerId": "5336",
       "name": "Clint Capela",
       "actualRank": 24,
       "preseasonRank": 60,
-      "gamesPlayed": null,
-      "teamId": "2021:jacob-g"
+      "gamesPlayed": 63,
+      "teamId": "2021:jacob-g",
+      "stats": {
+        "fgm": 413,
+        "fga": 695,
+        "ftm": 130,
+        "fta": 227,
+        "threes": 0,
+        "pts": 956,
+        "reb": 903,
+        "ast": 49,
+        "stl": 44,
+        "blk": 129,
+        "to": 73
+      }
     },
     {
       "playerId": "6014",
       "name": "Luka Dončić",
       "actualRank": 25,
       "preseasonRank": 2,
-      "gamesPlayed": null,
-      "teamId": "2021:jake"
+      "gamesPlayed": 66,
+      "teamId": "2021:jake",
+      "stats": {
+        "fgm": 647,
+        "fga": 1351,
+        "ftm": 344,
+        "fta": 471,
+        "threes": 192,
+        "pts": 1830,
+        "reb": 527,
+        "ast": 567,
+        "stl": 64,
+        "blk": 36,
+        "to": 281
+      }
     },
     {
       "playerId": "6025",
       "name": "Michael Porter Jr.",
       "actualRank": 26,
       "preseasonRank": 57,
-      "gamesPlayed": null,
-      "teamId": "2021:dadder"
+      "gamesPlayed": 61,
+      "teamId": "2021:dadder",
+      "stats": {
+        "fgm": 443,
+        "fga": 817,
+        "ftm": 106,
+        "fta": 134,
+        "threes": 170,
+        "pts": 1162,
+        "reb": 445,
+        "ast": 70,
+        "stl": 40,
+        "blk": 54,
+        "to": 77
+      }
     },
     {
       "playerId": "5164",
       "name": "Kelly Olynyk",
       "actualRank": 27,
       "preseasonRank": 230,
-      "gamesPlayed": null,
-      "teamId": "2021:jacob-g"
+      "gamesPlayed": 70,
+      "teamId": "2021:jacob-g",
+      "stats": {
+        "fgm": 337,
+        "fga": 697,
+        "ftm": 145,
+        "fta": 175,
+        "threes": 126,
+        "pts": 945,
+        "reb": 489,
+        "ast": 203,
+        "stl": 79,
+        "blk": 42,
+        "to": 126
+      }
     },
     {
       "playerId": "4886",
       "name": "Jonas Valančiūnas",
       "actualRank": 28,
       "preseasonRank": 49,
-      "gamesPlayed": null,
-      "teamId": "2021:mitchell"
+      "gamesPlayed": 62,
+      "teamId": "2021:mitchell",
+      "stats": {
+        "fgm": 440,
+        "fga": 743,
+        "ftm": 157,
+        "fta": 203,
+        "threes": 21,
+        "pts": 1058,
+        "reb": 776,
+        "ast": 112,
+        "stl": 35,
+        "blk": 57,
+        "to": 100
+      }
     },
     {
       "playerId": "5497",
       "name": "Richaun Holmes",
       "actualRank": 29,
       "preseasonRank": 92,
-      "gamesPlayed": null,
-      "teamId": "2021:benjamin"
+      "gamesPlayed": 61,
+      "teamId": "2021:benjamin",
+      "stats": {
+        "fgm": 366,
+        "fga": 575,
+        "ftm": 135,
+        "fta": 170,
+        "threes": 2,
+        "pts": 869,
+        "reb": 504,
+        "ast": 101,
+        "stl": 39,
+        "blk": 96,
+        "to": 75
+      }
     },
     {
       "playerId": "5341",
       "name": "Kyle Anderson",
       "actualRank": 30,
       "preseasonRank": 232,
-      "gamesPlayed": null,
-      "teamId": "2021:jake"
+      "gamesPlayed": 69,
+      "teamId": "2021:jake",
+      "stats": {
+        "fgm": 308,
+        "fga": 658,
+        "ftm": 144,
+        "fta": 184,
+        "threes": 94,
+        "pts": 854,
+        "reb": 396,
+        "ast": 250,
+        "stl": 84,
+        "blk": 57,
+        "to": 86
+      }
     },
     {
       "playerId": "5582",
       "name": "T.J. McConnell",
       "actualRank": 31,
       "preseasonRank": 281,
-      "gamesPlayed": null,
-      "teamId": "2021:jordan"
+      "gamesPlayed": 69,
+      "teamId": "2021:jordan",
+      "stats": {
+        "fgm": 274,
+        "fga": 490,
+        "ftm": 33,
+        "fta": 48,
+        "threes": 15,
+        "pts": 596,
+        "reb": 256,
+        "ast": 456,
+        "stl": 128,
+        "blk": 23,
+        "to": 135
+      }
     },
     {
       "playerId": "5324",
       "name": "Zach LaVine",
       "actualRank": 32,
       "preseasonRank": 30,
-      "gamesPlayed": null,
-      "teamId": "2021:mitchell"
+      "gamesPlayed": 58,
+      "teamId": "2021:mitchell",
+      "stats": {
+        "fgm": 569,
+        "fga": 1123,
+        "ftm": 253,
+        "fta": 298,
+        "threes": 200,
+        "pts": 1591,
+        "reb": 289,
+        "ast": 282,
+        "stl": 46,
+        "blk": 27,
+        "to": 203
+      }
     },
     {
       "playerId": "5432",
       "name": "Karl-Anthony Towns",
       "actualRank": 33,
       "preseasonRank": 4,
-      "gamesPlayed": null,
-      "teamId": "2021:jordan"
+      "gamesPlayed": 50,
+      "teamId": "2021:jordan",
+      "stats": {
+        "fgm": 425,
+        "fga": 875,
+        "ftm": 267,
+        "fta": 311,
+        "threes": 122,
+        "pts": 1239,
+        "reb": 529,
+        "ast": 225,
+        "stl": 39,
+        "blk": 57,
+        "to": 160
+      }
     },
     {
       "playerId": "5727",
       "name": "Fred VanVleet",
       "actualRank": 34,
       "preseasonRank": 36,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 52,
+      "teamId": null,
+      "stats": {
+        "fgm": 338,
+        "fga": 870,
+        "ftm": 169,
+        "fta": 191,
+        "threes": 174,
+        "pts": 1019,
+        "reb": 220,
+        "ast": 328,
+        "stl": 87,
+        "blk": 37,
+        "to": 95
+      }
     },
     {
       "playerId": "5660",
       "name": "Dejounte Murray",
       "actualRank": 35,
       "preseasonRank": 61,
-      "gamesPlayed": null,
-      "teamId": "2021:jordan"
+      "gamesPlayed": 67,
+      "teamId": "2021:jordan",
+      "stats": {
+        "fgm": 441,
+        "fga": 974,
+        "ftm": 106,
+        "fta": 134,
+        "threes": 63,
+        "pts": 1051,
+        "reb": 473,
+        "ast": 363,
+        "stl": 101,
+        "blk": 7,
+        "to": 117
+      }
     },
     {
       "playerId": "5506",
       "name": "Norman Powell",
       "actualRank": 36,
       "preseasonRank": 106,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 69,
+      "teamId": null,
+      "stats": {
+        "fgm": 438,
+        "fga": 918,
+        "ftm": 236,
+        "fta": 271,
+        "threes": 171,
+        "pts": 1283,
+        "reb": 215,
+        "ast": 129,
+        "stl": 82,
+        "blk": 18,
+        "to": 119
+      }
     },
     {
       "playerId": "5832",
       "name": "John Collins",
       "actualRank": 37,
       "preseasonRank": 21,
-      "gamesPlayed": null,
-      "teamId": "2021:mitchell"
+      "gamesPlayed": 63,
+      "teamId": "2021:mitchell",
+      "stats": {
+        "fgm": 429,
+        "fga": 771,
+        "ftm": 170,
+        "fta": 204,
+        "threes": 83,
+        "pts": 1111,
+        "reb": 467,
+        "ast": 78,
+        "stl": 34,
+        "blk": 63,
+        "to": 84
+      }
     },
     {
       "playerId": "5637",
       "name": "Buddy Hield",
       "actualRank": 38,
       "preseasonRank": 56,
-      "gamesPlayed": null,
-      "teamId": "2021:dadder"
+      "gamesPlayed": 71,
+      "teamId": "2021:dadder",
+      "stats": {
+        "fgm": 403,
+        "fga": 992,
+        "ftm": 88,
+        "fta": 104,
+        "threes": 282,
+        "pts": 1176,
+        "reb": 334,
+        "ast": 257,
+        "stl": 63,
+        "blk": 30,
+        "to": 130
+      }
     },
     {
       "playerId": "5069",
       "name": "Draymond Green",
       "actualRank": 39,
       "preseasonRank": 59,
-      "gamesPlayed": null,
-      "teamId": "2021:najim"
+      "gamesPlayed": 63,
+      "teamId": "2021:najim",
+      "stats": {
+        "fgm": 170,
+        "fga": 380,
+        "ftm": 70,
+        "fta": 88,
+        "threes": 34,
+        "pts": 444,
+        "reb": 448,
+        "ast": 558,
+        "stl": 105,
+        "blk": 52,
+        "to": 188
+      }
     },
     {
       "playerId": "4614",
       "name": "DeMar DeRozan",
       "actualRank": 40,
       "preseasonRank": 53,
-      "gamesPlayed": null,
-      "teamId": "2021:jordan"
+      "gamesPlayed": 61,
+      "teamId": "2021:jordan",
+      "stats": {
+        "fgm": 455,
+        "fga": 920,
+        "ftm": 387,
+        "fta": 440,
+        "threes": 19,
+        "pts": 1316,
+        "reb": 259,
+        "ast": 422,
+        "stl": 56,
+        "blk": 15,
+        "to": 119
+      }
     },
     {
       "playerId": "4563",
       "name": "James Harden",
       "actualRank": 41,
       "preseasonRank": 1,
-      "gamesPlayed": null,
-      "teamId": "2021:dadder"
+      "gamesPlayed": 44,
+      "teamId": "2021:dadder",
+      "stats": {
+        "fgm": 342,
+        "fga": 734,
+        "ftm": 278,
+        "fta": 323,
+        "threes": 121,
+        "pts": 1083,
+        "reb": 348,
+        "ast": 475,
+        "stl": 53,
+        "blk": 33,
+        "to": 177
+      }
     },
     {
       "playerId": "5601",
       "name": "Brandon Ingram",
       "actualRank": 42,
       "preseasonRank": 39,
-      "gamesPlayed": null,
-      "teamId": "2021:dadder"
+      "gamesPlayed": 61,
+      "teamId": "2021:dadder",
+      "stats": {
+        "fgm": 513,
+        "fga": 1101,
+        "ftm": 281,
+        "fta": 320,
+        "threes": 143,
+        "pts": 1450,
+        "reb": 299,
+        "ast": 296,
+        "stl": 42,
+        "blk": 36,
+        "to": 154
+      }
     },
     {
       "playerId": "5894",
       "name": "Chris Boucher",
       "actualRank": 43,
       "preseasonRank": 132,
-      "gamesPlayed": null,
-      "teamId": "2021:mitchell"
+      "gamesPlayed": 60,
+      "teamId": "2021:mitchell",
+      "stats": {
+        "fgm": 288,
+        "fga": 560,
+        "ftm": 152,
+        "fta": 193,
+        "threes": 90,
+        "pts": 818,
+        "reb": 404,
+        "ast": 63,
+        "stl": 35,
+        "blk": 111,
+        "to": 46
+      }
     },
     {
       "playerId": "6016",
       "name": "Trae Young",
       "actualRank": 44,
       "preseasonRank": 9,
-      "gamesPlayed": null,
-      "teamId": "2021:benjamin"
+      "gamesPlayed": 63,
+      "teamId": "2021:benjamin",
+      "stats": {
+        "fgm": 487,
+        "fga": 1112,
+        "ftm": 484,
+        "fta": 546,
+        "threes": 136,
+        "pts": 1594,
+        "reb": 245,
+        "ast": 594,
+        "stl": 53,
+        "blk": 12,
+        "to": 261
+      }
     },
     {
       "playerId": "4725",
       "name": "Paul George",
       "actualRank": 45,
       "preseasonRank": 20,
-      "gamesPlayed": null,
-      "teamId": "2021:najim"
+      "gamesPlayed": 54,
+      "teamId": "2021:najim",
+      "stats": {
+        "fgm": 445,
+        "fga": 953,
+        "ftm": 198,
+        "fta": 228,
+        "threes": 171,
+        "pts": 1259,
+        "reb": 359,
+        "ast": 280,
+        "stl": 62,
+        "blk": 24,
+        "to": 179
+      }
     },
     {
       "playerId": "5602",
       "name": "Jaylen Brown",
       "actualRank": 46,
       "preseasonRank": 46,
-      "gamesPlayed": null,
-      "teamId": "2021:michael"
+      "gamesPlayed": 58,
+      "teamId": "2021:michael",
+      "stats": {
+        "fgm": 538,
+        "fga": 1111,
+        "ftm": 191,
+        "fta": 250,
+        "threes": 163,
+        "pts": 1430,
+        "reb": 347,
+        "ast": 195,
+        "stl": 72,
+        "blk": 32,
+        "to": 158
+      }
     },
     {
       "playerId": "4472",
       "name": "Brook Lopez",
       "actualRank": 47,
       "preseasonRank": 88,
-      "gamesPlayed": null,
-      "teamId": "2021:najim"
+      "gamesPlayed": 70,
+      "teamId": "2021:najim",
+      "stats": {
+        "fgm": 322,
+        "fga": 640,
+        "ftm": 120,
+        "fta": 142,
+        "threes": 95,
+        "pts": 859,
+        "reb": 347,
+        "ast": 50,
+        "stl": 40,
+        "blk": 103,
+        "to": 64
+      }
     },
     {
       "playerId": "4651",
       "name": "Danny Green",
       "actualRank": 48,
       "preseasonRank": 165,
-      "gamesPlayed": null,
-      "teamId": "2021:matt"
+      "gamesPlayed": 69,
+      "teamId": "2021:matt",
+      "stats": {
+        "fgm": 224,
+        "fga": 544,
+        "ftm": 31,
+        "fta": 40,
+        "threes": 175,
+        "pts": 654,
+        "reb": 260,
+        "ast": 118,
+        "stl": 92,
+        "blk": 56,
+        "to": 67
+      }
     },
     {
       "playerId": "5292",
       "name": "Andrew Wiggins",
       "actualRank": 49,
       "preseasonRank": 76,
-      "gamesPlayed": null,
-      "teamId": "2021:jake"
+      "gamesPlayed": 71,
+      "teamId": "2021:jake",
+      "stats": {
+        "fgm": 505,
+        "fga": 1058,
+        "ftm": 170,
+        "fta": 238,
+        "threes": 140,
+        "pts": 1320,
+        "reb": 347,
+        "ast": 167,
+        "stl": 67,
+        "blk": 70,
+        "to": 126
+      }
     },
     {
       "playerId": "5473",
       "name": "Devin Booker",
       "actualRank": 50,
       "preseasonRank": 10,
-      "gamesPlayed": null,
-      "teamId": "2021:jacob-g"
+      "gamesPlayed": 67,
+      "teamId": "2021:jacob-g",
+      "stats": {
+        "fgm": 623,
+        "fga": 1287,
+        "ftm": 340,
+        "fta": 392,
+        "threes": 126,
+        "pts": 1712,
+        "reb": 281,
+        "ast": 289,
+        "stl": 53,
+        "blk": 16,
+        "to": 207
+      }
     },
     {
       "playerId": "5157",
       "name": "Nerlens Noel",
       "actualRank": 51,
       "preseasonRank": 116,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 64,
+      "teamId": null,
+      "stats": {
+        "fgm": 137,
+        "fga": 223,
+        "ftm": 50,
+        "fta": 70,
+        "threes": 0,
+        "pts": 324,
+        "reb": 407,
+        "ast": 46,
+        "stl": 70,
+        "blk": 141,
+        "to": 65
+      }
     },
     {
       "playerId": "4899",
       "name": "Enes Freedom",
       "actualRank": 52,
       "preseasonRank": 220,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 72,
+      "teamId": null,
+      "stats": {
+        "fgm": 339,
+        "fga": 561,
+        "ftm": 127,
+        "fta": 164,
+        "threes": 1,
+        "pts": 806,
+        "reb": 795,
+        "ast": 84,
+        "stl": 33,
+        "blk": 48,
+        "to": 78
+      }
     },
     {
       "playerId": "5480",
       "name": "Delon Wright",
       "actualRank": 53,
       "preseasonRank": 133,
-      "gamesPlayed": null,
-      "teamId": "2021:michael"
+      "gamesPlayed": 63,
+      "teamId": "2021:michael",
+      "stats": {
+        "fgm": 240,
+        "fga": 518,
+        "ftm": 101,
+        "fta": 126,
+        "threes": 64,
+        "pts": 645,
+        "reb": 269,
+        "ast": 278,
+        "stl": 101,
+        "blk": 30,
+        "to": 83
+      }
     },
     {
       "playerId": "5471",
       "name": "Myles Turner",
       "actualRank": 54,
       "preseasonRank": 52,
-      "gamesPlayed": null,
-      "teamId": "2021:eddie"
+      "gamesPlayed": 47,
+      "teamId": "2021:eddie",
+      "stats": {
+        "fgm": 206,
+        "fga": 432,
+        "ftm": 111,
+        "fta": 142,
+        "threes": 69,
+        "pts": 592,
+        "reb": 306,
+        "ast": 48,
+        "stl": 40,
+        "blk": 159,
+        "to": 67
+      }
     },
     {
       "playerId": "5667",
       "name": "Malcolm Brogdon",
       "actualRank": 55,
       "preseasonRank": 55,
-      "gamesPlayed": null,
-      "teamId": "2021:michael"
+      "gamesPlayed": 56,
+      "teamId": "2021:michael",
+      "stats": {
+        "fgm": 444,
+        "fga": 980,
+        "ftm": 153,
+        "fta": 177,
+        "threes": 145,
+        "pts": 1186,
+        "reb": 294,
+        "ast": 329,
+        "stl": 49,
+        "blk": 15,
+        "to": 115
+      }
     },
     {
       "playerId": "6163",
       "name": "Zion Williamson",
       "actualRank": 56,
       "preseasonRank": 31,
-      "gamesPlayed": null,
-      "teamId": "2021:jake"
+      "gamesPlayed": 61,
+      "teamId": "2021:jake",
+      "stats": {
+        "fgm": 634,
+        "fga": 1037,
+        "ftm": 369,
+        "fta": 529,
+        "threes": 10,
+        "pts": 1647,
+        "reb": 441,
+        "ast": 226,
+        "stl": 57,
+        "blk": 39,
+        "to": 167
+      }
     },
     {
       "playerId": "4390",
       "name": "Russell Westbrook",
       "actualRank": 57,
       "preseasonRank": 22,
-      "gamesPlayed": null,
-      "teamId": "2021:dadder"
+      "gamesPlayed": 65,
+      "teamId": "2021:dadder",
+      "stats": {
+        "fgm": 544,
+        "fga": 1238,
+        "ftm": 271,
+        "fta": 413,
+        "threes": 86,
+        "pts": 1445,
+        "reb": 750,
+        "ast": 763,
+        "stl": 89,
+        "blk": 23,
+        "to": 312
+      }
     },
     {
       "playerId": "5658",
       "name": "Pascal Siakam",
       "actualRank": 58,
       "preseasonRank": 32,
-      "gamesPlayed": null,
-      "teamId": "2021:najim"
+      "gamesPlayed": 56,
+      "teamId": "2021:najim",
+      "stats": {
+        "fgm": 437,
+        "fga": 961,
+        "ftm": 249,
+        "fta": 301,
+        "threes": 73,
+        "pts": 1196,
+        "reb": 405,
+        "ast": 250,
+        "stl": 64,
+        "blk": 37,
+        "to": 130
+      }
     },
     {
       "playerId": "5344",
       "name": "Joe Harris",
       "actualRank": 59,
       "preseasonRank": 135,
-      "gamesPlayed": null,
-      "teamId": "2021:najim"
+      "gamesPlayed": 69,
+      "teamId": "2021:najim",
+      "stats": {
+        "fgm": 357,
+        "fga": 707,
+        "ftm": 49,
+        "fta": 63,
+        "threes": 211,
+        "pts": 974,
+        "reb": 248,
+        "ast": 130,
+        "stl": 46,
+        "blk": 14,
+        "to": 62
+      }
     },
     {
       "playerId": "6404",
       "name": "Tyrese Haliburton",
       "actualRank": 60,
       "preseasonRank": 149,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 58,
+      "teamId": null,
+      "stats": {
+        "fgm": 292,
+        "fga": 619,
+        "ftm": 48,
+        "fta": 56,
+        "threes": 121,
+        "pts": 753,
+        "reb": 173,
+        "ast": 309,
+        "stl": 77,
+        "blk": 28,
+        "to": 92
+      }
     },
     {
       "playerId": "5764",
       "name": "Lonzo Ball",
       "actualRank": 61,
       "preseasonRank": 63,
-      "gamesPlayed": null,
-      "teamId": "2021:jacob-g"
+      "gamesPlayed": 55,
+      "teamId": "2021:jacob-g",
+      "stats": {
+        "fgm": 290,
+        "fga": 700,
+        "ftm": 50,
+        "fta": 64,
+        "threes": 172,
+        "pts": 802,
+        "reb": 263,
+        "ast": 316,
+        "stl": 82,
+        "blk": 31,
+        "to": 123
+      }
     },
     {
       "playerId": "6023",
       "name": "Miles Bridges",
       "actualRank": 62,
       "preseasonRank": 134,
-      "gamesPlayed": null,
-      "teamId": "2021:eddie"
+      "gamesPlayed": 66,
+      "teamId": "2021:eddie",
+      "stats": {
+        "fgm": 313,
+        "fga": 622,
+        "ftm": 98,
+        "fta": 113,
+        "threes": 116,
+        "pts": 840,
+        "reb": 397,
+        "ast": 147,
+        "stl": 44,
+        "blk": 52,
+        "to": 106
+      }
     },
     {
       "playerId": "6174",
       "name": "P.J. Washington",
       "actualRank": 63,
       "preseasonRank": 109,
-      "gamesPlayed": null,
-      "teamId": "2021:dadder"
+      "gamesPlayed": 64,
+      "teamId": "2021:dadder",
+      "stats": {
+        "fgm": 302,
+        "fga": 686,
+        "ftm": 108,
+        "fta": 145,
+        "threes": 112,
+        "pts": 824,
+        "reb": 418,
+        "ast": 161,
+        "stl": 69,
+        "blk": 79,
+        "to": 128
+      }
     },
     {
       "playerId": "5640",
       "name": "Jakob Poeltl",
       "actualRank": 64,
       "preseasonRank": 143,
-      "gamesPlayed": null,
-      "teamId": "2021:jake"
+      "gamesPlayed": 69,
+      "teamId": "2021:jake",
+      "stats": {
+        "fgm": 265,
+        "fga": 430,
+        "ftm": 63,
+        "fta": 124,
+        "threes": 0,
+        "pts": 593,
+        "reb": 547,
+        "ast": 134,
+        "stl": 47,
+        "blk": 123,
+        "to": 83
+      }
     },
     {
       "playerId": "5357",
       "name": "Jordan Clarkson",
       "actualRank": 65,
       "preseasonRank": 186,
-      "gamesPlayed": null,
-      "teamId": "2021:michael"
+      "gamesPlayed": 68,
+      "teamId": "2021:michael",
+      "stats": {
+        "fgm": 457,
+        "fga": 1075,
+        "ftm": 129,
+        "fta": 144,
+        "threes": 208,
+        "pts": 1251,
+        "reb": 274,
+        "ast": 168,
+        "stl": 61,
+        "blk": 10,
+        "to": 115
+      }
     },
     {
       "playerId": "5142",
       "name": "Justin Holiday",
       "actualRank": 66,
       "preseasonRank": 190,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 72,
+      "teamId": null,
+      "stats": {
+        "fgm": 258,
+        "fga": 625,
+        "ftm": 67,
+        "fta": 85,
+        "threes": 173,
+        "pts": 756,
+        "reb": 256,
+        "ast": 119,
+        "stl": 74,
+        "blk": 41,
+        "to": 54
+      }
     },
     {
       "playerId": "6355",
       "name": "Anthony Edwards",
       "actualRank": 67,
       "preseasonRank": 138,
-      "gamesPlayed": null,
-      "teamId": "2021:mitchell"
+      "gamesPlayed": 72,
+      "teamId": "2021:mitchell",
+      "stats": {
+        "fgm": 505,
+        "fga": 1211,
+        "ftm": 211,
+        "fta": 272,
+        "threes": 171,
+        "pts": 1392,
+        "reb": 336,
+        "ast": 211,
+        "stl": 82,
+        "blk": 36,
+        "to": 160
+      }
     },
     {
       "playerId": "5826",
       "name": "Donovan Mitchell",
       "actualRank": 68,
       "preseasonRank": 23,
-      "gamesPlayed": null,
-      "teamId": "2021:jake"
+      "gamesPlayed": 53,
+      "teamId": "2021:jake",
+      "stats": {
+        "fgm": 478,
+        "fga": 1091,
+        "ftm": 267,
+        "fta": 316,
+        "threes": 178,
+        "pts": 1401,
+        "reb": 235,
+        "ast": 277,
+        "stl": 52,
+        "blk": 15,
+        "to": 147
+      }
     },
     {
       "playerId": "6030",
       "name": "Kevin Huerter",
       "actualRank": 69,
       "preseasonRank": 124,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 69,
+      "teamId": null,
+      "stats": {
+        "fgm": 316,
+        "fga": 731,
+        "ftm": 50,
+        "fta": 64,
+        "threes": 140,
+        "pts": 822,
+        "reb": 231,
+        "ast": 241,
+        "stl": 82,
+        "blk": 18,
+        "to": 79
+      }
     },
     {
       "playerId": "5767",
       "name": "De'Aaron Fox",
       "actualRank": 70,
       "preseasonRank": 38,
-      "gamesPlayed": null,
-      "teamId": "2021:matt"
+      "gamesPlayed": 58,
+      "teamId": "2021:matt",
+      "stats": {
+        "fgm": 529,
+        "fga": 1110,
+        "ftm": 300,
+        "fta": 417,
+        "threes": 103,
+        "pts": 1461,
+        "reb": 203,
+        "ast": 417,
+        "stl": 87,
+        "blk": 27,
+        "to": 174
+      }
     },
     {
       "playerId": "4487",
       "name": "Nicolas Batum",
       "actualRank": 71,
       "preseasonRank": 212,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 67,
+      "teamId": null,
+      "stats": {
+        "fgm": 191,
+        "fga": 412,
+        "ftm": 48,
+        "fta": 58,
+        "threes": 110,
+        "pts": 540,
+        "reb": 316,
+        "ast": 148,
+        "stl": 69,
+        "blk": 37,
+        "to": 53
+      }
     },
     {
       "playerId": "5638",
       "name": "Jamal Murray",
       "actualRank": 72,
       "preseasonRank": 35,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 48,
+      "teamId": null,
+      "stats": {
+        "fgm": 378,
+        "fga": 792,
+        "ftm": 133,
+        "fta": 153,
+        "threes": 129,
+        "pts": 1018,
+        "reb": 194,
+        "ast": 231,
+        "stl": 64,
+        "blk": 13,
+        "to": 108
+      }
     },
     {
       "playerId": "6463",
       "name": "Jae'Sean Tate",
       "actualRank": 73,
       "preseasonRank": 282,
-      "gamesPlayed": null,
-      "teamId": "2021:mitchell"
+      "gamesPlayed": 70,
+      "teamId": "2021:mitchell",
+      "stats": {
+        "fgm": 316,
+        "fga": 625,
+        "ftm": 102,
+        "fta": 147,
+        "threes": 60,
+        "pts": 794,
+        "reb": 374,
+        "ast": 178,
+        "stl": 85,
+        "blk": 36,
+        "to": 98
+      }
     },
     {
       "playerId": "4290",
       "name": "Thaddeus Young",
       "actualRank": 74,
       "preseasonRank": 191,
-      "gamesPlayed": null,
-      "teamId": "2021:matt"
+      "gamesPlayed": 68,
+      "teamId": "2021:matt",
+      "stats": {
+        "fgm": 370,
+        "fga": 662,
+        "ftm": 71,
+        "fta": 113,
+        "threes": 12,
+        "pts": 823,
+        "reb": 423,
+        "ast": 291,
+        "stl": 74,
+        "blk": 40,
+        "to": 137
+      }
     },
     {
       "playerId": "5835",
       "name": "Jarrett Allen",
       "actualRank": 75,
       "preseasonRank": 118,
-      "gamesPlayed": null,
-      "teamId": "2021:mitchell"
+      "gamesPlayed": 63,
+      "teamId": "2021:mitchell",
+      "stats": {
+        "fgm": 298,
+        "fga": 482,
+        "ftm": 204,
+        "fta": 290,
+        "threes": 6,
+        "pts": 806,
+        "reb": 631,
+        "ast": 106,
+        "stl": 32,
+        "blk": 90,
+        "to": 100
+      }
     },
     {
       "playerId": "5393",
       "name": "Joe Ingles",
       "actualRank": 76,
       "preseasonRank": 140,
-      "gamesPlayed": null,
-      "teamId": "2021:mitchell"
+      "gamesPlayed": 67,
+      "teamId": "2021:mitchell",
+      "stats": {
+        "fgm": 275,
+        "fga": 562,
+        "ftm": 76,
+        "fta": 90,
+        "threes": 183,
+        "pts": 809,
+        "reb": 244,
+        "ast": 318,
+        "stl": 45,
+        "blk": 12,
+        "to": 117
+      }
     },
     {
       "playerId": "5161",
       "name": "CJ McCollum",
       "actualRank": 77,
       "preseasonRank": 54,
-      "gamesPlayed": null,
-      "teamId": "2021:jordan"
+      "gamesPlayed": 47,
+      "teamId": "2021:jordan",
+      "stats": {
+        "fgm": 405,
+        "fga": 884,
+        "ftm": 108,
+        "fta": 133,
+        "threes": 169,
+        "pts": 1087,
+        "reb": 185,
+        "ast": 223,
+        "stl": 44,
+        "blk": 21,
+        "to": 65
+      }
     },
     {
       "playerId": "6073",
       "name": "Duncan Robinson",
       "actualRank": 78,
       "preseasonRank": 117,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 72,
+      "teamId": null,
+      "stats": {
+        "fgm": 315,
+        "fga": 717,
+        "ftm": 62,
+        "fta": 75,
+        "threes": 250,
+        "pts": 942,
+        "reb": 250,
+        "ast": 127,
+        "stl": 43,
+        "blk": 20,
+        "to": 81
+      }
     },
     {
       "playerId": "4246",
       "name": "Mike Conley",
       "actualRank": 79,
       "preseasonRank": 86,
-      "gamesPlayed": null,
-      "teamId": "2021:matt"
+      "gamesPlayed": 51,
+      "teamId": "2021:matt",
+      "stats": {
+        "fgm": 284,
+        "fga": 640,
+        "ftm": 121,
+        "fta": 142,
+        "threes": 138,
+        "pts": 827,
+        "reb": 177,
+        "ast": 305,
+        "stl": 70,
+        "blk": 9,
+        "to": 99
+      }
     },
     {
       "playerId": "5905",
       "name": "Royce O'Neale",
       "actualRank": 80,
       "preseasonRank": 207,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 71,
+      "teamId": null,
+      "stats": {
+        "fgm": 175,
+        "fga": 394,
+        "ftm": 39,
+        "fta": 46,
+        "threes": 107,
+        "pts": 496,
+        "reb": 485,
+        "ast": 181,
+        "stl": 57,
+        "blk": 32,
+        "to": 83
+      }
     },
     {
       "playerId": "4610",
       "name": "Ricky Rubio",
       "actualRank": 81,
       "preseasonRank": 89,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 68,
+      "teamId": null,
+      "stats": {
+        "fgm": 193,
+        "fga": 498,
+        "ftm": 130,
+        "fta": 150,
+        "threes": 66,
+        "pts": 582,
+        "reb": 223,
+        "ast": 433,
+        "stl": 98,
+        "blk": 4,
+        "to": 111
+      }
     },
     {
       "playerId": "5482",
       "name": "Bobby Portis Jr.",
       "actualRank": 82,
       "preseasonRank": 226,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 66,
+      "teamId": null,
+      "stats": {
+        "fgm": 313,
+        "fga": 598,
+        "ftm": 54,
+        "fta": 73,
+        "threes": 74,
+        "pts": 754,
+        "reb": 466,
+        "ast": 71,
+        "stl": 52,
+        "blk": 26,
+        "to": 56
+      }
     },
     {
       "playerId": "5013",
       "name": "Harrison Barnes",
       "actualRank": 83,
       "preseasonRank": 157,
-      "gamesPlayed": null,
-      "teamId": "2021:jake"
+      "gamesPlayed": 58,
+      "teamId": "2021:jake",
+      "stats": {
+        "fgm": 319,
+        "fga": 642,
+        "ftm": 195,
+        "fta": 235,
+        "threes": 100,
+        "pts": 933,
+        "reb": 385,
+        "ast": 201,
+        "stl": 43,
+        "blk": 11,
+        "to": 93
+      }
     },
     {
       "playerId": "4244",
       "name": "Kevin Durant",
       "actualRank": 84,
       "preseasonRank": 14,
-      "gamesPlayed": null,
-      "teamId": "2021:najim"
+      "gamesPlayed": 35,
+      "teamId": "2021:najim",
+      "stats": {
+        "fgm": 324,
+        "fga": 603,
+        "ftm": 210,
+        "fta": 238,
+        "threes": 85,
+        "pts": 943,
+        "reb": 247,
+        "ast": 195,
+        "stl": 25,
+        "blk": 45,
+        "to": 120
+      }
     },
     {
       "playerId": "6038",
       "name": "Robert Williams III",
       "actualRank": 85,
       "preseasonRank": 176,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 52,
+      "teamId": null,
+      "stats": {
+        "fgm": 186,
+        "fga": 258,
+        "ftm": 45,
+        "fta": 73,
+        "threes": 0,
+        "pts": 417,
+        "reb": 358,
+        "ast": 94,
+        "stl": 43,
+        "blk": 91,
+        "to": 52
+      }
     },
     {
       "playerId": "5492",
       "name": "Montrezl Harrell",
       "actualRank": 86,
       "preseasonRank": 112,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 69,
+      "teamId": null,
+      "stats": {
+        "fgm": 375,
+        "fga": 603,
+        "ftm": 181,
+        "fta": 256,
+        "threes": 0,
+        "pts": 931,
+        "reb": 428,
+        "ast": 73,
+        "stl": 46,
+        "blk": 49,
+        "to": 74
+      }
     },
     {
       "playerId": "5464",
       "name": "Kristaps Porziņģis",
       "actualRank": 87,
       "preseasonRank": 64,
-      "gamesPlayed": null,
-      "teamId": "2021:mitchell"
+      "gamesPlayed": 43,
+      "teamId": "2021:mitchell",
+      "stats": {
+        "fgm": 325,
+        "fga": 683,
+        "ftm": 118,
+        "fta": 138,
+        "threes": 97,
+        "pts": 865,
+        "reb": 381,
+        "ast": 68,
+        "stl": 20,
+        "blk": 58,
+        "to": 51
+      }
     },
     {
       "playerId": "5663",
       "name": "Ivica Zubac",
       "actualRank": 88,
       "preseasonRank": 152,
-      "gamesPlayed": null,
-      "teamId": "2021:dadder"
+      "gamesPlayed": 72,
+      "teamId": "2021:dadder",
+      "stats": {
+        "fgm": 257,
+        "fga": 394,
+        "ftm": 135,
+        "fta": 171,
+        "threes": 1,
+        "pts": 650,
+        "reb": 519,
+        "ast": 90,
+        "stl": 24,
+        "blk": 62,
+        "to": 81
+      }
     },
     {
       "playerId": "4913",
       "name": "Bojan Bogdanović",
       "actualRank": 89,
       "preseasonRank": 104,
-      "gamesPlayed": null,
-      "teamId": "2021:eddie"
+      "gamesPlayed": 72,
+      "teamId": "2021:eddie",
+      "stats": {
+        "fgm": 406,
+        "fga": 925,
+        "ftm": 233,
+        "fta": 265,
+        "threes": 180,
+        "pts": 1225,
+        "reb": 281,
+        "ast": 136,
+        "stl": 45,
+        "blk": 4,
+        "to": 128
+      }
     },
     {
       "playerId": "6028",
       "name": "Donte DiVincenzo",
       "actualRank": 90,
       "preseasonRank": 110,
-      "gamesPlayed": null,
-      "teamId": "2021:mitchell"
+      "gamesPlayed": 66,
+      "teamId": "2021:mitchell",
+      "stats": {
+        "fgm": 253,
+        "fga": 603,
+        "ftm": 51,
+        "fta": 71,
+        "threes": 131,
+        "pts": 688,
+        "reb": 380,
+        "ast": 203,
+        "stl": 72,
+        "blk": 15,
+        "to": 91
+      }
     },
     {
       "playerId": "6019",
       "name": "Collin Sexton",
       "actualRank": 91,
       "preseasonRank": 79,
-      "gamesPlayed": null,
-      "teamId": "2021:dadder"
+      "gamesPlayed": 60,
+      "teamId": "2021:dadder",
+      "stats": {
+        "fgm": 525,
+        "fga": 1105,
+        "ftm": 312,
+        "fta": 383,
+        "threes": 98,
+        "pts": 1460,
+        "reb": 187,
+        "ast": 262,
+        "stl": 62,
+        "blk": 10,
+        "to": 167
+      }
     },
     {
       "playerId": "5350",
       "name": "Jerami Grant",
       "actualRank": 92,
       "preseasonRank": 95,
-      "gamesPlayed": null,
-      "teamId": "2021:jacob-g"
+      "gamesPlayed": 54,
+      "teamId": "2021:jacob-g",
+      "stats": {
+        "fgm": 400,
+        "fga": 932,
+        "ftm": 290,
+        "fta": 343,
+        "threes": 115,
+        "pts": 1205,
+        "reb": 250,
+        "ast": 152,
+        "stl": 35,
+        "blk": 58,
+        "to": 109
+      }
     },
     {
       "playerId": "5194",
       "name": "Tim Hardaway Jr.",
       "actualRank": 93,
       "preseasonRank": 148,
-      "gamesPlayed": null,
-      "teamId": "2021:najim"
+      "gamesPlayed": 70,
+      "teamId": "2021:najim",
+      "stats": {
+        "fgm": 407,
+        "fga": 911,
+        "ftm": 142,
+        "fta": 174,
+        "threes": 207,
+        "pts": 1163,
+        "reb": 229,
+        "ast": 126,
+        "stl": 31,
+        "blk": 11,
+        "to": 64
+      }
     },
     {
       "playerId": "6208",
       "name": "Matisse Thybulle",
       "actualRank": 94,
       "preseasonRank": 194,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 65,
+      "teamId": null,
+      "stats": {
+        "fgm": 102,
+        "fga": 243,
+        "ftm": 8,
+        "fta": 18,
+        "threes": 43,
+        "pts": 255,
+        "reb": 124,
+        "ast": 63,
+        "stl": 105,
+        "blk": 71,
+        "to": 32
+      }
     },
     {
       "playerId": "6408",
       "name": "Isaiah Stewart",
       "actualRank": 95,
       "preseasonRank": 288,
-      "gamesPlayed": null,
-      "teamId": "2021:benjamin"
+      "gamesPlayed": 68,
+      "teamId": "2021:benjamin",
+      "stats": {
+        "fgm": 226,
+        "fga": 409,
+        "ftm": 64,
+        "fta": 92,
+        "threes": 21,
+        "pts": 537,
+        "reb": 453,
+        "ast": 59,
+        "stl": 39,
+        "blk": 86,
+        "to": 67
+      }
     },
     {
       "playerId": "6411",
       "name": "Saddiq Bey",
       "actualRank": 96,
       "preseasonRank": 252,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 70,
+      "teamId": null,
+      "stats": {
+        "fgm": 279,
+        "fga": 691,
+        "ftm": 124,
+        "fta": 147,
+        "threes": 175,
+        "pts": 857,
+        "reb": 318,
+        "ast": 95,
+        "stl": 52,
+        "blk": 14,
+        "to": 60
+      }
     },
     {
       "playerId": "3706",
       "name": "Carmelo Anthony",
       "actualRank": 97,
       "preseasonRank": 179,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 69,
+      "teamId": null,
+      "stats": {
+        "fgm": 327,
+        "fga": 777,
+        "ftm": 137,
+        "fta": 154,
+        "threes": 133,
+        "pts": 924,
+        "reb": 214,
+        "ast": 104,
+        "stl": 46,
+        "blk": 38,
+        "to": 61
+      }
     },
     {
       "playerId": "5651",
       "name": "Caris LeVert",
       "actualRank": 98,
       "preseasonRank": 101,
-      "gamesPlayed": null,
-      "teamId": "2021:matt"
+      "gamesPlayed": 47,
+      "teamId": "2021:matt",
+      "stats": {
+        "fgm": 359,
+        "fga": 814,
+        "ftm": 146,
+        "fta": 180,
+        "threes": 84,
+        "pts": 948,
+        "reb": 214,
+        "ast": 245,
+        "stl": 66,
+        "blk": 30,
+        "to": 102
+      }
     },
     {
       "playerId": "3704",
       "name": "LeBron James",
       "actualRank": 99,
       "preseasonRank": 12,
-      "gamesPlayed": null,
-      "teamId": "2021:michael"
+      "gamesPlayed": 45,
+      "teamId": "2021:michael",
+      "stats": {
+        "fgm": 422,
+        "fga": 823,
+        "ftm": 178,
+        "fta": 255,
+        "threes": 104,
+        "pts": 1126,
+        "reb": 346,
+        "ast": 350,
+        "stl": 48,
+        "blk": 25,
+        "to": 168
+      }
     },
     {
       "playerId": "5693",
       "name": "Dorian Finney-Smith",
       "actualRank": 100,
       "preseasonRank": 209,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 60,
+      "teamId": null,
+      "stats": {
+        "fgm": 220,
+        "fga": 466,
+        "ftm": 31,
+        "fta": 41,
+        "threes": 119,
+        "pts": 590,
+        "reb": 326,
+        "ast": 102,
+        "stl": 52,
+        "blk": 25,
+        "to": 48
+      }
     },
     {
       "playerId": "5858",
       "name": "Dillon Brooks",
       "actualRank": 101,
       "preseasonRank": 182,
-      "gamesPlayed": null,
-      "teamId": "2021:michael"
+      "gamesPlayed": 67,
+      "teamId": "2021:michael",
+      "stats": {
+        "fgm": 432,
+        "fga": 1031,
+        "ftm": 159,
+        "fta": 195,
+        "threes": 128,
+        "pts": 1151,
+        "reb": 196,
+        "ast": 157,
+        "stl": 78,
+        "blk": 26,
+        "to": 119
+      }
     },
     {
       "playerId": "5195",
       "name": "Reggie Bullock Jr.",
       "actualRank": 102,
       "preseasonRank": 283,
-      "gamesPlayed": null,
-      "teamId": "2021:najim"
+      "gamesPlayed": 65,
+      "teamId": "2021:najim",
+      "stats": {
+        "fgm": 248,
+        "fga": 561,
+        "ftm": 50,
+        "fta": 55,
+        "threes": 163,
+        "pts": 709,
+        "reb": 223,
+        "ast": 99,
+        "stl": 52,
+        "blk": 11,
+        "to": 45
+      }
     },
     {
       "playerId": "4152",
       "name": "Kyle Lowry",
       "actualRank": 103,
       "preseasonRank": 41,
-      "gamesPlayed": null,
-      "teamId": "2021:jacob-g"
+      "gamesPlayed": 46,
+      "teamId": "2021:jacob-g",
+      "stats": {
+        "fgm": 260,
+        "fga": 596,
+        "ftm": 140,
+        "fta": 160,
+        "threes": 131,
+        "pts": 791,
+        "reb": 247,
+        "ast": 338,
+        "stl": 45,
+        "blk": 14,
+        "to": 126
+      }
     },
     {
       "playerId": "6114",
       "name": "Kendrick Nunn",
       "actualRank": 104,
       "preseasonRank": 195,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 56,
+      "teamId": null,
+      "stats": {
+        "fgm": 319,
+        "fga": 658,
+        "ftm": 56,
+        "fta": 60,
+        "threes": 122,
+        "pts": 816,
+        "reb": 179,
+        "ast": 148,
+        "stl": 52,
+        "blk": 14,
+        "to": 80
+      }
     },
     {
       "playerId": "5600",
       "name": "Ben Simmons",
       "actualRank": 105,
       "preseasonRank": 25,
-      "gamesPlayed": null,
-      "teamId": "2021:dadder"
+      "gamesPlayed": 58,
+      "teamId": "2021:dadder",
+      "stats": {
+        "fgm": 325,
+        "fga": 583,
+        "ftm": 176,
+        "fta": 287,
+        "threes": 3,
+        "pts": 829,
+        "reb": 417,
+        "ast": 401,
+        "stl": 93,
+        "blk": 35,
+        "to": 173
+      }
     },
     {
       "playerId": "6395",
       "name": "LaMelo Ball",
       "actualRank": 106,
       "preseasonRank": 108,
-      "gamesPlayed": null,
-      "teamId": "2021:jake"
+      "gamesPlayed": 51,
+      "teamId": "2021:jake",
+      "stats": {
+        "fgm": 293,
+        "fga": 672,
+        "ftm": 125,
+        "fta": 165,
+        "threes": 92,
+        "pts": 803,
+        "reb": 302,
+        "ast": 313,
+        "stl": 81,
+        "blk": 18,
+        "to": 145
+      }
     },
     {
       "playerId": "6209",
       "name": "Brandon Clarke",
       "actualRank": 107,
       "preseasonRank": 90,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 59,
+      "teamId": null,
+      "stats": {
+        "fgm": 256,
+        "fga": 495,
+        "ftm": 78,
+        "fta": 113,
+        "threes": 20,
+        "pts": 610,
+        "reb": 328,
+        "ast": 95,
+        "stl": 60,
+        "blk": 51,
+        "to": 33
+      }
     },
     {
       "playerId": "5836",
       "name": "OG Anunoby",
       "actualRank": 108,
       "preseasonRank": 87,
-      "gamesPlayed": null,
-      "teamId": "2021:jacob-g"
+      "gamesPlayed": 43,
+      "teamId": "2021:jacob-g",
+      "stats": {
+        "fgm": 249,
+        "fga": 519,
+        "ftm": 80,
+        "fta": 102,
+        "threes": 104,
+        "pts": 682,
+        "reb": 237,
+        "ast": 94,
+        "stl": 66,
+        "blk": 32,
+        "to": 75
+      }
     },
     {
       "playerId": "5338",
       "name": "Bogdan Bogdanović",
       "actualRank": 109,
       "preseasonRank": 100,
-      "gamesPlayed": null,
-      "teamId": "2021:benjamin"
+      "gamesPlayed": 44,
+      "teamId": "2021:benjamin",
+      "stats": {
+        "fgm": 267,
+        "fga": 565,
+        "ftm": 40,
+        "fta": 44,
+        "threes": 146,
+        "pts": 720,
+        "reb": 160,
+        "ast": 147,
+        "stl": 49,
+        "blk": 13,
+        "to": 54
+      }
     },
     {
       "playerId": "6169",
       "name": "Coby White",
       "actualRank": 110,
       "preseasonRank": 69,
-      "gamesPlayed": null,
-      "teamId": "2021:najim"
+      "gamesPlayed": 69,
+      "teamId": "2021:najim",
+      "stats": {
+        "fgm": 375,
+        "fga": 902,
+        "ftm": 128,
+        "fta": 142,
+        "threes": 163,
+        "pts": 1041,
+        "reb": 284,
+        "ast": 328,
+        "stl": 38,
+        "blk": 15,
+        "to": 156
+      }
     },
     {
       "playerId": "6165",
       "name": "RJ Barrett",
       "actualRank": 111,
       "preseasonRank": 131,
-      "gamesPlayed": null,
-      "teamId": "2021:eddie"
+      "gamesPlayed": 72,
+      "teamId": "2021:eddie",
+      "stats": {
+        "fgm": 467,
+        "fga": 1060,
+        "ftm": 206,
+        "fta": 276,
+        "threes": 124,
+        "pts": 1264,
+        "reb": 414,
+        "ast": 217,
+        "stl": 53,
+        "blk": 20,
+        "to": 139
+      }
     },
     {
       "playerId": "4724",
       "name": "Gordon Hayward",
       "actualRank": 112,
       "preseasonRank": 51,
-      "gamesPlayed": null,
-      "teamId": "2021:jake"
+      "gamesPlayed": 44,
+      "teamId": "2021:jake",
+      "stats": {
+        "fgm": 311,
+        "fga": 658,
+        "ftm": 156,
+        "fta": 185,
+        "threes": 85,
+        "pts": 863,
+        "reb": 258,
+        "ast": 181,
+        "stl": 52,
+        "blk": 14,
+        "to": 91
+      }
     },
     {
       "playerId": "5159",
       "name": "K. Caldwell-Pope",
       "actualRank": 113,
       "preseasonRank": 237,
-      "gamesPlayed": null,
-      "teamId": "2021:dadder"
+      "gamesPlayed": 67,
+      "teamId": "2021:dadder",
+      "stats": {
+        "fgm": 218,
+        "fga": 506,
+        "ftm": 97,
+        "fta": 112,
+        "threes": 120,
+        "pts": 653,
+        "reb": 179,
+        "ast": 127,
+        "stl": 62,
+        "blk": 26,
+        "to": 66
+      }
     },
     {
       "playerId": "5187",
       "name": "Dennis Schröder",
       "actualRank": 114,
       "preseasonRank": 111,
-      "gamesPlayed": null,
-      "teamId": "2021:jordan"
+      "gamesPlayed": 61,
+      "teamId": "2021:jordan",
+      "stats": {
+        "fgm": 332,
+        "fga": 760,
+        "ftm": 206,
+        "fta": 243,
+        "threes": 71,
+        "pts": 941,
+        "reb": 211,
+        "ast": 351,
+        "stl": 70,
+        "blk": 13,
+        "to": 163
+      }
     },
     {
       "playerId": "5192",
       "name": "Mason Plumlee",
       "actualRank": 115,
       "preseasonRank": 227,
-      "gamesPlayed": null,
-      "teamId": "2021:eddie"
+      "gamesPlayed": 56,
+      "teamId": "2021:eddie",
+      "stats": {
+        "fgm": 234,
+        "fga": 381,
+        "ftm": 113,
+        "fta": 169,
+        "threes": 0,
+        "pts": 581,
+        "reb": 519,
+        "ast": 202,
+        "stl": 43,
+        "blk": 50,
+        "to": 105
+      }
     },
     {
       "playerId": "6253",
       "name": "Naz Reid",
       "actualRank": 116,
       "preseasonRank": 289,
-      "gamesPlayed": null,
-      "teamId": "2021:benjamin"
+      "gamesPlayed": 70,
+      "teamId": "2021:benjamin",
+      "stats": {
+        "fgm": 304,
+        "fga": 581,
+        "ftm": 115,
+        "fta": 166,
+        "threes": 61,
+        "pts": 784,
+        "reb": 322,
+        "ast": 72,
+        "stl": 34,
+        "blk": 76,
+        "to": 69
+      }
     },
     {
       "playerId": "5880",
       "name": "Daniel Theis",
       "actualRank": 117,
       "preseasonRank": 115,
-      "gamesPlayed": null,
-      "teamId": "2021:jordan"
+      "gamesPlayed": 65,
+      "teamId": "2021:jordan",
+      "stats": {
+        "fgm": 252,
+        "fga": 466,
+        "ftm": 74,
+        "fta": 110,
+        "threes": 49,
+        "pts": 627,
+        "reb": 356,
+        "ast": 108,
+        "stl": 41,
+        "blk": 57,
+        "to": 66
+      }
     },
     {
       "playerId": "6053",
       "name": "Bruce Brown",
       "actualRank": 118,
       "preseasonRank": 263,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 65,
+      "teamId": null,
+      "stats": {
+        "fgm": 235,
+        "fga": 423,
+        "ftm": 86,
+        "fta": 117,
+        "threes": 17,
+        "pts": 573,
+        "reb": 349,
+        "ast": 104,
+        "stl": 58,
+        "blk": 28,
+        "to": 54
+      }
     },
     {
       "playerId": "5500",
       "name": "Josh Richardson",
       "actualRank": 119,
       "preseasonRank": 122,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 59,
+      "teamId": null,
+      "stats": {
+        "fgm": 264,
+        "fga": 618,
+        "ftm": 99,
+        "fta": 108,
+        "threes": 88,
+        "pts": 715,
+        "reb": 195,
+        "ast": 153,
+        "stl": 61,
+        "blk": 24,
+        "to": 79
+      }
     },
     {
       "playerId": "4890",
       "name": "Kemba Walker",
       "actualRank": 120,
       "preseasonRank": 91,
-      "gamesPlayed": null,
-      "teamId": "2021:jake"
+      "gamesPlayed": 43,
+      "teamId": "2021:jake",
+      "stats": {
+        "fgm": 284,
+        "fga": 676,
+        "ftm": 134,
+        "fta": 149,
+        "threes": 127,
+        "pts": 829,
+        "reb": 170,
+        "ast": 212,
+        "stl": 48,
+        "blk": 12,
+        "to": 88
+      }
     },
     {
       "playerId": "5068",
       "name": "Jae Crowder",
       "actualRank": 121,
       "preseasonRank": 150,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 60,
+      "teamId": null,
+      "stats": {
+        "fgm": 199,
+        "fga": 492,
+        "ftm": 57,
+        "fta": 75,
+        "threes": 148,
+        "pts": 603,
+        "reb": 282,
+        "ast": 127,
+        "stl": 48,
+        "blk": 27,
+        "to": 55
+      }
     },
     {
       "playerId": "6045",
       "name": "Devonte' Graham",
       "actualRank": 122,
       "preseasonRank": 99,
-      "gamesPlayed": null,
-      "teamId": "2021:benjamin"
+      "gamesPlayed": 55,
+      "teamId": "2021:benjamin",
+      "stats": {
+        "fgm": 252,
+        "fga": 669,
+        "ftm": 133,
+        "fta": 158,
+        "threes": 179,
+        "pts": 816,
+        "reb": 148,
+        "ast": 295,
+        "stl": 48,
+        "blk": 6,
+        "to": 84
+      }
     },
     {
       "playerId": "6396",
       "name": "Patrick Williams",
       "actualRank": 123,
       "preseasonRank": 293,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 71,
+      "teamId": null,
+      "stats": {
+        "fgm": 255,
+        "fga": 528,
+        "ftm": 91,
+        "fta": 125,
+        "threes": 54,
+        "pts": 655,
+        "reb": 327,
+        "ast": 99,
+        "stl": 64,
+        "blk": 46,
+        "to": 98
+      }
     },
     {
       "playerId": "6044",
       "name": "Jalen Brunson",
       "actualRank": 124,
       "preseasonRank": 287,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 68,
+      "teamId": null,
+      "stats": {
+        "fgm": 328,
+        "fga": 627,
+        "ftm": 120,
+        "fta": 151,
+        "threes": 81,
+        "pts": 857,
+        "reb": 231,
+        "ast": 239,
+        "stl": 35,
+        "blk": 1,
+        "to": 80
+      }
     },
     {
       "playerId": "5217",
       "name": "Raul Neto",
       "actualRank": 125,
       "preseasonRank": 290,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 64,
+      "teamId": null,
+      "stats": {
+        "fgm": 209,
+        "fga": 447,
+        "ftm": 75,
+        "fta": 85,
+        "threes": 64,
+        "pts": 557,
+        "reb": 156,
+        "ast": 146,
+        "stl": 73,
+        "blk": 6,
+        "to": 53
+      }
     },
     {
       "playerId": "4247",
       "name": "Jeff Green",
       "actualRank": 126,
       "preseasonRank": 259,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 68,
+      "teamId": null,
+      "stats": {
+        "fgm": 261,
+        "fga": 530,
+        "ftm": 125,
+        "fta": 161,
+        "threes": 103,
+        "pts": 750,
+        "reb": 263,
+        "ast": 108,
+        "stl": 36,
+        "blk": 27,
+        "to": 54
+      }
     },
     {
       "playerId": "5840",
       "name": "Kyle Kuzma",
       "actualRank": 127,
       "preseasonRank": 169,
-      "gamesPlayed": null,
-      "teamId": "2021:jake"
+      "gamesPlayed": 68,
+      "teamId": "2021:jake",
+      "stats": {
+        "fgm": 335,
+        "fga": 757,
+        "ftm": 67,
+        "fta": 97,
+        "threes": 137,
+        "pts": 874,
+        "reb": 417,
+        "ast": 127,
+        "stl": 35,
+        "blk": 41,
+        "to": 113
+      }
     },
     {
       "playerId": "5501",
       "name": "Pat Connaughton",
       "actualRank": 128,
       "preseasonRank": 284,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 69,
+      "teamId": null,
+      "stats": {
+        "fgm": 168,
+        "fga": 387,
+        "ftm": 31,
+        "fta": 40,
+        "threes": 101,
+        "pts": 468,
+        "reb": 332,
+        "ast": 81,
+        "stl": 49,
+        "blk": 23,
+        "to": 33
+      }
     },
     {
       "playerId": "6167",
       "name": "Darius Garland",
       "actualRank": 129,
       "preseasonRank": 137,
-      "gamesPlayed": null,
-      "teamId": "2021:najim"
+      "gamesPlayed": 54,
+      "teamId": "2021:najim",
+      "stats": {
+        "fgm": 362,
+        "fga": 802,
+        "ftm": 112,
+        "fta": 132,
+        "threes": 105,
+        "pts": 941,
+        "reb": 129,
+        "ast": 329,
+        "stl": 66,
+        "blk": 6,
+        "to": 164
+      }
     },
     {
       "playerId": "4718",
       "name": "Derrick Favors",
       "actualRank": 130,
       "preseasonRank": 161,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 68,
+      "teamId": null,
+      "stats": {
+        "fgm": 155,
+        "fga": 243,
+        "ftm": 59,
+        "fta": 80,
+        "threes": 0,
+        "pts": 369,
+        "reb": 376,
+        "ast": 44,
+        "stl": 32,
+        "blk": 68,
+        "to": 36
+      }
     },
     {
       "playerId": "5317",
       "name": "Marcus Smart",
       "actualRank": 131,
       "preseasonRank": 75,
-      "gamesPlayed": null,
-      "teamId": "2021:najim"
+      "gamesPlayed": 48,
+      "teamId": "2021:najim",
+      "stats": {
+        "fgm": 203,
+        "fga": 510,
+        "ftm": 128,
+        "fta": 162,
+        "threes": 93,
+        "pts": 627,
+        "reb": 167,
+        "ast": 273,
+        "stl": 72,
+        "blk": 23,
+        "to": 96
+      }
     },
     {
       "playerId": "4136",
       "name": "Rudy Gay",
       "actualRank": 132,
       "preseasonRank": 229,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 63,
+      "teamId": null,
+      "stats": {
+        "fgm": 264,
+        "fga": 628,
+        "ftm": 82,
+        "fta": 102,
+        "threes": 106,
+        "pts": 716,
+        "reb": 303,
+        "ast": 88,
+        "stl": 45,
+        "blk": 40,
+        "to": 65
+      }
     },
     {
       "playerId": "6468",
       "name": "Facundo Campazzo",
       "actualRank": 133,
       "preseasonRank": 292,
-      "gamesPlayed": null,
-      "teamId": "2021:najim"
+      "gamesPlayed": 65,
+      "teamId": "2021:najim",
+      "stats": {
+        "fgm": 120,
+        "fga": 315,
+        "ftm": 80,
+        "fta": 91,
+        "threes": 76,
+        "pts": 396,
+        "reb": 134,
+        "ast": 232,
+        "stl": 79,
+        "blk": 14,
+        "to": 73
+      }
     },
     {
       "playerId": "5245",
       "name": "Seth Curry",
       "actualRank": 134,
       "preseasonRank": 119,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 57,
+      "teamId": null,
+      "stats": {
+        "fgm": 258,
+        "fga": 552,
+        "ftm": 69,
+        "fta": 77,
+        "threes": 126,
+        "pts": 711,
+        "reb": 136,
+        "ast": 155,
+        "stl": 44,
+        "blk": 8,
+        "to": 65
+      }
     },
     {
       "playerId": "6217",
       "name": "Keldon Johnson",
       "actualRank": 135,
       "preseasonRank": 189,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 69,
+      "teamId": null,
+      "stats": {
+        "fgm": 338,
+        "fga": 705,
+        "ftm": 145,
+        "fta": 196,
+        "threes": 60,
+        "pts": 881,
+        "reb": 412,
+        "ast": 121,
+        "stl": 40,
+        "blk": 24,
+        "to": 78
+      }
     },
     {
       "playerId": "5322",
       "name": "Doug McDermott",
       "actualRank": 136,
       "preseasonRank": 286,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 66,
+      "teamId": null,
+      "stats": {
+        "fgm": 354,
+        "fga": 665,
+        "ftm": 80,
+        "fta": 98,
+        "threes": 111,
+        "pts": 899,
+        "reb": 221,
+        "ast": 85,
+        "stl": 20,
+        "blk": 6,
+        "to": 53
+      }
     },
     {
       "playerId": "5475",
       "name": "Kelly Oubre Jr.",
       "actualRank": 137,
       "preseasonRank": 66,
-      "gamesPlayed": null,
-      "teamId": "2021:benjamin"
+      "gamesPlayed": 55,
+      "teamId": "2021:benjamin",
+      "stats": {
+        "fgm": 318,
+        "fga": 724,
+        "ftm": 123,
+        "fta": 177,
+        "threes": 90,
+        "pts": 849,
+        "reb": 329,
+        "ast": 73,
+        "stl": 57,
+        "blk": 42,
+        "to": 70
+      }
     },
     {
       "playerId": "6048",
       "name": "Gary Trent Jr.",
       "actualRank": 138,
       "preseasonRank": 208,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 58,
+      "teamId": null,
+      "stats": {
+        "fgm": 320,
+        "fga": 785,
+        "ftm": 83,
+        "fta": 106,
+        "threes": 165,
+        "pts": 888,
+        "reb": 152,
+        "ast": 80,
+        "stl": 56,
+        "blk": 10,
+        "to": 43
+      }
     },
     {
       "playerId": "4895",
       "name": "Marcus Morris Sr.",
       "actualRank": 139,
       "preseasonRank": 178,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 57,
+      "teamId": null,
+      "stats": {
+        "fgm": 276,
+        "fga": 584,
+        "ftm": 73,
+        "fta": 89,
+        "threes": 140,
+        "pts": 765,
+        "reb": 234,
+        "ast": 58,
+        "stl": 34,
+        "blk": 15,
+        "to": 57
+      }
     },
     {
       "playerId": "5007",
       "name": "Anthony Davis",
       "actualRank": 140,
       "preseasonRank": 3,
-      "gamesPlayed": null,
-      "teamId": "2021:jacob-g"
+      "gamesPlayed": 36,
+      "teamId": "2021:jacob-g",
+      "stats": {
+        "fgm": 301,
+        "fga": 613,
+        "ftm": 158,
+        "fta": 214,
+        "threes": 26,
+        "pts": 786,
+        "reb": 286,
+        "ast": 110,
+        "stl": 45,
+        "blk": 59,
+        "to": 74
+      }
     },
     {
       "playerId": "5390",
       "name": "Khem Birch",
       "actualRank": 141,
       "preseasonRank": 291,
-      "gamesPlayed": null,
-      "teamId": "2021:matt"
+      "gamesPlayed": 67,
+      "teamId": "2021:matt",
+      "stats": {
+        "fgm": 189,
+        "fga": 380,
+        "ftm": 91,
+        "fta": 129,
+        "threes": 13,
+        "pts": 482,
+        "reb": 387,
+        "ast": 89,
+        "stl": 48,
+        "blk": 50,
+        "to": 44
+      }
     },
     {
       "playerId": "6422",
       "name": "Desmond Bane",
       "actualRank": 142,
       "preseasonRank": 296,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 68,
+      "teamId": null,
+      "stats": {
+        "fgm": 234,
+        "fga": 499,
+        "ftm": 40,
+        "fta": 49,
+        "threes": 117,
+        "pts": 625,
+        "reb": 210,
+        "ast": 118,
+        "stl": 41,
+        "blk": 16,
+        "to": 59
+      }
     },
     {
       "playerId": "4906",
       "name": "Reggie Jackson",
       "actualRank": 143,
       "preseasonRank": 241,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 67,
+      "teamId": null,
+      "stats": {
+        "fgm": 263,
+        "fga": 585,
+        "ftm": 67,
+        "fta": 82,
+        "threes": 122,
+        "pts": 715,
+        "reb": 192,
+        "ast": 205,
+        "stl": 41,
+        "blk": 7,
+        "to": 74
+      }
     },
     {
       "playerId": "4387",
       "name": "Derrick Rose",
       "actualRank": 144,
       "preseasonRank": 105,
-      "gamesPlayed": null,
-      "teamId": "2021:jordan"
+      "gamesPlayed": 50,
+      "teamId": "2021:jordan",
+      "stats": {
+        "fgm": 287,
+        "fga": 611,
+        "ftm": 110,
+        "fta": 127,
+        "threes": 50,
+        "pts": 734,
+        "reb": 130,
+        "ast": 209,
+        "stl": 49,
+        "blk": 19,
+        "to": 78
+      }
     },
     {
       "playerId": "4468",
       "name": "Danilo Gallinari",
       "actualRank": 145,
       "preseasonRank": 81,
-      "gamesPlayed": null,
-      "teamId": "2021:jacob-g"
+      "gamesPlayed": 51,
+      "teamId": "2021:jacob-g",
+      "stats": {
+        "fgm": 206,
+        "fga": 475,
+        "ftm": 161,
+        "fta": 174,
+        "threes": 103,
+        "pts": 676,
+        "reb": 211,
+        "ast": 76,
+        "stl": 30,
+        "blk": 10,
+        "to": 43
+      }
     },
     {
       "playerId": "5484",
       "name": "Tyus Jones",
       "actualRank": 146,
       "preseasonRank": 235,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 70,
+      "teamId": null,
+      "stats": {
+        "fgm": 178,
+        "fga": 413,
+        "ftm": 41,
+        "fta": 45,
+        "threes": 45,
+        "pts": 442,
+        "reb": 140,
+        "ast": 259,
+        "stl": 64,
+        "blk": 6,
+        "to": 48
+      }
     },
     {
       "playerId": "6057",
       "name": "De'Anthony Melton",
       "actualRank": 147,
       "preseasonRank": 163,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 52,
+      "teamId": null,
+      "stats": {
+        "fgm": 172,
+        "fga": 393,
+        "ftm": 41,
+        "fta": 51,
+        "threes": 87,
+        "pts": 472,
+        "reb": 161,
+        "ast": 132,
+        "stl": 60,
+        "blk": 31,
+        "to": 66
+      }
     },
     {
       "playerId": "5583",
       "name": "Christian Wood",
       "actualRank": 148,
       "preseasonRank": 45,
-      "gamesPlayed": null,
-      "teamId": "2021:michael"
+      "gamesPlayed": 41,
+      "teamId": "2021:michael",
+      "stats": {
+        "fgm": 329,
+        "fga": 640,
+        "ftm": 125,
+        "fta": 198,
+        "threes": 77,
+        "pts": 860,
+        "reb": 395,
+        "ast": 71,
+        "stl": 34,
+        "blk": 48,
+        "to": 80
+      }
     },
     {
       "playerId": "4660",
       "name": "Patty Mills",
       "actualRank": 149,
       "preseasonRank": 285,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 68,
+      "teamId": null,
+      "stats": {
+        "fgm": 252,
+        "fga": 611,
+        "ftm": 71,
+        "fta": 78,
+        "threes": 161,
+        "pts": 736,
+        "reb": 116,
+        "ast": 162,
+        "stl": 42,
+        "blk": 3,
+        "to": 66
+      }
     },
     {
       "playerId": "5102",
       "name": "Kent Bazemore",
       "actualRank": 150,
       "preseasonRank": 245,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 67,
+      "teamId": null,
+      "stats": {
+        "fgm": 176,
+        "fga": 392,
+        "ftm": 54,
+        "fta": 78,
+        "threes": 75,
+        "pts": 481,
+        "reb": 229,
+        "ast": 108,
+        "stl": 69,
+        "blk": 33,
+        "to": 82
+      }
     },
     {
       "playerId": "6052",
       "name": "Jarred Vanderbilt",
       "actualRank": 151,
       "preseasonRank": 304,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 64,
+      "teamId": null,
+      "stats": {
+        "fgm": 143,
+        "fga": 236,
+        "ftm": 57,
+        "fta": 102,
+        "threes": 1,
+        "pts": 344,
+        "reb": 368,
+        "ast": 76,
+        "stl": 64,
+        "blk": 46,
+        "to": 53
+      }
     },
     {
       "playerId": "4926",
       "name": "Dāvis Bertāns",
       "actualRank": 152,
       "preseasonRank": 96,
-      "gamesPlayed": null,
-      "teamId": "2021:jacob-g"
+      "gamesPlayed": 57,
+      "teamId": "2021:jacob-g",
+      "stats": {
+        "fgm": 193,
+        "fga": 478,
+        "ftm": 100,
+        "fta": 115,
+        "threes": 169,
+        "pts": 655,
+        "reb": 168,
+        "ast": 49,
+        "stl": 33,
+        "blk": 13,
+        "to": 33
+      }
     },
     {
       "playerId": "5054",
       "name": "Evan Fournier",
       "actualRank": 153,
       "preseasonRank": 102,
-      "gamesPlayed": null,
-      "teamId": "2021:jake"
+      "gamesPlayed": 42,
+      "teamId": "2021:jake",
+      "stats": {
+        "fgm": 247,
+        "fga": 541,
+        "ftm": 108,
+        "fta": 137,
+        "threes": 117,
+        "pts": 719,
+        "reb": 128,
+        "ast": 144,
+        "stl": 47,
+        "blk": 19,
+        "to": 73
+      }
     },
     {
       "playerId": "4911",
       "name": "Cory Joseph",
       "actualRank": 154,
       "preseasonRank": 268,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 63,
+      "teamId": null,
+      "stats": {
+        "fgm": 200,
+        "fga": 426,
+        "ftm": 72,
+        "fta": 88,
+        "threes": 45,
+        "pts": 517,
+        "reb": 159,
+        "ast": 213,
+        "stl": 61,
+        "blk": 18,
+        "to": 79
+      }
     },
     {
       "playerId": "4175",
       "name": "Paul Millsap",
       "actualRank": 155,
       "preseasonRank": 136,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 56,
+      "teamId": null,
+      "stats": {
+        "fgm": 191,
+        "fga": 401,
+        "ftm": 71,
+        "fta": 98,
+        "threes": 49,
+        "pts": 502,
+        "reb": 262,
+        "ast": 98,
+        "stl": 51,
+        "blk": 36,
+        "to": 51
+      }
     },
     {
       "playerId": "4749",
       "name": "Eric Bledsoe",
       "actualRank": 156,
       "preseasonRank": 71,
-      "gamesPlayed": null,
-      "teamId": "2021:benjamin"
+      "gamesPlayed": 71,
+      "teamId": "2021:benjamin",
+      "stats": {
+        "fgm": 307,
+        "fga": 730,
+        "ftm": 134,
+        "fta": 195,
+        "threes": 121,
+        "pts": 869,
+        "reb": 244,
+        "ast": 268,
+        "stl": 55,
+        "blk": 24,
+        "to": 114
+      }
     },
     {
       "playerId": "5769",
       "name": "Lauri Markkanen",
       "actualRank": 157,
       "preseasonRank": 73,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 51,
+      "teamId": null,
+      "stats": {
+        "fgm": 250,
+        "fga": 521,
+        "ftm": 76,
+        "fta": 92,
+        "threes": 119,
+        "pts": 695,
+        "reb": 268,
+        "ast": 45,
+        "stl": 26,
+        "blk": 15,
+        "to": 52
+      }
     },
     {
       "playerId": "5074",
       "name": "Will Barton",
       "actualRank": 158,
       "preseasonRank": 125,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 56,
+      "teamId": null,
+      "stats": {
+        "fgm": 259,
+        "fga": 608,
+        "ftm": 95,
+        "fta": 121,
+        "threes": 98,
+        "pts": 711,
+        "reb": 226,
+        "ast": 181,
+        "stl": 50,
+        "blk": 23,
+        "to": 96
+      }
     },
     {
       "playerId": "6076",
       "name": "Kenrich Williams",
       "actualRank": 159,
       "preseasonRank": 297,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 66,
+      "teamId": null,
+      "stats": {
+        "fgm": 219,
+        "fga": 411,
+        "ftm": 36,
+        "fta": 63,
+        "threes": 52,
+        "pts": 526,
+        "reb": 273,
+        "ast": 152,
+        "stl": 55,
+        "blk": 17,
+        "to": 76
+      }
     },
     {
       "playerId": "6175",
       "name": "Tyler Herro",
       "actualRank": 160,
       "preseasonRank": 97,
-      "gamesPlayed": null,
-      "teamId": "2021:benjamin"
+      "gamesPlayed": 54,
+      "teamId": "2021:benjamin",
+      "stats": {
+        "fgm": 307,
+        "fga": 699,
+        "ftm": 94,
+        "fta": 117,
+        "threes": 107,
+        "pts": 815,
+        "reb": 268,
+        "ast": 184,
+        "stl": 35,
+        "blk": 17,
+        "to": 101
+      }
     },
     {
       "playerId": "6164",
       "name": "Ja Morant",
       "actualRank": 161,
       "preseasonRank": 27,
-      "gamesPlayed": null,
-      "teamId": "2021:mitchell"
+      "gamesPlayed": 63,
+      "teamId": "2021:mitchell",
+      "stats": {
+        "fgm": 430,
+        "fga": 957,
+        "ftm": 271,
+        "fta": 372,
+        "threes": 73,
+        "pts": 1204,
+        "reb": 252,
+        "ast": 465,
+        "stl": 57,
+        "blk": 13,
+        "to": 203
+      }
     },
     {
       "playerId": "6018",
       "name": "Wendell Carter Jr.",
       "actualRank": 162,
       "preseasonRank": 77,
-      "gamesPlayed": null,
-      "teamId": "2021:benjamin"
+      "gamesPlayed": 54,
+      "teamId": "2021:benjamin",
+      "stats": {
+        "fgm": 230,
+        "fga": 457,
+        "ftm": 131,
+        "fta": 179,
+        "threes": 15,
+        "pts": 606,
+        "reb": 443,
+        "ast": 104,
+        "stl": 35,
+        "blk": 42,
+        "to": 78
+      }
     },
     {
       "playerId": "5474",
       "name": "Cameron Payne",
       "actualRank": 163,
       "preseasonRank": 300,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 60,
+      "teamId": null,
+      "stats": {
+        "fgm": 191,
+        "fga": 395,
+        "ftm": 50,
+        "fta": 56,
+        "threes": 73,
+        "pts": 505,
+        "reb": 144,
+        "ast": 217,
+        "stl": 36,
+        "blk": 16,
+        "to": 60
+      }
     },
     {
       "playerId": "6022",
       "name": "Shai Gilgeous-Alexander",
       "actualRank": 164,
       "preseasonRank": 26,
-      "gamesPlayed": null,
-      "teamId": "2021:jordan"
+      "gamesPlayed": 35,
+      "teamId": "2021:jordan",
+      "stats": {
+        "fgm": 287,
+        "fga": 565,
+        "ftm": 185,
+        "fta": 229,
+        "threes": 71,
+        "pts": 830,
+        "reb": 166,
+        "ast": 207,
+        "stl": 27,
+        "blk": 23,
+        "to": 106
+      }
     },
     {
       "playerId": "6173",
       "name": "Cameron Johnson",
       "actualRank": 165,
       "preseasonRank": 166,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 60,
+      "teamId": null,
+      "stats": {
+        "fgm": 203,
+        "fga": 483,
+        "ftm": 50,
+        "fta": 59,
+        "threes": 117,
+        "pts": 573,
+        "reb": 199,
+        "ast": 86,
+        "stl": 37,
+        "blk": 16,
+        "to": 40
+      }
     },
     {
       "playerId": "6032",
       "name": "Grayson Allen",
       "actualRank": 166,
       "preseasonRank": 298,
-      "gamesPlayed": null,
-      "teamId": "2021:jacob-g"
+      "gamesPlayed": 50,
+      "teamId": "2021:jacob-g",
+      "stats": {
+        "fgm": 173,
+        "fga": 414,
+        "ftm": 79,
+        "fta": 91,
+        "threes": 107,
+        "pts": 532,
+        "reb": 160,
+        "ast": 108,
+        "stl": 46,
+        "blk": 8,
+        "to": 48
+      }
     },
     {
       "playerId": "5014",
       "name": "Terrence Ross",
       "actualRank": 167,
       "preseasonRank": 146,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 46,
+      "teamId": null,
+      "stats": {
+        "fgm": 254,
+        "fga": 616,
+        "ftm": 120,
+        "fta": 138,
+        "threes": 89,
+        "pts": 717,
+        "reb": 158,
+        "ast": 108,
+        "stl": 47,
+        "blk": 21,
+        "to": 74
+      }
     },
     {
       "playerId": "6420",
       "name": "Jaden McDaniels",
       "actualRank": 168,
       "preseasonRank": 310,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 63,
+      "teamId": null,
+      "stats": {
+        "fgm": 164,
+        "fga": 367,
+        "ftm": 27,
+        "fta": 45,
+        "threes": 72,
+        "pts": 427,
+        "reb": 232,
+        "ast": 71,
+        "stl": 35,
+        "blk": 60,
+        "to": 47
+      }
     },
     {
       "playerId": "6171",
       "name": "Rui Hachimura",
       "actualRank": 169,
       "preseasonRank": 130,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 57,
+      "teamId": null,
+      "stats": {
+        "fgm": 310,
+        "fga": 648,
+        "ftm": 124,
+        "fta": 161,
+        "threes": 45,
+        "pts": 789,
+        "reb": 312,
+        "ast": 82,
+        "stl": 44,
+        "blk": 7,
+        "to": 68
+      }
     },
     {
       "playerId": "5843",
       "name": "Josh Hart",
       "actualRank": 170,
       "preseasonRank": 231,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 47,
+      "teamId": null,
+      "stats": {
+        "fgm": 151,
+        "fga": 344,
+        "ftm": 69,
+        "fta": 89,
+        "threes": 63,
+        "pts": 434,
+        "reb": 377,
+        "ast": 109,
+        "stl": 38,
+        "blk": 12,
+        "to": 49
+      }
     },
     {
       "playerId": "5015",
       "name": "Andre Drummond",
       "actualRank": 171,
       "preseasonRank": 37,
-      "gamesPlayed": null,
-      "teamId": "2021:jake"
+      "gamesPlayed": 46,
+      "teamId": "2021:jake",
+      "stats": {
+        "fgm": 282,
+        "fga": 572,
+        "ftm": 123,
+        "fta": 205,
+        "threes": 0,
+        "pts": 687,
+        "reb": 551,
+        "ast": 94,
+        "stl": 63,
+        "blk": 49,
+        "to": 124
+      }
     },
     {
       "playerId": "4893",
       "name": "Alec Burks",
       "actualRank": 172,
       "preseasonRank": 164,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 49,
+      "teamId": null,
+      "stats": {
+        "fgm": 210,
+        "fga": 500,
+        "ftm": 101,
+        "fta": 118,
+        "threes": 102,
+        "pts": 623,
+        "reb": 227,
+        "ast": 107,
+        "stl": 31,
+        "blk": 14,
+        "to": 49
+      }
     },
     {
       "playerId": "6233",
       "name": "Isaiah Roby",
       "actualRank": 173,
       "preseasonRank": 314,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 61,
+      "teamId": null,
+      "stats": {
+        "fgm": 207,
+        "fga": 429,
+        "ftm": 87,
+        "fta": 117,
+        "threes": 32,
+        "pts": 533,
+        "reb": 341,
+        "ast": 107,
+        "stl": 52,
+        "blk": 37,
+        "to": 113
+      }
     },
     {
       "playerId": "6329",
       "name": "Juan Toscano-Anderson",
       "actualRank": 174,
       "preseasonRank": 307,
-      "gamesPlayed": null,
-      "teamId": "2021:dadder"
+      "gamesPlayed": 53,
+      "teamId": "2021:dadder",
+      "stats": {
+        "fgm": 121,
+        "fga": 209,
+        "ftm": 22,
+        "fta": 31,
+        "threes": 37,
+        "pts": 301,
+        "reb": 235,
+        "ast": 150,
+        "stl": 41,
+        "blk": 26,
+        "to": 61
+      }
     },
     {
       "playerId": "6427",
       "name": "Xavier Tillman",
       "actualRank": 175,
       "preseasonRank": 315,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 59,
+      "teamId": null,
+      "stats": {
+        "fgm": 167,
+        "fga": 299,
+        "ftm": 34,
+        "fta": 53,
+        "threes": 22,
+        "pts": 390,
+        "reb": 256,
+        "ast": 75,
+        "stl": 44,
+        "blk": 33,
+        "to": 45
+      }
     },
     {
       "playerId": "5892",
       "name": "Maxi Kleber",
       "actualRank": 176,
       "preseasonRank": 167,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 50,
+      "teamId": null,
+      "stats": {
+        "fgm": 116,
+        "fga": 275,
+        "ftm": 34,
+        "fta": 37,
+        "threes": 87,
+        "pts": 353,
+        "reb": 260,
+        "ast": 68,
+        "stl": 24,
+        "blk": 35,
+        "to": 30
+      }
     },
     {
       "playerId": "5433",
       "name": "D'Angelo Russell",
       "actualRank": 177,
       "preseasonRank": 40,
-      "gamesPlayed": null,
-      "teamId": "2021:jacob-g"
+      "gamesPlayed": 42,
+      "teamId": "2021:jacob-g",
+      "stats": {
+        "fgm": 281,
+        "fga": 652,
+        "ftm": 114,
+        "fta": 149,
+        "threes": 120,
+        "pts": 796,
+        "reb": 111,
+        "ast": 244,
+        "stl": 45,
+        "blk": 18,
+        "to": 112
+      }
     },
     {
       "playerId": "4497",
       "name": "DeAndre Jordan",
       "actualRank": 178,
       "preseasonRank": 120,
-      "gamesPlayed": null,
-      "teamId": "2021:eddie"
+      "gamesPlayed": 57,
+      "teamId": "2021:eddie",
+      "stats": {
+        "fgm": 190,
+        "fga": 249,
+        "ftm": 46,
+        "fta": 92,
+        "threes": 0,
+        "pts": 426,
+        "reb": 427,
+        "ast": 93,
+        "stl": 17,
+        "blk": 65,
+        "to": 85
+      }
     },
     {
       "playerId": "6417",
       "name": "Immanuel Quickley",
       "actualRank": 179,
       "preseasonRank": 309,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 64,
+      "teamId": null,
+      "stats": {
+        "fgm": 229,
+        "fga": 580,
+        "ftm": 155,
+        "fta": 174,
+        "threes": 118,
+        "pts": 731,
+        "reb": 137,
+        "ast": 127,
+        "stl": 30,
+        "blk": 12,
+        "to": 58
+      }
     },
     {
       "playerId": "6226",
       "name": "Daniel Gafford",
       "actualRank": 180,
       "preseasonRank": 302,
-      "gamesPlayed": null,
-      "teamId": "2021:eddie"
+      "gamesPlayed": 54,
+      "teamId": "2021:eddie",
+      "stats": {
+        "fgm": 154,
+        "fga": 225,
+        "ftm": 72,
+        "fta": 108,
+        "threes": 0,
+        "pts": 380,
+        "reb": 231,
+        "ast": 29,
+        "stl": 26,
+        "blk": 75,
+        "to": 41
+      }
     },
     {
       "playerId": "6065",
       "name": "Shake Milton",
       "actualRank": 181,
       "preseasonRank": 192,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 63,
+      "teamId": null,
+      "stats": {
+        "fgm": 300,
+        "fga": 667,
+        "ftm": 146,
+        "fta": 176,
+        "threes": 71,
+        "pts": 817,
+        "reb": 148,
+        "ast": 193,
+        "stl": 39,
+        "blk": 18,
+        "to": 103
+      }
     },
     {
       "playerId": "5163",
       "name": "Steven Adams",
       "actualRank": 182,
       "preseasonRank": 74,
-      "gamesPlayed": null,
-      "teamId": "2021:eddie"
+      "gamesPlayed": 58,
+      "teamId": "2021:eddie",
+      "stats": {
+        "fgm": 189,
+        "fga": 308,
+        "ftm": 60,
+        "fta": 135,
+        "threes": 0,
+        "pts": 438,
+        "reb": 514,
+        "ast": 111,
+        "stl": 54,
+        "blk": 38,
+        "to": 78
+      }
     },
     {
       "playerId": "5066",
       "name": "Tomáš Satoranský",
       "actualRank": 183,
       "preseasonRank": 188,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 58,
+      "teamId": null,
+      "stats": {
+        "fgm": 169,
+        "fga": 329,
+        "ftm": 67,
+        "fta": 79,
+        "threes": 42,
+        "pts": 447,
+        "reb": 142,
+        "ast": 271,
+        "stl": 40,
+        "blk": 14,
+        "to": 96
+      }
     },
     {
       "playerId": "6234",
       "name": "Talen Horton-Tucker",
       "actualRank": 184,
       "preseasonRank": 318,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 65,
+      "teamId": null,
+      "stats": {
+        "fgm": 224,
+        "fga": 489,
+        "ftm": 100,
+        "fta": 129,
+        "threes": 37,
+        "pts": 585,
+        "reb": 169,
+        "ast": 181,
+        "stl": 63,
+        "blk": 21,
+        "to": 105
+      }
     },
     {
       "playerId": "3826",
       "name": "Andre Iguodala",
       "actualRank": 185,
       "preseasonRank": 308,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 63,
+      "teamId": null,
+      "stats": {
+        "fgm": 95,
+        "fga": 248,
+        "ftm": 25,
+        "fta": 38,
+        "threes": 60,
+        "pts": 275,
+        "reb": 221,
+        "ast": 142,
+        "stl": 57,
+        "blk": 35,
+        "to": 67
+      }
     },
     {
       "playerId": "5650",
       "name": "Malik Beasley",
       "actualRank": 186,
       "preseasonRank": 142,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 37,
+      "teamId": null,
+      "stats": {
+        "fgm": 264,
+        "fga": 600,
+        "ftm": 68,
+        "fta": 80,
+        "threes": 128,
+        "pts": 724,
+        "reb": 162,
+        "ast": 88,
+        "stl": 30,
+        "blk": 7,
+        "to": 60
+      }
     },
     {
       "playerId": "6418",
       "name": "Payton Pritchard",
       "actualRank": 187,
       "preseasonRank": 319,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 66,
+      "teamId": null,
+      "stats": {
+        "fgm": 184,
+        "fga": 418,
+        "ftm": 40,
+        "fta": 45,
+        "threes": 102,
+        "pts": 510,
+        "reb": 158,
+        "ast": 120,
+        "stl": 37,
+        "blk": 9,
+        "to": 53
+      }
     },
     {
       "playerId": "6170",
       "name": "Jaxson Hayes",
       "actualRank": 188,
       "preseasonRank": 160,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 60,
+      "teamId": null,
+      "stats": {
+        "fgm": 175,
+        "fga": 280,
+        "ftm": 93,
+        "fta": 120,
+        "threes": 6,
+        "pts": 449,
+        "reb": 257,
+        "ast": 35,
+        "stl": 25,
+        "blk": 38,
+        "to": 39
+      }
     },
     {
       "playerId": "5859",
       "name": "Sterling Brown",
       "actualRank": 189,
       "preseasonRank": 303,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 51,
+      "teamId": null,
+      "stats": {
+        "fgm": 150,
+        "fga": 335,
+        "ftm": 25,
+        "fta": 31,
+        "threes": 91,
+        "pts": 416,
+        "reb": 224,
+        "ast": 72,
+        "stl": 38,
+        "blk": 12,
+        "to": 41
+      }
     },
     {
       "playerId": "5487",
       "name": "Larry Nance Jr.",
       "actualRank": 190,
       "preseasonRank": 121,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 35,
+      "teamId": null,
+      "stats": {
+        "fgm": 128,
+        "fga": 272,
+        "ftm": 30,
+        "fta": 49,
+        "threes": 41,
+        "pts": 327,
+        "reb": 235,
+        "ast": 107,
+        "stl": 61,
+        "blk": 17,
+        "to": 55
+      }
     },
     {
       "playerId": "4477",
       "name": "Robin Lopez",
       "actualRank": 191,
       "preseasonRank": 277,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 71,
+      "teamId": null,
+      "stats": {
+        "fgm": 269,
+        "fga": 425,
+        "ftm": 99,
+        "fta": 137,
+        "threes": 5,
+        "pts": 642,
+        "reb": 272,
+        "ast": 55,
+        "stl": 15,
+        "blk": 44,
+        "to": 75
+      }
     },
     {
       "playerId": "5733",
       "name": "Damion Lee",
       "actualRank": 192,
       "preseasonRank": 294,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 57,
+      "teamId": null,
+      "stats": {
+        "fgm": 128,
+        "fga": 274,
+        "ftm": 40,
+        "fta": 44,
+        "threes": 77,
+        "pts": 373,
+        "reb": 180,
+        "ast": 73,
+        "stl": 38,
+        "blk": 8,
+        "to": 30
+      }
     },
     {
       "playerId": "6236",
       "name": "Terance Mann",
       "actualRank": 193,
       "preseasonRank": 312,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 67,
+      "teamId": null,
+      "stats": {
+        "fgm": 178,
+        "fga": 350,
+        "ftm": 78,
+        "fta": 94,
+        "threes": 38,
+        "pts": 472,
+        "reb": 242,
+        "ast": 104,
+        "stl": 29,
+        "blk": 13,
+        "to": 40
+      }
     },
     {
       "playerId": "4631",
       "name": "Taj Gibson",
       "actualRank": 194,
       "preseasonRank": 276,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 45,
+      "teamId": null,
+      "stats": {
+        "fgm": 99,
+        "fga": 158,
+        "ftm": 40,
+        "fta": 55,
+        "threes": 3,
+        "pts": 241,
+        "reb": 250,
+        "ast": 36,
+        "stl": 31,
+        "blk": 49,
+        "to": 22
+      }
     },
     {
       "playerId": "6397",
       "name": "Isaac Okoro",
       "actualRank": 195,
       "preseasonRank": 185,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 67,
+      "teamId": null,
+      "stats": {
+        "fgm": 235,
+        "fga": 559,
+        "ftm": 114,
+        "fta": 157,
+        "threes": 62,
+        "pts": 646,
+        "reb": 206,
+        "ast": 128,
+        "stl": 62,
+        "blk": 24,
+        "to": 86
+      }
     },
     {
       "playerId": "3971",
       "name": "Lou Williams",
       "actualRank": 196,
       "preseasonRank": 123,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 66,
+      "teamId": null,
+      "stats": {
+        "fgm": 265,
+        "fga": 646,
+        "ftm": 150,
+        "fta": 173,
+        "threes": 69,
+        "pts": 749,
+        "reb": 138,
+        "ast": 225,
+        "stl": 47,
+        "blk": 6,
+        "to": 108
+      }
     },
     {
       "playerId": "4486",
       "name": "Serge Ibaka",
       "actualRank": 197,
       "preseasonRank": 113,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 41,
+      "teamId": null,
+      "stats": {
+        "fgm": 186,
+        "fga": 365,
+        "ftm": 43,
+        "fta": 53,
+        "threes": 39,
+        "pts": 454,
+        "reb": 275,
+        "ast": 74,
+        "stl": 9,
+        "blk": 47,
+        "to": 44
+      }
     },
     {
       "playerId": "5747",
       "name": "Derrick Jones Jr.",
       "actualRank": 198,
       "preseasonRank": 172,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 58,
+      "teamId": null,
+      "stats": {
+        "fgm": 147,
+        "fga": 304,
+        "ftm": 59,
+        "fta": 91,
+        "threes": 43,
+        "pts": 396,
+        "reb": 205,
+        "ast": 47,
+        "stl": 37,
+        "blk": 54,
+        "to": 32
+      }
     },
     {
       "playerId": "5491",
       "name": "Cedi Osman",
       "actualRank": 199,
       "preseasonRank": 203,
-      "gamesPlayed": null,
-      "teamId": "2021:michael"
+      "gamesPlayed": 59,
+      "teamId": "2021:michael",
+      "stats": {
+        "fgm": 219,
+        "fga": 586,
+        "ftm": 76,
+        "fta": 95,
+        "threes": 99,
+        "pts": 613,
+        "reb": 201,
+        "ast": 174,
+        "stl": 53,
+        "blk": 9,
+        "to": 80
+      }
     },
     {
       "playerId": "5726",
       "name": "Bryn Forbes",
       "actualRank": 200,
       "preseasonRank": 301,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 70,
+      "teamId": null,
+      "stats": {
+        "fgm": 250,
+        "fga": 529,
+        "ftm": 47,
+        "fta": 61,
+        "threes": 154,
+        "pts": 701,
+        "reb": 112,
+        "ast": 45,
+        "stl": 24,
+        "blk": 1,
+        "to": 44
+      }
     },
     {
       "playerId": "5842",
       "name": "Derrick White",
       "actualRank": 201,
       "preseasonRank": 72,
-      "gamesPlayed": null,
-      "teamId": "2021:benjamin"
+      "gamesPlayed": 36,
+      "teamId": "2021:benjamin",
+      "stats": {
+        "fgm": 186,
+        "fga": 453,
+        "ftm": 97,
+        "fta": 114,
+        "threes": 84,
+        "pts": 553,
+        "reb": 107,
+        "ast": 127,
+        "stl": 26,
+        "blk": 36,
+        "to": 45
+      }
     },
     {
       "playerId": "6256",
       "name": "Dean Wade",
       "actualRank": 202,
       "preseasonRank": 321,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 63,
+      "teamId": null,
+      "stats": {
+        "fgm": 134,
+        "fga": 311,
+        "ftm": 30,
+        "fta": 39,
+        "threes": 78,
+        "pts": 376,
+        "reb": 215,
+        "ast": 74,
+        "stl": 35,
+        "blk": 21,
+        "to": 30
+      }
     },
     {
       "playerId": "5356",
       "name": "Dwight Powell",
       "actualRank": 203,
       "preseasonRank": 168,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 58,
+      "teamId": null,
+      "stats": {
+        "fgm": 120,
+        "fga": 194,
+        "ftm": 97,
+        "fta": 124,
+        "threes": 5,
+        "pts": 342,
+        "reb": 234,
+        "ast": 63,
+        "stl": 36,
+        "blk": 30,
+        "to": 40
+      }
     },
     {
       "playerId": "5766",
       "name": "Josh Jackson",
       "actualRank": 204,
       "preseasonRank": 202,
-      "gamesPlayed": null,
-      "teamId": "2021:eddie"
+      "gamesPlayed": 62,
+      "teamId": "2021:eddie",
+      "stats": {
+        "fgm": 296,
+        "fga": 707,
+        "ftm": 159,
+        "fta": 218,
+        "threes": 77,
+        "pts": 828,
+        "reb": 254,
+        "ast": 143,
+        "stl": 53,
+        "blk": 47,
+        "to": 142
+      }
     },
     {
       "playerId": "5262",
       "name": "JaMychal Green",
       "actualRank": 205,
       "preseasonRank": 249,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 58,
+      "teamId": null,
+      "stats": {
+        "fgm": 173,
+        "fga": 374,
+        "ftm": 46,
+        "fta": 57,
+        "threes": 79,
+        "pts": 471,
+        "reb": 277,
+        "ast": 53,
+        "stl": 26,
+        "blk": 22,
+        "to": 53
+      }
     },
     {
       "playerId": "4682",
       "name": "Garrett Temple",
       "actualRank": 206,
       "preseasonRank": 295,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 56,
+      "teamId": null,
+      "stats": {
+        "fgm": 158,
+        "fga": 381,
+        "ftm": 40,
+        "fta": 50,
+        "threes": 67,
+        "pts": 423,
+        "reb": 160,
+        "ast": 124,
+        "stl": 43,
+        "blk": 30,
+        "to": 58
+      }
     },
     {
       "playerId": "6444",
       "name": "KJ Martin",
       "actualRank": 207,
       "preseasonRank": 324,
-      "gamesPlayed": null,
-      "teamId": "2021:michael"
+      "gamesPlayed": 45,
+      "teamId": "2021:michael",
+      "stats": {
+        "fgm": 162,
+        "fga": 318,
+        "ftm": 60,
+        "fta": 84,
+        "threes": 35,
+        "pts": 419,
+        "reb": 242,
+        "ast": 48,
+        "stl": 30,
+        "blk": 41,
+        "to": 38
+      }
     },
     {
       "playerId": "5853",
       "name": "Dwayne Bacon",
       "actualRank": 208,
       "preseasonRank": 250,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 72,
+      "teamId": null,
+      "stats": {
+        "fgm": 292,
+        "fga": 726,
+        "ftm": 145,
+        "fta": 176,
+        "threes": 59,
+        "pts": 788,
+        "reb": 224,
+        "ast": 93,
+        "stl": 45,
+        "blk": 5,
+        "to": 46
+      }
     },
     {
       "playerId": "6280",
       "name": "Terence Davis",
       "actualRank": 209,
       "preseasonRank": 299,
-      "gamesPlayed": null,
-      "teamId": "2021:matt"
+      "gamesPlayed": 61,
+      "teamId": "2021:matt",
+      "stats": {
+        "fgm": 195,
+        "fga": 456,
+        "ftm": 45,
+        "fta": 55,
+        "threes": 98,
+        "pts": 533,
+        "reb": 154,
+        "ast": 83,
+        "stl": 44,
+        "blk": 14,
+        "to": 63
+      }
     },
     {
       "playerId": "4325",
       "name": "Marc Gasol",
       "actualRank": 210,
       "preseasonRank": 151,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 52,
+      "teamId": null,
+      "stats": {
+        "fgm": 88,
+        "fga": 194,
+        "ftm": 36,
+        "fta": 50,
+        "threes": 50,
+        "pts": 262,
+        "reb": 215,
+        "ast": 109,
+        "stl": 26,
+        "blk": 58,
+        "to": 53
+      }
     },
     {
       "playerId": "5018",
       "name": "Jeremy Lamb",
       "actualRank": 211,
       "preseasonRank": 174,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 36,
+      "teamId": null,
+      "stats": {
+        "fgm": 120,
+        "fga": 276,
+        "ftm": 71,
+        "fta": 75,
+        "threes": 52,
+        "pts": 363,
+        "reb": 131,
+        "ast": 53,
+        "stl": 34,
+        "blk": 23,
+        "to": 22
+      }
     },
     {
       "playerId": "5825",
       "name": "Luke Kennard",
       "actualRank": 212,
       "preseasonRank": 155,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 63,
+      "teamId": null,
+      "stats": {
+        "fgm": 197,
+        "fga": 414,
+        "ftm": 26,
+        "fta": 31,
+        "threes": 100,
+        "pts": 520,
+        "reb": 161,
+        "ast": 104,
+        "stl": 23,
+        "blk": 9,
+        "to": 48
+      }
     },
     {
       "playerId": "6204",
       "name": "Chuma Okeke",
       "actualRank": 213,
       "preseasonRank": 325,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 45,
+      "teamId": null,
+      "stats": {
+        "fgm": 135,
+        "fga": 324,
+        "ftm": 30,
+        "fta": 40,
+        "threes": 49,
+        "pts": 349,
+        "reb": 181,
+        "ast": 101,
+        "stl": 48,
+        "blk": 22,
+        "to": 38
+      }
     },
     {
       "playerId": "6037",
       "name": "Landry Shamet",
       "actualRank": 214,
       "preseasonRank": 239,
-      "gamesPlayed": null,
-      "teamId": "2021:jake"
+      "gamesPlayed": 61,
+      "teamId": "2021:jake",
+      "stats": {
+        "fgm": 186,
+        "fga": 456,
+        "ftm": 66,
+        "fta": 78,
+        "threes": 129,
+        "pts": 567,
+        "reb": 112,
+        "ast": 99,
+        "stl": 31,
+        "blk": 10,
+        "to": 48
+      }
     },
     {
       "playerId": "5864",
       "name": "Monté Morris",
       "actualRank": 215,
       "preseasonRank": 240,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 47,
+      "teamId": null,
+      "stats": {
+        "fgm": 186,
+        "fga": 387,
+        "ftm": 58,
+        "fta": 73,
+        "threes": 51,
+        "pts": 481,
+        "reb": 96,
+        "ast": 150,
+        "stl": 34,
+        "blk": 13,
+        "to": 34
+      }
     },
     {
       "playerId": "5754",
       "name": "Alex Caruso",
       "actualRank": 216,
       "preseasonRank": 305,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 58,
+      "teamId": null,
+      "stats": {
+        "fgm": 133,
+        "fga": 305,
+        "ftm": 49,
+        "fta": 76,
+        "threes": 55,
+        "pts": 370,
+        "reb": 170,
+        "ast": 160,
+        "stl": 64,
+        "blk": 15,
+        "to": 76
+      }
     },
     {
       "playerId": "6058",
       "name": "Svi Mykhailiuk",
       "actualRank": 217,
       "preseasonRank": 200,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 66,
+      "teamId": null,
+      "stats": {
+        "fgm": 208,
+        "fga": 506,
+        "ftm": 38,
+        "fta": 50,
+        "threes": 105,
+        "pts": 559,
+        "reb": 163,
+        "ast": 110,
+        "stl": 51,
+        "blk": 12,
+        "to": 88
+      }
     },
     {
       "playerId": "5327",
       "name": "Jusuf Nurkić",
       "actualRank": 218,
       "preseasonRank": 34,
-      "gamesPlayed": null,
-      "teamId": "2021:jordan"
+      "gamesPlayed": 37,
+      "teamId": "2021:jordan",
+      "stats": {
+        "fgm": 171,
+        "fga": 333,
+        "ftm": 70,
+        "fta": 113,
+        "threes": 12,
+        "pts": 424,
+        "reb": 332,
+        "ast": 125,
+        "stl": 38,
+        "blk": 39,
+        "to": 73
+      }
     },
     {
       "playerId": "5681",
       "name": "Georges Niang",
       "actualRank": 219,
       "preseasonRank": 311,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 72,
+      "teamId": null,
+      "stats": {
+        "fgm": 177,
+        "fga": 405,
+        "ftm": 22,
+        "fta": 23,
+        "threes": 124,
+        "pts": 500,
+        "reb": 176,
+        "ast": 59,
+        "stl": 25,
+        "blk": 8,
+        "to": 51
+      }
     },
     {
       "playerId": "4245",
       "name": "Al Horford",
       "actualRank": 220,
       "preseasonRank": 82,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 28,
+      "teamId": null,
+      "stats": {
+        "fgm": 162,
+        "fga": 360,
+        "ftm": 18,
+        "fta": 22,
+        "threes": 56,
+        "pts": 398,
+        "reb": 188,
+        "ast": 94,
+        "stl": 25,
+        "blk": 26,
+        "to": 29
+      }
     },
     {
       "playerId": "6403",
       "name": "Devin Vassell",
       "actualRank": 221,
       "preseasonRank": 328,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 62,
+      "teamId": null,
+      "stats": {
+        "fgm": 123,
+        "fga": 303,
+        "ftm": 43,
+        "fta": 51,
+        "threes": 52,
+        "pts": 341,
+        "reb": 174,
+        "ast": 56,
+        "stl": 43,
+        "blk": 18,
+        "to": 22
+      }
     },
     {
       "playerId": "5156",
       "name": "Alex Len",
       "actualRank": 222,
       "preseasonRank": 238,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 64,
+      "teamId": null,
+      "stats": {
+        "fgm": 171,
+        "fga": 278,
+        "ftm": 73,
+        "fta": 116,
+        "threes": 8,
+        "pts": 423,
+        "reb": 260,
+        "ast": 49,
+        "stl": 20,
+        "blk": 64,
+        "to": 55
+      }
     },
     {
       "playerId": "6216",
       "name": "Jordan Poole",
       "actualRank": 223,
       "preseasonRank": 313,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 51,
+      "teamId": null,
+      "stats": {
+        "fgm": 205,
+        "fga": 474,
+        "ftm": 105,
+        "fta": 119,
+        "threes": 97,
+        "pts": 612,
+        "reb": 92,
+        "ast": 99,
+        "stl": 26,
+        "blk": 9,
+        "to": 51
+      }
     },
     {
       "playerId": "4507",
       "name": "Goran Dragić",
       "actualRank": 224,
       "preseasonRank": 114,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 50,
+      "teamId": null,
+      "stats": {
+        "fgm": 240,
+        "fga": 555,
+        "ftm": 101,
+        "fta": 122,
+        "threes": 91,
+        "pts": 672,
+        "reb": 169,
+        "ast": 219,
+        "stl": 33,
+        "blk": 8,
+        "to": 118
+      }
     },
     {
       "playerId": "3818",
       "name": "Dwight Howard",
       "actualRank": 225,
       "preseasonRank": 225,
-      "gamesPlayed": null,
-      "teamId": "2021:mitchell"
+      "gamesPlayed": 69,
+      "teamId": "2021:mitchell",
+      "stats": {
+        "fgm": 178,
+        "fga": 303,
+        "ftm": 121,
+        "fta": 210,
+        "threes": 5,
+        "pts": 482,
+        "reb": 580,
+        "ast": 61,
+        "stl": 30,
+        "blk": 62,
+        "to": 112
+      }
     },
     {
       "playerId": "5155",
       "name": "Cody Zeller",
       "actualRank": 226,
       "preseasonRank": 205,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 48,
+      "teamId": null,
+      "stats": {
+        "fgm": 181,
+        "fga": 324,
+        "ftm": 85,
+        "fta": 119,
+        "threes": 4,
+        "pts": 451,
+        "reb": 328,
+        "ast": 86,
+        "stl": 27,
+        "blk": 17,
+        "to": 51
+      }
     },
     {
       "playerId": "6205",
       "name": "N. Alexander-Walker",
       "actualRank": 227,
       "preseasonRank": 262,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 46,
+      "teamId": null,
+      "stats": {
+        "fgm": 192,
+        "fga": 458,
+        "ftm": 48,
+        "fta": 66,
+        "threes": 76,
+        "pts": 508,
+        "reb": 144,
+        "ast": 102,
+        "stl": 47,
+        "blk": 22,
+        "to": 69
+      }
     },
     {
       "playerId": "6047",
       "name": "Mitchell Robinson",
       "actualRank": 228,
       "preseasonRank": 47,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 31,
+      "teamId": null,
+      "stats": {
+        "fgm": 115,
+        "fga": 176,
+        "ftm": 26,
+        "fta": 53,
+        "threes": 0,
+        "pts": 256,
+        "reb": 252,
+        "ast": 17,
+        "stl": 35,
+        "blk": 45,
+        "to": 26
+      }
     },
     {
       "playerId": "6029",
       "name": "Lonnie Walker IV",
       "actualRank": 229,
       "preseasonRank": 199,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 60,
+      "teamId": null,
+      "stats": {
+        "fgm": 256,
+        "fga": 609,
+        "ftm": 57,
+        "fta": 70,
+        "threes": 100,
+        "pts": 669,
+        "reb": 155,
+        "ast": 101,
+        "stl": 29,
+        "blk": 15,
+        "to": 65
+      }
     },
     {
       "playerId": "5295",
       "name": "Aaron Gordon",
       "actualRank": 230,
       "preseasonRank": 85,
-      "gamesPlayed": null,
-      "teamId": "2021:jake"
+      "gamesPlayed": 50,
+      "teamId": "2021:jake",
+      "stats": {
+        "fgm": 231,
+        "fga": 499,
+        "ftm": 97,
+        "fta": 149,
+        "threes": 59,
+        "pts": 618,
+        "reb": 284,
+        "ast": 161,
+        "stl": 33,
+        "blk": 34,
+        "to": 97
+      }
     },
     {
       "playerId": "5657",
       "name": "Furkan Korkmaz",
       "actualRank": 231,
       "preseasonRank": 306,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 55,
+      "teamId": null,
+      "stats": {
+        "fgm": 170,
+        "fga": 424,
+        "ftm": 60,
+        "fta": 82,
+        "threes": 101,
+        "pts": 501,
+        "reb": 113,
+        "ast": 82,
+        "stl": 49,
+        "blk": 9,
+        "to": 46
+      }
     },
     {
       "playerId": "6017",
       "name": "Mo Bamba",
       "actualRank": 232,
       "preseasonRank": 264,
-      "gamesPlayed": null,
-      "teamId": "2021:jordan"
+      "gamesPlayed": 46,
+      "teamId": "2021:jordan",
+      "stats": {
+        "fgm": 142,
+        "fga": 301,
+        "ftm": 45,
+        "fta": 66,
+        "threes": 38,
+        "pts": 367,
+        "reb": 265,
+        "ast": 35,
+        "stl": 14,
+        "blk": 58,
+        "to": 36
+      }
     },
     {
       "playerId": "6254",
       "name": "Luguentz Dort",
       "actualRank": 233,
       "preseasonRank": 215,
-      "gamesPlayed": null,
-      "teamId": "2021:mitchell"
+      "gamesPlayed": 52,
+      "teamId": "2021:mitchell",
+      "stats": {
+        "fgm": 247,
+        "fga": 639,
+        "ftm": 122,
+        "fta": 164,
+        "threes": 113,
+        "pts": 729,
+        "reb": 189,
+        "ast": 88,
+        "stl": 45,
+        "blk": 19,
+        "to": 79
+      }
     },
     {
       "playerId": "6289",
       "name": "Moses Brown",
       "actualRank": 234,
       "preseasonRank": 340,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 43,
+      "teamId": null,
+      "stats": {
+        "fgm": 146,
+        "fga": 268,
+        "ftm": 78,
+        "fta": 126,
+        "threes": 0,
+        "pts": 370,
+        "reb": 383,
+        "ast": 10,
+        "stl": 31,
+        "blk": 47,
+        "to": 43
+      }
     },
     {
       "playerId": "5193",
       "name": "Solomon Hill",
       "actualRank": 235,
       "preseasonRank": 316,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 71,
+      "teamId": null,
+      "stats": {
+        "fgm": 107,
+        "fga": 298,
+        "ftm": 35,
+        "fta": 46,
+        "threes": 68,
+        "pts": 317,
+        "reb": 214,
+        "ast": 75,
+        "stl": 50,
+        "blk": 11,
+        "to": 42
+      }
     },
     {
       "playerId": "5153",
       "name": "Victor Oladipo",
       "actualRank": 236,
       "preseasonRank": 83,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 33,
+      "teamId": null,
+      "stats": {
+        "fgm": 235,
+        "fga": 576,
+        "ftm": 104,
+        "fta": 138,
+        "threes": 78,
+        "pts": 652,
+        "reb": 160,
+        "ast": 151,
+        "stl": 46,
+        "blk": 14,
+        "to": 83
+      }
     },
     {
       "playerId": "4561",
       "name": "Blake Griffin",
       "actualRank": 237,
       "preseasonRank": 93,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 46,
+      "teamId": null,
+      "stats": {
+        "fgm": 174,
+        "fga": 411,
+        "ftm": 87,
+        "fta": 117,
+        "threes": 70,
+        "pts": 505,
+        "reb": 225,
+        "ast": 140,
+        "stl": 32,
+        "blk": 15,
+        "to": 62
+      }
     },
     {
       "playerId": "6031",
       "name": "Josh Okogie",
       "actualRank": 238,
       "preseasonRank": 218,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 59,
+      "teamId": null,
+      "stats": {
+        "fgm": 102,
+        "fga": 254,
+        "ftm": 83,
+        "fta": 108,
+        "threes": 29,
+        "pts": 316,
+        "reb": 156,
+        "ast": 63,
+        "stl": 54,
+        "blk": 28,
+        "to": 43
+      }
     },
     {
       "playerId": "5893",
       "name": "Torrey Craig",
       "actualRank": 239,
       "preseasonRank": 320,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 50,
+      "teamId": null,
+      "stats": {
+        "fgm": 109,
+        "fga": 227,
+        "ftm": 17,
+        "fta": 22,
+        "threes": 39,
+        "pts": 274,
+        "reb": 197,
+        "ast": 49,
+        "stl": 28,
+        "blk": 27,
+        "to": 25
+      }
     },
     {
       "playerId": "6426",
       "name": "Théo Maledon",
       "actualRank": 240,
       "preseasonRank": 338,
-      "gamesPlayed": null,
-      "teamId": "2021:jordan"
+      "gamesPlayed": 65,
+      "teamId": "2021:jordan",
+      "stats": {
+        "fgm": 226,
+        "fga": 614,
+        "ftm": 101,
+        "fta": 135,
+        "threes": 105,
+        "pts": 658,
+        "reb": 211,
+        "ast": 227,
+        "stl": 56,
+        "blk": 11,
+        "to": 141
+      }
     },
     {
       "playerId": "4716",
       "name": "John Wall",
       "actualRank": 241,
       "preseasonRank": 70,
-      "gamesPlayed": null,
-      "teamId": "2021:eddie"
+      "gamesPlayed": 40,
+      "teamId": "2021:eddie",
+      "stats": {
+        "fgm": 293,
+        "fga": 726,
+        "ftm": 158,
+        "fta": 211,
+        "threes": 79,
+        "pts": 823,
+        "reb": 129,
+        "ast": 275,
+        "stl": 42,
+        "blk": 31,
+        "to": 141
+      }
     },
     {
       "playerId": "5490",
       "name": "Kevon Looney",
       "actualRank": 242,
       "preseasonRank": 198,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 61,
+      "teamId": null,
+      "stats": {
+        "fgm": 108,
+        "fga": 197,
+        "ftm": 31,
+        "fta": 48,
+        "threes": 4,
+        "pts": 251,
+        "reb": 322,
+        "ast": 119,
+        "stl": 21,
+        "blk": 22,
+        "to": 37
+      }
     },
     {
       "playerId": "6133",
       "name": "Jordan McLaughlin",
       "actualRank": 243,
       "preseasonRank": 323,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 51,
+      "teamId": null,
+      "stats": {
+        "fgm": 100,
+        "fga": 242,
+        "ftm": 23,
+        "fta": 30,
+        "threes": 33,
+        "pts": 256,
+        "reb": 108,
+        "ast": 193,
+        "stl": 51,
+        "blk": 6,
+        "to": 51
+      }
     },
     {
       "playerId": "5468",
       "name": "Stanley Johnson",
       "actualRank": 244,
       "preseasonRank": 335,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 61,
+      "teamId": null,
+      "stats": {
+        "fgm": 89,
+        "fga": 233,
+        "ftm": 44,
+        "fta": 55,
+        "threes": 45,
+        "pts": 267,
+        "reb": 153,
+        "ast": 89,
+        "stl": 52,
+        "blk": 18,
+        "to": 54
+      }
     },
     {
       "playerId": "6035",
       "name": "Anfernee Simons",
       "actualRank": 245,
       "preseasonRank": 270,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 64,
+      "teamId": null,
+      "stats": {
+        "fgm": 168,
+        "fga": 401,
+        "ftm": 46,
+        "fta": 57,
+        "threes": 120,
+        "pts": 502,
+        "reb": 140,
+        "ast": 89,
+        "stl": 18,
+        "blk": 8,
+        "to": 43
+      }
     },
     {
       "playerId": "5495",
       "name": "Willy Hernangómez",
       "actualRank": 246,
       "preseasonRank": 336,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 47,
+      "teamId": null,
+      "stats": {
+        "fgm": 151,
+        "fga": 268,
+        "ftm": 62,
+        "fta": 93,
+        "threes": 1,
+        "pts": 365,
+        "reb": 334,
+        "ast": 50,
+        "stl": 22,
+        "blk": 23,
+        "to": 34
+      }
     },
     {
       "playerId": "4621",
       "name": "James Johnson",
       "actualRank": 247,
       "preseasonRank": 247,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 51,
+      "teamId": null,
+      "stats": {
+        "fgm": 146,
+        "fga": 327,
+        "ftm": 45,
+        "fta": 76,
+        "threes": 31,
+        "pts": 368,
+        "reb": 177,
+        "ast": 98,
+        "stl": 42,
+        "blk": 42,
+        "to": 55
+      }
     },
     {
       "playerId": "4471",
       "name": "D.J. Augustin",
       "actualRank": 248,
       "preseasonRank": 236,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 57,
+      "teamId": null,
+      "stats": {
+        "fgm": 135,
+        "fga": 343,
+        "ftm": 85,
+        "fta": 94,
+        "threes": 83,
+        "pts": 438,
+        "reb": 94,
+        "ast": 188,
+        "stl": 28,
+        "blk": 1,
+        "to": 65
+      }
     },
     {
       "playerId": "6407",
       "name": "Cole Anthony",
       "actualRank": 249,
       "preseasonRank": 339,
-      "gamesPlayed": null,
-      "teamId": "2021:jake"
+      "gamesPlayed": 47,
+      "teamId": "2021:jake",
+      "stats": {
+        "fgm": 219,
+        "fga": 552,
+        "ftm": 109,
+        "fta": 131,
+        "threes": 58,
+        "pts": 605,
+        "reb": 221,
+        "ast": 192,
+        "stl": 30,
+        "blk": 18,
+        "to": 106
+      }
     },
     {
       "playerId": "6259",
       "name": "Garrison Mathews",
       "actualRank": 250,
       "preseasonRank": 332,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 64,
+      "teamId": null,
+      "stats": {
+        "fgm": 97,
+        "fga": 237,
+        "ftm": 84,
+        "fta": 95,
+        "threes": 76,
+        "pts": 354,
+        "reb": 87,
+        "ast": 26,
+        "stl": 29,
+        "blk": 7,
+        "to": 10
+      }
     },
     {
       "playerId": "4720",
       "name": "DeMarcus Cousins",
       "actualRank": 251,
       "preseasonRank": 139,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 41,
+      "teamId": null,
+      "stats": {
+        "fgm": 130,
+        "fga": 305,
+        "ftm": 59,
+        "fta": 81,
+        "threes": 47,
+        "pts": 366,
+        "reb": 263,
+        "ast": 76,
+        "stl": 34,
+        "blk": 24,
+        "to": 64
+      }
     },
     {
       "playerId": "6401",
       "name": "Deni Avdija",
       "actualRank": 252,
       "preseasonRank": 258,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 54,
+      "teamId": null,
+      "stats": {
+        "fgm": 130,
+        "fga": 312,
+        "ftm": 29,
+        "fta": 45,
+        "threes": 53,
+        "pts": 342,
+        "reb": 262,
+        "ast": 63,
+        "stl": 32,
+        "blk": 15,
+        "to": 33
+      }
     },
     {
       "playerId": "6413",
       "name": "Tyrese Maxey",
       "actualRank": 253,
       "preseasonRank": 341,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 61,
+      "teamId": null,
+      "stats": {
+        "fgm": 198,
+        "fga": 429,
+        "ftm": 61,
+        "fta": 70,
+        "threes": 31,
+        "pts": 488,
+        "reb": 104,
+        "ast": 120,
+        "stl": 26,
+        "blk": 13,
+        "to": 41
+      }
     },
     {
       "playerId": "5466",
       "name": "Willie Cauley-Stein",
       "actualRank": 254,
       "preseasonRank": 228,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 53,
+      "teamId": null,
+      "stats": {
+        "fgm": 115,
+        "fga": 182,
+        "ftm": 49,
+        "fta": 78,
+        "threes": 1,
+        "pts": 280,
+        "reb": 236,
+        "ast": 35,
+        "stl": 21,
+        "blk": 43,
+        "to": 29
+      }
     },
     {
       "playerId": "4647",
       "name": "Patrick Beverley",
       "actualRank": 255,
       "preseasonRank": 170,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 37,
+      "teamId": null,
+      "stats": {
+        "fgm": 93,
+        "fga": 220,
+        "ftm": 36,
+        "fta": 45,
+        "threes": 56,
+        "pts": 278,
+        "reb": 119,
+        "ast": 76,
+        "stl": 29,
+        "blk": 28,
+        "to": 34
+      }
     },
     {
       "playerId": "6034",
       "name": "Aaron Holiday",
       "actualRank": 256,
       "preseasonRank": 273,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 66,
+      "teamId": null,
+      "stats": {
+        "fgm": 170,
+        "fga": 436,
+        "ftm": 68,
+        "fta": 83,
+        "threes": 67,
+        "pts": 475,
+        "reb": 89,
+        "ast": 123,
+        "stl": 46,
+        "blk": 13,
+        "to": 66
+      }
     },
     {
       "playerId": "5652",
       "name": "DeAndre' Bembry",
       "actualRank": 257,
       "preseasonRank": 329,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 51,
+      "teamId": null,
+      "stats": {
+        "fgm": 117,
+        "fga": 228,
+        "ftm": 45,
+        "fta": 66,
+        "threes": 14,
+        "pts": 293,
+        "reb": 146,
+        "ast": 107,
+        "stl": 53,
+        "blk": 18,
+        "to": 71
+      }
     },
     {
       "playerId": "6109",
       "name": "Drew Eubanks",
       "actualRank": 258,
       "preseasonRank": 337,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 54,
+      "teamId": null,
+      "stats": {
+        "fgm": 116,
+        "fga": 205,
+        "ftm": 77,
+        "fta": 106,
+        "threes": 2,
+        "pts": 311,
+        "reb": 241,
+        "ast": 42,
+        "stl": 18,
+        "blk": 49,
+        "to": 45
+      }
     },
     {
       "playerId": "5841",
       "name": "Tony Bradley",
       "actualRank": 259,
       "preseasonRank": 327,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 42,
+      "teamId": null,
+      "stats": {
+        "fgm": 131,
+        "fga": 197,
+        "ftm": 38,
+        "fta": 55,
+        "threes": 0,
+        "pts": 300,
+        "reb": 239,
+        "ast": 37,
+        "stl": 15,
+        "blk": 30,
+        "to": 33
+      }
     },
     {
       "playerId": "5645",
       "name": "Denzel Valentine",
       "actualRank": 260,
       "preseasonRank": 279,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 62,
+      "teamId": null,
+      "stats": {
+        "fgm": 155,
+        "fga": 416,
+        "ftm": 16,
+        "fta": 17,
+        "threes": 80,
+        "pts": 406,
+        "reb": 197,
+        "ast": 105,
+        "stl": 30,
+        "blk": 7,
+        "to": 42
+      }
     },
     {
       "playerId": "5643",
       "name": "Taurean Prince",
       "actualRank": 261,
       "preseasonRank": 224,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 41,
+      "teamId": null,
+      "stats": {
+        "fgm": 131,
+        "fga": 327,
+        "ftm": 65,
+        "fta": 76,
+        "threes": 62,
+        "pts": 389,
+        "reb": 142,
+        "ast": 76,
+        "stl": 28,
+        "blk": 23,
+        "to": 47
+      }
     },
     {
       "playerId": "4633",
       "name": "Wayne Ellington",
       "actualRank": 262,
       "preseasonRank": 333,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 46,
+      "teamId": null,
+      "stats": {
+        "fgm": 149,
+        "fga": 338,
+        "ftm": 28,
+        "fta": 35,
+        "threes": 116,
+        "pts": 442,
+        "reb": 85,
+        "ast": 67,
+        "stl": 18,
+        "blk": 9,
+        "to": 33
+      }
     },
     {
       "playerId": "4884",
       "name": "Tristan Thompson",
       "actualRank": 263,
       "preseasonRank": 187,
-      "gamesPlayed": null,
-      "teamId": "2021:eddie"
+      "gamesPlayed": 54,
+      "teamId": "2021:eddie",
+      "stats": {
+        "fgm": 169,
+        "fga": 326,
+        "ftm": 71,
+        "fta": 120,
+        "threes": 0,
+        "pts": 409,
+        "reb": 439,
+        "ast": 67,
+        "stl": 24,
+        "blk": 33,
+        "to": 62
+      }
     },
     {
       "playerId": "5220",
       "name": "James Ennis III",
       "actualRank": 264,
       "preseasonRank": 322,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 41,
+      "teamId": null,
+      "stats": {
+        "fgm": 115,
+        "fga": 243,
+        "ftm": 70,
+        "fta": 87,
+        "threes": 45,
+        "pts": 345,
+        "reb": 166,
+        "ast": 62,
+        "stl": 32,
+        "blk": 7,
+        "to": 36
+      }
     },
     {
       "playerId": "5160",
       "name": "Trey Burke",
       "actualRank": 265,
       "preseasonRank": 331,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 62,
+      "teamId": null,
+      "stats": {
+        "fgm": 151,
+        "fga": 353,
+        "ftm": 51,
+        "fta": 57,
+        "threes": 58,
+        "pts": 411,
+        "reb": 54,
+        "ast": 81,
+        "stl": 36,
+        "blk": 7,
+        "to": 33
+      }
     },
     {
       "playerId": "5321",
       "name": "Elfrid Payton",
       "actualRank": 266,
       "preseasonRank": 128,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 63,
+      "teamId": null,
+      "stats": {
+        "fgm": 269,
+        "fga": 622,
+        "ftm": 73,
+        "fta": 107,
+        "threes": 28,
+        "pts": 639,
+        "reb": 216,
+        "ast": 203,
+        "stl": 47,
+        "blk": 9,
+        "to": 103
+      }
     },
     {
       "playerId": "4163",
       "name": "P.J. Tucker",
       "actualRank": 267,
       "preseasonRank": 156,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 52,
+      "teamId": null,
+      "stats": {
+        "fgm": 66,
+        "fga": 177,
+        "ftm": 21,
+        "fta": 28,
+        "threes": 40,
+        "pts": 193,
+        "reb": 204,
+        "ast": 61,
+        "stl": 39,
+        "blk": 20,
+        "to": 40
+      }
     },
     {
       "playerId": "5323",
       "name": "Dario Šarić",
       "actualRank": 268,
       "preseasonRank": 181,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 50,
+      "teamId": null,
+      "stats": {
+        "fgm": 153,
+        "fga": 342,
+        "ftm": 84,
+        "fta": 99,
+        "threes": 47,
+        "pts": 437,
+        "reb": 190,
+        "ast": 65,
+        "stl": 30,
+        "blk": 4,
+        "to": 57
+      }
     },
     {
       "playerId": "5191",
       "name": "Gorgui Dieng",
       "actualRank": 269,
       "preseasonRank": 221,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 38,
+      "teamId": null,
+      "stats": {
+        "fgm": 85,
+        "fga": 163,
+        "ftm": 58,
+        "fta": 67,
+        "threes": 30,
+        "pts": 258,
+        "reb": 140,
+        "ast": 48,
+        "stl": 26,
+        "blk": 16,
+        "to": 32
+      }
     },
     {
       "playerId": "3860",
       "name": "Trevor Ariza",
       "actualRank": 270,
       "preseasonRank": 162,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 30,
+      "teamId": null,
+      "stats": {
+        "fgm": 99,
+        "fga": 241,
+        "ftm": 34,
+        "fta": 44,
+        "threes": 50,
+        "pts": 282,
+        "reb": 144,
+        "ast": 55,
+        "stl": 31,
+        "blk": 18,
+        "to": 21
+      }
     },
     {
       "playerId": "4888",
       "name": "Bismack Biyombo",
       "actualRank": 271,
       "preseasonRank": 342,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 66,
+      "teamId": null,
+      "stats": {
+        "fgm": 142,
+        "fga": 242,
+        "ftm": 47,
+        "fta": 105,
+        "threes": 0,
+        "pts": 331,
+        "reb": 347,
+        "ast": 81,
+        "stl": 17,
+        "blk": 74,
+        "to": 71
+      }
     },
     {
       "playerId": "4894",
       "name": "Markieff Morris",
       "actualRank": 272,
       "preseasonRank": 243,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 61,
+      "teamId": null,
+      "stats": {
+        "fgm": 153,
+        "fga": 378,
+        "ftm": 36,
+        "fta": 50,
+        "threes": 65,
+        "pts": 407,
+        "reb": 266,
+        "ast": 73,
+        "stl": 22,
+        "blk": 19,
+        "to": 54
+      }
     },
     {
       "playerId": "4969",
       "name": "Brad Wanamaker",
       "actualRank": 273,
       "preseasonRank": 317,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 61,
+      "teamId": null,
+      "stats": {
+        "fgm": 115,
+        "fga": 299,
+        "ftm": 90,
+        "fta": 101,
+        "threes": 16,
+        "pts": 336,
+        "reb": 105,
+        "ast": 174,
+        "stl": 43,
+        "blk": 11,
+        "to": 71
+      }
     },
     {
       "playerId": "4694",
       "name": "Wesley Matthews",
       "actualRank": 274,
       "preseasonRank": 257,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 58,
+      "teamId": null,
+      "stats": {
+        "fgm": 89,
+        "fga": 252,
+        "ftm": 35,
+        "fta": 41,
+        "threes": 66,
+        "pts": 279,
+        "reb": 93,
+        "ast": 54,
+        "stl": 38,
+        "blk": 17,
+        "to": 26
+      }
     },
     {
       "playerId": "6056",
       "name": "Hamidou Diallo",
       "actualRank": 275,
       "preseasonRank": 347,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 52,
+      "teamId": null,
+      "stats": {
+        "fgm": 224,
+        "fga": 470,
+        "ftm": 128,
+        "fta": 200,
+        "threes": 28,
+        "pts": 604,
+        "reb": 272,
+        "ast": 101,
+        "stl": 41,
+        "blk": 24,
+        "to": 76
+      }
     },
     {
       "playerId": "5865",
       "name": "Edmond Sumner",
       "actualRank": 276,
       "preseasonRank": 344,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 53,
+      "teamId": null,
+      "stats": {
+        "fgm": 148,
+        "fga": 282,
+        "ftm": 68,
+        "fta": 83,
+        "threes": 35,
+        "pts": 399,
+        "reb": 94,
+        "ast": 49,
+        "stl": 33,
+        "blk": 10,
+        "to": 51
+      }
     },
     {
       "playerId": "4480",
       "name": "JaVale McGee",
       "actualRank": 277,
       "preseasonRank": 219,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 46,
+      "teamId": null,
+      "stats": {
+        "fgm": 144,
+        "fga": 282,
+        "ftm": 44,
+        "fta": 67,
+        "threes": 5,
+        "pts": 337,
+        "reb": 239,
+        "ast": 39,
+        "stl": 19,
+        "blk": 54,
+        "to": 60
+      }
     },
     {
       "playerId": "6211",
       "name": "Darius Bazley",
       "actualRank": 278,
       "preseasonRank": 158,
-      "gamesPlayed": null,
-      "teamId": "2021:michael"
+      "gamesPlayed": 55,
+      "teamId": "2021:michael",
+      "stats": {
+        "fgm": 273,
+        "fga": 690,
+        "ftm": 125,
+        "fta": 178,
+        "threes": 83,
+        "pts": 754,
+        "reb": 396,
+        "ast": 99,
+        "stl": 29,
+        "blk": 25,
+        "to": 122
+      }
     },
     {
       "playerId": "6421",
       "name": "Malachi Flynn",
       "actualRank": 279,
       "preseasonRank": 350,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 47,
+      "teamId": null,
+      "stats": {
+        "fgm": 127,
+        "fga": 340,
+        "ftm": 45,
+        "fta": 56,
+        "threes": 54,
+        "pts": 353,
+        "reb": 116,
+        "ast": 137,
+        "stl": 38,
+        "blk": 7,
+        "to": 43
+      }
     },
     {
       "playerId": "4624",
       "name": "Jeff Teague",
       "actualRank": 280,
       "preseasonRank": 126,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 55,
+      "teamId": null,
+      "stats": {
+        "fgm": 123,
+        "fga": 284,
+        "ftm": 89,
+        "fta": 105,
+        "threes": 36,
+        "pts": 371,
+        "reb": 88,
+        "ast": 132,
+        "stl": 34,
+        "blk": 12,
+        "to": 64
+      }
     },
     {
       "playerId": "6132",
       "name": "Yuta Watanabe",
       "actualRank": 281,
       "preseasonRank": 349,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 50,
+      "teamId": null,
+      "stats": {
+        "fgm": 79,
+        "fga": 180,
+        "ftm": 24,
+        "fta": 29,
+        "threes": 36,
+        "pts": 218,
+        "reb": 159,
+        "ast": 40,
+        "stl": 26,
+        "blk": 19,
+        "to": 19
+      }
     },
     {
       "playerId": "6405",
       "name": "Kira Lewis Jr.",
       "actualRank": 282,
       "preseasonRank": 352,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 54,
+      "teamId": null,
+      "stats": {
+        "fgm": 130,
+        "fga": 337,
+        "ftm": 43,
+        "fta": 51,
+        "threes": 40,
+        "pts": 343,
+        "reb": 71,
+        "ast": 124,
+        "stl": 38,
+        "blk": 10,
+        "to": 34
+      }
     },
     {
       "playerId": "4149",
       "name": "Rajon Rondo",
       "actualRank": 283,
       "preseasonRank": 242,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 45,
+      "teamId": null,
+      "stats": {
+        "fgm": 95,
+        "fga": 215,
+        "ftm": 16,
+        "fta": 17,
+        "threes": 36,
+        "pts": 242,
+        "reb": 110,
+        "ast": 199,
+        "stl": 37,
+        "blk": 4,
+        "to": 79
+      }
     },
     {
       "playerId": "5886",
       "name": "PJ Dozier",
       "actualRank": 284,
       "preseasonRank": 348,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 50,
+      "teamId": null,
+      "stats": {
+        "fgm": 148,
+        "fga": 355,
+        "ftm": 42,
+        "fta": 66,
+        "threes": 47,
+        "pts": 385,
+        "reb": 182,
+        "ast": 92,
+        "stl": 31,
+        "blk": 22,
+        "to": 46
+      }
     },
     {
       "playerId": "4800",
       "name": "Ish Smith",
       "actualRank": 285,
       "preseasonRank": 233,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 44,
+      "teamId": null,
+      "stats": {
+        "fgm": 129,
+        "fga": 297,
+        "ftm": 19,
+        "fta": 33,
+        "threes": 18,
+        "pts": 295,
+        "reb": 150,
+        "ast": 172,
+        "stl": 32,
+        "blk": 13,
+        "to": 41
+      }
     },
     {
       "playerId": "5190",
       "name": "Tony Snell",
       "actualRank": 286,
       "preseasonRank": 326,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 47,
+      "teamId": null,
+      "stats": {
+        "fgm": 88,
+        "fga": 171,
+        "ftm": 11,
+        "fta": 11,
+        "threes": 62,
+        "pts": 249,
+        "reb": 112,
+        "ast": 59,
+        "stl": 13,
+        "blk": 11,
+        "to": 21
+      }
     },
     {
       "playerId": "6206",
       "name": "Goga Bitadze",
       "actualRank": 287,
       "preseasonRank": 223,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 45,
+      "teamId": null,
+      "stats": {
+        "fgm": 83,
+        "fga": 194,
+        "ftm": 45,
+        "fta": 61,
+        "threes": 20,
+        "pts": 231,
+        "reb": 150,
+        "ast": 37,
+        "stl": 9,
+        "blk": 60,
+        "to": 17
+      }
     },
     {
       "playerId": "4130",
       "name": "LaMarcus Aldridge",
       "actualRank": 288,
       "preseasonRank": 48,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 26,
+      "teamId": null,
+      "stats": {
+        "fgm": 140,
+        "fga": 296,
+        "ftm": 41,
+        "fta": 47,
+        "threes": 31,
+        "pts": 352,
+        "reb": 118,
+        "ast": 49,
+        "stl": 11,
+        "blk": 29,
+        "to": 27
+      }
     },
     {
       "playerId": "6043",
       "name": "Jevon Carter",
       "actualRank": 289,
       "preseasonRank": 330,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 60,
+      "teamId": null,
+      "stats": {
+        "fgm": 94,
+        "fga": 223,
+        "ftm": 4,
+        "fta": 7,
+        "threes": 56,
+        "pts": 248,
+        "reb": 92,
+        "ast": 71,
+        "stl": 29,
+        "blk": 9,
+        "to": 16
+      }
     },
     {
       "playerId": "5959",
       "name": "Marvin Bagley III",
       "actualRank": 290,
       "preseasonRank": 98,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 43,
+      "teamId": null,
+      "stats": {
+        "fgm": 247,
+        "fga": 490,
+        "ftm": 77,
+        "fta": 134,
+        "threes": 37,
+        "pts": 608,
+        "reb": 318,
+        "ast": 43,
+        "stl": 21,
+        "blk": 21,
+        "to": 59
+      }
     },
     {
       "playerId": "6240",
       "name": "Jalen McDaniels",
       "actualRank": 291,
       "preseasonRank": 354,
-      "gamesPlayed": null,
-      "teamId": "2021:benjamin"
+      "gamesPlayed": 47,
+      "teamId": "2021:benjamin",
+      "stats": {
+        "fgm": 133,
+        "fga": 284,
+        "ftm": 45,
+        "fta": 64,
+        "threes": 35,
+        "pts": 346,
+        "reb": 169,
+        "ast": 53,
+        "stl": 28,
+        "blk": 19,
+        "to": 45
+      }
     },
     {
       "playerId": "6255",
       "name": "John Konchar",
       "actualRank": 292,
       "preseasonRank": 353,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 43,
+      "teamId": null,
+      "stats": {
+        "fgm": 69,
+        "fga": 138,
+        "ftm": 25,
+        "fta": 30,
+        "threes": 21,
+        "pts": 184,
+        "reb": 128,
+        "ast": 47,
+        "stl": 30,
+        "blk": 9,
+        "to": 18
+      }
     },
     {
       "playerId": "6036",
       "name": "Moritz Wagner",
       "actualRank": 293,
       "preseasonRank": 267,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 45,
+      "teamId": null,
+      "stats": {
+        "fgm": 104,
+        "fga": 229,
+        "ftm": 71,
+        "fta": 87,
+        "threes": 31,
+        "pts": 310,
+        "reb": 146,
+        "ast": 50,
+        "stl": 26,
+        "blk": 18,
+        "to": 43
+      }
     },
     {
       "playerId": "5824",
       "name": "Malik Monk",
       "actualRank": 294,
       "preseasonRank": 246,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 42,
+      "teamId": null,
+      "stats": {
+        "fgm": 173,
+        "fga": 399,
+        "ftm": 59,
+        "fta": 72,
+        "threes": 85,
+        "pts": 490,
+        "reb": 101,
+        "ast": 87,
+        "stl": 19,
+        "blk": 4,
+        "to": 55
+      }
     },
     {
       "playerId": "6166",
       "name": "De'Andre Hunter",
       "actualRank": 295,
       "preseasonRank": 154,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 23,
+      "teamId": null,
+      "stats": {
+        "fgm": 120,
+        "fga": 248,
+        "ftm": 73,
+        "fta": 85,
+        "threes": 31,
+        "pts": 344,
+        "reb": 110,
+        "ast": 44,
+        "stl": 19,
+        "blk": 12,
+        "to": 29
+      }
     },
     {
       "playerId": "6398",
       "name": "Onyeka Okongwu",
       "actualRank": 296,
       "preseasonRank": 365,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 50,
+      "teamId": null,
+      "stats": {
+        "fgm": 96,
+        "fga": 149,
+        "ftm": 36,
+        "fta": 57,
+        "threes": 0,
+        "pts": 228,
+        "reb": 163,
+        "ast": 18,
+        "stl": 23,
+        "blk": 33,
+        "to": 29
+      }
     },
     {
       "playerId": "6212",
       "name": "Ty Jerome",
       "actualRank": 297,
       "preseasonRank": 357,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 33,
+      "teamId": null,
+      "stats": {
+        "fgm": 128,
+        "fga": 287,
+        "ftm": 26,
+        "fta": 34,
+        "threes": 71,
+        "pts": 353,
+        "reb": 91,
+        "ast": 120,
+        "stl": 20,
+        "blk": 6,
+        "to": 47
+      }
     },
     {
       "playerId": "6210",
       "name": "Grant Williams",
       "actualRank": 298,
       "preseasonRank": 201,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 63,
+      "teamId": null,
+      "stats": {
+        "fgm": 108,
+        "fga": 247,
+        "ftm": 30,
+        "fta": 51,
+        "threes": 48,
+        "pts": 294,
+        "reb": 178,
+        "ast": 64,
+        "stl": 32,
+        "blk": 24,
+        "to": 56
+      }
     },
     {
       "playerId": "5655",
       "name": "T. Luwawu-Cabarrot",
       "actualRank": 299,
       "preseasonRank": 343,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 58,
+      "teamId": null,
+      "stats": {
+        "fgm": 130,
+        "fga": 356,
+        "ftm": 35,
+        "fta": 43,
+        "threes": 75,
+        "pts": 370,
+        "reb": 129,
+        "ast": 69,
+        "stl": 33,
+        "blk": 6,
+        "to": 43
+      }
     },
     {
       "playerId": "5150",
       "name": "Aron Baynes",
       "actualRank": 300,
       "preseasonRank": 175,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 53,
+      "teamId": null,
+      "stats": {
+        "fgm": 134,
+        "fga": 304,
+        "ftm": 29,
+        "fta": 41,
+        "threes": 27,
+        "pts": 324,
+        "reb": 273,
+        "ast": 47,
+        "stl": 17,
+        "blk": 22,
+        "to": 46
+      }
     }
   ],
   "activity": {
@@ -4410,7 +8310,11 @@
           "receives": [
             {
               "name": "Ben Simmons",
-              "playerId": "5600"
+              "playerId": "5600",
+              "afterTrade": {
+                "rank": 175,
+                "games": 20
+              }
             }
           ]
         },
@@ -4419,7 +8323,11 @@
           "receives": [
             {
               "name": "Deandre Ayton",
-              "playerId": "5958"
+              "playerId": "5958",
+              "afterTrade": {
+                "rank": 21,
+                "games": 24
+              }
             }
           ]
         }
@@ -4434,15 +8342,27 @@
           "receives": [
             {
               "name": "Kyle Anderson",
-              "playerId": "5341"
+              "playerId": "5341",
+              "afterTrade": {
+                "rank": 20,
+                "games": 28
+              }
             },
             {
               "name": "Kemba Walker",
-              "playerId": "4890"
+              "playerId": "4890",
+              "afterTrade": {
+                "rank": 104,
+                "games": 16
+              }
             },
             {
               "name": "Gordon Hayward",
-              "playerId": "4724"
+              "playerId": "4724",
+              "afterTrade": {
+                "rank": 401,
+                "games": 3
+              }
             }
           ]
         },
@@ -4451,11 +8371,19 @@
           "receives": [
             {
               "name": "Chris Boucher",
-              "playerId": "5894"
+              "playerId": "5894",
+              "afterTrade": {
+                "rank": 128,
+                "games": 14
+              }
             },
             {
               "name": "Paul George",
-              "playerId": "4725"
+              "playerId": "4725",
+              "afterTrade": {
+                "rank": 68,
+                "games": 18
+              }
             }
           ]
         }
@@ -4470,19 +8398,35 @@
           "receives": [
             {
               "name": "Bradley Beal",
-              "playerId": "5009"
+              "playerId": "5009",
+              "afterTrade": {
+                "rank": 55,
+                "games": 19
+              }
             },
             {
               "name": "John Collins",
-              "playerId": "5832"
+              "playerId": "5832",
+              "afterTrade": {
+                "rank": 129,
+                "games": 17
+              }
             },
             {
               "name": "Kristaps Porziņģis",
-              "playerId": "5464"
+              "playerId": "5464",
+              "afterTrade": {
+                "rank": 94,
+                "games": 15
+              }
             },
             {
               "name": "Zach LaVine",
-              "playerId": "5324"
+              "playerId": "5324",
+              "afterTrade": {
+                "rank": 174,
+                "games": 14
+              }
             }
           ]
         },
@@ -4491,23 +8435,43 @@
           "receives": [
             {
               "name": "Devin Booker",
-              "playerId": "5473"
+              "playerId": "5473",
+              "afterTrade": {
+                "rank": 37,
+                "games": 26
+              }
             },
             {
               "name": "Jayson Tatum",
-              "playerId": "5765"
+              "playerId": "5765",
+              "afterTrade": {
+                "rank": 13,
+                "games": 24
+              }
             },
             {
               "name": "Clint Capela",
-              "playerId": "5336"
+              "playerId": "5336",
+              "afterTrade": {
+                "rank": 29,
+                "games": 23
+              }
             },
             {
               "name": "OG Anunoby",
-              "playerId": "5836"
+              "playerId": "5836",
+              "afterTrade": {
+                "rank": 114,
+                "games": 15
+              }
             },
             {
               "name": "Jerami Grant",
-              "playerId": "5350"
+              "playerId": "5350",
+              "afterTrade": {
+                "rank": 286,
+                "games": 12
+              }
             }
           ]
         }
@@ -4522,11 +8486,19 @@
           "receives": [
             {
               "name": "Bradley Beal",
-              "playerId": "5009"
+              "playerId": "5009",
+              "afterTrade": {
+                "rank": 56,
+                "games": 20
+              }
             },
             {
               "name": "Will Barton",
-              "playerId": "5074"
+              "playerId": "5074",
+              "afterTrade": {
+                "rank": 242,
+                "games": 15
+              }
             }
           ]
         },
@@ -4535,11 +8507,19 @@
           "receives": [
             {
               "name": "Jaylen Brown",
-              "playerId": "5602"
+              "playerId": "5602",
+              "afterTrade": {
+                "rank": 90,
+                "games": 17
+              }
             },
             {
               "name": "LeBron James",
-              "playerId": "3704"
+              "playerId": "3704",
+              "afterTrade": {
+                "rank": 389,
+                "games": 4
+              }
             }
           ]
         }
@@ -4554,15 +8534,27 @@
           "receives": [
             {
               "name": "John Wall",
-              "playerId": "4716"
+              "playerId": "4716",
+              "afterTrade": {
+                "rank": 312,
+                "games": 18
+              }
             },
             {
               "name": "Chris Paul",
-              "playerId": "3930"
+              "playerId": "3930",
+              "afterTrade": {
+                "rank": 4,
+                "games": 40
+              }
             },
             {
               "name": "Myles Turner",
-              "playerId": "5471"
+              "playerId": "5471",
+              "afterTrade": {
+                "rank": 163,
+                "games": 18
+              }
             }
           ]
         },
@@ -4571,15 +8563,27 @@
           "receives": [
             {
               "name": "Lonzo Ball",
-              "playerId": "5764"
+              "playerId": "5764",
+              "afterTrade": {
+                "rank": 77,
+                "games": 26
+              }
             },
             {
               "name": "Kyle Lowry",
-              "playerId": "4152"
+              "playerId": "4152",
+              "afterTrade": {
+                "rank": 186,
+                "games": 19
+              }
             },
             {
               "name": "Anthony Davis",
-              "playerId": "5007"
+              "playerId": "5007",
+              "afterTrade": {
+                "rank": 285,
+                "games": 13
+              }
             }
           ]
         }
@@ -4594,7 +8598,11 @@
           "receives": [
             {
               "name": "Myles Turner",
-              "playerId": "5471"
+              "playerId": "5471",
+              "afterTrade": {
+                "rank": 152,
+                "games": 20
+              }
             }
           ]
         },
@@ -4603,7 +8611,11 @@
           "receives": [
             {
               "name": "Zion Williamson",
-              "playerId": "6163"
+              "playerId": "6163",
+              "afterTrade": {
+                "rank": 105,
+                "games": 35
+              }
             }
           ]
         }
@@ -4618,11 +8630,19 @@
           "receives": [
             {
               "name": "Harrison Barnes",
-              "playerId": "5013"
+              "playerId": "5013",
+              "afterTrade": {
+                "rank": 114,
+                "games": 37
+              }
             },
             {
               "name": "Evan Fournier",
-              "playerId": "5054"
+              "playerId": "5054",
+              "afterTrade": {
+                "rank": 153,
+                "games": 29
+              }
             }
           ]
         },
@@ -4631,7 +8651,11 @@
           "receives": [
             {
               "name": "Michael Porter Jr.",
-              "playerId": "6025"
+              "playerId": "6025",
+              "afterTrade": {
+                "rank": 13,
+                "games": 51
+              }
             }
           ]
         }
@@ -4646,11 +8670,19 @@
           "receives": [
             {
               "name": "Ben Simmons",
-              "playerId": "5600"
+              "playerId": "5600",
+              "afterTrade": {
+                "rank": 134,
+                "games": 40
+              }
             },
             {
               "name": "Rudy Gobert",
-              "playerId": "5197"
+              "playerId": "5197",
+              "afterTrade": {
+                "rank": 9,
+                "games": 53
+              }
             }
           ]
         },
@@ -4659,11 +8691,19 @@
           "receives": [
             {
               "name": "Zach LaVine",
-              "playerId": "5324"
+              "playerId": "5324",
+              "afterTrade": {
+                "rank": 53,
+                "games": 41
+              }
             },
             {
               "name": "John Collins",
-              "playerId": "5832"
+              "playerId": "5832",
+              "afterTrade": {
+                "rank": 40,
+                "games": 44
+              }
             }
           ]
         }
@@ -4678,11 +8718,19 @@
           "receives": [
             {
               "name": "Chris Boucher",
-              "playerId": "5894"
+              "playerId": "5894",
+              "afterTrade": {
+                "rank": 60,
+                "games": 41
+              }
             },
             {
               "name": "Myles Turner",
-              "playerId": "5471"
+              "playerId": "5471",
+              "afterTrade": {
+                "rank": 109,
+                "games": 30
+              }
             }
           ]
         },
@@ -4691,11 +8739,19 @@
           "receives": [
             {
               "name": "Jaylen Brown",
-              "playerId": "5602"
+              "playerId": "5602",
+              "afterTrade": {
+                "rank": 74,
+                "games": 42
+              }
             },
             {
               "name": "John Wall",
-              "playerId": "4716"
+              "playerId": "4716",
+              "afterTrade": {
+                "rank": 265,
+                "games": 30
+              }
             }
           ]
         }
@@ -4710,11 +8766,19 @@
           "receives": [
             {
               "name": "De'Aaron Fox",
-              "playerId": "5767"
+              "playerId": "5767",
+              "afterTrade": {
+                "rank": 76,
+                "games": 41
+              }
             },
             {
               "name": "Robert Covington",
-              "playerId": "5253"
+              "playerId": "5253",
+              "afterTrade": {
+                "rank": 11,
+                "games": 55
+              }
             }
           ]
         },
@@ -4723,11 +8787,19 @@
           "receives": [
             {
               "name": "Andrew Wiggins",
-              "playerId": "5292"
+              "playerId": "5292",
+              "afterTrade": {
+                "rank": 49,
+                "games": 53
+              }
             },
             {
               "name": "Michael Porter Jr.",
-              "playerId": "6025"
+              "playerId": "6025",
+              "afterTrade": {
+                "rank": 15,
+                "games": 53
+              }
             }
           ]
         }
@@ -4742,7 +8814,11 @@
           "receives": [
             {
               "name": "Giannis Antetokounmpo",
-              "playerId": "5185"
+              "playerId": "5185",
+              "afterTrade": {
+                "rank": 10,
+                "games": 47
+              }
             }
           ]
         },
@@ -4751,7 +8827,11 @@
           "receives": [
             {
               "name": "Luka Dončić",
-              "playerId": "6014"
+              "playerId": "6014",
+              "afterTrade": {
+                "rank": 42,
+                "games": 51
+              }
             }
           ]
         }
@@ -4766,7 +8846,11 @@
           "receives": [
             {
               "name": "D'Angelo Russell",
-              "playerId": "5433"
+              "playerId": "5433",
+              "afterTrade": {
+                "rank": 225,
+                "games": 29
+              }
             }
           ]
         },
@@ -4775,7 +8859,11 @@
           "receives": [
             {
               "name": "Richaun Holmes",
-              "playerId": "5497"
+              "playerId": "5497",
+              "afterTrade": {
+                "rank": 42,
+                "games": 47
+              }
             }
           ]
         }
@@ -4790,11 +8878,19 @@
           "receives": [
             {
               "name": "Trae Young",
-              "playerId": "6016"
+              "playerId": "6016",
+              "afterTrade": {
+                "rank": 33,
+                "games": 53
+              }
             },
             {
               "name": "Tyler Herro",
-              "playerId": "6175"
+              "playerId": "6175",
+              "afterTrade": {
+                "rank": 153,
+                "games": 45
+              }
             }
           ]
         },
@@ -4803,11 +8899,19 @@
           "receives": [
             {
               "name": "Chris Paul",
-              "playerId": "3930"
+              "playerId": "3930",
+              "afterTrade": {
+                "rank": 5,
+                "games": 60
+              }
             },
             {
               "name": "Rudy Gobert",
-              "playerId": "5197"
+              "playerId": "5197",
+              "afterTrade": {
+                "rank": 6,
+                "games": 61
+              }
             }
           ]
         }
@@ -4822,7 +8926,11 @@
           "receives": [
             {
               "name": "Zion Williamson",
-              "playerId": "6163"
+              "playerId": "6163",
+              "afterTrade": {
+                "rank": 54,
+                "games": 53
+              }
             }
           ]
         },
@@ -4831,7 +8939,11 @@
           "receives": [
             {
               "name": "Pascal Siakam",
-              "playerId": "5658"
+              "playerId": "5658",
+              "afterTrade": {
+                "rank": 56,
+                "games": 49
+              }
             }
           ]
         }

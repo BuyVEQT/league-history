@@ -1,0 +1,20 @@
+# date|player|rank on games after the trade (to 2022-04-10, among all players)|games played
+2021-12-15|Deandre Ayton|52|39
+2021-12-15|Jonathan Isaac|-|0
+2021-12-15|Jrue Holiday|23|43
+2021-12-09|Bradley Beal|273|17
+2021-12-09|Derrick White|72|51
+2021-12-09|Scottie Barnes|49|52
+2021-12-09|Derrick White|72|51
+2021-12-09|Scottie Barnes|49|52
+2021-12-09|Bradley Beal|273|17
+2021-12-07|Bradley Beal|273|18
+2021-12-07|Derrick White|66|52
+2021-12-07|Scottie Barnes|47|53
+2021-12-07|Clint Capela|59|49
+2021-12-07|Khris Middleton|26|50
+2021-12-04|Kevin Porter Jr.|150|42
+2021-12-04|DeMar DeRozan|18|53
+2021-11-14|Jonas Valančiūnas|40|60
+2021-11-14|Dennis Schröder|205|51
+2021-11-14|Jimmy Butler III|43|47

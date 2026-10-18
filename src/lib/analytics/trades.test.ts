@@ -69,3 +69,32 @@ describe("trades", () => {
     expect(activityVsFinish(league)).toMatchObject({ leagueAvg: 30, championsAvg: 10, topThirdAvg: 10, bottomThirdAvg: 50 });
   });
 });
+
+describe("trades scored on post-trade games", () => {
+  const after: Season = {
+    ...season,
+    trades: [
+      {
+        date: "2025-01-02",
+        status: "completed",
+        sides: [
+          // Star (#1 for the season) barely played after the trade; Role (#101) ranked 2nd on the games after it.
+          { teamId: "t:a", receives: [{ name: "Star", playerId: "p1", afterTrade: { rank: null, games: 2 } }] },
+          { teamId: "t:b", receives: [{ name: "Role", playerId: "p2", afterTrade: { rank: 2, games: 30 } }] },
+        ],
+      },
+    ],
+  };
+  const [t] = leagueTrades({ ...league, seasons: [after] });
+
+  it("uses post-trade ranks when every player has one, and can flip the winner", () => {
+    expect(t.basis).toBe("after");
+    expect(t.sides.map((s) => s.value)).toEqual([0, rankValue(2, 3)]);
+    expect(t.winnerManagerId).toBe("b");
+    expect(t.sides[1].players[0]).toMatchObject({ actualRank: 101, afterRank: 2, afterGames: 30 });
+  });
+
+  it("falls back to full-season ranks otherwise", () => {
+    expect(leagueTrades(league)[0].basis).toBe("season");
+  });
+});

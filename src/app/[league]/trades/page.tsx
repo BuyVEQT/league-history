@@ -106,8 +106,9 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
           Trade value uses the same scale as the draft: each player&apos;s end-of-season rank in 9-category z-score points above a
           replacement-level player (roughly the last rostered player, teams × draft rounds, about 156 in a 12-team league). The scale is
           steep at the top, so one star outweighs several solid players, and fringe players add nothing: getting more bodies doesn&apos;t
-          win a trade. Ranks cover the whole NBA season, not just the weeks after the trade, so treat winners as a rough guide. Moves
-          are the season count of adds and drops.
+          win a trade. Where game logs are available, each player is re-ranked on only the games played after the trade (to the end
+          of the regular season), so a trade is judged on what each side actually got; the card shows that rank and games played
+          (hover for the season rank). Otherwise it falls back to full-season ranks. Moves are the season count of adds and drops.
         </p>
       </Section>
 
@@ -136,7 +137,10 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
                   {list.map((t, i) => (
                     <div key={i} className={`${cardClass} p-4 ${t.status === "vetoed" ? "opacity-70" : ""}`}>
                       <div className="mb-3 flex items-center justify-between text-xs text-muted">
-                        <span>{dateLabel(t.date)}</span>
+                        <span>
+                          {dateLabel(t.date)}
+                          {t.status === "completed" && <span> · {t.basis === "after" ? "rated on games after the trade" : "rated on full-season ranks"}</span>}
+                        </span>
                         {t.status === "vetoed" ? (
                           <span className="rounded-full border border-negative/40 px-2 py-0.5 text-negative">Vetoed</span>
                         ) : t.winnerManagerId ? (
@@ -163,7 +167,14 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
                               {s.players.map((p) => (
                                 <li key={p.playerId ?? p.name} className="flex justify-between gap-2">
                                   <span className="truncate">{p.name}</span>
-                                  <span className="shrink-0 tabular-nums text-muted">{rankLabel(p.actualRank)}</span>
+                                  {t.basis === "after" ? (
+                                    <span className="shrink-0 tabular-nums" title={`Season rank ${rankLabel(p.actualRank)}; ${p.afterGames} games after the trade`}>
+                                      {p.afterRank ? `#${p.afterRank}` : "—"}
+                                      <span className="text-xs text-muted"> · {p.afterGames}g</span>
+                                    </span>
+                                  ) : (
+                                    <span className="shrink-0 tabular-nums text-muted">{rankLabel(p.actualRank)}</span>
+                                  )}
                                 </li>
                               ))}
                             </ul>

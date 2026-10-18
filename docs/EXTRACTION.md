@@ -71,6 +71,10 @@ module, not the header link.
   (`teams`, `settings`, `regular`, `playoffs`, `standings`, `draft`, `ranks`, `moves-trades`).
   `node scripts/build-caboclo.mjs [yahooYear]` writes `<endYear>.json`; with no argument it rebuilds every
   season and `league.json` (Yahoo's manager Ratings & Levels from `raw/league/alltime.txt`). Never hand-edit the JSON.
+- **Sleeper:** `NODE_USE_ENV_PROXY=1 node scripts/capture-sleeper.mjs` (the env var only matters behind a proxy)
+  writes `sleeper-stats.txt` and `sleeper-trades.txt` per season, then rebuild. Sleeper has no Yahoo ids, so players
+  match by name (accent/suffix-insensitive; two players can share a name, the one who played wins). Its feeds
+  include whole-team rows (`TEAM_XXX`), which are skipped; an empty game row is a day the player didn't play.
 - **Namesakes:** `teams.txt` takes an optional 4th column, the player a team name clearly refers to
   (`0|Mad Maxey|matt|Tyrese Maxey`). Only add unambiguous ones ("Tyrese's Pieces" could be Maxey or Haliburton).
   The build resolves it to a player id and lists any it can't find (e.g. a player not in the NBA that season).

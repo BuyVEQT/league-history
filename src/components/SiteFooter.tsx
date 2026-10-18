@@ -18,6 +18,15 @@ export function SiteFooter({ source }: { source?: League["source"] }) {
               </a>
             </p>
           )}
+          {source === "yahoo" && (
+            <p>
+              Additional NBA player stats from{" "}
+              <a href="https://sleeper.com" className="underline hover:text-foreground" target="_blank" rel="noreferrer">
+                Sleeper
+              </a>
+              .
+            </p>
+          )}
           {source === "demo" && <p>Demo league is fictional and was not retrieved from Yahoo.</p>}
           <p>
             {SITE_NAME} is an independent project and is not affiliated with or endorsed by Yahoo.

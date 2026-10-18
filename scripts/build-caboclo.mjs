@@ -119,6 +119,19 @@ function build(yahooYear) {
     });
   }
 
+  // Sleeper fills stats Yahoo doesn't show (2018-2020 seasons, free agents); see capture-sleeper.mjs.
+  const sleeperStats = new Map((lines(yahooYear, "sleeper-stats.txt") ?? []).map((l) => l.split("|")).map(([pid, ...v]) => [pid, v.map(num)]));
+  for (const p of season.players ?? []) {
+    const s = sleeperStats.get(p.playerId);
+    if (p.stats || !s) continue;
+    const [gp, fgm, fga, ftm, fta, threes, pts, reb, ast, stl, blk, to] = s;
+    if (p.gamesPlayed === null) p.gamesPlayed = gp;
+    p.stats = { fgm, fga, ftm, fta, threes, pts, reb, ast, stl, blk, to };
+  }
+  const afterTrade = new Map(
+    (lines(yahooYear, "sleeper-trades.txt") ?? []).map((l) => l.split("|")).map(([date, name, rank, games]) => [`${date}|${name}`, { rank: rank === "-" ? null : num(rank), games: num(games) }]),
+  );
+
   const resolve = playerResolver([...(season.draft ?? []).map((d) => ({ playerId: d.playerId, name: d.playerName })), ...(season.players ?? [])]);
   for (const team of teams) {
     const player = namesakes.get(team.id);
@@ -143,7 +156,8 @@ function build(yahooYear) {
               const name = s.trim();
               const playerId = resolve(name);
               if (!playerId) unresolved.add(name);
-              return { name, playerId };
+              const after = afterTrade.get(`${date}|${name}`);
+              return { name, playerId, ...(after && { afterTrade: after }) };
             });
             return { teamId: id(idxOfName(team)), receives };
           }),

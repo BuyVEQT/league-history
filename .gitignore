@@ -48,3 +48,4 @@ next-env.d.ts
 
 # private extraction helpers (emails etc.)
 *.local.json
+data/leagues/caboclo/.sleeper-cache/
