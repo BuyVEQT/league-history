@@ -1,0 +1,65 @@
+# date|player|rank on games after the trade (to 2019-04-10, among all players)|games played
+2019-02-08|Jamal Murray|39|26
+2019-02-08|Zach LaVine|156|15
+2019-02-08|Harrison Barnes|101|27
+2019-02-08|DeMarcus Cousins|47|21
+2019-02-08|Ben Simmons|34|27
+2019-02-08|Pascal Siakam|36|25
+2019-02-08|Jayson Tatum|79|25
+2019-02-06|Zach LaVine|147|16
+2019-02-06|Jamal Murray|35|27
+2019-02-06|Harrison Barnes|97|28
+2019-02-06|DeMarcus Cousins|51|22
+2019-02-06|Steven Adams|101|29
+2019-02-06|Ben Simmons|41|28
+2019-02-06|Pascal Siakam|32|26
+2019-02-06|Deandre Ayton|78|22
+2019-02-06|Jayson Tatum|68|26
+2019-01-31|DeAndre Jordan|154|19
+2019-01-31|Jayson Tatum|50|29
+2019-01-12|DeMarcus Cousins|66|30
+2019-01-12|Al Horford|18|35
+2019-01-02|Kemba Walker|15|46
+2019-01-02|Kevin Love|217|18
+2019-01-02|Blake Griffin|64|41
+2019-01-02|Joe Ingles|65|44
+2019-01-02|Jimmy Butler III|35|34
+2019-01-02|Giannis Antetokounmpo|3|39
+2019-01-01|Jeff Teague|253|19
+2019-01-01|Enes Freedom|202|29
+2019-01-01|T.J. Warren|318|11
+2019-01-01|Dennis Schröder|153|44
+2018-12-30|Larry Nance Jr.|106|32
+2018-12-30|Kyle Anderson|358|9
+2018-12-30|DeMar DeRozan|63|40
+2018-12-30|Nikola Jokić|6|47
+2018-12-30|Serge Ibaka|89|40
+2018-12-30|Lou Williams|70|43
+2018-12-26|Kyle Anderson|346|10
+2018-12-26|Larry Nance Jr.|98|34
+2018-12-26|DeMar DeRozan|60|42
+2018-12-26|Nikola Jokić|5|49
+2018-12-26|Serge Ibaka|89|42
+2018-12-26|Lou Williams|72|45
+2018-12-22|Andrew Wiggins|176|45
+2018-12-22|Danilo Gallinari|54|37
+2018-12-22|Josh Richardson|79|43
+2018-12-01|Kent Bazemore|215|44
+2018-12-01|Marcus Morris Sr.|109|53
+2018-12-01|Bradley Beal|8|60
+2018-12-01|Jonas Valančiūnas|207|25
+2018-12-01|Trevor Ariza|94|49
+2018-12-01|T.J. Warren|224|23
+2018-12-01|Al Horford|30|47
+2018-12-01|Hassan Whiteside|103|52
+2018-11-28|Joel Embiid|27|42
+2018-11-28|Dwight Howard|-|0
+2018-11-28|Eric Bledsoe|32|57
+2018-11-28|John Wall|362|11
+2018-11-28|Blake Griffin|54|58
+2018-11-22|Kyle Kuzma|129|54
+2018-11-22|Andrew Wiggins|162|59
+2018-11-02|James Harden|1|75
+2018-11-02|Kemba Walker|16|74
+2018-11-02|Stephen Curry|12|60
+2018-11-02|D'Angelo Russell|29|73

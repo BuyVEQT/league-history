@@ -2645,7 +2645,20 @@
       "actualRank": 14,
       "preseasonRank": 236,
       "gamesPlayed": 46,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 408,
+        "fga": 857,
+        "ftm": 158,
+        "fta": 189,
+        "threes": 142,
+        "pts": 1116,
+        "reb": 506,
+        "ast": 168,
+        "stl": 52,
+        "blk": 176,
+        "to": 149
+      }
     },
     {
       "playerId": "6175",
@@ -3430,7 +3443,20 @@
       "actualRank": 52,
       "preseasonRank": 238,
       "gamesPlayed": 80,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 227,
+        "fga": 464,
+        "ftm": 73,
+        "fta": 86,
+        "threes": 139,
+        "pts": 666,
+        "reb": 212,
+        "ast": 120,
+        "stl": 121,
+        "blk": 63,
+        "to": 71
+      }
     },
     {
       "playerId": "6253",
@@ -3690,7 +3716,20 @@
       "actualRank": 65,
       "preseasonRank": 237,
       "gamesPlayed": 50,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 447,
+        "fga": 945,
+        "ftm": 196,
+        "fta": 214,
+        "threes": 144,
+        "pts": 1234,
+        "reb": 240,
+        "ast": 231,
+        "stl": 66,
+        "blk": 23,
+        "to": 111
+      }
     },
     {
       "playerId": "6515",
@@ -4034,7 +4073,20 @@
       "actualRank": 82,
       "preseasonRank": 154,
       "gamesPlayed": 71,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 258,
+        "fga": 593,
+        "ftm": 33,
+        "fta": 46,
+        "threes": 170,
+        "pts": 719,
+        "reb": 293,
+        "ast": 115,
+        "stl": 79,
+        "blk": 39,
+        "to": 51
+      }
     },
     {
       "playerId": "5727",
@@ -4126,7 +4178,20 @@
       "actualRank": 87,
       "preseasonRank": 145,
       "gamesPlayed": 75,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 241,
+        "fga": 570,
+        "ftm": 19,
+        "fta": 26,
+        "threes": 179,
+        "pts": 680,
+        "reb": 349,
+        "ast": 163,
+        "stl": 67,
+        "blk": 34,
+        "to": 65
+      }
     },
     {
       "playerId": "5013",
@@ -4197,7 +4262,20 @@
       "actualRank": 91,
       "preseasonRank": 246,
       "gamesPlayed": 70,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 319,
+        "fga": 618,
+        "ftm": 129,
+        "fta": 148,
+        "threes": 111,
+        "pts": 878,
+        "reb": 173,
+        "ast": 237,
+        "stl": 78,
+        "blk": 3,
+        "to": 92
+      }
     },
     {
       "playerId": "6754",
@@ -4205,7 +4283,20 @@
       "actualRank": 92,
       "preseasonRank": 187,
       "gamesPlayed": 82,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 276,
+        "fga": 665,
+        "ftm": 85,
+        "fta": 94,
+        "threes": 178,
+        "pts": 815,
+        "reb": 318,
+        "ast": 111,
+        "stl": 61,
+        "blk": 35,
+        "to": 74
+      }
     },
     {
       "playerId": "5159",
@@ -4213,7 +4304,20 @@
       "actualRank": 93,
       "preseasonRank": 170,
       "gamesPlayed": 77,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 239,
+        "fga": 544,
+        "ftm": 82,
+        "fta": 95,
+        "threes": 113,
+        "pts": 673,
+        "reb": 169,
+        "ast": 136,
+        "stl": 99,
+        "blk": 34,
+        "to": 62
+      }
     },
     {
       "playerId": "6567",
@@ -4242,7 +4346,20 @@
       "actualRank": 95,
       "preseasonRank": 167,
       "gamesPlayed": 79,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 285,
+        "fga": 594,
+        "ftm": 122,
+        "fta": 171,
+        "threes": 87,
+        "pts": 779,
+        "reb": 259,
+        "ast": 347,
+        "stl": 103,
+        "blk": 30,
+        "to": 138
+      }
     },
     {
       "playerId": "5318",
@@ -4397,7 +4514,20 @@
       "actualRank": 103,
       "preseasonRank": 132,
       "gamesPlayed": 62,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 254,
+        "fga": 573,
+        "ftm": 70,
+        "fta": 77,
+        "threes": 108,
+        "pts": 686,
+        "reb": 265,
+        "ast": 239,
+        "stl": 66,
+        "blk": 27,
+        "to": 77
+      }
     },
     {
       "playerId": "6226",
@@ -4405,7 +4535,20 @@
       "actualRank": 104,
       "preseasonRank": 217,
       "gamesPlayed": 57,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 283,
+        "fga": 403,
+        "ftm": 135,
+        "fta": 196,
+        "threes": 0,
+        "pts": 701,
+        "reb": 388,
+        "ast": 80,
+        "stl": 23,
+        "blk": 102,
+        "to": 66
+      }
     },
     {
       "playerId": "4892",
@@ -4434,7 +4577,20 @@
       "actualRank": 106,
       "preseasonRank": 153,
       "gamesPlayed": 82,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 328,
+        "fga": 786,
+        "ftm": 53,
+        "fta": 64,
+        "threes": 203,
+        "pts": 912,
+        "reb": 264,
+        "ast": 134,
+        "stl": 69,
+        "blk": 23,
+        "to": 91
+      }
     },
     {
       "playerId": "6400",
@@ -4442,7 +4598,20 @@
       "actualRank": 107,
       "preseasonRank": 240,
       "gamesPlayed": 79,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 317,
+        "fga": 599,
+        "ftm": 89,
+        "fta": 114,
+        "threes": 110,
+        "pts": 833,
+        "reb": 318,
+        "ast": 128,
+        "stl": 46,
+        "blk": 28,
+        "to": 68
+      }
     },
     {
       "playerId": "6166",
@@ -4450,7 +4619,20 @@
       "actualRank": 108,
       "preseasonRank": 117,
       "gamesPlayed": 64,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 358,
+        "fga": 762,
+        "ftm": 215,
+        "fta": 254,
+        "threes": 157,
+        "pts": 1088,
+        "reb": 258,
+        "ast": 92,
+        "stl": 50,
+        "blk": 13,
+        "to": 82
+      }
     },
     {
       "playerId": "4246",
@@ -4458,7 +4640,20 @@
       "actualRank": 109,
       "preseasonRank": 168,
       "gamesPlayed": 71,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 187,
+        "fga": 468,
+        "ftm": 81,
+        "fta": 90,
+        "threes": 127,
+        "pts": 582,
+        "reb": 182,
+        "ast": 319,
+        "stl": 79,
+        "blk": 14,
+        "to": 75
+      }
     },
     {
       "playerId": "5858",
@@ -4550,7 +4745,20 @@
       "actualRank": 114,
       "preseasonRank": 194,
       "gamesPlayed": 80,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 235,
+        "fga": 514,
+        "ftm": 39,
+        "fta": 48,
+        "threes": 147,
+        "pts": 656,
+        "reb": 287,
+        "ast": 155,
+        "stl": 76,
+        "blk": 15,
+        "to": 82
+      }
     },
     {
       "playerId": "5464",
@@ -4621,7 +4829,20 @@
       "actualRank": 118,
       "preseasonRank": 182,
       "gamesPlayed": 72,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 176,
+        "fga": 315,
+        "ftm": 66,
+        "fta": 87,
+        "threes": 17,
+        "pts": 435,
+        "reb": 399,
+        "ast": 123,
+        "stl": 28,
+        "blk": 101,
+        "to": 68
+      }
     },
     {
       "playerId": "6697",
@@ -4650,7 +4871,20 @@
       "actualRank": 120,
       "preseasonRank": 243,
       "gamesPlayed": 73,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 187,
+        "fga": 280,
+        "ftm": 67,
+        "fta": 97,
+        "threes": 0,
+        "pts": 441,
+        "reb": 388,
+        "ast": 117,
+        "stl": 36,
+        "blk": 71,
+        "to": 31
+      }
     },
     {
       "playerId": "5747",
@@ -4658,7 +4892,20 @@
       "actualRank": 121,
       "preseasonRank": 204,
       "gamesPlayed": 77,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 310,
+        "fga": 589,
+        "ftm": 83,
+        "fta": 118,
+        "threes": 78,
+        "pts": 781,
+        "reb": 263,
+        "ast": 60,
+        "stl": 79,
+        "blk": 33,
+        "to": 66
+      }
     },
     {
       "playerId": "10115",
@@ -4666,7 +4913,20 @@
       "actualRank": 122,
       "preseasonRank": 98,
       "gamesPlayed": 64,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 280,
+        "fga": 629,
+        "ftm": 72,
+        "fta": 95,
+        "threes": 115,
+        "pts": 747,
+        "reb": 325,
+        "ast": 220,
+        "stl": 69,
+        "blk": 13,
+        "to": 75
+      }
     },
     {
       "playerId": "6028",
@@ -4716,7 +4976,20 @@
       "actualRank": 125,
       "preseasonRank": 115,
       "gamesPlayed": 70,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 282,
+        "fga": 563,
+        "ftm": 100,
+        "fta": 138,
+        "threes": 104,
+        "pts": 768,
+        "reb": 395,
+        "ast": 148,
+        "stl": 58,
+        "blk": 24,
+        "to": 87
+      }
     },
     {
       "playerId": "6174",
@@ -4724,7 +4997,20 @@
       "actualRank": 126,
       "preseasonRank": 124,
       "gamesPlayed": 57,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 301,
+        "fga": 665,
+        "ftm": 143,
+        "fta": 198,
+        "threes": 91,
+        "pts": 836,
+        "reb": 442,
+        "ast": 131,
+        "stl": 63,
+        "blk": 60,
+        "to": 118
+      }
     },
     {
       "playerId": "5582",
@@ -4732,7 +5018,20 @@
       "actualRank": 127,
       "preseasonRank": 185,
       "gamesPlayed": 79,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 324,
+        "fga": 624,
+        "ftm": 57,
+        "fta": 77,
+        "threes": 15,
+        "pts": 720,
+        "reb": 193,
+        "ast": 351,
+        "stl": 83,
+        "blk": 21,
+        "to": 109
+      }
     },
     {
       "playerId": "5349",
@@ -4866,7 +5165,20 @@
       "actualRank": 134,
       "preseasonRank": 138,
       "gamesPlayed": 72,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 391,
+        "fga": 853,
+        "ftm": 276,
+        "fta": 332,
+        "threes": 98,
+        "pts": 1156,
+        "reb": 383,
+        "ast": 136,
+        "stl": 47,
+        "blk": 24,
+        "to": 135
+      }
     },
     {
       "playerId": "6725",
@@ -4916,7 +5228,20 @@
       "actualRank": 137,
       "preseasonRank": 156,
       "gamesPlayed": 75,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 336,
+        "fga": 827,
+        "ftm": 181,
+        "fta": 216,
+        "threes": 127,
+        "pts": 980,
+        "reb": 198,
+        "ast": 404,
+        "stl": 66,
+        "blk": 12,
+        "to": 142
+      }
     },
     {
       "playerId": "6441",
@@ -5050,7 +5375,20 @@
       "actualRank": 144,
       "preseasonRank": 198,
       "gamesPlayed": 64,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 266,
+        "fga": 534,
+        "ftm": 34,
+        "fta": 48,
+        "threes": 101,
+        "pts": 667,
+        "reb": 242,
+        "ast": 98,
+        "stl": 58,
+        "blk": 30,
+        "to": 54
+      }
     },
     {
       "playerId": "10273",
@@ -5058,7 +5396,20 @@
       "actualRank": 145,
       "preseasonRank": 157,
       "gamesPlayed": 82,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 300,
+        "fga": 748,
+        "ftm": 69,
+        "fta": 85,
+        "threes": 138,
+        "pts": 807,
+        "reb": 341,
+        "ast": 364,
+        "stl": 54,
+        "blk": 21,
+        "to": 141
+      }
     },
     {
       "playerId": "10096",
@@ -5150,7 +5501,20 @@
       "actualRank": 150,
       "preseasonRank": 114,
       "gamesPlayed": 80,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 252,
+        "fga": 555,
+        "ftm": 88,
+        "fta": 108,
+        "threes": 96,
+        "pts": 688,
+        "reb": 278,
+        "ast": 79,
+        "stl": 29,
+        "blk": 75,
+        "to": 74
+      }
     },
     {
       "playerId": "6155",
@@ -5158,7 +5522,20 @@
       "actualRank": 151,
       "preseasonRank": 228,
       "gamesPlayed": 74,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 179,
+        "fga": 391,
+        "ftm": 31,
+        "fta": 43,
+        "threes": 89,
+        "pts": 478,
+        "reb": 252,
+        "ast": 112,
+        "stl": 68,
+        "blk": 37,
+        "to": 54
+      }
     },
     {
       "playerId": "6164",
@@ -5187,7 +5564,20 @@
       "actualRank": 153,
       "preseasonRank": 142,
       "gamesPlayed": 40,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 280,
+        "fga": 531,
+        "ftm": 139,
+        "fta": 164,
+        "threes": 59,
+        "pts": 758,
+        "reb": 327,
+        "ast": 80,
+        "stl": 39,
+        "blk": 40,
+        "to": 103
+      }
     },
     {
       "playerId": "5651",
@@ -5195,7 +5585,20 @@
       "actualRank": 154,
       "preseasonRank": 121,
       "gamesPlayed": 64,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 280,
+        "fga": 599,
+        "ftm": 110,
+        "fta": 155,
+        "threes": 106,
+        "pts": 776,
+        "reb": 203,
+        "ast": 215,
+        "stl": 57,
+        "blk": 33,
+        "to": 76
+      }
     },
     {
       "playerId": "6720",
@@ -5203,7 +5606,20 @@
       "actualRank": 155,
       "preseasonRank": 186,
       "gamesPlayed": 68,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 204,
+        "fga": 428,
+        "ftm": 95,
+        "fta": 137,
+        "threes": 48,
+        "pts": 551,
+        "reb": 233,
+        "ast": 94,
+        "stl": 48,
+        "blk": 93,
+        "to": 56
+      }
     },
     {
       "playerId": "6619",
@@ -5211,7 +5627,20 @@
       "actualRank": 156,
       "preseasonRank": 191,
       "gamesPlayed": 71,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 214,
+        "fga": 474,
+        "ftm": 11,
+        "fta": 11,
+        "threes": 166,
+        "pts": 605,
+        "reb": 224,
+        "ast": 64,
+        "stl": 41,
+        "blk": 13,
+        "to": 23
+      }
     },
     {
       "playerId": "6556",
@@ -5261,7 +5690,20 @@
       "actualRank": 159,
       "preseasonRank": 260,
       "gamesPlayed": 79,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 303,
+        "fga": 779,
+        "ftm": 107,
+        "fta": 139,
+        "threes": 126,
+        "pts": 839,
+        "reb": 297,
+        "ast": 175,
+        "stl": 82,
+        "blk": 30,
+        "to": 116
+      }
     },
     {
       "playerId": "6032",
@@ -5290,7 +5732,20 @@
       "actualRank": 161,
       "preseasonRank": 197,
       "gamesPlayed": 69,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 257,
+        "fga": 604,
+        "ftm": 35,
+        "fta": 49,
+        "threes": 132,
+        "pts": 681,
+        "reb": 205,
+        "ast": 156,
+        "stl": 66,
+        "blk": 23,
+        "to": 67
+      }
     },
     {
       "playerId": "6721",
@@ -5340,7 +5795,20 @@
       "actualRank": 164,
       "preseasonRank": 245,
       "gamesPlayed": 36,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 271,
+        "fga": 542,
+        "ftm": 94,
+        "fta": 126,
+        "threes": 44,
+        "pts": 680,
+        "reb": 359,
+        "ast": 181,
+        "stl": 56,
+        "blk": 36,
+        "to": 106
+      }
     },
     {
       "playerId": "6209",
@@ -5390,7 +5858,20 @@
       "actualRank": 167,
       "preseasonRank": 206,
       "gamesPlayed": 78,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 262,
+        "fga": 620,
+        "ftm": 150,
+        "fta": 197,
+        "threes": 62,
+        "pts": 736,
+        "reb": 230,
+        "ast": 240,
+        "stl": 86,
+        "blk": 48,
+        "to": 139
+      }
     },
     {
       "playerId": "5482",
@@ -5398,7 +5879,20 @@
       "actualRank": 168,
       "preseasonRank": 242,
       "gamesPlayed": 49,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 277,
+        "fga": 595,
+        "ftm": 61,
+        "fta": 73,
+        "threes": 65,
+        "pts": 680,
+        "reb": 411,
+        "ast": 104,
+        "stl": 35,
+        "blk": 26,
+        "to": 57
+      }
     },
     {
       "playerId": "10272",
@@ -5406,7 +5900,20 @@
       "actualRank": 169,
       "preseasonRank": 151,
       "gamesPlayed": 68,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 203,
+        "fga": 546,
+        "ftm": 70,
+        "fta": 93,
+        "threes": 114,
+        "pts": 590,
+        "reb": 285,
+        "ast": 169,
+        "stl": 68,
+        "blk": 50,
+        "to": 97
+      }
     },
     {
       "playerId": "6073",
@@ -5456,7 +5963,20 @@
       "actualRank": 172,
       "preseasonRank": 196,
       "gamesPlayed": 71,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 134,
+        "fga": 324,
+        "ftm": 73,
+        "fta": 107,
+        "threes": 39,
+        "pts": 380,
+        "reb": 314,
+        "ast": 40,
+        "stl": 61,
+        "blk": 80,
+        "to": 33
+      }
     },
     {
       "playerId": "5825",
@@ -5464,7 +5984,20 @@
       "actualRank": 173,
       "preseasonRank": 251,
       "gamesPlayed": 65,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 206,
+        "fga": 431,
+        "ftm": 51,
+        "fta": 57,
+        "threes": 113,
+        "pts": 576,
+        "reb": 183,
+        "ast": 215,
+        "stl": 50,
+        "blk": 5,
+        "to": 72
+      }
     },
     {
       "playerId": "10296",
@@ -5472,7 +6005,20 @@
       "actualRank": 174,
       "preseasonRank": 148,
       "gamesPlayed": 75,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 357,
+        "fga": 779,
+        "ftm": 106,
+        "fta": 149,
+        "threes": 122,
+        "pts": 942,
+        "reb": 268,
+        "ast": 92,
+        "stl": 52,
+        "blk": 37,
+        "to": 92
+      }
     },
     {
       "playerId": "6552",
@@ -5480,7 +6026,20 @@
       "actualRank": 175,
       "preseasonRank": 255,
       "gamesPlayed": 63,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 214,
+        "fga": 520,
+        "ftm": 101,
+        "fta": 123,
+        "threes": 103,
+        "pts": 632,
+        "reb": 287,
+        "ast": 84,
+        "stl": 62,
+        "blk": 28,
+        "to": 67
+      }
     },
     {
       "playerId": "6693",
@@ -5530,7 +6089,20 @@
       "actualRank": 178,
       "preseasonRank": 164,
       "gamesPlayed": 63,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 195,
+        "fga": 435,
+        "ftm": 30,
+        "fta": 45,
+        "threes": 129,
+        "pts": 549,
+        "reb": 247,
+        "ast": 90,
+        "stl": 58,
+        "blk": 23,
+        "to": 56
+      }
     },
     {
       "playerId": "10100",
@@ -5559,7 +6131,20 @@
       "actualRank": 180,
       "preseasonRank": 180,
       "gamesPlayed": 77,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 276,
+        "fga": 680,
+        "ftm": 124,
+        "fta": 145,
+        "threes": 168,
+        "pts": 844,
+        "reb": 183,
+        "ast": 123,
+        "stl": 38,
+        "blk": 7,
+        "to": 48
+      }
     },
     {
       "playerId": "10340",
@@ -5567,7 +6152,20 @@
       "actualRank": 181,
       "preseasonRank": 266,
       "gamesPlayed": 79,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 287,
+        "fga": 676,
+        "ftm": 111,
+        "fta": 135,
+        "threes": 138,
+        "pts": 823,
+        "reb": 268,
+        "ast": 135,
+        "stl": 44,
+        "blk": 8,
+        "to": 69
+      }
     },
     {
       "playerId": "6551",
@@ -5596,7 +6194,20 @@
       "actualRank": 183,
       "preseasonRank": 123,
       "gamesPlayed": 59,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 263,
+        "fga": 624,
+        "ftm": 138,
+        "fta": 185,
+        "threes": 63,
+        "pts": 727,
+        "reb": 294,
+        "ast": 199,
+        "stl": 78,
+        "blk": 41,
+        "to": 125
+      }
     },
     {
       "playerId": "6218",
@@ -5604,7 +6215,20 @@
       "actualRank": 184,
       "preseasonRank": 209,
       "gamesPlayed": 75,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 293,
+        "fga": 652,
+        "ftm": 130,
+        "fta": 169,
+        "threes": 55,
+        "pts": 771,
+        "reb": 278,
+        "ast": 256,
+        "stl": 81,
+        "blk": 13,
+        "to": 136
+      }
     },
     {
       "playerId": "5681",
@@ -5654,7 +6278,20 @@
       "actualRank": 187,
       "preseasonRank": 262,
       "gamesPlayed": 71,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 275,
+        "fga": 599,
+        "ftm": 65,
+        "fta": 73,
+        "threes": 157,
+        "pts": 772,
+        "reb": 210,
+        "ast": 110,
+        "stl": 46,
+        "blk": 8,
+        "to": 107
+      }
     },
     {
       "playerId": "5433",
@@ -5683,7 +6320,20 @@
       "actualRank": 189,
       "preseasonRank": 256,
       "gamesPlayed": 71,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 172,
+        "fga": 424,
+        "ftm": 28,
+        "fta": 29,
+        "threes": 137,
+        "pts": 509,
+        "reb": 157,
+        "ast": 108,
+        "stl": 53,
+        "blk": 14,
+        "to": 35
+      }
     },
     {
       "playerId": "4487",
@@ -5691,7 +6341,20 @@
       "actualRank": 190,
       "preseasonRank": 234,
       "gamesPlayed": 78,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 104,
+        "fga": 238,
+        "ftm": 17,
+        "fta": 21,
+        "threes": 88,
+        "pts": 313,
+        "reb": 218,
+        "ast": 84,
+        "stl": 52,
+        "blk": 36,
+        "to": 34
+      }
     },
     {
       "playerId": "10290",
@@ -5741,7 +6404,20 @@
       "actualRank": 193,
       "preseasonRank": 202,
       "gamesPlayed": 64,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 190,
+        "fga": 408,
+        "ftm": 72,
+        "fta": 89,
+        "threes": 72,
+        "pts": 524,
+        "reb": 357,
+        "ast": 65,
+        "stl": 17,
+        "blk": 44,
+        "to": 37
+      }
     },
     {
       "playerId": "6315",
@@ -5749,7 +6425,20 @@
       "actualRank": 194,
       "preseasonRank": 254,
       "gamesPlayed": 72,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 240,
+        "fga": 510,
+        "ftm": 115,
+        "fta": 129,
+        "threes": 101,
+        "pts": 696,
+        "reb": 161,
+        "ast": 77,
+        "stl": 40,
+        "blk": 7,
+        "to": 45
+      }
     },
     {
       "playerId": "10315",
@@ -5778,7 +6467,20 @@
       "actualRank": 196,
       "preseasonRank": 218,
       "gamesPlayed": 40,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 265,
+        "fga": 468,
+        "ftm": 40,
+        "fta": 60,
+        "threes": 6,
+        "pts": 576,
+        "reb": 406,
+        "ast": 64,
+        "stl": 31,
+        "blk": 39,
+        "to": 69
+      }
     },
     {
       "playerId": "6406",
@@ -5807,7 +6509,20 @@
       "actualRank": 198,
       "preseasonRank": 265,
       "gamesPlayed": 66,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 163,
+        "fga": 321,
+        "ftm": 55,
+        "fta": 64,
+        "threes": 48,
+        "pts": 429,
+        "reb": 251,
+        "ast": 53,
+        "stl": 28,
+        "blk": 41,
+        "to": 30
+      }
     },
     {
       "playerId": "6699",
@@ -5815,7 +6530,20 @@
       "actualRank": 199,
       "preseasonRank": 105,
       "gamesPlayed": 54,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 251,
+        "fga": 469,
+        "ftm": 87,
+        "fta": 125,
+        "threes": 28,
+        "pts": 617,
+        "reb": 352,
+        "ast": 128,
+        "stl": 45,
+        "blk": 27,
+        "to": 84
+      }
     },
     {
       "playerId": "5336",
@@ -5823,7 +6551,20 @@
       "actualRank": 200,
       "preseasonRank": 133,
       "gamesPlayed": 55,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 218,
+        "fga": 390,
+        "ftm": 52,
+        "fta": 97,
+        "threes": 0,
+        "pts": 488,
+        "reb": 469,
+        "ast": 62,
+        "stl": 34,
+        "blk": 53,
+        "to": 47
+      }
     },
     {
       "playerId": "6755",
@@ -5831,7 +6572,20 @@
       "actualRank": 201,
       "preseasonRank": 270,
       "gamesPlayed": 73,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 182,
+        "fga": 424,
+        "ftm": 22,
+        "fta": 27,
+        "threes": 155,
+        "pts": 541,
+        "reb": 174,
+        "ast": 108,
+        "stl": 37,
+        "blk": 7,
+        "to": 40
+      }
     },
     {
       "playerId": "5350",
@@ -5860,7 +6614,20 @@
       "actualRank": 203,
       "preseasonRank": 250,
       "gamesPlayed": 46,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 221,
+        "fga": 449,
+        "ftm": 62,
+        "fta": 79,
+        "threes": 62,
+        "pts": 566,
+        "reb": 161,
+        "ast": 208,
+        "stl": 43,
+        "blk": 18,
+        "to": 69
+      }
     },
     {
       "playerId": "5192",
@@ -5868,7 +6635,20 @@
       "actualRank": 204,
       "preseasonRank": 275,
       "gamesPlayed": 74,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 125,
+        "fga": 202,
+        "ftm": 83,
+        "fta": 128,
+        "threes": 0,
+        "pts": 333,
+        "reb": 455,
+        "ast": 134,
+        "stl": 33,
+        "blk": 47,
+        "to": 59
+      }
     },
     {
       "playerId": "6692",
@@ -5960,7 +6740,20 @@
       "actualRank": 209,
       "preseasonRank": 229,
       "gamesPlayed": 76,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 143,
+        "fga": 278,
+        "ftm": 56,
+        "fta": 99,
+        "threes": 2,
+        "pts": 344,
+        "reb": 462,
+        "ast": 118,
+        "stl": 46,
+        "blk": 37,
+        "to": 39
+      }
     },
     {
       "playerId": "6691",
@@ -6010,7 +6803,20 @@
       "actualRank": 212,
       "preseasonRank": 267,
       "gamesPlayed": 68,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 180,
+        "fga": 421,
+        "ftm": 49,
+        "fta": 72,
+        "threes": 97,
+        "pts": 506,
+        "reb": 172,
+        "ast": 108,
+        "stl": 74,
+        "blk": 15,
+        "to": 70
+      }
     },
     {
       "playerId": "10101",
@@ -6018,7 +6824,20 @@
       "actualRank": 213,
       "preseasonRank": 165,
       "gamesPlayed": 54,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 265,
+        "fga": 647,
+        "ftm": 133,
+        "fta": 155,
+        "threes": 114,
+        "pts": 777,
+        "reb": 193,
+        "ast": 98,
+        "stl": 48,
+        "blk": 10,
+        "to": 83
+      }
     },
     {
       "playerId": "6429",
@@ -6026,7 +6845,20 @@
       "actualRank": 214,
       "preseasonRank": 282,
       "gamesPlayed": 57,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 145,
+        "fga": 292,
+        "ftm": 32,
+        "fta": 45,
+        "threes": 90,
+        "pts": 412,
+        "reb": 156,
+        "ast": 147,
+        "stl": 36,
+        "blk": 26,
+        "to": 50
+      }
     },
     {
       "playerId": "5823",
@@ -6055,7 +6887,20 @@
       "actualRank": 216,
       "preseasonRank": 284,
       "gamesPlayed": 68,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 123,
+        "fga": 287,
+        "ftm": 55,
+        "fta": 76,
+        "threes": 46,
+        "pts": 347,
+        "reb": 218,
+        "ast": 56,
+        "stl": 65,
+        "blk": 31,
+        "to": 32
+      }
     },
     {
       "playerId": "5739",
@@ -6084,7 +6929,20 @@
       "actualRank": 218,
       "preseasonRank": 215,
       "gamesPlayed": 61,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 255,
+        "fga": 565,
+        "ftm": 75,
+        "fta": 88,
+        "threes": 120,
+        "pts": 705,
+        "reb": 181,
+        "ast": 103,
+        "stl": 26,
+        "blk": 14,
+        "to": 64
+      }
     },
     {
       "playerId": "10077",
@@ -6092,7 +6950,20 @@
       "actualRank": 219,
       "preseasonRank": 278,
       "gamesPlayed": 79,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 246,
+        "fga": 620,
+        "ftm": 135,
+        "fta": 165,
+        "threes": 122,
+        "pts": 749,
+        "reb": 270,
+        "ast": 145,
+        "stl": 40,
+        "blk": 5,
+        "to": 79
+      }
     },
     {
       "playerId": "10292",
@@ -6100,7 +6971,20 @@
       "actualRank": 220,
       "preseasonRank": 293,
       "gamesPlayed": 74,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 205,
+        "fga": 477,
+        "ftm": 19,
+        "fta": 39,
+        "threes": 82,
+        "pts": 511,
+        "reb": 267,
+        "ast": 57,
+        "stl": 44,
+        "blk": 40,
+        "to": 40
+      }
     },
     {
       "playerId": "10291",
@@ -6129,7 +7013,20 @@
       "actualRank": 222,
       "preseasonRank": 280,
       "gamesPlayed": 66,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 160,
+        "fga": 337,
+        "ftm": 78,
+        "fta": 115,
+        "threes": 60,
+        "pts": 458,
+        "reb": 259,
+        "ast": 158,
+        "stl": 62,
+        "blk": 23,
+        "to": 86
+      }
     },
     {
       "playerId": "6762",
@@ -6137,7 +7034,20 @@
       "actualRank": 223,
       "preseasonRank": 287,
       "gamesPlayed": 64,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 204,
+        "fga": 475,
+        "ftm": 45,
+        "fta": 53,
+        "threes": 118,
+        "pts": 571,
+        "reb": 184,
+        "ast": 68,
+        "stl": 39,
+        "blk": 8,
+        "to": 36
+      }
     },
     {
       "playerId": "6733",
@@ -6145,7 +7055,20 @@
       "actualRank": 224,
       "preseasonRank": 294,
       "gamesPlayed": 71,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 167,
+        "fga": 280,
+        "ftm": 69,
+        "fta": 116,
+        "threes": 0,
+        "pts": 403,
+        "reb": 438,
+        "ast": 56,
+        "stl": 46,
+        "blk": 40,
+        "to": 61
+      }
     },
     {
       "playerId": "6236",
@@ -6153,7 +7076,20 @@
       "actualRank": 225,
       "preseasonRank": 261,
       "gamesPlayed": 67,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 205,
+        "fga": 413,
+        "ftm": 47,
+        "fta": 68,
+        "threes": 60,
+        "pts": 517,
+        "reb": 199,
+        "ast": 121,
+        "stl": 47,
+        "blk": 15,
+        "to": 47
+      }
     },
     {
       "playerId": "6170",
@@ -6182,7 +7118,20 @@
       "actualRank": 227,
       "preseasonRank": 219,
       "gamesPlayed": 63,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 156,
+        "fga": 356,
+        "ftm": 60,
+        "fta": 82,
+        "threes": 17,
+        "pts": 389,
+        "reb": 311,
+        "ast": 146,
+        "stl": 55,
+        "blk": 34,
+        "to": 70
+      }
     },
     {
       "playerId": "5472",
@@ -6190,7 +7139,20 @@
       "actualRank": 228,
       "preseasonRank": 273,
       "gamesPlayed": 69,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 157,
+        "fga": 374,
+        "ftm": 56,
+        "fta": 80,
+        "threes": 81,
+        "pts": 451,
+        "reb": 316,
+        "ast": 82,
+        "stl": 41,
+        "blk": 23,
+        "to": 39
+      }
     },
     {
       "playerId": "6617",
@@ -6198,7 +7160,20 @@
       "actualRank": 229,
       "preseasonRank": 235,
       "gamesPlayed": 64,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 157,
+        "fga": 305,
+        "ftm": 44,
+        "fta": 56,
+        "threes": 81,
+        "pts": 439,
+        "reb": 129,
+        "ast": 38,
+        "stl": 16,
+        "blk": 56,
+        "to": 34
+      }
     },
     {
       "playerId": "6267",
@@ -6227,7 +7202,20 @@
       "actualRank": 231,
       "preseasonRank": 177,
       "gamesPlayed": 66,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 213,
+        "fga": 462,
+        "ftm": 107,
+        "fta": 142,
+        "threes": 37,
+        "pts": 570,
+        "reb": 290,
+        "ast": 166,
+        "stl": 61,
+        "blk": 14,
+        "to": 98
+      }
     },
     {
       "playerId": "6076",
@@ -6235,7 +7223,20 @@
       "actualRank": 232,
       "preseasonRank": 271,
       "gamesPlayed": 69,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 171,
+        "fga": 354,
+        "ftm": 28,
+        "fta": 39,
+        "threes": 66,
+        "pts": 436,
+        "reb": 241,
+        "ast": 97,
+        "stl": 43,
+        "blk": 10,
+        "to": 39
+      }
     },
     {
       "playerId": "10103",
@@ -6243,7 +7244,20 @@
       "actualRank": 233,
       "preseasonRank": 288,
       "gamesPlayed": 75,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 170,
+        "fga": 360,
+        "ftm": 46,
+        "fta": 69,
+        "threes": 75,
+        "pts": 461,
+        "reb": 229,
+        "ast": 110,
+        "stl": 54,
+        "blk": 25,
+        "to": 78
+      }
     },
     {
       "playerId": "6165",
@@ -6272,7 +7286,20 @@
       "actualRank": 235,
       "preseasonRank": 231,
       "gamesPlayed": 72,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 179,
+        "fga": 446,
+        "ftm": 49,
+        "fta": 54,
+        "threes": 93,
+        "pts": 500,
+        "reb": 104,
+        "ast": 203,
+        "stl": 39,
+        "blk": 16,
+        "to": 52
+      }
     },
     {
       "playerId": "5338",
@@ -6301,7 +7328,20 @@
       "actualRank": 237,
       "preseasonRank": 253,
       "gamesPlayed": 35,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 197,
+        "fga": 481,
+        "ftm": 97,
+        "fta": 110,
+        "threes": 76,
+        "pts": 567,
+        "reb": 141,
+        "ast": 129,
+        "stl": 51,
+        "blk": 33,
+        "to": 102
+      }
     },
     {
       "playerId": "10097",
@@ -6309,7 +7349,20 @@
       "actualRank": 238,
       "preseasonRank": 216,
       "gamesPlayed": 36,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 134,
+        "fga": 191,
+        "ftm": 46,
+        "fta": 73,
+        "threes": 0,
+        "pts": 314,
+        "reb": 270,
+        "ast": 85,
+        "stl": 20,
+        "blk": 56,
+        "to": 41
+      }
     },
     {
       "playerId": "5341",
@@ -6317,7 +7370,20 @@
       "actualRank": 239,
       "preseasonRank": 263,
       "gamesPlayed": 61,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 142,
+        "fga": 303,
+        "ftm": 48,
+        "fta": 65,
+        "threes": 25,
+        "pts": 357,
+        "reb": 206,
+        "ast": 145,
+        "stl": 40,
+        "blk": 33,
+        "to": 37
+      }
     },
     {
       "playerId": "6717",
@@ -6346,7 +7412,20 @@
       "actualRank": 241,
       "preseasonRank": 201,
       "gamesPlayed": 57,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 164,
+        "fga": 327,
+        "ftm": 41,
+        "fta": 69,
+        "threes": 10,
+        "pts": 379,
+        "reb": 317,
+        "ast": 55,
+        "stl": 47,
+        "blk": 42,
+        "to": 45
+      }
     },
     {
       "playerId": "6224",
@@ -6354,7 +7433,20 @@
       "actualRank": 242,
       "preseasonRank": 289,
       "gamesPlayed": 53,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 136,
+        "fga": 325,
+        "ftm": 43,
+        "fta": 61,
+        "threes": 43,
+        "pts": 358,
+        "reb": 224,
+        "ast": 105,
+        "stl": 56,
+        "blk": 32,
+        "to": 51
+      }
     },
     {
       "playerId": "10275",
@@ -6362,7 +7454,20 @@
       "actualRank": 243,
       "preseasonRank": 295,
       "gamesPlayed": 74,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 199,
+        "fga": 483,
+        "ftm": 55,
+        "fta": 63,
+        "threes": 80,
+        "pts": 533,
+        "reb": 245,
+        "ast": 113,
+        "stl": 33,
+        "blk": 18,
+        "to": 56
+      }
     },
     {
       "playerId": "6574",
@@ -6370,7 +7475,20 @@
       "actualRank": 244,
       "preseasonRank": 292,
       "gamesPlayed": 66,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 158,
+        "fga": 347,
+        "ftm": 46,
+        "fta": 55,
+        "threes": 56,
+        "pts": 418,
+        "reb": 315,
+        "ast": 88,
+        "stl": 39,
+        "blk": 7,
+        "to": 51
+      }
     },
     {
       "playerId": "5894",
@@ -6378,7 +7496,20 @@
       "actualRank": 245,
       "preseasonRank": 283,
       "gamesPlayed": 50,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 182,
+        "fga": 370,
+        "ftm": 68,
+        "fta": 87,
+        "threes": 70,
+        "pts": 502,
+        "reb": 224,
+        "ast": 33,
+        "stl": 24,
+        "blk": 25,
+        "to": 29
+      }
     },
     {
       "playerId": "6396",
@@ -6386,7 +7517,20 @@
       "actualRank": 246,
       "preseasonRank": 221,
       "gamesPlayed": 63,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 205,
+        "fga": 516,
+        "ftm": 60,
+        "fta": 83,
+        "threes": 96,
+        "pts": 566,
+        "reb": 237,
+        "ast": 124,
+        "stl": 48,
+        "blk": 32,
+        "to": 86
+      }
     },
     {
       "playerId": "5476",
@@ -6394,7 +7538,20 @@
       "actualRank": 247,
       "preseasonRank": 181,
       "gamesPlayed": 64,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 248,
+        "fga": 635,
+        "ftm": 92,
+        "fta": 108,
+        "threes": 91,
+        "pts": 679,
+        "reb": 238,
+        "ast": 167,
+        "stl": 37,
+        "blk": 14,
+        "to": 78
+      }
     },
     {
       "playerId": "6256",
@@ -6402,7 +7559,20 @@
       "actualRank": 248,
       "preseasonRank": 274,
       "gamesPlayed": 59,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 112,
+        "fga": 271,
+        "ftm": 16,
+        "fta": 30,
+        "threes": 80,
+        "pts": 320,
+        "reb": 249,
+        "ast": 76,
+        "stl": 42,
+        "blk": 20,
+        "to": 22
+      }
     },
     {
       "playerId": "10335",
@@ -6431,7 +7601,20 @@
       "actualRank": 250,
       "preseasonRank": 248,
       "gamesPlayed": 31,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 194,
+        "fga": 494,
+        "ftm": 102,
+        "fta": 124,
+        "threes": 52,
+        "pts": 542,
+        "reb": 200,
+        "ast": 228,
+        "stl": 63,
+        "blk": 12,
+        "to": 106
+      }
     },
     {
       "playerId": "6724",
@@ -6460,7 +7643,20 @@
       "actualRank": 252,
       "preseasonRank": 210,
       "gamesPlayed": 65,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 210,
+        "fga": 486,
+        "ftm": 74,
+        "fta": 90,
+        "threes": 94,
+        "pts": 588,
+        "reb": 142,
+        "ast": 83,
+        "stl": 39,
+        "blk": 16,
+        "to": 57
+      }
     },
     {
       "playerId": "6582",
@@ -6489,7 +7685,20 @@
       "actualRank": 254,
       "preseasonRank": 300,
       "gamesPlayed": 72,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 168,
+        "fga": 420,
+        "ftm": 15,
+        "fta": 21,
+        "threes": 109,
+        "pts": 460,
+        "reb": 92,
+        "ast": 98,
+        "stl": 51,
+        "blk": 13,
+        "to": 41
+      }
     },
     {
       "playerId": "10113",
@@ -6497,7 +7706,20 @@
       "actualRank": 255,
       "preseasonRank": 290,
       "gamesPlayed": 63,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 120,
+        "fga": 287,
+        "ftm": 24,
+        "fta": 27,
+        "threes": 68,
+        "pts": 332,
+        "reb": 177,
+        "ast": 85,
+        "stl": 38,
+        "blk": 14,
+        "to": 22
+      }
     },
     {
       "playerId": "10333",
@@ -6505,7 +7727,20 @@
       "actualRank": 256,
       "preseasonRank": 303,
       "gamesPlayed": 75,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 204,
+        "fga": 504,
+        "ftm": 53,
+        "fta": 69,
+        "threes": 72,
+        "pts": 533,
+        "reb": 115,
+        "ast": 316,
+        "stl": 58,
+        "blk": 10,
+        "to": 117
+      }
     },
     {
       "playerId": "6433",
@@ -6534,7 +7769,20 @@
       "actualRank": 258,
       "preseasonRank": 178,
       "gamesPlayed": 51,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 168,
+        "fga": 352,
+        "ftm": 85,
+        "fta": 128,
+        "threes": 32,
+        "pts": 453,
+        "reb": 398,
+        "ast": 115,
+        "stl": 40,
+        "blk": 34,
+        "to": 97
+      }
     },
     {
       "playerId": "6742",
@@ -6542,7 +7790,20 @@
       "actualRank": 259,
       "preseasonRank": 309,
       "gamesPlayed": 42,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 135,
+        "fga": 235,
+        "ftm": 34,
+        "fta": 44,
+        "threes": 21,
+        "pts": 325,
+        "reb": 209,
+        "ast": 46,
+        "stl": 22,
+        "blk": 41,
+        "to": 43
+      }
     },
     {
       "playerId": "5600",
@@ -6550,7 +7811,20 @@
       "actualRank": 260,
       "preseasonRank": 179,
       "gamesPlayed": 51,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 116,
+        "fga": 223,
+        "ftm": 24,
+        "fta": 33,
+        "threes": 0,
+        "pts": 256,
+        "reb": 241,
+        "ast": 285,
+        "stl": 38,
+        "blk": 23,
+        "to": 102
+      }
     },
     {
       "playerId": "6581",
@@ -6558,7 +7832,20 @@
       "actualRank": 261,
       "preseasonRank": 298,
       "gamesPlayed": 62,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 132,
+        "fga": 203,
+        "ftm": 46,
+        "fta": 61,
+        "threes": 0,
+        "pts": 310,
+        "reb": 236,
+        "ast": 45,
+        "stl": 18,
+        "blk": 42,
+        "to": 40
+      }
     },
     {
       "playerId": "5073",
@@ -6566,7 +7853,20 @@
       "actualRank": 262,
       "preseasonRank": 171,
       "gamesPlayed": 37,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 160,
+        "fga": 337,
+        "ftm": 72,
+        "fta": 84,
+        "threes": 48,
+        "pts": 440,
+        "reb": 137,
+        "ast": 150,
+        "stl": 35,
+        "blk": 8,
+        "to": 56
+      }
     },
     {
       "playerId": "6417",
@@ -6595,7 +7895,20 @@
       "actualRank": 264,
       "preseasonRank": 316,
       "gamesPlayed": 81,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 197,
+        "fga": 416,
+        "ftm": 92,
+        "fta": 122,
+        "threes": 36,
+        "pts": 522,
+        "reb": 218,
+        "ast": 82,
+        "stl": 49,
+        "blk": 17,
+        "to": 72
+      }
     },
     {
       "playerId": "10310",
@@ -6603,7 +7916,20 @@
       "actualRank": 265,
       "preseasonRank": 319,
       "gamesPlayed": 44,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 172,
+        "fga": 378,
+        "ftm": 32,
+        "fta": 46,
+        "threes": 69,
+        "pts": 445,
+        "reb": 148,
+        "ast": 69,
+        "stl": 45,
+        "blk": 16,
+        "to": 49
+      }
     },
     {
       "playerId": "6741",
@@ -6632,7 +7958,20 @@
       "actualRank": 267,
       "preseasonRank": 188,
       "gamesPlayed": 62,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 174,
+        "fga": 302,
+        "ftm": 59,
+        "fta": 102,
+        "threes": 0,
+        "pts": 407,
+        "reb": 311,
+        "ast": 104,
+        "stl": 23,
+        "blk": 38,
+        "to": 45
+      }
     },
     {
       "playerId": "10083",
@@ -6640,7 +7979,20 @@
       "actualRank": 268,
       "preseasonRank": 314,
       "gamesPlayed": 79,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 128,
+        "fga": 287,
+        "ftm": 60,
+        "fta": 76,
+        "threes": 50,
+        "pts": 366,
+        "reb": 169,
+        "ast": 39,
+        "stl": 38,
+        "blk": 20,
+        "to": 27
+      }
     },
     {
       "playerId": "6734",
@@ -6648,7 +8000,20 @@
       "actualRank": 269,
       "preseasonRank": 315,
       "gamesPlayed": 56,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 132,
+        "fga": 271,
+        "ftm": 36,
+        "fta": 45,
+        "threes": 49,
+        "pts": 349,
+        "reb": 108,
+        "ast": 104,
+        "stl": 42,
+        "blk": 17,
+        "to": 53
+      }
     },
     {
       "playerId": "6593",
@@ -6656,7 +8021,20 @@
       "actualRank": 270,
       "preseasonRank": 205,
       "gamesPlayed": 42,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 166,
+        "fga": 381,
+        "ftm": 67,
+        "fta": 85,
+        "threes": 49,
+        "pts": 448,
+        "reb": 134,
+        "ast": 92,
+        "stl": 53,
+        "blk": 9,
+        "to": 52
+      }
     },
     {
       "playerId": "5245",
@@ -6664,7 +8042,20 @@
       "actualRank": 271,
       "preseasonRank": 301,
       "gamesPlayed": 68,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 164,
+        "fga": 343,
+        "ftm": 33,
+        "fta": 39,
+        "threes": 83,
+        "pts": 444,
+        "reb": 113,
+        "ast": 60,
+        "stl": 27,
+        "blk": 7,
+        "to": 32
+      }
     },
     {
       "playerId": "10282",
@@ -6672,7 +8063,20 @@
       "actualRank": 272,
       "preseasonRank": 327,
       "gamesPlayed": 71,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 234,
+        "fga": 555,
+        "ftm": 105,
+        "fta": 154,
+        "threes": 42,
+        "pts": 615,
+        "reb": 235,
+        "ast": 446,
+        "stl": 66,
+        "blk": 16,
+        "to": 208
+      }
     },
     {
       "playerId": "6596",
@@ -6680,7 +8084,20 @@
       "actualRank": 273,
       "preseasonRank": 306,
       "gamesPlayed": 61,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 141,
+        "fga": 281,
+        "ftm": 43,
+        "fta": 58,
+        "threes": 60,
+        "pts": 385,
+        "reb": 187,
+        "ast": 48,
+        "stl": 22,
+        "blk": 17,
+        "to": 26
+      }
     },
     {
       "playerId": "10104",
@@ -6688,7 +8105,20 @@
       "actualRank": 274,
       "preseasonRank": 268,
       "gamesPlayed": 27,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 198,
+        "fga": 491,
+        "ftm": 68,
+        "fta": 79,
+        "threes": 104,
+        "pts": 568,
+        "reb": 131,
+        "ast": 98,
+        "stl": 29,
+        "blk": 20,
+        "to": 76
+      }
     },
     {
       "playerId": "5764",
@@ -6696,7 +8126,20 @@
       "actualRank": 275,
       "preseasonRank": 169,
       "gamesPlayed": 35,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 89,
+        "fga": 243,
+        "ftm": 22,
+        "fta": 27,
+        "threes": 67,
+        "pts": 267,
+        "reb": 118,
+        "ast": 115,
+        "stl": 47,
+        "blk": 17,
+        "to": 41
+      }
     },
     {
       "playerId": "6163",
@@ -6725,7 +8168,20 @@
       "actualRank": 277,
       "preseasonRank": 321,
       "gamesPlayed": 59,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 149,
+        "fga": 347,
+        "ftm": 16,
+        "fta": 18,
+        "threes": 105,
+        "pts": 419,
+        "reb": 158,
+        "ast": 53,
+        "stl": 17,
+        "blk": 10,
+        "to": 27
+      }
     },
     {
       "playerId": "10098",
@@ -6754,7 +8210,20 @@
       "actualRank": 279,
       "preseasonRank": 230,
       "gamesPlayed": 75,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 150,
+        "fga": 373,
+        "ftm": 70,
+        "fta": 84,
+        "threes": 76,
+        "pts": 446,
+        "reb": 215,
+        "ast": 65,
+        "stl": 31,
+        "blk": 12,
+        "to": 54
+      }
     },
     {
       "playerId": "5164",
@@ -6783,7 +8252,20 @@
       "actualRank": 281,
       "preseasonRank": 200,
       "gamesPlayed": 67,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 198,
+        "fga": 507,
+        "ftm": 91,
+        "fta": 125,
+        "threes": 72,
+        "pts": 559,
+        "reb": 135,
+        "ast": 160,
+        "stl": 43,
+        "blk": 34,
+        "to": 86
+      }
     },
     {
       "playerId": "6397",
@@ -6791,7 +8273,20 @@
       "actualRank": 282,
       "preseasonRank": 233,
       "gamesPlayed": 55,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 124,
+        "fga": 267,
+        "ftm": 33,
+        "fta": 46,
+        "threes": 56,
+        "pts": 337,
+        "reb": 130,
+        "ast": 68,
+        "stl": 32,
+        "blk": 16,
+        "to": 23
+      }
     },
     {
       "playerId": "10278",
@@ -6799,7 +8294,20 @@
       "actualRank": 283,
       "preseasonRank": 324,
       "gamesPlayed": 52,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 159,
+        "fga": 393,
+        "ftm": 66,
+        "fta": 83,
+        "threes": 65,
+        "pts": 449,
+        "reb": 160,
+        "ast": 81,
+        "stl": 43,
+        "blk": 10,
+        "to": 50
+      }
     },
     {
       "playerId": "10114",
@@ -6807,7 +8315,20 @@
       "actualRank": 284,
       "preseasonRank": 297,
       "gamesPlayed": 57,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 137,
+        "fga": 296,
+        "ftm": 43,
+        "fta": 51,
+        "threes": 58,
+        "pts": 375,
+        "reb": 69,
+        "ast": 133,
+        "stl": 37,
+        "blk": 4,
+        "to": 54
+      }
     },
     {
       "playerId": "10125",
@@ -6815,7 +8336,20 @@
       "actualRank": 285,
       "preseasonRank": 323,
       "gamesPlayed": 73,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 177,
+        "fga": 463,
+        "ftm": 123,
+        "fta": 153,
+        "threes": 55,
+        "pts": 532,
+        "reb": 214,
+        "ast": 97,
+        "stl": 32,
+        "blk": 13,
+        "to": 52
+      }
     },
     {
       "playerId": "10313",
@@ -6823,7 +8357,20 @@
       "actualRank": 286,
       "preseasonRank": 337,
       "gamesPlayed": 61,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 113,
+        "fga": 187,
+        "ftm": 29,
+        "fta": 50,
+        "threes": 0,
+        "pts": 255,
+        "reb": 222,
+        "ast": 71,
+        "stl": 28,
+        "blk": 29,
+        "to": 39
+      }
     },
     {
       "playerId": "5840",
@@ -6852,7 +8399,20 @@
       "actualRank": 288,
       "preseasonRank": 299,
       "gamesPlayed": 49,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 115,
+        "fga": 271,
+        "ftm": 38,
+        "fta": 49,
+        "threes": 88,
+        "pts": 356,
+        "reb": 124,
+        "ast": 55,
+        "stl": 28,
+        "blk": 7,
+        "to": 29
+      }
     },
     {
       "playerId": "10118",
@@ -6860,7 +8420,20 @@
       "actualRank": 289,
       "preseasonRank": 183,
       "gamesPlayed": 51,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 179,
+        "fga": 403,
+        "ftm": 54,
+        "fta": 72,
+        "threes": 65,
+        "pts": 477,
+        "reb": 151,
+        "ast": 49,
+        "stl": 31,
+        "blk": 13,
+        "to": 46
+      }
     },
     {
       "playerId": "6259",
@@ -6868,7 +8441,20 @@
       "actualRank": 290,
       "preseasonRank": 313,
       "gamesPlayed": 47,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 102,
+        "fga": 257,
+        "ftm": 64,
+        "fta": 78,
+        "threes": 85,
+        "pts": 353,
+        "reb": 87,
+        "ast": 60,
+        "stl": 26,
+        "blk": 15,
+        "to": 31
+      }
     },
     {
       "playerId": "10308",
@@ -6876,7 +8462,20 @@
       "actualRank": 291,
       "preseasonRank": 336,
       "gamesPlayed": 42,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 123,
+        "fga": 274,
+        "ftm": 21,
+        "fta": 27,
+        "threes": 73,
+        "pts": 340,
+        "reb": 148,
+        "ast": 56,
+        "stl": 16,
+        "blk": 18,
+        "to": 33
+      }
     },
     {
       "playerId": "6031",
@@ -6884,7 +8483,20 @@
       "actualRank": 292,
       "preseasonRank": 317,
       "gamesPlayed": 40,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 94,
+        "fga": 212,
+        "ftm": 63,
+        "fta": 85,
+        "threes": 32,
+        "pts": 283,
+        "reb": 113,
+        "ast": 33,
+        "stl": 48,
+        "blk": 18,
+        "to": 31
+      }
     },
     {
       "playerId": "10121",
@@ -6892,7 +8504,20 @@
       "actualRank": 293,
       "preseasonRank": 208,
       "gamesPlayed": 46,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 133,
+        "fga": 372,
+        "ftm": 67,
+        "fta": 80,
+        "threes": 87,
+        "pts": 420,
+        "reb": 181,
+        "ast": 40,
+        "stl": 24,
+        "blk": 21,
+        "to": 46
+      }
     },
     {
       "playerId": "6450",
@@ -6900,7 +8525,20 @@
       "actualRank": 294,
       "preseasonRank": 285,
       "gamesPlayed": 45,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 72,
+        "fga": 142,
+        "ftm": 32,
+        "fta": 42,
+        "threes": 8,
+        "pts": 184,
+        "reb": 123,
+        "ast": 44,
+        "stl": 39,
+        "blk": 25,
+        "to": 26
+      }
     },
     {
       "playerId": "6708",
@@ -6908,7 +8546,20 @@
       "actualRank": 295,
       "preseasonRank": 326,
       "gamesPlayed": 73,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 120,
+        "fga": 268,
+        "ftm": 49,
+        "fta": 69,
+        "threes": 37,
+        "pts": 326,
+        "reb": 124,
+        "ast": 97,
+        "stl": 44,
+        "blk": 15,
+        "to": 53
+      }
     },
     {
       "playerId": "5294",
@@ -6937,7 +8588,20 @@
       "actualRank": 297,
       "preseasonRank": 212,
       "gamesPlayed": 37,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 201,
+        "fga": 493,
+        "ftm": 114,
+        "fta": 143,
+        "threes": 84,
+        "pts": 600,
+        "reb": 118,
+        "ast": 138,
+        "stl": 31,
+        "blk": 9,
+        "to": 86
+      }
     },
     {
       "playerId": "6276",
@@ -6945,7 +8609,20 @@
       "actualRank": 298,
       "preseasonRank": 341,
       "gamesPlayed": 47,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 118,
+        "fga": 291,
+        "ftm": 24,
+        "fta": 30,
+        "threes": 55,
+        "pts": 315,
+        "reb": 135,
+        "ast": 53,
+        "stl": 26,
+        "blk": 25,
+        "to": 35
+      }
     },
     {
       "playerId": "6109",
@@ -6953,7 +8630,20 @@
       "actualRank": 299,
       "preseasonRank": 305,
       "gamesPlayed": 61,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 115,
+        "fga": 194,
+        "ftm": 47,
+        "fta": 71,
+        "threes": 3,
+        "pts": 280,
+        "reb": 226,
+        "ast": 54,
+        "stl": 12,
+        "blk": 39,
+        "to": 41
+      }
     },
     {
       "playerId": "10069",
@@ -6961,7 +8651,20 @@
       "actualRank": 300,
       "preseasonRank": 339,
       "gamesPlayed": 33,
-      "teamId": null
+      "teamId": null,
+      "stats": {
+        "fgm": 72,
+        "fga": 171,
+        "ftm": 32,
+        "fta": 42,
+        "threes": 21,
+        "pts": 197,
+        "reb": 139,
+        "ast": 27,
+        "stl": 28,
+        "blk": 33,
+        "to": 15
+      }
     }
   ],
   "activity": {
@@ -7024,7 +8727,11 @@
           "receives": [
             {
               "name": "DeMar DeRozan",
-              "playerId": "4614"
+              "playerId": "4614",
+              "afterTrade": {
+                "rank": 60,
+                "games": 23
+              }
             }
           ]
         },
@@ -7033,7 +8740,11 @@
           "receives": [
             {
               "name": "Rudy Gobert",
-              "playerId": "5197"
+              "playerId": "5197",
+              "afterTrade": {
+                "rank": 35,
+                "games": 17
+              }
             }
           ]
         }
@@ -7048,19 +8759,35 @@
           "receives": [
             {
               "name": "Walker Kessler",
-              "playerId": "6712"
+              "playerId": "6712",
+              "afterTrade": {
+                "rank": 92,
+                "games": 19
+              }
             },
             {
               "name": "Tobias Harris",
-              "playerId": "4901"
+              "playerId": "4901",
+              "afterTrade": {
+                "rank": 60,
+                "games": 24
+              }
             },
             {
               "name": "Cameron Johnson",
-              "playerId": "6173"
+              "playerId": "6173",
+              "afterTrade": {
+                "rank": 95,
+                "games": 21
+              }
             },
             {
               "name": "Stephen Curry",
-              "playerId": "4612"
+              "playerId": "4612",
+              "afterTrade": {
+                "rank": 3,
+                "games": 29
+              }
             }
           ]
         },
@@ -7069,19 +8796,35 @@
           "receives": [
             {
               "name": "Malik Beasley",
-              "playerId": "5650"
+              "playerId": "5650",
+              "afterTrade": {
+                "rank": 93,
+                "games": 31
+              }
             },
             {
               "name": "Mikal Bridges",
-              "playerId": "6021"
+              "playerId": "6021",
+              "afterTrade": {
+                "rank": 45,
+                "games": 31
+              }
             },
             {
               "name": "Austin Reaves",
-              "playerId": "6606"
+              "playerId": "6606",
+              "afterTrade": {
+                "rank": 7,
+                "games": 29
+              }
             },
             {
               "name": "Luka Dončić",
-              "playerId": "6014"
+              "playerId": "6014",
+              "afterTrade": {
+                "rank": 13,
+                "games": 28
+              }
             }
           ]
         }

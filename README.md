@@ -56,6 +56,9 @@ Draft and trade pages appear when a league has that data (both leagues do).
   namesake teams and manager ratings. Extras use their own random streams, so they never change the matchups.
 - `data/leagues/caboclo/` — the real league. Raw page captures live in `raw/<yahooYear>/`;
   `node scripts/build-caboclo.mjs` turns them into `<endYear>.json` and `league.json`. Never hand-edit the JSON.
+  `node scripts/capture-sleeper.mjs` first adds NBA stats from Sleeper's public API (no key): season stat lines
+  Yahoo doesn't show (2018-19 to 2020-21, free agents) and each traded player's rank on the games after the trade.
+  Real league only.
   Every season is checked against Yahoo's own standings, seeds, podiums and record book by
   `src/lib/data/caboclo*.test.ts`.
 
@@ -81,7 +84,8 @@ Draft and trade pages appear when a league has that data (both leagues do).
   roughly 9-category z-score points above a replacement-level player. Fitted on the real league: Yahoo's season
   ranks match a 9-category z-score ranking almost exactly, and value falls off like the log of rank.
   **Draft value** = value of the finish − value expected at the draft slot. **Trade value** = sum of the value of
-  the players received (full-season ranks, so a rough guide).
+  the players received, ranked on only the games played after the trade (Sleeper game logs, to the end of the
+  regular season); full-season ranks when those aren't captured.
 - **Roster builds:** standard scores per category of each team's season-end roster (players' full-season totals);
   a likely punt is 1.5 SD below the league *and* below the team's own average. Approximate by design.
 
@@ -95,4 +99,5 @@ Draft and trade pages appear when a league has that data (both leagues do).
 
 Yahoo OAuth and API import, a database, e2e (Playwright) tests. Data the page captures don't have yet and would
 unlock more: each team's weekly category totals (all-play records, true category identities and punts), the full
-add/drop log (who actually picked up whom), week dates (time-aware trade values) and consolation-bracket games.
+add/drop log (who actually picked up whom), week dates (to end post-trade windows at the fantasy final instead of
+the NBA regular season) and consolation-bracket games.

@@ -1,0 +1,11 @@
+# date|player|rank on games after the trade (to 2025-04-13, among all players)|games played
+2025-03-01|DeMar DeRozan|60|23
+2025-03-01|Rudy Gobert|35|17
+2025-02-06|Walker Kessler|92|19
+2025-02-06|Tobias Harris|60|24
+2025-02-06|Cameron Johnson|95|21
+2025-02-06|Stephen Curry|3|29
+2025-02-06|Malik Beasley|93|31
+2025-02-06|Mikal Bridges|45|31
+2025-02-06|Austin Reaves|7|29
+2025-02-06|Luka Dončić|13|28

@@ -117,6 +117,11 @@ export interface TradePlayer {
   name: string;
   /** Null when the name matches no ranked or drafted player that season (so the player is unranked). */
   playerId: string | null;
+  /**
+   * Rank on only the games played after the trade (through the end of the regular season), among all
+   * players over the same games. Null = didn't play enough to rank. Absent when not captured.
+   */
+  afterTrade?: { rank: number | null; games: number };
 }
 
 export interface Trade {

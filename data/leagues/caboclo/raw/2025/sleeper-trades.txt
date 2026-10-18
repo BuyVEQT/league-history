@@ -1,0 +1,18 @@
+# date|player|rank on games after the trade (to 2026-04-12, among all players)|games played
+2026-03-04|Kevin Durant|7|21
+2026-03-04|Russell Westbrook|320|6
+2026-01-22|Peyton Watson|377|11
+2026-01-22|Jalen Williams|347|9
+2026-01-07|Ja Morant|440|2
+2026-01-07|Mark Williams|173|28
+2025-12-31|Amen Thompson|7|49
+2025-12-31|LaMelo Ball|15|49
+2025-12-31|Kristaps Porziņģis|302|18
+2025-12-31|Kon Knueppel|27|49
+2025-12-31|Devin Booker|83|35
+2025-12-31|Cason Wallace|70|44
+2025-12-31|Andrew Wiggins|59|39
+2025-12-31|Payton Pritchard|31|47
+2025-12-31|Joel Embiid|95|24
+2025-12-31|Myles Turner|114|37
+2025-12-31|Dillon Brooks|241|29

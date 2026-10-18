@@ -2101,2400 +2101,6300 @@
       "name": "James Harden",
       "actualRank": 1,
       "preseasonRank": 1,
-      "gamesPlayed": null,
-      "teamId": "2019:jacob-g"
+      "gamesPlayed": 78,
+      "teamId": "2019:jacob-g",
+      "stats": {
+        "fgm": 843,
+        "fga": 1909,
+        "ftm": 754,
+        "fta": 858,
+        "threes": 378,
+        "pts": 2818,
+        "reb": 518,
+        "ast": 586,
+        "stl": 158,
+        "blk": 58,
+        "to": 387
+      }
     },
     {
       "playerId": "4725",
       "name": "Paul George",
       "actualRank": 2,
       "preseasonRank": 12,
-      "gamesPlayed": null,
-      "teamId": "2019:michael"
+      "gamesPlayed": 77,
+      "teamId": "2019:michael",
+      "stats": {
+        "fgm": 707,
+        "fga": 1614,
+        "ftm": 453,
+        "fta": 540,
+        "threes": 292,
+        "pts": 2159,
+        "reb": 628,
+        "ast": 318,
+        "stl": 170,
+        "blk": 34,
+        "to": 205
+      }
     },
     {
       "playerId": "5432",
       "name": "Karl-Anthony Towns",
       "actualRank": 3,
       "preseasonRank": 5,
-      "gamesPlayed": null,
-      "teamId": "2019:najim"
+      "gamesPlayed": 77,
+      "teamId": "2019:najim",
+      "stats": {
+        "fgm": 681,
+        "fga": 1314,
+        "ftm": 376,
+        "fta": 450,
+        "threes": 142,
+        "pts": 1880,
+        "reb": 954,
+        "ast": 259,
+        "stl": 67,
+        "blk": 125,
+        "to": 240
+      }
     },
     {
       "playerId": "4244",
       "name": "Kevin Durant",
       "actualRank": 4,
       "preseasonRank": 6,
-      "gamesPlayed": null,
-      "teamId": "2019:benjamin"
+      "gamesPlayed": 78,
+      "teamId": "2019:benjamin",
+      "stats": {
+        "fgm": 721,
+        "fga": 1383,
+        "ftm": 448,
+        "fta": 506,
+        "threes": 137,
+        "pts": 2027,
+        "reb": 497,
+        "ast": 457,
+        "stl": 58,
+        "blk": 84,
+        "to": 225
+      }
     },
     {
       "playerId": "4897",
       "name": "Nikola Vučević",
       "actualRank": 5,
       "preseasonRank": 59,
-      "gamesPlayed": null,
-      "teamId": "2019:benjamin"
+      "gamesPlayed": 80,
+      "teamId": "2019:benjamin",
+      "stats": {
+        "fgm": 701,
+        "fga": 1354,
+        "ftm": 179,
+        "fta": 227,
+        "threes": 84,
+        "pts": 1665,
+        "reb": 960,
+        "ast": 307,
+        "stl": 81,
+        "blk": 89,
+        "to": 159
+      }
     },
     {
       "playerId": "5185",
       "name": "Giannis Antetokounmpo",
       "actualRank": 6,
       "preseasonRank": 3,
-      "gamesPlayed": null,
-      "teamId": "2019:jacob-g"
+      "gamesPlayed": 72,
+      "teamId": "2019:jacob-g",
+      "stats": {
+        "fgm": 721,
+        "fga": 1247,
+        "ftm": 500,
+        "fta": 686,
+        "threes": 52,
+        "pts": 1994,
+        "reb": 898,
+        "ast": 424,
+        "stl": 92,
+        "blk": 110,
+        "to": 268
+      }
     },
     {
       "playerId": "5352",
       "name": "Nikola Jokić",
       "actualRank": 7,
       "preseasonRank": 8,
-      "gamesPlayed": null,
-      "teamId": "2019:najim"
+      "gamesPlayed": 80,
+      "teamId": "2019:najim",
+      "stats": {
+        "fgm": 616,
+        "fga": 1206,
+        "ftm": 289,
+        "fta": 352,
+        "threes": 83,
+        "pts": 1604,
+        "reb": 865,
+        "ast": 580,
+        "stl": 108,
+        "blk": 55,
+        "to": 248
+      }
     },
     {
       "playerId": "4612",
       "name": "Stephen Curry",
       "actualRank": 8,
       "preseasonRank": 4,
-      "gamesPlayed": null,
-      "teamId": "2019:brendan"
+      "gamesPlayed": 69,
+      "teamId": "2019:brendan",
+      "stats": {
+        "fgm": 632,
+        "fga": 1340,
+        "ftm": 263,
+        "fta": 287,
+        "threes": 354,
+        "pts": 1881,
+        "reb": 369,
+        "ast": 361,
+        "stl": 92,
+        "blk": 25,
+        "to": 192
+      }
     },
     {
       "playerId": "5012",
       "name": "Damian Lillard",
       "actualRank": 9,
       "preseasonRank": 9,
-      "gamesPlayed": null,
-      "teamId": "2019:matt"
+      "gamesPlayed": 80,
+      "teamId": "2019:matt",
+      "stats": {
+        "fgm": 681,
+        "fga": 1533,
+        "ftm": 468,
+        "fta": 513,
+        "threes": 237,
+        "pts": 2067,
+        "reb": 371,
+        "ast": 551,
+        "stl": 88,
+        "blk": 34,
+        "to": 212
+      }
     },
     {
       "playerId": "5009",
       "name": "Bradley Beal",
       "actualRank": 10,
       "preseasonRank": 21,
-      "gamesPlayed": null,
-      "teamId": "2019:mitchell"
+      "gamesPlayed": 82,
+      "teamId": "2019:mitchell",
+      "stats": {
+        "fgm": 764,
+        "fga": 1609,
+        "ftm": 362,
+        "fta": 448,
+        "threes": 209,
+        "pts": 2099,
+        "reb": 411,
+        "ast": 448,
+        "stl": 121,
+        "blk": 58,
+        "to": 224
+      }
     },
     {
       "playerId": "5007",
       "name": "Anthony Davis",
       "actualRank": 11,
       "preseasonRank": 2,
-      "gamesPlayed": null,
-      "teamId": "2019:mitchell"
+      "gamesPlayed": 56,
+      "teamId": "2019:mitchell",
+      "stats": {
+        "fgm": 530,
+        "fga": 1026,
+        "ftm": 344,
+        "fta": 433,
+        "threes": 48,
+        "pts": 1452,
+        "reb": 672,
+        "ast": 218,
+        "stl": 88,
+        "blk": 135,
+        "to": 112
+      }
     },
     {
       "playerId": "5197",
       "name": "Rudy Gobert",
       "actualRank": 12,
       "preseasonRank": 27,
-      "gamesPlayed": null,
-      "teamId": "2019:michael"
+      "gamesPlayed": 81,
+      "teamId": "2019:michael",
+      "stats": {
+        "fgm": 476,
+        "fga": 712,
+        "ftm": 332,
+        "fta": 522,
+        "threes": 0,
+        "pts": 1284,
+        "reb": 1041,
+        "ast": 161,
+        "stl": 66,
+        "blk": 187,
+        "to": 130
+      }
     },
     {
       "playerId": "4890",
       "name": "Kemba Walker",
       "actualRank": 13,
       "preseasonRank": 15,
-      "gamesPlayed": null,
-      "teamId": "2019:michael"
+      "gamesPlayed": 82,
+      "teamId": "2019:michael",
+      "stats": {
+        "fgm": 731,
+        "fga": 1684,
+        "ftm": 380,
+        "fta": 450,
+        "threes": 260,
+        "pts": 2102,
+        "reb": 361,
+        "ast": 484,
+        "stl": 102,
+        "blk": 34,
+        "to": 211
+      }
     },
     {
       "playerId": "5015",
       "name": "Andre Drummond",
       "actualRank": 14,
       "preseasonRank": 25,
-      "gamesPlayed": null,
-      "teamId": "2019:dadder"
+      "gamesPlayed": 79,
+      "teamId": "2019:dadder",
+      "stats": {
+        "fgm": 561,
+        "fga": 1052,
+        "ftm": 243,
+        "fta": 412,
+        "threes": 5,
+        "pts": 1370,
+        "reb": 1232,
+        "ast": 112,
+        "stl": 136,
+        "blk": 138,
+        "to": 175
+      }
     },
     {
       "playerId": "4840",
       "name": "Kyrie Irving",
       "actualRank": 15,
       "preseasonRank": 18,
-      "gamesPlayed": null,
-      "teamId": "2019:dadder"
+      "gamesPlayed": 67,
+      "teamId": "2019:dadder",
+      "stats": {
+        "fgm": 604,
+        "fga": 1241,
+        "ftm": 214,
+        "fta": 245,
+        "threes": 174,
+        "pts": 1596,
+        "reb": 335,
+        "ast": 464,
+        "stl": 103,
+        "blk": 34,
+        "to": 172
+      }
     },
     {
       "playerId": "4130",
       "name": "LaMarcus Aldridge",
       "actualRank": 16,
       "preseasonRank": 36,
-      "gamesPlayed": null,
-      "teamId": "2019:matt"
+      "gamesPlayed": 81,
+      "teamId": "2019:matt",
+      "stats": {
+        "fgm": 684,
+        "fga": 1319,
+        "ftm": 349,
+        "fta": 412,
+        "threes": 10,
+        "pts": 1727,
+        "reb": 744,
+        "ast": 194,
+        "stl": 43,
+        "blk": 107,
+        "to": 144
+      }
     },
     {
       "playerId": "5294",
       "name": "Joel Embiid",
       "actualRank": 17,
       "preseasonRank": 19,
-      "gamesPlayed": null,
-      "teamId": "2019:najim"
+      "gamesPlayed": 64,
+      "teamId": "2019:najim",
+      "stats": {
+        "fgm": 580,
+        "fga": 1199,
+        "ftm": 522,
+        "fta": 649,
+        "threes": 79,
+        "pts": 1761,
+        "reb": 871,
+        "ast": 234,
+        "stl": 46,
+        "blk": 122,
+        "to": 226
+      }
     },
     {
       "playerId": "4896",
       "name": "Kawhi Leonard",
       "actualRank": 18,
       "preseasonRank": 13,
-      "gamesPlayed": null,
-      "teamId": "2019:matt"
+      "gamesPlayed": 60,
+      "teamId": "2019:matt",
+      "stats": {
+        "fgm": 560,
+        "fga": 1129,
+        "ftm": 364,
+        "fta": 426,
+        "threes": 112,
+        "pts": 1596,
+        "reb": 439,
+        "ast": 199,
+        "stl": 106,
+        "blk": 24,
+        "to": 121
+      }
     },
     {
       "playerId": "4472",
       "name": "Brook Lopez",
       "actualRank": 19,
       "preseasonRank": 75,
-      "gamesPlayed": null,
-      "teamId": "2019:eddie"
+      "gamesPlayed": 81,
+      "teamId": "2019:eddie",
+      "stats": {
+        "fgm": 355,
+        "fga": 786,
+        "ftm": 112,
+        "fta": 133,
+        "threes": 187,
+        "pts": 1009,
+        "reb": 396,
+        "ast": 98,
+        "stl": 51,
+        "blk": 179,
+        "to": 82
+      }
     },
     {
       "playerId": "4901",
       "name": "Tobias Harris",
       "actualRank": 20,
       "preseasonRank": 33,
-      "gamesPlayed": null,
-      "teamId": "2019:brendan"
+      "gamesPlayed": 82,
+      "teamId": "2019:brendan",
+      "stats": {
+        "fgm": 611,
+        "fga": 1254,
+        "ftm": 266,
+        "fta": 307,
+        "threes": 156,
+        "pts": 1644,
+        "reb": 645,
+        "ast": 229,
+        "stl": 51,
+        "blk": 37,
+        "to": 151
+      }
     },
     {
       "playerId": "5471",
       "name": "Myles Turner",
       "actualRank": 21,
       "preseasonRank": 42,
-      "gamesPlayed": null,
-      "teamId": "2019:benjamin"
+      "gamesPlayed": 74,
+      "teamId": "2019:benjamin",
+      "stats": {
+        "fgm": 380,
+        "fga": 780,
+        "ftm": 148,
+        "fta": 201,
+        "threes": 76,
+        "pts": 984,
+        "reb": 531,
+        "ast": 115,
+        "stl": 60,
+        "blk": 199,
+        "to": 100
+      }
     },
     {
       "playerId": "4892",
       "name": "Klay Thompson",
       "actualRank": 22,
       "preseasonRank": 32,
-      "gamesPlayed": null,
-      "teamId": "2019:brendan"
+      "gamesPlayed": 78,
+      "teamId": "2019:brendan",
+      "stats": {
+        "fgm": 655,
+        "fga": 1402,
+        "ftm": 129,
+        "fta": 158,
+        "threes": 241,
+        "pts": 1680,
+        "reb": 299,
+        "ast": 186,
+        "stl": 84,
+        "blk": 47,
+        "to": 115
+      }
     },
     {
       "playerId": "5637",
       "name": "Buddy Hield",
       "actualRank": 23,
       "preseasonRank": 85,
-      "gamesPlayed": null,
-      "teamId": "2019:matt"
+      "gamesPlayed": 82,
+      "teamId": "2019:matt",
+      "stats": {
+        "fgm": 623,
+        "fga": 1360,
+        "ftm": 171,
+        "fta": 193,
+        "threes": 278,
+        "pts": 1695,
+        "reb": 412,
+        "ast": 205,
+        "stl": 58,
+        "blk": 33,
+        "to": 146
+      }
     },
     {
       "playerId": "4912",
       "name": "Jimmy Butler III",
       "actualRank": 24,
       "preseasonRank": 22,
-      "gamesPlayed": null,
-      "teamId": "2019:jacob-g"
+      "gamesPlayed": 65,
+      "teamId": "2019:jacob-g",
+      "stats": {
+        "fgm": 418,
+        "fga": 904,
+        "ftm": 312,
+        "fta": 365,
+        "threes": 67,
+        "pts": 1215,
+        "reb": 342,
+        "ast": 263,
+        "stl": 123,
+        "blk": 39,
+        "to": 95
+      }
     },
     {
       "playerId": "4390",
       "name": "Russell Westbrook",
       "actualRank": 25,
       "preseasonRank": 10,
-      "gamesPlayed": null,
-      "teamId": "2019:jordan"
+      "gamesPlayed": 73,
+      "teamId": "2019:jordan",
+      "stats": {
+        "fgm": 630,
+        "fga": 1473,
+        "ftm": 296,
+        "fta": 451,
+        "threes": 119,
+        "pts": 1675,
+        "reb": 807,
+        "ast": 784,
+        "stl": 142,
+        "blk": 33,
+        "to": 325
+      }
     },
     {
       "playerId": "5658",
       "name": "Pascal Siakam",
       "actualRank": 26,
       "preseasonRank": 140,
-      "gamesPlayed": null,
-      "teamId": "2019:jordan"
+      "gamesPlayed": 80,
+      "teamId": "2019:jordan",
+      "stats": {
+        "fgm": 519,
+        "fga": 945,
+        "ftm": 237,
+        "fta": 302,
+        "threes": 79,
+        "pts": 1354,
+        "reb": 549,
+        "ast": 248,
+        "stl": 73,
+        "blk": 52,
+        "to": 154
+      }
     },
     {
       "playerId": "4622",
       "name": "Jrue Holiday",
       "actualRank": 27,
       "preseasonRank": 20,
-      "gamesPlayed": null,
-      "teamId": "2019:mitchell"
+      "gamesPlayed": 67,
+      "teamId": "2019:mitchell",
+      "stats": {
+        "fgm": 547,
+        "fga": 1159,
+        "ftm": 208,
+        "fta": 271,
+        "threes": 118,
+        "pts": 1420,
+        "reb": 334,
+        "ast": 518,
+        "stl": 109,
+        "blk": 54,
+        "to": 210
+      }
     },
     {
       "playerId": "4246",
       "name": "Mike Conley",
       "actualRank": 28,
       "preseasonRank": 47,
-      "gamesPlayed": null,
-      "teamId": "2019:michael"
+      "gamesPlayed": 70,
+      "teamId": "2019:michael",
+      "stats": {
+        "fgm": 490,
+        "fga": 1120,
+        "ftm": 343,
+        "fta": 406,
+        "threes": 155,
+        "pts": 1478,
+        "reb": 239,
+        "ast": 449,
+        "stl": 94,
+        "blk": 22,
+        "to": 130
+      }
     },
     {
       "playerId": "5336",
       "name": "Clint Capela",
       "actualRank": 29,
       "preseasonRank": 39,
-      "gamesPlayed": null,
-      "teamId": "2019:matt"
+      "gamesPlayed": 67,
+      "teamId": "2019:matt",
+      "stats": {
+        "fgm": 474,
+        "fga": 732,
+        "ftm": 166,
+        "fta": 261,
+        "threes": 0,
+        "pts": 1114,
+        "reb": 848,
+        "ast": 96,
+        "stl": 44,
+        "blk": 102,
+        "to": 95
+      }
     },
     {
       "playerId": "4325",
       "name": "Marc Gasol",
       "actualRank": 30,
       "preseasonRank": 34,
-      "gamesPlayed": null,
-      "teamId": "2019:brendan"
+      "gamesPlayed": 79,
+      "teamId": "2019:brendan",
+      "stats": {
+        "fgm": 390,
+        "fga": 870,
+        "ftm": 192,
+        "fta": 253,
+        "threes": 99,
+        "pts": 1071,
+        "reb": 627,
+        "ast": 349,
+        "stl": 84,
+        "blk": 86,
+        "to": 155
+      }
     },
     {
       "playerId": "4749",
       "name": "Eric Bledsoe",
       "actualRank": 31,
       "preseasonRank": 38,
-      "gamesPlayed": null,
-      "teamId": "2019:najim"
+      "gamesPlayed": 78,
+      "teamId": "2019:najim",
+      "stats": {
+        "fgm": 470,
+        "fga": 971,
+        "ftm": 177,
+        "fta": 236,
+        "threes": 124,
+        "pts": 1241,
+        "reb": 362,
+        "ast": 430,
+        "stl": 116,
+        "blk": 29,
+        "to": 165
+      }
     },
     {
       "playerId": "4245",
       "name": "Al Horford",
       "actualRank": 32,
       "preseasonRank": 43,
-      "gamesPlayed": null,
-      "teamId": "2019:jacob-g"
+      "gamesPlayed": 68,
+      "teamId": "2019:jacob-g",
+      "stats": {
+        "fgm": 387,
+        "fga": 723,
+        "ftm": 78,
+        "fta": 95,
+        "threes": 73,
+        "pts": 925,
+        "reb": 458,
+        "ast": 283,
+        "stl": 59,
+        "blk": 86,
+        "to": 102
+      }
     },
     {
       "playerId": "5433",
       "name": "D'Angelo Russell",
       "actualRank": 33,
       "preseasonRank": 90,
-      "gamesPlayed": null,
-      "teamId": "2019:brendan"
+      "gamesPlayed": 81,
+      "teamId": "2019:brendan",
+      "stats": {
+        "fgm": 659,
+        "fga": 1517,
+        "ftm": 160,
+        "fta": 205,
+        "threes": 234,
+        "pts": 1712,
+        "reb": 315,
+        "ast": 563,
+        "stl": 100,
+        "blk": 20,
+        "to": 253
+      }
     },
     {
       "playerId": "4468",
       "name": "Danilo Gallinari",
       "actualRank": 34,
       "preseasonRank": 151,
-      "gamesPlayed": null,
-      "teamId": "2019:eddie"
+      "gamesPlayed": 68,
+      "teamId": "2019:eddie",
+      "stats": {
+        "fgm": 409,
+        "fga": 884,
+        "ftm": 367,
+        "fta": 406,
+        "threes": 161,
+        "pts": 1346,
+        "reb": 417,
+        "ast": 178,
+        "stl": 49,
+        "blk": 23,
+        "to": 99
+      }
     },
     {
       "playerId": "4614",
       "name": "DeMar DeRozan",
       "actualRank": 35,
       "preseasonRank": 37,
-      "gamesPlayed": null,
-      "teamId": "2019:eddie"
+      "gamesPlayed": 77,
+      "teamId": "2019:eddie",
+      "stats": {
+        "fgm": 631,
+        "fga": 1313,
+        "ftm": 366,
+        "fta": 441,
+        "threes": 7,
+        "pts": 1635,
+        "reb": 462,
+        "ast": 475,
+        "stl": 86,
+        "blk": 36,
+        "to": 199
+      }
     },
     {
       "playerId": "5327",
       "name": "Jusuf Nurkić",
       "actualRank": 36,
       "preseasonRank": 101,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 72,
+      "teamId": null,
+      "stats": {
+        "fgm": 420,
+        "fga": 826,
+        "ftm": 282,
+        "fta": 365,
+        "threes": 3,
+        "pts": 1125,
+        "reb": 748,
+        "ast": 233,
+        "stl": 71,
+        "blk": 103,
+        "to": 168
+      }
     },
     {
       "playerId": "5958",
       "name": "Deandre Ayton",
       "actualRank": 37,
       "preseasonRank": 63,
-      "gamesPlayed": null,
-      "teamId": "2019:jordan"
+      "gamesPlayed": 71,
+      "teamId": "2019:jordan",
+      "stats": {
+        "fgm": 509,
+        "fga": 870,
+        "ftm": 141,
+        "fta": 189,
+        "threes": 0,
+        "pts": 1159,
+        "reb": 729,
+        "ast": 125,
+        "stl": 61,
+        "blk": 67,
+        "to": 126
+      }
     },
     {
       "playerId": "5018",
       "name": "Jeremy Lamb",
       "actualRank": 38,
       "preseasonRank": 148,
-      "gamesPlayed": null,
-      "teamId": "2019:brendan"
+      "gamesPlayed": 79,
+      "teamId": "2019:brendan",
+      "stats": {
+        "fgm": 431,
+        "fga": 979,
+        "ftm": 231,
+        "fta": 260,
+        "threes": 115,
+        "pts": 1208,
+        "reb": 434,
+        "ast": 172,
+        "stl": 88,
+        "blk": 32,
+        "to": 80
+      }
     },
     {
       "playerId": "5767",
       "name": "De'Aaron Fox",
       "actualRank": 39,
       "preseasonRank": 127,
-      "gamesPlayed": null,
-      "teamId": "2019:mitchell"
+      "gamesPlayed": 81,
+      "teamId": "2019:mitchell",
+      "stats": {
+        "fgm": 505,
+        "fga": 1102,
+        "ftm": 303,
+        "fta": 417,
+        "threes": 86,
+        "pts": 1399,
+        "reb": 304,
+        "ast": 590,
+        "stl": 133,
+        "blk": 45,
+        "to": 227
+      }
     },
     {
       "playerId": "5765",
       "name": "Jayson Tatum",
       "actualRank": 40,
       "preseasonRank": 50,
-      "gamesPlayed": null,
-      "teamId": "2019:dadder"
+      "gamesPlayed": 79,
+      "teamId": "2019:dadder",
+      "stats": {
+        "fgm": 466,
+        "fga": 1036,
+        "ftm": 195,
+        "fta": 228,
+        "threes": 116,
+        "pts": 1243,
+        "reb": 477,
+        "ast": 168,
+        "stl": 84,
+        "blk": 57,
+        "to": 122
+      }
     },
     {
       "playerId": "5492",
       "name": "Montrezl Harrell",
       "actualRank": 41,
       "preseasonRank": 143,
-      "gamesPlayed": null,
-      "teamId": "2019:eddie"
+      "gamesPlayed": 82,
+      "teamId": "2019:eddie",
+      "stats": {
+        "fgm": 546,
+        "fga": 888,
+        "ftm": 266,
+        "fta": 414,
+        "threes": 3,
+        "pts": 1361,
+        "reb": 535,
+        "ast": 162,
+        "stl": 71,
+        "blk": 110,
+        "to": 132
+      }
     },
     {
       "playerId": "5826",
       "name": "Donovan Mitchell",
       "actualRank": 42,
       "preseasonRank": 17,
-      "gamesPlayed": null,
-      "teamId": "2019:eddie"
+      "gamesPlayed": 77,
+      "teamId": "2019:eddie",
+      "stats": {
+        "fgm": 661,
+        "fga": 1530,
+        "ftm": 319,
+        "fta": 396,
+        "threes": 188,
+        "pts": 1829,
+        "reb": 316,
+        "ast": 322,
+        "stl": 106,
+        "blk": 31,
+        "to": 218
+      }
     },
     {
       "playerId": "4290",
       "name": "Thaddeus Young",
       "actualRank": 43,
       "preseasonRank": 102,
-      "gamesPlayed": null,
-      "teamId": "2019:eddie"
+      "gamesPlayed": 81,
+      "teamId": "2019:eddie",
+      "stats": {
+        "fgm": 443,
+        "fga": 841,
+        "ftm": 87,
+        "fta": 135,
+        "threes": 51,
+        "pts": 1024,
+        "reb": 523,
+        "ast": 204,
+        "stl": 123,
+        "blk": 36,
+        "to": 123
+      }
     },
     {
       "playerId": "5600",
       "name": "Ben Simmons",
       "actualRank": 44,
       "preseasonRank": 14,
-      "gamesPlayed": null,
-      "teamId": "2019:jordan"
+      "gamesPlayed": 79,
+      "teamId": "2019:jordan",
+      "stats": {
+        "fgm": 540,
+        "fga": 960,
+        "ftm": 257,
+        "fta": 428,
+        "threes": 0,
+        "pts": 1337,
+        "reb": 697,
+        "ast": 610,
+        "stl": 112,
+        "blk": 61,
+        "to": 274
+      }
     },
     {
       "playerId": "4480",
       "name": "JaVale McGee",
       "actualRank": 45,
       "preseasonRank": 120,
-      "gamesPlayed": null,
-      "teamId": "2019:eddie"
+      "gamesPlayed": 75,
+      "teamId": "2019:eddie",
+      "stats": {
+        "fgm": 400,
+        "fga": 641,
+        "ftm": 96,
+        "fta": 152,
+        "threes": 1,
+        "pts": 897,
+        "reb": 566,
+        "ast": 52,
+        "stl": 47,
+        "blk": 148,
+        "to": 108
+      }
     },
     {
       "playerId": "5073",
       "name": "Khris Middleton",
       "actualRank": 46,
       "preseasonRank": 26,
-      "gamesPlayed": null,
-      "teamId": "2019:mitchell"
+      "gamesPlayed": 77,
+      "teamId": "2019:mitchell",
+      "stats": {
+        "fgm": 506,
+        "fga": 1148,
+        "ftm": 216,
+        "fta": 258,
+        "threes": 179,
+        "pts": 1407,
+        "reb": 461,
+        "ast": 331,
+        "stl": 80,
+        "blk": 7,
+        "to": 174
+      }
     },
     {
       "playerId": "5350",
       "name": "Jerami Grant",
       "actualRank": 47,
       "preseasonRank": 114,
-      "gamesPlayed": null,
-      "teamId": "2019:jacob-g"
+      "gamesPlayed": 80,
+      "teamId": "2019:jacob-g",
+      "stats": {
+        "fgm": 409,
+        "fga": 823,
+        "ftm": 157,
+        "fta": 221,
+        "threes": 115,
+        "pts": 1090,
+        "reb": 417,
+        "ast": 79,
+        "stl": 61,
+        "blk": 100,
+        "to": 67
+      }
     },
     {
       "playerId": "3930",
       "name": "Chris Paul",
       "actualRank": 48,
       "preseasonRank": 16,
-      "gamesPlayed": null,
-      "teamId": "2019:benjamin"
+      "gamesPlayed": 58,
+      "teamId": "2019:benjamin",
+      "stats": {
+        "fgm": 302,
+        "fga": 720,
+        "ftm": 175,
+        "fta": 203,
+        "threes": 127,
+        "pts": 906,
+        "reb": 265,
+        "ast": 473,
+        "stl": 114,
+        "blk": 18,
+        "to": 152
+      }
     },
     {
       "playerId": "4152",
       "name": "Kyle Lowry",
       "actualRank": 49,
       "preseasonRank": 24,
-      "gamesPlayed": null,
-      "teamId": "2019:jordan"
+      "gamesPlayed": 65,
+      "teamId": "2019:jordan",
+      "stats": {
+        "fgm": 304,
+        "fga": 739,
+        "ftm": 161,
+        "fta": 194,
+        "threes": 157,
+        "pts": 926,
+        "reb": 312,
+        "ast": 564,
+        "stl": 91,
+        "blk": 31,
+        "to": 182
+      }
     },
     {
       "playerId": "4163",
       "name": "P.J. Tucker",
       "actualRank": 50,
       "preseasonRank": 183,
-      "gamesPlayed": null,
-      "teamId": "2019:jordan"
+      "gamesPlayed": 82,
+      "teamId": "2019:jordan",
+      "stats": {
+        "fgm": 207,
+        "fga": 523,
+        "ftm": 41,
+        "fta": 59,
+        "threes": 146,
+        "pts": 601,
+        "reb": 479,
+        "ast": 96,
+        "stl": 132,
+        "blk": 39,
+        "to": 63
+      }
     },
     {
       "playerId": "5317",
       "name": "Marcus Smart",
       "actualRank": 51,
       "preseasonRank": 176,
-      "gamesPlayed": null,
-      "teamId": "2019:mitchell"
+      "gamesPlayed": 80,
+      "teamId": "2019:mitchell",
+      "stats": {
+        "fgm": 239,
+        "fga": 567,
+        "ftm": 104,
+        "fta": 129,
+        "threes": 126,
+        "pts": 708,
+        "reb": 234,
+        "ast": 321,
+        "stl": 143,
+        "blk": 28,
+        "to": 123
+      }
     },
     {
       "playerId": "5163",
       "name": "Steven Adams",
       "actualRank": 52,
       "preseasonRank": 77,
-      "gamesPlayed": null,
-      "teamId": "2019:dadder"
+      "gamesPlayed": 80,
+      "teamId": "2019:dadder",
+      "stats": {
+        "fgm": 481,
+        "fga": 809,
+        "ftm": 146,
+        "fta": 292,
+        "threes": 0,
+        "pts": 1108,
+        "reb": 760,
+        "ast": 124,
+        "stl": 117,
+        "blk": 76,
+        "to": 135
+      }
     },
     {
       "playerId": "5835",
       "name": "Jarrett Allen",
       "actualRank": 53,
       "preseasonRank": 46,
-      "gamesPlayed": null,
-      "teamId": "2019:benjamin"
+      "gamesPlayed": 80,
+      "teamId": "2019:benjamin",
+      "stats": {
+        "fgm": 335,
+        "fga": 568,
+        "ftm": 197,
+        "fta": 278,
+        "threes": 6,
+        "pts": 873,
+        "reb": 672,
+        "ast": 110,
+        "stl": 43,
+        "blk": 120,
+        "to": 103
+      }
     },
     {
       "playerId": "4561",
       "name": "Blake Griffin",
       "actualRank": 54,
       "preseasonRank": 48,
-      "gamesPlayed": null,
-      "teamId": "2019:michael"
+      "gamesPlayed": 75,
+      "teamId": "2019:michael",
+      "stats": {
+        "fgm": 619,
+        "fga": 1341,
+        "ftm": 414,
+        "fta": 550,
+        "threes": 189,
+        "pts": 1841,
+        "reb": 565,
+        "ast": 402,
+        "stl": 52,
+        "blk": 28,
+        "to": 253
+      }
     },
     {
       "playerId": "4651",
       "name": "Danny Green",
       "actualRank": 55,
       "preseasonRank": 157,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 80,
+      "teamId": null,
+      "stats": {
+        "fgm": 293,
+        "fga": 630,
+        "ftm": 37,
+        "fta": 44,
+        "threes": 198,
+        "pts": 821,
+        "reb": 317,
+        "ast": 126,
+        "stl": 73,
+        "blk": 53,
+        "to": 75
+      }
     },
     {
       "playerId": "4486",
       "name": "Serge Ibaka",
       "actualRank": 56,
       "preseasonRank": 78,
-      "gamesPlayed": null,
-      "teamId": "2019:najim"
+      "gamesPlayed": 74,
+      "teamId": "2019:najim",
+      "stats": {
+        "fgm": 464,
+        "fga": 877,
+        "ftm": 135,
+        "fta": 177,
+        "threes": 49,
+        "pts": 1112,
+        "reb": 601,
+        "ast": 99,
+        "stl": 29,
+        "blk": 103,
+        "to": 114
+      }
     },
     {
       "playerId": "4718",
       "name": "Derrick Favors",
       "actualRank": 57,
       "preseasonRank": 146,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 76,
+      "teamId": null,
+      "stats": {
+        "fgm": 363,
+        "fga": 619,
+        "ftm": 154,
+        "fta": 228,
+        "threes": 17,
+        "pts": 897,
+        "reb": 560,
+        "ast": 89,
+        "stl": 56,
+        "blk": 106,
+        "to": 84
+      }
     },
     {
       "playerId": "4626",
       "name": "Darren Collison",
       "actualRank": 58,
       "preseasonRank": 68,
-      "gamesPlayed": null,
-      "teamId": "2019:jacob-g"
+      "gamesPlayed": 76,
+      "teamId": "2019:jacob-g",
+      "stats": {
+        "fgm": 308,
+        "fga": 659,
+        "ftm": 158,
+        "fta": 190,
+        "threes": 79,
+        "pts": 853,
+        "reb": 232,
+        "ast": 459,
+        "stl": 110,
+        "blk": 9,
+        "to": 125
+      }
     },
     {
       "playerId": "5393",
       "name": "Joe Ingles",
       "actualRank": 59,
       "preseasonRank": 54,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 82,
+      "teamId": null,
+      "stats": {
+        "fgm": 359,
+        "fga": 802,
+        "ftm": 87,
+        "fta": 123,
+        "threes": 189,
+        "pts": 994,
+        "reb": 330,
+        "ast": 469,
+        "stl": 98,
+        "blk": 20,
+        "to": 193
+      }
     },
     {
       "playerId": "5500",
       "name": "Josh Richardson",
       "actualRank": 60,
       "preseasonRank": 56,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 73,
+      "teamId": null,
+      "stats": {
+        "fgm": 423,
+        "fga": 1026,
+        "ftm": 199,
+        "fta": 231,
+        "threes": 164,
+        "pts": 1209,
+        "reb": 263,
+        "ast": 298,
+        "stl": 79,
+        "blk": 34,
+        "to": 113
+      }
     },
     {
       "playerId": "5014",
       "name": "Terrence Ross",
       "actualRank": 61,
       "preseasonRank": 264,
-      "gamesPlayed": null,
-      "teamId": "2019:jordan"
+      "gamesPlayed": 81,
+      "teamId": "2019:jordan",
+      "stats": {
+        "fgm": 440,
+        "fga": 1027,
+        "ftm": 126,
+        "fta": 144,
+        "threes": 217,
+        "pts": 1223,
+        "reb": 280,
+        "ast": 135,
+        "stl": 72,
+        "blk": 29,
+        "to": 90
+      }
     },
     {
       "playerId": "6021",
       "name": "Mikal Bridges",
       "actualRank": 62,
       "preseasonRank": 265,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 82,
+      "teamId": null,
+      "stats": {
+        "fgm": 242,
+        "fga": 563,
+        "ftm": 95,
+        "fta": 118,
+        "threes": 105,
+        "pts": 684,
+        "reb": 264,
+        "ast": 173,
+        "stl": 129,
+        "blk": 38,
+        "to": 70
+      }
     },
     {
       "playerId": "4913",
       "name": "Bojan Bogdanović",
       "actualRank": 63,
       "preseasonRank": 132,
-      "gamesPlayed": null,
-      "teamId": "2019:brendan"
+      "gamesPlayed": 81,
+      "teamId": "2019:brendan",
+      "stats": {
+        "fgm": 522,
+        "fga": 1051,
+        "ftm": 246,
+        "fta": 305,
+        "threes": 164,
+        "pts": 1454,
+        "reb": 333,
+        "ast": 161,
+        "stl": 69,
+        "blk": 1,
+        "to": 134
+      }
     },
     {
       "playerId": "5638",
       "name": "Jamal Murray",
       "actualRank": 64,
       "preseasonRank": 40,
-      "gamesPlayed": null,
-      "teamId": "2019:dadder"
+      "gamesPlayed": 75,
+      "teamId": "2019:dadder",
+      "stats": {
+        "fgm": 513,
+        "fga": 1173,
+        "ftm": 189,
+        "fta": 223,
+        "threes": 152,
+        "pts": 1367,
+        "reb": 317,
+        "ast": 363,
+        "stl": 67,
+        "blk": 27,
+        "to": 158
+      }
     },
     {
       "playerId": "5161",
       "name": "CJ McCollum",
       "actualRank": 65,
       "preseasonRank": 28,
-      "gamesPlayed": null,
-      "teamId": "2019:benjamin"
+      "gamesPlayed": 70,
+      "teamId": "2019:benjamin",
+      "stats": {
+        "fgm": 571,
+        "fga": 1243,
+        "ftm": 159,
+        "fta": 192,
+        "threes": 167,
+        "pts": 1468,
+        "reb": 282,
+        "ast": 207,
+        "stl": 55,
+        "blk": 28,
+        "to": 106
+      }
     },
     {
       "playerId": "6047",
       "name": "Mitchell Robinson",
       "actualRank": 66,
       "preseasonRank": 266,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 66,
+      "teamId": null,
+      "stats": {
+        "fgm": 202,
+        "fga": 291,
+        "ftm": 81,
+        "fta": 135,
+        "threes": 0,
+        "pts": 485,
+        "reb": 423,
+        "ast": 37,
+        "stl": 52,
+        "blk": 161,
+        "to": 35
+      }
     },
     {
       "playerId": "3704",
       "name": "LeBron James",
       "actualRank": 67,
       "preseasonRank": 7,
-      "gamesPlayed": null,
-      "teamId": "2019:dadder"
+      "gamesPlayed": 55,
+      "teamId": "2019:dadder",
+      "stats": {
+        "fgm": 558,
+        "fga": 1095,
+        "ftm": 278,
+        "fta": 418,
+        "threes": 111,
+        "pts": 1505,
+        "reb": 465,
+        "ast": 454,
+        "stl": 72,
+        "blk": 33,
+        "to": 197
+      }
     },
     {
       "playerId": "5142",
       "name": "Justin Holiday",
       "actualRank": 68,
       "preseasonRank": 192,
-      "gamesPlayed": null,
-      "teamId": "2019:jacob-g"
+      "gamesPlayed": 82,
+      "teamId": "2019:jacob-g",
+      "stats": {
+        "fgm": 300,
+        "fga": 777,
+        "ftm": 95,
+        "fta": 106,
+        "threes": 162,
+        "pts": 857,
+        "reb": 323,
+        "ast": 146,
+        "stl": 121,
+        "blk": 36,
+        "to": 104
+      }
     },
     {
       "playerId": "5487",
       "name": "Larry Nance Jr.",
       "actualRank": 69,
       "preseasonRank": 96,
-      "gamesPlayed": null,
-      "teamId": "2019:eddie"
+      "gamesPlayed": 67,
+      "teamId": "2019:eddie",
+      "stats": {
+        "fgm": 249,
+        "fga": 479,
+        "ftm": 96,
+        "fta": 134,
+        "threes": 33,
+        "pts": 627,
+        "reb": 552,
+        "ast": 214,
+        "stl": 100,
+        "blk": 40,
+        "to": 97
+      }
     },
     {
       "playerId": "5473",
       "name": "Devin Booker",
       "actualRank": 70,
       "preseasonRank": 29,
-      "gamesPlayed": null,
-      "teamId": "2019:jordan"
+      "gamesPlayed": 64,
+      "teamId": "2019:jordan",
+      "stats": {
+        "fgm": 586,
+        "fga": 1255,
+        "ftm": 393,
+        "fta": 454,
+        "threes": 135,
+        "pts": 1700,
+        "reb": 265,
+        "ast": 433,
+        "stl": 56,
+        "blk": 13,
+        "to": 264
+      }
     },
     {
       "playerId": "5466",
       "name": "Willie Cauley-Stein",
       "actualRank": 71,
       "preseasonRank": 118,
-      "gamesPlayed": null,
-      "teamId": "2019:matt"
+      "gamesPlayed": 81,
+      "teamId": "2019:matt",
+      "stats": {
+        "fgm": 412,
+        "fga": 741,
+        "ftm": 140,
+        "fta": 254,
+        "threes": 1,
+        "pts": 965,
+        "reb": 678,
+        "ast": 194,
+        "stl": 96,
+        "blk": 51,
+        "to": 84
+      }
     },
     {
       "playerId": "4497",
       "name": "DeAndre Jordan",
       "actualRank": 72,
       "preseasonRank": 65,
-      "gamesPlayed": null,
-      "teamId": "2019:dadder"
+      "gamesPlayed": 69,
+      "teamId": "2019:dadder",
+      "stats": {
+        "fgm": 286,
+        "fga": 446,
+        "ftm": 186,
+        "fta": 264,
+        "threes": 0,
+        "pts": 758,
+        "reb": 902,
+        "ast": 156,
+        "stl": 42,
+        "blk": 73,
+        "to": 153
+      }
     },
     {
       "playerId": "4139",
       "name": "JJ Redick",
       "actualRank": 73,
       "preseasonRank": 82,
-      "gamesPlayed": null,
-      "teamId": "2019:najim"
+      "gamesPlayed": 76,
+      "teamId": "2019:najim",
+      "stats": {
+        "fgm": 452,
+        "fga": 1027,
+        "ftm": 228,
+        "fta": 255,
+        "threes": 240,
+        "pts": 1372,
+        "reb": 186,
+        "ast": 206,
+        "stl": 32,
+        "blk": 17,
+        "to": 101
+      }
     },
     {
       "playerId": "5256",
       "name": "Dewayne Dedmon",
       "actualRank": 74,
       "preseasonRank": 97,
-      "gamesPlayed": null,
-      "teamId": "2019:mitchell"
+      "gamesPlayed": 64,
+      "teamId": "2019:mitchell",
+      "stats": {
+        "fgm": 259,
+        "fga": 526,
+        "ftm": 92,
+        "fta": 113,
+        "threes": 83,
+        "pts": 693,
+        "reb": 480,
+        "ast": 90,
+        "stl": 69,
+        "blk": 71,
+        "to": 84
+      }
     },
     {
       "playerId": "5295",
       "name": "Aaron Gordon",
       "actualRank": 75,
       "preseasonRank": 41,
-      "gamesPlayed": null,
-      "teamId": "2019:eddie"
+      "gamesPlayed": 78,
+      "teamId": "2019:eddie",
+      "stats": {
+        "fgm": 470,
+        "fga": 1046,
+        "ftm": 185,
+        "fta": 253,
+        "threes": 121,
+        "pts": 1246,
+        "reb": 574,
+        "ast": 289,
+        "stl": 57,
+        "blk": 56,
+        "to": 162
+      }
     },
     {
       "playerId": "4723",
       "name": "Al-Farouq Aminu",
       "actualRank": 76,
       "preseasonRank": 152,
-      "gamesPlayed": null,
-      "teamId": "2019:benjamin"
+      "gamesPlayed": 81,
+      "teamId": "2019:benjamin",
+      "stats": {
+        "fgm": 257,
+        "fga": 593,
+        "ftm": 150,
+        "fta": 173,
+        "threes": 96,
+        "pts": 760,
+        "reb": 610,
+        "ast": 104,
+        "stl": 68,
+        "blk": 33,
+        "to": 72
+      }
     },
     {
       "playerId": "5318",
       "name": "Julius Randle",
       "actualRank": 77,
       "preseasonRank": 72,
-      "gamesPlayed": null,
-      "teamId": "2019:jordan"
+      "gamesPlayed": 73,
+      "teamId": "2019:jordan",
+      "stats": {
+        "fgm": 571,
+        "fga": 1089,
+        "ftm": 356,
+        "fta": 487,
+        "threes": 67,
+        "pts": 1565,
+        "reb": 634,
+        "ast": 229,
+        "stl": 52,
+        "blk": 45,
+        "to": 208
+      }
     },
     {
       "playerId": "5069",
       "name": "Draymond Green",
       "actualRank": 78,
       "preseasonRank": 31,
-      "gamesPlayed": null,
-      "teamId": "2019:eddie"
+      "gamesPlayed": 66,
+      "teamId": "2019:eddie",
+      "stats": {
+        "fgm": 188,
+        "fga": 422,
+        "ftm": 63,
+        "fta": 91,
+        "threes": 47,
+        "pts": 486,
+        "reb": 481,
+        "ast": 454,
+        "stl": 95,
+        "blk": 70,
+        "to": 169
+      }
     },
     {
       "playerId": "5827",
       "name": "Bam Adebayo",
       "actualRank": 79,
       "preseasonRank": 201,
-      "gamesPlayed": null,
-      "teamId": "2019:mitchell"
+      "gamesPlayed": 82,
+      "teamId": "2019:mitchell",
+      "stats": {
+        "fgm": 280,
+        "fga": 486,
+        "ftm": 166,
+        "fta": 226,
+        "threes": 3,
+        "pts": 729,
+        "reb": 597,
+        "ast": 184,
+        "stl": 71,
+        "blk": 65,
+        "to": 121
+      }
     },
     {
       "playerId": "3928",
       "name": "Marvin Williams",
       "actualRank": 80,
       "preseasonRank": 124,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 75,
+      "teamId": null,
+      "stats": {
+        "fgm": 275,
+        "fga": 652,
+        "ftm": 66,
+        "fta": 86,
+        "threes": 140,
+        "pts": 756,
+        "reb": 407,
+        "ast": 92,
+        "stl": 71,
+        "blk": 61,
+        "to": 47
+      }
     },
     {
       "playerId": "6016",
       "name": "Trae Young",
       "actualRank": 81,
       "preseasonRank": 106,
-      "gamesPlayed": null,
-      "teamId": "2019:jacob-g"
+      "gamesPlayed": 81,
+      "teamId": "2019:jacob-g",
+      "stats": {
+        "fgm": 525,
+        "fga": 1256,
+        "ftm": 343,
+        "fta": 414,
+        "threes": 156,
+        "pts": 1549,
+        "reb": 301,
+        "ast": 653,
+        "stl": 72,
+        "blk": 15,
+        "to": 308
+      }
     },
     {
       "playerId": "4175",
       "name": "Paul Millsap",
       "actualRank": 82,
       "preseasonRank": 60,
-      "gamesPlayed": null,
-      "teamId": "2019:najim"
+      "gamesPlayed": 70,
+      "teamId": "2019:najim",
+      "stats": {
+        "fgm": 322,
+        "fga": 665,
+        "ftm": 181,
+        "fta": 249,
+        "threes": 58,
+        "pts": 883,
+        "reb": 505,
+        "ast": 141,
+        "stl": 83,
+        "blk": 54,
+        "to": 95
+      }
     },
     {
       "playerId": "4487",
       "name": "Nicolas Batum",
       "actualRank": 83,
       "preseasonRank": 70,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 75,
+      "teamId": null,
+      "stats": {
+        "fgm": 253,
+        "fga": 562,
+        "ftm": 77,
+        "fta": 89,
+        "threes": 116,
+        "pts": 699,
+        "reb": 390,
+        "ast": 247,
+        "stl": 71,
+        "blk": 43,
+        "to": 117
+      }
     },
     {
       "playerId": "3971",
       "name": "Lou Williams",
       "actualRank": 84,
       "preseasonRank": 55,
-      "gamesPlayed": null,
-      "teamId": "2019:najim"
+      "gamesPlayed": 75,
+      "teamId": "2019:najim",
+      "stats": {
+        "fgm": 484,
+        "fga": 1138,
+        "ftm": 425,
+        "fta": 485,
+        "threes": 105,
+        "pts": 1498,
+        "reb": 222,
+        "ast": 402,
+        "stl": 57,
+        "blk": 11,
+        "to": 181
+      }
     },
     {
       "playerId": "5667",
       "name": "Malcolm Brogdon",
       "actualRank": 85,
       "preseasonRank": 105,
-      "gamesPlayed": null,
-      "teamId": "2019:michael"
+      "gamesPlayed": 64,
+      "teamId": "2019:michael",
+      "stats": {
+        "fgm": 378,
+        "fga": 748,
+        "ftm": 141,
+        "fta": 152,
+        "threes": 104,
+        "pts": 1001,
+        "reb": 288,
+        "ast": 205,
+        "stl": 46,
+        "blk": 13,
+        "to": 91
+      }
     },
     {
       "playerId": "5832",
       "name": "John Collins",
       "actualRank": 86,
       "preseasonRank": 45,
-      "gamesPlayed": null,
-      "teamId": "2019:michael"
+      "gamesPlayed": 61,
+      "teamId": "2019:michael",
+      "stats": {
+        "fgm": 465,
+        "fga": 831,
+        "ftm": 203,
+        "fta": 266,
+        "threes": 55,
+        "pts": 1188,
+        "reb": 595,
+        "ast": 121,
+        "stl": 22,
+        "blk": 39,
+        "to": 120
+      }
     },
     {
       "playerId": "5768",
       "name": "Jonathan Isaac",
       "actualRank": 87,
       "preseasonRank": 86,
-      "gamesPlayed": null,
-      "teamId": "2019:brendan"
+      "gamesPlayed": 75,
+      "teamId": "2019:brendan",
+      "stats": {
+        "fgm": 262,
+        "fga": 611,
+        "ftm": 110,
+        "fta": 135,
+        "threes": 86,
+        "pts": 720,
+        "reb": 411,
+        "ast": 80,
+        "stl": 59,
+        "blk": 98,
+        "to": 75
+      }
     },
     {
       "playerId": "4136",
       "name": "Rudy Gay",
       "actualRank": 88,
       "preseasonRank": 142,
-      "gamesPlayed": null,
-      "teamId": "2019:jacob-g"
+      "gamesPlayed": 69,
+      "teamId": "2019:jacob-g",
+      "stats": {
+        "fgm": 376,
+        "fga": 746,
+        "ftm": 120,
+        "fta": 147,
+        "threes": 74,
+        "pts": 946,
+        "reb": 470,
+        "ast": 182,
+        "stl": 54,
+        "blk": 34,
+        "to": 114
+      }
     },
     {
       "playerId": "3860",
       "name": "Trevor Ariza",
       "actualRank": 89,
       "preseasonRank": 104,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 69,
+      "teamId": null,
+      "stats": {
+        "fgm": 294,
+        "fga": 736,
+        "ftm": 130,
+        "fta": 164,
+        "threes": 145,
+        "pts": 863,
+        "reb": 371,
+        "ast": 252,
+        "stl": 91,
+        "blk": 21,
+        "to": 106
+      }
     },
     {
       "playerId": "5855",
       "name": "Thomas Bryant",
       "actualRank": 90,
       "preseasonRank": 268,
-      "gamesPlayed": null,
-      "teamId": "2019:matt"
+      "gamesPlayed": 72,
+      "teamId": "2019:matt",
+      "stats": {
+        "fgm": 309,
+        "fga": 502,
+        "ftm": 107,
+        "fta": 137,
+        "threes": 33,
+        "pts": 758,
+        "reb": 454,
+        "ast": 92,
+        "stl": 25,
+        "blk": 67,
+        "to": 60
+      }
     },
     {
       "playerId": "5864",
       "name": "Monté Morris",
       "actualRank": 91,
       "preseasonRank": 267,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 82,
+      "teamId": null,
+      "stats": {
+        "fgm": 346,
+        "fga": 702,
+        "ftm": 65,
+        "fta": 81,
+        "threes": 94,
+        "pts": 851,
+        "reb": 194,
+        "ast": 297,
+        "stl": 73,
+        "blk": 4,
+        "to": 52
+      }
     },
     {
       "playerId": "4766",
       "name": "Nemanja Bjelica",
       "actualRank": 92,
       "preseasonRank": 213,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 77,
+      "teamId": null,
+      "stats": {
+        "fgm": 284,
+        "fga": 593,
+        "ftm": 70,
+        "fta": 92,
+        "threes": 103,
+        "pts": 741,
+        "reb": 444,
+        "ast": 147,
+        "stl": 54,
+        "blk": 56,
+        "to": 82
+      }
     },
     {
       "playerId": "4471",
       "name": "D.J. Augustin",
       "actualRank": 93,
       "preseasonRank": 131,
-      "gamesPlayed": null,
-      "teamId": "2019:benjamin"
+      "gamesPlayed": 81,
+      "teamId": "2019:benjamin",
+      "stats": {
+        "fgm": 318,
+        "fga": 677,
+        "ftm": 181,
+        "fta": 209,
+        "threes": 131,
+        "pts": 948,
+        "reb": 203,
+        "ast": 426,
+        "stl": 52,
+        "blk": 4,
+        "to": 128
+      }
     },
     {
       "playerId": "6014",
       "name": "Luka Dončić",
       "actualRank": 94,
       "preseasonRank": 92,
-      "gamesPlayed": null,
-      "teamId": "2019:najim"
+      "gamesPlayed": 72,
+      "teamId": "2019:najim",
+      "stats": {
+        "fgm": 506,
+        "fga": 1186,
+        "ftm": 346,
+        "fta": 485,
+        "threes": 168,
+        "pts": 1526,
+        "reb": 563,
+        "ast": 429,
+        "stl": 77,
+        "blk": 25,
+        "to": 247
+      }
     },
     {
       "playerId": "5642",
       "name": "Domantas Sabonis",
       "actualRank": 95,
       "preseasonRank": 190,
-      "gamesPlayed": null,
-      "teamId": "2019:matt"
+      "gamesPlayed": 74,
+      "teamId": "2019:matt",
+      "stats": {
+        "fgm": 413,
+        "fga": 700,
+        "ftm": 208,
+        "fta": 291,
+        "threes": 9,
+        "pts": 1043,
+        "reb": 690,
+        "ast": 212,
+        "stl": 48,
+        "blk": 30,
+        "to": 160
+      }
     },
     {
       "playerId": "5475",
       "name": "Kelly Oubre Jr.",
       "actualRank": 96,
       "preseasonRank": 136,
-      "gamesPlayed": null,
-      "teamId": "2019:mitchell"
+      "gamesPlayed": 69,
+      "teamId": "2019:mitchell",
+      "stats": {
+        "fgm": 375,
+        "fga": 842,
+        "ftm": 189,
+        "fta": 244,
+        "threes": 108,
+        "pts": 1047,
+        "reb": 325,
+        "ast": 84,
+        "stl": 84,
+        "blk": 59,
+        "to": 103
+      }
     },
     {
       "playerId": "5324",
       "name": "Zach LaVine",
       "actualRank": 97,
       "preseasonRank": 62,
-      "gamesPlayed": null,
-      "teamId": "2019:dadder"
+      "gamesPlayed": 63,
+      "teamId": "2019:dadder",
+      "stats": {
+        "fgm": 530,
+        "fga": 1135,
+        "ftm": 312,
+        "fta": 375,
+        "threes": 120,
+        "pts": 1492,
+        "reb": 294,
+        "ast": 283,
+        "stl": 60,
+        "blk": 26,
+        "to": 215
+      }
     },
     {
       "playerId": "5154",
       "name": "Otto Porter Jr.",
       "actualRank": 98,
       "preseasonRank": 30,
-      "gamesPlayed": null,
-      "teamId": "2019:michael"
+      "gamesPlayed": 56,
+      "teamId": "2019:michael",
+      "stats": {
+        "fgm": 299,
+        "fga": 643,
+        "ftm": 78,
+        "fta": 96,
+        "threes": 104,
+        "pts": 780,
+        "reb": 314,
+        "ast": 120,
+        "stl": 82,
+        "blk": 31,
+        "to": 65
+      }
     },
     {
       "playerId": "5356",
       "name": "Dwight Powell",
       "actualRank": 99,
       "preseasonRank": 239,
-      "gamesPlayed": null,
-      "teamId": "2019:mitchell"
+      "gamesPlayed": 77,
+      "teamId": "2019:mitchell",
+      "stats": {
+        "fgm": 290,
+        "fga": 486,
+        "ftm": 196,
+        "fta": 254,
+        "threes": 39,
+        "pts": 815,
+        "reb": 411,
+        "ast": 112,
+        "stl": 44,
+        "blk": 50,
+        "to": 67
+      }
     },
     {
       "playerId": "4647",
       "name": "Patrick Beverley",
       "actualRank": 100,
       "preseasonRank": 147,
-      "gamesPlayed": null,
-      "teamId": "2019:benjamin"
+      "gamesPlayed": 78,
+      "teamId": "2019:benjamin",
+      "stats": {
+        "fgm": 194,
+        "fga": 477,
+        "ftm": 96,
+        "fta": 123,
+        "threes": 112,
+        "pts": 596,
+        "reb": 388,
+        "ast": 300,
+        "stl": 67,
+        "blk": 43,
+        "to": 85
+      }
     },
     {
       "playerId": "4764",
       "name": "Hassan Whiteside",
       "actualRank": 101,
       "preseasonRank": 81,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 72,
+      "teamId": null,
+      "stats": {
+        "fgm": 388,
+        "fga": 680,
+        "ftm": 109,
+        "fta": 243,
+        "threes": 2,
+        "pts": 887,
+        "reb": 817,
+        "ast": 56,
+        "stl": 46,
+        "blk": 136,
+        "to": 97
+      }
     },
     {
       "playerId": "5066",
       "name": "Tomáš Satoranský",
       "actualRank": 102,
       "preseasonRank": 257,
-      "gamesPlayed": null,
-      "teamId": "2019:michael"
+      "gamesPlayed": 80,
+      "teamId": "2019:michael",
+      "stats": {
+        "fgm": 257,
+        "fga": 530,
+        "ftm": 131,
+        "fta": 160,
+        "threes": 64,
+        "pts": 709,
+        "reb": 279,
+        "ast": 399,
+        "stl": 82,
+        "blk": 13,
+        "to": 120
+      }
     },
     {
       "playerId": "6022",
       "name": "Shai Gilgeous-Alexander",
       "actualRank": 103,
       "preseasonRank": 195,
-      "gamesPlayed": null,
-      "teamId": "2019:najim"
+      "gamesPlayed": 82,
+      "teamId": "2019:najim",
+      "stats": {
+        "fgm": 341,
+        "fga": 716,
+        "ftm": 156,
+        "fta": 195,
+        "threes": 51,
+        "pts": 889,
+        "reb": 232,
+        "ast": 270,
+        "stl": 96,
+        "blk": 45,
+        "to": 141
+      }
     },
     {
       "playerId": "4895",
       "name": "Marcus Morris Sr.",
       "actualRank": 104,
       "preseasonRank": 223,
-      "gamesPlayed": null,
-      "teamId": "2019:mitchell"
+      "gamesPlayed": 75,
+      "teamId": "2019:mitchell",
+      "stats": {
+        "fgm": 377,
+        "fga": 844,
+        "ftm": 146,
+        "fta": 173,
+        "threes": 146,
+        "pts": 1046,
+        "reb": 458,
+        "ast": 109,
+        "stl": 43,
+        "blk": 25,
+        "to": 92
+      }
     },
     {
       "playerId": "5344",
       "name": "Joe Harris",
       "actualRank": 105,
       "preseasonRank": 128,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 76,
+      "teamId": null,
+      "stats": {
+        "fgm": 374,
+        "fga": 748,
+        "ftm": 110,
+        "fta": 133,
+        "threes": 183,
+        "pts": 1041,
+        "reb": 291,
+        "ast": 181,
+        "stl": 38,
+        "blk": 17,
+        "to": 121
+      }
     },
     {
       "playerId": "4906",
       "name": "Reggie Jackson",
       "actualRank": 106,
       "preseasonRank": 130,
-      "gamesPlayed": null,
-      "teamId": "2019:jordan"
+      "gamesPlayed": 82,
+      "teamId": "2019:jordan",
+      "stats": {
+        "fgm": 441,
+        "fga": 1047,
+        "ftm": 204,
+        "fta": 236,
+        "threes": 174,
+        "pts": 1260,
+        "reb": 216,
+        "ast": 344,
+        "stl": 55,
+        "blk": 9,
+        "to": 148
+      }
     },
     {
       "playerId": "4247",
       "name": "Jeff Green",
       "actualRank": 107,
       "preseasonRank": 254,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 77,
+      "teamId": null,
+      "stats": {
+        "fgm": 326,
+        "fga": 687,
+        "ftm": 183,
+        "fta": 206,
+        "threes": 111,
+        "pts": 946,
+        "reb": 309,
+        "ast": 137,
+        "stl": 43,
+        "blk": 39,
+        "to": 101
+      }
     },
     {
       "playerId": "5159",
       "name": "K. Caldwell-Pope",
       "actualRank": 108,
       "preseasonRank": 93,
-      "gamesPlayed": null,
-      "teamId": "2019:benjamin"
+      "gamesPlayed": 82,
+      "teamId": "2019:benjamin",
+      "stats": {
+        "fgm": 325,
+        "fga": 756,
+        "ftm": 137,
+        "fta": 158,
+        "threes": 151,
+        "pts": 938,
+        "reb": 238,
+        "ast": 110,
+        "stl": 73,
+        "blk": 13,
+        "to": 65
+      }
     },
     {
       "playerId": "5054",
       "name": "Evan Fournier",
       "actualRank": 109,
       "preseasonRank": 79,
-      "gamesPlayed": null,
-      "teamId": "2019:benjamin"
+      "gamesPlayed": 81,
+      "teamId": "2019:benjamin",
+      "stats": {
+        "fgm": 468,
+        "fga": 1069,
+        "ftm": 137,
+        "fta": 170,
+        "threes": 153,
+        "pts": 1226,
+        "reb": 258,
+        "ast": 295,
+        "stl": 71,
+        "blk": 12,
+        "to": 154
+      }
     },
     {
       "playerId": "5357",
       "name": "Jordan Clarkson",
       "actualRank": 110,
       "preseasonRank": 217,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 81,
+      "teamId": null,
+      "stats": {
+        "fgm": 529,
+        "fga": 1180,
+        "ftm": 162,
+        "fta": 192,
+        "threes": 144,
+        "pts": 1364,
+        "reb": 270,
+        "ast": 196,
+        "stl": 57,
+        "blk": 13,
+        "to": 135
+      }
     },
     {
       "playerId": "5013",
       "name": "Harrison Barnes",
       "actualRank": 111,
       "preseasonRank": 74,
-      "gamesPlayed": null,
-      "teamId": "2019:dadder"
+      "gamesPlayed": 77,
+      "teamId": "2019:dadder",
+      "stats": {
+        "fgm": 431,
+        "fga": 1027,
+        "ftm": 229,
+        "fta": 278,
+        "threes": 174,
+        "pts": 1265,
+        "reb": 361,
+        "ast": 115,
+        "stl": 50,
+        "blk": 13,
+        "to": 98
+      }
     },
     {
       "playerId": "4724",
       "name": "Gordon Hayward",
       "actualRank": 112,
       "preseasonRank": 58,
-      "gamesPlayed": null,
-      "teamId": "2019:eddie"
+      "gamesPlayed": 72,
+      "teamId": "2019:eddie",
+      "stats": {
+        "fgm": 296,
+        "fga": 635,
+        "ftm": 156,
+        "fta": 187,
+        "threes": 77,
+        "pts": 825,
+        "reb": 322,
+        "ast": 244,
+        "stl": 62,
+        "blk": 23,
+        "to": 105
+      }
     },
     {
       "playerId": "5769",
       "name": "Lauri Markkanen",
       "actualRank": 113,
       "preseasonRank": 89,
-      "gamesPlayed": null,
-      "teamId": "2019:brendan"
+      "gamesPlayed": 52,
+      "teamId": "2019:brendan",
+      "stats": {
+        "fgm": 342,
+        "fga": 795,
+        "ftm": 170,
+        "fta": 195,
+        "threes": 120,
+        "pts": 974,
+        "reb": 470,
+        "ast": 75,
+        "stl": 37,
+        "blk": 33,
+        "to": 85
+      }
     },
     {
       "playerId": "5650",
       "name": "Malik Beasley",
       "actualRank": 114,
       "preseasonRank": 271,
-      "gamesPlayed": null,
-      "teamId": "2019:benjamin"
+      "gamesPlayed": 81,
+      "teamId": "2019:benjamin",
+      "stats": {
+        "fgm": 349,
+        "fga": 737,
+        "ftm": 56,
+        "fta": 66,
+        "threes": 163,
+        "pts": 917,
+        "reb": 200,
+        "ast": 97,
+        "stl": 55,
+        "blk": 10,
+        "to": 55
+      }
     },
     {
       "playerId": "4899",
       "name": "Enes Freedom",
       "actualRank": 115,
       "preseasonRank": 91,
-      "gamesPlayed": null,
-      "teamId": "2019:mitchell"
+      "gamesPlayed": 67,
+      "teamId": "2019:mitchell",
+      "stats": {
+        "fgm": 375,
+        "fga": 683,
+        "ftm": 155,
+        "fta": 197,
+        "threes": 10,
+        "pts": 915,
+        "reb": 659,
+        "ast": 116,
+        "stl": 32,
+        "blk": 26,
+        "to": 118
+      }
     },
     {
       "playerId": "5726",
       "name": "Bryn Forbes",
       "actualRank": 116,
       "preseasonRank": 269,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 82,
+      "teamId": null,
+      "stats": {
+        "fgm": 361,
+        "fga": 791,
+        "ftm": 69,
+        "fta": 78,
+        "threes": 176,
+        "pts": 967,
+        "reb": 239,
+        "ast": 175,
+        "stl": 45,
+        "blk": 4,
+        "to": 80
+      }
     },
     {
       "playerId": "4631",
       "name": "Taj Gibson",
       "actualRank": 117,
       "preseasonRank": 161,
-      "gamesPlayed": null,
-      "teamId": "2019:dadder"
+      "gamesPlayed": 70,
+      "teamId": "2019:dadder",
+      "stats": {
+        "fgm": 304,
+        "fga": 537,
+        "ftm": 134,
+        "fta": 177,
+        "threes": 11,
+        "pts": 753,
+        "reb": 458,
+        "ast": 84,
+        "stl": 53,
+        "blk": 39,
+        "to": 73
+      }
     },
     {
       "playerId": "5338",
       "name": "Bogdan Bogdanović",
       "actualRank": 118,
       "preseasonRank": 108,
-      "gamesPlayed": null,
-      "teamId": "2019:brendan"
+      "gamesPlayed": 70,
+      "teamId": "2019:brendan",
+      "stats": {
+        "fgm": 361,
+        "fga": 863,
+        "ftm": 134,
+        "fta": 162,
+        "threes": 134,
+        "pts": 990,
+        "reb": 243,
+        "ast": 267,
+        "stl": 72,
+        "blk": 15,
+        "to": 117
+      }
     },
     {
       "playerId": "5480",
       "name": "Delon Wright",
       "actualRank": 119,
       "preseasonRank": 170,
-      "gamesPlayed": null,
-      "teamId": "2019:mitchell"
+      "gamesPlayed": 75,
+      "teamId": "2019:mitchell",
+      "stats": {
+        "fgm": 242,
+        "fga": 558,
+        "ftm": 119,
+        "fta": 150,
+        "threes": 50,
+        "pts": 653,
+        "reb": 266,
+        "ast": 248,
+        "stl": 88,
+        "blk": 30,
+        "to": 77
+      }
     },
     {
       "playerId": "5164",
       "name": "Kelly Olynyk",
       "actualRank": 120,
       "preseasonRank": 154,
-      "gamesPlayed": null,
-      "teamId": "2019:jordan"
+      "gamesPlayed": 79,
+      "teamId": "2019:jordan",
+      "stats": {
+        "fgm": 261,
+        "fga": 564,
+        "ftm": 152,
+        "fta": 185,
+        "threes": 113,
+        "pts": 787,
+        "reb": 375,
+        "ast": 140,
+        "stl": 53,
+        "blk": 37,
+        "to": 114
+      }
     },
     {
       "playerId": "5192",
       "name": "Mason Plumlee",
       "actualRank": 121,
       "preseasonRank": 270,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 82,
+      "teamId": null,
+      "stats": {
+        "fgm": 262,
+        "fga": 442,
+        "ftm": 111,
+        "fta": 198,
+        "threes": 2,
+        "pts": 637,
+        "reb": 524,
+        "ast": 243,
+        "stl": 66,
+        "blk": 76,
+        "to": 126
+      }
     },
     {
       "playerId": "5157",
       "name": "Nerlens Noel",
       "actualRank": 122,
       "preseasonRank": 229,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 77,
+      "teamId": null,
+      "stats": {
+        "fgm": 162,
+        "fga": 276,
+        "ftm": 54,
+        "fta": 79,
+        "threes": 0,
+        "pts": 378,
+        "reb": 325,
+        "ast": 45,
+        "stl": 66,
+        "blk": 96,
+        "to": 48
+      }
     },
     {
       "playerId": "5068",
       "name": "Jae Crowder",
       "actualRank": 123,
       "preseasonRank": 164,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 80,
+      "teamId": null,
+      "stats": {
+        "fgm": 318,
+        "fga": 797,
+        "ftm": 142,
+        "fta": 197,
+        "threes": 173,
+        "pts": 951,
+        "reb": 384,
+        "ast": 133,
+        "stl": 64,
+        "blk": 31,
+        "to": 85
+      }
     },
     {
       "playerId": "4911",
       "name": "Cory Joseph",
       "actualRank": 124,
       "preseasonRank": 200,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 82,
+      "teamId": null,
+      "stats": {
+        "fgm": 226,
+        "fga": 548,
+        "ftm": 30,
+        "fta": 43,
+        "threes": 55,
+        "pts": 537,
+        "reb": 279,
+        "ast": 321,
+        "stl": 94,
+        "blk": 22,
+        "to": 80
+      }
     },
     {
       "playerId": "5842",
       "name": "Derrick White",
       "actualRank": 125,
       "preseasonRank": 145,
-      "gamesPlayed": null,
-      "teamId": "2019:matt"
+      "gamesPlayed": 67,
+      "teamId": "2019:matt",
+      "stats": {
+        "fgm": 260,
+        "fga": 543,
+        "ftm": 95,
+        "fta": 123,
+        "threes": 48,
+        "pts": 663,
+        "reb": 247,
+        "ast": 263,
+        "stl": 67,
+        "blk": 47,
+        "to": 97
+      }
     },
     {
       "playerId": "4610",
       "name": "Ricky Rubio",
       "actualRank": 126,
       "preseasonRank": 51,
-      "gamesPlayed": null,
-      "teamId": "2019:mitchell"
+      "gamesPlayed": 68,
+      "teamId": "2019:mitchell",
+      "stats": {
+        "fgm": 295,
+        "fga": 730,
+        "ftm": 195,
+        "fta": 228,
+        "threes": 79,
+        "pts": 864,
+        "reb": 243,
+        "ast": 416,
+        "stl": 91,
+        "blk": 10,
+        "to": 180
+      }
     },
     {
       "playerId": "5840",
       "name": "Kyle Kuzma",
       "actualRank": 127,
       "preseasonRank": 80,
-      "gamesPlayed": null,
-      "teamId": "2019:jacob-g"
+      "gamesPlayed": 70,
+      "teamId": "2019:jacob-g",
+      "stats": {
+        "fgm": 496,
+        "fga": 1087,
+        "ftm": 188,
+        "fta": 250,
+        "threes": 128,
+        "pts": 1308,
+        "reb": 382,
+        "ast": 178,
+        "stl": 41,
+        "blk": 26,
+        "to": 133
+      }
     },
     {
       "playerId": "5323",
       "name": "Dario Šarić",
       "actualRank": 128,
       "preseasonRank": 87,
-      "gamesPlayed": null,
-      "teamId": "2019:eddie"
+      "gamesPlayed": 81,
+      "teamId": "2019:eddie",
+      "stats": {
+        "fgm": 304,
+        "fga": 696,
+        "ftm": 132,
+        "fta": 150,
+        "threes": 118,
+        "pts": 858,
+        "reb": 457,
+        "ast": 127,
+        "stl": 45,
+        "blk": 9,
+        "to": 97
+      }
     },
     {
       "playerId": "6015",
       "name": "Jaren Jackson Jr.",
       "actualRank": 129,
       "preseasonRank": 88,
-      "gamesPlayed": null,
-      "teamId": "2019:michael"
+      "gamesPlayed": 58,
+      "teamId": "2019:michael",
+      "stats": {
+        "fgm": 298,
+        "fga": 589,
+        "ftm": 151,
+        "fta": 197,
+        "threes": 51,
+        "pts": 798,
+        "reb": 272,
+        "ast": 64,
+        "stl": 52,
+        "blk": 82,
+        "to": 98
+      }
     },
     {
       "playerId": "5476",
       "name": "Terry Rozier",
       "actualRank": 130,
       "preseasonRank": 115,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 79,
+      "teamId": null,
+      "stats": {
+        "fgm": 258,
+        "fga": 666,
+        "ftm": 73,
+        "fta": 93,
+        "threes": 119,
+        "pts": 708,
+        "reb": 307,
+        "ast": 231,
+        "stl": 68,
+        "blk": 21,
+        "to": 68
+      }
     },
     {
       "playerId": "5497",
       "name": "Richaun Holmes",
       "actualRank": 131,
       "preseasonRank": 193,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 70,
+      "teamId": null,
+      "stats": {
+        "fgm": 222,
+        "fga": 365,
+        "ftm": 128,
+        "fta": 175,
+        "threes": 0,
+        "pts": 572,
+        "reb": 331,
+        "ast": 60,
+        "stl": 42,
+        "blk": 79,
+        "to": 52
+      }
     },
     {
       "playerId": "4926",
       "name": "Dāvis Bertāns",
       "actualRank": 132,
       "preseasonRank": 177,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 76,
+      "teamId": null,
+      "stats": {
+        "fgm": 204,
+        "fga": 453,
+        "ftm": 53,
+        "fta": 60,
+        "threes": 145,
+        "pts": 606,
+        "reb": 264,
+        "ast": 100,
+        "stl": 35,
+        "blk": 33,
+        "to": 43
+      }
     },
     {
       "playerId": "5187",
       "name": "Dennis Schröder",
       "actualRank": 133,
       "preseasonRank": 135,
-      "gamesPlayed": null,
-      "teamId": "2019:brendan"
+      "gamesPlayed": 79,
+      "teamId": "2019:brendan",
+      "stats": {
+        "fgm": 457,
+        "fga": 1104,
+        "ftm": 186,
+        "fta": 227,
+        "threes": 124,
+        "pts": 1224,
+        "reb": 284,
+        "ast": 323,
+        "stl": 65,
+        "blk": 12,
+        "to": 172
+      }
     },
     {
       "playerId": "5491",
       "name": "Cedi Osman",
       "actualRank": 134,
       "preseasonRank": 179,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 76,
+      "teamId": null,
+      "stats": {
+        "fgm": 360,
+        "fga": 844,
+        "ftm": 141,
+        "fta": 181,
+        "threes": 130,
+        "pts": 991,
+        "reb": 357,
+        "ast": 195,
+        "stl": 60,
+        "blk": 11,
+        "to": 114
+      }
     },
     {
       "playerId": "5695",
       "name": "Ryan Arcidiacono",
       "actualRank": 135,
       "preseasonRank": 274,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 81,
+      "teamId": null,
+      "stats": {
+        "fgm": 187,
+        "fga": 418,
+        "ftm": 89,
+        "fta": 102,
+        "threes": 81,
+        "pts": 544,
+        "reb": 219,
+        "ast": 269,
+        "stl": 65,
+        "blk": 4,
+        "to": 63
+      }
     },
     {
       "playerId": "5490",
       "name": "Kevon Looney",
       "actualRank": 136,
       "preseasonRank": 272,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 80,
+      "teamId": null,
+      "stats": {
+        "fgm": 217,
+        "fga": 347,
+        "ftm": 65,
+        "fta": 105,
+        "threes": 1,
+        "pts": 500,
+        "reb": 417,
+        "ast": 123,
+        "stl": 46,
+        "blk": 53,
+        "to": 51
+      }
     },
     {
       "playerId": "6023",
       "name": "Miles Bridges",
       "actualRank": 137,
       "preseasonRank": 275,
-      "gamesPlayed": null,
-      "teamId": "2019:jacob-g"
+      "gamesPlayed": 80,
+      "teamId": "2019:jacob-g",
+      "stats": {
+        "fgm": 237,
+        "fga": 511,
+        "ftm": 58,
+        "fta": 77,
+        "threes": 65,
+        "pts": 597,
+        "reb": 323,
+        "ast": 95,
+        "stl": 55,
+        "blk": 49,
+        "to": 51
+      }
     },
     {
       "playerId": "4660",
       "name": "Patty Mills",
       "actualRank": 138,
       "preseasonRank": 175,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 82,
+      "teamId": null,
+      "stats": {
+        "fgm": 282,
+        "fga": 663,
+        "ftm": 88,
+        "fta": 103,
+        "threes": 159,
+        "pts": 811,
+        "reb": 182,
+        "ast": 245,
+        "stl": 49,
+        "blk": 10,
+        "to": 93
+      }
     },
     {
       "playerId": "5727",
       "name": "Fred VanVleet",
       "actualRank": 139,
       "preseasonRank": 103,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 64,
+      "teamId": null,
+      "stats": {
+        "fgm": 246,
+        "fga": 600,
+        "ftm": 97,
+        "fta": 115,
+        "threes": 112,
+        "pts": 701,
+        "reb": 167,
+        "ast": 307,
+        "stl": 57,
+        "blk": 20,
+        "to": 82
+      }
     },
     {
       "playerId": "5652",
       "name": "DeAndre' Bembry",
       "actualRank": 140,
       "preseasonRank": 276,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 82,
+      "teamId": null,
+      "stats": {
+        "fgm": 275,
+        "fga": 616,
+        "ftm": 87,
+        "fta": 136,
+        "threes": 50,
+        "pts": 687,
+        "reb": 358,
+        "ast": 202,
+        "stl": 105,
+        "blk": 41,
+        "to": 142
+      }
     },
     {
       "playerId": "5892",
       "name": "Maxi Kleber",
       "actualRank": 141,
       "preseasonRank": 253,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 71,
+      "teamId": null,
+      "stats": {
+        "fgm": 175,
+        "fga": 386,
+        "ftm": 58,
+        "fta": 74,
+        "threes": 77,
+        "pts": 485,
+        "reb": 329,
+        "ast": 70,
+        "stl": 36,
+        "blk": 78,
+        "to": 54
+      }
     },
     {
       "playerId": "5292",
       "name": "Andrew Wiggins",
       "actualRank": 142,
       "preseasonRank": 99,
-      "gamesPlayed": null,
-      "teamId": "2019:eddie"
+      "gamesPlayed": 73,
+      "teamId": "2019:eddie",
+      "stats": {
+        "fgm": 498,
+        "fga": 1209,
+        "ftm": 207,
+        "fta": 296,
+        "threes": 118,
+        "pts": 1321,
+        "reb": 352,
+        "ast": 184,
+        "stl": 70,
+        "blk": 48,
+        "to": 138
+      }
     },
     {
       "playerId": "5320",
       "name": "Noah Vonleh",
       "actualRank": 143,
       "preseasonRank": 273,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 68,
+      "teamId": null,
+      "stats": {
+        "fgm": 207,
+        "fga": 440,
+        "ftm": 111,
+        "fta": 156,
+        "threes": 46,
+        "pts": 571,
+        "reb": 528,
+        "ast": 129,
+        "stl": 46,
+        "blk": 51,
+        "to": 88
+      }
     },
     {
       "playerId": "3826",
       "name": "Andre Iguodala",
       "actualRank": 144,
       "preseasonRank": 247,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 68,
+      "teamId": null,
+      "stats": {
+        "fgm": 151,
+        "fga": 302,
+        "ftm": 39,
+        "fta": 67,
+        "threes": 48,
+        "pts": 389,
+        "reb": 252,
+        "ast": 216,
+        "stl": 61,
+        "blk": 51,
+        "to": 52
+      }
     },
     {
       "playerId": "4469",
       "name": "Eric Gordon",
       "actualRank": 145,
       "preseasonRank": 100,
-      "gamesPlayed": null,
-      "teamId": "2019:jordan"
+      "gamesPlayed": 68,
+      "teamId": "2019:jordan",
+      "stats": {
+        "fgm": 384,
+        "fga": 938,
+        "ftm": 119,
+        "fta": 152,
+        "threes": 216,
+        "pts": 1103,
+        "reb": 148,
+        "ast": 129,
+        "stl": 41,
+        "blk": 27,
+        "to": 90
+      }
     },
     {
       "playerId": "5693",
       "name": "Dorian Finney-Smith",
       "actualRank": 146,
       "preseasonRank": 277,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 81,
+      "teamId": null,
+      "stats": {
+        "fgm": 228,
+        "fga": 528,
+        "ftm": 73,
+        "fta": 103,
+        "threes": 79,
+        "pts": 608,
+        "reb": 389,
+        "ast": 95,
+        "stl": 69,
+        "blk": 36,
+        "to": 74
+      }
     },
     {
       "playerId": "6030",
       "name": "Kevin Huerter",
       "actualRank": 147,
       "preseasonRank": 228,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 75,
+      "teamId": null,
+      "stats": {
+        "fgm": 275,
+        "fga": 657,
+        "ftm": 41,
+        "fta": 56,
+        "threes": 136,
+        "pts": 727,
+        "reb": 245,
+        "ast": 214,
+        "stl": 65,
+        "blk": 25,
+        "to": 109
+      }
     },
     {
       "playerId": "4905",
       "name": "Nikola Mirotić",
       "actualRank": 148,
       "preseasonRank": 67,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 46,
+      "teamId": null,
+      "stats": {
+        "fgm": 238,
+        "fga": 542,
+        "ftm": 105,
+        "fta": 124,
+        "threes": 116,
+        "pts": 697,
+        "reb": 339,
+        "ast": 55,
+        "stl": 31,
+        "blk": 34,
+        "to": 48
+      }
     },
     {
       "playerId": "5194",
       "name": "Tim Hardaway Jr.",
       "actualRank": 149,
       "preseasonRank": 69,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 65,
+      "teamId": null,
+      "stats": {
+        "fgm": 390,
+        "fga": 993,
+        "ftm": 232,
+        "fta": 276,
+        "threes": 162,
+        "pts": 1174,
+        "reb": 222,
+        "ast": 159,
+        "stl": 54,
+        "blk": 8,
+        "to": 105
+      }
     },
     {
       "playerId": "5349",
       "name": "Spencer Dinwiddie",
       "actualRank": 150,
       "preseasonRank": 129,
-      "gamesPlayed": null,
-      "teamId": "2019:michael"
+      "gamesPlayed": 68,
+      "teamId": "2019:michael",
+      "stats": {
+        "fgm": 366,
+        "fga": 828,
+        "ftm": 287,
+        "fta": 356,
+        "threes": 124,
+        "pts": 1143,
+        "reb": 166,
+        "ast": 311,
+        "stl": 40,
+        "blk": 17,
+        "to": 152
+      }
     },
     {
       "playerId": "4886",
       "name": "Jonas Valančiūnas",
       "actualRank": 151,
       "preseasonRank": 76,
-      "gamesPlayed": null,
-      "teamId": "2019:mitchell"
+      "gamesPlayed": 49,
+      "teamId": "2019:mitchell",
+      "stats": {
+        "fgm": 301,
+        "fga": 538,
+        "ftm": 147,
+        "fta": 185,
+        "threes": 14,
+        "pts": 763,
+        "reb": 419,
+        "ast": 70,
+        "stl": 19,
+        "blk": 53,
+        "to": 90
+      }
     },
     {
       "playerId": "5334",
       "name": "Rodney Hood",
       "actualRank": 152,
       "preseasonRank": 197,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 72,
+      "teamId": null,
+      "stats": {
+        "fgm": 292,
+        "fga": 671,
+        "ftm": 137,
+        "fta": 155,
+        "threes": 84,
+        "pts": 805,
+        "reb": 157,
+        "ast": 126,
+        "stl": 59,
+        "blk": 12,
+        "to": 55
+      }
     },
     {
       "playerId": "5484",
       "name": "Tyus Jones",
       "actualRank": 153,
       "preseasonRank": 171,
-      "gamesPlayed": null,
-      "teamId": "2019:dadder"
+      "gamesPlayed": 68,
+      "teamId": "2019:dadder",
+      "stats": {
+        "fgm": 185,
+        "fga": 446,
+        "ftm": 58,
+        "fta": 69,
+        "threes": 40,
+        "pts": 468,
+        "reb": 134,
+        "ast": 327,
+        "stl": 81,
+        "blk": 5,
+        "to": 47
+      }
     },
     {
       "playerId": "5325",
       "name": "T.J. Warren",
       "actualRank": 154,
       "preseasonRank": 168,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 43,
+      "teamId": null,
+      "stats": {
+        "fgm": 297,
+        "fga": 611,
+        "ftm": 101,
+        "fta": 124,
+        "threes": 77,
+        "pts": 772,
+        "reb": 174,
+        "ast": 64,
+        "stl": 51,
+        "blk": 29,
+        "to": 52
+      }
     },
     {
       "playerId": "5602",
       "name": "Jaylen Brown",
       "actualRank": 155,
       "preseasonRank": 123,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 74,
+      "teamId": null,
+      "stats": {
+        "fgm": 368,
+        "fga": 792,
+        "ftm": 133,
+        "fta": 202,
+        "threes": 95,
+        "pts": 964,
+        "reb": 313,
+        "ast": 100,
+        "stl": 69,
+        "blk": 32,
+        "to": 99
+      }
     },
     {
       "playerId": "5253",
       "name": "Robert Covington",
       "actualRank": 156,
       "preseasonRank": 52,
-      "gamesPlayed": null,
-      "teamId": "2019:brendan"
+      "gamesPlayed": 35,
+      "teamId": "2019:brendan",
+      "stats": {
+        "fgm": 156,
+        "fga": 362,
+        "ftm": 68,
+        "fta": 89,
+        "threes": 85,
+        "pts": 465,
+        "reb": 193,
+        "ast": 46,
+        "stl": 74,
+        "blk": 47,
+        "to": 47
+      }
     },
     {
       "playerId": "5102",
       "name": "Kent Bazemore",
       "actualRank": 157,
       "preseasonRank": 126,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 67,
+      "teamId": null,
+      "stats": {
+        "fgm": 278,
+        "fga": 691,
+        "ftm": 127,
+        "fta": 175,
+        "threes": 96,
+        "pts": 779,
+        "reb": 261,
+        "ast": 152,
+        "stl": 89,
+        "blk": 42,
+        "to": 121
+      }
     },
     {
       "playerId": "5021",
       "name": "Maurice Harkless",
       "actualRank": 158,
       "preseasonRank": 189,
-      "gamesPlayed": null,
-      "teamId": "2019:najim"
+      "gamesPlayed": 60,
+      "teamId": "2019:najim",
+      "stats": {
+        "fgm": 189,
+        "fga": 388,
+        "ftm": 49,
+        "fta": 73,
+        "threes": 33,
+        "pts": 460,
+        "reb": 269,
+        "ast": 74,
+        "stl": 67,
+        "blk": 53,
+        "to": 45
+      }
     },
     {
       "playerId": "5582",
       "name": "T.J. McConnell",
       "actualRank": 159,
       "preseasonRank": 237,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 76,
+      "teamId": null,
+      "stats": {
+        "fgm": 220,
+        "fga": 419,
+        "ftm": 29,
+        "fta": 37,
+        "threes": 14,
+        "pts": 483,
+        "reb": 174,
+        "ast": 258,
+        "stl": 79,
+        "blk": 17,
+        "to": 91
+      }
     },
     {
       "playerId": "5262",
       "name": "JaMychal Green",
       "actualRank": 160,
       "preseasonRank": 169,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 65,
+      "teamId": null,
+      "stats": {
+        "fgm": 230,
+        "fga": 476,
+        "ftm": 80,
+        "fta": 101,
+        "threes": 71,
+        "pts": 611,
+        "reb": 409,
+        "ast": 50,
+        "stl": 45,
+        "blk": 34,
+        "to": 87
+      }
     },
     {
       "playerId": "5470",
       "name": "Justise Winslow",
       "actualRank": 161,
       "preseasonRank": 180,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 66,
+      "teamId": null,
+      "stats": {
+        "fgm": 324,
+        "fga": 749,
+        "ftm": 86,
+        "fta": 137,
+        "threes": 96,
+        "pts": 830,
+        "reb": 355,
+        "ast": 282,
+        "stl": 72,
+        "blk": 19,
+        "to": 142
+      }
     },
     {
       "playerId": "4682",
       "name": "Garrett Temple",
       "actualRank": 162,
       "preseasonRank": 256,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 75,
+      "teamId": null,
+      "stats": {
+        "fgm": 208,
+        "fga": 493,
+        "ftm": 80,
+        "fta": 107,
+        "threes": 90,
+        "pts": 586,
+        "reb": 216,
+        "ast": 106,
+        "stl": 76,
+        "blk": 30,
+        "to": 70
+      }
     },
     {
       "playerId": "4728",
       "name": "Ed Davis",
       "actualRank": 163,
       "preseasonRank": 238,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 81,
+      "teamId": null,
+      "stats": {
+        "fgm": 186,
+        "fga": 302,
+        "ftm": 100,
+        "fta": 162,
+        "threes": 0,
+        "pts": 472,
+        "reb": 694,
+        "ast": 61,
+        "stl": 35,
+        "blk": 33,
+        "to": 64
+      }
     },
     {
       "playerId": "5156",
       "name": "Alex Len",
       "actualRank": 164,
       "preseasonRank": 191,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 77,
+      "teamId": null,
+      "stats": {
+        "fgm": 320,
+        "fga": 648,
+        "ftm": 140,
+        "fta": 216,
+        "threes": 74,
+        "pts": 854,
+        "reb": 424,
+        "ast": 86,
+        "stl": 27,
+        "blk": 69,
+        "to": 97
+      }
     },
     {
       "playerId": "5959",
       "name": "Marvin Bagley III",
       "actualRank": 165,
       "preseasonRank": 137,
-      "gamesPlayed": null,
-      "teamId": "2019:matt"
+      "gamesPlayed": 62,
+      "teamId": "2019:matt",
+      "stats": {
+        "fgm": 356,
+        "fga": 706,
+        "ftm": 181,
+        "fta": 262,
+        "threes": 30,
+        "pts": 923,
+        "reb": 471,
+        "ast": 62,
+        "stl": 33,
+        "blk": 59,
+        "to": 98
+      }
     },
     {
       "playerId": "3708",
       "name": "Dwyane Wade",
       "actualRank": 166,
       "preseasonRank": 261,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 72,
+      "teamId": null,
+      "stats": {
+        "fgm": 416,
+        "fga": 960,
+        "ftm": 165,
+        "fta": 233,
+        "threes": 86,
+        "pts": 1083,
+        "reb": 285,
+        "ast": 301,
+        "stl": 59,
+        "blk": 38,
+        "to": 166
+      }
     },
     {
       "playerId": "5640",
       "name": "Jakob Poeltl",
       "actualRank": 167,
       "preseasonRank": 138,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 77,
+      "teamId": null,
+      "stats": {
+        "fgm": 187,
+        "fga": 290,
+        "ftm": 49,
+        "fta": 92,
+        "threes": 0,
+        "pts": 423,
+        "reb": 410,
+        "ast": 93,
+        "stl": 29,
+        "blk": 68,
+        "to": 48
+      }
     },
     {
       "playerId": "5857",
       "name": "Damyean Dotson",
       "actualRank": 168,
       "preseasonRank": 280,
-      "gamesPlayed": null,
-      "teamId": "2019:benjamin"
+      "gamesPlayed": 73,
+      "teamId": "2019:benjamin",
+      "stats": {
+        "fgm": 290,
+        "fga": 698,
+        "ftm": 73,
+        "fta": 98,
+        "threes": 126,
+        "pts": 779,
+        "reb": 262,
+        "ast": 135,
+        "stl": 58,
+        "blk": 10,
+        "to": 71
+      }
     },
     {
       "playerId": "5293",
       "name": "Jabari Parker",
       "actualRank": 169,
       "preseasonRank": 112,
-      "gamesPlayed": null,
-      "teamId": "2019:matt"
+      "gamesPlayed": 64,
+      "teamId": "2019:matt",
+      "stats": {
+        "fgm": 369,
+        "fga": 749,
+        "ftm": 131,
+        "fta": 184,
+        "threes": 61,
+        "pts": 930,
+        "reb": 421,
+        "ast": 152,
+        "stl": 46,
+        "blk": 30,
+        "to": 151
+      }
     },
     {
       "playerId": "4694",
       "name": "Wesley Matthews",
       "actualRank": 170,
       "preseasonRank": 156,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 69,
+      "teamId": null,
+      "stats": {
+        "fgm": 279,
+        "fga": 698,
+        "ftm": 132,
+        "fta": 163,
+        "threes": 150,
+        "pts": 840,
+        "reb": 170,
+        "ast": 160,
+        "stl": 54,
+        "blk": 17,
+        "to": 91
+      }
     },
     {
       "playerId": "4296",
       "name": "Marco Belinelli",
       "actualRank": 171,
       "preseasonRank": 158,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 79,
+      "teamId": null,
+      "stats": {
+        "fgm": 285,
+        "fga": 690,
+        "ftm": 112,
+        "fta": 124,
+        "threes": 147,
+        "pts": 829,
+        "reb": 198,
+        "ast": 132,
+        "stl": 35,
+        "blk": 8,
+        "to": 72
+      }
     },
     {
       "playerId": "6037",
       "name": "Landry Shamet",
       "actualRank": 172,
       "preseasonRank": 285,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 79,
+      "teamId": null,
+      "stats": {
+        "fgm": 240,
+        "fga": 557,
+        "ftm": 75,
+        "fta": 93,
+        "threes": 167,
+        "pts": 722,
+        "reb": 134,
+        "ast": 117,
+        "stl": 37,
+        "blk": 10,
+        "to": 45
+      }
     },
     {
       "playerId": "6019",
       "name": "Collin Sexton",
       "actualRank": 173,
       "preseasonRank": 153,
-      "gamesPlayed": null,
-      "teamId": "2019:michael"
+      "gamesPlayed": 82,
+      "teamId": "2019:michael",
+      "stats": {
+        "fgm": 519,
+        "fga": 1206,
+        "ftm": 214,
+        "fta": 255,
+        "threes": 119,
+        "pts": 1371,
+        "reb": 236,
+        "ast": 243,
+        "stl": 44,
+        "blk": 6,
+        "to": 185
+      }
     },
     {
       "playerId": "5191",
       "name": "Gorgui Dieng",
       "actualRank": 174,
       "preseasonRank": 207,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 76,
+      "teamId": null,
+      "stats": {
+        "fgm": 189,
+        "fga": 377,
+        "ftm": 88,
+        "fta": 106,
+        "threes": 19,
+        "pts": 485,
+        "reb": 311,
+        "ast": 72,
+        "stl": 48,
+        "blk": 41,
+        "to": 57
+      }
     },
     {
       "playerId": "4387",
       "name": "Derrick Rose",
       "actualRank": 175,
       "preseasonRank": 282,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 51,
+      "teamId": null,
+      "stats": {
+        "fgm": 363,
+        "fga": 753,
+        "ftm": 137,
+        "fta": 160,
+        "threes": 54,
+        "pts": 917,
+        "reb": 140,
+        "ast": 220,
+        "stl": 31,
+        "blk": 12,
+        "to": 82
+      }
     },
     {
       "playerId": "5643",
       "name": "Taurean Prince",
       "actualRank": 176,
       "preseasonRank": 53,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 55,
+      "teamId": null,
+      "stats": {
+        "fgm": 262,
+        "fga": 594,
+        "ftm": 95,
+        "fta": 116,
+        "threes": 123,
+        "pts": 742,
+        "reb": 199,
+        "ast": 118,
+        "stl": 53,
+        "blk": 19,
+        "to": 100
+      }
     },
     {
       "playerId": "5843",
       "name": "Josh Hart",
       "actualRank": 177,
       "preseasonRank": 125,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 67,
+      "teamId": null,
+      "stats": {
+        "fgm": 189,
+        "fga": 464,
+        "ftm": 55,
+        "fta": 80,
+        "threes": 92,
+        "pts": 525,
+        "reb": 248,
+        "ast": 93,
+        "stl": 64,
+        "blk": 40,
+        "to": 58
+      }
     },
     {
       "playerId": "5155",
       "name": "Cody Zeller",
       "actualRank": 178,
       "preseasonRank": 279,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 49,
+      "teamId": null,
+      "stats": {
+        "fgm": 190,
+        "fga": 345,
+        "ftm": 111,
+        "fta": 141,
+        "threes": 6,
+        "pts": 497,
+        "reb": 333,
+        "ast": 102,
+        "stl": 38,
+        "blk": 41,
+        "to": 62
+      }
     },
     {
       "playerId": "5905",
       "name": "Royce O'Neale",
       "actualRank": 179,
       "preseasonRank": 263,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 82,
+      "teamId": null,
+      "stats": {
+        "fgm": 163,
+        "fga": 343,
+        "ftm": 32,
+        "fta": 42,
+        "threes": 68,
+        "pts": 426,
+        "reb": 285,
+        "ast": 124,
+        "stl": 54,
+        "blk": 24,
+        "to": 70
+      }
     },
     {
       "playerId": "5195",
       "name": "Reggie Bullock Jr.",
       "actualRank": 180,
       "preseasonRank": 163,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 63,
+      "teamId": null,
+      "stats": {
+        "fgm": 245,
+        "fga": 594,
+        "ftm": 73,
+        "fta": 85,
+        "threes": 148,
+        "pts": 711,
+        "reb": 173,
+        "ast": 129,
+        "stl": 40,
+        "blk": 12,
+        "to": 65
+      }
     },
     {
       "playerId": "4477",
       "name": "Robin Lopez",
       "actualRank": 181,
       "preseasonRank": 252,
-      "gamesPlayed": null,
-      "teamId": "2019:michael"
+      "gamesPlayed": 74,
+      "teamId": "2019:michael",
+      "stats": {
+        "fgm": 304,
+        "fga": 535,
+        "ftm": 89,
+        "fta": 123,
+        "threes": 7,
+        "pts": 704,
+        "reb": 286,
+        "ast": 89,
+        "stl": 11,
+        "blk": 78,
+        "to": 96
+      }
     },
     {
       "playerId": "5482",
       "name": "Bobby Portis Jr.",
       "actualRank": 182,
       "preseasonRank": 181,
-      "gamesPlayed": null,
-      "teamId": "2019:najim"
+      "gamesPlayed": 50,
+      "teamId": "2019:najim",
+      "stats": {
+        "fgm": 279,
+        "fga": 628,
+        "ftm": 77,
+        "fta": 97,
+        "threes": 75,
+        "pts": 710,
+        "reb": 403,
+        "ast": 72,
+        "stl": 35,
+        "blk": 20,
+        "to": 74
+      }
     },
     {
       "playerId": "6031",
       "name": "Josh Okogie",
       "actualRank": 183,
       "preseasonRank": 293,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 74,
+      "teamId": null,
+      "stats": {
+        "fgm": 196,
+        "fga": 508,
+        "ftm": 118,
+        "fta": 162,
+        "threes": 60,
+        "pts": 570,
+        "reb": 218,
+        "ast": 91,
+        "stl": 88,
+        "blk": 33,
+        "to": 63
+      }
     },
     {
       "playerId": "5746",
       "name": "Shaquille Harrison",
       "actualRank": 184,
       "preseasonRank": 286,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 73,
+      "teamId": null,
+      "stats": {
+        "fgm": 184,
+        "fga": 426,
+        "ftm": 82,
+        "fta": 123,
+        "threes": 24,
+        "pts": 474,
+        "reb": 222,
+        "ast": 139,
+        "stl": 89,
+        "blk": 30,
+        "to": 60
+      }
     },
     {
       "playerId": "3248",
       "name": "Vince Carter",
       "actualRank": 185,
       "preseasonRank": 278,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 76,
+      "teamId": null,
+      "stats": {
+        "fgm": 196,
+        "fga": 468,
+        "ftm": 47,
+        "fta": 66,
+        "threes": 123,
+        "pts": 562,
+        "reb": 194,
+        "ast": 87,
+        "stl": 44,
+        "blk": 27,
+        "to": 48
+      }
     },
     {
       "playerId": "5330",
       "name": "Gary Harris",
       "actualRank": 186,
       "preseasonRank": 44,
-      "gamesPlayed": null,
-      "teamId": "2019:brendan"
+      "gamesPlayed": 57,
+      "teamId": "2019:brendan",
+      "stats": {
+        "fgm": 270,
+        "fga": 637,
+        "ftm": 115,
+        "fta": 144,
+        "threes": 82,
+        "pts": 737,
+        "reb": 160,
+        "ast": 127,
+        "stl": 55,
+        "blk": 19,
+        "to": 68
+      }
     },
     {
       "playerId": "5636",
       "name": "Kris Dunn",
       "actualRank": 187,
       "preseasonRank": 73,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 46,
+      "teamId": null,
+      "stats": {
+        "fgm": 215,
+        "fga": 506,
+        "ftm": 55,
+        "fta": 69,
+        "threes": 34,
+        "pts": 519,
+        "reb": 187,
+        "ast": 277,
+        "stl": 68,
+        "blk": 21,
+        "to": 104
+      }
     },
     {
       "playerId": "5766",
       "name": "Josh Jackson",
       "actualRank": 188,
       "preseasonRank": 144,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 79,
+      "teamId": null,
+      "stats": {
+        "fgm": 347,
+        "fga": 841,
+        "ftm": 143,
+        "fta": 213,
+        "threes": 73,
+        "pts": 910,
+        "reb": 347,
+        "ast": 183,
+        "stl": 74,
+        "blk": 56,
+        "to": 173
+      }
     },
     {
       "playerId": "5501",
       "name": "Pat Connaughton",
       "actualRank": 189,
       "preseasonRank": 281,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 61,
+      "teamId": null,
+      "stats": {
+        "fgm": 163,
+        "fga": 350,
+        "ftm": 29,
+        "fta": 40,
+        "threes": 66,
+        "pts": 421,
+        "reb": 258,
+        "ast": 122,
+        "stl": 33,
+        "blk": 25,
+        "to": 33
+      }
     },
     {
       "playerId": "5388",
       "name": "Langston Galloway",
       "actualRank": 190,
       "preseasonRank": 283,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 80,
+      "teamId": null,
+      "stats": {
+        "fgm": 228,
+        "fga": 587,
+        "ftm": 81,
+        "fta": 96,
+        "threes": 135,
+        "pts": 672,
+        "reb": 171,
+        "ast": 85,
+        "stl": 37,
+        "blk": 8,
+        "to": 24
+      }
     },
     {
       "playerId": "3944",
       "name": "Gerald Green",
       "actualRank": 191,
       "preseasonRank": 232,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 73,
+      "teamId": null,
+      "stats": {
+        "fgm": 231,
+        "fga": 578,
+        "ftm": 57,
+        "fta": 68,
+        "threes": 156,
+        "pts": 675,
+        "reb": 182,
+        "ast": 40,
+        "stl": 33,
+        "blk": 27,
+        "to": 55
+      }
     },
     {
       "playerId": "5376",
       "name": "Tyler Johnson",
       "actualRank": 192,
       "preseasonRank": 133,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 57,
+      "teamId": null,
+      "stats": {
+        "fgm": 217,
+        "fga": 526,
+        "ftm": 95,
+        "fta": 127,
+        "threes": 90,
+        "pts": 619,
+        "reb": 173,
+        "ast": 166,
+        "stl": 54,
+        "blk": 27,
+        "to": 77
+      }
     },
     {
       "playerId": "5663",
       "name": "Ivica Zubac",
       "actualRank": 193,
       "preseasonRank": 290,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 59,
+      "teamId": null,
+      "stats": {
+        "fgm": 212,
+        "fga": 379,
+        "ftm": 101,
+        "fta": 126,
+        "threes": 0,
+        "pts": 525,
+        "reb": 362,
+        "ast": 63,
+        "stl": 14,
+        "blk": 51,
+        "to": 70
+      }
     },
     {
       "playerId": "5828",
       "name": "Justin Jackson",
       "actualRank": 194,
       "preseasonRank": 259,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 81,
+      "teamId": null,
+      "stats": {
+        "fgm": 217,
+        "fga": 485,
+        "ftm": 62,
+        "fta": 79,
+        "threes": 87,
+        "pts": 583,
+        "reb": 212,
+        "ast": 96,
+        "stl": 32,
+        "blk": 14,
+        "to": 29
+      }
     },
     {
       "playerId": "5823",
       "name": "Zach Collins",
       "actualRank": 195,
       "preseasonRank": 202,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 77,
+      "teamId": null,
+      "stats": {
+        "fgm": 189,
+        "fga": 400,
+        "ftm": 94,
+        "fta": 126,
+        "threes": 40,
+        "pts": 512,
+        "reb": 324,
+        "ast": 71,
+        "stl": 25,
+        "blk": 66,
+        "to": 77
+      }
     },
     {
       "playerId": "4898",
       "name": "Iman Shumpert",
       "actualRank": 196,
       "preseasonRank": 295,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 62,
+      "teamId": null,
+      "stats": {
+        "fgm": 167,
+        "fga": 446,
+        "ftm": 36,
+        "fta": 45,
+        "threes": 95,
+        "pts": 465,
+        "reb": 183,
+        "ast": 112,
+        "stl": 59,
+        "blk": 24,
+        "to": 50
+      }
     },
     {
       "playerId": "5893",
       "name": "Torrey Craig",
       "actualRank": 197,
       "preseasonRank": 294,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 75,
+      "teamId": null,
+      "stats": {
+        "fgm": 160,
+        "fga": 362,
+        "ftm": 49,
+        "fta": 70,
+        "threes": 61,
+        "pts": 430,
+        "reb": 263,
+        "ast": 72,
+        "stl": 37,
+        "blk": 46,
+        "to": 44
+      }
     },
     {
       "playerId": "5080",
       "name": "Darius Miller",
       "actualRank": 198,
       "preseasonRank": 186,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 69,
+      "teamId": null,
+      "stats": {
+        "fgm": 189,
+        "fga": 484,
+        "ftm": 56,
+        "fta": 71,
+        "threes": 133,
+        "pts": 567,
+        "reb": 128,
+        "ast": 146,
+        "stl": 40,
+        "blk": 23,
+        "to": 59
+      }
     },
     {
       "playerId": "5153",
       "name": "Victor Oladipo",
       "actualRank": 199,
       "preseasonRank": 11,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 36,
+      "teamId": null,
+      "stats": {
+        "fgm": 249,
+        "fga": 588,
+        "ftm": 103,
+        "fta": 141,
+        "threes": 74,
+        "pts": 675,
+        "reb": 202,
+        "ast": 186,
+        "stl": 60,
+        "blk": 11,
+        "to": 82
+      }
     },
     {
       "playerId": "4795",
       "name": "Jeremy Lin",
       "actualRank": 200,
       "preseasonRank": 220,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 74,
+      "teamId": null,
+      "stats": {
+        "fgm": 238,
+        "fga": 541,
+        "ftm": 176,
+        "fta": 210,
+        "threes": 55,
+        "pts": 707,
+        "reb": 179,
+        "ast": 231,
+        "stl": 47,
+        "blk": 13,
+        "to": 124
+      }
     },
     {
       "playerId": "4633",
       "name": "Wayne Ellington",
       "actualRank": 201,
       "preseasonRank": 150,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 53,
+      "teamId": null,
+      "stats": {
+        "fgm": 184,
+        "fga": 457,
+        "ftm": 39,
+        "fta": 49,
+        "threes": 138,
+        "pts": 545,
+        "reb": 107,
+        "ast": 72,
+        "stl": 54,
+        "blk": 6,
+        "to": 40
+      }
     },
     {
       "playerId": "5341",
       "name": "Kyle Anderson",
       "actualRank": 202,
       "preseasonRank": 71,
-      "gamesPlayed": null,
-      "teamId": "2019:eddie"
+      "gamesPlayed": 43,
+      "teamId": "2019:eddie",
+      "stats": {
+        "fgm": 150,
+        "fga": 276,
+        "ftm": 37,
+        "fta": 64,
+        "threes": 9,
+        "pts": 346,
+        "reb": 251,
+        "ast": 128,
+        "stl": 54,
+        "blk": 37,
+        "to": 58
+      }
     },
     {
       "playerId": "5764",
       "name": "Lonzo Ball",
       "actualRank": 203,
       "preseasonRank": 64,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 47,
+      "teamId": null,
+      "stats": {
+        "fgm": 185,
+        "fga": 456,
+        "ftm": 20,
+        "fta": 48,
+        "threes": 75,
+        "pts": 465,
+        "reb": 251,
+        "ast": 255,
+        "stl": 69,
+        "blk": 19,
+        "to": 103
+      }
     },
     {
       "playerId": "4644",
       "name": "Jonas Jerebko",
       "actualRank": 204,
       "preseasonRank": 284,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 73,
+      "teamId": null,
+      "stats": {
+        "fgm": 163,
+        "fga": 355,
+        "ftm": 64,
+        "fta": 80,
+        "threes": 69,
+        "pts": 459,
+        "reb": 288,
+        "ast": 96,
+        "stl": 27,
+        "blk": 18,
+        "to": 43
+      }
     },
     {
       "playerId": "6018",
       "name": "Wendell Carter Jr.",
       "actualRank": 205,
       "preseasonRank": 84,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 44,
+      "teamId": null,
+      "stats": {
+        "fgm": 180,
+        "fga": 371,
+        "ftm": 89,
+        "fta": 112,
+        "threes": 6,
+        "pts": 455,
+        "reb": 307,
+        "ast": 78,
+        "stl": 26,
+        "blk": 58,
+        "to": 65
+      }
     },
     {
       "playerId": "5664",
       "name": "Cheick Diallo",
       "actualRank": 206,
       "preseasonRank": 241,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 64,
+      "teamId": null,
+      "stats": {
+        "fgm": 168,
+        "fga": 271,
+        "ftm": 50,
+        "fta": 67,
+        "threes": 1,
+        "pts": 387,
+        "reb": 332,
+        "ast": 33,
+        "stl": 29,
+        "blk": 33,
+        "to": 49
+      }
     },
     {
       "playerId": "5678",
       "name": "Jake Layman",
       "actualRank": 207,
       "preseasonRank": 299,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 71,
+      "teamId": null,
+      "stats": {
+        "fgm": 216,
+        "fga": 424,
+        "ftm": 50,
+        "fta": 71,
+        "threes": 59,
+        "pts": 541,
+        "reb": 217,
+        "ast": 53,
+        "stl": 31,
+        "blk": 30,
+        "to": 46
+      }
     },
     {
       "playerId": "5467",
       "name": "Emmanuel Mudiay",
       "actualRank": 208,
       "preseasonRank": 291,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 59,
+      "teamId": null,
+      "stats": {
+        "fgm": 330,
+        "fga": 740,
+        "ftm": 144,
+        "fta": 186,
+        "threes": 69,
+        "pts": 873,
+        "reb": 196,
+        "ast": 228,
+        "stl": 43,
+        "blk": 19,
+        "to": 140
+      }
     },
     {
       "playerId": "4720",
       "name": "DeMarcus Cousins",
       "actualRank": 209,
       "preseasonRank": 172,
-      "gamesPlayed": null,
-      "teamId": "2019:dadder"
+      "gamesPlayed": 30,
+      "teamId": "2019:dadder",
+      "stats": {
+        "fgm": 178,
+        "fga": 371,
+        "ftm": 106,
+        "fta": 144,
+        "threes": 26,
+        "pts": 488,
+        "reb": 247,
+        "ast": 107,
+        "stl": 40,
+        "blk": 44,
+        "to": 72
+      }
     },
     {
       "playerId": "5214",
       "name": "Mike Muscala",
       "actualRank": 210,
       "preseasonRank": 227,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 64,
+      "teamId": null,
+      "stats": {
+        "fgm": 145,
+        "fga": 361,
+        "ftm": 70,
+        "fta": 85,
+        "threes": 89,
+        "pts": 449,
+        "reb": 244,
+        "ast": 76,
+        "stl": 22,
+        "blk": 38,
+        "to": 48
+      }
     },
     {
       "playerId": "4149",
       "name": "Rajon Rondo",
       "actualRank": 211,
       "preseasonRank": 184,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 46,
+      "teamId": null,
+      "stats": {
+        "fgm": 175,
+        "fga": 432,
+        "ftm": 23,
+        "fta": 36,
+        "threes": 51,
+        "pts": 424,
+        "reb": 243,
+        "ast": 367,
+        "stl": 57,
+        "blk": 7,
+        "to": 127
+      }
     },
     {
       "playerId": "4488",
       "name": "George Hill",
       "actualRank": 212,
       "preseasonRank": 182,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 60,
+      "teamId": null,
+      "stats": {
+        "fgm": 170,
+        "fga": 376,
+        "ftm": 70,
+        "fta": 85,
+        "threes": 48,
+        "pts": 458,
+        "reb": 148,
+        "ast": 135,
+        "stl": 52,
+        "blk": 8,
+        "to": 51
+      }
     },
     {
       "playerId": "4893",
       "name": "Alec Burks",
       "actualRank": 213,
       "preseasonRank": 288,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 64,
+      "teamId": null,
+      "stats": {
+        "fgm": 192,
+        "fga": 474,
+        "ftm": 116,
+        "fta": 141,
+        "threes": 61,
+        "pts": 561,
+        "reb": 235,
+        "ast": 128,
+        "stl": 39,
+        "blk": 21,
+        "to": 65
+      }
     },
     {
       "playerId": "5825",
       "name": "Luke Kennard",
       "actualRank": 214,
       "preseasonRank": 160,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 63,
+      "teamId": null,
+      "stats": {
+        "fgm": 228,
+        "fga": 520,
+        "ftm": 51,
+        "fta": 61,
+        "threes": 106,
+        "pts": 613,
+        "reb": 183,
+        "ast": 114,
+        "stl": 26,
+        "blk": 10,
+        "to": 57
+      }
     },
     {
       "playerId": "4937",
       "name": "E'Twaun Moore",
       "actualRank": 215,
       "preseasonRank": 149,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 53,
+      "teamId": null,
+      "stats": {
+        "fgm": 256,
+        "fga": 532,
+        "ftm": 45,
+        "fta": 59,
+        "threes": 76,
+        "pts": 633,
+        "reb": 127,
+        "ast": 102,
+        "stl": 40,
+        "blk": 8,
+        "to": 59
+      }
     },
     {
       "playerId": "4624",
       "name": "Jeff Teague",
       "actualRank": 216,
       "preseasonRank": 61,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 42,
+      "teamId": null,
+      "stats": {
+        "fgm": 176,
+        "fga": 416,
+        "ftm": 123,
+        "fta": 153,
+        "threes": 35,
+        "pts": 510,
+        "reb": 106,
+        "ast": 343,
+        "stl": 43,
+        "blk": 18,
+        "to": 97
+      }
     },
     {
       "playerId": "5245",
       "name": "Seth Curry",
       "actualRank": 217,
       "preseasonRank": 196,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 74,
+      "teamId": null,
+      "stats": {
+        "fgm": 212,
+        "fga": 465,
+        "ftm": 44,
+        "fta": 52,
+        "threes": 113,
+        "pts": 581,
+        "reb": 120,
+        "ast": 66,
+        "stl": 36,
+        "blk": 12,
+        "to": 61
+      }
     },
     {
       "playerId": "3962",
       "name": "Ersan İlyasova",
       "actualRank": 218,
       "preseasonRank": 167,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 67,
+      "teamId": null,
+      "stats": {
+        "fgm": 167,
+        "fga": 381,
+        "ftm": 61,
+        "fta": 74,
+        "threes": 58,
+        "pts": 453,
+        "reb": 302,
+        "ast": 52,
+        "stl": 32,
+        "blk": 20,
+        "to": 48
+      }
     },
     {
       "playerId": "5880",
       "name": "Daniel Theis",
       "actualRank": 219,
       "preseasonRank": 289,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 66,
+      "teamId": null,
+      "stats": {
+        "fgm": 146,
+        "fga": 266,
+        "ftm": 56,
+        "fta": 76,
+        "threes": 26,
+        "pts": 374,
+        "reb": 225,
+        "ast": 68,
+        "stl": 21,
+        "blk": 42,
+        "to": 33
+      }
     },
     {
       "playerId": "4894",
       "name": "Markieff Morris",
       "actualRank": 220,
       "preseasonRank": 141,
-      "gamesPlayed": null,
-      "teamId": "2019:brendan"
+      "gamesPlayed": 58,
+      "teamId": "2019:brendan",
+      "stats": {
+        "fgm": 204,
+        "fga": 484,
+        "ftm": 71,
+        "fta": 92,
+        "threes": 68,
+        "pts": 547,
+        "reb": 265,
+        "ast": 79,
+        "stl": 36,
+        "blk": 22,
+        "to": 54
+      }
     },
     {
       "playerId": "4632",
       "name": "DeMarre Carroll",
       "actualRank": 221,
       "preseasonRank": 166,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 67,
+      "teamId": null,
+      "stats": {
+        "fgm": 227,
+        "fga": 575,
+        "ftm": 184,
+        "fta": 242,
+        "threes": 106,
+        "pts": 744,
+        "reb": 349,
+        "ast": 85,
+        "stl": 31,
+        "blk": 10,
+        "to": 73
+      }
     },
     {
       "playerId": "5190",
       "name": "Tony Snell",
       "actualRank": 222,
       "preseasonRank": 210,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 74,
+      "teamId": null,
+      "stats": {
+        "fgm": 163,
+        "fga": 361,
+        "ftm": 37,
+        "fta": 42,
+        "threes": 81,
+        "pts": 444,
+        "reb": 157,
+        "ast": 68,
+        "stl": 26,
+        "blk": 18,
+        "to": 23
+      }
     },
     {
       "playerId": "5321",
       "name": "Elfrid Payton",
       "actualRank": 223,
       "preseasonRank": 119,
-      "gamesPlayed": null,
-      "teamId": "2019:jacob-g"
+      "gamesPlayed": 42,
+      "teamId": "2019:jacob-g",
+      "stats": {
+        "fgm": 179,
+        "fga": 412,
+        "ftm": 55,
+        "fta": 74,
+        "threes": 33,
+        "pts": 446,
+        "reb": 220,
+        "ast": 320,
+        "stl": 44,
+        "blk": 17,
+        "to": 112
+      }
     },
     {
       "playerId": "6044",
       "name": "Jalen Brunson",
       "actualRank": 224,
       "preseasonRank": 305,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 73,
+      "teamId": null,
+      "stats": {
+        "fgm": 264,
+        "fga": 565,
+        "ftm": 87,
+        "fta": 120,
+        "threes": 63,
+        "pts": 678,
+        "reb": 169,
+        "ast": 230,
+        "stl": 37,
+        "blk": 4,
+        "to": 88
+      }
     },
     {
       "playerId": "3754",
       "name": "Kyle Korver",
       "actualRank": 225,
       "preseasonRank": 199,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 70,
+      "teamId": null,
+      "stats": {
+        "fgm": 201,
+        "fga": 483,
+        "ftm": 60,
+        "fta": 73,
+        "threes": 138,
+        "pts": 600,
+        "reb": 162,
+        "ast": 81,
+        "stl": 25,
+        "blk": 12,
+        "to": 59
+      }
     },
     {
       "playerId": "5834",
       "name": "Terrance Ferguson",
       "actualRank": 226,
       "preseasonRank": 298,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 74,
+      "teamId": null,
+      "stats": {
+        "fgm": 185,
+        "fga": 431,
+        "ftm": 37,
+        "fta": 51,
+        "threes": 106,
+        "pts": 513,
+        "reb": 141,
+        "ast": 72,
+        "stl": 40,
+        "blk": 16,
+        "to": 47
+      }
     },
     {
       "playerId": "5506",
       "name": "Norman Powell",
       "actualRank": 227,
       "preseasonRank": 296,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 60,
+      "teamId": null,
+      "stats": {
+        "fgm": 193,
+        "fga": 400,
+        "ftm": 62,
+        "fta": 75,
+        "threes": 68,
+        "pts": 516,
+        "reb": 139,
+        "ast": 91,
+        "stl": 39,
+        "blk": 13,
+        "to": 65
+      }
     },
     {
       "playerId": "5008",
       "name": "Michael Kidd-Gilchrist",
       "actualRank": 228,
       "preseasonRank": 250,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 64,
+      "teamId": null,
+      "stats": {
+        "fgm": 158,
+        "fga": 332,
+        "ftm": 95,
+        "fta": 123,
+        "threes": 16,
+        "pts": 427,
+        "reb": 246,
+        "ast": 61,
+        "stl": 32,
+        "blk": 39,
+        "to": 43
+      }
     },
     {
       "playerId": "5646",
       "name": "Juancho Hernangómez",
       "actualRank": 229,
       "preseasonRank": 302,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 70,
+      "teamId": null,
+      "stats": {
+        "fgm": 138,
+        "fga": 314,
+        "ftm": 66,
+        "fta": 86,
+        "threes": 66,
+        "pts": 408,
+        "reb": 265,
+        "ast": 55,
+        "stl": 27,
+        "blk": 24,
+        "to": 37
+      }
     },
     {
       "playerId": "6051",
       "name": "Rodions Kurucs",
       "actualRank": 230,
       "preseasonRank": 310,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 63,
+      "teamId": null,
+      "stats": {
+        "fgm": 202,
+        "fga": 449,
+        "ftm": 72,
+        "fta": 92,
+        "threes": 58,
+        "pts": 534,
+        "reb": 246,
+        "ast": 52,
+        "stl": 41,
+        "blk": 25,
+        "to": 77
+      }
     },
     {
       "playerId": "4750",
       "name": "Avery Bradley",
       "actualRank": 231,
       "preseasonRank": 173,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 63,
+      "teamId": null,
+      "stats": {
+        "fgm": 248,
+        "fga": 608,
+        "ftm": 43,
+        "fta": 50,
+        "threes": 86,
+        "pts": 625,
+        "reb": 175,
+        "ast": 152,
+        "stl": 41,
+        "blk": 16,
+        "to": 89
+      }
     },
     {
       "playerId": "5824",
       "name": "Malik Monk",
       "actualRank": 232,
       "preseasonRank": 216,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 73,
+      "teamId": null,
+      "stats": {
+        "fgm": 227,
+        "fga": 586,
+        "ftm": 90,
+        "fta": 102,
+        "threes": 109,
+        "pts": 653,
+        "reb": 137,
+        "ast": 117,
+        "stl": 37,
+        "blk": 19,
+        "to": 86
+      }
     },
     {
       "playerId": "4884",
       "name": "Tristan Thompson",
       "actualRank": 233,
       "preseasonRank": 301,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 43,
+      "teamId": null,
+      "stats": {
+        "fgm": 201,
+        "fga": 380,
+        "ftm": 68,
+        "fta": 106,
+        "threes": 0,
+        "pts": 470,
+        "reb": 438,
+        "ast": 86,
+        "stl": 28,
+        "blk": 16,
+        "to": 59
+      }
     },
     {
       "playerId": "4717",
       "name": "Evan Turner",
       "actualRank": 234,
       "preseasonRank": 224,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 73,
+      "teamId": null,
+      "stats": {
+        "fgm": 204,
+        "fga": 443,
+        "ftm": 75,
+        "fta": 106,
+        "threes": 11,
+        "pts": 494,
+        "reb": 328,
+        "ast": 283,
+        "stl": 33,
+        "blk": 18,
+        "to": 114
+      }
     },
     {
       "playerId": "4716",
       "name": "John Wall",
       "actualRank": 235,
       "preseasonRank": 23,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 32,
+      "teamId": null,
+      "stats": {
+        "fgm": 245,
+        "fga": 552,
+        "ftm": 122,
+        "fta": 175,
+        "threes": 51,
+        "pts": 663,
+        "reb": 116,
+        "ast": 279,
+        "stl": 49,
+        "blk": 29,
+        "to": 121
+      }
     },
     {
       "playerId": "5220",
       "name": "James Ennis III",
       "actualRank": 236,
       "preseasonRank": 292,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 58,
+      "teamId": null,
+      "stats": {
+        "fgm": 138,
+        "fga": 294,
+        "ftm": 58,
+        "fta": 81,
+        "threes": 55,
+        "pts": 389,
+        "reb": 182,
+        "ast": 41,
+        "stl": 41,
+        "blk": 23,
+        "to": 34
+      }
     },
     {
       "playerId": "5160",
       "name": "Trey Burke",
       "actualRank": 237,
       "preseasonRank": 155,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 58,
+      "teamId": null,
+      "stats": {
+        "fgm": 236,
+        "fga": 548,
+        "ftm": 103,
+        "fta": 124,
+        "threes": 56,
+        "pts": 631,
+        "reb": 99,
+        "ast": 159,
+        "stl": 33,
+        "blk": 7,
+        "to": 49
+      }
     },
     {
       "playerId": "5747",
       "name": "Derrick Jones Jr.",
       "actualRank": 238,
       "preseasonRank": 317,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 60,
+      "teamId": null,
+      "stats": {
+        "fgm": 160,
+        "fga": 324,
+        "ftm": 74,
+        "fta": 122,
+        "threes": 28,
+        "pts": 422,
+        "reb": 240,
+        "ast": 37,
+        "stl": 46,
+        "blk": 42,
+        "to": 43
+      }
     },
     {
       "playerId": "5434",
       "name": "Jahlil Okafor",
       "actualRank": 239,
       "preseasonRank": 311,
-      "gamesPlayed": null,
-      "teamId": "2019:najim"
+      "gamesPlayed": 59,
+      "teamId": "2019:najim",
+      "stats": {
+        "fgm": 212,
+        "fga": 362,
+        "ftm": 59,
+        "fta": 89,
+        "threes": 1,
+        "pts": 484,
+        "reb": 278,
+        "ast": 40,
+        "stl": 15,
+        "blk": 40,
+        "to": 52
+      }
     },
     {
       "playerId": "5322",
       "name": "Doug McDermott",
       "actualRank": 240,
       "preseasonRank": 233,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 77,
+      "teamId": null,
+      "stats": {
+        "fgm": 207,
+        "fga": 422,
+        "ftm": 66,
+        "fta": 79,
+        "threes": 84,
+        "pts": 564,
+        "reb": 109,
+        "ast": 67,
+        "stl": 18,
+        "blk": 8,
+        "to": 42
+      }
     },
     {
       "playerId": "5077",
       "name": "Mike Scott",
       "actualRank": 241,
       "preseasonRank": 297,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 79,
+      "teamId": null,
+      "stats": {
+        "fgm": 168,
+        "fga": 420,
+        "ftm": 22,
+        "fta": 33,
+        "threes": 101,
+        "pts": 459,
+        "reb": 276,
+        "ast": 66,
+        "stl": 26,
+        "blk": 13,
+        "to": 44
+      }
     },
     {
       "playerId": "6057",
       "name": "De'Anthony Melton",
       "actualRank": 242,
       "preseasonRank": 316,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 50,
+      "teamId": null,
+      "stats": {
+        "fgm": 100,
+        "fga": 256,
+        "ftm": 21,
+        "fta": 28,
+        "threes": 29,
+        "pts": 250,
+        "reb": 134,
+        "ast": 159,
+        "stl": 68,
+        "blk": 23,
+        "to": 75
+      }
     },
     {
       "playerId": "5335",
       "name": "Shabazz Napier",
       "actualRank": 243,
       "preseasonRank": 287,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 56,
+      "teamId": null,
+      "stats": {
+        "fgm": 169,
+        "fga": 435,
+        "ftm": 115,
+        "fta": 138,
+        "threes": 76,
+        "pts": 529,
+        "reb": 100,
+        "ast": 143,
+        "stl": 41,
+        "blk": 16,
+        "to": 66
+      }
     },
     {
       "playerId": "5016",
       "name": "Austin Rivers",
       "actualRank": 244,
       "preseasonRank": 194,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 76,
+      "teamId": null,
+      "stats": {
+        "fgm": 232,
+        "fga": 572,
+        "ftm": 50,
+        "fta": 95,
+        "threes": 104,
+        "pts": 618,
+        "reb": 162,
+        "ast": 167,
+        "stl": 47,
+        "blk": 23,
+        "to": 68
+      }
     },
     {
       "playerId": "5720",
       "name": "Yogi Ferrell",
       "actualRank": 245,
       "preseasonRank": 234,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 71,
+      "teamId": null,
+      "stats": {
+        "fgm": 153,
+        "fga": 352,
+        "ftm": 60,
+        "fta": 67,
+        "threes": 54,
+        "pts": 420,
+        "reb": 109,
+        "ast": 137,
+        "stl": 36,
+        "blk": 4,
+        "to": 40
+      }
     },
     {
       "playerId": "5468",
       "name": "Stanley Johnson",
       "actualRank": 246,
       "preseasonRank": 198,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 66,
+      "teamId": null,
+      "stats": {
+        "fgm": 171,
+        "fga": 440,
+        "ftm": 50,
+        "fta": 64,
+        "threes": 62,
+        "pts": 454,
+        "reb": 217,
+        "ast": 88,
+        "stl": 60,
+        "blk": 14,
+        "to": 81
+      }
     },
     {
       "playerId": "6076",
       "name": "Kenrich Williams",
       "actualRank": 247,
       "preseasonRank": 319,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 53,
+      "teamId": null,
+      "stats": {
+        "fgm": 149,
+        "fga": 361,
+        "ftm": 21,
+        "fta": 39,
+        "threes": 57,
+        "pts": 376,
+        "reb": 292,
+        "ast": 108,
+        "stl": 60,
+        "blk": 26,
+        "to": 44
+      }
     },
     {
       "playerId": "5903",
       "name": "Luke Kornet",
       "actualRank": 248,
       "preseasonRank": 209,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 46,
+      "teamId": null,
+      "stats": {
+        "fgm": 107,
+        "fga": 283,
+        "ftm": 38,
+        "fta": 46,
+        "threes": 70,
+        "pts": 322,
+        "reb": 135,
+        "ast": 54,
+        "stl": 27,
+        "blk": 42,
+        "to": 25
+      }
     },
     {
       "playerId": "5836",
       "name": "OG Anunoby",
       "actualRank": 249,
       "preseasonRank": 215,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 67,
+      "teamId": null,
+      "stats": {
+        "fgm": 183,
+        "fga": 404,
+        "ftm": 36,
+        "fta": 62,
+        "threes": 67,
+        "pts": 469,
+        "reb": 197,
+        "ast": 47,
+        "stl": 46,
+        "blk": 22,
+        "to": 55
+      }
     },
     {
       "playerId": "5270",
       "name": "Rodney McGruder",
       "actualRank": 250,
       "preseasonRank": 315,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 66,
+      "teamId": null,
+      "stats": {
+        "fgm": 186,
+        "fga": 461,
+        "ftm": 52,
+        "fta": 72,
+        "threes": 79,
+        "pts": 503,
+        "reb": 238,
+        "ast": 112,
+        "stl": 36,
+        "blk": 12,
+        "to": 64
+      }
     },
     {
       "playerId": "5017",
       "name": "Meyers Leonard",
       "actualRank": 251,
       "preseasonRank": 313,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 61,
+      "teamId": null,
+      "stats": {
+        "fgm": 132,
+        "fga": 242,
+        "ftm": 43,
+        "fta": 51,
+        "threes": 50,
+        "pts": 357,
+        "reb": 233,
+        "ast": 75,
+        "stl": 13,
+        "blk": 9,
+        "to": 43
+      }
     },
     {
       "playerId": "6020",
       "name": "Kevin Knox II",
       "actualRank": 252,
       "preseasonRank": 162,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 75,
+      "teamId": null,
+      "stats": {
+        "fgm": 338,
+        "fga": 914,
+        "ftm": 162,
+        "fta": 226,
+        "threes": 125,
+        "pts": 963,
+        "reb": 335,
+        "ast": 82,
+        "stl": 43,
+        "blk": 24,
+        "to": 114
+      }
     },
     {
       "playerId": "5601",
       "name": "Brandon Ingram",
       "actualRank": 253,
       "preseasonRank": 83,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 52,
+      "teamId": null,
+      "stats": {
+        "fgm": 362,
+        "fga": 729,
+        "ftm": 195,
+        "fta": 289,
+        "threes": 31,
+        "pts": 950,
+        "reb": 267,
+        "ast": 154,
+        "stl": 28,
+        "blk": 31,
+        "to": 129
+      }
     },
     {
       "playerId": "5588",
       "name": "Quinn Cook",
       "actualRank": 254,
       "preseasonRank": 304,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 74,
+      "teamId": null,
+      "stats": {
+        "fgm": 204,
+        "fga": 439,
+        "ftm": 20,
+        "fta": 26,
+        "threes": 81,
+        "pts": 509,
+        "reb": 157,
+        "ast": 116,
+        "stl": 20,
+        "blk": 3,
+        "to": 50
+      }
     },
     {
       "playerId": "5524",
       "name": "Boban Marjanović",
       "actualRank": 255,
       "preseasonRank": 314,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 58,
+      "teamId": null,
+      "stats": {
+        "fgm": 160,
+        "fga": 260,
+        "ftm": 98,
+        "fta": 131,
+        "threes": 4,
+        "pts": 422,
+        "reb": 265,
+        "ast": 54,
+        "stl": 16,
+        "blk": 27,
+        "to": 59
+      }
     },
     {
       "playerId": "5822",
       "name": "Dennis Smith Jr.",
       "actualRank": 256,
       "preseasonRank": 95,
-      "gamesPlayed": null,
-      "teamId": "2019:michael"
+      "gamesPlayed": 53,
+      "teamId": "2019:michael",
+      "stats": {
+        "fgm": 278,
+        "fga": 650,
+        "ftm": 99,
+        "fta": 156,
+        "threes": 67,
+        "pts": 722,
+        "reb": 155,
+        "ast": 252,
+        "stl": 67,
+        "blk": 20,
+        "to": 154
+      }
     },
     {
       "playerId": "4564",
       "name": "Tyreke Evans",
       "actualRank": 257,
       "preseasonRank": 98,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 69,
+      "teamId": null,
+      "stats": {
+        "fgm": 257,
+        "fga": 660,
+        "ftm": 115,
+        "fta": 160,
+        "threes": 77,
+        "pts": 706,
+        "reb": 201,
+        "ast": 166,
+        "stl": 58,
+        "blk": 18,
+        "to": 118
+      }
     },
     {
       "playerId": "4621",
       "name": "James Johnson",
       "actualRank": 258,
       "preseasonRank": 107,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 55,
+      "teamId": null,
+      "stats": {
+        "fgm": 164,
+        "fga": 379,
+        "ftm": 50,
+        "fta": 70,
+        "threes": 50,
+        "pts": 428,
+        "reb": 176,
+        "ast": 135,
+        "stl": 35,
+        "blk": 27,
+        "to": 74
+      }
     },
     {
       "playerId": "4771",
       "name": "Lance Stephenson",
       "actualRank": 259,
       "preseasonRank": 205,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 68,
+      "teamId": null,
+      "stats": {
+        "fgm": 184,
+        "fga": 432,
+        "ftm": 50,
+        "fta": 73,
+        "threes": 73,
+        "pts": 491,
+        "reb": 215,
+        "ast": 140,
+        "stl": 41,
+        "blk": 7,
+        "to": 86
+      }
     },
     {
       "playerId": "5465",
       "name": "Mario Hezonja",
       "actualRank": 260,
       "preseasonRank": 110,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 58,
+      "teamId": null,
+      "stats": {
+        "fgm": 191,
+        "fga": 464,
+        "ftm": 87,
+        "fta": 114,
+        "threes": 42,
+        "pts": 511,
+        "reb": 239,
+        "ast": 88,
+        "stl": 57,
+        "blk": 8,
+        "to": 88
+      }
     },
     {
       "playerId": "6053",
       "name": "Bruce Brown",
       "actualRank": 261,
       "preseasonRank": 326,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 74,
+      "teamId": null,
+      "stats": {
+        "fgm": 125,
+        "fga": 314,
+        "ftm": 45,
+        "fta": 60,
+        "threes": 24,
+        "pts": 319,
+        "reb": 185,
+        "ast": 91,
+        "stl": 40,
+        "blk": 36,
+        "to": 46
+      }
     },
     {
       "playerId": "6140",
       "name": "Allonzo Trier",
       "actualRank": 262,
       "preseasonRank": 327,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 64,
+      "teamId": null,
+      "stats": {
+        "fgm": 232,
+        "fga": 518,
+        "ftm": 179,
+        "fta": 223,
+        "threes": 52,
+        "pts": 695,
+        "reb": 197,
+        "ast": 119,
+        "stl": 28,
+        "blk": 14,
+        "to": 116
+      }
     },
     {
       "playerId": "5414",
       "name": "Tim Frazier",
       "actualRank": 263,
       "preseasonRank": 309,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 59,
+      "teamId": null,
+      "stats": {
+        "fgm": 116,
+        "fga": 261,
+        "ftm": 41,
+        "fta": 54,
+        "threes": 37,
+        "pts": 310,
+        "reb": 168,
+        "ast": 248,
+        "stl": 30,
+        "blk": 5,
+        "to": 76
+      }
     },
     {
       "playerId": "4800",
       "name": "Ish Smith",
       "actualRank": 264,
       "preseasonRank": 206,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 56,
+      "teamId": null,
+      "stats": {
+        "fgm": 205,
+        "fga": 489,
+        "ftm": 47,
+        "fta": 62,
+        "threes": 44,
+        "pts": 501,
+        "reb": 145,
+        "ast": 203,
+        "stl": 28,
+        "blk": 11,
+        "to": 61
+      }
     },
     {
       "playerId": "5651",
       "name": "Caris LeVert",
       "actualRank": 265,
       "preseasonRank": 134,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 40,
+      "teamId": null,
+      "stats": {
+        "fgm": 207,
+        "fga": 483,
+        "ftm": 85,
+        "fta": 123,
+        "threes": 48,
+        "pts": 547,
+        "reb": 151,
+        "ast": 156,
+        "stl": 42,
+        "blk": 14,
+        "to": 69
+      }
     },
     {
       "playerId": "3407",
       "name": "Jamal Crawford",
       "actualRank": 266,
       "preseasonRank": 246,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 64,
+      "teamId": null,
+      "stats": {
+        "fgm": 174,
+        "fga": 438,
+        "ftm": 93,
+        "fta": 110,
+        "threes": 67,
+        "pts": 508,
+        "reb": 85,
+        "ast": 229,
+        "stl": 33,
+        "blk": 12,
+        "to": 99
+      }
     },
     {
       "playerId": "5641",
       "name": "Thon Maker",
       "actualRank": 267,
       "preseasonRank": 303,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 64,
+      "teamId": null,
+      "stats": {
+        "fgm": 109,
+        "fga": 268,
+        "ftm": 56,
+        "fta": 84,
+        "threes": 49,
+        "pts": 323,
+        "reb": 202,
+        "ast": 45,
+        "stl": 21,
+        "blk": 51,
+        "to": 33
+      }
     },
     {
       "playerId": "4301",
       "name": "Wilson Chandler",
       "actualRank": 268,
       "preseasonRank": 203,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 51,
+      "teamId": null,
+      "stats": {
+        "fgm": 114,
+        "fga": 273,
+        "ftm": 18,
+        "fta": 25,
+        "threes": 59,
+        "pts": 305,
+        "reb": 215,
+        "ast": 82,
+        "stl": 25,
+        "blk": 21,
+        "to": 46
+      }
     },
     {
       "playerId": "5150",
       "name": "Aron Baynes",
       "actualRank": 269,
       "preseasonRank": 300,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 51,
+      "teamId": null,
+      "stats": {
+        "fgm": 105,
+        "fga": 223,
+        "ftm": 53,
+        "fta": 62,
+        "threes": 21,
+        "pts": 284,
+        "reb": 240,
+        "ast": 57,
+        "stl": 12,
+        "blk": 34,
+        "to": 40
+      }
     },
     {
       "playerId": "3821",
       "name": "Shaun Livingston",
       "actualRank": 270,
       "preseasonRank": 306,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 64,
+      "teamId": null,
+      "stats": {
+        "fgm": 109,
+        "fga": 210,
+        "ftm": 40,
+        "fta": 51,
+        "threes": 0,
+        "pts": 258,
+        "reb": 117,
+        "ast": 114,
+        "stl": 31,
+        "blk": 27,
+        "to": 38
+      }
     },
     {
       "playerId": "6017",
       "name": "Mo Bamba",
       "actualRank": 271,
       "preseasonRank": 122,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 47,
+      "teamId": null,
+      "stats": {
+        "fgm": 117,
+        "fga": 243,
+        "ftm": 37,
+        "fta": 63,
+        "threes": 21,
+        "pts": 292,
+        "reb": 233,
+        "ast": 39,
+        "stl": 13,
+        "blk": 64,
+        "to": 43
+      }
     },
     {
       "playerId": "5728",
       "name": "Danuel House Jr.",
       "actualRank": 272,
       "preseasonRank": 325,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 40,
+      "teamId": null,
+      "stats": {
+        "fgm": 123,
+        "fga": 268,
+        "ftm": 66,
+        "fta": 81,
+        "threes": 75,
+        "pts": 387,
+        "reb": 147,
+        "ast": 43,
+        "stl": 22,
+        "blk": 11,
+        "to": 37
+      }
     },
     {
       "playerId": "5472",
       "name": "Trey Lyles",
       "actualRank": 273,
       "preseasonRank": 165,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 64,
+      "teamId": null,
+      "stats": {
+        "fgm": 207,
+        "fga": 495,
+        "ftm": 81,
+        "fta": 116,
+        "threes": 51,
+        "pts": 546,
+        "reb": 246,
+        "ast": 87,
+        "stl": 30,
+        "blk": 23,
+        "to": 68
+      }
     },
     {
       "playerId": "4300",
       "name": "Jared Dudley",
       "actualRank": 274,
       "preseasonRank": 323,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 59,
+      "teamId": null,
+      "stats": {
+        "fgm": 101,
+        "fga": 239,
+        "ftm": 32,
+        "fta": 46,
+        "threes": 53,
+        "pts": 287,
+        "reb": 155,
+        "ast": 83,
+        "stl": 36,
+        "blk": 16,
+        "to": 43
+      }
     },
     {
       "playerId": "5074",
       "name": "Will Barton",
       "actualRank": 275,
       "preseasonRank": 49,
-      "gamesPlayed": null,
-      "teamId": "2019:matt"
+      "gamesPlayed": 43,
+      "teamId": "2019:matt",
+      "stats": {
+        "fgm": 185,
+        "fga": 460,
+        "ftm": 57,
+        "fta": 74,
+        "threes": 67,
+        "pts": 494,
+        "reb": 199,
+        "ast": 124,
+        "stl": 18,
+        "blk": 22,
+        "to": 65
+      }
     },
     {
       "playerId": "5654",
       "name": "Ante Žižić",
       "actualRank": 276,
       "preseasonRank": 243,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 59,
+      "teamId": null,
+      "stats": {
+        "fgm": 183,
+        "fga": 331,
+        "ftm": 93,
+        "fta": 132,
+        "threes": 0,
+        "pts": 459,
+        "reb": 320,
+        "ast": 53,
+        "stl": 13,
+        "blk": 22,
+        "to": 61
+      }
     },
     {
       "playerId": "5846",
       "name": "Wes Iwundu",
       "actualRank": 277,
       "preseasonRank": 320,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 68,
+      "teamId": null,
+      "stats": {
+        "fgm": 113,
+        "fga": 274,
+        "ftm": 84,
+        "fta": 103,
+        "threes": 29,
+        "pts": 339,
+        "reb": 184,
+        "ast": 73,
+        "stl": 28,
+        "blk": 22,
+        "to": 44
+      }
     },
     {
       "playerId": "5762",
       "name": "David Nwaba",
       "actualRank": 278,
       "preseasonRank": 208,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 51,
+      "teamId": null,
+      "stats": {
+        "fgm": 126,
+        "fga": 262,
+        "ftm": 58,
+        "fta": 85,
+        "threes": 24,
+        "pts": 334,
+        "reb": 163,
+        "ast": 54,
+        "stl": 36,
+        "blk": 17,
+        "to": 29
+      }
     },
     {
       "playerId": "5859",
       "name": "Sterling Brown",
       "actualRank": 279,
       "preseasonRank": 321,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 58,
+      "teamId": null,
+      "stats": {
+        "fgm": 145,
+        "fga": 312,
+        "ftm": 29,
+        "fta": 42,
+        "threes": 53,
+        "pts": 372,
+        "reb": 184,
+        "ast": 84,
+        "stl": 25,
+        "blk": 8,
+        "to": 46
+      }
     },
     {
       "playerId": "5851",
       "name": "Jordan Bell",
       "actualRank": 280,
       "preseasonRank": 109,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 68,
+      "teamId": null,
+      "stats": {
+        "fgm": 99,
+        "fga": 192,
+        "ftm": 25,
+        "fta": 41,
+        "threes": 0,
+        "pts": 223,
+        "reb": 184,
+        "ast": 76,
+        "stl": 20,
+        "blk": 51,
+        "to": 42
+      }
     },
     {
       "playerId": "4904",
       "name": "Kenneth Faried",
       "actualRank": 281,
       "preseasonRank": 329,
-      "gamesPlayed": null,
-      "teamId": "2019:dadder"
+      "gamesPlayed": 37,
+      "teamId": "2019:dadder",
+      "stats": {
+        "fgm": 156,
+        "fga": 265,
+        "ftm": 64,
+        "fta": 99,
+        "threes": 8,
+        "pts": 384,
+        "reb": 250,
+        "ast": 20,
+        "stl": 17,
+        "blk": 23,
+        "to": 33
+      }
     },
     {
       "playerId": "4638",
       "name": "Dante Cunningham",
       "actualRank": 282,
       "preseasonRank": 308,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 64,
+      "teamId": null,
+      "stats": {
+        "fgm": 75,
+        "fga": 158,
+        "ftm": 14,
+        "fta": 18,
+        "threes": 30,
+        "pts": 194,
+        "reb": 188,
+        "ast": 50,
+        "stl": 27,
+        "blk": 13,
+        "to": 22
+      }
     },
     {
       "playerId": "4371",
       "name": "Anthony Tolliver",
       "actualRank": 283,
       "preseasonRank": 230,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 65,
+      "teamId": null,
+      "stats": {
+        "fgm": 99,
+        "fga": 259,
+        "ftm": 47,
+        "fta": 60,
+        "threes": 81,
+        "pts": 326,
+        "reb": 177,
+        "ast": 46,
+        "stl": 17,
+        "blk": 21,
+        "to": 36
+      }
     },
     {
       "playerId": "5010",
       "name": "Dion Waiters",
       "actualRank": 284,
       "preseasonRank": 245,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 44,
+      "teamId": null,
+      "stats": {
+        "fgm": 198,
+        "fga": 478,
+        "ftm": 22,
+        "fta": 44,
+        "threes": 109,
+        "pts": 527,
+        "reb": 116,
+        "ast": 121,
+        "stl": 29,
+        "blk": 9,
+        "to": 64
+      }
     },
     {
       "playerId": "4287",
       "name": "Joakim Noah",
       "actualRank": 285,
       "preseasonRank": 340,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 42,
+      "teamId": null,
+      "stats": {
+        "fgm": 110,
+        "fga": 213,
+        "ftm": 78,
+        "fta": 109,
+        "threes": 0,
+        "pts": 298,
+        "reb": 238,
+        "ast": 89,
+        "stl": 20,
+        "blk": 31,
+        "to": 50
+      }
     },
     {
       "playerId": "5331",
       "name": "Bruno Caboclo",
       "actualRank": 286,
       "preseasonRank": 335,
-      "gamesPlayed": null,
-      "teamId": "2019:jacob-g"
+      "gamesPlayed": 34,
+      "teamId": "2019:jacob-g",
+      "stats": {
+        "fgm": 96,
+        "fga": 225,
+        "ftm": 42,
+        "fta": 50,
+        "threes": 48,
+        "pts": 282,
+        "reb": 158,
+        "ast": 50,
+        "stl": 14,
+        "blk": 33,
+        "to": 38
+      }
     },
     {
       "playerId": "3822",
       "name": "Devin Harris",
       "actualRank": 287,
       "preseasonRank": 307,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 68,
+      "teamId": null,
+      "stats": {
+        "fgm": 132,
+        "fga": 347,
+        "ftm": 102,
+        "fta": 134,
+        "threes": 62,
+        "pts": 428,
+        "reb": 112,
+        "ast": 122,
+        "stl": 35,
+        "blk": 16,
+        "to": 56
+      }
     },
     {
       "playerId": "5495",
       "name": "Willy Hernangómez",
       "actualRank": 288,
       "preseasonRank": 204,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 58,
+      "teamId": null,
+      "stats": {
+        "fgm": 153,
+        "fga": 295,
+        "ftm": 100,
+        "fta": 144,
+        "threes": 15,
+        "pts": 421,
+        "reb": 311,
+        "ast": 60,
+        "stl": 16,
+        "blk": 20,
+        "to": 58
+      }
     },
     {
       "playerId": "4507",
       "name": "Goran Dragić",
       "actualRank": 289,
       "preseasonRank": 57,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 36,
+      "teamId": null,
+      "stats": {
+        "fgm": 179,
+        "fga": 433,
+        "ftm": 79,
+        "fta": 101,
+        "threes": 57,
+        "pts": 494,
+        "reb": 111,
+        "ast": 174,
+        "stl": 30,
+        "blk": 5,
+        "to": 71
+      }
     },
     {
       "playerId": "6041",
       "name": "Omari Spellman",
       "actualRank": 290,
       "preseasonRank": 339,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 49,
+      "teamId": null,
+      "stats": {
+        "fgm": 114,
+        "fga": 284,
+        "ftm": 42,
+        "fta": 64,
+        "threes": 51,
+        "pts": 321,
+        "reb": 231,
+        "ast": 58,
+        "stl": 28,
+        "blk": 30,
+        "to": 35
+      }
     },
     {
       "playerId": "4916",
       "name": "Shelvin Mack",
       "actualRank": 291,
       "preseasonRank": 255,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 57,
+      "teamId": null,
+      "stats": {
+        "fgm": 163,
+        "fga": 403,
+        "ftm": 58,
+        "fta": 84,
+        "threes": 46,
+        "pts": 430,
+        "reb": 104,
+        "ast": 183,
+        "stl": 47,
+        "blk": 4,
+        "to": 66
+      }
     },
     {
       "playerId": "3745",
       "name": "Zaza Pachulia",
       "actualRank": 292,
       "preseasonRank": 312,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 68,
+      "teamId": null,
+      "stats": {
+        "fgm": 85,
+        "fga": 193,
+        "ftm": 97,
+        "fta": 124,
+        "threes": 0,
+        "pts": 267,
+        "reb": 265,
+        "ast": 91,
+        "stl": 31,
+        "blk": 17,
+        "to": 57
+      }
     },
     {
       "playerId": "5479",
       "name": "Jerian Grant",
       "actualRank": 293,
       "preseasonRank": 187,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 60,
+      "teamId": null,
+      "stats": {
+        "fgm": 92,
+        "fga": 220,
+        "ftm": 26,
+        "fta": 40,
+        "threes": 40,
+        "pts": 250,
+        "reb": 98,
+        "ast": 156,
+        "stl": 44,
+        "blk": 6,
+        "to": 51
+      }
     },
     {
       "playerId": "5390",
       "name": "Khem Birch",
       "actualRank": 294,
       "preseasonRank": 328,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 50,
+      "teamId": null,
+      "stats": {
+        "fgm": 91,
+        "fga": 151,
+        "ftm": 58,
+        "fta": 83,
+        "threes": 0,
+        "pts": 240,
+        "reb": 190,
+        "ast": 38,
+        "stl": 18,
+        "blk": 29,
+        "to": 20
+      }
     },
     {
       "playerId": "5904",
       "name": "Alfonzo McKinnie",
       "actualRank": 295,
       "preseasonRank": 345,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 72,
+      "teamId": null,
+      "stats": {
+        "fgm": 134,
+        "fga": 275,
+        "ftm": 27,
+        "fta": 48,
+        "threes": 42,
+        "pts": 337,
+        "reb": 247,
+        "ast": 31,
+        "stl": 18,
+        "blk": 15,
+        "to": 30
+      }
     },
     {
       "playerId": "5319",
       "name": "Nik Stauskas",
       "actualRank": 296,
       "preseasonRank": 330,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 68,
+      "teamId": null,
+      "stats": {
+        "fgm": 136,
+        "fga": 338,
+        "ftm": 57,
+        "fta": 64,
+        "threes": 70,
+        "pts": 399,
+        "reb": 127,
+        "ast": 81,
+        "stl": 21,
+        "blk": 7,
+        "to": 51
+      }
     },
     {
       "playerId": "5483",
       "name": "Rondae Hollis-Jefferson",
       "actualRank": 297,
       "preseasonRank": 111,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 59,
+      "teamId": null,
+      "stats": {
+        "fgm": 200,
+        "fga": 487,
+        "ftm": 118,
+        "fta": 183,
+        "threes": 9,
+        "pts": 527,
+        "reb": 310,
+        "ast": 96,
+        "stl": 44,
+        "blk": 27,
+        "to": 68
+      }
     },
     {
       "playerId": "4141",
       "name": "Thabo Sefolosha",
       "actualRank": 298,
       "preseasonRank": 322,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 50,
+      "teamId": null,
+      "stats": {
+        "fgm": 71,
+        "fga": 149,
+        "ftm": 14,
+        "fta": 22,
+        "threes": 34,
+        "pts": 190,
+        "reb": 123,
+        "ast": 27,
+        "stl": 43,
+        "blk": 5,
+        "to": 25
+      }
     },
     {
       "playerId": "4391",
       "name": "Kevin Love",
       "actualRank": 299,
       "preseasonRank": 35,
-      "gamesPlayed": null,
-      "teamId": "2019:michael"
+      "gamesPlayed": 22,
+      "teamId": "2019:michael",
+      "stats": {
+        "fgm": 109,
+        "fga": 283,
+        "ftm": 103,
+        "fta": 114,
+        "threes": 53,
+        "pts": 374,
+        "reb": 239,
+        "ast": 48,
+        "stl": 6,
+        "blk": 5,
+        "to": 42
+      }
     },
     {
       "playerId": "5708",
       "name": "Wayne Selden Jr.",
       "actualRank": 300,
       "preseasonRank": 332,
-      "gamesPlayed": null,
-      "teamId": null
+      "gamesPlayed": 75,
+      "teamId": null,
+      "stats": {
+        "fgm": 196,
+        "fga": 483,
+        "ftm": 67,
+        "fta": 92,
+        "threes": 55,
+        "pts": 514,
+        "reb": 180,
+        "ast": 109,
+        "stl": 33,
+        "blk": 13,
+        "to": 79
+      }
     }
   ],
   "activity": {
@@ -4549,19 +8449,35 @@
           "receives": [
             {
               "name": "Jamal Murray",
-              "playerId": "5638"
+              "playerId": "5638",
+              "afterTrade": {
+                "rank": 39,
+                "games": 26
+              }
             },
             {
               "name": "Zach LaVine",
-              "playerId": "5324"
+              "playerId": "5324",
+              "afterTrade": {
+                "rank": 156,
+                "games": 15
+              }
             },
             {
               "name": "Harrison Barnes",
-              "playerId": "5013"
+              "playerId": "5013",
+              "afterTrade": {
+                "rank": 101,
+                "games": 27
+              }
             },
             {
               "name": "DeMarcus Cousins",
-              "playerId": "4720"
+              "playerId": "4720",
+              "afterTrade": {
+                "rank": 47,
+                "games": 21
+              }
             }
           ]
         },
@@ -4570,15 +8486,27 @@
           "receives": [
             {
               "name": "Ben Simmons",
-              "playerId": "5600"
+              "playerId": "5600",
+              "afterTrade": {
+                "rank": 34,
+                "games": 27
+              }
             },
             {
               "name": "Pascal Siakam",
-              "playerId": "5658"
+              "playerId": "5658",
+              "afterTrade": {
+                "rank": 36,
+                "games": 25
+              }
             },
             {
               "name": "Jayson Tatum",
-              "playerId": "5765"
+              "playerId": "5765",
+              "afterTrade": {
+                "rank": 79,
+                "games": 25
+              }
             }
           ]
         }
@@ -4593,23 +8521,43 @@
           "receives": [
             {
               "name": "Zach LaVine",
-              "playerId": "5324"
+              "playerId": "5324",
+              "afterTrade": {
+                "rank": 147,
+                "games": 16
+              }
             },
             {
               "name": "Jamal Murray",
-              "playerId": "5638"
+              "playerId": "5638",
+              "afterTrade": {
+                "rank": 35,
+                "games": 27
+              }
             },
             {
               "name": "Harrison Barnes",
-              "playerId": "5013"
+              "playerId": "5013",
+              "afterTrade": {
+                "rank": 97,
+                "games": 28
+              }
             },
             {
               "name": "DeMarcus Cousins",
-              "playerId": "4720"
+              "playerId": "4720",
+              "afterTrade": {
+                "rank": 51,
+                "games": 22
+              }
             },
             {
               "name": "Steven Adams",
-              "playerId": "5163"
+              "playerId": "5163",
+              "afterTrade": {
+                "rank": 101,
+                "games": 29
+              }
             }
           ]
         },
@@ -4618,19 +8566,35 @@
           "receives": [
             {
               "name": "Ben Simmons",
-              "playerId": "5600"
+              "playerId": "5600",
+              "afterTrade": {
+                "rank": 41,
+                "games": 28
+              }
             },
             {
               "name": "Pascal Siakam",
-              "playerId": "5658"
+              "playerId": "5658",
+              "afterTrade": {
+                "rank": 32,
+                "games": 26
+              }
             },
             {
               "name": "Deandre Ayton",
-              "playerId": "5958"
+              "playerId": "5958",
+              "afterTrade": {
+                "rank": 78,
+                "games": 22
+              }
             },
             {
               "name": "Jayson Tatum",
-              "playerId": "5765"
+              "playerId": "5765",
+              "afterTrade": {
+                "rank": 68,
+                "games": 26
+              }
             }
           ]
         }
@@ -4645,7 +8609,11 @@
           "receives": [
             {
               "name": "DeAndre Jordan",
-              "playerId": "4497"
+              "playerId": "4497",
+              "afterTrade": {
+                "rank": 154,
+                "games": 19
+              }
             }
           ]
         },
@@ -4654,7 +8622,11 @@
           "receives": [
             {
               "name": "Jayson Tatum",
-              "playerId": "5765"
+              "playerId": "5765",
+              "afterTrade": {
+                "rank": 50,
+                "games": 29
+              }
             }
           ]
         }
@@ -4669,7 +8641,11 @@
           "receives": [
             {
               "name": "DeMarcus Cousins",
-              "playerId": "4720"
+              "playerId": "4720",
+              "afterTrade": {
+                "rank": 66,
+                "games": 30
+              }
             }
           ]
         },
@@ -4678,7 +8654,11 @@
           "receives": [
             {
               "name": "Al Horford",
-              "playerId": "4245"
+              "playerId": "4245",
+              "afterTrade": {
+                "rank": 18,
+                "games": 35
+              }
             }
           ]
         }
@@ -4693,15 +8673,27 @@
           "receives": [
             {
               "name": "Kemba Walker",
-              "playerId": "4890"
+              "playerId": "4890",
+              "afterTrade": {
+                "rank": 15,
+                "games": 46
+              }
             },
             {
               "name": "Kevin Love",
-              "playerId": "4391"
+              "playerId": "4391",
+              "afterTrade": {
+                "rank": 217,
+                "games": 18
+              }
             },
             {
               "name": "Blake Griffin",
-              "playerId": "4561"
+              "playerId": "4561",
+              "afterTrade": {
+                "rank": 64,
+                "games": 41
+              }
             }
           ]
         },
@@ -4710,15 +8702,27 @@
           "receives": [
             {
               "name": "Joe Ingles",
-              "playerId": "5393"
+              "playerId": "5393",
+              "afterTrade": {
+                "rank": 65,
+                "games": 44
+              }
             },
             {
               "name": "Jimmy Butler III",
-              "playerId": "4912"
+              "playerId": "4912",
+              "afterTrade": {
+                "rank": 35,
+                "games": 34
+              }
             },
             {
               "name": "Giannis Antetokounmpo",
-              "playerId": "5185"
+              "playerId": "5185",
+              "afterTrade": {
+                "rank": 3,
+                "games": 39
+              }
             }
           ]
         }
@@ -4733,11 +8737,19 @@
           "receives": [
             {
               "name": "Jeff Teague",
-              "playerId": "4624"
+              "playerId": "4624",
+              "afterTrade": {
+                "rank": 253,
+                "games": 19
+              }
             },
             {
               "name": "Enes Freedom",
-              "playerId": "4899"
+              "playerId": "4899",
+              "afterTrade": {
+                "rank": 202,
+                "games": 29
+              }
             }
           ]
         },
@@ -4746,11 +8758,19 @@
           "receives": [
             {
               "name": "T.J. Warren",
-              "playerId": "5325"
+              "playerId": "5325",
+              "afterTrade": {
+                "rank": 318,
+                "games": 11
+              }
             },
             {
               "name": "Dennis Schröder",
-              "playerId": "5187"
+              "playerId": "5187",
+              "afterTrade": {
+                "rank": 153,
+                "games": 44
+              }
             }
           ]
         }
@@ -4765,15 +8785,27 @@
           "receives": [
             {
               "name": "Larry Nance Jr.",
-              "playerId": "5487"
+              "playerId": "5487",
+              "afterTrade": {
+                "rank": 106,
+                "games": 32
+              }
             },
             {
               "name": "Kyle Anderson",
-              "playerId": "5341"
+              "playerId": "5341",
+              "afterTrade": {
+                "rank": 358,
+                "games": 9
+              }
             },
             {
               "name": "DeMar DeRozan",
-              "playerId": "4614"
+              "playerId": "4614",
+              "afterTrade": {
+                "rank": 63,
+                "games": 40
+              }
             }
           ]
         },
@@ -4782,15 +8814,27 @@
           "receives": [
             {
               "name": "Nikola Jokić",
-              "playerId": "5352"
+              "playerId": "5352",
+              "afterTrade": {
+                "rank": 6,
+                "games": 47
+              }
             },
             {
               "name": "Serge Ibaka",
-              "playerId": "4486"
+              "playerId": "4486",
+              "afterTrade": {
+                "rank": 89,
+                "games": 40
+              }
             },
             {
               "name": "Lou Williams",
-              "playerId": "3971"
+              "playerId": "3971",
+              "afterTrade": {
+                "rank": 70,
+                "games": 43
+              }
             }
           ]
         }
@@ -4805,15 +8849,27 @@
           "receives": [
             {
               "name": "Kyle Anderson",
-              "playerId": "5341"
+              "playerId": "5341",
+              "afterTrade": {
+                "rank": 346,
+                "games": 10
+              }
             },
             {
               "name": "Larry Nance Jr.",
-              "playerId": "5487"
+              "playerId": "5487",
+              "afterTrade": {
+                "rank": 98,
+                "games": 34
+              }
             },
             {
               "name": "DeMar DeRozan",
-              "playerId": "4614"
+              "playerId": "4614",
+              "afterTrade": {
+                "rank": 60,
+                "games": 42
+              }
             }
           ]
         },
@@ -4822,15 +8878,27 @@
           "receives": [
             {
               "name": "Nikola Jokić",
-              "playerId": "5352"
+              "playerId": "5352",
+              "afterTrade": {
+                "rank": 5,
+                "games": 49
+              }
             },
             {
               "name": "Serge Ibaka",
-              "playerId": "4486"
+              "playerId": "4486",
+              "afterTrade": {
+                "rank": 89,
+                "games": 42
+              }
             },
             {
               "name": "Lou Williams",
-              "playerId": "3971"
+              "playerId": "3971",
+              "afterTrade": {
+                "rank": 72,
+                "games": 45
+              }
             }
           ]
         }
@@ -4845,11 +8913,19 @@
           "receives": [
             {
               "name": "Andrew Wiggins",
-              "playerId": "5292"
+              "playerId": "5292",
+              "afterTrade": {
+                "rank": 176,
+                "games": 45
+              }
             },
             {
               "name": "Danilo Gallinari",
-              "playerId": "4468"
+              "playerId": "4468",
+              "afterTrade": {
+                "rank": 54,
+                "games": 37
+              }
             }
           ]
         },
@@ -4858,7 +8934,11 @@
           "receives": [
             {
               "name": "Josh Richardson",
-              "playerId": "5500"
+              "playerId": "5500",
+              "afterTrade": {
+                "rank": 79,
+                "games": 43
+              }
             }
           ]
         }
@@ -4873,19 +8953,35 @@
           "receives": [
             {
               "name": "Kent Bazemore",
-              "playerId": "5102"
+              "playerId": "5102",
+              "afterTrade": {
+                "rank": 215,
+                "games": 44
+              }
             },
             {
               "name": "Marcus Morris Sr.",
-              "playerId": "4895"
+              "playerId": "4895",
+              "afterTrade": {
+                "rank": 109,
+                "games": 53
+              }
             },
             {
               "name": "Bradley Beal",
-              "playerId": "5009"
+              "playerId": "5009",
+              "afterTrade": {
+                "rank": 8,
+                "games": 60
+              }
             },
             {
               "name": "Jonas Valančiūnas",
-              "playerId": "4886"
+              "playerId": "4886",
+              "afterTrade": {
+                "rank": 207,
+                "games": 25
+              }
             }
           ]
         },
@@ -4894,19 +8990,35 @@
           "receives": [
             {
               "name": "Trevor Ariza",
-              "playerId": "3860"
+              "playerId": "3860",
+              "afterTrade": {
+                "rank": 94,
+                "games": 49
+              }
             },
             {
               "name": "T.J. Warren",
-              "playerId": "5325"
+              "playerId": "5325",
+              "afterTrade": {
+                "rank": 224,
+                "games": 23
+              }
             },
             {
               "name": "Al Horford",
-              "playerId": "4245"
+              "playerId": "4245",
+              "afterTrade": {
+                "rank": 30,
+                "games": 47
+              }
             },
             {
               "name": "Hassan Whiteside",
-              "playerId": "4764"
+              "playerId": "4764",
+              "afterTrade": {
+                "rank": 103,
+                "games": 52
+              }
             }
           ]
         }
@@ -4921,15 +9033,27 @@
           "receives": [
             {
               "name": "Joel Embiid",
-              "playerId": "5294"
+              "playerId": "5294",
+              "afterTrade": {
+                "rank": 27,
+                "games": 42
+              }
             },
             {
               "name": "Dwight Howard",
-              "playerId": "3818"
+              "playerId": "3818",
+              "afterTrade": {
+                "rank": null,
+                "games": 0
+              }
             },
             {
               "name": "Eric Bledsoe",
-              "playerId": "4749"
+              "playerId": "4749",
+              "afterTrade": {
+                "rank": 32,
+                "games": 57
+              }
             }
           ]
         },
@@ -4938,11 +9062,19 @@
           "receives": [
             {
               "name": "John Wall",
-              "playerId": "4716"
+              "playerId": "4716",
+              "afterTrade": {
+                "rank": 362,
+                "games": 11
+              }
             },
             {
               "name": "Blake Griffin",
-              "playerId": "4561"
+              "playerId": "4561",
+              "afterTrade": {
+                "rank": 54,
+                "games": 58
+              }
             }
           ]
         }
@@ -4957,7 +9089,11 @@
           "receives": [
             {
               "name": "Kyle Kuzma",
-              "playerId": "5840"
+              "playerId": "5840",
+              "afterTrade": {
+                "rank": 129,
+                "games": 54
+              }
             }
           ]
         },
@@ -4966,7 +9102,11 @@
           "receives": [
             {
               "name": "Andrew Wiggins",
-              "playerId": "5292"
+              "playerId": "5292",
+              "afterTrade": {
+                "rank": 162,
+                "games": 59
+              }
             }
           ]
         }
@@ -4981,11 +9121,19 @@
           "receives": [
             {
               "name": "James Harden",
-              "playerId": "4563"
+              "playerId": "4563",
+              "afterTrade": {
+                "rank": 1,
+                "games": 75
+              }
             },
             {
               "name": "Kemba Walker",
-              "playerId": "4890"
+              "playerId": "4890",
+              "afterTrade": {
+                "rank": 16,
+                "games": 74
+              }
             }
           ]
         },
@@ -4994,11 +9142,19 @@
           "receives": [
             {
               "name": "Stephen Curry",
-              "playerId": "4612"
+              "playerId": "4612",
+              "afterTrade": {
+                "rank": 12,
+                "games": 60
+              }
             },
             {
               "name": "D'Angelo Russell",
-              "playerId": "5433"
+              "playerId": "5433",
+              "afterTrade": {
+                "rank": 29,
+                "games": 73
+              }
             }
           ]
         }

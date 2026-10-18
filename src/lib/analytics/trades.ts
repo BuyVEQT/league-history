@@ -7,14 +7,18 @@ import { rankValue, replacementRank } from "./value";
  * replacement curve as the draft (see ./value): replacement level is roughly
  * how many players are rostered (teams × draft rounds, e.g. 156 in a 12-team,
  * 13-round league), and fringe players add nothing, so a side can't "win" just
- * by receiving more bodies. Ranks cover the full NBA season, not just the
- * weeks after the trade — an approximation, labelled in the UI.
+ * by receiving more bodies.
+ *
+ * When every player in a trade has a post-trade rank (games after the trade
+ * only, from Sleeper's game logs), the trade is scored on that: what each side
+ * actually got. Otherwise it falls back to full-season ranks, which include
+ * games played before the trade.
  */
 export interface TradeSideView {
   teamId: TeamId;
   managerId: ManagerId;
   teamName: string;
-  players: { name: string; playerId: string | null; actualRank: number | null }[];
+  players: { name: string; playerId: string | null; actualRank: number | null; afterRank?: number | null; afterGames?: number }[];
   value: number;
 }
 
@@ -24,6 +28,8 @@ export interface TradeView {
   date: string;
   status: Trade["status"];
   sides: TradeSideView[];
+  /** "after" = scored on games after the trade; "season" = full-season ranks. */
+  basis: "after" | "season";
   /** Manager whose incoming players were worth more; null for a dead-even trade. */
   winnerManagerId: ManagerId | null;
   margin: number;
@@ -36,15 +42,20 @@ export function seasonTrades(season: Season): TradeView[] {
   const rankById = new Map((season.players ?? []).map((p) => [p.playerId, p.actualRank]));
   const replacement = replacementRank(season);
   return (season.trades ?? []).map((t) => {
+    const basis = t.sides.every((s) => s.receives.every((r) => r.afterTrade)) ? ("after" as const) : ("season" as const);
     const sides = t.sides.map((s) => {
       const team = teams.get(s.teamId)!;
-      const players = s.receives.map((r) => ({ ...r, actualRank: r.playerId ? (rankById.get(r.playerId) ?? null) : null }));
+      const players = s.receives.map(({ afterTrade, ...r }) => ({
+        ...r,
+        actualRank: r.playerId ? (rankById.get(r.playerId) ?? null) : null,
+        ...(afterTrade && { afterRank: afterTrade.rank, afterGames: afterTrade.games }),
+      }));
       return {
         teamId: s.teamId,
         managerId: team.managerId,
         teamName: team.name,
         players,
-        value: players.reduce((sum, p) => sum + rankValue(p.actualRank, replacement), 0),
+        value: players.reduce((sum, p) => sum + rankValue(basis === "after" ? p.afterRank! : p.actualRank, replacement), 0),
       };
     });
     const [a, b] = sides;
@@ -54,6 +65,7 @@ export function seasonTrades(season: Season): TradeView[] {
       label: season.label,
       date: t.date,
       status: t.status,
+      basis,
       sides,
       winnerManagerId: margin === 0 ? null : a.value > b.value ? a.managerId : b.managerId,
       margin,
