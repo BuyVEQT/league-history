@@ -17,7 +17,11 @@
     {
       "id": "2026:matt",
       "managerId": "matt",
-      "name": "Mad Maxey"
+      "name": "Mad Maxey",
+      "namesake": {
+        "name": "Tyrese Maxey",
+        "playerId": "6413"
+      }
     },
     {
       "id": "2026:dadder",
@@ -32,7 +36,11 @@
     {
       "id": "2026:dylan",
       "managerId": "dylan",
-      "name": "Vagiannis"
+      "name": "Vagiannis",
+      "namesake": {
+        "name": "Giannis Antetokounmpo",
+        "playerId": "5185"
+      }
     },
     {
       "id": "2026:jake",
@@ -42,7 +50,11 @@
     {
       "id": "2026:benjamin",
       "managerId": "benjamin",
-      "name": "Sweet Home Wembanyama"
+      "name": "Sweet Home Wembanyama",
+      "namesake": {
+        "name": "Victor Wembanyama",
+        "playerId": "10094"
+      }
     },
     {
       "id": "2026:mitchell",
@@ -52,12 +64,20 @@
     {
       "id": "2026:michael",
       "managerId": "michael",
-      "name": "Dončić Corleone"
+      "name": "Dončić Corleone",
+      "namesake": {
+        "name": "Luka Dončić",
+        "playerId": "6014"
+      }
     },
     {
       "id": "2026:eddie",
       "managerId": "eddie",
-      "name": "Ain't No Jokic"
+      "name": "Ain't No Jokic",
+      "namesake": {
+        "name": "Nikola Jokić",
+        "playerId": "5352"
+      }
     },
     {
       "id": "2026:jacob-g",
@@ -72,7 +92,11 @@
     {
       "id": "2026:jordan",
       "managerId": "jordan",
-      "name": "Day to Davis"
+      "name": "Day to Davis",
+      "namesake": {
+        "name": "Anthony Davis",
+        "playerId": "5007"
+      }
     }
   ],
   "matchups": [
@@ -6841,13 +6865,19 @@
         {
           "teamId": "2026:jake",
           "receives": [
-            "Kevin Durant"
+            {
+              "name": "Kevin Durant",
+              "playerId": "4244"
+            }
           ]
         },
         {
           "teamId": "2026:dadder",
           "receives": [
-            "Russell Westbrook"
+            {
+              "name": "Russell Westbrook",
+              "playerId": "4390"
+            }
           ]
         }
       ]
@@ -6859,13 +6889,19 @@
         {
           "teamId": "2026:jordan",
           "receives": [
-            "Peyton Watson"
+            {
+              "name": "Peyton Watson",
+              "playerId": "6720"
+            }
           ]
         },
         {
           "teamId": "2026:jacob-v",
           "receives": [
-            "Jalen Williams"
+            {
+              "name": "Jalen Williams",
+              "playerId": "6702"
+            }
           ]
         }
       ]
@@ -6877,13 +6913,19 @@
         {
           "teamId": "2026:michael",
           "receives": [
-            "Ja Morant"
+            {
+              "name": "Ja Morant",
+              "playerId": "6164"
+            }
           ]
         },
         {
           "teamId": "2026:dadder",
           "receives": [
-            "Mark Williams"
+            {
+              "name": "Mark Williams",
+              "playerId": "6705"
+            }
           ]
         }
       ]
@@ -6895,20 +6937,47 @@
         {
           "teamId": "2026:jacob-g",
           "receives": [
-            "Amen Thompson",
-            "LaMelo Ball",
-            "Kristaps Porziņģis",
-            "Kon Knueppel"
+            {
+              "name": "Amen Thompson",
+              "playerId": "10108"
+            },
+            {
+              "name": "LaMelo Ball",
+              "playerId": "6395"
+            },
+            {
+              "name": "Kristaps Porziņģis",
+              "playerId": "5464"
+            },
+            {
+              "name": "Kon Knueppel",
+              "playerId": "10450"
+            }
           ]
         },
         {
           "teamId": "2026:michael",
           "receives": [
-            "Devin Booker",
-            "Cason Wallace",
-            "Andrew Wiggins",
-            "Payton Pritchard",
-            "Joel Embiid"
+            {
+              "name": "Devin Booker",
+              "playerId": "5473"
+            },
+            {
+              "name": "Cason Wallace",
+              "playerId": "10107"
+            },
+            {
+              "name": "Andrew Wiggins",
+              "playerId": "5292"
+            },
+            {
+              "name": "Payton Pritchard",
+              "playerId": "6418"
+            },
+            {
+              "name": "Joel Embiid",
+              "playerId": "5294"
+            }
           ]
         }
       ]
@@ -6920,13 +6989,19 @@
         {
           "teamId": "2026:jacob-g",
           "receives": [
-            "Myles Turner"
+            {
+              "name": "Myles Turner",
+              "playerId": "5471"
+            }
           ]
         },
         {
           "teamId": "2026:jordan",
           "receives": [
-            "Dillon Brooks"
+            {
+              "name": "Dillon Brooks",
+              "playerId": "5858"
+            }
           ]
         }
       ]

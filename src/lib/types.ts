@@ -20,6 +20,8 @@ export interface Team {
   id: TeamId;
   managerId: ManagerId;
   name: string;
+  /** The player the team name clearly refers to ("Mad Maxey"), when there is one. */
+  namesake?: { name: string; playerId: string | null };
 }
 
 export type Stage = "regular" | "quarterfinal" | "semifinal" | "final" | "third_place";
@@ -111,10 +113,24 @@ export interface PlayerSeason {
   stats?: PlayerStats;
 }
 
+export interface TradePlayer {
+  name: string;
+  /** Null when the name matches no ranked or drafted player that season (so the player is unranked). */
+  playerId: string | null;
+}
+
 export interface Trade {
   date: string; // YYYY-MM-DD
   status: "completed" | "vetoed";
-  sides: { teamId: TeamId; receives: string[] }[];
+  sides: { teamId: TeamId; receives: TradePlayer[] }[];
+}
+
+/** The source's own manager rating (Yahoo "Ratings & Levels"), a snapshot on `asOf`. */
+export interface ManagerRating {
+  managerId: ManagerId;
+  rank: number;
+  rating: number;
+  level: string;
 }
 
 export interface League {
@@ -122,6 +138,7 @@ export interface League {
   source: "demo" | "yahoo";
   managers: Manager[];
   seasons: Season[]; // ascending by year
+  ratings?: { asOf: string; rows: ManagerRating[] };
 }
 
 /** The seam where a Yahoo implementation plugs in later. */

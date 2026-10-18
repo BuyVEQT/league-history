@@ -1,0 +1,79 @@
+{
+  "ratings": {
+    "asOf": "2026-10-17",
+    "rows": [
+      {
+        "managerId": "matt",
+        "rank": 1,
+        "rating": 962,
+        "level": "Diamond"
+      },
+      {
+        "managerId": "najim",
+        "rank": 2,
+        "rating": 928,
+        "level": "Diamond"
+      },
+      {
+        "managerId": "dylan",
+        "rank": 3,
+        "rating": 823,
+        "level": "Platinum"
+      },
+      {
+        "managerId": "jake",
+        "rank": 4,
+        "rating": 819,
+        "level": "Platinum"
+      },
+      {
+        "managerId": "eddie",
+        "rank": 5,
+        "rating": 808,
+        "level": "Platinum"
+      },
+      {
+        "managerId": "michael",
+        "rank": 6,
+        "rating": 772,
+        "level": "Gold"
+      },
+      {
+        "managerId": "jacob-v",
+        "rank": 7,
+        "rating": 768,
+        "level": "Gold"
+      },
+      {
+        "managerId": "mitchell",
+        "rank": 8,
+        "rating": 725,
+        "level": "Gold"
+      },
+      {
+        "managerId": "dadder",
+        "rank": 9,
+        "rating": 675,
+        "level": "Silver"
+      },
+      {
+        "managerId": "jacob-g",
+        "rank": 10,
+        "rating": 660,
+        "level": "Silver"
+      },
+      {
+        "managerId": "benjamin",
+        "rank": 11,
+        "rating": 646,
+        "level": "Silver"
+      },
+      {
+        "managerId": "jordan",
+        "rank": 12,
+        "rating": 606,
+        "level": "Silver"
+      }
+    ]
+  }
+}

@@ -1,13 +1,13 @@
-# idx|team name (as on the Managers page)|manager id
+# idx|team name (as on the Managers page)|manager id|namesake player (optional; a clear player reference in the team name)
 0|BIG papa|dadder
-1|Brunthony Davocolo|jacob-g
-2|Chef Curry|eddie
-3|Daddy Doncic|jake
-4|Dame or Bust (Capt)|dylan
-5|Davis Bertans (JVL)|jacob-v
-6|Jimmy BUMtler 👑|matt
-7|KD²|jordan
+1|Brunthony Davocolo|jacob-g|Anthony Davis
+2|Chef Curry|eddie|Stephen Curry
+3|Daddy Doncic|jake|Luka Dončić
+4|Dame or Bust (Capt)|dylan|Damian Lillard
+5|Davis Bertans (JVL)|jacob-v|Dāvis Bertāns
+6|Jimmy BUMtler 👑|matt|Jimmy Butler III
+7|KD²|jordan|Kevin Durant
 8|Mikola Colić|michael
-9|SGA-2|najim
+9|SGA-2|najim|Shai Gilgeous-Alexander
 10|Sunday Strangler|mitchell
 11|Tyrese's Pieces|benjamin

@@ -32,7 +32,11 @@
     {
       "id": "2019:matt",
       "managerId": "matt",
-      "name": "Klaw Leonard"
+      "name": "Klaw Leonard",
+      "namesake": {
+        "name": "Kawhi Leonard",
+        "playerId": "4896"
+      }
     },
     {
       "id": "2019:jordan",
@@ -52,7 +56,11 @@
     {
       "id": "2019:najim",
       "managerId": "najim",
-      "name": "Suck my Doncic"
+      "name": "Suck my Doncic",
+      "namesake": {
+        "name": "Luka Dončić",
+        "playerId": "6014"
+      }
     },
     {
       "id": "2019:benjamin",
@@ -62,7 +70,11 @@
     {
       "id": "2019:eddie",
       "managerId": "eddie",
-      "name": "Vince Carter's Nuts"
+      "name": "Vince Carter's Nuts",
+      "namesake": {
+        "name": "Vince Carter",
+        "playerId": "3248"
+      }
     }
   ],
   "matchups": [
@@ -4535,18 +4547,39 @@
         {
           "teamId": "2019:jordan",
           "receives": [
-            "Jamal Murray",
-            "Zach LaVine",
-            "Harrison Barnes",
-            "DeMarcus Cousins"
+            {
+              "name": "Jamal Murray",
+              "playerId": "5638"
+            },
+            {
+              "name": "Zach LaVine",
+              "playerId": "5324"
+            },
+            {
+              "name": "Harrison Barnes",
+              "playerId": "5013"
+            },
+            {
+              "name": "DeMarcus Cousins",
+              "playerId": "4720"
+            }
           ]
         },
         {
           "teamId": "2019:dadder",
           "receives": [
-            "Ben Simmons",
-            "Pascal Siakam",
-            "Jayson Tatum"
+            {
+              "name": "Ben Simmons",
+              "playerId": "5600"
+            },
+            {
+              "name": "Pascal Siakam",
+              "playerId": "5658"
+            },
+            {
+              "name": "Jayson Tatum",
+              "playerId": "5765"
+            }
           ]
         }
       ]
@@ -4558,20 +4591,47 @@
         {
           "teamId": "2019:jordan",
           "receives": [
-            "Zach LaVine",
-            "Jamal Murray",
-            "Harrison Barnes",
-            "DeMarcus Cousins",
-            "Steven Adams"
+            {
+              "name": "Zach LaVine",
+              "playerId": "5324"
+            },
+            {
+              "name": "Jamal Murray",
+              "playerId": "5638"
+            },
+            {
+              "name": "Harrison Barnes",
+              "playerId": "5013"
+            },
+            {
+              "name": "DeMarcus Cousins",
+              "playerId": "4720"
+            },
+            {
+              "name": "Steven Adams",
+              "playerId": "5163"
+            }
           ]
         },
         {
           "teamId": "2019:dadder",
           "receives": [
-            "Ben Simmons",
-            "Pascal Siakam",
-            "Deandre Ayton",
-            "Jayson Tatum"
+            {
+              "name": "Ben Simmons",
+              "playerId": "5600"
+            },
+            {
+              "name": "Pascal Siakam",
+              "playerId": "5658"
+            },
+            {
+              "name": "Deandre Ayton",
+              "playerId": "5958"
+            },
+            {
+              "name": "Jayson Tatum",
+              "playerId": "5765"
+            }
           ]
         }
       ]
@@ -4583,13 +4643,19 @@
         {
           "teamId": "2019:dadder",
           "receives": [
-            "DeAndre Jordan"
+            {
+              "name": "DeAndre Jordan",
+              "playerId": "4497"
+            }
           ]
         },
         {
           "teamId": "2019:jordan",
           "receives": [
-            "Jayson Tatum"
+            {
+              "name": "Jayson Tatum",
+              "playerId": "5765"
+            }
           ]
         }
       ]
@@ -4601,13 +4667,19 @@
         {
           "teamId": "2019:jacob-g",
           "receives": [
-            "DeMarcus Cousins"
+            {
+              "name": "DeMarcus Cousins",
+              "playerId": "4720"
+            }
           ]
         },
         {
           "teamId": "2019:dadder",
           "receives": [
-            "Al Horford"
+            {
+              "name": "Al Horford",
+              "playerId": "4245"
+            }
           ]
         }
       ]
@@ -4619,17 +4691,35 @@
         {
           "teamId": "2019:michael",
           "receives": [
-            "Kemba Walker",
-            "Kevin Love",
-            "Blake Griffin"
+            {
+              "name": "Kemba Walker",
+              "playerId": "4890"
+            },
+            {
+              "name": "Kevin Love",
+              "playerId": "4391"
+            },
+            {
+              "name": "Blake Griffin",
+              "playerId": "4561"
+            }
           ]
         },
         {
           "teamId": "2019:jacob-g",
           "receives": [
-            "Joe Ingles",
-            "Jimmy Butler III",
-            "Giannis Antetokounmpo"
+            {
+              "name": "Joe Ingles",
+              "playerId": "5393"
+            },
+            {
+              "name": "Jimmy Butler III",
+              "playerId": "4912"
+            },
+            {
+              "name": "Giannis Antetokounmpo",
+              "playerId": "5185"
+            }
           ]
         }
       ]
@@ -4641,15 +4731,27 @@
         {
           "teamId": "2019:jacob-g",
           "receives": [
-            "Jeff Teague",
-            "Enes Freedom"
+            {
+              "name": "Jeff Teague",
+              "playerId": "4624"
+            },
+            {
+              "name": "Enes Freedom",
+              "playerId": "4899"
+            }
           ]
         },
         {
           "teamId": "2019:matt",
           "receives": [
-            "T.J. Warren",
-            "Dennis Schröder"
+            {
+              "name": "T.J. Warren",
+              "playerId": "5325"
+            },
+            {
+              "name": "Dennis Schröder",
+              "playerId": "5187"
+            }
           ]
         }
       ]
@@ -4661,17 +4763,35 @@
         {
           "teamId": "2019:eddie",
           "receives": [
-            "Larry Nance Jr.",
-            "Kyle Anderson",
-            "DeMar DeRozan"
+            {
+              "name": "Larry Nance Jr.",
+              "playerId": "5487"
+            },
+            {
+              "name": "Kyle Anderson",
+              "playerId": "5341"
+            },
+            {
+              "name": "DeMar DeRozan",
+              "playerId": "4614"
+            }
           ]
         },
         {
           "teamId": "2019:najim",
           "receives": [
-            "Nikola Jokić",
-            "Serge Ibaka",
-            "Lou Williams"
+            {
+              "name": "Nikola Jokić",
+              "playerId": "5352"
+            },
+            {
+              "name": "Serge Ibaka",
+              "playerId": "4486"
+            },
+            {
+              "name": "Lou Williams",
+              "playerId": "3971"
+            }
           ]
         }
       ]
@@ -4683,17 +4803,35 @@
         {
           "teamId": "2019:eddie",
           "receives": [
-            "Kyle Anderson",
-            "Larry Nance Jr.",
-            "DeMar DeRozan"
+            {
+              "name": "Kyle Anderson",
+              "playerId": "5341"
+            },
+            {
+              "name": "Larry Nance Jr.",
+              "playerId": "5487"
+            },
+            {
+              "name": "DeMar DeRozan",
+              "playerId": "4614"
+            }
           ]
         },
         {
           "teamId": "2019:najim",
           "receives": [
-            "Nikola Jokić",
-            "Serge Ibaka",
-            "Lou Williams"
+            {
+              "name": "Nikola Jokić",
+              "playerId": "5352"
+            },
+            {
+              "name": "Serge Ibaka",
+              "playerId": "4486"
+            },
+            {
+              "name": "Lou Williams",
+              "playerId": "3971"
+            }
           ]
         }
       ]
@@ -4705,14 +4843,23 @@
         {
           "teamId": "2019:eddie",
           "receives": [
-            "Andrew Wiggins",
-            "Danilo Gallinari"
+            {
+              "name": "Andrew Wiggins",
+              "playerId": "5292"
+            },
+            {
+              "name": "Danilo Gallinari",
+              "playerId": "4468"
+            }
           ]
         },
         {
           "teamId": "2019:najim",
           "receives": [
-            "Josh Richardson"
+            {
+              "name": "Josh Richardson",
+              "playerId": "5500"
+            }
           ]
         }
       ]
@@ -4724,19 +4871,43 @@
         {
           "teamId": "2019:mitchell",
           "receives": [
-            "Kent Bazemore",
-            "Marcus Morris Sr.",
-            "Bradley Beal",
-            "Jonas Valančiūnas"
+            {
+              "name": "Kent Bazemore",
+              "playerId": "5102"
+            },
+            {
+              "name": "Marcus Morris Sr.",
+              "playerId": "4895"
+            },
+            {
+              "name": "Bradley Beal",
+              "playerId": "5009"
+            },
+            {
+              "name": "Jonas Valančiūnas",
+              "playerId": "4886"
+            }
           ]
         },
         {
           "teamId": "2019:jacob-g",
           "receives": [
-            "Trevor Ariza",
-            "T.J. Warren",
-            "Al Horford",
-            "Hassan Whiteside"
+            {
+              "name": "Trevor Ariza",
+              "playerId": "3860"
+            },
+            {
+              "name": "T.J. Warren",
+              "playerId": "5325"
+            },
+            {
+              "name": "Al Horford",
+              "playerId": "4245"
+            },
+            {
+              "name": "Hassan Whiteside",
+              "playerId": "4764"
+            }
           ]
         }
       ]
@@ -4748,16 +4919,31 @@
         {
           "teamId": "2019:najim",
           "receives": [
-            "Joel Embiid",
-            "Dwight Howard",
-            "Eric Bledsoe"
+            {
+              "name": "Joel Embiid",
+              "playerId": "5294"
+            },
+            {
+              "name": "Dwight Howard",
+              "playerId": "3818"
+            },
+            {
+              "name": "Eric Bledsoe",
+              "playerId": "4749"
+            }
           ]
         },
         {
           "teamId": "2019:jacob-g",
           "receives": [
-            "John Wall",
-            "Blake Griffin"
+            {
+              "name": "John Wall",
+              "playerId": "4716"
+            },
+            {
+              "name": "Blake Griffin",
+              "playerId": "4561"
+            }
           ]
         }
       ]
@@ -4769,13 +4955,19 @@
         {
           "teamId": "2019:jacob-g",
           "receives": [
-            "Kyle Kuzma"
+            {
+              "name": "Kyle Kuzma",
+              "playerId": "5840"
+            }
           ]
         },
         {
           "teamId": "2019:najim",
           "receives": [
-            "Andrew Wiggins"
+            {
+              "name": "Andrew Wiggins",
+              "playerId": "5292"
+            }
           ]
         }
       ]
@@ -4787,15 +4979,27 @@
         {
           "teamId": "2019:jacob-g",
           "receives": [
-            "James Harden",
-            "Kemba Walker"
+            {
+              "name": "James Harden",
+              "playerId": "4563"
+            },
+            {
+              "name": "Kemba Walker",
+              "playerId": "4890"
+            }
           ]
         },
         {
           "teamId": "2019:brendan",
           "receives": [
-            "Stephen Curry",
-            "D'Angelo Russell"
+            {
+              "name": "Stephen Curry",
+              "playerId": "4612"
+            },
+            {
+              "name": "D'Angelo Russell",
+              "playerId": "5433"
+            }
           ]
         }
       ]

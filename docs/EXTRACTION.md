@@ -69,7 +69,17 @@ module, not the header link.
 
 - **Raw files, then build.** Each season's captures live in `data/leagues/caboclo/raw/<yahooYear>/`
   (`teams`, `settings`, `regular`, `playoffs`, `standings`, `draft`, `ranks`, `moves-trades`).
-  `node scripts/build-caboclo.mjs [yahooYear]` writes `<endYear>.json`. Never hand-edit the JSON.
+  `node scripts/build-caboclo.mjs [yahooYear]` writes `<endYear>.json`; with no argument it rebuilds every
+  season and `league.json` (Yahoo's manager Ratings & Levels from `raw/league/alltime.txt`). Never hand-edit the JSON.
+- **Namesakes:** `teams.txt` takes an optional 4th column, the player a team name clearly refers to
+  (`0|Mad Maxey|matt|Tyrese Maxey`). Only add unambiguous ones ("Tyrese's Pieces" could be Maxey or Haliburton).
+  The build resolves it to a player id and lists any it can't find (e.g. a player not in the NBA that season).
+- **Trade players** are resolved from names to Yahoo player ids using that season's draft and ranks, ignoring
+  accents and Jr./III suffixes and matching the ranks page's abbreviations ("N. Alexander-Walker"). The build
+  lists any traded player it can't resolve; those count as unranked.
+- **Record book:** `raw/league/recordbook-*.txt` are checked by `src/lib/data/caboclo-league.test.ts` (streaks,
+  9-0 weeks, category wins/losses, margin averages). Yahoo's margin averages also count consolation games,
+  which are not captured, so three of eight match on the record holder but not the exact value.
 - **Faster capture.** Everything except the Schedule tab can be `fetch`ed same-origin and parsed with
   `DOMParser`, one page about every second. Write the combined output into a `<pre>` and read it back with
   `get_page_text`: that avoids the ~2,000-character limit on script return values. Keep each script

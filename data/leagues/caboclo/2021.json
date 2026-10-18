@@ -27,7 +27,11 @@
     {
       "id": "2021:eddie",
       "managerId": "eddie",
-      "name": "Jimmy Buckets"
+      "name": "Jimmy Buckets",
+      "namesake": {
+        "name": "Jimmy Butler III",
+        "playerId": "4912"
+      }
     },
     {
       "id": "2021:jordan",
@@ -52,7 +56,11 @@
     {
       "id": "2021:matt",
       "managerId": "matt",
-      "name": "SSJ3 Lebron"
+      "name": "SSJ3 Lebron",
+      "namesake": {
+        "name": "LeBron James",
+        "playerId": "3704"
+      }
     },
     {
       "id": "2021:mitchell",
@@ -4400,13 +4408,19 @@
         {
           "teamId": "2021:dadder",
           "receives": [
-            "Ben Simmons"
+            {
+              "name": "Ben Simmons",
+              "playerId": "5600"
+            }
           ]
         },
         {
           "teamId": "2021:michael",
           "receives": [
-            "Deandre Ayton"
+            {
+              "name": "Deandre Ayton",
+              "playerId": "5958"
+            }
           ]
         }
       ]
@@ -4418,16 +4432,31 @@
         {
           "teamId": "2021:jake",
           "receives": [
-            "Kyle Anderson",
-            "Kemba Walker",
-            "Gordon Hayward"
+            {
+              "name": "Kyle Anderson",
+              "playerId": "5341"
+            },
+            {
+              "name": "Kemba Walker",
+              "playerId": "4890"
+            },
+            {
+              "name": "Gordon Hayward",
+              "playerId": "4724"
+            }
           ]
         },
         {
           "teamId": "2021:najim",
           "receives": [
-            "Chris Boucher",
-            "Paul George"
+            {
+              "name": "Chris Boucher",
+              "playerId": "5894"
+            },
+            {
+              "name": "Paul George",
+              "playerId": "4725"
+            }
           ]
         }
       ]
@@ -4439,20 +4468,47 @@
         {
           "teamId": "2021:mitchell",
           "receives": [
-            "Bradley Beal",
-            "John Collins",
-            "Kristaps Porziņģis",
-            "Zach LaVine"
+            {
+              "name": "Bradley Beal",
+              "playerId": "5009"
+            },
+            {
+              "name": "John Collins",
+              "playerId": "5832"
+            },
+            {
+              "name": "Kristaps Porziņģis",
+              "playerId": "5464"
+            },
+            {
+              "name": "Zach LaVine",
+              "playerId": "5324"
+            }
           ]
         },
         {
           "teamId": "2021:jacob-g",
           "receives": [
-            "Devin Booker",
-            "Jayson Tatum",
-            "Clint Capela",
-            "OG Anunoby",
-            "Jerami Grant"
+            {
+              "name": "Devin Booker",
+              "playerId": "5473"
+            },
+            {
+              "name": "Jayson Tatum",
+              "playerId": "5765"
+            },
+            {
+              "name": "Clint Capela",
+              "playerId": "5336"
+            },
+            {
+              "name": "OG Anunoby",
+              "playerId": "5836"
+            },
+            {
+              "name": "Jerami Grant",
+              "playerId": "5350"
+            }
           ]
         }
       ]
@@ -4464,15 +4520,27 @@
         {
           "teamId": "2021:jacob-g",
           "receives": [
-            "Bradley Beal",
-            "Will Barton"
+            {
+              "name": "Bradley Beal",
+              "playerId": "5009"
+            },
+            {
+              "name": "Will Barton",
+              "playerId": "5074"
+            }
           ]
         },
         {
           "teamId": "2021:michael",
           "receives": [
-            "Jaylen Brown",
-            "LeBron James"
+            {
+              "name": "Jaylen Brown",
+              "playerId": "5602"
+            },
+            {
+              "name": "LeBron James",
+              "playerId": "3704"
+            }
           ]
         }
       ]
@@ -4484,17 +4552,35 @@
         {
           "teamId": "2021:eddie",
           "receives": [
-            "John Wall",
-            "Chris Paul",
-            "Myles Turner"
+            {
+              "name": "John Wall",
+              "playerId": "4716"
+            },
+            {
+              "name": "Chris Paul",
+              "playerId": "3930"
+            },
+            {
+              "name": "Myles Turner",
+              "playerId": "5471"
+            }
           ]
         },
         {
           "teamId": "2021:jacob-g",
           "receives": [
-            "Lonzo Ball",
-            "Kyle Lowry",
-            "Anthony Davis"
+            {
+              "name": "Lonzo Ball",
+              "playerId": "5764"
+            },
+            {
+              "name": "Kyle Lowry",
+              "playerId": "4152"
+            },
+            {
+              "name": "Anthony Davis",
+              "playerId": "5007"
+            }
           ]
         }
       ]
@@ -4506,13 +4592,19 @@
         {
           "teamId": "2021:jacob-g",
           "receives": [
-            "Myles Turner"
+            {
+              "name": "Myles Turner",
+              "playerId": "5471"
+            }
           ]
         },
         {
           "teamId": "2021:jake",
           "receives": [
-            "Zion Williamson"
+            {
+              "name": "Zion Williamson",
+              "playerId": "6163"
+            }
           ]
         }
       ]
@@ -4524,14 +4616,23 @@
         {
           "teamId": "2021:jake",
           "receives": [
-            "Harrison Barnes",
-            "Evan Fournier"
+            {
+              "name": "Harrison Barnes",
+              "playerId": "5013"
+            },
+            {
+              "name": "Evan Fournier",
+              "playerId": "5054"
+            }
           ]
         },
         {
           "teamId": "2021:dadder",
           "receives": [
-            "Michael Porter Jr."
+            {
+              "name": "Michael Porter Jr.",
+              "playerId": "6025"
+            }
           ]
         }
       ]
@@ -4543,15 +4644,27 @@
         {
           "teamId": "2021:michael",
           "receives": [
-            "Ben Simmons",
-            "Rudy Gobert"
+            {
+              "name": "Ben Simmons",
+              "playerId": "5600"
+            },
+            {
+              "name": "Rudy Gobert",
+              "playerId": "5197"
+            }
           ]
         },
         {
           "teamId": "2021:jacob-g",
           "receives": [
-            "Zach LaVine",
-            "John Collins"
+            {
+              "name": "Zach LaVine",
+              "playerId": "5324"
+            },
+            {
+              "name": "John Collins",
+              "playerId": "5832"
+            }
           ]
         }
       ]
@@ -4563,15 +4676,27 @@
         {
           "teamId": "2021:jake",
           "receives": [
-            "Chris Boucher",
-            "Myles Turner"
+            {
+              "name": "Chris Boucher",
+              "playerId": "5894"
+            },
+            {
+              "name": "Myles Turner",
+              "playerId": "5471"
+            }
           ]
         },
         {
           "teamId": "2021:jacob-g",
           "receives": [
-            "Jaylen Brown",
-            "John Wall"
+            {
+              "name": "Jaylen Brown",
+              "playerId": "5602"
+            },
+            {
+              "name": "John Wall",
+              "playerId": "4716"
+            }
           ]
         }
       ]
@@ -4583,15 +4708,27 @@
         {
           "teamId": "2021:jake",
           "receives": [
-            "De'Aaron Fox",
-            "Robert Covington"
+            {
+              "name": "De'Aaron Fox",
+              "playerId": "5767"
+            },
+            {
+              "name": "Robert Covington",
+              "playerId": "5253"
+            }
           ]
         },
         {
           "teamId": "2021:matt",
           "receives": [
-            "Andrew Wiggins",
-            "Michael Porter Jr."
+            {
+              "name": "Andrew Wiggins",
+              "playerId": "5292"
+            },
+            {
+              "name": "Michael Porter Jr.",
+              "playerId": "6025"
+            }
           ]
         }
       ]
@@ -4603,13 +4740,19 @@
         {
           "teamId": "2021:jake",
           "receives": [
-            "Giannis Antetokounmpo"
+            {
+              "name": "Giannis Antetokounmpo",
+              "playerId": "5185"
+            }
           ]
         },
         {
           "teamId": "2021:matt",
           "receives": [
-            "Luka Dončić"
+            {
+              "name": "Luka Dončić",
+              "playerId": "6014"
+            }
           ]
         }
       ]
@@ -4621,13 +4764,19 @@
         {
           "teamId": "2021:jacob-g",
           "receives": [
-            "D'Angelo Russell"
+            {
+              "name": "D'Angelo Russell",
+              "playerId": "5433"
+            }
           ]
         },
         {
           "teamId": "2021:benjamin",
           "receives": [
-            "Richaun Holmes"
+            {
+              "name": "Richaun Holmes",
+              "playerId": "5497"
+            }
           ]
         }
       ]
@@ -4639,15 +4788,27 @@
         {
           "teamId": "2021:benjamin",
           "receives": [
-            "Trae Young",
-            "Tyler Herro"
+            {
+              "name": "Trae Young",
+              "playerId": "6016"
+            },
+            {
+              "name": "Tyler Herro",
+              "playerId": "6175"
+            }
           ]
         },
         {
           "teamId": "2021:jacob-g",
           "receives": [
-            "Chris Paul",
-            "Rudy Gobert"
+            {
+              "name": "Chris Paul",
+              "playerId": "3930"
+            },
+            {
+              "name": "Rudy Gobert",
+              "playerId": "5197"
+            }
           ]
         }
       ]
@@ -4659,13 +4820,19 @@
         {
           "teamId": "2021:jacob-g",
           "receives": [
-            "Zion Williamson"
+            {
+              "name": "Zion Williamson",
+              "playerId": "6163"
+            }
           ]
         },
         {
           "teamId": "2021:najim",
           "receives": [
-            "Pascal Siakam"
+            {
+              "name": "Pascal Siakam",
+              "playerId": "5658"
+            }
           ]
         }
       ]

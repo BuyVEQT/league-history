@@ -1,12 +1,17 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { TrendChart } from "@/components/charts/TrendChart";
-import { Avatar, ManagerLink, PageTitle, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
+import { Avatar, cardClass, ManagerLink, PageTitle, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
 import { colorForManager } from "@/lib/colors";
+import { signed } from "@/components/draft";
 import { careerFromSeasons, managerSeasons } from "@/lib/analytics/career";
+import { favouritePlayers, keepRates, reachStats } from "@/lib/analytics/draft";
+import { eloRatings } from "@/lib/analytics/elo";
 import { formatNumber, formatPct, formatRecord } from "@/lib/analytics/format";
 import { opponentRecords } from "@/lib/analytics/headToHead";
 import { MIN_SEASONS_FOR_RATES } from "@/lib/analytics/overview";
+import { managerStreaks } from "@/lib/analytics/streaks";
+import { careerLuck } from "@/lib/analytics/whatIf";
 import { getLeague } from "@/lib/data";
 
 const MIN_RIVAL_GAMES = 4;
@@ -44,6 +49,17 @@ export default async function ManagerPage(props: PageProps<"/[league]/managers/[
     const row = seasons.find((x) => x.year === s.year);
     return { year: s.year, final: row?.finalRank ?? null, regular: row?.regularRank ?? null };
   });
+  const elo = eloRatings(league);
+  const lastRating = elo.history[manager.id]?.at(-1);
+  const peak = elo.peak[manager.id];
+  const streaks = managerStreaks(league, manager.id);
+  const luck = careerLuck(league).find((r) => r.managerId === manager.id);
+  const rating = league.ratings?.rows.find((r) => r.managerId === manager.id);
+  const favourites = favouritePlayers(league).filter((f) => f.managerId === manager.id);
+  const reach = reachStats(league)?.rows.find((r) => r.managerId === manager.id);
+  const keep = keepRates(league).rows.find((r) => r.managerId === manager.id);
+  const streakDetail = (r: typeof streaks.win) => (r ? `${r.teamName}, ${r.label} (weeks ${r.fromWeek}–${r.toWeek})` : undefined);
+  const asOf = (iso: string) => new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
   const ratesNote = career.seasons < MIN_SEASONS_FOR_RATES ? ` Only ${career.seasons} season${career.seasons === 1 ? "" : "s"} played, so rates are a small sample.` : "";
 
   return (
@@ -65,7 +81,66 @@ export default async function ManagerPage(props: PageProps<"/[league]/managers/[
         <StatCard label="Best season" value={best ? best.label : "—"} detail={best ? `${best.playoffResult} · ${best.teamName}` : undefined} />
         <StatCard label="Worst season" value={worst ? worst.label : "—"} detail={worst ? `finished ${worst.finalRank} of ${worst.teamCount}` : undefined} />
         <StatCard label="Category record" value={formatRecord(career.catWins, career.catLosses, career.catTies)} />
+        {lastRating && (
+          <StatCard
+            label="Power rating"
+            value={lastRating.rating.toFixed(0)}
+            detail={`${lastRating.label === league.seasons.at(-1)!.label ? "now" : `after ${lastRating.label}`} · peak ${peak.rating.toFixed(0)} (${peak.label}, wk ${peak.week})`}
+          />
+        )}
+        <StatCard label="Longest win streak" value={streaks.win?.length ?? 0} detail={streakDetail(streaks.win)} />
+        <StatCard label="Longest losing streak" value={streaks.loss?.length ?? 0} detail={streakDetail(streaks.loss)} />
+        {luck && (
+          <StatCard
+            label="Matchup luck"
+            value={signed(luck.luck, 1)}
+            detail={`matchup wins vs what their category results predicted, ${luck.seasons} season${luck.seasons === 1 ? "" : "s"}`}
+          />
+        )}
+        {rating && (
+          <StatCard
+            label={league.source === "yahoo" ? "Yahoo manager rating" : "Manager rating"}
+            value={rating.rating}
+            detail={`${rating.level} · #${rating.rank} in the league · as of ${asOf(league.ratings!.asOf)}`}
+          />
+        )}
       </div>
+
+      {(favourites.length > 0 || reach || keep) && (
+        <Section title="Draft habits">
+          <div className="grid gap-3 md:grid-cols-3">
+            {reach && (
+              <StatCard
+                label="Reaching"
+                value={`${reach.avgEarly >= 0 ? "" : "−"}${Math.abs(reach.avgEarly).toFixed(1)} spots`}
+                detail={`${reach.avgEarly >= 0 ? "ahead of" : "after"} the pre-season rank on average (rounds 1-8); ${formatPct(reach.reachShare, 0)} of picks were 15+ spots early`}
+              />
+            )}
+            {keep && (
+              <StatCard
+                label="Picks kept"
+                value={`${keep.avgKept.toFixed(1)} per draft`}
+                detail={`${formatPct(keep.keptShare, 0)} of their own picks were still on the roster at season end`}
+              />
+            )}
+            <div className={`${cardClass} p-5`}>
+              <div className="text-xs font-medium uppercase tracking-wide text-muted">Favourite players</div>
+              {favourites.length ? (
+                <ul className="mt-3 space-y-1 text-sm">
+                  {favourites.slice(0, 5).map((f) => (
+                    <li key={f.playerId} className="flex justify-between gap-2">
+                      <span className="truncate">{f.playerName}</span>
+                      <span className="shrink-0 text-muted">drafted ×{f.picks.length}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="mt-3 text-sm text-muted">Nobody drafted in three or more seasons.</p>
+              )}
+            </div>
+          </div>
+        </Section>
+      )}
 
       <Section title="Finish by season">
         <div className="rounded-xl border border-border bg-surface/80 shadow-[inset_0_1px_0_0_rgb(255_255_255/0.03)] p-4">

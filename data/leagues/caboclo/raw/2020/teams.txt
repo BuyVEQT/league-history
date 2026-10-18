@@ -1,11 +1,11 @@
-# idx|team name (as on the Managers page)|manager id     (10-team season)
+# idx|team name (as on the Managers page)|manager id|namesake player (optional; a clear player reference in the team name)     (10-team season)
 0|Alex Honnold|jacob-g
 1|BIG papa|dadder
-2|Jimmy Buckets|eddie
+2|Jimmy Buckets|eddie|Jimmy Butler III
 3|Joe|jordan
 4|Masai Jr|najim
 5|Scrap Heap|jake
 6|Skyfuckers|benjamin
-7|SSJ3 Lebron|matt
+7|SSJ3 Lebron|matt|LeBron James
 8|Sunday Strangler|mitchell
 9|The Twin Towers 2.0|michael

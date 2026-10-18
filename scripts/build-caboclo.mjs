@@ -17,6 +17,39 @@ const lines = (yahooYear, file) => {
 };
 const num = (s) => Number(String(s).replace(/,/g, ""));
 
+/** Name key that ignores accents, punctuation and Jr./Sr./II-style suffixes ("Luka Dončić" = "luka doncic"). */
+const nameKey = (name) =>
+  name
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/\b(jr|sr|ii|iii|iv)\b\.?/g, "")
+    .replace(/[^a-z ]/g, "")
+    .split(" ")
+    .filter(Boolean)
+    .join(" ");
+
+/**
+ * Resolves player names to Yahoo player ids from a season's draft and player ranks. The ranks
+ * page abbreviates long names ("N. Alexander-Walker"), so those also match on initial + surname.
+ */
+function playerResolver(entries) {
+  const full = new Map();
+  const abbrev = new Map();
+  const add = (map, key, id) => map.set(key, map.has(key) && map.get(key) !== id ? null : id); // null = ambiguous
+  for (const { playerId, name } of entries) {
+    const m = name.match(/^([A-Z])\. (.+)$/);
+    if (m) add(abbrev, nameKey(`${m[1]} ${m[2]}`), playerId);
+    else add(full, nameKey(name), playerId);
+  }
+  return (name) => {
+    const k = nameKey(name);
+    if (full.get(k)) return full.get(k);
+    const [first, ...rest] = k.split(" ");
+    return abbrev.get(`${first?.[0]} ${rest.join(" ")}`) ?? null;
+  };
+}
+
 function build(yahooYear) {
   const year = yahooYear + 1; // Yahoo's "2025 Season" is 2025-26
   const settings = Object.fromEntries(lines(yahooYear, "settings.txt").map((l) => l.split("|")));
@@ -24,6 +57,7 @@ function build(yahooYear) {
   const teamRows = lines(yahooYear, "teams.txt").map((l) => l.split("|"));
   const id = (idx) => `${year}:${teamRows[Number(idx)][2]}`;
   const teams = teamRows.map(([, name, managerId]) => ({ id: `${year}:${managerId}`, managerId, name }));
+  const namesakes = new Map(teamRows.filter((r) => r[3]).map(([, , managerId, player]) => [`${year}:${managerId}`, player]));
   const byName = new Map(teamRows.map(([idx, name]) => [name.toLowerCase(), Number(idx)]));
   const idxOfName = (name) => {
     const i = byName.get(name.trim().toLowerCase());
@@ -85,6 +119,13 @@ function build(yahooYear) {
     });
   }
 
+  const resolve = playerResolver([...(season.draft ?? []).map((d) => ({ playerId: d.playerId, name: d.playerName })), ...(season.players ?? [])]);
+  for (const team of teams) {
+    const player = namesakes.get(team.id);
+    if (player) team.namesake = { name: player, playerId: resolve(player) };
+  }
+  const unresolved = new Set();
+
   const mt = lines(yahooYear, "moves-trades.txt");
   if (mt) {
     season.activity = {};
@@ -98,7 +139,13 @@ function build(yahooYear) {
           status,
           sides: body.split(";;").map((side) => {
             const [team, players] = side.split(":");
-            return { teamId: id(idxOfName(team)), receives: players.split(",").map((s) => s.trim()) };
+            const receives = players.split(",").map((s) => {
+              const name = s.trim();
+              const playerId = resolve(name);
+              if (!playerId) unresolved.add(name);
+              return { name, playerId };
+            });
+            return { teamId: id(idxOfName(team)), receives };
           }),
         });
       } else {
@@ -119,7 +166,36 @@ function build(yahooYear) {
   const out = join(ROOT, `${year}.json`);
   writeFileSync(out, JSON.stringify(season, null, 2) + "\n");
   console.log(`${yahooYear} -> ${year}.json: ${matchups.length} matchups, ${season.draft?.length ?? 0} picks, ${season.players?.length ?? 0} players, ${season.trades?.length ?? 0} trades`);
+  // Traded players who were neither drafted nor ranked top 300 have no id; they count as unranked.
+  if (unresolved.size) console.log(`  unranked trade players (no id): ${[...unresolved].join(", ")}`);
+  const unnamed = teams.filter((t) => t.namesake && !t.namesake.playerId).map((t) => t.namesake.name);
+  if (unnamed.length) console.log(`  namesakes outside the draft and top 300: ${unnamed.join(", ")}`);
+}
+
+/** League-wide captures: Yahoo's manager Ratings & Levels from raw/league/alltime.txt. */
+function buildLeague() {
+  const all = readFileSync(join(RAW, "league", "alltime.txt"), "utf8").split(/\r?\n/);
+  const at = all.findIndex((l) => l.startsWith("# Ratings & Levels"));
+  if (at < 0) return;
+  const asOf = all[at].match(/captured (\d{4}-\d{2}-\d{2})/)[1];
+  // Rows name each manager's team in the latest season; that season's teams.txt maps it to a manager id.
+  const latestYear = readdirSync(RAW).filter((d) => /^\d{4}$/.test(d)).sort().at(-1);
+  const latest = lines(latestYear, "teams.txt").map((l) => l.split("|"));
+  const managerOf = new Map(latest.map(([, name, managerId]) => [name.toLowerCase(), managerId]));
+  const rows = all
+    .slice(at + 1)
+    .map((l) => l.trim())
+    .filter((l) => /^\d+\|/.test(l))
+    .map((l) => {
+      const [rank, , team, rating, level] = l.split("|");
+      const managerId = managerOf.get(team.toLowerCase());
+      if (!managerId) throw new Error(`ratings: unknown team "${team}"`);
+      return { managerId, rank: num(rank), rating: num(rating), level };
+    });
+  writeFileSync(join(ROOT, "league.json"), JSON.stringify({ ratings: { asOf, rows } }, null, 2) + "\n");
+  console.log(`league.json: ${rows.length} manager ratings as of ${asOf}`);
 }
 
 const years = process.argv.slice(2).map(Number);
 for (const y of years.length ? years : readdirSync(RAW).filter((d) => /^\d{4}$/.test(d)).map(Number)) build(y);
+if (!years.length) buildLeague();

@@ -1,11 +1,11 @@
-# idx|team name (as on the Managers page)|manager id     (10-team season)
+# idx|team name (as on the Managers page)|manager id|namesake player (optional; a clear player reference in the team name)     (10-team season)
 0|BIG papa|dadder
-1|Bruno Caboclo|jacob-g
-2|De'Aaron Fox and the Hound|michael
+1|Bruno Caboclo|jacob-g|Bruno Caboclo
+2|De'Aaron Fox and the Hound|michael|De'Aaron Fox
 3|Masai Jr|najim
 4|Masai Jr .|jordan
 5|Redemption SZN|jake
-6|Russell WestBrick|eddie
-7|SSJ3 Lebron|matt
+6|Russell WestBrick|eddie|Russell Westbrook
+7|SSJ3 Lebron|matt|LeBron James
 8|Sunday Strangler|mitchell
-9|The Golden Jokic's|benjamin
+9|The Golden Jokic's|benjamin|Nikola Jokić

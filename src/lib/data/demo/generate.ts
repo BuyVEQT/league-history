@@ -1,5 +1,7 @@
 import { seasonStandings } from "../../analytics/season";
 import type { League, Manager, Matchup, Season, Team } from "../../types";
+import { addSeasonExtras, createPlayerPool, demoRatings } from "./extras";
+import { gaussian, mulberry32 } from "./random";
 
 /**
  * Deterministic demo league. A seeded PRNG means the same fictional league is
@@ -19,15 +21,15 @@ interface ManagerSpec {
   skill: number;
   /** Years the manager is in the league (inclusive ranges). */
   years: [number, number][];
-  /** Team name history: the last entry whose `from` <= year applies. */
-  teamNames: { from: number; name: string }[];
+  /** Team name history: the last entry whose `from` <= year applies. `namesake` = the (fictional) player it's named after. */
+  teamNames: { from: number; name: string; namesake?: string }[];
 }
 
 const MANAGER_SPECS: ManagerSpec[] = [
-  { id: "alex", name: "Alex Rivera", skill: 1.1, years: [[2016, 2025]], teamNames: [{ from: 2016, name: "Rivera Rim Rockers" }, { from: 2021, name: "Dunk Dynasty" }] },
+  { id: "alex", name: "Alex Rivera", skill: 1.1, years: [[2016, 2025]], teamNames: [{ from: 2016, name: "Rivera Rim Rockers" }, { from: 2021, name: "Dunk Dynasty" }, { from: 2024, name: "Bolt From the Blue", namesake: "Andre Bolt" }] },
   { id: "jordan", name: "Jordan Blake", skill: 0.9, years: [[2016, 2025]], teamNames: [{ from: 2016, name: "Blake Shake" }, { from: 2022, name: "Fast Break Club" }] },
   { id: "sam", name: "Sam Okafor", skill: 0.5, years: [[2016, 2025]], teamNames: [{ from: 2016, name: "Okafor Offense" }] },
-  { id: "taylor", name: "Taylor Nguyen", skill: 0.3, years: [[2016, 2025]], teamNames: [{ from: 2016, name: "Triple-Double Trouble" }, { from: 2020, name: "Nguyen Nets" }] },
+  { id: "taylor", name: "Taylor Nguyen", skill: 0.3, years: [[2016, 2025]], teamNames: [{ from: 2016, name: "Triple-Double Trouble" }, { from: 2020, name: "Nguyen Nets" }, { from: 2023, name: "Frostbite", namesake: "Kai Frost" }] },
   { id: "casey", name: "Casey Brooks", skill: 0.0, years: [[2016, 2025]], teamNames: [{ from: 2016, name: "Brooks Brigade" }] },
   { id: "riley", name: "Riley Park", skill: -0.1, years: [[2016, 2025]], teamNames: [{ from: 2016, name: "Park Ave Ballers" }, { from: 2019, name: "Hoop Dreams" }, { from: 2023, name: "Park Ave Ballers II" }] },
   { id: "devon", name: "Devon Hart", skill: 0.2, years: [[2016, 2018], [2021, 2025]], teamNames: [{ from: 2016, name: "Hart Attack" }, { from: 2021, name: "Heart of the Paint" }] },
@@ -35,31 +37,15 @@ const MANAGER_SPECS: ManagerSpec[] = [
   { id: "jamie", name: "Jamie Cruz", skill: -1.1, years: [[2016, 2025]], teamNames: [{ from: 2016, name: "Cruz Control" }, { from: 2024, name: "Tank Commanders" }] },
   { id: "quinn", name: "Quinn Walsh", skill: -1.4, years: [[2016, 2025]], teamNames: [{ from: 2016, name: "Walsh Wall" }] },
   { id: "priya", name: "Priya Shah", skill: 0.7, years: [[2019, 2025]], teamNames: [{ from: 2019, name: "Shah Mates" }, { from: 2023, name: "Checkmate Hoops" }] },
-  { id: "marcus", name: "Marcus Bell", skill: -0.3, years: [[2021, 2025]], teamNames: [{ from: 2021, name: "Bell Curve" }] },
+  { id: "marcus", name: "Marcus Bell", skill: -0.3, years: [[2021, 2025]], teamNames: [{ from: 2021, name: "Bell Curve" }, { from: 2025, name: "Vance Advance", namesake: "Theo Vance" }] },
 ];
-
-function mulberry32(seed: number): () => number {
-  let a = seed >>> 0;
-  return () => {
-    a = (a + 0x6d2b79f5) | 0;
-    let t = Math.imul(a ^ (a >>> 15), 1 | a);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
-function gaussian(rng: () => number): number {
-  const u = Math.max(rng(), 1e-9);
-  const v = rng();
-  return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
-}
 
 const isActive = (spec: ManagerSpec, year: number) =>
   spec.years.some(([from, to]) => year >= from && year <= to);
 
-function teamNameFor(spec: ManagerSpec, year: number): string {
-  let name = spec.teamNames[0].name;
-  for (const n of spec.teamNames) if (n.from <= year) name = n.name;
+function teamNameFor(spec: ManagerSpec, year: number): ManagerSpec["teamNames"][number] {
+  let name = spec.teamNames[0];
+  for (const n of spec.teamNames) if (n.from <= year) name = n;
   return name;
 }
 
@@ -90,13 +76,13 @@ function roundPairs(ids: string[], round: number): [string, string][] {
   return pairs;
 }
 
-function buildSeason(year: number, rng: () => number): Season {
+function buildSeason(year: number, rng: () => number): { season: Season; strength: Map<string, number> } {
   const specs = MANAGER_SPECS.filter((s) => isActive(s, year));
-  const teams: Team[] = specs.map((s) => ({
-    id: `${year}:${s.id}`,
-    managerId: s.id,
-    name: teamNameFor(s, year),
-  }));
+  const teams: Team[] = specs.map((s) => {
+    const { name, namesake } = teamNameFor(s, year);
+    // The player id is filled in once the season's player pool exists.
+    return { id: `${year}:${s.id}`, managerId: s.id, name, ...(namesake && { namesake: { name: namesake, playerId: null } }) };
+  });
   const strength = new Map(specs.map((s) => [`${year}:${s.id}`, s.skill + gaussian(rng) * 0.9]));
 
   // 2020 was a shortened season; other weeks scale with league size.
@@ -156,13 +142,20 @@ function buildSeason(year: number, rng: () => number): Season {
   const final = play(weeks + 2, "final", winnerOf(semi1), winnerOf(semi2));
   const third = play(weeks + 2, "third_place", loserOf(semi1), loserOf(semi2));
   matchups.push(semi1, semi2, final, third);
-  return season;
+  return { season, strength };
 }
 
 export function generateDemoLeague(): League {
   const rng = mulberry32(SEED);
+  // Player-level extras draw from their own streams, so they never change the matchups above.
+  const pool = createPlayerPool(mulberry32(SEED ^ 0x9e3779b9), FIRST_YEAR);
   const seasons: Season[] = [];
-  for (let year = FIRST_YEAR; year <= LAST_YEAR; year++) seasons.push(buildSeason(year, rng));
+  for (let year = FIRST_YEAR; year <= LAST_YEAR; year++) {
+    const { season, strength } = buildSeason(year, rng);
+    addSeasonExtras(season, strength, pool, mulberry32(SEED + year * 7919));
+    seasons.push(season);
+  }
   const managers: Manager[] = MANAGER_SPECS.map((s) => ({ id: s.id, name: s.name }));
-  return { name: "Demo League (fictional)", source: "demo", managers, seasons };
+  const league: League = { name: "Demo League (fictional)", source: "demo", managers, seasons };
+  return { ...league, ratings: demoRatings(league, mulberry32(SEED + 1)) };
 }

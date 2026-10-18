@@ -22,37 +22,65 @@
     {
       "id": "2024:jacob-g",
       "managerId": "jacob-g",
-      "name": "Brunthony Davocolo"
+      "name": "Brunthony Davocolo",
+      "namesake": {
+        "name": "Anthony Davis",
+        "playerId": "5007"
+      }
     },
     {
       "id": "2024:eddie",
       "managerId": "eddie",
-      "name": "Chef Curry"
+      "name": "Chef Curry",
+      "namesake": {
+        "name": "Stephen Curry",
+        "playerId": "4612"
+      }
     },
     {
       "id": "2024:jake",
       "managerId": "jake",
-      "name": "Daddy Doncic"
+      "name": "Daddy Doncic",
+      "namesake": {
+        "name": "Luka Dončić",
+        "playerId": "6014"
+      }
     },
     {
       "id": "2024:dylan",
       "managerId": "dylan",
-      "name": "Dame or Bust (Capt)"
+      "name": "Dame or Bust (Capt)",
+      "namesake": {
+        "name": "Damian Lillard",
+        "playerId": "5012"
+      }
     },
     {
       "id": "2024:jacob-v",
       "managerId": "jacob-v",
-      "name": "Davis Bertans (JVL)"
+      "name": "Davis Bertans (JVL)",
+      "namesake": {
+        "name": "Dāvis Bertāns",
+        "playerId": "4926"
+      }
     },
     {
       "id": "2024:matt",
       "managerId": "matt",
-      "name": "Jimmy BUMtler 👑"
+      "name": "Jimmy BUMtler 👑",
+      "namesake": {
+        "name": "Jimmy Butler III",
+        "playerId": "4912"
+      }
     },
     {
       "id": "2024:jordan",
       "managerId": "jordan",
-      "name": "KD²"
+      "name": "KD²",
+      "namesake": {
+        "name": "Kevin Durant",
+        "playerId": "4244"
+      }
     },
     {
       "id": "2024:michael",
@@ -62,7 +90,11 @@
     {
       "id": "2024:najim",
       "managerId": "najim",
-      "name": "SGA-2"
+      "name": "SGA-2",
+      "namesake": {
+        "name": "Shai Gilgeous-Alexander",
+        "playerId": "6022"
+      }
     },
     {
       "id": "2024:mitchell",
@@ -7065,13 +7097,19 @@
         {
           "teamId": "2024:michael",
           "receives": [
-            "Myles Turner"
+            {
+              "name": "Myles Turner",
+              "playerId": "5471"
+            }
           ]
         },
         {
           "teamId": "2024:najim",
           "receives": [
-            "Kyrie Irving"
+            {
+              "name": "Kyrie Irving",
+              "playerId": "4840"
+            }
           ]
         }
       ]
@@ -7083,17 +7121,35 @@
         {
           "teamId": "2024:najim",
           "receives": [
-            "Jalen Brunson",
-            "Jalen Williams",
-            "Bruce Brown"
+            {
+              "name": "Jalen Brunson",
+              "playerId": "6044"
+            },
+            {
+              "name": "Jalen Williams",
+              "playerId": "6702"
+            },
+            {
+              "name": "Bruce Brown",
+              "playerId": "6053"
+            }
           ]
         },
         {
           "teamId": "2024:benjamin",
           "receives": [
-            "Trey Murphy III",
-            "Cam Thomas",
-            "Bradley Beal"
+            {
+              "name": "Trey Murphy III",
+              "playerId": "6559"
+            },
+            {
+              "name": "Cam Thomas",
+              "playerId": "6569"
+            },
+            {
+              "name": "Bradley Beal",
+              "playerId": "5009"
+            }
           ]
         }
       ]
@@ -7105,15 +7161,27 @@
         {
           "teamId": "2024:eddie",
           "receives": [
-            "Jaylen Brown",
-            "Brook Lopez"
+            {
+              "name": "Jaylen Brown",
+              "playerId": "5602"
+            },
+            {
+              "name": "Brook Lopez",
+              "playerId": "4472"
+            }
           ]
         },
         {
           "teamId": "2024:mitchell",
           "receives": [
-            "Devin Vassell",
-            "Zion Williamson"
+            {
+              "name": "Devin Vassell",
+              "playerId": "6403"
+            },
+            {
+              "name": "Zion Williamson",
+              "playerId": "6163"
+            }
           ]
         }
       ]

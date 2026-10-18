@@ -1,13 +1,13 @@
-# idx|team name (as on the Managers page)|manager id
+# idx|team name (as on the Managers page)|manager id|namesake player (optional; a clear player reference in the team name)
 0|BACK to BACK|dadder
-1|Ball Don’t Lie|najim
+1|Ball Don’t Lie|najim|LaMelo Ball
 2|Glass Cannon|matt
-3|Nikosus Chrokic|dylan
-4|P Giddey|jake
-5|Slim Shai'dy|benjamin
+3|Nikosus Chrokic|dylan|Nikola Jokić
+4|P Giddey|jake|Josh Giddey
+5|Slim Shai'dy|benjamin|Shai Gilgeous-Alexander
 6|Sunday Strangler|mitchell
 7|The Real Splash Bros|michael
-8|Trigga Trae|eddie
+8|Trigga Trae|eddie|Trae Young
 9|Two Time 🥈|jacob-g
 10|We did it WE DID ITTTTTTTTTTTT|jacob-v
-11|WemBangYaMama|jordan
+11|WemBangYaMama|jordan|Victor Wembanyama
