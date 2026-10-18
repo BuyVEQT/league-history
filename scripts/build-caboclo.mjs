@@ -50,9 +50,37 @@ function playerResolver(entries) {
   };
 }
 
+const settingsOf = (yahooYear) => Object.fromEntries(lines(yahooYear, "settings.txt").map((l) => l.split("|")));
+const isUpcoming = (yahooYear) => settingsOf(yahooYear).status === "upcoming";
+
+/**
+ * A season that hasn't started: teams and whatever of the draft is captured, written to upcoming.json.
+ * It joins the history (as <endYear>.json) once it has matchups.
+ */
+function buildUpcoming(yahooYear) {
+  const year = yahooYear + 1;
+  const settings = settingsOf(yahooYear);
+  const teamRows = lines(yahooYear, "teams.txt").map((l) => l.split("|"));
+  const teams = teamRows.map(([, name, managerId, namesake]) => ({
+    id: `${year}:${managerId}`,
+    managerId,
+    name,
+    ...(namesake && { namesake: { name: namesake, playerId: null } }),
+  }));
+  const draft = (lines(yahooYear, "draft.txt") ?? []).join("|").split("|").filter(Boolean).map((tok) => {
+    const [round, pick, teamIdx, playerId, ...name] = tok.split(".");
+    return { round: num(round), pick: num(pick), overall: (num(round) - 1) * teams.length + num(pick), teamId: `${year}:${teamRows[Number(teamIdx)][2]}`, playerId, playerName: name.join(".") };
+  });
+  for (const t of teams) if (t.namesake) t.namesake.playerId = draft.find((d) => d.playerName === t.namesake.name)?.playerId ?? null;
+  const season = { year, label: `${yahooYear}-${String(year).slice(2)}`, scoring: settings.scoring, categories: settings.categories.split(","), teams, matchups: [], draft };
+  writeFileSync(join(ROOT, "upcoming.json"), JSON.stringify(season, null, 2) + "\n");
+  console.log(`${yahooYear} -> upcoming.json: ${teams.length} teams, ${draft.length} picks (season not started)`);
+}
+
 function build(yahooYear) {
+  if (isUpcoming(yahooYear)) return buildUpcoming(yahooYear);
   const year = yahooYear + 1; // Yahoo's "2025 Season" is 2025-26
-  const settings = Object.fromEntries(lines(yahooYear, "settings.txt").map((l) => l.split("|")));
+  const settings = settingsOf(yahooYear);
   const categories = settings.categories.split(",");
   const teamRows = lines(yahooYear, "teams.txt").map((l) => l.split("|"));
   const id = (idx) => `${year}:${teamRows[Number(idx)][2]}`;
@@ -192,8 +220,8 @@ function buildLeague() {
   const at = all.findIndex((l) => l.startsWith("# Ratings & Levels"));
   if (at < 0) return;
   const asOf = all[at].match(/captured (\d{4}-\d{2}-\d{2})/)[1];
-  // Rows name each manager's team in the latest season; that season's teams.txt maps it to a manager id.
-  const latestYear = readdirSync(RAW).filter((d) => /^\d{4}$/.test(d)).sort().at(-1);
+  // Rows name each manager's team in the latest played season; that season's teams.txt maps it to a manager id.
+  const latestYear = readdirSync(RAW).filter((d) => /^\d{4}$/.test(d) && !isUpcoming(Number(d))).sort().at(-1);
   const latest = lines(latestYear, "teams.txt").map((l) => l.split("|"));
   const managerOf = new Map(latest.map(([, name, managerId]) => [name.toLowerCase(), managerId]));
   const rows = all

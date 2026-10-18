@@ -1,0 +1,2 @@
+# round.pick.teamIdx.yahooPlayerId.name   (2026 draft order, round 1 from the draft results page; later rounds to come)
+1.1.0.5352.Nikola Jokić|1.2.1.10094.Victor Wembanyama|1.3.2.6014.Luka Dončić|1.4.3.6022.Shai Gilgeous-Alexander|1.5.4.6512.Cade Cunningham|1.6.5.5765.Jayson Tatum|1.7.6.6413.Tyrese Maxey|1.8.7.6355.Anthony Edwards|1.9.8.5185.Giannis Antetokounmpo|1.10.9.6562.Jalen Johnson|1.11.10.10468.Cooper Flagg|1.12.11.5826.Donovan Mitchell

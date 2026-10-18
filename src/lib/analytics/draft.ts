@@ -407,18 +407,39 @@ export interface DraftPositionRow {
   avgSlotShare: number;
   /** Players they drafted who finished the season ranked 1st, 2nd or 3rd. */
   topThreeFinishers: number;
+  /**
+   * Draft-position luck per draft, in the same value points as pick value: what their slot's picks
+   * are worth across a 13-round snake draft, minus the average slot's. Positive = lucky (early slots).
+   */
+  slotLuck: number;
+}
+
+export const SNAKE_ROUNDS = 13;
+
+/** Value of every pick a slot gets in a snake draft, minus the average slot's (see slotLuck). */
+export function slotCapital(slot: number, teams: number, rounds = SNAKE_ROUNDS): number {
+  const replacement = teams * rounds;
+  const capital = (s: number) => {
+    let sum = 0;
+    for (let r = 1; r <= rounds; r++) sum += rankValue((r - 1) * teams + (r % 2 ? s : teams - s + 1), replacement);
+    return sum;
+  };
+  let mean = 0;
+  for (let s = 1; s <= teams; s++) mean += capital(s) / teams;
+  return capital(slot) - mean;
 }
 
 /** Draft-position luck per manager: early slots get the surest stars. Earliest average slot first. */
 export function draftPositions(league: League): DraftPositionRow[] {
-  const rows = new Map<ManagerId, DraftPositionRow & { slots: number[]; shares: number[] }>();
-  for (const season of league.seasons) {
+  const rows = new Map<ManagerId, DraftPositionRow & { slots: number[]; shares: number[]; lucks: number[] }>();
+  // A drafted but unplayed season counts too: its draft order is already set.
+  for (const season of [...league.seasons, ...(league.upcoming ? [league.upcoming] : [])]) {
     if (!season.draft?.length) continue;
     const teams = teamIndex(season);
     const rank = new Map((season.players ?? []).map((p) => [p.playerId, p.actualRank]));
     for (const d of season.draft) {
       const managerId = teams.get(d.teamId)!.managerId;
-      const row = rows.get(managerId) ?? { managerId, drafts: 0, firstPicks: 0, secondPicks: 0, topThreePicks: 0, avgSlot: 0, avgSlotShare: 0, topThreeFinishers: 0, slots: [], shares: [] };
+      const row = rows.get(managerId) ?? { managerId, drafts: 0, firstPicks: 0, secondPicks: 0, topThreePicks: 0, avgSlot: 0, avgSlotShare: 0, topThreeFinishers: 0, slotLuck: 0, slots: [], shares: [], lucks: [] as number[] };
       rows.set(managerId, row);
       if ((rank.get(d.playerId) ?? Infinity) <= 3) row.topThreeFinishers++;
       if (d.round !== 1) continue;
@@ -428,10 +449,11 @@ export function draftPositions(league: League): DraftPositionRow[] {
       if (d.pick <= 3) row.topThreePicks++;
       row.slots.push(d.pick);
       row.shares.push((d.pick - 1) / Math.max(1, season.teams.length - 1));
+      row.lucks.push(slotCapital(d.pick, season.teams.length));
     }
   }
   return [...rows.values()]
     .filter((r) => r.drafts)
-    .map(({ slots, shares, ...r }) => ({ ...r, avgSlot: mean(slots), avgSlotShare: mean(shares) }))
+    .map(({ slots, shares, lucks, ...r }) => ({ ...r, avgSlot: mean(slots), avgSlotShare: mean(shares), slotLuck: mean(lucks) }))
     .sort((a, b) => a.avgSlotShare - b.avgSlotShare || b.topThreePicks - a.topThreePicks);
 }

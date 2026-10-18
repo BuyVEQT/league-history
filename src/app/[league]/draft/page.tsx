@@ -20,6 +20,10 @@ import {
   type PickValue,
 } from "@/lib/analytics/draft";
 import { formatNumber, formatPct } from "@/lib/analytics/format";
+import { InfoTip } from "@/components/InfoTip";
+
+const SLOT_LUCK_RULE =
+  "Slot luck = what a draft slot is worth: the value of every pick it gets across a 13-round snake draft, minus the average slot's, averaged over their drafts. + means lucky (early slots), − unlucky. Picking 1st is worth about +4.6 a draft in a 12-team league, picking last about −1.8. Draft value already compares each pick with its slot, so this is the luck that value doesn't count.";
 import { colorForManager } from "@/lib/colors";
 import { getLeague } from "@/lib/data";
 
@@ -41,6 +45,7 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
   const gems = lateGems(picks);
   const draftSeasons = league.seasons.filter((s) => s.draft?.length);
   const positions = draftPositions(league);
+  const positionOf = new Map(positions.map((p) => [p.managerId, p]));
   const impact = draftImpact(league);
   const reach = reachStats(league);
   const keep = keepRates(league);
@@ -73,6 +78,11 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
             {s.label} board
           </Link>
         ))}
+        {league.upcoming?.draft?.length ? (
+          <Link href={`/${slug}/draft/${league.upcoming.year}`} className="pill !border-accent !text-accent">
+            {league.upcoming.label} board · new
+          </Link>
+        ) : null}
       </nav>
 
       <Section title="Draft report card">
@@ -84,6 +94,11 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
                 <th className={th}>Manager</th>
                 <th className={th}>Drafts</th>
                 <th className={th}>Value vs avg</th>
+                <th className={th}>
+                  <span className="inline-flex items-center gap-1.5">
+                    Slot luck <InfoTip down text={SLOT_LUCK_RULE} />
+                  </span>
+                </th>
                 <th className={th}>Hit rate</th>
                 <th className={th}>Rds 1-3: slot → finish</th>
                 <th className={th}>Late gems</th>
@@ -101,6 +116,7 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
                   </td>
                   <td className={`${td} tabular-nums`}>{g.drafts}</td>
                   <td className={`${td} tabular-nums ${g.vsLeague >= 0 ? "text-positive" : "text-negative"}`}>{signed(g.vsLeague, 1)}</td>
+                  <td className={`${td} tabular-nums`}>{positionOf.get(g.managerId) ? `${signed(positionOf.get(g.managerId)!.slotLuck, 1)} · avg slot ${formatNumber(positionOf.get(g.managerId)!.avgSlot)}` : "—"}</td>
                   <td className={`${td} tabular-nums`}>{formatPct(g.hitRate, 0)}</td>
                   <td className={`${td} tabular-nums`}>
                     #{formatNumber(g.coreAvgSlot, 0)} → #{formatNumber(g.coreAvgRank, 0)}
@@ -133,7 +149,8 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
                 <th className={th}>#2 pick</th>
                 <th className={th}>Top 3</th>
                 <th className={th}>Avg slot</th>
-                <th className={th}>Drafted a top-3 finisher</th>
+                <th className={th}>Top-3 finisher drafted</th>
+                <th className={th}>Slot luck</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -153,13 +170,14 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
                     {formatNumber(r.avgSlot)} <span className="text-xs text-muted">(top {formatPct(r.avgSlotShare, 0)})</span>
                   </td>
                   <td className={`${td} tabular-nums`}>{r.topThreeFinishers || <span className="text-muted">0</span>}</td>
+                  <td className={`${td} tabular-nums ${r.slotLuck > 0.25 ? "text-positive" : r.slotLuck < -0.25 ? "text-negative" : ""}`}>{signed(r.slotLuck, 1)}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </TableWrap>
         <p className="text-xs text-muted">
-          Round-one draft slot each season; earliest average slot first. &quot;Top&quot; = position as a share of the league (0% = always picking
+          Round-one draft slot each season{league.upcoming?.draft?.length ? `, including the ${league.upcoming.label} draft` : ""}; earliest average slot first. {SLOT_LUCK_RULE} &quot;Top&quot; = position as a share of the league (0% = always picking
           first), so 10- and 12-team drafts compare fairly. The last column counts players they drafted who finished the season ranked 1st, 2nd or
           3rd. Draft value already compares each pick with its slot, so an early pick doesn&apos;t inflate it, but early slots are where the surest
           stars go; see &quot;Does draft slot matter?&quot; below.

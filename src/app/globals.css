@@ -182,7 +182,7 @@ body:has(#pause-motion:checked) *, body:has(#pause-motion:checked) *::before, bo
 .band-tabs a[aria-current="page"] { color: var(--band-ink); border-bottom-color: var(--accent); }
 .band-tabs .new { font-size: 10px; font-weight: 700; letter-spacing: .06em; color: var(--accent); margin-left: 4px; text-transform: uppercase; }
 @media (max-width: 900px) { .band-tabs { margin-left: 0; width: 100%; } .band-brand { padding-bottom: 4px; } }
-.league-main { max-width: 1200px; width: 100%; margin: 0 auto; padding: 28px 16px 64px; display: grid; gap: 28px; animation: pageIn .35s ease both; }
+.league-main { max-width: 1200px; width: 100%; margin: 0 auto; padding: 28px 16px 64px; display: grid; align-content: start; gap: 28px; animation: pageIn .35s ease both; }
 @keyframes pageIn { from { opacity: .4; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 .league-main > * { min-width: 0; }
 .eyebrow-accent { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-ink); }
