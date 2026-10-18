@@ -22,7 +22,7 @@
         ${App.tile("Trades completed", App.count(done.length), `${vetoed.length} more vetoed`)}
         ${App.tile("Most trades", App.count(act[0].trades), esc(App.name(act[0].managerId)))}
         ${App.tile("Most moves, one season", App.count(busiest.moves), `${esc(busiest.team)} · ${esc(App.name(busiest.managerId))}, ${esc(busiest.label)}`, App.TIP.moves)}
-        ${App.tile("Most lopsided trade", App.signed(lop.margin), `${esc(App.name(lop.winner))} won it, ${esc(lop.label)}`, App.TIP.tradeValue)}
+        ${App.tile("Most lopsided trade", App.val(lop.margin), `${esc(App.name(lop.winner))} won it, ${esc(lop.label)}`, App.TIP.tradeValue)}
       </section>
 
       <section class="grid g2">
@@ -45,14 +45,18 @@
         <div class="grid g2" id="log"></div>
       </section>
 
-      <section class="panel">${App.secHead(`Undrafted gems (${T.undrafted.length})`, "Nobody drafted them; they finished top 75.", App.TIP.undrafted)}<div class="grid g3" id="und"></div></section>`;
+      <section class="grid g2">
+        <div class="panel">${App.secHead(`Undrafted gems (${T.undrafted.length})`, "Nobody drafted them; they finished top 75.", App.TIP.undrafted)}<div class="grid und capped" style="grid-template-columns:repeat(auto-fill,minmax(230px,1fr))" id="und"></div>
+          <button type="button" class="btn" id="und-more" style="margin-top:12px">Show all ${T.undrafted.length}</button></div>
+        <div class="panel">${App.secHead(`Stars nobody owned (${T.unowned.length})`, "Finished top 60, but sat on the waiver wire when the season ended.", App.TIP.unowned)}<div class="chart" id="unowned"></div></div>
+      </section>`;
 
     // Activity table
     const maxMoves = d3.max(act, (r) => r.moves), maxNet = d3.max(act, (r) => Math.abs(r.netValue)) || 1;
     root.querySelector("#act").innerHTML = act.map((r) => `<tr><td>${App.who(r.managerId)}</td>
       <td><div class="inbar" style="min-width:150px"><span class="num" style="width:34px">${r.moves}</span><div class="tr"><div class="fl" style="width:${(r.moves / maxMoves) * 100}%"></div></div></div></td>
       <td class="r">${Math.round(r.movesPerSeason)}</td><td class="r">${r.trades}</td><td class="r">${r.trades ? `${r.tradeWins}-${r.tradeLosses}` : "—"}</td>
-      <td>${r.trades ? `<div class="inbar" style="min-width:150px"><span class="num ${r.netValue >= 0 ? "pos" : "neg"}" style="width:46px">${App.signed(r.netValue)}</span><div class="tr" style="position:relative"><div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--line-2)"></div><div style="position:absolute;top:0;bottom:0;border-radius:3px;background:${r.netValue >= 0 ? "var(--pos)" : "var(--neg)"};${r.netValue >= 0 ? `left:50%;width:${(r.netValue / maxNet) * 50}%` : `right:50%;width:${(-r.netValue / maxNet) * 50}%`}"></div></div></div>` : "—"}</td>
+      <td>${r.trades ? `<div class="inbar" style="min-width:150px"><span class="num ${r.netValue >= 0 ? "pos" : "neg"}" style="width:46px">${App.val(r.netValue)}</span><div class="tr" style="position:relative"><div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--line-2)"></div><div style="position:absolute;top:0;bottom:0;border-radius:3px;background:${r.netValue >= 0 ? "var(--pos)" : "var(--neg)"};${r.netValue >= 0 ? `left:50%;width:${(r.netValue / maxNet) * 50}%` : `right:50%;width:${(-r.netValue / maxNet) * 50}%`}"></div></div></div>` : "—"}</td>
       <td class="r">${r.vetoed || "—"}</td><td>${r.favoritePartner ? `${esc(App.name(r.favoritePartner.managerId))} <span class="muted">(${r.favoritePartner.count})</span>` : "—"}</td></tr>`).join("");
 
     // Trade log
@@ -63,10 +67,10 @@
         const max = Math.max(1, ...t.sides.map((s) => s.value));
         const win = t.status === "completed" ? t.winner : null;
         return `<div class="trade panel ${t.status === "vetoed" ? "vetoed" : ""}" style="box-shadow:none">
-          <div class="hd"><span>${dateLabel(t.date)} · ${esc(t.label)}</span>${t.status === "vetoed" ? '<span class="badge" style="color:var(--bad-ink)">Vetoed</span>' : win ? `<span class="badge orange">Edge: ${esc(App.name(win))} (${App.signed(t.margin)})</span>` : '<span class="badge">Even</span>'}</div>
+          <div class="hd"><span>${dateLabel(t.date)} · ${esc(t.label)}</span>${t.status === "vetoed" ? '<span class="badge" style="color:var(--bad-ink)">Vetoed</span>' : win ? `<span class="badge orange">Edge: ${esc(App.name(win))} (${App.val(t.margin)})</span>` : '<span class="badge">Even</span>'}</div>
           <div class="sides">${t.sides.map((s) => `<div class="sd">${App.who(s.m)}<div class="small muted">${esc(s.team)} received</div>
             <ul>${s.players.map((p) => `<li><span>${esc(p.n)}</span><span class="muted num">${App.rankLabel(p.r)}</span></li>`).join("")}</ul>
-            <div class="vbar ${win === s.m ? "win" : ""}" style="width:0" data-w="${(s.value / max) * 100}"></div><div class="small muted num" style="margin-top:3px">value ${s.value}</div></div>`).join("")}</div></div>`;
+            <div class="vbar ${win === s.m ? "win" : ""}" style="width:0" data-w="${(s.value / max) * 100}"></div><div class="small muted num" style="margin-top:3px">value ${s.value.toFixed(1)}</div></div>`).join("")}</div></div>`;
       }).join("");
       requestAnimationFrame(() => logEl.querySelectorAll(".vbar").forEach((b) => (b.style.width = Math.max(2, +b.dataset.w) + "%")));
     };
@@ -76,7 +80,9 @@
     root.querySelector("#und").innerHTML = T.undrafted.map((g) => `<div class="award"><div class="ic" style="font-family:var(--font-display);font-weight:900;font-size:18px;color:var(--good-ink)">#${g.actualRank}</div>
       <div><div class="aw" style="font-size:19px">${esc(g.playerName)}</div><div class="ad">${esc(g.label)} · on ${esc(g.teamName)} (${esc(App.name(g.managerId))}) at season end</div></div></div>`).join("");
 
-    const draw = () => { drawNetwork(root.querySelector("#net"), done); drawWire(root.querySelector("#wire"), vf); drawWireScatter(root.querySelector("#wire-sc"), teamSeasons); };
+    const undEl = root.querySelector("#und"), undMore = root.querySelector("#und-more");
+    undMore.addEventListener("click", () => { const capped = undEl.classList.toggle("capped"); undMore.textContent = capped ? `Show all ${T.undrafted.length}` : "Show fewer"; });
+    const draw = () => { drawUnowned(root.querySelector("#unowned"), T.unowned); drawNetwork(root.querySelector("#net"), done); drawWire(root.querySelector("#wire"), vf); drawWireScatter(root.querySelector("#wire-sc"), teamSeasons); };
     draw(); App.onResize(draw);
   });
 
@@ -109,6 +115,23 @@
       App.showTip(App.tt(`${App.name(id)} · ${deg.get(id)} trades`, partners), e.clientX, e.clientY);
     }).on("pointerleave", () => { link.transition().duration(150).attr("stroke-opacity", 0.35).attr("stroke", "var(--s1)"); App.hideTip(); })
       .on("click", (e, id) => App.go(`m-${id}`));
+  }
+
+  /** Unowned stars: one row per player, a rank track from #1 to #60, dot at the finish. */
+  function drawUnowned(el, rows) {
+    el.innerHTML = "";
+    const W = App.w(el), rh = 34, m = { t: 20, r: 16, l: 190 }, H = m.t + rows.length * rh;
+    const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("role", "img").attr("aria-label", "Top-60 finishers who were free agents at season end");
+    const x = d3.scaleLinear().domain([1, 60]).range([m.l, W - m.r]);
+    [1, 20, 40, 60].forEach((v) => { svg.append("line").attr("x1", x(v)).attr("x2", x(v)).attr("y1", m.t - 4).attr("y2", H).attr("stroke", "var(--line)"); svg.append("text").attr("class", "lbl num").attr("x", x(v)).attr("y", 11).attr("text-anchor", "middle").text(`#${v}`); });
+    const g = svg.append("g").selectAll("g").data(rows).join("g").attr("transform", (r, i) => `translate(0,${m.t + i * rh})`);
+    g.append("text").attr("class", "lbl-ink").attr("x", m.l - 12).attr("y", rh / 2 - 6).attr("dy", ".35em").attr("text-anchor", "end").text((r) => r.playerName);
+    g.append("text").attr("class", "lbl").attr("x", m.l - 12).attr("y", rh / 2 + 8).attr("dy", ".35em").attr("text-anchor", "end").text((r) => `${r.label} · ${r.draftedBy ? `drafted by ${App.name(r.draftedBy)}` : "undrafted"}`);
+    g.append("line").attr("x1", x(1)).attr("x2", x(60)).attr("y1", rh / 2).attr("y2", rh / 2).attr("stroke", "var(--line)").attr("stroke-width", 6).attr("stroke-linecap", "round");
+    g.append("circle").attr("cx", x(60)).attr("cy", rh / 2).attr("r", 8).attr("fill", "var(--accent)").attr("stroke", "var(--panel)").attr("stroke-width", 2)
+      .transition().duration(800).delay((r, i) => i * 50).attr("cx", (r) => x(r.actualRank));
+    g.append("text").attr("x", x(60)).attr("y", rh / 2).attr("dy", ".35em").attr("text-anchor", "middle").style("font-size", "9px").style("font-weight", 800).style("fill", "#fff")
+      .text((r) => r.actualRank).transition().duration(800).delay((r, i) => i * 50).attr("x", (r) => x(r.actualRank));
   }
 
   function drawWire(el, vf) {

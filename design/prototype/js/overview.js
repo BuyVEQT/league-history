@@ -9,9 +9,8 @@
     const matchups = D.seasons.reduce((n, s) => n + s.matchups.length, 0);
     const maxT = Math.max(...D.careers.map((c) => c.titles));
     const kings = D.careers.filter((c) => c.titles === maxT);
-    const streaks = D.extra.streaks;
-    const bestStreak = [...streaks].sort((a, b) => b.win.n - a.win.n)[0];
-    const worstStreak = [...streaks].sort((a, b) => b.loss.n - a.loss.n)[0];
+    const bestStreak = D.records.streaks.win[0], worstStreak = D.records.streaks.loss[0];
+    const span = (s) => `${s.label}, weeks ${s.fromWeek}–${s.toWeek}`;
     const sweepKing = [...D.extra.weekly].sort((a, b) => b.sweeps - a.sweeps || b.avgCats - a.avgCats)[0];
     const catKing = [...D.extra.weekly].filter((w) => w.games >= 60).sort((a, b) => b.avgCats - a.avgCats)[0];
 
@@ -27,7 +26,7 @@
         </div>
         <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr))">
           ${App.tile("Most titles", App.count(maxT), kings.map((k) => esc(k.name)).join(", ") + (kings.length > 1 ? " (tied)" : ""), App.TIP.titles)}
-          ${App.tile("Longest win streak", App.count(bestStreak.win.n), `${esc(App.name(bestStreak.managerId))} · ${App.wkLabel(bestStreak.win.from)} → ${bestStreak.win.from.split(":")[0] === bestStreak.win.to.split(":")[0] ? "wk " + bestStreak.win.to.split(":")[1] : App.wkLabel(bestStreak.win.to)}`, App.TIP.streak)}
+          ${App.tile("Longest win streak", App.count(bestStreak.length), `${esc(App.name(bestStreak.managerId))} · ${esc(span(bestStreak))}`, App.TIP.streak)}
           ${App.tile("Seasons", App.count(D.seasons.length), `${esc(D.league.firstLabel)} to ${esc(D.league.lastLabel)} · no 2019-20 season`)}
           ${App.tile("Matchups played", App.count(matchups), "weekly head-to-heads, playoffs included")}
         </div>
@@ -50,6 +49,15 @@
       </section>
 
       <section class="panel">
+        ${App.secHead("Power ratings", `Who's playing best right now. Ratings move every week with the share of categories won. Click a name to add or remove their line.`, App.TIP.elo)}
+        <div class="power">
+          <ol class="power-list" id="pw-list"></ol>
+          <div style="min-width:0"><div class="chart" id="pw-chart"></div>
+            <div class="legend" id="pw-legend"></div></div>
+        </div>
+      </section>
+
+      <section class="panel">
         ${App.secHead("Where everyone finished", "Final finish by season. Hover any line; tap names to pin up to three.", App.TIP.bump)}
         <div class="pills" id="bump-pins" role="group" aria-label="Pin managers"></div>
         <div class="chart" id="bump" style="margin-top:12px"></div>
@@ -59,8 +67,8 @@
       <section>
         ${App.secHead("Bragging rights", "The streaks and weeks people still bring up in the group chat.")}
         <div class="grid g4">
-          <div class="panel rec"><div class="k">Hottest streak ${App.info(App.TIP.streak)}</div><div class="v">${bestStreak.win.n}<small>straight wins</small></div><div class="d">${App.who(bestStreak.managerId)} · ${App.wkLabel(bestStreak.win.from)} to ${App.wkLabel(bestStreak.win.to)}</div></div>
-          <div class="panel rec"><div class="k">Coldest streak ${App.info(App.TIP.streak)}</div><div class="v">${worstStreak.loss.n}<small>straight losses</small></div><div class="d">${App.who(worstStreak.managerId)} · ${App.wkLabel(worstStreak.loss.from)} to ${App.wkLabel(worstStreak.loss.to)}</div></div>
+          <div class="panel rec"><div class="k">Hottest streak ${App.info(App.TIP.streak)}</div><div class="v">${bestStreak.length}<small>straight wins</small></div><div class="d">${App.who(bestStreak.managerId)} · ${esc(bestStreak.teamName)}, ${esc(span(bestStreak))}</div></div>
+          <div class="panel rec"><div class="k">Coldest streak ${App.info(App.TIP.streak)}</div><div class="v">${worstStreak.length}<small>straight losses</small></div><div class="d">${App.who(worstStreak.managerId)} · ${esc(worstStreak.teamName)}, ${esc(span(worstStreak))}</div></div>
           <div class="panel rec"><div class="k">9-0 sweeps ${App.info(App.TIP.sweep)}</div><div class="v">${sweepKing.sweeps}<small>perfect weeks</small></div><div class="d">${App.who(sweepKing.managerId)} · most in league history</div></div>
           <div class="panel rec"><div class="k">Categories per week ${App.info(App.TIP.avgCats)}</div><div class="v">${catKing.avgCats.toFixed(2)}<small>of 9</small></div><div class="d">${App.who(catKing.managerId)} · best average, ${catKing.games} weeks</div></div>
         </div>
@@ -74,6 +82,7 @@
       .join("");
 
     drawRace(root);
+    drawPower(root);
     drawBump(root);
   });
 
@@ -138,6 +147,79 @@
     App.bindSeg(root, "race-metric", (v) => { metric = v; render(700); });
     render(0);
     App.onResize(() => render(0));
+  }
+
+  // ---------- Power ratings: ranked list + rating-over-time chart ----------
+  function drawPower(root) {
+    const E = D.elo, listEl = root.querySelector("#pw-list"), el = root.querySelector("#pw-chart"), legEl = root.querySelector("#pw-legend");
+    const SLOTS = ["var(--s1)", "var(--s2)", "var(--s3)", "var(--s4)"];
+    const latest = App.latest.year;
+    let pins = E.current.slice(0, 3).map((c) => c.m);
+    const pts = (id) => (E.history[id] || []).map(([y, w, r]) => ({ y, w, r }));
+    const thisSeason = (id) => pts(id).filter((p) => p.y === latest);
+    const lo = d3.min(E.current, (c) => c.r), hi = d3.max(E.current, (c) => c.r);
+    const renderList = () => {
+      listEl.innerHTML = E.current.map((c, i) => {
+        const k = pins.indexOf(c.m), s = thisSeason(c.m);
+        const sx = d3.scaleLinear().domain([0, Math.max(1, s.length - 1)]).range([2, 68]), sy = d3.scaleLinear().domain(d3.extent(s, (p) => p.r)).range([18, 2]);
+        const path = s.length ? "M" + s.map((p, j) => `${sx(j).toFixed(1)},${sy(p.r).toFixed(1)}`).join("L") : "";
+        const delta = s.length > 1 ? s[s.length - 1].r - s[0].r : 0;
+        return `<li><button type="button" data-id="${c.m}" aria-pressed="${k >= 0}">
+          <span class="pw-rk num">${i + 1}</span>${App.mono(c.m)}<span class="pw-nm">${esc(App.name(c.m))}</span>
+          <svg class="pw-spark" viewBox="0 0 70 20" aria-hidden="true"><path d="${path}" fill="none" stroke="${k >= 0 ? SLOTS[k] : "var(--line-2)"}" stroke-width="1.6"/></svg>
+          <span class="pw-r num">${c.r}</span><span class="pw-d num ${delta >= 0 ? "pos" : "neg"}">${delta >= 0 ? "▲" : "▼"}${Math.abs(delta)}</span>
+          <span class="pw-bar"><i style="width:${8 + ((c.r - lo) / Math.max(1, hi - lo)) * 92}%;background:${k >= 0 ? SLOTS[k] : "var(--line-2)"}"></i></span></button></li>`;
+      }).join("");
+      legEl.innerHTML = pins.map((id, k) => `<span><i style="background:${SLOTS[k]}"></i>${esc(App.name(id))}</span>`).join("") + `<span><i style="background:var(--ink-2);height:1px"></i>1500 = league average</span>`;
+    };
+    listEl.addEventListener("click", (e) => {
+      const b = e.target.closest("button[data-id]");
+      if (!b) return;
+      const id = b.dataset.id;
+      pins = pins.includes(id) ? pins.filter((x) => x !== id) : [...pins, id].slice(-4);
+      renderList(); render(true);
+    });
+    const seasons = D.seasons.map((s) => s.year);
+    const render = (animate = false) => {
+      el.innerHTML = "";
+      const W = App.w(el), H = 330, m = { t: 12, r: 12, b: 28, l: 42 };
+      const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("role", "img").attr("aria-label", "Power rating over time");
+      // x = season slots of equal width, weeks spread inside
+      const xs = d3.scaleBand().domain(seasons).range([m.l, W - m.r]).paddingInner(0.06);
+      const maxWk = d3.max(D.seasons, (s) => d3.max(s.matchups, (mm) => mm.wk));
+      const x = (p) => xs(p.y) + ((p.w - 1) / (maxWk - 1)) * xs.bandwidth();
+      const all = Object.values(E.history).flat();
+      const y = d3.scaleLinear().domain(d3.extent(all, (p) => p[2])).nice().range([H - m.b, m.t]);
+      seasons.forEach((yr, i) => {
+        if (i % 2 === 0) svg.append("rect").attr("x", xs(yr)).attr("y", m.t).attr("width", xs.bandwidth()).attr("height", H - m.b - m.t).attr("fill", "var(--panel-2)");
+        svg.append("text").attr("class", "lbl").attr("x", xs(yr) + xs.bandwidth() / 2).attr("y", H - 8).attr("text-anchor", "middle").text(App.label(yr));
+      });
+      svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickSize(0)).call((g) => g.select(".domain").remove());
+      svg.append("line").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y(1500)).attr("y2", y(1500)).attr("stroke", "var(--ink-2)").attr("stroke-dasharray", "3 3");
+      const line = d3.line().x(x).y((p) => y(p.r)).curve(d3.curveMonotoneX);
+      const runs = (ps) => d3.groups(ps, (p) => p.y).map(([, r]) => r);
+      // everyone faint, pinned on top
+      const g0 = svg.append("g");
+      Object.keys(E.history).filter((id) => !pins.includes(id)).forEach((id) => runs(pts(id)).forEach((r) => g0.append("path").attr("d", line(r)).attr("fill", "none").attr("stroke", "var(--line-2)").attr("stroke-width", 1).attr("opacity", 0.7)));
+      pins.forEach((id, k) => runs(pts(id)).forEach((r) => {
+        const p = svg.append("path").attr("d", line(r)).attr("fill", "none").attr("stroke", SLOTS[k]).attr("stroke-width", 2.4).attr("stroke-linecap", "round");
+        if (animate) { const L = p.node().getTotalLength(); p.attr("stroke-dasharray", `${L} ${L}`).attr("stroke-dashoffset", L).transition().duration(800).attr("stroke-dashoffset", 0); }
+      }));
+      // peak markers for pinned
+      pins.forEach((id, k) => { const pk = E.peak[id]; if (!pk) return; const p = { y: pk.year, w: pk.wk, r: pk.r };
+        svg.append("circle").attr("cx", x(p)).attr("cy", y(p.r)).attr("r", 4.5).attr("fill", "var(--panel)").attr("stroke", SLOTS[k]).attr("stroke-width", 2); });
+      // hover: nearest pinned point
+      const cand = pins.flatMap((id) => pts(id).map((p) => ({ ...p, id })));
+      if (!cand.length) return;
+      const del = d3.Delaunay.from(cand, x, (p) => y(p.r));
+      const dot = svg.append("circle").attr("r", 5).attr("fill", "var(--ink)").style("opacity", 0);
+      svg.append("rect").attr("x", m.l).attr("y", m.t).attr("width", W - m.l - m.r).attr("height", H - m.t - m.b).attr("fill", "transparent")
+        .on("pointermove", (e) => { const [mx, my] = d3.pointer(e); const p = cand[del.find(mx, my)]; dot.attr("cx", x(p)).attr("cy", y(p.r)).style("opacity", 1);
+          const pk = E.peak[p.id]; App.showTip(App.tt(`${App.name(p.id)} · ${App.label(p.y)} week ${p.w}`, [["Power rating", p.r], ["Career peak", `${pk.r} (${App.label(pk.year)} wk ${pk.wk})`]]), e.clientX, e.clientY); })
+        .on("pointerleave", () => { dot.style("opacity", 0); App.hideTip(); });
+    };
+    renderList(); render(true);
+    App.onResize(() => render());
   }
 
   // ---------- Bump chart of finishes ----------

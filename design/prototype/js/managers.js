@@ -20,8 +20,10 @@
     if (top(clutch, "p", -1, (x) => x.n >= 10) === id) out.push(["", "target", "Ice in veins", "Best record in one-category games (min. 10). " + App.TIP.closeGame]);
     if (top(D.records.playoffs, "avgOverSeed", -1, (x) => x.appearances >= 2) === id) out.push(["", "rocket", "Playoff riser", "Gains the most places from seed to final finish (min. 2 playoff trips). " + App.TIP.overSeed]);
     if (top(D.records.consistency, "spread", 1) === id) out.push(["", "shield", "Steady hand", "Smallest swing in finish from year to year. " + App.TIP.consistency]);
-    const s = D.extra.streaks.find((x) => x.managerId === id);
-    if (s && s.win.n === Math.max(...D.extra.streaks.map((x) => x.win.n))) out.push(["", "flame", "Heater", `Owns the league's longest win streak (${s.win.n} straight weeks).`]);
+    const ws = D.records.streaks.win[0];
+    if (ws && ws.managerId === id) out.push(["", "flame", "Heater", `Owns the league's longest win streak (${ws.length} straight weeks, ${ws.label}).`]);
+    const lk = D.records.careerLuck[0];
+    if (lk && lk.managerId === id) out.push(["", "star", "Horseshoe", "Most career matchup luck: wins more weeks than their categories deserve. " + App.TIP.luck]);
     return out;
   }
   const badgeHtml = (b) => `<span class="badge ${b[0]}" data-tip="${esc(b[3])}" tabindex="0">${App.icon(b[1])}${esc(b[2])}</span>`;
@@ -53,7 +55,12 @@
   function profile(root, id) {
     const c = App.career(id);
     const others = D.careers.filter((x) => x.managerId !== id);
-    const s = D.extra.streaks.find((x) => x.managerId === id);
+    const st = c.streaks;
+    const elo = D.elo.current.find((x) => x.m === id), peak = D.elo.peak[id];
+    const luck = D.records.careerLuck.find((x) => x.managerId === id);
+    const yr = D.ratings?.rows.find((x) => x.managerId === id);
+    const reach = D.draft.reach?.rows.find((x) => x.managerId === id), keep = D.draft.keeps.rows.find((x) => x.managerId === id);
+    const fav = D.draft.favourites.find((x) => x.m === id);
     const wk = D.extra.weekly.find((x) => x.managerId === id);
     const dr = D.draft.managers.find((x) => x.managerId === id);
     const tr = D.trades.activity.find((x) => x.managerId === id);
@@ -72,7 +79,21 @@
         ${App.tile("Titles", App.count(c.titles), `${finals} final${finals === 1 ? "" : "s"} reached`, App.TIP.titles)}
         ${App.tile("Category win %", App.count(c.catPct * 100, 1, "%"), `${App.rec(c.catWins, c.catLosses, c.catTies)} · league rank ${D.careers.filter((x) => x.catPct > c.catPct).length + 1}`, App.TIP.catPct)}
         ${App.tile("Average finish", App.count(c.avgFinish, 1), `best ${App.ord(c.bestFinish)} · playoffs ${c.playoffApps}/${c.seasons}`, App.TIP.avgFinish)}
-        ${App.tile("Best streak", App.count(s.win.n), `${App.wkLabel(s.win.from)} → ${App.wkLabel(s.win.to)} · worst skid ${s.loss.n}`, App.TIP.streak)}
+        ${App.tile("Longest win streak", st.win ? App.count(st.win.n) : "—", st.win ? `${esc(App.label(st.win.year))}, weeks ${st.win.from}–${st.win.to} · ${esc(st.win.team)}` : "", App.TIP.streak)}
+      </div>
+
+      <div class="form-strip">
+        <div class="fs"><div class="lab">Power rating ${App.info(App.TIP.elo)}</div>
+          <div class="fs-row"><span class="val">${elo ? App.count(elo.r) : "—"}</span><span class="fs-sub">${elo ? `#${D.elo.current.findIndex((x) => x.m === id) + 1} of ${D.elo.current.length} now` : "not in the latest season"}<br>peak ${peak.r} · ${esc(App.label(peak.year))} wk ${peak.wk}</span></div>
+          <div class="chart" id="elo-mini"></div></div>
+        <div class="fs"><div class="lab">Matchup luck ${App.info(App.TIP.luck)}</div>
+          <div class="fs-row"><span class="val ${luck && luck.luck >= 0 ? "pos" : "neg"}">${luck ? App.signed(luck.luck, 1) : "—"}</span><span class="fs-sub">weeks won vs expected<br>over ${luck?.seasons ?? 0} season${luck?.seasons === 1 ? "" : "s"}</span></div>
+          <div class="chart" id="luck-mini"></div></div>
+        <div class="fs"><div class="lab">Longest losing streak ${App.info(App.TIP.streak)}</div>
+          <div class="fs-row"><span class="val">${st.loss ? st.loss.n : "—"}</span><span class="fs-sub">${st.loss ? `${esc(App.label(st.loss.year))}, weeks ${st.loss.from}–${st.loss.to}<br>${esc(st.loss.team)}` : ""}</span></div></div>
+        <div class="fs"><div class="lab">Yahoo manager rating</div>
+          <div class="fs-row"><span class="val">${yr ? yr.rating : "—"}</span>${yr ? `<span class="level lv-${yr.level.toLowerCase()}">${esc(yr.level)}</span>` : ""}</div>
+          <div class="fs-sub">${yr ? `#${yr.rank} in the league · Yahoo snapshot ${esc(D.ratings.asOf)}` : "No Yahoo rating"}</div></div>
       </div>
 
       <div class="grid g2">
@@ -85,15 +106,18 @@
       <section class="panel">${App.secHead("Head-to-head vs everyone", "Matchup record against each opponent, regular season and playoffs. Right of center = winning record.", App.TIP.h2h)}<div class="chart" id="riv"></div></section>
 
       <div class="grid g3">
-        <section class="panel">${App.secHead("At the draft", "", App.TIP.draftValue)}${dr ? `<div class="list">
-          <div><span class="l"><span class="t1">Value vs league</span><span class="t2">${dr.drafts} drafts · ${dr.picks} picks</span></span><span class="rv ${dr.vsLeague >= 0 ? "pos" : "neg"}">${App.signed(dr.vsLeague, 1)} ${App.info(App.TIP.vsLeague)}</span></div>
+        <section class="panel">${App.secHead("Draft habits", "", App.TIP.draftValue)}${dr ? `<div class="list">
+          ${reach ? `<div><span class="l"><span class="t1">Drafts ahead of the rankings ${App.info(App.TIP.reach)}</span><span class="t2">${App.pct(reach.reachShare, 0)} of picks are 15+ spot reaches</span></span><span class="rv">${App.signed(reach.avgEarly, 1)} <span class="t2">spots</span></span></div>` : ""}
+          ${keep ? `<div><span class="l"><span class="t1">Keeps their picks ${App.info(App.TIP.keep)}</span><span class="t2">still rostered at season end</span></span><span class="rv">${keep.avgKept.toFixed(1)} <span class="t2">per draft (${App.pct(keep.keptShare, 0)})</span></span></div>` : ""}
+          ${fav ? `<div><span class="l"><span class="t1">Can't quit: ${esc(fav.p)}</span><span class="t2">drafted in ${fav.picks.length} seasons</span></span><span class="rv">${fav.picks.map((x) => `'${String(x.y - 1).slice(2)}`).join(" ")}</span></div>` : ""}
+          <div><span class="l"><span class="t1">Value vs league</span><span class="t2">${dr.drafts} drafts · ${dr.picks} picks</span></span><span class="rv ${dr.vsLeague >= 0 ? "pos" : "neg"}">${App.val(dr.vsLeague)} ${App.info(App.TIP.vsLeague)}</span></div>
           <div><span class="l"><span class="t1">Hit rate</span><span class="t2">picks that beat their slot</span></span><span class="rv">${App.pct(dr.hitRate, 0)}</span></div>
-          <div><span class="l"><span class="t1">Best pick: ${esc(dr.best.p)}</span><span class="t2">${esc(dr.best.y)} · #${dr.best.ov} overall → ${App.rankLabel(dr.best.ar)}</span></span><span class="rv pos">${App.signed(dr.best.v)}</span></div>
-          <div><span class="l"><span class="t1">Ouch: ${esc(dr.worst.p)}</span><span class="t2">${esc(dr.worst.y)} · #${dr.worst.ov} overall → ${App.rankLabel(dr.worst.ar)}</span></span><span class="rv neg">${App.signed(dr.worst.v)}</span></div></div>` : '<p class="muted">No draft data.</p>'}</section>
+          <div><span class="l"><span class="t1">Best pick: ${esc(dr.best.p)}</span><span class="t2">${esc(dr.best.y)} · #${dr.best.ov} overall → ${App.rankLabel(dr.best.ar)}</span></span><span class="rv pos">${App.val(dr.best.v)}</span></div>
+          <div><span class="l"><span class="t1">Ouch: ${esc(dr.worst.p)}</span><span class="t2">${esc(dr.worst.y)} · #${dr.worst.ov} overall → ${App.rankLabel(dr.worst.ar)}</span></span><span class="rv neg">${App.val(dr.worst.v)}</span></div></div>` : '<p class="muted">No draft data.</p>'}</section>
         <section class="panel">${App.secHead("On the wire & in trades", "", App.TIP.tradeValue)}${tr ? `<div class="list">
           <div><span class="l"><span class="t1">Moves per season</span><span class="t2">${tr.moves} total adds/drops</span></span><span class="rv">${tr.movesPerSeason.toFixed(0)}</span></div>
           <div><span class="l"><span class="t1">Trades</span><span class="t2">${tr.vetoed ? `${tr.vetoed} more vetoed` : "none vetoed"}</span></span><span class="rv">${tr.trades} <span class="t2">(${tr.tradeWins}-${tr.tradeLosses})</span></span></div>
-          <div><span class="l"><span class="t1">Net trade value</span><span class="t2">received − given</span></span><span class="rv ${tr.netValue > 0 ? "pos" : tr.netValue < 0 ? "neg" : ""}">${tr.trades ? App.signed(tr.netValue) : "—"}</span></div>
+          <div><span class="l"><span class="t1">Net trade value</span><span class="t2">received − given</span></span><span class="rv ${tr.netValue > 0 ? "pos" : tr.netValue < 0 ? "neg" : ""}">${tr.trades ? App.val(tr.netValue) : "—"}</span></div>
           <div><span class="l"><span class="t1">Favorite partner</span><span class="t2">most trades with</span></span><span class="rv">${tr.favoritePartner ? `${esc(App.name(tr.favoritePartner.managerId))} (${tr.favoritePartner.count})` : "—"}</span></div></div>` : '<p class="muted">No activity data.</p>'}</section>
         <section class="panel">${App.secHead("Close calls", "", App.TIP.unluckyOne)}<div class="list">
           <div><span class="l"><span class="t1">One-category wins</span><span class="t2">regular season</span></span><span class="rv pos">${hb?.oneCatWins ?? 0}</span></div>
@@ -111,6 +135,45 @@
     drawPath(root.querySelector("#path"), c);
     drawDist(root.querySelector("#dist"), id);
     drawRivals(root.querySelector("#riv"), id);
+    const minis = () => { drawEloMini(root.querySelector("#elo-mini"), id); drawLuckMini(root.querySelector("#luck-mini"), id); };
+    minis(); App.onResize(minis);
+  }
+
+  /** Whole-career power rating line, one segment per season, 1500 reference. */
+  function drawEloMini(el, id) {
+    el.innerHTML = "";
+    const pts = (D.elo.history[id] || []).map(([y, w, r]) => ({ y, w, r }));
+    if (!pts.length) return;
+    const W = App.w(el, 200), H = 54;
+    const years = D.seasons.map((s) => s.year), xs = d3.scaleBand().domain(years).range([0, W]).paddingInner(0.08);
+    const maxWk = d3.max(D.seasons, (s) => d3.max(s.matchups, (m) => m.wk));
+    const x = (p) => xs(p.y) + ((p.w - 1) / (maxWk - 1)) * xs.bandwidth();
+    const all = Object.values(D.elo.history).flat().map((p) => p[2]);
+    const y = d3.scaleLinear().domain(d3.extent(all)).range([H - 3, 3]);
+    const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("aria-label", "Power rating over the career");
+    svg.append("line").attr("x1", 0).attr("x2", W).attr("y1", y(1500)).attr("y2", y(1500)).attr("stroke", "var(--line-2)").attr("stroke-dasharray", "3 3");
+    const line = d3.line().x(x).y((p) => y(p.r)).curve(d3.curveMonotoneX);
+    d3.groups(pts, (p) => p.y).forEach(([, r]) => svg.append("path").attr("d", line(r)).attr("fill", "none").attr("stroke", "var(--s1)").attr("stroke-width", 1.8));
+    const pk = D.elo.peak[id];
+    svg.append("circle").attr("cx", x({ y: pk.year, w: pk.wk })).attr("cy", y(pk.r)).attr("r", 3.5).attr("fill", "var(--gold)");
+    const dots = svg.append("g").selectAll("rect").data(years).join("rect").attr("x", (yy) => xs(yy)).attr("width", xs.bandwidth()).attr("y", 0).attr("height", H).attr("fill", "transparent");
+    App.hover(dots, (yy) => { const r = pts.filter((p) => p.y === yy); return r.length ? App.tt(App.label(yy), [["Start", r[0].r], ["End", r[r.length - 1].r], ["High", d3.max(r, (p) => p.r)]]) : App.tt(App.label(yy), [], "Not in the league"); });
+  }
+
+  /** Luck per season: diverging bars, won more weeks than deserved (up) or fewer (down). */
+  function drawLuckMini(el, id) {
+    el.innerHTML = "";
+    const rows = D.records.luck.filter((r) => r.m === id).sort((a, b) => a.year - b.year);
+    if (!rows.length) return;
+    const W = App.w(el, 200), H = 54, years = D.seasons.map((s) => s.year);
+    const x = d3.scaleBand().domain(years).range([0, W]).padding(0.25);
+    const mx = d3.max(D.records.luck, (r) => Math.abs(r.luck));
+    const y = d3.scaleLinear().domain([-mx, mx]).range([H - 2, 2]);
+    const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("aria-label", "Matchup luck by season");
+    svg.append("line").attr("x1", 0).attr("x2", W).attr("y1", y(0)).attr("y2", y(0)).attr("stroke", "var(--line-2)");
+    const b = svg.selectAll("rect").data(rows).join("rect").attr("x", (r) => x(r.year)).attr("width", x.bandwidth()).attr("rx", 2)
+      .attr("y", (r) => Math.min(y(0), y(r.luck))).attr("height", (r) => Math.max(1.5, Math.abs(y(r.luck) - y(0)))).attr("fill", (r) => (r.luck >= 0 ? "var(--pos)" : "var(--neg)"));
+    App.hover(b, (r) => App.tt(`${r.team} · ${r.label}`, [["Matchups won", r.actual], ["Expected", r.expected.toFixed(1)], ["Luck", App.signed(r.luck, 1)]]));
   }
 
   function drawPath(el, c) {

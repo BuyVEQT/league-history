@@ -22,6 +22,8 @@
   App.rec = (w, l, t) => `${w}-${l}-${t}`;
   App.signed = (n, d = 0) => `${n > 0 ? "+" : n < 0 ? "−" : "±"}${Math.abs(n).toFixed(d)}`;
   App.ord = (n) => { const s = ["th", "st", "nd", "rd"], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); };
+  /** Draft/trade value points (site: src/lib/analytics/value.ts), one decimal. */
+  App.val = (v) => App.signed(v, 1);
   App.rankLabel = (r) => (r == null ? "300+" : `#${r}`);
   App.wkLabel = (tag) => { const [y, w] = tag.split(":"); return `${App.label(y)} wk ${w}`; };
   // Two-letter monograms: "Jacob G." → JG; single names take the first two letters,
@@ -97,7 +99,7 @@
     playoffs: "Playoff appearances ÷ seasons played. 6 teams made the playoffs in 10-team seasons, 8 in 12-team seasons.",
     titles: "Championships: won the final in the playoff bracket.",
     finals: "Finals = titles + runner-up finishes.",
-    streak: "Consecutive weekly matchups won (or lost), counting playoff games and carrying over between seasons. A tied week ends the streak.",
+    streak: "Consecutive regular-season matchups won (or lost) within one season. A tied week ends the streak (Yahoo record-book rule).",
     sweep: "A 9-0 week: winning all nine categories (FG%, FT%, 3PM, PTS, REB, AST, STL, BLK, TO) in one matchup.",
     avgCats: "Average number of the 9 categories won per weekly matchup, regular season and playoffs.",
     closeGame: "A close game is decided by exactly one category (for example 5-4, or 4-3 with 2 tied). Playoffs included.",
@@ -106,11 +108,11 @@
     drought: "Seasons played since this manager's last title (or since joining, if they've never won).",
     consistency: "Finish is converted to a share of the league (0% = first, 100% = last) so 10- and 12-team seasons compare fairly. Swing is the standard deviation of that share: lower means steadier. Minimum 3 seasons.",
     sos: "Strength of schedule: the average regular-season category win % of the opponents a team actually played that season.",
-    draftValue: "Pick value = overall draft slot − the player's end-of-season rank (Yahoo, full NBA season). +40 means a player taken 50th finished 10th. Players outside the top 300 count as rank 301.",
-    vsLeague: "Average value per pick minus the league-wide average. Drafted players finish below their slot on average (injuries, rookies), so raw values are mostly negative; 0 here means an average drafter.",
+    draftValue: "Pick value = what the player's finish was worth minus what the draft slot was expected to be worth, in 9-category value points above a replacement-level player. Value drops steeply at the top, so an early flop costs more than a late gem gains.",
+    vsLeague: "Average value per pick compared with the league average. 0 = an average drafter.",
     hitRate: "Share of picks that finished at or better than where they were drafted.",
     gems: "Late gems: picks from round 8 or later who finished inside the top 75.",
-    tradeValue: "Trade value is value above replacement: only players good enough to be rostered count (teams × draft rounds, about 156 in a 12-team league). A player ranked r is worth (replacement + 1 − r). Ranks cover the whole NBA season, not just the weeks after the trade, so treat winners as a rough guide.",
+    tradeValue: "Each side's received players valued on the same curve as the draft, from end-of-season rank. Only players good enough to be rostered count. Ranks cover the whole season, so treat winners as a rough guide.",
     moves: "Yahoo's season count of adds and drops for each team.",
     h2h: "Built only from matchups the two managers actually played (regular season and playoffs). Seasons where they weren't both in the league add nothing. Playoff ties are decided by the higher seed, as Yahoo does.",
     race: "Running totals at the end of each season. Category wins are regular-season categories won; titles are championships; podiums are top-3 final finishes.",
@@ -120,6 +122,22 @@
     unluckyOne: "Weekly matchups lost by a single category during the regular season.",
     scatter: "Every draft pick: where they were taken (across) against where they finished (down). Points above the diagonal finished better than their slot (steals); below it, worse (busts).",
     network: "Each line is a completed trade between two managers; thicker = more trades. Vetoed trades are not drawn.",
+    elo: "Power rating (Elo): updated every week from the share of categories won versus what the ratings expected. Ratings drift halfway back to 1500 between seasons. A guide to current form, not a forecast.",
+    luck: "Matchup luck = matchups actually won minus matchups expected from both teams' category win %. Positive = won more weeks than their category totals deserved.",
+    whatIf: "The same results re-ranked by matchup wins (weeks won) instead of category win %, the method this league uses.",
+    raceStory: "Comeback = made the playoffs after sitting outside a playoff spot after midseason. Collapse = missed after sitting in the top half of the playoff field after midseason.",
+    seeds: "Seed = regular-season rank. The third-place game is left out of the higher-seed count.",
+    parity: "Spread of the standings win % in each season. Lower = a more even league.",
+    scorelines: "How often each final score happens, regular season and playoffs. 5-3-1 means one category tied.",
+    dominant: "Average categories won by, in matchups won (5+ wins, playoffs included).",
+    namesake: "Teams named after a player: did they have him, and how did both do?",
+    roster: "Approximate team builds from season-end rosters and players' full-season totals. Each cell is a standard score against the league; a punt is a category far below both the league and the team's own average.",
+    position: "Round-one draft slot each season. Early slots get the surest stars.",
+    reach: "Spots taken ahead of the pre-season rank (rounds 1-8). Negative = waits for players to fall.",
+    keep: "Draft picks still on the roster when the season ended.",
+    impact: "How strongly the value of a team's drafted players lines up with its regular-season win %. The share shown is how much of the standings the draft explains.",
+    gotAway: "Drafted players who finished in the top 40 on someone else's roster, or nobody's. Traded = dealt away by the drafting team; otherwise dropped.",
+    unowned: "Top-60 finishers who were free agents when the season ended.",
     undrafted: "Players nobody drafted who finished in the top 75, shown with the team that had them at season end (not necessarily who added them first).",
   };
 

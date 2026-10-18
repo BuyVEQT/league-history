@@ -1,10 +1,9 @@
 # Caboclo Cup redesign: handoff for Claude Code
 
-This folder holds a working design prototype of the redesigned league site and everything needed to rebuild it in the real Next.js app.
+This is a **visual redesign**. The calculations stay exactly as they are in `src/lib/analytics` (including everything PR #7 added). Your job is to rebuild the presentation layer to match the prototype, wiring each component to the analytics function listed below. Do not change formulas.
 
 - `design/prototype/` — the clickable prototype (plain HTML + d3, no build step). It is the visual and behavioral reference.
-- `design/data.json` and `design/prototype/data.js` — every number the prototype shows, exported by `scripts/export-design-data.ts`.
-- `scripts/export-design-data.ts` — computes those numbers **with the site's own `src/lib/analytics`**, plus a few new metrics (marked `NEW METRICS`) that need to move into `src/lib/analytics` with tests.
+- `design/data.json` and `design/prototype/data.js` — every number the prototype shows, exported by `scripts/export-design-data.ts` **from the site's own analytics**, so the prototype and the site agree.
 - Published copy of the prototype: https://claude.ai/artifact/Q2p3qWgtizk5N7Yo21AmkY (private to the owner until shared).
 
 ## How to view the prototype locally
@@ -12,33 +11,26 @@ This folder holds a working design prototype of the redesigned league site and e
 ```bash
 npx tsx scripts/export-design-data.ts design/data.json      # refresh the numbers (also re-checks them against Yahoo)
 (printf 'window.DATA = '; cat design/data.json; printf ';\n') > design/prototype/data.js
-npx serve design/prototype    # or open design/prototype/index.html directly in a browser
+npx serve design/prototype    # or open design/prototype/index.html in a browser
 ```
 
-The export script prints `data problems: none` when every season's derived category records and playoff seeds still match the Yahoo captures (same checks as `src/lib/data/caboclo.test.ts`).
+The export prints `data problems: none` when derived category records and playoff seeds still match the Yahoo captures.
 
-## Before you start: reconcile with main
+## Before you start: one decision for the owner
 
-`main` gained a separate light reskin after this prototype was designed (commit b193337, "Redesign Hoops History with animated courtside visuals": `globals.css`, league layout, leaderboard table, landing page, `SeasonExplorer`). It changes presentation only; analytics and data are untouched, so every number here still holds. Ask the owner which direction wins before replacing it. Keep anything from it the owner likes (for example the landing page or `SeasonExplorer`) and apply this spec's tokens and components to the league pages.
+`main` has a light "courtside" reskin (green/cream, commit b193337) that predates this prototype. Ask the owner whether this prototype's look replaces it. Keep anything from it they want (for example the landing page or `SeasonExplorer`).
 
 ## Ground rules
 
-1. **Data stays derived.** Do not hard-code any number in components. Everything comes from `src/lib/analytics` functions over `League`. New metrics go into `src/lib/analytics/*.ts` with vitest tests, like the existing ones.
-2. **Keep what works:** the password proxy (`src/proxy.ts`, `LEAGUE_PASSWORD`), the `/demo` league, Yahoo attribution in the footer, `coreLeague()` trimming for client components, `generateStaticParams` everywhere, and all existing tests.
-3. **Desktop-first.** The owner only needs desktop/PC. Don't spend effort on phone layouts beyond not breaking (a horizontal scroll on wide charts/tables is fine).
-4. **Read the Next.js docs in `node_modules/next/dist/docs/` first** (see AGENTS.md: this Next version has breaking changes).
-5. Every metric that someone might question gets an ⓘ explainer. The wording is centralized in `App.TIP` in `design/prototype/js/core.js`; port it into one `src/lib/explainers.ts` and reuse it everywhere.
-
-## Suggested build order
-
-1. Design tokens, fonts, shell (header band + tabs), shared components.
-2. Port the new metrics into `src/lib/analytics` + tests.
-3. Pages in this order: Overview → Seasons → Managers → Leaderboard → Rivalries → Records → Draft → Trades → Awards (new).
-4. Verify (checklist at the bottom), then open a PR so Vercel builds a preview.
+1. **Visuals only.** Every number comes from an existing `src/lib/analytics` function. The few prototype-only view helpers are listed in section 3; move them into `src/lib/analytics` with tests rather than computing in components.
+2. **Keep what works:** the password proxy (`src/proxy.ts`, `LEAGUE_PASSWORD`), the `/demo` league (now with full data), Yahoo attribution, `coreLeague()` trimming for client components, `generateStaticParams`, and all 157+ existing tests.
+3. **Desktop-first.** The owner only needs desktop. Don't break phones, but no phone-specific design work.
+4. **Read the Next.js docs in `node_modules/next/dist/docs/` first** (AGENTS.md: this Next version has breaking changes).
+5. **Explainers:** every ⓘ in the prototype carries wording in `App.TIP` (`design/prototype/js/core.js`). Port it to `src/lib/explainers.ts`. Where the site's own page already has explainer copy for a metric (PR #7 added many), the site's copy wins; keep the prototype's placement.
 
 ## 1. Visual system
 
-Light-first, with a dark mode via tokens. Copy the `:root` block from `design/prototype/index.html` into `src/app/globals.css` (replacing the current dark-first tokens) and map them in `@theme inline` for Tailwind.
+Light-first with dark-mode tokens. Copy the `:root` block (and both dark blocks) from `design/prototype/index.html` into `src/app/globals.css` and map them in `@theme inline`.
 
 | Token | Light | Role |
 |---|---|---|
@@ -47,148 +39,140 @@ Light-first, with a dark mode via tokens. Copy the `:root` block from `design/pr
 | `--ink` / `--ink-2` / `--muted` | `#142030` / `#46546a` / `#7a8698` | text levels |
 | `--line` / `--line-2` | `#dde3eb` / `#c9d1dc` | borders, gridlines |
 | `--band` | `#18293f` | navy header band, hero card, banners, monograms |
-| `--accent` / `--accent-ink` | `#e0601c` / `#b44710` | ball orange: active tab, primary button, leader bar |
-| `--gold` / `--gold-wash` | `#c99a1a` / `#fbf1d3` | titles/champions only |
+| `--accent` / `--accent-ink` / `--accent-wash` | `#e0601c` / `#b44710` / `#fde9dc` | ball orange: interaction, active tab, highlights |
+| `--gold` / `--gold-wash` | `#c99a1a` / `#fbf1d3` | championships only |
 | `--pos` / `--neg` (+ `-wash`) | blue `#2a78d6` / red `#e34948` | diverging: won/better vs lost/worse |
-| `--s1..--s4` | blue, orange, green, amber | categorical series (pinned managers) |
+| `--s1..--s4` | blue, orange, green, amber | pinned series |
 
-Dark values are in the same file (both the `prefers-color-scheme` block and `[data-theme="dark"]`).
+**Type:** display = **Big Shoulders Display** 800–900 uppercase (titles, section heads, big numbers); body = **Public Sans** 400–700. Load both with `next/font/google`. Tabular numbers wherever digits line up.
 
-**Type:** display = **Big Shoulders Display** 800–900, uppercase, for page titles, section titles, big numbers, banner years. Body = **Public Sans** 400–700. Use `next/font/google` for both (replace Geist). Tabular numbers everywhere digits line up.
+**Color rules:** blue/red only mean win/loss or better/worse; gold only means a title; orange is interaction/accent. Managers are identified by the navy monogram, not per-manager colors.
 
-**Color rules:** blue/red only ever mean win/loss or better/worse. Gold only means a championship. Orange is the interaction/accent color. Manager identity is shown with the navy monogram, not 13 different colors. Pinned series use `--s1..--s3`.
-
-## 2. Shared components (build once, use everywhere)
+## 2. Shared components
 
 | Component | Prototype source | Notes |
 |---|---|---|
-| `HeaderBand` with tabs | `index.html` `.band`, `core.js` router | Sticky navy band: logo, league name, "2018-19 – 2025-26 · 7 seasons · 13 managers", tabs on the right. Replace the current sidebar. "Awards" gets a small NEW tag. |
-| `InfoTip` | `App.info`, `#tip` | ⓘ button; shows explainer on hover, focus and click. Accessible: `aria-label` holds the text. |
-| `ChartTooltip` | `App.showTip/App.tt` | One floating tooltip following the pointer; title + label/value rows + optional footer. Keep inside viewport. |
-| `StatTile` | `App.tile` | label (+ ⓘ), big display number, detail line. |
-| `RecordCard` | `.rec` in index.html | heavier "record book" tile with a 4px ink top rule. |
-| `CountUp` | `App.count` | animate numbers 0→value over 700ms on client navigation; respect `prefers-reduced-motion`. |
-| `Monogram` / `ManagerLink` | `App.mono`, `App.who` | Initials are collision-aware: two-part names use both initials (Jacob G. → JG); colliding single names use the first differing letter (Michael → MC, Mitchell → MT). Logic in `core.js`. |
-| `Segmented`, `Pill`, `Badge` | `App.seg`, `.pill`, `.badge` | |
-| `InlineBar` / diverging inline bar | `.inbar` | Used in tables (leaderboard, draft card, trades). |
+| `HeaderBand` with tabs | `index.html` `.band`, `core.js` router | Sticky navy band replaces the sidebar. "Awards" gets a NEW tag. |
+| `InfoTip` | `App.info`, `#tip` | ⓘ shows the explainer on hover, focus and click. |
+| `ChartTooltip` | `App.showTip` / `App.tt` | one floating tooltip, title + label/value rows + footer, kept in the viewport. |
+| `StatTile`, `RecordCard`, `FormStrip` | `App.tile`, `.rec`, `.form-strip` | |
+| `CountUp` | `App.count` | 0→value over 700ms on client navigation; off with `prefers-reduced-motion`. |
+| `Monogram` / `ManagerLink` | `App.mono`, `App.who` | collision-aware initials (Jacob G. → JG; Michael → MC, Mitchell → MT). |
+| `Segmented`, `Pill`, `Badge`, `ShowMore` | `App.seg`, `.pill`, `.badge`, `.capped` lists | long lists show 8–12 items with "Show all N". |
+| `InlineBar` / diverging inline bar | `.inbar` | tables (leaderboard, draft, trades, habits). |
+| `Storyline` button | `.story` (seasons.js) | icon + kind + team + one-line detail; pressed state highlights lines in the race chart. |
 
-**Charts:** use **d3 (v7) inside client components** (`"use client"`, `useRef` + `useEffect`, redraw on resize with a `ResizeObserver`). Recharts can't do the race, bump, beeswarm, network or week grid well; you can drop it once nothing uses it. Each chart in the prototype is a self-contained `draw*` function you can port nearly line for line. Every chart must have hover tooltips with exact values and an `aria-label`.
+**Charts:** d3 v7 in client components (`"use client"`, `useRef` + `useEffect`, `ResizeObserver` redraw). Each chart in the prototype is a self-contained `draw*` function you can port nearly line for line. Every chart needs hover tooltips with exact values and an `aria-label`. Recharts can be removed once nothing uses it (`RaceChart` from PR #7 is replaced by the race chart below).
 
-**Motion:** page fade-in (350ms), count-ups, bar growth on load, animated reordering in the race and replay, line draw-on for pinned bump lines. Nothing waits on scroll; everything is readable at rest.
+**Motion:** page fade-in, count-ups, bars growing on load, animated reordering in the all-time race and the replay, draw-on lines for pinned series, the champion-seed dots dropping into place, the draft gauge sweeping. Nothing waits on scroll; everything is readable at rest.
 
-## 3. New analytics to add (with tests)
+## 3. Prototype-only view helpers (move into `src/lib/analytics` with tests)
 
-All exist in prototype form in `scripts/export-design-data.ts` (`NEW METRICS`) or the page scripts. Put them in `src/lib/analytics/` and test each one against hand-checked values.
+Everything else already exists in the site. These small helpers don't yet:
 
-| Function | Rule | Where used | Test idea |
-|---|---|---|---|
-| `managerGames(league)` | Every weekly matchup from each side: year, week, stage, opponent, cats for/against/tied, result. Chronological. | base for the rest | count = 2 × matchups |
-| `streaks(league)` | Longest consecutive matchup **wins** and **losses** per manager, playoffs included, carrying across seasons; a tie ends a streak. Returns n, from (year:week), to. | Overview, Awards, Manager | Dadder's longest win streak is 11 (2020-21 wk 15 → 2021-22 wk 6); Eddie's losing streak is 13 |
-| `weeklyProfile(league)` | Per manager: average cats won per week, 9-0 sweeps for/against, distribution of cats won (0–9). | Overview, Manager ("typical week") | Najim has 2 sweeps (league high); Matt's average cats per week is 5.02 |
-| `raceFrames(league)` | Cumulative category wins, matchup wins, titles, podiums (top-3 final) and seasons at the end of each season. | Overview "all-time race" | last frame: Matt 642 category wins |
-| `oneCategoryGames(league)` | Regular-season wins/losses decided by exactly one category. | Manager, Awards | |
-| `weeklyStandings(season)` | Cumulative category W-L-T per team after each regular week, ranked by category win %, then cat differential, then cat wins. **Final frame must equal `seasonStandings` order** (it handles Yahoo tiebreaks via `sourceSeedOrder`). | Seasons "replay" | last frame order == `seasonStandings(season)` |
-| `meetings(league, a, b)` | Every game between two managers with stage, week and both scores. (Extend `headToHead` if you prefer.) | Rivalries timeline | Matt vs Najim: 16 meetings, 9-7 |
-| `seasonAwards(league, year)` / `allTimeAwards(league)` | See "Awards" below for each rule. | Awards | each award picks the expected manager for 2025-26 |
-| `managerBadges(league, id)` | Archetype badges (Dynasty, Draft guru, Wire hawk, Trade shark, Ice in veins, Playoff riser, Steady hand, Heater). Rules in `managers.js` `badgesFor`. Min 3 seasons for rate-based badges. | Manager cards and profiles | |
-| `tradeNetwork(league)` | Completed trades counted per manager pair. | Trades | 40 completed trades total |
+| Helper | What it returns | Used by |
+|---|---|---|
+| `weeklyProfile(league)` | per manager: average categories won per week, 9-0 sweeps for/against, distribution of categories won (0–9) | Overview bragging rights, Manager "typical week", Awards |
+| `allTimeRaceFrames(league)` | cumulative category wins, matchup wins, titles, podiums and seasons at the end of each season | Overview all-time race |
+| `oneCategoryGames(league)` | regular-season wins/losses by exactly one category | Manager "close calls" |
+| `managerBadges(league, id)` | archetype badges and their rules (`managers.js` `badgesFor`) | Manager cards and profiles |
+| `seasonAwards(league, year)` / `allTimeAwards(league)` | award winners (rules in the Awards table below) | Awards |
 
-`schedules()` rows don't carry final finish; join it from `seasonOutcome` (the prototype does this in `records.js` `drawSos`).
+## 4. Page specs (site function → visual)
 
-## 4. Page specs
-
-Routes stay the same (`/[league]`, `/leaderboard`, `/seasons/[year]`, `/managers/[id]`, `/rivalries`, `/records`, `/draft`, `/draft/[year]`, `/trades`) plus **new `/awards` and `/awards/[year]`**. Also add a **`/managers` index** (card grid; today it doesn't exist). Prototype file in brackets.
+Routes stay as they are, plus **new `/awards` and `/awards/[year]`** and a **`/managers` index** (card grid).
 
 ### Overview `[overview.js]`
-- Hero: navy "reigning champion" card (team name huge, manager monogram, "title #N · beat X in the final", link to season) + 4 tiles (most titles, longest win streak, seasons, matchups played).
-- **Banners in the rafters:** one pennant per champion, newest in orange; click → season.
-- **All-time race:** animated bar chart race with Play/Pause, a season slider, metric toggle (category wins / titles / podiums), leader in orange, big season watermark. Tooltip shows all metrics through that season.
-- **Where everyone finished:** bump chart of final finish by season, all managers in gray, two pinned in color (pills to pin up to 3), nearest-point hover highlights a line, gold dots for titles, gaps for missed seasons.
-- **Bragging rights:** hottest streak, coldest streak, most 9-0 sweeps, best categories per week.
+- Hero: navy reigning-champion card + tiles (most titles, longest win streak ← `longestStreaks(league, "W")[0]`, seasons, matchups).
+- **Banners in the rafters** ← `championHistory`.
+- **All-time race** (bar chart race, Play/slider, metric toggle) ← `allTimeRaceFrames`.
+- **Power ratings** ← `eloRatings`: ranked list (rank, monogram, rating, this-season sparkline and change, bar), click to pin up to 4 lines on a rating-over-time chart (season bands, 1500 dashed baseline, peak ring, nearest-point tooltip). Replaces the "Power ratings" list and the Elo metric in "Performance over time".
+- **Where everyone finished** bump chart ← `managerSeasons`.
+- **Bragging rights** ← `longestStreaks` (W and L), `weeklyProfile`.
 
 ### Seasons `[seasons.js]`
-- Season pills; 4 tiles (champion, runner-up, regular-season #1, biggest blowout).
-- **Replay the season:** week slider + Play, diverging bars from .500 category win % per team, rows animate into the new order, orange "playoff line" after the last playoff seed.
-- **Playoff bracket:** quarterfinals → semis → final + third place, seeds, scores, champion card. Seed tiebreaks noted.
-- **Every week, every team:** heat grid (team × week), number = cats won, blue win / red loss / gray tie, darker = bigger margin, playoff weeks outlined in gold.
-- **Final standings table:** seed, team, manager, category W-L-T, category win %, matchup W-L-T, moves, final (champion badge, "Nth · playoffs").
+- Season pills; tiles (champion, runner-up, regular-season #1, biggest blowout).
+- **The standings race** ← `seasonRace(season)`, one panel with a toggle:
+  - *Every week*: rank-by-week bump chart, playoff zone shaded, champion in gold, team labels at the end; **storyline buttons** (front-runner = most `weeksInFirst`; `comebacks`; `collapses`; final-week knockout = `lastWeekOut`/`lastWeekIn`). Clicking one highlights those lines.
+  - *Replay*: the animated bars from .500 (category win % by week, `seasonStandings(season, { throughWeek })`).
+- **Playoff bracket** ← playoff matchups + seeds.
+- **What if weeks won decided it?** ← `seasonStandings(season, { method: "matchups" })` + `alternateStandings(season)`: slope chart real order → matchups order, lines crossing the playoff line in blue (gets in) / red (drops out), callout naming who swaps and whether a finalist would have missed.
+- **Roster builds** ← `rosterProfiles(season)`: team × category heat map (diverging standard scores), outlined "PUNT" cells, finish column. Seasons without player stats show a note.
+- **Every week, every team** grid, **Final standings** table.
 
 ### Managers `[managers.js]`
-- `/managers`: trading-card grid (monogram, name, titles, seasons, category win %, mini finish sparkline, badges).
-- Profile: badges with explainers, team-name history chips (title years with a trophy), tiles (titles, category win %, average finish, best streak), **career path** (final finish dot + regular-season seed ring per season, connected), **typical week** histogram vs league average, **head-to-head vs everyone** diverging bars (click → rivalry), draft / wire & trades / close calls panels, season-by-season table, quick switcher.
+- `/managers`: trading cards (monogram, titles, category win %, average finish, finish sparkline, badges).
+- Profile: badges, team-name chips, tiles (titles, category win %, average finish, longest win streak ← `managerStreaks`), then a **form strip**: power rating (current rank, peak, career sparkline ← `eloRatings`), matchup luck (career total + per-season diverging bars ← `careerLuck`, `matchupLuck`), longest losing streak, **Yahoo manager rating** with a level pill (Diamond/Platinum/Gold/Silver) ← `league.ratings`.
+- Career path, typical week, head-to-head vs everyone, then panels: **Draft habits** (value vs league, reach ← `reachStats`, picks kept ← `keepRates`, favourite player ← `favouritePlayers`, best and worst pick), wire & trades, close calls; season table; quick switcher.
 
 ### Leaderboard `[leaderboard.js]`
-- Sortable table with season-range filter and search; inline bars for category win %, finish sparkline per manager, trophies in the titles column.
-- **Decision for the owner:** the prototype ranks ties by **category win %** (the number Yahoo uses for this league's standings); the current site uses matchup win %. Both columns are shown. Pick one for the default sort and the overview "best win %" tile.
+Sortable table with season range and search, inline bars, finish sparklines, trophies. Keep the site's default sort unless the owner chooses otherwise (the prototype ties on category win %).
 
 ### Rivalries `[rivalries.js]`
-- Manager A / B selects + Swap. Big score (wins each), "X leads", tug-of-war bar, tiles (regular season, playoffs, categories, current streak).
-- **Every meeting** timeline: one lollipop per game, up = A won, down = B won, height = category margin, ringed gold = playoffs. Note the biggest beatdown.
-- Rivalry index: most lopsided (min 10 meetings), dead even, playoff rivals; each row loads that pair.
-- **Everyone vs everyone** heat grid (row's record vs column), diverging blue/red, click a square to load the pair.
+Picker + swap, big score, tug-of-war bar, tiles, every-meeting lollipop timeline, rivalry index (lopsided / even / playoff rivals), everyone-vs-everyone heat grid ← `headToHead`, `h2hMatrix`.
 
 ### Records `[records.js]`
-- Record cards: best and worst regular season (category win %), biggest playoff riser (3+ trips), best one-category record.
-- **Playoff risers & fallers:** arrow from average seed to average finish per manager.
-- **Title droughts:** season strip per manager (gold = title year, pink = seasons since last title, dashed = not in league).
-- **Coin-flip weeks:** butterfly chart of wins/losses in one-category weeks, toggle to blowouts.
-- Best/worst regular seasons ever (top 8 lists).
-- **Steady or streaky:** scatter of typical finish vs swing (names in a right-side column with leader lines).
-- **Strength of schedule:** beeswarm of every team-season's opponents' category win %, title winners in gold, extremes labelled.
+Grouped with section headers and a sticky "jump to" bar: Playoffs · Streaks & the race · Luck & what-ifs · Scorelines · Best & worst · Named after a player.
+- Record cards (best season, longest win streak, playoff riser, one-category record).
+- **Seeds & upsets** ← `seedHistory`: 4 tiles + champion-seed strip (each season's playoff field as a column, gold dot drops to the champion's seed; "#1 seed finished Nth" underneath).
+- Playoff risers & fallers ← `playoffRecords`; title droughts ← `titleDroughts`; coin-flip weeks ← `marginRecords`.
+- **Longest streaks** ← `longestStreaks` (W and L): bars placed on the season's week axis.
+- **Front-runners** and **Comebacks & collapses** ← `raceRecords`.
+- **Matchup luck** ← `matchupLuck` (scatter: expected vs actual wins, diagonal, lucky zone shaded) + `careerLuck` (diverging bars).
+- **What if weeks won decided the standings?** ← `leagueAlternates`: one card per season that changes.
+- **How matchups end** ← `scorelines` (histogram colored by margin) + most dominant seasons ← `marginAverages` (5+ wins); **Clean sweeps** ← `sweeps`.
+- Best/worst regular seasons ← `teamSeasons`; steady or streaky ← `consistency`; **Parity by season** ← `parity` (worst→best range bar, orange tick at the last playoff seed, most even season in blue). Strength of schedule is gone, as on the site.
+- **Did the namesake deliver?** ← `namesakes`: cards (team name, player's rank, team finish, a "drafted & kept / lost him / never had him" chip), 8 shown + "Show all".
 
 ### Draft `[draft.js]`
-- **Report card** table with a letter grade (A ≥ +15, B ≥ +6, C within ±6, D ≤ −6, F ≤ −15 vs league; placeholder cut-offs), diverging value bar, hit rate, rounds 1–3 slot → finish, late gems, best pick. Clicking a row highlights that manager in the scatter.
-- **Every pick, ever:** scatter of overall pick vs finish rank for all ~1,000 picks; diagonal "finished where drafted", steal zone shaded; filters by manager and season; players outside the top 300 shown at 300+.
-- Biggest steals / busts (rounds 1–3), **Does draft slot matter?** bars (average finish by first-round slot, trophies per slot), late-round gems list.
-- **Draft boards** (`/draft/[year]`): full board colored by value, with each column's final place.
+- **Report card** ← `managerDraftStats`: letter grade (placeholder cut-offs on the new value scale: A ≥ +0.30, B ≥ +0.10, C within ±0.10, D ≤ −0.10, F ≤ −0.30 vs league), diverging value bar, hit rate, rounds 1–3 slot → finish, late gems, best pick. Clicking a row highlights that manager in the scatter.
+- **How much does draft day decide?** ← `draftImpact`: semicircle gauge sweeping to r² (19%).
+- **Does reaching pay off?** ← `reachStats().groups`: three bars (beat-the-rankings rate), plus the `keepRates` correlation note.
+- **Draft position** ← `draftPositions`: per-manager dot strip of first-round slots (gold = #1 pick), ring at the average, chips for #1 picks, #2 picks, top-3 finishers drafted.
+- **Every pick, ever** scatter ← `leaguePicks` (values are value points now; one decimal).
+- Steals / busts ← `topSteals`, `topBusts`; **Draft habits** table ← `reachStats().rows`, `keepRates`, `favouritePlayers`.
+- **Favourite players** ← `favouritePlayers`: cards with one chip per year (blue beat the slot, red fell short).
+- **The ones that got away** ← `gotAway`: list with traded/dropped badge.
+- **First overall picks** ← `draftSlotHistory`: horizontal timeline cards.
+- Does draft slot matter ← `finishByDraftSlot`; late-round gems ← `lateGems` (scroll or collapse after 15); draft boards ← `seasonPicks` (cell colors: ≥ +3 strong steal, ≥ 0 steal, > −3 miss, else bust).
 
 ### Trades `[trades.js]`
-- Tiles: trades completed (+ vetoed), most trades, most moves in one season, most lopsided trade.
-- **Who trades with whom:** circular network, edge width = number of trades, hover a manager to light up their partners, click → profile.
-- **Does grinding the wire pay off?** bars (champions / top third / league avg / bottom third) + scatter of moves vs final finish for every team-season.
-- Activity table with inline bars (moves, net trade value diverging).
-- **Trade log** filtered by season (defaults to the latest), value bars per side; vetoed trades dimmed with no winner.
-- Undrafted gems.
+Tiles, **who trades with whom** network, wire-vs-finish bars + scatter ← `activityVsFinish`, activity table ← `managerActivity`, trade log by season ← `leagueTrades`, **Undrafted gems** ← `undraftedGems` (12 + show all) beside **Stars nobody owned** ← `unownedStars` (dot on a #1–#60 track, drafted-by note).
 
 ### Awards (new) `[awards.js]`
-Season pills + "All-time". Each card: icon, award name + ⓘ, headline value, manager(s), one-line reason.
+Season pills + "All-time". Card = icon, name + ⓘ, headline value, manager(s), one-line reason.
 
-Season awards (all from that season only):
-
-| Award | Rule |
+| Season award | Pick from |
 |---|---|
-| Champion | won the final |
-| Regular-season MVP | #1 in regular-season standings (category win %) |
-| Cinderella | biggest gain from playoff seed to final finish (only if > 0) |
-| Playoff heartbreak | biggest drop from seed to final finish (only if < 0) |
-| Unluckiest | most regular-season losses by one category (ties → fewer one-category wins) |
-| Broom award | most 9-0 weeks (skip if none) |
-| Toughest road | hardest strength of schedule |
-| Waiver warrior | most adds/drops |
-| Steal of the draft | highest pick value |
-| Bust of the year | lowest pick value, rounds 1–3 |
-| Heist of the year | completed trade with the largest value margin (winner gets it) |
-| Biggest beatdown | largest category margin in a regular-season week |
+| Champion | season outcome |
+| Regular-season MVP | standings #1 |
+| Cinderella / Playoff heartbreak | biggest gain / drop from seed to final finish |
+| Horseshoe / Snake-bitten | highest / lowest `matchupLuck` that season |
+| Broom award | most 9-0 weeks (`sweeps`) |
+| Front-runner | most `weeksInFirst` (`seasonRace`) |
+| Comeback of the year | first `seasonRace().comebacks` entry |
+| Waiver warrior | most moves |
+| Steal of the draft / Bust of the year | highest pick value / lowest in rounds 1–3 |
+| Heist of the year | completed trade with the largest margin |
+| Biggest beatdown | largest regular-season category margin |
 
-All-time: Most decorated (titles, ties shown), Podium regular (top-3 finishes), Category machine (best career category win %, 3+ seasons), Mr. Steady (smallest swing), Heater / Ice cold (streaks), Broom closet (most sweeps), Snake-bitten (most one-category losses), Draft guru, Trade shark, Wire hawk (moves per season), Still waiting (longest active drought, never won). Names are placeholders for the league to vote on.
+All-time: Most decorated, Podium regular, Category machine, Mr. Steady, Power player (top current Elo), Heater / Ice cold (`longestStreaks`), Broom closet, Horseshoe / Snake-bitten (`careerLuck`), Draft guru, Trade shark, Wire hawk, Still waiting. Names are placeholders for the league to vote on.
 
-## 5. Known data limits (say so in the UI where relevant)
+## 5. Things to present carefully
 
-- No 2019-20 season exists. Seasons are labelled by end year in data (`2026` = 2025-26).
-- Only category **counts** per matchup are stored (e.g. 6-3), not the category stats. So no per-category strengths, no all-play "luck" record, no "won FG% by 0.002". These need the weekly category totals (next data phase).
-- Draft value and trade value use full-season player ranks, so injuries count against a pick and trade value includes weeks before the trade. Explainers already say this.
-- "Moves" is Yahoo's season count of adds/drops.
-- 10-team seasons (2018-19 to 2021-22) and 12-team seasons are mixed; typical finish uses percentiles to compare fairly.
+- Power ratings predict next week only slightly better than a coin flip (`predictiveSkill` ≈ 0.02). Frame them as current form, not a forecast (the explainer says so).
+- No 2019-20 season. Seasons are labelled by end year in data (`2026` = 2025-26).
+- Only category counts per matchup are stored (6-3), not category stats, so there are no per-category head-to-heads yet.
+- Draft and trade values use full-season ranks; injuries count against a pick and trade value includes weeks before the trade.
+- Roster builds use season-end rosters and start in 2022-23.
 
-## 6. Verification checklist (before opening the PR)
+## 6. Verification checklist
 
-- [ ] `npm run typecheck`, `npm run lint`, `npm test` (all existing + new tests), `npm run build` all pass.
+- [ ] `npm run typecheck`, `npm run lint`, `npm test`, `npm run build` pass.
 - [ ] `npx tsx scripts/export-design-data.ts` prints `data problems: none`.
-- [ ] Spot-check against Yahoo: 2025-26 champion Baby-Faced Assassin (Najim) over Mad Maxey (Matt); Matt's 2025-26 category record 109-58-4; Matt vs Najim all-time 9-7.
-- [ ] Every number on every page traces to an analytics function (grep components for numeric literals).
-- [ ] Every ⓘ in the prototype exists on the real page with the same wording.
-- [ ] Both `/demo` and `/caboclo` render (the demo league has no draft/trades data, so those tabs stay hidden there, as today).
-- [ ] `/caboclo` is still password-protected.
-- [ ] Light and dark mode both readable; `prefers-reduced-motion` turns animation off.
-- [ ] Desktop at 1280–1920px wide looks like the prototype.
-- [ ] Delete `scripts/export-design-data.ts` only if its metrics have all moved into `src/lib/analytics`; keep `design/` until the owner signs off.
+- [ ] Every number on every page comes from an analytics function (no numeric literals in components besides fixed thresholds).
+- [ ] Every ⓘ in the prototype exists on the real page.
+- [ ] `/demo` and `/caboclo` both render; `/caboclo` is still password-protected.
+- [ ] Light and dark mode readable; `prefers-reduced-motion` turns animation off.
+- [ ] Desktop at 1280–1920px matches the prototype.
+- [ ] Open a PR; Vercel builds a preview for the owner before merge.
