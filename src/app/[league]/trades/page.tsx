@@ -3,9 +3,11 @@ import { rankLabel, signed } from "@/components/draft";
 import { Avatar, Card, cardClass, ManagerLink, PageTitle, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
 import { formatNumber } from "@/lib/analytics/format";
 import { unownedStars } from "@/lib/analytics/players";
-import { activityVsFinish, hasTradeData, leagueTrades, managerActivity, undraftedGems } from "@/lib/analytics/trades";
+import { activityVsFinish, hasTradeData, leagueTrades, managerActivity, tradeEdges, undraftedGems, wireSeasons } from "@/lib/analytics/trades";
 import { colorForManager } from "@/lib/colors";
 import { getLeague } from "@/lib/data";
+import { TradeNetwork } from "@/components/viz/TradeNetwork";
+import { WireCharts } from "@/components/viz/WireCharts";
 
 export const metadata = { title: "Trades & moves" };
 
@@ -25,6 +27,10 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
   const gems = undraftedGems(league);
   const unowned = unownedStars(league);
   const vsFinish = activityVsFinish(league);
+  const edges = tradeEdges(league);
+  // Circle order follows the league's manager list; only managers with a completed trade get a seat.
+  const traders = league.managers.map((m) => m.id).filter((id) => edges.some((e) => e.a === id || e.b === id));
+  const names = Object.fromEntries(league.managers.map((m) => [m.id, m.name]));
   const mostTrades = activity[0];
   const busiestSeason = league.seasons
     .flatMap((s) =>
@@ -60,6 +66,27 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
           detail={`${nameOf(lopsided.winnerManagerId!)} won, ${lopsided.label}`}
         />
       </div>
+
+      {(traders.length > 1 || vsFinish) && (
+        <div className="grid gap-3 lg:grid-cols-2">
+          {traders.length > 1 && (
+            <Section title="Who trades with whom">
+              <Card className="space-y-2">
+                <p className="text-sm text-muted">Hover a manager to see their trade partners; click to open their page. Wider line = more trades.</p>
+                <TradeNetwork ids={traders} edges={edges} names={names} slug={slug} />
+              </Card>
+            </Section>
+          )}
+          {vsFinish && (
+            <Section title="Does working the wire pay off?">
+              <Card className="space-y-2">
+                <p className="text-sm text-muted">Average adds/drops per team-season across {vsFinish.seasons} seasons, by how the team finished.</p>
+                <WireCharts vf={vsFinish} rows={wireSeasons(league)} nameOf={nameOf} />
+              </Card>
+            </Section>
+          )}
+        </div>
+      )}
 
       <Section title="Activity by manager">
         <TableWrap>
@@ -111,17 +138,6 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
           (hover for the season rank). Otherwise it falls back to full-season ranks. Moves are the season count of adds and drops.
         </p>
       </Section>
-
-      {vsFinish && (
-        <Section title="Does working the wire pay off?">
-          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-            <StatCard label="League average" value={formatNumber(vsFinish.leagueAvg, 0)} detail="moves per team-season" />
-            <StatCard label="Champions" value={formatNumber(vsFinish.championsAvg, 0)} detail={`across ${vsFinish.seasons} seasons`} />
-            <StatCard label="Top third of the standings" value={formatNumber(vsFinish.topThirdAvg, 0)} detail="by final finish" />
-            <StatCard label="Bottom third" value={formatNumber(vsFinish.bottomThirdAvg, 0)} detail="by final finish" />
-          </div>
-        </Section>
-      )}
 
       <Section title="Trade log">
         <div className="space-y-6">

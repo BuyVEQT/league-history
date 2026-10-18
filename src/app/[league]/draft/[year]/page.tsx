@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { PickLine, rankLabel, signed, valueTone } from "@/components/draft";
+import { PickLine, pickTone, rankLabel, signed } from "@/components/draft";
 import { Card, PageTitle, Section } from "@/components/ui";
+import { tt } from "@/components/viz/tt";
 import { seasonPicks, topBusts, topSteals } from "@/lib/analytics/draft";
+import { ordinal } from "@/lib/analytics/format";
+import { seasonOutcome } from "@/lib/analytics/season";
 import { getLeague } from "@/lib/data";
 
 export async function generateStaticParams({ params }: { params: { league: string } }) {
@@ -29,6 +32,8 @@ export default async function DraftBoardPage(props: PageProps<"/[league]/draft/[
   // Columns follow round-one order; snake drafts reverse each even round.
   const columns = picks.filter((p) => p.round === 1).sort((a, b) => a.pick - b.pick);
   const cell = (teamId: string, round: number) => picks.find((p) => p.teamId === teamId && p.round === round);
+  // Final finish per team, for the column headers; a live draft has none yet.
+  const finish = live ? null : seasonOutcome(season).finalRank;
   const draftSeasons = [...league.seasons, ...(league.upcoming ? [league.upcoming] : [])].filter((s) => s.draft?.length);
 
   return (
@@ -59,38 +64,51 @@ export default async function DraftBoardPage(props: PageProps<"/[league]/draft/[
         ))}
       </nav>
 
-      <div className="overflow-x-auto rounded-xl border border-border bg-surface/80">
-        <table className="w-full min-w-[960px] table-fixed border-collapse text-xs">
+      <div className="panel overflow-x-auto p-3">
+        <table className="w-full table-fixed border-separate border-spacing-[3px] text-xs" style={{ minWidth: columns.length * 104 + 40 }}>
           <caption className="sr-only">{season.label} draft board by round and team</caption>
           <thead>
             <tr>
-              <th className="w-10 border-b border-border px-2 py-2 text-left text-muted">Rd</th>
-              {columns.map((c) => (
-                <th key={c.teamId} className="border-b border-border px-1.5 py-2 text-left font-medium">
-                  <div className="truncate">{c.teamName}</div>
-                  <div className="truncate font-normal text-muted">{nameOf(c.managerId)}</div>
-                </th>
-              ))}
+              <th className="w-9 px-1 pb-2 text-left align-bottom text-[11px] font-bold uppercase tracking-wider text-muted">Rd</th>
+              {columns.map((c) => {
+                const place = finish?.get(c.teamId);
+                return (
+                  <th key={c.teamId} className="px-1 pb-2 text-left align-bottom font-normal" title={c.teamName}>
+                    <div className="truncate text-[12.5px] font-bold text-foreground">{nameOf(c.managerId)}</div>
+                    <div className="truncate text-[11px] text-muted">{place ? `${ordinal(place)} place` : c.teamName}</div>
+                  </th>
+                );
+              })}
             </tr>
           </thead>
           <tbody>
             {Array.from({ length: rounds }, (_, i) => i + 1).map((round) => (
               <tr key={round}>
-                <td className="border-b border-border px-2 py-1.5 text-muted">{round}</td>
+                <td className="px-1 text-muted tabular-nums">{round}</td>
                 {columns.map((c) => {
                   const p = cell(c.teamId, round);
+                  if (!p) return <td key={c.teamId} />;
                   return (
-                    <td key={c.teamId} className={`border-b border-l border-border px-1.5 py-1.5 align-top ${p && !live ? valueTone(p.value) : ""}`}>
-                      {p && live && (
-                        <div title={`${p.playerName}: pick #${p.overall}`}>
-                          <div className="truncate font-medium">{p.playerName}</div>
-                          <div className="tabular-nums text-muted">#{p.overall}</div>
+                    <td key={c.teamId} className="p-0 align-top">
+                      {live ? (
+                        <div className="pick plain" tabIndex={0} data-tt={tt(p.playerName, [["Pick", `Rd ${p.round}, #${p.overall} overall`], ["Drafted by", nameOf(p.managerId)]])}>
+                          <div className="pn">{p.playerName}</div>
+                          <div className="pm">#{p.overall}</div>
                         </div>
-                      )}
-                      {p && !live && (
-                        <div title={`${p.playerName}: pick #${p.overall}, finished ${rankLabel(p.actualRank)} (${signed(p.value, 1)})`}>
-                          <div className="truncate font-medium">{p.playerName}</div>
-                          <div className="flex justify-between gap-1 tabular-nums text-muted">
+                      ) : (
+                        <div
+                          className={`pick ${pickTone(p.value)}`}
+                          tabIndex={0}
+                          data-tt={tt(p.playerName, [
+                            ["Pick", `Rd ${p.round}, #${p.overall} overall`],
+                            ["Drafted by", nameOf(p.managerId)],
+                            ["Finished", rankLabel(p.actualRank)],
+                            ["Preseason rank", p.preseasonRank === null ? "—" : `#${p.preseasonRank}`],
+                            ["Value", signed(p.value, 1)],
+                          ])}
+                        >
+                          <div className="pn">{p.playerName}</div>
+                          <div className="pm">
                             <span>{rankLabel(p.actualRank)}</span>
                             <span>{signed(p.value, 1)}</span>
                           </div>
@@ -103,8 +121,28 @@ export default async function DraftBoardPage(props: PageProps<"/[league]/draft/[
             ))}
           </tbody>
         </table>
+        {!live && (
+          <div className="viz-legend mt-3 px-1">
+            <span>
+              <i style={{ background: "var(--pos)" }} />
+              Big steal
+            </span>
+            <span>
+              <i style={{ background: "var(--pos-wash)" }} />
+              Beat the slot
+            </span>
+            <span>
+              <i style={{ background: "var(--neg-wash)" }} />
+              Below the slot
+            </span>
+            <span>
+              <i style={{ background: "var(--neg)" }} />
+              Big bust
+            </span>
+            <span>Hover a pick for the details.</span>
+          </div>
+        )}
       </div>
-      {!live && <p className="-mt-6 text-xs text-muted">Green = finished better than drafted, red = worse. Hover a cell for details.</p>}
 
       {!live && <div className="grid gap-3 lg:grid-cols-2">
         <Section title="Steals of the draft">

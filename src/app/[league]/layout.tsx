@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Nav } from "@/components/Nav";
 import { SiteFooter } from "@/components/SiteFooter";
+import { ChartTooltip } from "@/components/viz/ChartTooltip";
 import { hasDraftData } from "@/lib/analytics/draft";
 import { hasTradeData } from "@/lib/analytics/trades";
 import { getLeague, leagueSlugs } from "@/lib/data";
@@ -49,6 +50,7 @@ export default async function LeagueLayout({ children, params }: LayoutProps<"/[
         {children}
       </main>
       <SiteFooter source={league.source} />
+      <ChartTooltip />
     </div>
   );
 }

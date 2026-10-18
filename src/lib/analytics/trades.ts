@@ -212,3 +212,35 @@ export function activityVsFinish(league: League): ActivityVsFinish | null {
     seasons: new Set(league.seasons.filter((s) => s.activity).map((s) => s.year)).size,
   };
 }
+
+/** Completed trades between each pair of managers (a before b alphabetically by id). */
+export function tradeEdges(league: League): { a: ManagerId; b: ManagerId; trades: number }[] {
+  const edges = new Map<string, number>();
+  for (const t of leagueTrades(league)) {
+    if (t.status !== "completed" || t.sides.length !== 2) continue;
+    const key = t.sides.map((s) => s.managerId).sort().join("|");
+    edges.set(key, (edges.get(key) ?? 0) + 1);
+  }
+  return [...edges].map(([key, trades]) => {
+    const [a, b] = key.split("|");
+    return { a, b, trades };
+  });
+}
+
+/** Every team-season with a move count: adds and drops against final finish. */
+export function wireSeasons(league: League) {
+  return league.seasons.flatMap((season) => {
+    if (!season.activity) return [];
+    const o = seasonOutcome(season);
+    const teams = teamIndex(season);
+    return Object.entries(season.activity).map(([teamId, a]) => ({
+      year: season.year,
+      label: season.label,
+      teamName: teams.get(teamId)!.name,
+      managerId: teams.get(teamId)!.managerId,
+      moves: a.moves,
+      final: o.finalRank.get(teamId)!,
+      teams: season.teams.length,
+    }));
+  });
+}
