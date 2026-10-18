@@ -1,4 +1,11 @@
 @import "tailwindcss";
+@import "./styles/overview.css";
+@import "./styles/seasons.css";
+@import "./styles/managers.css";
+@import "./styles/records.css";
+@import "./styles/draft.css";
+@import "./styles/trades.css";
+@import "./styles/explore.css";
 
 /* "Caboclo Cup" design: a navy arena band over a cool scorebook-gray floor, white panels, ball-orange accents. */
 :root {
@@ -28,15 +35,14 @@
   --pos: #2a78d6; --pos-wash: #cde2fb; --neg: #e34948; --neg-wash: #f9d4d3; --mid: #eceae5;
   --shadow: 0 1px 2px rgb(20 32 48 / .06), 0 4px 16px rgb(20 32 48 / .05);
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --background: #0f151d; --foreground: #eef2f7; --surface: #18212c; --surface-2: #1e2935; --border: #2a3644; --border-2: #3a4757;
-    --ink-2: #b9c4d2; --muted: #93a0b2; --accent: #f07a3a; --accent-ink: #f59a62; --accent-wash: #3a2416; --gold: #e0b43c; --gold-wash: #3a3016;
-    --band: #0a1220; --band-2: #16243a; --band-muted: #93a3b9; --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
-    --positive: #3ccf5a; --negative: #f08a8a;
-    --pos: #3987e5; --pos-wash: #1d3554; --neg: #e66767; --neg-wash: #4a2324; --mid: #383835; --shadow: 0 1px 2px rgb(0 0 0 / .3);
-  }
+/* Always light (owner's choice). Dark only applies if a future toggle sets data-theme="dark". */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #0f151d; --foreground: #eef2f7; --surface: #18212c; --surface-2: #1e2935; --border: #2a3644; --border-2: #3a4757;
+  --ink-2: #b9c4d2; --muted: #93a0b2; --accent: #f07a3a; --accent-ink: #f59a62; --accent-wash: #3a2416; --gold: #e0b43c; --gold-wash: #3a3016;
+  --band: #0a1220; --band-2: #16243a; --band-muted: #93a3b9; --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
+  --positive: #3ccf5a; --negative: #f08a8a;
+  --pos: #3987e5; --pos-wash: #1d3554; --neg: #e66767; --neg-wash: #4a2324; --mid: #383835; --shadow: 0 1px 2px rgb(0 0 0 / .3);
 }
 @theme inline {
   --color-background: var(--background);
@@ -330,3 +336,5 @@ input[type="range"].scrub { accent-color: var(--accent); flex: 1; min-height: 0;
 .pick.neg { background: var(--neg-wash); }
 .pick.big-neg { background: var(--neg); color: #fff; }
 .pick.plain { background: var(--surface-2); }
+.show-more { margin-top: 8px; border: 1px solid var(--border-2); background: var(--surface); border-radius: 999px; padding: 5px 14px; font-size: 13px; font-weight: 600; color: var(--ink-2); min-height: 0; }
+.show-more:hover { border-color: var(--ink-2); color: var(--foreground); }
