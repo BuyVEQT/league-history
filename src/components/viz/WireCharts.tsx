@@ -1,6 +1,7 @@
 import type { ActivityVsFinish } from "@/lib/analytics/trades";
 import { ordinal } from "@/lib/analytics/format";
 import { tt } from "./tt";
+import { WireScatter } from "./WireScatter";
 
 type TeamSeason = { year: number; label: string; teamName: string; managerId: string; moves: number; final: number; teams: number };
 
@@ -11,12 +12,24 @@ export function WireCharts({ vf, rows, nameOf }: { vf: ActivityVsFinish; rows: T
       <WireBars vf={vf} />
       <div>
         <div className="mb-1 text-[11.5px] font-bold uppercase tracking-[.12em] text-muted">Every team-season</div>
-        <WireScatter rows={rows} nameOf={nameOf} />
+        <WireScatter
+          rows={rows.map((d) => ({
+            key: `${d.year}-${d.teamName}-${d.managerId}`,
+            teamName: d.teamName,
+            manager: nameOf(d.managerId),
+            label: d.label,
+            moves: d.moves,
+            final: d.final,
+            finalLabel: `${ordinal(d.final)} of ${d.teams}`,
+            teams: d.teams,
+          }))}
+        />
       </div>
     </div>
   );
 }
 
+/** HTML row bars so the labels stay full size at any width; bars grow in with CSS (at rest under reduced motion). */
 function WireBars({ vf }: { vf: ActivityVsFinish }) {
   const rows: [string, number, string][] = [
     ["Champions", vf.championsAvg, "var(--gold)"],
@@ -24,77 +37,20 @@ function WireBars({ vf }: { vf: ActivityVsFinish }) {
     ["League average", vf.leagueAvg, "var(--ink-2)"],
     ["Bottom third", vf.bottomThirdAvg, "var(--border-2)"],
   ];
-  const W = 560;
-  const rh = 34;
-  const m = { t: 4, r: 50, l: 118 };
-  const H = m.t + rows.length * rh;
   const max = Math.max(1, ...rows.map((r) => r[1]));
-  const x = (v: number) => (v / max) * (W - m.l - m.r);
   return (
-    <svg className="viz" viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Average moves by final finish group">
+    <div className="tx-wire" role="img" aria-label={`Average moves per team-season: ${rows.map(([l, v]) => `${l} ${Math.round(v)}`).join(", ")}`}>
       {rows.map(([label, v, color], i) => (
-        <g key={label} transform={`translate(0,${m.t + i * rh})`} data-tt={tt(label, [["Moves per team-season", Math.round(v)]], `across ${vf.seasons} seasons`)}>
-          <text className="ink" x={m.l - 10} y={rh / 2} dy=".35em" textAnchor="end">
-            {label}
-          </text>
-          <rect x={m.l} y={7} height={rh - 14} rx={4} width={x(v)} fill={color} />
-          <text className="ink num" x={m.l + x(v) + 6} y={rh / 2} dy=".35em">
-            {Math.round(v)}
-          </text>
-        </g>
+        <div key={label} className="tx-wire-row" data-tt={tt(label, [["Moves per team-season", Math.round(v)]], `across ${vf.seasons} seasons`)}>
+          <span className="tx-wire-nm">{label}</span>
+          <span className="tx-wire-trk">
+            <span className="tx-wire-bar" style={{ width: `calc(${(v / max) * 100}% - ${((v / max) * 34).toFixed(1)}px)`, background: color, animationDelay: `${i * 80}ms` }} />
+            <span className="tx-wire-v tx-wire-fade" style={{ animationDelay: `${300 + i * 80}ms` }}>
+              {Math.round(v)}
+            </span>
+          </span>
+        </div>
       ))}
-    </svg>
-  );
-}
-
-function WireScatter({ rows, nameOf }: { rows: TeamSeason[]; nameOf: (id: string) => string }) {
-  const W = 560;
-  const H = 230;
-  const m = { t: 10, r: 14, b: 34, l: 40 };
-  const maxTeams = Math.max(12, ...rows.map((r) => r.teams));
-  // Round the move axis up to a tidy multiple of 20.
-  const xMax = Math.max(20, Math.ceil(Math.max(...rows.map((r) => r.moves)) / 20) * 20);
-  const x = (v: number) => m.l + (v / xMax) * (W - m.l - m.r);
-  const y = (v: number) => m.t + ((v - 1) / (maxTeams - 1)) * (H - m.t - m.b);
-  const xTicks = Array.from({ length: xMax / 20 + 1 }, (_, i) => i * 20);
-  const yTicks = [1, 4, 8, maxTeams];
-  return (
-    <svg className="viz" viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Moves against final finish for each team-season">
-      {yTicks.map((t) => (
-        <g key={t}>
-          <line x1={m.l} x2={W - m.r} y1={y(t)} y2={y(t)} stroke="var(--border)" />
-          <text className="lbl num" x={m.l - 6} y={y(t)} dy=".35em" textAnchor="end">
-            {ordinal(t)}
-          </text>
-        </g>
-      ))}
-      <line x1={m.l} x2={m.l} y1={m.t} y2={H - m.b} stroke="var(--border-2)" />
-      {xTicks.map((t) => (
-        <text key={t} className="lbl num" x={x(t)} y={H - m.b + 16} textAnchor="middle">
-          {t}
-        </text>
-      ))}
-      <text className="lbl" x={W - m.r} y={H - 4} textAnchor="end">
-        adds &amp; drops that season →
-      </text>
-      {/* Champions last so the gold dots sit on top. */}
-      {[...rows].sort((a, b) => Number(a.final === 1) - Number(b.final === 1)).map((d) => (
-        <circle
-          key={`${d.year}-${d.teamName}-${d.managerId}`}
-          cx={x(d.moves)}
-          cy={y(d.final)}
-          r={4.5}
-          fill={d.final === 1 ? "var(--gold)" : "var(--s1)"}
-          fillOpacity={0.7}
-          stroke="var(--surface)"
-          data-tt={tt(d.teamName, [
-            ["Manager", nameOf(d.managerId)],
-            ["Season", d.label],
-            ["Moves", d.moves],
-            ["Final finish", `${ordinal(d.final)} of ${d.teams}`],
-          ])}
-        />
-      ))}
-    </svg>
+    </div>
   );
 }

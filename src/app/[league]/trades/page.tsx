@@ -1,20 +1,24 @@
 import { notFound } from "next/navigation";
-import { rankLabel, signed } from "@/components/draft";
-import { Avatar, Card, cardClass, ManagerLink, PageTitle, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
+import { CountUp } from "@/components/CountUp";
+import { signed } from "@/components/draft";
+import { InfoTip } from "@/components/InfoTip";
+import { ShowMore } from "@/components/ShowMore";
+import { TradeLog, type TradeLogEntry } from "@/components/TradeLog";
+import { TradePanelHead } from "@/components/TradePanelHead";
+import { Avatar, ManagerLink, PageTitle, StatCard, td, th, tr } from "@/components/ui";
+import { TradeNetwork } from "@/components/viz/TradeNetwork";
+import { tt } from "@/components/viz/tt";
+import { UnownedTrack } from "@/components/viz/UnownedTrack";
+import { WireCharts } from "@/components/viz/WireCharts";
 import { formatNumber } from "@/lib/analytics/format";
 import { unownedStars } from "@/lib/analytics/players";
 import { activityVsFinish, hasTradeData, leagueTrades, managerActivity, tradeEdges, undraftedGems, wireSeasons } from "@/lib/analytics/trades";
-import { colorForManager } from "@/lib/colors";
+import { activityBars, tradeLogSeasons, tradeSideShares } from "@/lib/analytics/tradesView";
 import { getLeague } from "@/lib/data";
 import { TIPS } from "@/lib/explain";
-import { InfoTip } from "@/components/InfoTip";
-import { TradeNetwork } from "@/components/viz/TradeNetwork";
-import { WireCharts } from "@/components/viz/WireCharts";
+import { TRADE_TIPS } from "@/lib/explain/trades";
 
 export const metadata = { title: "Trades & moves" };
-
-const dateLabel = (iso: string) =>
-  new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
 
 export default async function TradesPage(props: PageProps<"/[league]/trades">) {
   const { league: slug } = await props.params;
@@ -25,7 +29,7 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
   const trades = leagueTrades(league);
   const completed = trades.filter((t) => t.status === "completed");
   const vetoed = trades.filter((t) => t.status === "vetoed");
-  const activity = managerActivity(league);
+  const activity = activityBars(managerActivity(league));
   const gems = undraftedGems(league);
   const unowned = unownedStars(league);
   const vsFinish = activityVsFinish(league);
@@ -44,7 +48,33 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
     )
     .sort((a, b) => b.moves - a.moves)[0];
   const lopsided = [...completed].sort((a, b) => b.margin - a.margin)[0];
-  const seasonsWithTrades = [...new Set(trades.map((t) => t.year))].sort((a, b) => b - a);
+  const anyAfter = completed.some((t) => t.basis === "after");
+
+  const log: TradeLogEntry[] = trades.map((t) => {
+    const shares = tradeSideShares(t);
+    return {
+      year: t.year,
+      label: t.label,
+      date: t.date,
+      status: t.status,
+      basis: t.basis,
+      winnerManagerId: t.winnerManagerId,
+      margin: t.margin,
+      sides: t.sides.map((s, i) => ({
+        managerId: s.managerId,
+        teamName: s.teamName,
+        value: s.value,
+        share: shares[i],
+        players: s.players.map((p, j) => ({
+          key: `${p.playerId ?? p.name}-${j}`,
+          name: p.name,
+          actualRank: p.actualRank,
+          afterRank: p.afterRank ?? null,
+          afterGames: p.afterGames ?? null,
+        })),
+      })),
+    };
+  });
 
   return (
     <>
@@ -55,237 +85,210 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
       />
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        <StatCard label="Trades completed" value={completed.length} detail={`${vetoed.length} more vetoed`} />
-        <StatCard label="Most trades, all time" value={mostTrades.trades} detail={nameOf(mostTrades.managerId)} />
-        <StatCard
-          label="Most moves, one season"
-          value={busiestSeason.moves}
-          detail={`${busiestSeason.team.name} · ${nameOf(busiestSeason.team.managerId)}, ${busiestSeason.label}`}
-        />
-        <StatCard
-          label="Most lopsided trade"
-          tip={TIPS.tradeMargin}
-          value={signed(lopsided.margin, 1)}
-          detail={`${nameOf(lopsided.winnerManagerId!)} won, ${lopsided.label}`}
-        />
+        <StatCard label="Trades completed" value={<CountUp value={completed.length} />} detail={`${vetoed.length} more vetoed`} />
+        {mostTrades && <StatCard label="Most trades, all time" value={<CountUp value={mostTrades.trades} />} detail={nameOf(mostTrades.managerId)} />}
+        {busiestSeason && (
+          <StatCard
+            label="Most moves, one season"
+            tip={TRADE_TIPS.moves}
+            value={<CountUp value={busiestSeason.moves} />}
+            detail={`${busiestSeason.team.name} · ${nameOf(busiestSeason.team.managerId)}, ${busiestSeason.label}`}
+          />
+        )}
+        {lopsided && (
+          <StatCard
+            label="Most lopsided trade"
+            tip={TIPS.tradeMargin}
+            value={<CountUp value={lopsided.margin} decimals={1} prefix={lopsided.margin > 0 ? "+" : ""} />}
+            detail={`${nameOf(lopsided.winnerManagerId!)} won it, ${lopsided.label}`}
+          />
+        )}
       </div>
 
       {(traders.length > 1 || vsFinish) && (
-        <div className="grid gap-3 lg:grid-cols-2">
+        <div className="grid gap-4 lg:grid-cols-2">
           {traders.length > 1 && (
-            <Section title="Who trades with whom" tip="Each line is completed trades between two managers; the thicker the line, the more often they've dealt. Bigger circles = managers who trade more. Vetoed trades aren't drawn.">
-              <Card className="space-y-2">
-                <p className="text-sm text-muted">Hover a manager to see their trade partners; click to open their page. Wider line = more trades.</p>
-                <TradeNetwork ids={traders} edges={edges} names={names} slug={slug} />
-              </Card>
-            </Section>
+            <section className="panel tx-tp-panel">
+              <TradePanelHead title="Who trades with whom" sub="Hover a manager to see their trade partners; click to open their page." tip={TRADE_TIPS.network} />
+              <TradeNetwork ids={traders} edges={edges} names={names} slug={slug} />
+            </section>
           )}
           {vsFinish && (
-            <Section
-              title="Does working the wire pay off?"
-              tip="Average adds and drops per team-season, split by how teams finished. If champions and top teams make more moves than the bottom third, grinding the waiver wire pays."
-            >
-              <Card className="space-y-2">
-                <p className="text-sm text-muted">Average adds/drops per team-season across {vsFinish.seasons} seasons, by how the team finished.</p>
-                <WireCharts vf={vsFinish} rows={wireSeasons(league)} nameOf={nameOf} />
-              </Card>
-            </Section>
+            <section className="panel tx-tp-panel">
+              <TradePanelHead
+                title="Does grinding the wire pay off?"
+                sub={`Average adds/drops per team-season across ${vsFinish.seasons} seasons, by how the team finished.`}
+                tip={TRADE_TIPS.wire}
+              />
+              <WireCharts vf={vsFinish} rows={wireSeasons(league)} nameOf={nameOf} />
+            </section>
           )}
         </div>
       )}
 
-      <Section title="Activity by manager" tip={TIPS.netTrade}>
-        <TableWrap>
+      <section className="panel overflow-hidden">
+        <div className="tx-tp-panel pb-0">
+          <TradePanelHead
+            title="Activity by manager"
+            sub={`Trade wins compare the value of what each side received${anyAfter ? " over the games after the trade" : ""}.`}
+            tip={TIPS.netTrade}
+          />
+        </div>
+        <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <caption className="sr-only">Moves and trades by manager, all seasons</caption>
             <thead>
               <tr>
                 <th className={th}>Manager</th>
-                <th className={th}>Moves</th>
-                <th className={th}>Per season</th>
-                <th className={th}>Trades</th>
                 <th className={th}>
+                  <span className="inline-flex items-center gap-1.5">
+                    Moves <InfoTip down text={TRADE_TIPS.moves} />
+                  </span>
+                </th>
+                <th className={`${th} text-right`}>Per season</th>
+                <th className={`${th} text-right`}>Trades</th>
+                <th className={`${th} text-right`}>
                   <span className="inline-flex items-center gap-1.5">
                     Trade W-L <InfoTip down text={TIPS.tradeRecord} />
                   </span>
                 </th>
                 <th className={th}>
                   <span className="inline-flex items-center gap-1.5">
-                    Net value <InfoTip down text={TIPS.netTrade} />
+                    Net value <InfoTip down end text={TIPS.netTrade} />
                   </span>
                 </th>
-                <th className={th}>Vetoed</th>
+                <th className={`${th} text-right`}>Vetoed</th>
                 <th className={th}>Favorite partner</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
-              {activity.map((r) => (
+              {activity.map((r, i) => (
                 <tr key={r.managerId} className={tr}>
                   <td className={td}>
                     <span className="flex items-center gap-2">
-                      <Avatar size="sm" name={nameOf(r.managerId)} color={colorForManager(league, r.managerId)} />
+                      <Avatar size="sm" name={nameOf(r.managerId)} />
                       <ManagerLink id={r.managerId} name={nameOf(r.managerId)} />
                     </span>
                   </td>
-                  <td className={`${td} tabular-nums`}>{r.moves}</td>
-                  <td className={`${td} tabular-nums`}>{formatNumber(r.movesPerSeason, 0)}</td>
-                  <td className={`${td} tabular-nums`}>{r.trades}</td>
-                  <td className={`${td} tabular-nums`}>{r.trades ? `${r.tradeWins}-${r.tradeLosses}` : "—"}</td>
-                  <td className={`${td} tabular-nums ${r.netValue > 0 ? "text-positive" : r.netValue < 0 ? "text-negative" : ""}`}>
-                    {r.trades ? signed(r.netValue, 1) : "—"}
-                  </td>
-                  <td className={`${td} tabular-nums`}>{r.vetoed || "—"}</td>
                   <td className={td}>
-                    {r.favoritePartner ? `${nameOf(r.favoritePartner.managerId)} (${r.favoritePartner.count})` : "—"}
+                    <div className="tx-inbar" data-tt={tt(nameOf(r.managerId), [["Moves", r.moves], ["Seasons", r.seasons], ["Per season", formatNumber(r.movesPerSeason, 0)]])}>
+                      <span className="tx-inbar-n">{r.moves}</span>
+                      <div className="tx-inbar-tr">
+                        <div className="tx-inbar-fl" style={{ width: `${r.movesShare * 100}%`, animationDelay: `${i * 30}ms` }} />
+                      </div>
+                    </div>
+                  </td>
+                  <td className={`${td} text-right`}>{formatNumber(r.movesPerSeason, 0)}</td>
+                  <td className={`${td} text-right`}>{r.trades}</td>
+                  <td className={`${td} text-right`}>{r.trades ? `${r.tradeWins}-${r.tradeLosses}` : "—"}</td>
+                  <td className={td}>
+                    {r.trades ? (
+                      <div
+                        className="tx-inbar"
+                        data-tt={tt(nameOf(r.managerId), [["Net trade value", signed(r.netValue, 1)], ["Trade record", `${r.tradeWins}-${r.tradeLosses}`]], "Value received minus value given, all trades")}
+                      >
+                        <span className={`tx-inbar-n wide ${r.netValue > 0 ? "text-positive" : r.netValue < 0 ? "text-negative" : "text-muted"}`}>{signed(r.netValue, 1)}</span>
+                        <div className="tx-inbar-tr div">
+                          <div
+                            className={`tx-inbar-fl ${r.netShare >= 0 ? "pos" : "neg"}`}
+                            style={
+                              r.netShare >= 0
+                                ? { left: "50%", width: `${r.netShare * 50}%`, animationDelay: `${i * 30}ms` }
+                                : { right: "50%", width: `${-r.netShare * 50}%`, animationDelay: `${i * 30}ms` }
+                            }
+                          />
+                        </div>
+                      </div>
+                    ) : (
+                      <span className="text-muted">—</span>
+                    )}
+                  </td>
+                  <td className={`${td} text-right`}>{r.vetoed || "—"}</td>
+                  <td className={td}>
+                    {r.favoritePartner ? (
+                      <>
+                        {nameOf(r.favoritePartner.managerId)} <span className="text-muted">({r.favoritePartner.count})</span>
+                      </>
+                    ) : (
+                      "—"
+                    )}
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
-        </TableWrap>
-        <p className="text-xs text-muted">
-          Trade value uses the same scale as the draft: each player&apos;s end-of-season rank in 9-category z-score points above a
-          replacement-level player (roughly the last rostered player, teams × draft rounds, about 156 in a 12-team league). The scale is
-          steep at the top, so one star outweighs several solid players, and fringe players add nothing: getting more bodies doesn&apos;t
-          win a trade. Where game logs are available, each player is re-ranked on only the games played after the trade (to the end
-          of the regular season), so a trade is judged on what each side actually got; the card shows that rank and games played
-          (hover for the season rank). Otherwise it falls back to full-season ranks. Moves are the season count of adds and drops.
-        </p>
-      </Section>
+        </div>
+        <details className="tx-tp-note">
+          <summary>How trade value works</summary>
+          <p>
+            Trade value uses the same scale as the draft: each player&apos;s rank in 9-category z-score points above a replacement-level
+            player (roughly the last rostered player, teams × draft rounds, about 156 in a 12-team league). The scale is steep at the top,
+            so one star outweighs several solid players, and fringe players add nothing: getting more bodies doesn&apos;t win a trade.
+            Where game logs are available, each player is re-ranked on only the games played after the trade (to the end of the regular
+            season), so a trade is judged on what each side actually got; the trade log shows that rank and games played (hover for the
+            season rank). Otherwise it falls back to full-season ranks. Moves are the season count of adds and drops.
+          </p>
+        </details>
+      </section>
 
-      <Section title="Trade log" tip={TIPS.tradeMargin}>
-        <div className="space-y-6">
-          {seasonsWithTrades.map((year) => {
-            const list = trades.filter((t) => t.year === year);
-            return (
-              <div key={year} className="space-y-2">
-                <h3 className="text-sm font-medium text-muted">
-                  {list[0].label} · {list.filter((t) => t.status === "completed").length} trade{list.filter((t) => t.status === "completed").length === 1 ? "" : "s"}
-                  {list.some((t) => t.status === "vetoed") && `, ${list.filter((t) => t.status === "vetoed").length} vetoed`}
-                </h3>
-                <div className="grid gap-3 lg:grid-cols-2">
-                  {list.map((t, i) => (
-                    <div key={i} className={`${cardClass} p-4 ${t.status === "vetoed" ? "opacity-70" : ""}`}>
-                      <div className="mb-3 flex items-center justify-between text-xs text-muted">
-                        <span>
-                          {dateLabel(t.date)}
-                          {t.status === "completed" && <span> · {t.basis === "after" ? "rated on games after the trade" : "rated on full-season ranks"}</span>}
-                        </span>
-                        {t.status === "vetoed" ? (
-                          <span className="rounded-full border border-negative/40 px-2 py-0.5 text-negative">Vetoed</span>
-                        ) : t.winnerManagerId ? (
-                          <span>
-                            Edge: {nameOf(t.winnerManagerId)} ({signed(t.margin, 1)})
-                          </span>
-                        ) : (
-                          <span>Even</span>
-                        )}
-                      </div>
-                      <div className="grid grid-cols-2 gap-4">
-                        {t.sides.map((s) => (
-                          <div key={s.teamId}>
-                            <div className="mb-1.5 flex items-center gap-2 text-sm">
-                              <Avatar size="sm" name={nameOf(s.managerId)} color={colorForManager(league, s.managerId)} />
-                              <span className="min-w-0">
-                                <span className={`block truncate font-medium ${t.winnerManagerId === s.managerId && t.status === "completed" ? "text-positive" : ""}`}>
-                                  {s.teamName}
-                                </span>
-                                <span className="block text-xs text-muted">gets · worth {s.value.toFixed(1)}</span>
-                              </span>
-                            </div>
-                            <ul className="space-y-0.5 text-sm">
-                              {s.players.map((p) => (
-                                <li key={p.playerId ?? p.name} className="flex justify-between gap-2">
-                                  <span className="truncate">{p.name}</span>
-                                  {t.basis === "after" ? (
-                                    <span className="shrink-0 tabular-nums" title={`Season rank ${rankLabel(p.actualRank)}; ${p.afterGames} games after the trade`}>
-                                      {p.afterRank ? `#${p.afterRank}` : "—"}
-                                      <span className="text-xs text-muted"> · {p.afterGames}g</span>
-                                    </span>
-                                  ) : (
-                                    <span className="shrink-0 tabular-nums text-muted">{rankLabel(p.actualRank)}</span>
-                                  )}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
+      {log.length > 0 && (
+        <section className="panel tx-tp-panel">
+          <TradePanelHead
+            title="Trade log"
+            sub={
+              <span className="inline-flex flex-wrap items-center gap-1.5">
+                {anyAfter
+                  ? "Bars show the value each side received over the games after the trade. Bigger bar won it."
+                  : "Bars show the value each side received. Bigger bar won it."}
+                <InfoTip text={anyAfter ? TRADE_TIPS.afterTrade : TRADE_TIPS.tradeLog} />
+              </span>
+            }
+            tip={TIPS.tradeMargin}
+          />
+          <TradeLog trades={log} seasons={tradeLogSeasons(trades)} names={names} />
+        </section>
+      )}
+
+      {(gems.length > 0 || unowned.length > 0) && (
+        <div className="grid gap-4 lg:grid-cols-2">
+          {gems.length > 0 && (
+            <section className="panel tx-tp-panel">
+              <TradePanelHead title={`Undrafted gems (${gems.length})`} sub="Nobody drafted them; they finished top 75." tip={TRADE_TIPS.undrafted} />
+              <ShowMore initial={12} className="tx-und-grid" noun="gems">
+                {gems.map((g) => (
+                  <div key={`${g.year}-${g.playerName}`} className="tx-und-card">
+                    <div className="tx-und-rk num" aria-label={`Finished number ${g.actualRank}`}>
+                      #{g.actualRank}
+                    </div>
+                    <div className="min-w-0">
+                      <div className="tx-und-nm">{g.playerName}</div>
+                      <div className="tx-und-d">
+                        {g.label} · on {g.teamName} (<ManagerLink id={g.managerId} name={nameOf(g.managerId)} />) at season end
                       </div>
                     </div>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </Section>
-
-      <Section title={`Undrafted gems (${gems.length})`}>
-        <Card className="space-y-2">
-          <p className="text-xs text-muted">
-            Players nobody drafted who finished in the top 75 — and who had them on their roster at season end (not necessarily who
-            picked them up first).
-          </p>
-          <TableWrap>
-            <table className="w-full text-sm">
-              <caption className="sr-only">Undrafted players who finished in the top 75</caption>
-              <thead>
-                <tr>
-                  <th className={th}>Player</th>
-                  <th className={th}>Season</th>
-                  <th className={th}>Finished</th>
-                  <th className={th}>Owned at season end</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                {gems.map((g) => (
-                  <tr key={`${g.year}-${g.playerName}`} className={tr}>
-                    <td className={`${td} font-medium`}>{g.playerName}</td>
-                    <td className={td}>{g.label}</td>
-                    <td className={`${td} tabular-nums text-positive`}>#{g.actualRank}</td>
-                    <td className={td}>
-                      {g.teamName} · <ManagerLink id={g.managerId} name={nameOf(g.managerId)} />
-                    </td>
-                  </tr>
+                  </div>
                 ))}
-              </tbody>
-            </table>
-          </TableWrap>
-        </Card>
-      </Section>
-
-      {unowned.length > 0 && (
-        <Section title={`Stars nobody owned (${unowned.length})`}>
-          <Card className="space-y-2">
-            <p className="text-xs text-muted">
-              Top-60 players who were free agents when the season ended: usually injured stars who were dropped, or late-season breakouts
-              nobody picked up in time.
-            </p>
-            <TableWrap>
-              <table className="w-full text-sm">
-                <caption className="sr-only">Top-60 players unowned at season end</caption>
-                <thead>
-                  <tr>
-                    <th className={th}>Player</th>
-                    <th className={th}>Season</th>
-                    <th className={th}>Finished</th>
-                    <th className={th}>Drafted by</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-border">
-                  {unowned.map((u) => (
-                    <tr key={`${u.year}-${u.playerName}`} className={tr}>
-                      <td className={`${td} font-medium`}>{u.playerName}</td>
-                      <td className={td}>{u.label}</td>
-                      <td className={`${td} tabular-nums`}>#{u.actualRank}</td>
-                      <td className={td}>{u.draftedBy ? <ManagerLink id={u.draftedBy} name={nameOf(u.draftedBy)} /> : <span className="text-muted">Undrafted</span>}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </TableWrap>
-          </Card>
-        </Section>
+              </ShowMore>
+            </section>
+          )}
+          {unowned.length > 0 && (
+            <section className="panel tx-tp-panel">
+              <TradePanelHead
+                title={`Stars nobody owned (${unowned.length})`}
+                sub="Finished top 60, but sat on the waiver wire when the season ended."
+                tip={TRADE_TIPS.unowned}
+              />
+              <UnownedTrack
+                rows={unowned.map((u) => ({
+                  playerName: u.playerName,
+                  label: u.label,
+                  actualRank: u.actualRank,
+                  draftedBy: u.draftedBy ? nameOf(u.draftedBy) : null,
+                }))}
+              />
+            </section>
+          )}
+        </div>
       )}
     </>
   );
