@@ -1,5 +1,7 @@
 # Caboclo Cup redesign: handoff for Claude Code
 
+> **Round 2:** PR #9 shipped the reskin but not the charts. See `design/HANDOFF-2.md` for the remaining work, in priority order. This file stays as the full reference.
+
 This is a **visual redesign**. The calculations stay exactly as they are in `src/lib/analytics` (including everything PR #7 added). Your job is to rebuild the presentation layer to match the prototype, wiring each component to the analytics function listed below. Do not change formulas.
 
 - `design/prototype/` — the clickable prototype (plain HTML + d3, no build step). It is the visual and behavioral reference.
