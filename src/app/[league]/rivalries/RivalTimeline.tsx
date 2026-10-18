@@ -1,10 +1,13 @@
 "use client";
 
 import * as d3 from "d3";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef } from "react";
 import type { H2HGame } from "@/lib/analytics/headToHead";
 import type { Stage } from "@/lib/types";
 import { tt } from "@/components/viz/tt";
 import { useD3Chart } from "@/components/viz/useD3Chart";
+import { useLeagueBase } from "@/components/useLeagueBase";
 
 export const STAGE_LABEL: Record<Stage, string> = {
   regular: "Regular season",
@@ -16,7 +19,7 @@ export const STAGE_LABEL: Record<Stage, string> = {
 
 /**
  * Every meeting on a season-by-season strip: a lollipop up for A's wins, down for B's, height = category margin,
- * gold ring = playoffs. Lollipops grow out from the center line, one after another.
+ * gold ring = playoffs. Lollipops grow out from the center line, one after another. Each meeting opens its week page.
  */
 export function RivalTimeline({
   games,
@@ -35,6 +38,12 @@ export function RivalTimeline({
   a: string;
   b: string;
 }) {
+  const base = useLeagueBase();
+  const router = useRouter();
+  const routerRef = useRef(router);
+  useEffect(() => {
+    routerRef.current = router;
+  }, [router]);
   const ref = useD3Chart(
     (el, { width, reduced, first }) => {
       el.selectAll("*").remove();
@@ -76,6 +85,19 @@ export function RivalTimeline({
         .data(games)
         .join("g")
         .attr("tabindex", 0)
+        .attr("role", "link")
+        .attr("aria-label", (g) => `${g.year - 1}-${String(g.year).slice(2)}, week ${g.week}: ${a} ${g.aCats}, ${b} ${g.bCats}. Open the week`)
+        .style("cursor", "pointer")
+        .on("click", (e: MouseEvent, g) => {
+          const href = `${base}/seasons/${g.year}/week/${g.week}`;
+          if (e.metaKey || e.ctrlKey) window.open(href, "_blank");
+          else routerRef.current.push(href);
+        })
+        .on("keydown", (e: KeyboardEvent, g) => {
+          if (e.key !== "Enter") return;
+          e.preventDefault();
+          routerRef.current.push(`${base}/seasons/${g.year}/week/${g.week}`);
+        })
         .attr("data-tt", (g) => {
           const po = g.stage !== "regular";
           return tt(
@@ -85,7 +107,7 @@ export function RivalTimeline({
               [b, g.bCats],
               ["Tied categories", g.tiedCats],
             ],
-            g.winner === null ? "Tied week" : `${g.winner === aId ? a : b} won${po && g.aCats === g.bCats ? " on seed" : ""}`,
+            `${g.winner === null ? "Tied week" : `${g.winner === aId ? a : b} won${po && g.aCats === g.bCats ? " on seed" : ""}`} · click for the week`,
           );
         });
       // Wide invisible hit target so small dots are easy to hover.
@@ -118,7 +140,7 @@ export function RivalTimeline({
         dot.attr("cy", mid).transition().duration(600).delay((_, i) => i * step).ease(d3.easeCubicOut).attr("cy", (g) => y(g.aCats - g.bCats));
       }
     },
-    [games, years, maxWeek, maxCats, aId, a, b],
+    [games, years, maxWeek, maxCats, aId, a, b, base],
     300,
   );
   return <div ref={ref} style={{ minHeight: 170 }} />;

@@ -2,6 +2,7 @@
 
 import * as d3 from "d3";
 import { Crown, HeartCrack, Rocket, TrendingDown } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ordinal as ord } from "@/lib/analytics/format";
 import type { ReplayFrame, Storyline, StoryKind } from "@/lib/analytics/seasonView";
@@ -29,6 +30,8 @@ interface Props {
   stories: Storyline[];
   replay: { method: "categories" | "matchups"; frames: ReplayFrame[] };
   managerNames: Record<string, string>;
+  /** Prefix for week pages ("/demo/seasons/2025/week/"): week labels on the axis link to them. */
+  weekHref?: string;
 }
 
 const ICON: Record<StoryKind, typeof Crown> = {
@@ -44,7 +47,12 @@ const clip = (s: string, n: number) => (s.length > n ? `${s.slice(0, n - 1)}…`
  * The standings race. "Every week": every team's place after each week as a bump chart, with storyline
  * cards that light up the teams they're about. "Replay": the table itself, played back week by week.
  */
-export function RaceChart({ weeks, lines, spots, stories, replay, managerNames }: Props) {
+export function RaceChart({ weeks, lines, spots, stories, replay, managerNames, weekHref }: Props) {
+  const router = useRouter();
+  const routerRef = useRef(router);
+  useEffect(() => {
+    routerRef.current = router;
+  }, [router]);
   const [mode, setMode] = useState<"lines" | "replay">("lines");
   const [story, setStory] = useState<number | null>(null);
   const focusRef = useRef<string[] | null>(null);
@@ -90,8 +98,21 @@ export function RaceChart({ weeks, lines, spots, stories, replay, managerNames }
       for (let k = 1; k <= n; k++) svg.append("text").attr("class", "lbl num").attr("x", m.l - 14).attr("y", y(k)).attr("dy", ".35em").attr("text-anchor", "end").text(k);
       const every = narrow ? 4 : 2;
       weeks.forEach((w, i) => {
-        if ((i % every === 0 && i <= weeks.length - 1 - every) || i === weeks.length - 1)
-          svg.append("text").attr("class", "lbl num").attr("x", x(w)!).attr("y", H - 6).attr("text-anchor", "middle").text(`wk ${w}`);
+        if ((i % every === 0 && i <= weeks.length - 1 - every) || i === weeks.length - 1) {
+          const parent = weekHref
+            ? svg
+                .append("a")
+                .attr("class", "wk-link")
+                .attr("href", `${weekHref}${w}`)
+                .attr("aria-label", `Open week ${w}`)
+                .on("click", (e: MouseEvent) => {
+                  if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+                  e.preventDefault();
+                  routerRef.current.push(`${weekHref}${w}`);
+                })
+            : svg;
+          parent.append("text").attr("class", "lbl num").attr("x", x(w)!).attr("y", H - 6).attr("text-anchor", "middle").text(`wk ${w}`);
+        }
       });
       const line = d3
         .line<number>()
@@ -184,7 +205,7 @@ export function RaceChart({ weeks, lines, spots, stories, replay, managerNames }
         paintRef.current = null;
       };
     },
-    [weeks, lines, spots],
+    [weeks, lines, spots, weekHref],
   );
 
   useEffect(() => {

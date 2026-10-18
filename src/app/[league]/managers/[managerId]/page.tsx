@@ -10,6 +10,7 @@ import { LuckMini } from "@/components/viz/LuckMini";
 import { WeekHistogram } from "@/components/viz/WeekHistogram";
 import { tt } from "@/components/viz/tt";
 import { Avatar, PageTitle, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
+import { FormChips, PctBar, SeedArrow } from "@/components/TableCharts";
 import { rankLabel, signed } from "@/components/draft";
 import { careerFromSeasons, careerStats, managerSeasons } from "@/lib/analytics/career";
 import { favouritePlayers, keepRates, managerDraftStats, reachStats } from "@/lib/analytics/draft";
@@ -371,7 +372,6 @@ export default async function ManagerPage(props: PageProps<"/[league]/managers/[
             <tbody className="divide-y divide-border">
               {[...seasons].reverse().map((s) => {
                 const p = winPct(s.catWins, s.catLosses, s.catTies);
-                const d = s.regularRank - s.finalRank;
                 return (
                   <tr key={s.year} className={tr}>
                     <td className={td}>
@@ -381,40 +381,15 @@ export default async function ManagerPage(props: PageProps<"/[league]/managers/[
                     </td>
                     <td className={td}>{s.teamName}</td>
                     <td className={td}>
-                      {p !== null && (
-                        <span className="mg-inbar">
-                          <span className="w-12">{formatPct(p)}</span>
-                          <span className="mg-tr">
-                            {/* Fixed .35–.70 scale so rows compare. */}
-                            <span className="mg-fl" style={{ width: `${Math.max(2, Math.min(100, ((p - 0.35) / 0.35) * 100))}%`, background: p >= 0.5 ? "var(--pos)" : "var(--neg)" }} />
-                          </span>
-                        </span>
-                      )}
+                      <PctBar p={p} />
                     </td>
                     <td className={td}>{formatRecord(s.wins, s.losses, s.ties)}</td>
                     <td className={td}>{formatRecord(s.catWins, s.catLosses, s.catTies)}</td>
                     <td className={td}>
-                      <span
-                        tabIndex={0}
-                        className={`mg-sa ${d > 0 ? "up" : d < 0 ? "down" : ""}`}
-                        data-tt={tt(`${s.label}`, [
-                          ["Seed", `${ordinal(s.regularRank)} of ${s.teamCount}`],
-                          ["Final", ordinal(s.finalRank)],
-                        ])}
-                      >
-                        <b>{s.regularRank}</b>
-                        <i>{d > 0 ? "▲" : d < 0 ? "▼" : "→"}</i>
-                        <b>{s.finalRank}</b>
-                      </span>
+                      <SeedArrow seed={s.regularRank} final={s.finalRank} title={s.label} />
                     </td>
                     <td className={td}>
-                      <span className="mg-formchips">
-                        {(form[s.year] ?? []).map((g) => (
-                          <span key={g.week} tabIndex={0} className={`mg-fc ${g.result}`} data-tt={tt(`Week ${g.week}`, [["Categories", `${g.my}-${g.their}`]], g.result === "W" ? "Won" : g.result === "L" ? "Lost" : "Tied")}>
-                            {g.result}
-                          </span>
-                        ))}
-                      </span>
+                      <FormChips games={form[s.year] ?? []} base={`/${slug}`} year={s.year} />
                     </td>
                     <td className={td}>
                       {s.finalRank === 1 ? (
