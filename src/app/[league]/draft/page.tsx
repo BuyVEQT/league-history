@@ -29,7 +29,7 @@ import {
   topBusts,
   topSteals,
 } from "@/lib/analytics/draft";
-import { draftGrade, impactShare, roundOneSlots } from "@/lib/analytics/draftView";
+import { draftGrade, impactShare, MIN_DRAFTS_FOR_SLOT_LUCK, roundOneSlots, topThreePicks } from "@/lib/analytics/draftView";
 import { playerIdLookup } from "@/lib/analytics/panelView";
 import { formatNumber, formatPct, ordinal } from "@/lib/analytics/format";
 import { getLeague } from "@/lib/data";
@@ -88,7 +88,9 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
     r === null ? "not enough data" : Math.abs(r) < 0.1 ? "no real relationship" : `${Math.abs(r) < 0.3 ? "a weak" : "a clear"} link (r = ${r.toFixed(2)})`;
 
   const vsMax = maxAbs(grades.map((g) => g.vsLeague));
-  const luckMax = maxAbs(positions.map((p) => p.slotLuck));
+  const ranked = (p: { drafts: number }) => p.drafts >= MIN_DRAFTS_FOR_SLOT_LUCK;
+  const luckMax = maxAbs(positions.filter(ranked).map((p) => p.slotLuck));
+  const top3 = topThreePicks(slots);
   const habitRows = reach ? reach.rows.map((r) => r.managerId) : grades.map((g) => g.managerId);
   const reachOf = new Map(reach?.rows.map((r) => [r.managerId, r]));
   const earlyMax = maxAbs(reach?.rows.map((r) => r.avgEarly) ?? []);
@@ -151,7 +153,7 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
                     />
                   </td>
                   <td>
-                    {pos ? (
+                    {pos && ranked(pos) ? (
                       <DivBar
                         value={pos.slotLuck}
                         max={luckMax}
@@ -163,7 +165,9 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
                         ])}
                       />
                     ) : (
-                      <span className="text-muted">—</span>
+                      <span className="text-muted" data-tt={tt(`${nameOf(g.managerId)}: slot luck`, [["Drafts", pos?.drafts ?? 0]], "Not ranked: one draft is too few to call lucky or unlucky.")}>
+                        —
+                      </span>
                     )}
                   </td>
                   <td className="r">{formatPct(g.hitRate, 0)}</td>
@@ -230,7 +234,7 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
       <Section title="Draft position: who got the early picks?" tip={DRAFT_TIPS.position}>
         <div className="panel space-y-3 p-4">
           <p className="dr-sub !mt-0">
-            Every first-round slot each manager has drawn{upcoming ? `, including the ${upcoming.label} draft` : ""}. The ring is their average; chips count #1 and #2 picks and top-3 finishers they drafted; slot luck is what those slots were worth.
+            Every first-round slot each manager has drawn{upcoming ? `, including the ${upcoming.label} draft` : ""}. The ring is their average; chips count their #1, #2 and #3 picks; slot luck is what those slots were worth.
           </p>
           <DraftPositionStrip
             rows={positions.map((p) => ({
@@ -239,9 +243,9 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
               drafts: p.drafts,
               firstPicks: p.firstPicks,
               secondPicks: p.secondPicks,
-              topThreeFinishers: p.topThreeFinishers,
+              thirdPicks: p.topThreePicks - p.firstPicks - p.secondPicks,
               avgSlot: p.avgSlot,
-              slotLuck: p.slotLuck,
+              slotLuck: ranked(p) ? p.slotLuck : null,
             }))}
             slots={slots.map((s) => ({ managerId: s.managerId, label: s.label, slot: s.slot, playerName: s.playerName, actualRank: s.actualRank, next: s.next }))}
             maxSlot={maxTeams}
@@ -268,6 +272,65 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
             <span className="inline-flex items-center gap-1.5">
               Slot luck <InfoTip end text={`${TIPS.slotLuck} ${DRAFT_TIPS.slotLuckRule}`} />
             </span>
+            <span>Slot luck needs {MIN_DRAFTS_FOR_SLOT_LUCK}+ drafts; one-draft managers show —</span>
+          </div>
+        </div>
+
+        <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
+          <div className="panel p-4">
+            <h3 className="dr-h3">Top-3 picks: who&apos;s had the most</h3>
+            <p className="dr-sub !mt-1">
+              Round-one picks #1, #2 and #3, counted per manager{upcoming ? `, including the ${upcoming.label} order` : ""}. Most top-3 picks first.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="dr-t top3-t mt-2 w-full">
+                <caption className="sr-only">Top-three draft picks by manager</caption>
+                <thead>
+                  <tr>
+                    <th>Manager</th>
+                    <th className="r">#1</th>
+                    <th className="r">#2</th>
+                    <th className="r">#3</th>
+                    <th className="r">Top 3</th>
+                    <th className="r">Drafts</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {top3.counts.map((c) => (
+                    <tr key={c.managerId} data-m={c.managerId} className={c.total ? "" : "opacity-60"}>
+                      <td>{who(c.managerId)}</td>
+                      <td className="r tabular-nums">{c.first || <span className="text-muted">0</span>}</td>
+                      <td className="r tabular-nums">{c.second || <span className="text-muted">0</span>}</td>
+                      <td className="r tabular-nums">{c.third || <span className="text-muted">0</span>}</td>
+                      <td className="r">
+                        <b className="top3-total tabular-nums">{c.total}</b>
+                      </td>
+                      <td className="r tabular-nums text-muted">{c.drafts}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div className="panel p-4">
+            <h3 className="dr-h3">Picks #1–#3, draft by draft</h3>
+            <p className="dr-sub !mt-1">Who held the top three slots each year, newest first.</p>
+            <ol className="top3-years mt-2">
+              {top3.years.map((y) => (
+                <li key={y.year} className={y.next ? "next" : ""}>
+                  <span className="top3-yr">
+                    {y.label}
+                    {y.next && <small>next</small>}
+                  </span>
+                  {y.picks.map((id, i) => (
+                    <span key={i} className={`top3-pick n${i + 1}`}>
+                      <span className="top3-n">#{i + 1}</span>
+                      {id ? who(id) : <span className="text-muted">—</span>}
+                    </span>
+                  ))}
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
       </Section>
@@ -288,11 +351,6 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
             {s.label} board
           </Link>
         ))}
-        {upcoming ? (
-          <Link href={`/${slug}/draft/${upcoming.year}`} className="pill !border-accent !text-accent">
-            {upcoming.label} board · new
-          </Link>
-        ) : null}
       </nav>
 
       <DraftExplorer card={reportCard} between={between} picks={scatterPicks} names={names} seasons={draftSeasons.map((s) => ({ year: s.year, label: s.label }))} scatterTip={DRAFT_TIPS.scatter} />

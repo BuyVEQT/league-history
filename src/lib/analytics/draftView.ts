@@ -45,3 +45,50 @@ export function roundOneSlots(league: League): RoundOneSlot[] {
     ...upcoming.map((p) => ({ managerId: p.managerId, year: p.year, label: p.label, slot: p.pick, playerName: p.playerName, actualRank: null, next: true })),
   ];
 }
+
+/** Slot luck is an average per draft; one draft is too few to rank a manager on it. */
+export const MIN_DRAFTS_FOR_SLOT_LUCK = 2;
+
+export interface TopThreeYear {
+  year: number;
+  label: string;
+  next: boolean;
+  /** Manager holding round-one picks #1, #2 and #3 (null if the draft had fewer teams captured). */
+  picks: [ManagerId | null, ManagerId | null, ManagerId | null];
+}
+
+export interface TopThreeCount {
+  managerId: ManagerId;
+  first: number;
+  second: number;
+  third: number;
+  total: number;
+  /** Drafts they were in (round-one slots drawn). */
+  drafts: number;
+}
+
+/** Who held picks #1-#3 in each draft (newest first), and how often each manager has had one (most first). */
+export function topThreePicks(slots: RoundOneSlot[]): { years: TopThreeYear[]; counts: TopThreeCount[] } {
+  const years = [...new Map(slots.map((s) => [s.year, s])).values()]
+    .sort((a, b) => b.year - a.year)
+    .map((s) => ({
+      year: s.year,
+      label: s.label,
+      next: s.next,
+      picks: [1, 2, 3].map((n) => slots.find((x) => x.year === s.year && x.slot === n)?.managerId ?? null) as TopThreeYear["picks"],
+    }));
+  const counts = new Map<ManagerId, TopThreeCount>();
+  for (const s of slots) {
+    const c = counts.get(s.managerId) ?? { managerId: s.managerId, first: 0, second: 0, third: 0, total: 0, drafts: 0 };
+    c.drafts++;
+    if (s.slot === 1) c.first++;
+    if (s.slot === 2) c.second++;
+    if (s.slot === 3) c.third++;
+    if (s.slot <= 3) c.total++;
+    counts.set(s.managerId, c);
+  }
+  return {
+    years,
+    counts: [...counts.values()].sort((a, b) => b.total - a.total || b.first - a.first || b.second - a.second || a.drafts - b.drafts),
+  };
+}

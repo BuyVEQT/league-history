@@ -10,9 +10,11 @@ export interface PositionStripRow {
   drafts: number;
   firstPicks: number;
   secondPicks: number;
-  topThreeFinishers: number;
+  /** Round-one #3 picks. */
+  thirdPicks: number;
   avgSlot: number;
-  slotLuck: number;
+  /** Null when they have too few drafts to rank (shown as "—"). */
+  slotLuck: number | null;
 }
 
 export interface PositionStripSlot {
@@ -32,7 +34,7 @@ const sgn = (n: number, d = 1) => {
 
 /**
  * Per-manager dot strip of round-one draft slots (gold = #1, outlined = next season), a ring at the
- * average slot, chips for #1 / #2 picks and top-3 finishers, and slot luck as a diverging bar.
+ * average slot, chips for #1 / #2 / #3 picks, and slot luck as a diverging bar.
  * Port of the prototype's drawPositions, plus slot luck and the next-season dot.
  */
 export function DraftPositionStrip({ rows, slots, maxSlot }: { rows: PositionStripRow[]; slots: PositionStripSlot[]; maxSlot: number }) {
@@ -44,9 +46,9 @@ export function DraftPositionStrip({ rows, slots, maxSlot }: { rows: PositionStr
       const m = { t: 26, r: 430, l: 100, b: 4 };
       const H = m.t + rows.length * rh + m.b;
       const R = W - m.r; // start of the right-hand columns
-      const svg = el.append("svg").attr("class", "viz").attr("viewBox", `0 0 ${W} ${H}`).attr("role", "img").attr("aria-label", "First-round draft slots by manager, with average slot, #1 and #2 picks, top-3 finishers drafted and slot luck");
+      const svg = el.append("svg").attr("class", "viz").attr("viewBox", `0 0 ${W} ${H}`).attr("role", "img").attr("aria-label", "First-round draft slots by manager, with average slot, #1, #2 and #3 picks and slot luck");
       const x = d3.scaleLinear().domain([1, maxSlot]).range([m.l + 10, R - 14]);
-      const luckMax = d3.max(rows, (r) => Math.abs(r.slotLuck)) || 1;
+      const luckMax = d3.max(rows, (r) => Math.abs(r.slotLuck ?? 0)) || 1;
       const lx = d3.scaleLinear().domain([-luckMax, luckMax]).range([R + 186, R + 296]);
 
       d3.range(1, maxSlot + 1).forEach((k) => {
@@ -55,7 +57,7 @@ export function DraftPositionStrip({ rows, slots, maxSlot }: { rows: PositionStr
       });
       const head = (at: number, text: string, anchor = "start") =>
         svg.append("text").attr("class", "lbl").attr("x", at).attr("y", 14).attr("text-anchor", anchor).style("font-weight", 700).text(text);
-      head(R + 16, "#1 · #2 · top-3");
+      head(R + 16, "#1 · #2 · #3 picks");
       head(R + 178, "Slot luck", "end");
       head(R + 312, "Avg slot");
       svg.append("line").attr("x1", lx(0)).attr("x2", lx(0)).attr("y1", m.t - 6).attr("y2", H).attr("stroke", "var(--border-2)");
@@ -115,7 +117,7 @@ export function DraftPositionStrip({ rows, slots, maxSlot }: { rows: PositionStr
         .attr("data-tt", (r) => tt(`${r.name}: average slot`, [["Average round-one slot", `#${r.avgSlot.toFixed(1)}`], ["Drafts", r.drafts]]));
       if (animate) ring.attr("opacity", 0).transition().delay(500).duration(400).attr("opacity", 1);
 
-      const chip = (dx: number, key: "firstPicks" | "secondPicks" | "topThreeFinishers", label: string) =>
+      const chip = (dx: number, key: "firstPicks" | "secondPicks" | "thirdPicks", label: string) =>
         g.each(function (r) {
           const v = r[key];
           const on = v > 0;
@@ -134,7 +136,7 @@ export function DraftPositionStrip({ rows, slots, maxSlot }: { rows: PositionStr
         });
       chip(16, "firstPicks", "#1 picks");
       chip(56, "secondPicks", "#2 picks");
-      chip(96, "topThreeFinishers", "Top-3 finishers drafted");
+      chip(96, "thirdPicks", "#3 picks");
 
       // Slot luck: number, then a diverging bar from zero.
       g.append("text")
@@ -145,15 +147,17 @@ export function DraftPositionStrip({ rows, slots, maxSlot }: { rows: PositionStr
         .attr("text-anchor", "end")
         .style("font-size", "12.5px")
         .style("font-weight", 700)
-        .style("fill", (r) => (r.slotLuck > 0.25 ? "var(--positive)" : r.slotLuck < -0.25 ? "var(--negative)" : "var(--ink-2)"))
-        .text((r) => sgn(r.slotLuck));
+        .style("fill", (r) => (r.slotLuck === null ? "var(--muted)" : r.slotLuck > 0.25 ? "var(--positive)" : r.slotLuck < -0.25 ? "var(--negative)" : "var(--ink-2)"))
+        .text((r) => (r.slotLuck === null ? "—" : sgn(r.slotLuck)))
+        .attr("data-tt", (r) => (r.slotLuck === null ? tt(`${r.name}: slot luck`, [["Drafts", r.drafts]], "Not ranked: one draft is too few to call lucky or unlucky.") : null));
       const bar = g
+        .filter((r) => r.slotLuck !== null)
         .append("rect")
         .attr("y", rh / 2 - 4)
         .attr("height", 8)
         .attr("rx", 3)
-        .attr("fill", (r) => (r.slotLuck >= 0 ? "var(--pos)" : "var(--neg)"))
-        .attr("data-tt", (r) => tt(`${r.name}: slot luck`, [["Per draft", sgn(r.slotLuck)], ["Average slot", `#${r.avgSlot.toFixed(1)}`]], "+ = early slots (lucky), − = late"));
+        .attr("fill", (r) => (r.slotLuck! >= 0 ? "var(--pos)" : "var(--neg)"))
+        .attr("data-tt", (r) => tt(`${r.name}: slot luck`, [["Per draft", sgn(r.slotLuck!)], ["Average slot", `#${r.avgSlot.toFixed(1)}`]], "+ = early slots (lucky), − = late"));
       if (animate)
         bar
           .attr("x", lx(0))
@@ -161,9 +165,9 @@ export function DraftPositionStrip({ rows, slots, maxSlot }: { rows: PositionStr
           .transition()
           .duration(700)
           .delay((_, i) => 200 + i * 30)
-          .attr("x", (r) => Math.min(lx(0), lx(r.slotLuck)))
-          .attr("width", (r) => Math.abs(lx(r.slotLuck) - lx(0)));
-      else bar.attr("x", (r) => Math.min(lx(0), lx(r.slotLuck))).attr("width", (r) => Math.abs(lx(r.slotLuck) - lx(0)));
+          .attr("x", (r) => Math.min(lx(0), lx(r.slotLuck!)))
+          .attr("width", (r) => Math.abs(lx(r.slotLuck!) - lx(0)));
+      else bar.attr("x", (r) => Math.min(lx(0), lx(r.slotLuck!))).attr("width", (r) => Math.abs(lx(r.slotLuck!) - lx(0)));
 
       g.append("text")
         .attr("class", "lbl num")

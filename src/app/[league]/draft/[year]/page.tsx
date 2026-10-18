@@ -9,12 +9,20 @@ import { seasonPicks, topBusts, topSteals } from "@/lib/analytics/draft";
 import { ordinal } from "@/lib/analytics/format";
 import { seasonOutcome } from "@/lib/analytics/season";
 import { getLeague } from "@/lib/data";
+import type { League } from "@/lib/types";
 import { TIPS } from "@/lib/explain";
 import { InfoTip } from "@/components/InfoTip";
 
+/**
+ * The next season's board (drafted, not yet played). Hidden for now; flip to true to bring it back.
+ * Its round-one order still feeds the draft-position section on the draft page.
+ */
+const SHOW_UPCOMING_BOARD = false;
+const boardSeasons = (league: League) => [...league.seasons, ...(SHOW_UPCOMING_BOARD && league.upcoming ? [league.upcoming] : [])];
+
 export async function generateStaticParams({ params }: { params: { league: string } }) {
   const league = await getLeague(params.league);
-  const drafted = [...(league?.seasons ?? []), ...(league?.upcoming ? [league.upcoming] : [])];
+  const drafted = league ? boardSeasons(league) : [];
   const years = drafted.filter((s) => s.draft?.length).map((s) => ({ year: String(s.year) }));
   // Cache Components requires at least one param per league; leagues without
   // drafts (the demo) get a placeholder that the page turns into a 404.
@@ -25,7 +33,7 @@ export default async function DraftBoardPage(props: PageProps<"/[league]/draft/[
   const { league: slug, year } = await props.params;
   const league = await getLeague(slug);
   if (!league) notFound();
-  const season = [...league.seasons, ...(league.upcoming ? [league.upcoming] : [])].find((s) => String(s.year) === year);
+  const season = boardSeasons(league).find((s) => String(s.year) === year);
   if (!season?.draft?.length) notFound();
   // A drafted season with no games yet: show the picks, values come once it's played.
   const live = season === league.upcoming;
@@ -38,7 +46,7 @@ export default async function DraftBoardPage(props: PageProps<"/[league]/draft/[
   const columns = picks.filter((p) => p.round === 1).sort((a, b) => a.pick - b.pick);
   // Final finish per team, for the column headers; a live draft has none yet.
   const finish = live ? null : seasonOutcome(season).finalRank;
-  const draftSeasons = [...league.seasons, ...(league.upcoming ? [league.upcoming] : [])].filter((s) => s.draft?.length);
+  const draftSeasons = boardSeasons(league).filter((s) => s.draft?.length);
 
   return (
     <>
