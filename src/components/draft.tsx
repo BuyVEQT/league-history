@@ -4,16 +4,14 @@ export const rankLabel = (rank: number | null) => (rank === null ? "300+" : `#${
 export const signed = (n: number, digits = 0) => `${n > 0 ? "+" : n < 0 ? "−" : "±"}${Math.abs(n).toFixed(digits)}`;
 
 /**
- * Background tint for a pick's value (z-score points vs the slot): green for steals, red for busts.
- * Cut points sit near the 5th / 25th / 75th / 95th percentiles of real picks.
+ * Draft board chip tone (`.pick` classes) for a pick's value (z-score points vs the slot):
+ * blue beat the slot, red fell short, solid at 3+ points either way.
  */
-export function valueTone(value: number): string {
-  if (value >= 4) return "bg-positive/35";
-  if (value >= 1.5) return "bg-positive/20";
-  if (value >= 0) return "bg-positive/8";
-  if (value > -1.5) return "bg-negative/10";
-  if (value > -4) return "bg-negative/20";
-  return "bg-negative/35";
+export function pickTone(value: number): "big-pos" | "pos" | "neg" | "big-neg" {
+  if (value >= 3) return "big-pos";
+  if (value >= 0) return "pos";
+  if (value > -3) return "neg";
+  return "big-neg";
 }
 
 export function PickLine({ p, manager }: { p: PickValue; manager: string }) {

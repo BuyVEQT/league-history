@@ -2,6 +2,7 @@ import { Trophy } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ManagerTrend } from "@/components/charts/ManagerTrend";
+import { AllTimeRace } from "@/components/viz/AllTimeRace";
 import { Avatar, Card, ManagerLink, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
 import { careerStats, defaultCompare, managerSeasons } from "@/lib/analytics/career";
 import { formatRecord, ordinal } from "@/lib/analytics/format";
@@ -9,6 +10,7 @@ import { championHistory, leagueSummary, seasonRecords } from "@/lib/analytics/o
 import { sweeps } from "@/lib/analytics/scorelines";
 import { seasonOutcome } from "@/lib/analytics/season";
 import { longestStreaks } from "@/lib/analytics/streaks";
+import { allTimeRace } from "@/lib/analytics/weekly";
 import { getLeague } from "@/lib/data";
 
 export const metadata = { title: "League overview" };
@@ -121,6 +123,15 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
             ))}
           </div>
         </div>
+      </Section>
+
+      <Section title="The all-time race">
+        <p className="-mt-1 text-sm text-[color:var(--ink-2)]">
+          Watch the all-time standings take shape, season by season. Category wins are regular-season categories won; podiums are top-3 finishes.
+        </p>
+        <Card className="p-5">
+          <AllTimeRace frames={allTimeRace(league).map(({ label, rows }) => ({ label, rows }))} names={Object.fromEntries(league.managers.map((m) => [m.id, m.name]))} />
+        </Card>
       </Section>
 
       <Section title="Where everyone finished">

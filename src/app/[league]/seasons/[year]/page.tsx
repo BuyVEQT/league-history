@@ -2,12 +2,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Bracket } from "@/components/Bracket";
 import { RaceChart } from "@/components/charts/RaceChart";
+import { WeekGrid } from "@/components/viz/WeekGrid";
+import { WhatIfSlope } from "@/components/viz/WhatIfSlope";
 import { Card, ManagerLink, PageTitle, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
 import { formatPct, formatRecord, ordinal } from "@/lib/analytics/format";
 import { seasonRecords } from "@/lib/analytics/overview";
 import { PUNT_Z, rosterProfiles } from "@/lib/analytics/players";
 import { seasonRace } from "@/lib/analytics/race";
-import { seasonOutcome, teamIndex } from "@/lib/analytics/season";
+import { seasonOutcome, seasonStandings, teamIndex } from "@/lib/analytics/season";
 import { alternateStandings } from "@/lib/analytics/whatIf";
 import { colorForManager } from "@/lib/colors";
 import { getLeague } from "@/lib/data";
@@ -172,18 +174,52 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
             ))}
           </div>
         )}
-        {alt && (
-          <p className="text-sm text-muted">
-            <span className="font-medium text-foreground">If {METHOD_LABEL[alt.altMethod]} decided the standings</span> instead of{" "}
-            {METHOD_LABEL[alt.method]}:{" "}
-            {alt.out.length === 0
-              ? "the same playoff field."
-              : `${alt.in.map((r) => r.teamName).join(", ")} would have made the playoffs instead of ${alt.out.map((r) => r.teamName).join(", ")}${
-                  alt.finalistsOut.length ? ` (${alt.finalistsOut.map(teamName).join(" and ")} went on to reach the final)` : ""
-                }.`}
-            {alt.altTop.teamId !== alt.actualTop.teamId && ` First place would have gone to ${alt.altTop.teamName}, not ${alt.actualTop.teamName}.`}
-          </p>
-        )}
+      </Section>
+
+      {alt && (
+        <Section title={`What if ${METHOD_LABEL[alt.altMethod]} decided it?`}>
+          <div className="grid gap-3 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+            <Card className="p-5">
+              <WhatIfSlope
+                actual={outcome.standings}
+                alt={seasonStandings(season, { method: alt.altMethod })}
+                spots={alt.spots}
+                leftLabel={METHOD_LABEL[alt.method]}
+                rightLabel={METHOD_LABEL[alt.altMethod]}
+                managerName={managerName}
+              />
+            </Card>
+            <div className="space-y-3 text-sm">
+              <p className="text-[color:var(--ink-2)]">
+                Left: the real order, by {METHOD_LABEL[alt.method]}. Right: the same results ranked by {METHOD_LABEL[alt.altMethod]} instead. Lines
+                that cross the dashed playoff line change who gets in: blue would have got in, red would have missed.
+              </p>
+              <p className="rounded-[10px] border border-border border-l-4 border-l-accent bg-surface px-3 py-2.5">
+                {alt.out.length === 0
+                  ? "The same playoff field either way."
+                  : `${alt.in.map((r) => r.teamName).join(", ")} would have made the playoffs instead of ${alt.out.map((r) => r.teamName).join(", ")}${
+                      alt.finalistsOut.length ? ` (${alt.finalistsOut.map(teamName).join(" and ")} went on to reach the final)` : ""
+                    }.`}
+                {alt.altTop.teamId !== alt.actualTop.teamId
+                  ? ` First place would have gone to ${alt.altTop.teamName}, not ${alt.actualTop.teamName}.`
+                  : " Same first place."}
+              </p>
+            </div>
+          </div>
+        </Section>
+      )}
+
+      <Section title="Every week, every team">
+        <Card className="space-y-3 p-5">
+          <WeekGrid season={season} standings={outcome.standings} />
+          <div className="viz-legend">
+            <span><i style={{ background: "var(--pos)" }} />Won the week</span>
+            <span><i style={{ background: "var(--neg)" }} />Lost</span>
+            <span><i style={{ background: "var(--mid)" }} />Tied</span>
+            <span><i style={{ boxShadow: "inset 0 0 0 1.5px var(--gold)" }} />Playoffs (P)</span>
+            <span>Number = categories won · darker = bigger margin · hover for the score</span>
+          </div>
+        </Card>
       </Section>
 
       <Section title="Playoff bracket">

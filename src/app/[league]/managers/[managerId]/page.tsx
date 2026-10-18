@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { TrendChart } from "@/components/charts/TrendChart";
-import { Avatar, cardClass, ManagerLink, PageTitle, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
+import { CareerPath } from "@/components/viz/CareerPath";
+import { H2HBars } from "@/components/viz/H2HBars";
+import { WeekHistogram } from "@/components/viz/WeekHistogram";
+import { Avatar, Card, cardClass, PageTitle, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
 import { colorForManager } from "@/lib/colors";
 import { signed } from "@/components/draft";
 import { careerFromSeasons, managerSeasons } from "@/lib/analytics/career";
@@ -10,6 +12,9 @@ import { eloRatings } from "@/lib/analytics/elo";
 import { formatNumber, formatPct, formatRecord } from "@/lib/analytics/format";
 import { opponentRecords } from "@/lib/analytics/headToHead";
 import { MIN_SEASONS_FOR_RATES } from "@/lib/analytics/overview";
+import { marginRecords } from "@/lib/analytics/records";
+import { managerActivity } from "@/lib/analytics/trades";
+import { careerPath, weeklyProfile } from "@/lib/analytics/weekly";
 import { managerStreaks } from "@/lib/analytics/streaks";
 import { careerLuck } from "@/lib/analytics/whatIf";
 import { getLeague } from "@/lib/data";
@@ -37,18 +42,17 @@ export default async function ManagerPage(props: PageProps<"/[league]/managers/[
   const worst = [...seasons].sort((a, b) => b.finalRank - a.finalRank || (a.winPct ?? 1) - (b.winPct ?? 1))[0];
   const finals = career.titles + career.runnerUps;
   const rivals = opponentRecords(league, manager.id).filter((r) => r.games >= MIN_RIVAL_GAMES);
-  const bestRivals = [...rivals].sort((a, b) => b.winPct - a.winPct || b.games - a.games).slice(0, 3);
-  const worstRivals = [...rivals].sort((a, b) => a.winPct - b.winPct || b.games - a.games).slice(0, 3);
+  const allRivals = opponentRecords(league, manager.id);
   const nameOf = (id: string) => league.managers.find((m) => m.id === id)!.name;
   const maxTeams = Math.max(...league.seasons.map((s) => s.teams.length));
 
   // Team names used over the years — one manager, many team names.
   const aliases = [...new Set(seasons.map((s) => s.teamName))];
 
-  const chartRows = league.seasons.map((s) => {
-    const row = seasons.find((x) => x.year === s.year);
-    return { year: s.year, final: row?.finalRank ?? null, regular: row?.regularRank ?? null };
-  });
+  const path = careerPath(league, manager.id);
+  const weekly = weeklyProfile(league, manager.id);
+  const close = marginRecords(league).find((r) => r.managerId === manager.id);
+  const wire = managerActivity(league).find((r) => r.managerId === manager.id && r.seasons);
   const elo = eloRatings(league);
   const lastRating = elo.history[manager.id]?.at(-1);
   const peak = elo.peak[manager.id];
@@ -142,21 +146,70 @@ export default async function ManagerPage(props: PageProps<"/[league]/managers/[
         </Section>
       )}
 
-      <Section title="Finish by season">
-        <div className="panel p-4">
-          <TrendChart
-            rows={chartRows}
-            series={[
-              { key: "final", name: "Final finish", color: "var(--s2)" },
-              { key: "regular", name: "Regular-season rank", color: "var(--s1)" },
-            ]}
-            reversed
-            domain={[1, maxTeams]}
-            valueLabel="Finish"
-          />
-          <p className="mt-2 text-xs text-muted">Gaps are seasons {manager.name} did not play.</p>
-        </div>
-      </Section>
+      <div className="grid gap-3 lg:grid-cols-2">
+        <Section title="Career path">
+          <Card className="space-y-2 p-5">
+            <CareerPath points={path} years={league.seasons} maxTeams={maxTeams} />
+            <div className="viz-legend">
+              <span><i className="dot" style={{ background: "var(--s1)" }} />Final finish</span>
+              <span><i className="dot" style={{ boxShadow: "inset 0 0 0 2px var(--ink-2)" }} />Regular-season seed</span>
+              <span><i className="dot" style={{ background: "var(--gold)" }} />Title</span>
+              <span><i className="line" style={{ background: "var(--pos)" }} />Beat the seed</span>
+              <span><i className="line" style={{ background: "var(--neg)" }} />Fell below it</span>
+            </div>
+          </Card>
+        </Section>
+        <Section title="A typical week">
+          <Card className="space-y-2 p-5">
+            <WeekHistogram dist={weekly.dist} leagueDist={weekly.leagueDist} name={manager.name} />
+            <div className="viz-legend">
+              <span><i style={{ background: "var(--s1)" }} />{manager.name}</span>
+              <span><i className="line" style={{ background: "var(--foreground)" }} />League average</span>
+              <span>
+                {weekly.avgCats.toFixed(2)} categories a week · {weekly.sweeps} sweep{weekly.sweeps === 1 ? "" : "s"}
+              </span>
+            </div>
+          </Card>
+        </Section>
+      </div>
+
+      <div className="grid gap-3 md:grid-cols-2">
+        {close && (
+          <Section title="Close calls">
+            <Card className="py-1">
+              <ListRows
+                rows={[
+                  ["One-category wins", "decided by a single category, playoffs included", <span key="w" className="text-positive">{close.closeWins}</span>],
+                  ["One-category losses", "so close", <span key="l" className="text-negative">{close.closeLosses}</span>],
+                  ["Blowouts", "won or lost by 7+ categories", `${close.blowoutWins}-${close.blowoutLosses}`],
+                  ["Swept", `lost every category to an opponent`, weekly.swept],
+                  ["Categories per week", `${weekly.weeks} weeks`, weekly.avgCats.toFixed(2)],
+                ]}
+              />
+            </Card>
+          </Section>
+        )}
+        {wire && (
+          <Section title="On the wire & in trades">
+            <Card className="py-1">
+              <ListRows
+                rows={[
+                  ["Moves per season", `${wire.moves} adds and drops in all`, wire.movesPerSeason.toFixed(0)],
+                  ["Trades", wire.vetoed ? `${wire.vetoed} more vetoed` : "none vetoed", wire.trades ? `${wire.trades} (${wire.tradeWins}-${wire.tradeLosses})` : "0"],
+                  [
+                    "Net trade value",
+                    "received minus given",
+                    <span key="n" className={wire.netValue > 0 ? "text-positive" : wire.netValue < 0 ? "text-negative" : ""}>
+                      {wire.trades ? signed(wire.netValue, 1) : "—"}
+                    </span>,
+                  ],
+                  ["Favorite partner", "most trades with", wire.favoritePartner ? `${nameOf(wire.favoritePartner.managerId)} (${wire.favoritePartner.count})` : "—"],
+                ]}
+              />
+            </Card>
+          </Section>
+        )}
+      </div>
 
       <Section title="Season by season">
         <TableWrap>
@@ -190,31 +243,35 @@ export default async function ManagerPage(props: PageProps<"/[league]/managers/[
         </TableWrap>
       </Section>
 
-      <Section title="Rivalries" aside={<Link href={`/${slug}/rivalries`} className="text-sm text-accent hover:underline">Compare any two managers →</Link>}>
-        {rivals.length === 0 ? (
-          <p className="text-sm text-muted">Not enough head-to-head history yet (needs {MIN_RIVAL_GAMES}+ matchups against an opponent).</p>
+      <Section title="Head-to-head vs everyone" aside={<Link href={`/${slug}/rivalries`} className="text-sm text-accent hover:underline">Compare any two managers →</Link>}>
+        {allRivals.length === 0 ? (
+          <p className="text-sm text-muted">No head-to-head history yet.</p>
         ) : (
-          <div className="grid gap-3 md:grid-cols-2">
-            {[
-              { title: "Dominates", list: bestRivals },
-              { title: "Struggles against", list: worstRivals },
-            ].map((g) => (
-              <div key={g.title} className="rounded-xl border border-border bg-surface/80 shadow-[inset_0_1px_0_0_rgb(255_255_255/0.03)] p-4">
-                <h3 className="mb-2 text-sm font-medium text-muted">{g.title}</h3>
-                <ul className="space-y-1.5 text-sm">
-                  {g.list.map((r) => (
-                    <li key={r.opponentId} className="flex justify-between">
-                      <ManagerLink id={r.opponentId} name={nameOf(r.opponentId)} />
-                      <span className="tabular-nums text-muted">{formatRecord(r.wins, r.losses, r.ties)} · {formatPct(r.winPct, 0)}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          <Card className="p-5">
+            <H2HBars rows={allRivals} name={manager.name} nameOf={nameOf} href={`/${slug}/rivalries#a=${manager.id}`} />
+          </Card>
         )}
-        <p className="text-xs text-muted">Includes opponents with at least {MIN_RIVAL_GAMES} matchups, regular season and playoffs.</p>
+        <p className="text-xs text-muted">
+          Matchup record against each opponent, regular season and playoffs; right of center = a winning record. Click a row to open the rivalry.
+          {rivals.length > 0 && ` Best: ${nameOf([...rivals].sort((a, b) => b.winPct - a.winPct)[0].opponentId)}; toughest: ${nameOf([...rivals].sort((a, b) => a.winPct - b.winPct)[0].opponentId)} (${MIN_RIVAL_GAMES}+ meetings).`}
+        </p>
       </Section>
     </>
+  );
+}
+
+function ListRows({ rows }: { rows: [string, string, React.ReactNode][] }) {
+  return (
+    <ul className="divide-y divide-border">
+      {rows.map(([label, note, value]) => (
+        <li key={label} className="flex items-center justify-between gap-3 py-2.5">
+          <div className="min-w-0">
+            <div className="font-semibold">{label}</div>
+            <div className="text-xs text-muted">{note}</div>
+          </div>
+          <div className="shrink-0 text-right tabular-nums">{value}</div>
+        </li>
+      ))}
+    </ul>
   );
 }
