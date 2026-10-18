@@ -2,6 +2,7 @@ import type { League, ManagerId, Season } from "../types";
 import { careerStats } from "./career";
 import { managerDraftStats, seasonPicks } from "./draft";
 import { formatPct, ordinal } from "./format";
+import { goatScores } from "./goat";
 import { seasonRace } from "./race";
 import { consistency, titleDroughts } from "./records";
 import { scoreline, sweeps } from "./scorelines";
@@ -103,6 +104,8 @@ export function seasonAwards(league: League, season: Season): Award[] {
 export function allTimeAwards(league: League): Award[] {
   const careers = careerStats(league);
   const out: Award[] = [];
+  const [goat, runnerUp] = goatScores(league);
+  if (goat) out.push({ title: "The GOAT", icon: "crown", gold: true, winners: [goat.managerId], value: `${goat.score.toFixed(0)} / 100`, detail: `Best all-round career by GOAT score${runnerUp ? `; next is ${runnerUp.name} at ${runnerUp.score.toFixed(0)}` : ""}.` });
   const maxTitles = Math.max(0, ...careers.map((c) => c.titles));
   const kings = careers.filter((c) => c.titles === maxTitles && maxTitles > 0);
   if (kings.length) out.push({ title: "Most decorated", icon: "crown", gold: true, winners: kings.map((k) => k.managerId), value: `${maxTitles} title${maxTitles === 1 ? "" : "s"}`, detail: kings.length > 1 ? "Tied at the top." : "" });

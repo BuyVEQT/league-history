@@ -4,6 +4,7 @@ import { Sparkline } from "@/components/Sparkline";
 import { Avatar, PageTitle } from "@/components/ui";
 import { careerStats, managerSeasons } from "@/lib/analytics/career";
 import { managerDraftStats } from "@/lib/analytics/draft";
+import { GOAT_RULE, goatScores } from "@/lib/analytics/goat";
 import { formatNumber, formatPct } from "@/lib/analytics/format";
 import { marginRecords, playoffRecords } from "@/lib/analytics/records";
 import { managerActivity } from "@/lib/analytics/trades";
@@ -26,6 +27,7 @@ export default async function ManagersPage(props: PageProps<"/[league]/managers"
   const give = (id: string | undefined, name: string, tone: "gold" | "orange" | "", rule: string) => {
     if (id) badges.set(id, [...(badges.get(id) ?? []), { name, tone, rule }]);
   };
+  give(goatScores(league)[0]?.managerId, "GOAT", "gold", `Highest ${GOAT_RULE}`);
   for (const c of careers.filter((c) => c.titles >= 2)) give(c.managerId, "Dynasty", "gold", "Two or more titles.");
   const best = <T,>(xs: T[], f: (x: T) => number) => [...xs].sort((a, b) => f(b) - f(a))[0];
   give(best(managerDraftStats(league), (r) => r.vsLeague)?.managerId, "Draft guru", "orange", "Best average draft value per pick vs the league.");

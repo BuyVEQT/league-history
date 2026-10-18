@@ -257,3 +257,9 @@ body:has(#pause-motion:checked) *, body:has(#pause-motion:checked) *::before, bo
 .pill { white-space: nowrap; border: 1px solid var(--border-2); background: var(--surface); border-radius: 999px; padding: 5px 12px; font-size: 13px; font-weight: 600; text-decoration: none; color: var(--ink-2); display: inline-flex; align-items: center; gap: 6px; }
 .pill:hover { border-color: var(--ink-2); color: var(--foreground); }
 .pill[aria-current="page"], .pill[aria-pressed="true"] { background: var(--foreground); border-color: var(--foreground); color: var(--surface); }
+/* Info tips: an "i" that shows its note on hover and keyboard focus. */
+.tip { position: relative; display: inline-grid; place-items: center; width: 17px; height: 17px; border-radius: 50%; border: 1px solid var(--border-2); background: var(--surface-2); color: var(--ink-2); font: italic 700 11px/1 Georgia, serif; cursor: help; vertical-align: middle; flex: none; text-transform: none; letter-spacing: 0; }
+.tip:hover, .tip:focus-visible { background: var(--accent); border-color: var(--accent); color: #fff; }
+.tip::after { content: attr(data-tip); position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); width: max-content; max-width: min(320px, 80vw); background: var(--foreground); color: var(--surface); padding: 9px 11px; border-radius: 8px; font: 400 13px/1.45 var(--font-sans); font-style: normal; white-space: normal; text-align: left; opacity: 0; pointer-events: none; transition: opacity .12s; z-index: 30; box-shadow: 0 8px 24px rgb(0 0 0 / .2); }
+.tip.down::after { bottom: auto; top: calc(100% + 8px); left: -8px; transform: none; }
+.tip:hover::after, .tip:focus-visible::after { opacity: 1; }

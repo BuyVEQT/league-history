@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { Download, RotateCcw, Search } from "lucide-react";
 import { Avatar } from "@/components/ui";
-import { colorForManager } from "@/lib/colors";
 import { useMemo, useState } from "react";
+import { InfoTip } from "@/components/InfoTip";
 import { careerStats, defaultCompare, type CareerRow } from "@/lib/analytics/career";
+import { GOAT_RULE, goatScores } from "@/lib/analytics/goat";
 import { DASH, formatNumber, formatPct, formatRecord } from "@/lib/analytics/format";
 import type { League } from "@/lib/types";
 import { useLeagueBase } from "@/components/useLeagueBase";
@@ -18,6 +19,8 @@ interface Column {
   render: (r: CareerRow) => string;
   /** Natural first-click direction. */
   best: "high" | "low";
+  /** Explanation shown in the header's info tip. */
+  tip?: string;
 }
 
 const COLUMNS: Column[] = [
@@ -40,16 +43,34 @@ export function LeaderboardTable({ league }: { league: League }) {
   const [to, setTo] = useState(years.at(-1)!);
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<{ key: string; dir: "asc" | "desc" } | null>(null);
+  const lo = Math.min(from, to);
+  const hi = Math.max(from, to);
+  // GOAT scores depend on the selected seasons; managers with too few seasons have none.
+  const goat = useMemo(() => new Map(goatScores(league, { from: lo, to: hi }).map((g) => [g.managerId, g.score])), [league, lo, hi]);
+  const goatId = useMemo(() => [...goat.entries()].sort((a, b) => b[1] - a[1])[0]?.[0], [goat]);
+  const columns = useMemo<Column[]>(
+    () => [
+      {
+        key: "goat",
+        label: "GOAT score",
+        value: (r) => goat.get(r.managerId) ?? null,
+        render: (r) => (goat.has(r.managerId) ? goat.get(r.managerId)!.toFixed(0) : DASH),
+        best: "high",
+        tip: GOAT_RULE,
+      },
+      ...COLUMNS,
+    ],
+    [goat],
+  );
 
   const rows = useMemo(() => {
-    const lo = Math.min(from, to);
-    const hi = Math.max(from, to);
     let list = careerStats(league, { from: lo, to: hi }).filter((r) =>
       r.name.toLowerCase().includes(query.trim().toLowerCase()),
     );
-    if (!sort) return list.sort(defaultCompare);
-    const col = COLUMNS.find((c) => c.key === sort.key)!;
-    const sign = sort.dir === "asc" ? 1 : -1;
+    // Default order: GOAT score, then everyone without one in the usual order.
+    const active = sort ?? { key: "goat", dir: "desc" as const };
+    const col = columns.find((c) => c.key === active.key)!;
+    const sign = active.dir === "asc" ? 1 : -1;
     list = list.sort((a, b) => {
       const av = col.value(a);
       const bv = col.value(b);
@@ -59,7 +80,7 @@ export function LeaderboardTable({ league }: { league: League }) {
       return (av < bv ? -1 : av > bv ? 1 : 0) * sign || defaultCompare(a, b);
     });
     return list;
-  }, [league, from, to, query, sort]);
+  }, [league, lo, hi, query, sort, columns]);
 
   const onSort = (col: Column) =>
     setSort((cur) =>
@@ -75,7 +96,7 @@ export function LeaderboardTable({ league }: { league: League }) {
       const safe = /^[=+\-@\t\r]/.test(value) ? `'${value}` : value;
       return `"${safe.replaceAll('"', '""')}"`;
     };
-    const csv = [["Manager", ...COLUMNS.map(c => c.label)], ...rows.map(r => [r.name, ...COLUMNS.map(c => c.render(r))])]
+    const csv = [["Manager", ...columns.map(c => c.label)], ...rows.map(r => [r.name, ...columns.map(c => c.render(r))])]
       .map(row => row.map(escape).join(",")).join("\r\n");
     const url = URL.createObjectURL(new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" }));
     const link = document.createElement("a");
@@ -135,13 +156,14 @@ export function LeaderboardTable({ league }: { league: League }) {
           <thead>
             <tr>
               <th scope="col" className="px-3 py-2 text-left text-xs font-medium uppercase tracking-wide text-muted">Manager</th>
-              {COLUMNS.map((c) => {
-                const active = sort?.key === c.key;
+              {columns.map((c) => {
+                const active = (sort?.key ?? "goat") === c.key;
+                const dir = sort?.dir ?? "desc";
                 return (
                   <th
                     key={c.key}
                     scope="col"
-                    aria-sort={active ? (sort!.dir === "asc" ? "ascending" : "descending") : "none"}
+                    aria-sort={active ? (dir === "asc" ? "ascending" : "descending") : "none"}
                     className="whitespace-nowrap px-1 py-1 text-left"
                   >
                     <button
@@ -149,8 +171,9 @@ export function LeaderboardTable({ league }: { league: League }) {
                       onClick={() => onSort(c)}
                       className="rounded px-2 py-1 text-xs font-medium uppercase tracking-wide text-muted hover:text-foreground"
                     >
-                      {c.label} {active ? (sort!.dir === "asc" ? "▲" : "▼") : ""}
+                      {c.label} {active ? (dir === "asc" ? "▲" : "▼") : ""}
                     </button>
+                    {c.tip && <InfoTip text={c.tip} down />}
                   </th>
                 );
               })}
@@ -158,14 +181,15 @@ export function LeaderboardTable({ league }: { league: League }) {
           </thead>
           <tbody className="divide-y divide-border">
             {rows.map((r) => (
-              <tr key={r.managerId} className="transition-colors hover:bg-surface-2/60">
-                <td className="sticky left-0 z-10 whitespace-nowrap bg-surface px-3 py-3">
+              <tr key={r.managerId} className={`transition-colors hover:bg-surface-2/60 ${r.managerId === goatId ? "bg-[color:var(--gold-wash)]" : ""}`}>
+                <td className={`sticky left-0 z-10 whitespace-nowrap px-3 py-3 ${r.managerId === goatId ? "bg-[color:var(--gold-wash)]" : "bg-surface"}`}>
                   <Link href={`${base}/managers/${r.managerId}`} className="inline-flex items-center gap-2 font-semibold hover:text-accent hover:underline">
-                    <Avatar name={r.name} color={colorForManager(league, r.managerId)} size="sm" />{r.name}
+                    <Avatar name={r.name} size="sm" />{r.name}
                   </Link>
+                  {r.managerId === goatId && <span className="badge badge-gold ml-2">GOAT</span>}
                 </td>
-                {COLUMNS.map((c) => (
-                  <td key={c.key} className="whitespace-nowrap px-3 py-2 tabular-nums">
+                {columns.map((c) => (
+                  <td key={c.key} className={`whitespace-nowrap px-3 py-2 tabular-nums ${c.key === "goat" ? "font-display text-lg font-extrabold" : ""}`}>
                     {c.render(r)}
                   </td>
                 ))}
@@ -173,7 +197,7 @@ export function LeaderboardTable({ league }: { league: League }) {
             ))}
             {rows.length === 0 && (
               <tr>
-                <td colSpan={COLUMNS.length + 1} className="px-3 py-8 text-center text-muted">
+                <td colSpan={columns.length + 1} className="px-3 py-8 text-center text-muted">
                   <p className="font-semibold text-foreground">No managers found.</p>
                   <p className="mt-1">Try another name or season range.</p>
                   <button className="mt-3 text-accent underline" onClick={reset}>Clear all filters</button>
