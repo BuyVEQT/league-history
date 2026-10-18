@@ -17,6 +17,10 @@ npx serve design/prototype    # or open design/prototype/index.html directly in 
 
 The export script prints `data problems: none` when every season's derived category records and playoff seeds still match the Yahoo captures (same checks as `src/lib/data/caboclo.test.ts`).
 
+## Before you start: reconcile with main
+
+`main` gained a separate light reskin after this prototype was designed (commit b193337, "Redesign Hoops History with animated courtside visuals": `globals.css`, league layout, leaderboard table, landing page, `SeasonExplorer`). It changes presentation only; analytics and data are untouched, so every number here still holds. Ask the owner which direction wins before replacing it. Keep anything from it the owner likes (for example the landing page or `SeasonExplorer`) and apply this spec's tokens and components to the league pages.
+
 ## Ground rules
 
 1. **Data stays derived.** Do not hard-code any number in components. Everything comes from `src/lib/analytics` functions over `League`. New metrics go into `src/lib/analytics/*.ts` with vitest tests, like the existing ones.
