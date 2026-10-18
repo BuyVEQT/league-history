@@ -31,7 +31,7 @@ export function WeekGrid({ season, standings }: { season: Season; standings: Sta
         ))}
         {standings.map((r) => (
           <div key={r.teamId} className="contents">
-            <span className="t" title={r.teamName}>
+            <span className="t" title={r.teamName} data-m={r.managerId} data-m-mark>
               {r.teamName}
             </span>
             {weeks.map((w) => {
@@ -43,6 +43,8 @@ export function WeekGrid({ season, standings }: { season: Season; standings: Sta
                 <span
                   key={w}
                   className={`c ${c.po ? "po" : ""}`}
+                  data-m={r.managerId}
+                  data-m-mark
                   style={{ background: tie ? "var(--mid)" : shade(c.won!, margin), color: !tie && margin >= 5 ? "#fff" : undefined }}
                   data-tt={tt(
                     `Week ${w}${c.po ? " · playoffs" : ""}`,

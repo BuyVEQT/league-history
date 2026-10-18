@@ -267,7 +267,7 @@ export function LeaderboardTable({ league }: { league: League }) {
           </thead>
           <tbody className="divide-y divide-border">
             {rows.map((r) => (
-              <tr key={r.managerId} className={`transition-colors hover:bg-surface-2/60 ${r.managerId === goatId ? "bg-[color:var(--gold-wash)]" : ""}`}>
+              <tr key={r.managerId} data-m={r.managerId} className={`transition-colors hover:bg-surface-2/60 ${r.managerId === goatId ? "bg-[color:var(--gold-wash)]" : ""}`}>
                 <td className={`sticky left-0 z-10 whitespace-nowrap px-3 py-3 ${r.managerId === goatId ? "bg-[color:var(--gold-wash)]" : "bg-surface"}`}>
                   <Link href={`${base}/managers/${r.managerId}`} className="inline-flex items-center gap-2 font-semibold hover:text-accent hover:underline">
                     <Avatar name={r.name} size="sm" initials={mono.get(r.managerId)} />{r.name}

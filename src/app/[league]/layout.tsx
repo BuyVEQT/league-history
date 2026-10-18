@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Nav } from "@/components/Nav";
+import { SpotlightPicker } from "@/components/spotlight/SpotlightPicker";
+import { SpotlightProvider } from "@/components/spotlight/SpotlightProvider";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ChartTooltip } from "@/components/viz/ChartTooltip";
 import { hasDraftData } from "@/lib/analytics/draft";
 import { hasTradeData } from "@/lib/analytics/trades";
 import { getLeague, leagueSlugs } from "@/lib/data";
+import { spotlightOptions } from "@/lib/spotlight";
 
 // Opts this layout segment out of the dev-only instant-navigation check
 // (https://nextjs.org/docs/messages/instant-shell-url-data). Pages that read params can still show that
@@ -23,6 +26,7 @@ export default async function LeagueLayout({ children, params }: LayoutProps<"/[
   const last = league.seasons.at(-1)!;
   const managers = new Set(league.seasons.flatMap((s) => s.teams.map((t) => t.managerId))).size;
   return (
+    <SpotlightProvider league={(await params).league} managers={spotlightOptions(league).map(({ id, name }) => ({ id, name }))}>
     <div className="flex min-h-screen flex-col">
       <a href="#league-content" className="skip-link">Skip to league content</a>
       <header className="band">
@@ -43,6 +47,7 @@ export default async function LeagueLayout({ children, params }: LayoutProps<"/[
               </span>
             </span>
           </Link>
+          <SpotlightPicker />
           <Nav features={{ draft: hasDraftData(league), trades: hasTradeData(league) }} />
         </div>
       </header>
@@ -52,5 +57,6 @@ export default async function LeagueLayout({ children, params }: LayoutProps<"/[
       <SiteFooter source={league.source} />
       <ChartTooltip />
     </div>
+    </SpotlightProvider>
   );
 }

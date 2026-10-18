@@ -39,6 +39,7 @@ export function LuckScatter({ rows, names }: { rows: LuckRow[]; names: Record<st
         .selectAll("circle")
         .data(rows)
         .join("circle")
+        .attr("data-m", (r) => r.managerId)
         .attr("cx", (r) => x(r.expected))
         .attr("cy", (r) => y(r.actual))
         .attr("fill", (r) => (r.luck >= 0 ? "var(--pos)" : "var(--neg)"))
@@ -59,6 +60,7 @@ export function LuckScatter({ rows, names }: { rows: LuckRow[]; names: Record<st
         svg
           .append("text")
           .attr("class", "ink")
+          .attr("data-m", r.managerId)
           .attr("pointer-events", "none")
           .attr("x", x(r.expected) + (right ? 9 : -9))
           .attr("y", y(r.actual))
@@ -89,6 +91,7 @@ export function LuckCareerBars({ rows, names }: { rows: { managerId: string; sea
         .selectAll("g")
         .data(rows)
         .join("g")
+        .attr("data-m", (r) => r.managerId)
         .attr("transform", (_, i) => `translate(0,${m.t + i * rh})`)
         .attr("data-tt", (r) =>
           tt(names[r.managerId] ?? r.managerId, [

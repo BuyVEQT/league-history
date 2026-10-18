@@ -39,7 +39,7 @@ export default async function ManagersPage(props: PageProps<"/[league]/managers"
           const titles = league.seasons.map((s, i) => (seasons.find((x) => x.year === s.year)?.finalRank === 1 ? i : -1)).filter((i) => i >= 0);
           const catPct = (c.catWins + c.catTies / 2) / Math.max(1, c.catWins + c.catLosses + c.catTies);
           return (
-            <Link key={c.managerId} href={`/${slug}/managers/${c.managerId}`} className="mcard">
+            <Link key={c.managerId} href={`/${slug}/managers/${c.managerId}`} className="mcard" data-m={c.managerId} data-m-card>
               <div className="flex items-center gap-2.5">
                 <Avatar name={c.name} initials={monograms(league.managers).get(c.managerId)} />
                 <div className="min-w-0">

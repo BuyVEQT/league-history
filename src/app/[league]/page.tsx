@@ -339,7 +339,7 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
               </thead>
               <tbody className="divide-y divide-border">
                 {recentOutcome.standings.slice(0, 5).map((r) => (
-                  <tr key={r.teamId} className={tr}>
+                  <tr key={r.teamId} data-m={r.managerId} className={tr}>
                     <td className={`${td} text-muted`}>{r.rank}</td>
                     <td className={td}>
                       <span className="font-semibold">{r.teamName}</span> <span className="text-muted">· {nameOf(r.managerId)}</span>

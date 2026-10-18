@@ -1,0 +1,15 @@
+/* Spotlight (round 3): the header band's picker. The fading itself is one rule generated at runtime
+   from the chosen id (src/lib/spotlight.ts → spotlightCss), keyed off body[data-spot] and data-m tags. */
+.spot { display: flex; align-items: center; gap: 8px; padding-bottom: 10px; margin-left: auto; min-width: 0; }
+.spot-l { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--band-muted); cursor: pointer; }
+.spot-l svg { width: 15px; height: 15px; }
+.spot select { background: var(--band-2); color: var(--band-ink); border: 1px solid transparent; border-radius: 6px; font-weight: 600; font-size: 13px; padding: 5px 8px; max-width: 11rem; min-height: 32px; cursor: pointer; }
+.spot select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.spot select option { color: var(--foreground); background: var(--surface); }
+.spot-chip { border: 0; background: var(--accent); color: #fff; font-weight: 700; font-size: 12px; padding: 5px 10px; border-radius: 999px; cursor: pointer; white-space: nowrap; }
+.spot-chip:hover { background: var(--accent-ink); }
+.spot-chip:focus-visible { outline: 2px solid var(--band-ink); outline-offset: 2px; }
+.band .band-tabs { margin-left: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  [data-m] { transition: opacity .2s; }
+}

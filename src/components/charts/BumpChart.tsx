@@ -126,6 +126,7 @@ export function BumpChart({ series, years, maxTeams, initialPins }: { series: Bu
           runs(s.pts).forEach((r) => {
             const p = lg
               .append("path")
+              .attr("data-m", s.id)
               .attr("d", line(r))
               .attr("fill", "none")
               .attr("stroke", color(s.id))
@@ -146,6 +147,7 @@ export function BumpChart({ series, years, maxTeams, initialPins }: { series: Bu
             }
           });
           lg.append("g")
+            .attr("data-m", s.id)
             .selectAll("circle")
             .data(s.pts)
             .join("circle")
@@ -171,6 +173,7 @@ export function BumpChart({ series, years, maxTeams, initialPins }: { series: Bu
             .data(labs)
             .join("text")
             .attr("class", "ink")
+            .attr("data-m", (d) => d.id)
             .attr("x", (d) => d.x + 12)
             .attr("y", (d) => d.y)
             .attr("dy", ".35em")
@@ -233,7 +236,7 @@ export function BumpChart({ series, years, maxTeams, initialPins }: { series: Bu
         {series.map((s) => {
           const k = pins.indexOf(s.id);
           return (
-            <button key={s.id} type="button" className="pill" aria-pressed={k >= 0} onClick={() => toggle(s.id)}>
+            <button key={s.id} type="button" className="pill" data-m={s.id} aria-pressed={k >= 0} onClick={() => toggle(s.id)}>
               {k >= 0 && <span className="size-2 rounded-full" style={{ background: SLOTS[k] }} />}
               {s.name}
             </button>
