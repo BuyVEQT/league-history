@@ -49,8 +49,9 @@ export default async function CabocloCupPage(props: PageProps<"/[league]/caboclo
   const oneBasket = WI.made.pct - lose.yahooFgPct; // what one more make was worth (1/FGA)
   const nth = Math.round(oneBasket / WI.margin);
   const fraction = ORDINAL_WORD[nth] ? `one-${ORDINAL_WORD[nth]}` : `1/${nth}`;
-  const brunoAdd = final.adds.find((a) => a.player === BRUNO);
-  const holAdd = final.adds.find((a) => a.player === HOLIDAY);
+  const adds = final.adds ?? [];
+  const brunoAdd = adds.find((a) => a.player === BRUNO);
+  const holAdd = adds.find((a) => a.player === HOLIDAY);
   const addGap = brunoAdd && holAdd ? Math.round((new Date(holAdd.time).getTime() - new Date(brunoAdd.time).getTime()) / 60000) : null;
   const sat = final.activeDays.find((a) => a.name === BRUNO)?.games.find((g) => g.date === "2019-03-30");
 
@@ -134,9 +135,9 @@ export default async function CabocloCupPage(props: PageProps<"/[league]/caboclo
               He had options. He took Bruno{addGap ? `, then Justin Holiday ${addGap} minutes later: the two Grizzlies who decide the final` : ""}.
               {sat ? ` Bruno gives him ${sat.pts} that night.` : ""}
             </p>
-            {final.adds.length > 0 && (
+            {adds.length > 0 && (
               <div className="addlog">
-                {final.adds.map((a, i) => (
+                {adds.map((a, i) => (
                   <div key={a.time + a.player} className={a.managerId === LOSER ? "" : "other"} style={{ ["--d" as string]: `${0.5 + i * 0.25}s` }}>
                     <span className="plus">+</span>
                     <b>{a.player}</b>

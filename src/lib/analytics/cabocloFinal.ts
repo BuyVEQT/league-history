@@ -11,8 +11,8 @@ export interface FinalTeam {
   fga: number;
   /** Yahoo's own tiebreaker value, to 8 decimals. */
   yahooFgPct: number;
-  /** Yahoo's FT% for the week, 3 decimals (null if not captured). */
-  yahooFtPct: number | null;
+  /** Yahoo's FT% for the week, as displayed (3 decimals). Optional: added by hand from the matchup page. */
+  yahooFtPct?: number;
   tpm: number;
   pts: number;
   reb: number;
@@ -37,11 +37,11 @@ export interface CabocloFinal {
   week: { number: number; from: string; to: string };
   teams: FinalTeam[];
   winners: Record<string, string>;
-  /** Free-agent adds that weekend, from Yahoo's transaction log (times Eastern). */
-  adds: { time: string; managerId: string; teamName: string; player: string }[];
   activeDays: { name: string; yahoo: { fgPct: string; pts: number; tpm: number }; games: { date: string; game: string; fgm: number; fga: number; pts: number }[] }[];
   sunday: { tip: string; game: string; espnId: string; lengthMin: number | null }[];
   lastGame: { id: string; game: string; pbpUrl: string; shots: FinalShot[] };
+  /** Free-agent adds before the last games, from Yahoo's transaction log (Eastern time). Optional, entered by hand. */
+  adds?: { time: string; managerId: string; teamName: string; player: string }[];
   sources: { label: string; url: string | null }[];
 }
 

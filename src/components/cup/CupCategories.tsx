@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ResetIcon, reducedMotion } from "./shared";
 
 export interface CupCategory {
@@ -48,7 +48,35 @@ export function CupCategories({ cats, final, names }: { cats: CupCategory[]; fin
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cats]);
 
-  useEffect(() => flip(), [flip]);
+  // Server render shows the final state. After hydration the cards turn face-down (still below the fold) and
+  // flip once they scroll into view; reduced motion leaves them flipped.
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    let undo: (() => void) | undefined;
+    const hide = reducedMotion()
+      ? undefined
+      : setTimeout(() => {
+          setOpen(0);
+          setTally([0, 0]);
+        });
+    const io = new IntersectionObserver(
+      (es) => {
+        if (es.some((e) => e.isIntersecting)) {
+          io.disconnect();
+          undo = flip();
+        }
+      },
+      { threshold: 0.3 },
+    );
+    io.observe(el);
+    return () => {
+      clearTimeout(hide);
+      io.disconnect();
+      undo?.();
+    };
+  }, [flip]);
 
   const card = (c: CupCategory) => {
     const on = order.indexOf(c) < open;
@@ -80,7 +108,7 @@ export function CupCategories({ cats, final, names }: { cats: CupCategory[]; fin
   };
 
   return (
-    <>
+    <div ref={ref}>
       <div className="flex justify-end">
         <button type="button" className="cup-btn" onClick={() => flip()}>
           <ResetIcon />
@@ -100,6 +128,6 @@ export function CupCategories({ cats, final, names }: { cats: CupCategory[]; fin
           <b>{names[1]}</b>
         </span>
       </div>
-    </>
+    </div>
   );
 }
