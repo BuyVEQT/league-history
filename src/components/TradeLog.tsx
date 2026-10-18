@@ -1,5 +1,6 @@
 "use client";
 
+import { monograms } from "@/components/viz/monograms";
 import { useState } from "react";
 import { rankLabel, signed } from "./draft";
 import { Avatar, ManagerLink } from "./ui";
@@ -42,6 +43,7 @@ export function TradeLog({
   const list = trades.filter((t) => year === "all" || t.year === year);
   const current = seasons.find((s) => s.year === year);
   const nameOf = (id: string) => names[id] ?? id;
+  const mono = monograms(Object.entries(names).map(([id, name]) => ({ id, name })));
 
   return (
     <div className="space-y-3">
@@ -87,7 +89,7 @@ export function TradeLog({
                 {t.sides.map((s) => (
                   <div key={s.managerId + s.teamName} className="tx-tl-side">
                     <div className="flex min-w-0 items-center gap-2 text-sm">
-                      <Avatar size="sm" name={nameOf(s.managerId)} />
+                      <Avatar size="sm" name={nameOf(s.managerId)} initials={mono.get(s.managerId)} />
                       <span className="truncate">
                         <ManagerLink id={s.managerId} name={nameOf(s.managerId)} />
                       </span>

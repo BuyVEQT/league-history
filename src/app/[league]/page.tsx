@@ -307,7 +307,7 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
                   <small>{r.unit}</small>
                 </div>
                 <div className="mt-1 flex items-center gap-2 text-[13.5px] text-[color:var(--ink-2)]">
-                  <Avatar size="sm" name={nameOf(r.who)} />
+                  <Avatar size="sm" name={nameOf(r.who)} initials={monograms(league.managers).get(r.who)} />
                   <span>
                     <ManagerLink id={r.who} name={nameOf(r.who)} /> · {r.d}
                   </span>

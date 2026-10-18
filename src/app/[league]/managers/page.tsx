@@ -1,3 +1,4 @@
+import { monograms } from "@/components/viz/monograms";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Sparkline } from "@/components/Sparkline";
@@ -40,7 +41,7 @@ export default async function ManagersPage(props: PageProps<"/[league]/managers"
           return (
             <Link key={c.managerId} href={`/${slug}/managers/${c.managerId}`} className="mcard">
               <div className="flex items-center gap-2.5">
-                <Avatar name={c.name} />
+                <Avatar name={c.name} initials={monograms(league.managers).get(c.managerId)} />
                 <div className="min-w-0">
                   <div className="mcard-nm truncate">{c.name}</div>
                   <div className="text-[12.5px] text-muted">

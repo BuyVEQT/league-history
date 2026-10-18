@@ -1,3 +1,4 @@
+import { monograms } from "@/components/viz/monograms";
 import { notFound } from "next/navigation";
 import { CountUp } from "@/components/CountUp";
 import { signed } from "@/components/draft";
@@ -26,6 +27,7 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
   if (!league || !hasTradeData(league)) notFound();
 
   const nameOf = (id: string) => league.managers.find((m) => m.id === id)?.name ?? id;
+  const mono = monograms(league.managers);
   const trades = leagueTrades(league);
   const completed = trades.filter((t) => t.status === "completed");
   const vetoed = trades.filter((t) => t.status === "vetoed");
@@ -166,7 +168,7 @@ export default async function TradesPage(props: PageProps<"/[league]/trades">) {
                 <tr key={r.managerId} className={tr}>
                   <td className={td}>
                     <span className="flex items-center gap-2">
-                      <Avatar size="sm" name={nameOf(r.managerId)} />
+                      <Avatar size="sm" name={nameOf(r.managerId)} initials={mono.get(r.managerId)} />
                       <ManagerLink id={r.managerId} name={nameOf(r.managerId)} />
                     </span>
                   </td>

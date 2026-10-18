@@ -1,5 +1,6 @@
 "use client";
 
+import { monograms } from "@/components/viz/monograms";
 import Link from "next/link";
 import { Download, RotateCcw, Search, Trophy } from "lucide-react";
 import { Avatar } from "@/components/ui";
@@ -101,6 +102,7 @@ export function LeaderboardTable({ league }: { league: League }) {
   const lo = Math.min(from, to);
   const hi = Math.max(from, to);
   // GOAT scores depend on the selected seasons; managers with too few seasons have none.
+  const mono = useMemo(() => monograms(league.managers), [league]);
   const goat = useMemo(() => new Map(goatScores(league, { from: lo, to: hi }).map((g) => [g.managerId, g.score])), [league, lo, hi]);
   const goatId = useMemo(() => [...goat.entries()].sort((a, b) => b[1] - a[1])[0]?.[0], [goat]);
   const columns = useMemo<Column[]>(
@@ -268,7 +270,7 @@ export function LeaderboardTable({ league }: { league: League }) {
               <tr key={r.managerId} className={`transition-colors hover:bg-surface-2/60 ${r.managerId === goatId ? "bg-[color:var(--gold-wash)]" : ""}`}>
                 <td className={`sticky left-0 z-10 whitespace-nowrap px-3 py-3 ${r.managerId === goatId ? "bg-[color:var(--gold-wash)]" : "bg-surface"}`}>
                   <Link href={`${base}/managers/${r.managerId}`} className="inline-flex items-center gap-2 font-semibold hover:text-accent hover:underline">
-                    <Avatar name={r.name} size="sm" />{r.name}
+                    <Avatar name={r.name} size="sm" initials={mono.get(r.managerId)} />{r.name}
                   </Link>
                   {r.managerId === goatId && <span className="badge badge-gold ml-2">GOAT</span>}
                 </td>

@@ -1,3 +1,4 @@
+import { monograms } from "@/components/viz/monograms";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
@@ -63,7 +64,7 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
   const nameOf = (id: string) => names[id] ?? id;
   const who = (id: string) => (
     <span className="flex items-center gap-2">
-      <Avatar size="sm" name={nameOf(id)} />
+      <Avatar size="sm" name={nameOf(id)} initials={monograms(league.managers).get(id)} />
       <ManagerLink id={id} name={nameOf(id)} />
     </span>
   );

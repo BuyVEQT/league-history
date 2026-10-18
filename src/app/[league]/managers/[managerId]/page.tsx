@@ -1,3 +1,4 @@
+import { monograms } from "@/components/viz/monograms";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CountUp } from "@/components/CountUp";
@@ -9,7 +10,6 @@ import { LuckMini } from "@/components/viz/LuckMini";
 import { WeekHistogram } from "@/components/viz/WeekHistogram";
 import { tt } from "@/components/viz/tt";
 import { Avatar, PageTitle, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
-import { colorForManager } from "@/lib/colors";
 import { rankLabel, signed } from "@/components/draft";
 import { careerFromSeasons, careerStats, managerSeasons } from "@/lib/analytics/career";
 import { favouritePlayers, keepRates, managerDraftStats, reachStats } from "@/lib/analytics/draft";
@@ -86,7 +86,7 @@ export default async function ManagerPage(props: PageProps<"/[league]/managers/[
         ← All managers
       </Link>
       <div className="flex flex-wrap items-center gap-4">
-        <Avatar size="lg" name={manager.name} color={colorForManager(league, manager.id)} />
+        <Avatar size="lg" name={manager.name} initials={monograms(league.managers).get(manager.id)} />
         <div className="min-w-0">
           <PageTitle
             eyebrow="Manager profile"
