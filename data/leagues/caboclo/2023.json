@@ -1460,7 +1460,8 @@
       "overall": 36,
       "teamId": "2023:jacob-v",
       "playerId": "6512",
-      "playerName": "Cade Cunningham"
+      "playerName": "Cade Cunningham",
+      "gamesPlayed": 12
     },
     {
       "round": 4,
@@ -2164,7 +2165,8 @@
       "overall": 124,
       "teamId": "2023:jake",
       "playerId": "4716",
-      "playerName": "John Wall"
+      "playerName": "John Wall",
+      "gamesPlayed": 34
     },
     {
       "round": 11,
@@ -2252,7 +2254,8 @@
       "overall": 135,
       "teamId": "2023:jacob-g",
       "playerId": "6356",
-      "playerName": "James Wiseman"
+      "playerName": "James Wiseman",
+      "gamesPlayed": 45
     },
     {
       "round": 12,
@@ -2292,7 +2295,8 @@
       "overall": 140,
       "teamId": "2023:dadder",
       "playerId": "5054",
-      "playerName": "Evan Fournier"
+      "playerName": "Evan Fournier",
+      "gamesPlayed": 27
     },
     {
       "round": 12,
@@ -2380,7 +2384,8 @@
       "overall": 151,
       "teamId": "2023:dylan",
       "playerId": "5074",
-      "playerName": "Will Barton"
+      "playerName": "Will Barton",
+      "gamesPlayed": 56
     },
     {
       "round": 13,
@@ -2404,7 +2409,8 @@
       "overall": 154,
       "teamId": "2023:jacob-g",
       "playerId": "5497",
-      "playerName": "Richaun Holmes"
+      "playerName": "Richaun Holmes",
+      "gamesPlayed": 42
     },
     {
       "round": 13,

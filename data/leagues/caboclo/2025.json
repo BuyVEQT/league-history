@@ -1610,7 +1610,8 @@
       "overall": 62,
       "teamId": "2025:najim",
       "playerId": "6569",
-      "playerName": "Cam Thomas"
+      "playerName": "Cam Thomas",
+      "gamesPlayed": 25
     },
     {
       "round": 6,
@@ -1666,7 +1667,8 @@
       "overall": 69,
       "teamId": "2025:benjamin",
       "playerId": "5601",
-      "playerName": "Brandon Ingram"
+      "playerName": "Brandon Ingram",
+      "gamesPlayed": 18
     },
     {
       "round": 6,
@@ -1842,7 +1844,8 @@
       "overall": 91,
       "teamId": "2025:jacob-v",
       "playerId": "6549",
-      "playerName": "Jonathan Kuminga"
+      "playerName": "Jonathan Kuminga",
+      "gamesPlayed": 47
     },
     {
       "round": 8,
@@ -1850,7 +1853,8 @@
       "overall": 92,
       "teamId": "2025:mitchell",
       "playerId": "6577",
-      "playerName": "Herbert Jones"
+      "playerName": "Herbert Jones",
+      "gamesPlayed": 20
     },
     {
       "round": 8,
@@ -2034,7 +2038,8 @@
       "overall": 115,
       "teamId": "2025:jacob-v",
       "playerId": "6695",
-      "playerName": "Jaden Ivey"
+      "playerName": "Jaden Ivey",
+      "gamesPlayed": 30
     },
     {
       "round": 10,
@@ -2122,7 +2127,8 @@
       "overall": 126,
       "teamId": "2025:jacob-v",
       "playerId": "5317",
-      "playerName": "Marcus Smart"
+      "playerName": "Marcus Smart",
+      "gamesPlayed": 34
     },
     {
       "round": 11,
@@ -2170,7 +2176,8 @@
       "overall": 132,
       "teamId": "2025:michael",
       "playerId": "10110",
-      "playerName": "Taylor Hendricks"
+      "playerName": "Taylor Hendricks",
+      "gamesPlayed": 3
     },
     {
       "round": 12,
@@ -2226,7 +2233,8 @@
       "overall": 139,
       "teamId": "2025:jacob-v",
       "playerId": "5667",
-      "playerName": "Malcolm Brogdon"
+      "playerName": "Malcolm Brogdon",
+      "gamesPlayed": 24
     },
     {
       "round": 12,
@@ -2338,7 +2346,8 @@
       "overall": 153,
       "teamId": "2025:matt",
       "playerId": "6057",
-      "playerName": "De'Anthony Melton"
+      "playerName": "De'Anthony Melton",
+      "gamesPlayed": 6
     },
     {
       "round": 13,
@@ -2346,7 +2355,8 @@
       "overall": 154,
       "teamId": "2025:eddie",
       "playerId": "5480",
-      "playerName": "Delon Wright"
+      "playerName": "Delon Wright",
+      "gamesPlayed": 40
     },
     {
       "round": 13,

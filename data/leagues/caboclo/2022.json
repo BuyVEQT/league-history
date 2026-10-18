@@ -1122,7 +1122,8 @@
       "overall": 19,
       "teamId": "2022:mitchell",
       "playerId": "6025",
-      "playerName": "Michael Porter Jr."
+      "playerName": "Michael Porter Jr.",
+      "gamesPlayed": 9
     },
     {
       "round": 2,
@@ -1322,7 +1323,8 @@
       "overall": 44,
       "teamId": "2022:eddie",
       "playerId": "6163",
-      "playerName": "Zion Williamson"
+      "playerName": "Zion Williamson",
+      "gamesPlayed": 0
     },
     {
       "round": 5,
@@ -1450,7 +1452,8 @@
       "overall": 60,
       "teamId": "2022:benjamin",
       "playerId": "6019",
-      "playerName": "Collin Sexton"
+      "playerName": "Collin Sexton",
+      "gamesPlayed": 11
     },
     {
       "round": 7,
@@ -1626,7 +1629,8 @@
       "overall": 82,
       "teamId": "2022:mitchell",
       "playerId": "5600",
-      "playerName": "Ben Simmons"
+      "playerName": "Ben Simmons",
+      "gamesPlayed": 0
     },
     {
       "round": 9,
@@ -1698,7 +1702,8 @@
       "overall": 91,
       "teamId": "2022:jacob-g",
       "playerId": "4472",
-      "playerName": "Brook Lopez"
+      "playerName": "Brook Lopez",
+      "gamesPlayed": 13
     },
     {
       "round": 10,
@@ -1794,7 +1799,8 @@
       "overall": 103,
       "teamId": "2022:najim",
       "playerId": "5768",
-      "playerName": "Jonathan Isaac"
+      "playerName": "Jonathan Isaac",
+      "gamesPlayed": 0
     },
     {
       "round": 11,
@@ -1850,7 +1856,8 @@
       "overall": 110,
       "teamId": "2022:jacob-g",
       "playerId": "5582",
-      "playerName": "T.J. McConnell"
+      "playerName": "T.J. McConnell",
+      "gamesPlayed": 27
     },
     {
       "round": 12,
@@ -1858,7 +1865,8 @@
       "overall": 111,
       "teamId": "2022:jacob-g",
       "playerId": "6396",
-      "playerName": "Patrick Williams"
+      "playerName": "Patrick Williams",
+      "gamesPlayed": 17
     },
     {
       "round": 12,
@@ -1906,7 +1914,8 @@
       "overall": 117,
       "teamId": "2022:eddie",
       "playerId": "6516",
-      "playerName": "Jalen Suggs"
+      "playerName": "Jalen Suggs",
+      "gamesPlayed": 48
     },
     {
       "round": 12,
@@ -1914,7 +1923,8 @@
       "overall": 118,
       "teamId": "2022:najim",
       "playerId": "5344",
-      "playerName": "Joe Harris"
+      "playerName": "Joe Harris",
+      "gamesPlayed": 14
     },
     {
       "round": 12,
@@ -1930,7 +1940,8 @@
       "overall": 120,
       "teamId": "2022:benjamin",
       "playerId": "5157",
-      "playerName": "Nerlens Noel"
+      "playerName": "Nerlens Noel",
+      "gamesPlayed": 25
     },
     {
       "round": 13,

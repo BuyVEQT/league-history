@@ -156,6 +156,12 @@ function build(yahooYear) {
     if (p.gamesPlayed === null) p.gamesPlayed = gp;
     p.stats = { fgm, fga, ftm, fta, threes, pts, reb, ast, stl, blk, to };
   }
+  // Drafted players outside the top 300 have no ranks row; Sleeper's totals still give their games played
+  // (no Sleeper row = never played that season, e.g. a year lost to injury).
+  if (sleeperStats.size) {
+    const ranked = new Set((season.players ?? []).map((p) => p.playerId));
+    for (const d of season.draft ?? []) if (!ranked.has(d.playerId)) d.gamesPlayed = sleeperStats.get(d.playerId)?.[0] ?? 0;
+  }
   const afterTrade = new Map(
     (lines(yahooYear, "sleeper-trades.txt") ?? []).map((l) => l.split("|")).map(([date, name, rank, games]) => [`${date}|${name}`, { rank: rank === "-" ? null : num(rank), games: num(games) }]),
   );

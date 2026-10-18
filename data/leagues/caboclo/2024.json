@@ -1688,7 +1688,8 @@
       "overall": 64,
       "teamId": "2024:dadder",
       "playerId": "6164",
-      "playerName": "Ja Morant"
+      "playerName": "Ja Morant",
+      "gamesPlayed": 9
     },
     {
       "round": 6,
@@ -1824,7 +1825,8 @@
       "overall": 81,
       "teamId": "2024:dadder",
       "playerId": "5317",
-      "playerName": "Marcus Smart"
+      "playerName": "Marcus Smart",
+      "gamesPlayed": 20
     },
     {
       "round": 7,
@@ -1832,7 +1834,8 @@
       "overall": 82,
       "teamId": "2024:jordan",
       "playerId": "6705",
-      "playerName": "Mark Williams"
+      "playerName": "Mark Williams",
+      "gamesPlayed": 19
     },
     {
       "round": 7,
@@ -1920,7 +1923,8 @@
       "overall": 93,
       "teamId": "2024:jake",
       "playerId": "6038",
-      "playerName": "Robert Williams III"
+      "playerName": "Robert Williams III",
+      "gamesPlayed": 6
     },
     {
       "round": 8,
@@ -1984,7 +1988,8 @@
       "overall": 101,
       "teamId": "2024:mitchell",
       "playerId": "6047",
-      "playerName": "Mitchell Robinson"
+      "playerName": "Mitchell Robinson",
+      "gamesPlayed": 30
     },
     {
       "round": 9,
@@ -2112,7 +2117,8 @@
       "overall": 117,
       "teamId": "2024:jake",
       "playerId": "5600",
-      "playerName": "Ben Simmons"
+      "playerName": "Ben Simmons",
+      "gamesPlayed": 15
     },
     {
       "round": 10,
@@ -2224,7 +2230,8 @@
       "overall": 131,
       "teamId": "2024:jacob-g",
       "playerId": "5583",
-      "playerName": "Christian Wood"
+      "playerName": "Christian Wood",
+      "gamesPlayed": 50
     },
     {
       "round": 11,
@@ -2344,7 +2351,8 @@
       "overall": 146,
       "teamId": "2024:najim",
       "playerId": "6707",
-      "playerName": "Tari Eason"
+      "playerName": "Tari Eason",
+      "gamesPlayed": 22
     },
     {
       "round": 13,
@@ -2368,7 +2376,8 @@
       "overall": 149,
       "teamId": "2024:mitchell",
       "playerId": "5163",
-      "playerName": "Steven Adams"
+      "playerName": "Steven Adams",
+      "gamesPlayed": 0
     },
     {
       "round": 13,

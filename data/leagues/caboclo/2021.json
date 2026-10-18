@@ -1289,7 +1289,8 @@
       "overall": 47,
       "teamId": "2021:benjamin",
       "playerId": "4764",
-      "playerName": "Hassan Whiteside"
+      "playerName": "Hassan Whiteside",
+      "gamesPlayed": 36
     },
     {
       "round": 5,
@@ -1409,7 +1410,8 @@
       "overall": 62,
       "teamId": "2021:eddie",
       "playerId": "5855",
-      "playerName": "Thomas Bryant"
+      "playerName": "Thomas Bryant",
+      "gamesPlayed": 10
     },
     {
       "round": 7,
@@ -1425,7 +1427,8 @@
       "overall": 64,
       "teamId": "2021:matt",
       "playerId": "5325",
-      "playerName": "T.J. Warren"
+      "playerName": "T.J. Warren",
+      "gamesPlayed": 4
     },
     {
       "round": 7,
@@ -1441,7 +1444,8 @@
       "overall": 66,
       "teamId": "2021:michael",
       "playerId": "6015",
-      "playerName": "Jaren Jackson Jr."
+      "playerName": "Jaren Jackson Jr.",
+      "gamesPlayed": 11
     },
     {
       "round": 7,
@@ -1561,7 +1565,8 @@
       "overall": 81,
       "teamId": "2021:jake",
       "playerId": "4391",
-      "playerName": "Kevin Love"
+      "playerName": "Kevin Love",
+      "gamesPlayed": 25
     },
     {
       "round": 9,
@@ -1713,7 +1718,8 @@
       "overall": 100,
       "teamId": "2021:jake",
       "playerId": "5763",
-      "playerName": "Markelle Fultz"
+      "playerName": "Markelle Fultz",
+      "gamesPlayed": 8
     },
     {
       "round": 11,
@@ -1769,7 +1775,8 @@
       "overall": 107,
       "teamId": "2021:benjamin",
       "playerId": "5154",
-      "playerName": "Otto Porter Jr."
+      "playerName": "Otto Porter Jr.",
+      "gamesPlayed": 28
     },
     {
       "round": 11,
@@ -1841,7 +1848,8 @@
       "overall": 116,
       "teamId": "2021:jordan",
       "playerId": "6356",
-      "playerName": "James Wiseman"
+      "playerName": "James Wiseman",
+      "gamesPlayed": 39
     },
     {
       "round": 12,
@@ -1921,7 +1929,8 @@
       "overall": 126,
       "teamId": "2021:michael",
       "playerId": "6172",
-      "playerName": "Cam Reddish"
+      "playerName": "Cam Reddish",
+      "gamesPlayed": 26
     },
     {
       "round": 13,

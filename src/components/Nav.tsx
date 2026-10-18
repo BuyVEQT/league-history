@@ -20,6 +20,7 @@ const LINKS: { href: string; label: string; needs?: keyof NavFeatures; isNew?: b
   { href: "/rivalries", label: "Rivalries" },
   { href: "/records", label: "Records" },
   { href: "/draft", label: "Draft", needs: "draft" },
+  { href: "/injuries", label: "Injury luck", needs: "draft", isNew: true },
   { href: "/trades", label: "Trades & moves", needs: "trades" },
   { href: "/awards", label: "Awards" },
   { href: "/caboclo-cup", label: "The Cup", needs: "story", isNew: true },

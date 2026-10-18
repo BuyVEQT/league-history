@@ -81,6 +81,11 @@ export interface DraftPick {
   teamId: TeamId;
   playerId: string;
   playerName: string;
+  /**
+   * Games played that NBA season, for drafted players outside the source's top 300 (who have no
+   * PlayerSeason row). 0 = never played. Absent when not captured.
+   */
+  gamesPlayed?: number;
 }
 
 /** Category totals for a player's whole NBA season. */
