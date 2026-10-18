@@ -10,7 +10,8 @@ export async function proxy(request: NextRequest) {
     return NextResponse.next();
   }
   const unlock = new URL(`/unlock/${slug}`, request.url);
-  unlock.searchParams.set("next", request.nextUrl.pathname);
+  // Keep the query (e.g. ?panel=player:…) so shared links survive unlocking.
+  unlock.searchParams.set("next", request.nextUrl.pathname + request.nextUrl.search);
   return NextResponse.redirect(unlock);
 }
 
