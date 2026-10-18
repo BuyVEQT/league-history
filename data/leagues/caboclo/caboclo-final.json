@@ -11,7 +11,6 @@
       "fgm": 275,
       "fga": 586,
       "yahooFgPct": 0.46928328,
-      "yahooFtPct": 0.757,
       "tpm": 46,
       "pts": 711,
       "reb": 322,
@@ -19,7 +18,8 @@
       "stl": 32,
       "blk": 33,
       "to": 64,
-      "categoriesWon": 5
+      "categoriesWon": 5,
+      "yahooFtPct": 0.757
     },
     {
       "managerId": "jacob-g",
@@ -27,7 +27,6 @@
       "fgm": 266,
       "fga": 567,
       "yahooFgPct": 0.4691358,
-      "yahooFtPct": 0.816,
       "tpm": 67,
       "pts": 710,
       "reb": 244,
@@ -35,7 +34,8 @@
       "stl": 33,
       "blk": 28,
       "to": 74,
-      "categoriesWon": 4
+      "categoriesWon": 4,
+      "yahooFtPct": 0.816
     }
   ],
   "winners": {
@@ -120,6 +120,32 @@
           "pts": 9
         }
       ]
+    }
+  ],
+  "adds": [
+    {
+      "time": "2019-03-30T19:47:00-04:00",
+      "managerId": "jacob-g",
+      "teamName": "Skip",
+      "player": "Bruno Caboclo"
+    },
+    {
+      "time": "2019-03-30T19:56:00-04:00",
+      "managerId": "jacob-g",
+      "teamName": "Skip",
+      "player": "Justin Holiday"
+    },
+    {
+      "time": "2019-03-31T03:00:00-04:00",
+      "managerId": "matt",
+      "teamName": "Klaw Leonard",
+      "player": "Christian Wood"
+    },
+    {
+      "time": "2019-03-31T10:45:00-04:00",
+      "managerId": "jacob-g",
+      "teamName": "Skip",
+      "player": "Miles Bridges"
     }
   ],
   "sunday": [
@@ -317,32 +343,6 @@
       }
     ]
   },
-  "adds": [
-    {
-      "time": "2019-03-30T19:47:00-04:00",
-      "managerId": "jacob-g",
-      "teamName": "Skip",
-      "player": "Bruno Caboclo"
-    },
-    {
-      "time": "2019-03-30T19:56:00-04:00",
-      "managerId": "jacob-g",
-      "teamName": "Skip",
-      "player": "Justin Holiday"
-    },
-    {
-      "time": "2019-03-31T03:00:00-04:00",
-      "managerId": "matt",
-      "teamName": "Klaw Leonard",
-      "player": "Christian Wood"
-    },
-    {
-      "time": "2019-03-31T10:45:00-04:00",
-      "managerId": "jacob-g",
-      "teamName": "Skip",
-      "player": "Miles Bridges"
-    }
-  ],
   "sources": [
     {
       "label": "Yahoo Fantasy matchup page, 2018-19 week 24 (captured by Matt)",

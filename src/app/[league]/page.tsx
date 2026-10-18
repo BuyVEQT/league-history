@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Trophy } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -128,32 +129,65 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
     },
   ].filter((x) => !!x);
 
+  const cupFinal = cabocloFinalFor(slug);
+
   return (
     <>
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
-        <div className="hero-card">
-          <Court />
-          <div className="eyebrow-accent !text-accent">Reigning champion · {reigning.label}</div>
-          {reigning.championManagerId ? (
-            <>
-              <div className="big">{reigning.championTeamName}</div>
-              <div className="flex items-center gap-2.5">
-                <span className="mono size-10 !bg-accent text-[17px]" aria-hidden>
-                  {monograms(league.managers).get(reigning.championManagerId) ?? nameOf(reigning.championManagerId).slice(0, 2).toUpperCase()}
-                </span>
-                <div className="sub">
-                  <b>{nameOf(reigning.championManagerId)}</b> · title #{titlesOf(reigning.championManagerId)}
-                  {reigning.runnerUpTeamName && `. Beat ${nameOf(reigning.runnerUpManagerId!)} (${reigning.runnerUpTeamName}) in the final.`}
-                </div>
+        {cupFinal ? (
+          <Link href={`/${slug}/caboclo-cup`} className="cup-card">
+            <div className="eyebrow-accent !text-accent">Why it&apos;s called</div>
+            <div className="cup-title">The Caboclo Cup</div>
+            <p className="cup-sub">
+              Our first championship was decided by field-goal percentage at the <b>fourth decimal</b>, on Bruno Caboclo&apos;s missed six-footer: <b>the last shot anyone took all season</b>.
+            </p>
+            <div className="cup-ticker">
+              <div className="fg">
+                <span>Field-goal %, 2018–19 final</span>
+                {[cupFinal.teams[0].yahooFgPct, cupFinal.teams[1].yahooFgPct].map((v, i) => (
+                  <Fragment key={v}>
+                    {i === 1 && <i>vs</i>}
+                    <b className="num">
+                      {v.toFixed(4).replace(/^0/, "").slice(0, 4)}
+                      <b>{v.toFixed(4).slice(-1)}</b>
+                    </b>
+                  </Fragment>
+                ))}
               </div>
-            </>
-          ) : (
-            <div className="sub">Not decided yet.</div>
-          )}
-          <Link href={`/${slug}/seasons/${reigning.year}`} className="go">
-            Relive the {reigning.label} season →
+              <div>
+                <span>Final</span>
+                <b className="num">
+                  {cupFinal.teams[0].categoriesWon}–{cupFinal.teams[1].categoriesWon}
+                </b>
+              </div>
+            </div>
+            <span className="go">The story, shot by shot →</span>
           </Link>
-        </div>
+        ) : (
+        <div className="hero-card">
+            <Court />
+            <div className="eyebrow-accent !text-accent">Reigning champion · {reigning.label}</div>
+            {reigning.championManagerId ? (
+              <>
+                <div className="big">{reigning.championTeamName}</div>
+                <div className="flex items-center gap-2.5">
+                  <span className="mono size-10 !bg-accent text-[17px]" aria-hidden>
+                    {monograms(league.managers).get(reigning.championManagerId) ?? nameOf(reigning.championManagerId).slice(0, 2).toUpperCase()}
+                  </span>
+                  <div className="sub">
+                    <b>{nameOf(reigning.championManagerId)}</b> · title #{titlesOf(reigning.championManagerId)}
+                    {reigning.runnerUpTeamName && `. Beat ${nameOf(reigning.runnerUpManagerId!)} (${reigning.runnerUpTeamName}) in the final.`}
+                  </div>
+                </div>
+              </>
+            ) : (
+              <div className="sub">Not decided yet.</div>
+            )}
+            <Link href={`/${slug}/seasons/${reigning.year}`} className="go">
+              Relive the {reigning.label} season →
+            </Link>
+          </div>
+        )}
         <div className="grid grid-cols-2 gap-3">
           <StatCard
             label="Most titles"
@@ -171,14 +205,6 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
           <StatCard label="Matchups played" value={<CountUp value={summary.completedMatchups} />} detail="weekly head-to-heads, playoffs included" />
         </div>
       </div>
-
-      {cabocloFinalFor(slug) && (
-        <Link href={`/${slug}/caboclo-cup`} className="cf-teaser">
-          <span className="cf-teaser-k">Why the Caboclo Cup?</span>
-          <span className="cf-teaser-v">The first title was decided by .00015 in field-goal percentage, on Bruno Caboclo&apos;s last shot of the season.</span>
-          <span className="cf-teaser-go">See every shot →</span>
-        </Link>
-      )}
 
       <Section title="Banners in the rafters">
         <p className="-mt-1 text-sm text-[color:var(--ink-2)]">Every champion, hung where they belong. Click a banner to relive that season.</p>
