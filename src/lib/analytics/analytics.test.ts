@@ -212,6 +212,41 @@ describe("mini league: head-to-head", () => {
 });
 
 describe("demo league: internal consistency", () => {
+  // The demo is what Yahoo reviews: every feature, including drafts, players and trades, must have data.
+  it("has a draft, ranked players with stats, trades and activity every season", () => {
+    for (const s of demo.seasons) {
+      expect(s.draft!.length).toBe(s.teams.length * 13);
+      expect(s.players).toHaveLength(300);
+      expect(s.players!.every((p) => p.stats)).toBe(true);
+      expect(s.trades!.length).toBeGreaterThan(0);
+      expect(Object.keys(s.activity!)).toHaveLength(s.teams.length);
+    }
+    expect(demo.ratings!.rows.length).toBe(demo.seasons.at(-1)!.teams.length);
+  });
+
+  it("drafts are snake drafts with each player taken once", () => {
+    for (const s of demo.seasons) {
+      expect(new Set(s.draft!.map((d) => d.playerId)).size).toBe(s.draft!.length);
+      const r1 = s.draft!.filter((d) => d.round === 1).map((d) => d.teamId);
+      const r2 = s.draft!.filter((d) => d.round === 2).map((d) => d.teamId);
+      expect(r2).toEqual([...r1].reverse());
+    }
+  });
+
+  it("player owners, trade players and namesakes all point at real teams and players", () => {
+    const named = demo.seasons.flatMap((s) => s.teams.filter((t) => t.namesake));
+    expect(named.length).toBeGreaterThan(0);
+    expect(named.every((t) => t.namesake!.playerId)).toBe(true);
+    for (const s of demo.seasons) {
+      const teamIds = new Set(s.teams.map((t) => t.id));
+      expect(s.players!.every((p) => p.teamId === null || teamIds.has(p.teamId))).toBe(true);
+      for (const t of s.trades!) for (const side of t.sides) {
+        expect(teamIds.has(side.teamId)).toBe(true);
+        expect(side.receives.every((r) => r.playerId)).toBe(true);
+      }
+    }
+  });
+
   it("covers about 10 seasons with a different league size mid-way", () => {
     expect(demo.seasons).toHaveLength(10);
     const sizes = new Set(demo.seasons.map((s) => s.teams.length));
