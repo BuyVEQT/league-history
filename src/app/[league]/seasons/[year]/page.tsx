@@ -7,6 +7,8 @@ import { Card, ManagerLink, PageTitle, Section, StatCard, TableWrap, td, th, tr 
 import { RosterHeat } from "@/components/viz/RosterHeat";
 import { WeekGrid } from "@/components/viz/WeekGrid";
 import { WhatIfSlope } from "@/components/viz/WhatIfSlope";
+import { FormChips, PctBar, SeedArrow } from "@/components/TableCharts";
+import { WeekStrip } from "@/components/WeekStrip";
 import { formatPct, formatRecord, ordinal, winPct } from "@/lib/analytics/format";
 import { seasonRecords } from "@/lib/analytics/overview";
 import { PUNT_Z, rosterProfiles } from "@/lib/analytics/players";
@@ -14,6 +16,7 @@ import { seasonRace } from "@/lib/analytics/race";
 import { rankMethod, seasonOutcome, seasonStandings, teamIndex, type StandingRow } from "@/lib/analytics/season";
 import { raceStorylines, replayFrames } from "@/lib/analytics/seasonView";
 import { alternateStandings } from "@/lib/analytics/whatIf";
+import { seasonWeeks, teamForm } from "@/lib/analytics/weeksView";
 import { getLeague } from "@/lib/data";
 import { TIPS } from "@/lib/explain";
 import { SEASON_TIPS } from "@/lib/explain/seasons";
@@ -51,8 +54,6 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
   // The standings' own win % (category win % in category leagues), for the inline bar.
   const method = rankMethod(season);
   const pctOf = (r: StandingRow) => (method === "categories" ? winPct(r.catWins, r.catLosses, r.catTies) : r.winPct);
-  const maxPct = Math.max(0.0001, ...outcome.standings.map((r) => pctOf(r) ?? 0));
-  const minPct = Math.min(0.4, ...outcome.standings.map((r) => pctOf(r) ?? 0)) - 0.02;
   const spots = outcome.playoffTeamIds.size;
 
   return (
@@ -70,6 +71,11 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
           </Link>
         ))}
       </nav>
+
+      <div className="weekstrip-row">
+        <span className="weekstrip-k">Open a week</span>
+        <WeekStrip weeks={seasonWeeks(season)} base={`/${slug}`} year={season.year} label={`${season.label} weeks`} />
+      </div>
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         <StatCard label="Champion" value={champ?.name ?? "—"} detail={champ ? managerName(champ.managerId) : "Not decided"} tip={SEASON_TIPS.titles} />
@@ -112,12 +118,13 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
               stories={stories}
               replay={replay}
               managerNames={managerNames}
+              weekHref={`/${slug}/seasons/${season.year}/week/`}
             />
           </Card>
         </Section>
       )}
 
-      <Section title="Playoff bracket">
+      <Section title="Playoff bracket" id="bracket">
         <Card className="p-5">
           <Bracket season={season} managerName={managerName} />
           <p className="mt-3 text-xs text-muted">Seeds come from the regular-season standings. Ties in a playoff week go to the higher seed.</p>
@@ -204,7 +211,7 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
 
       <Section title="Every week, every team" tip={SEASON_TIPS.weekGrid}>
         <Card className="space-y-3 p-5">
-          <WeekGrid season={season} standings={outcome.standings} />
+          <WeekGrid season={season} standings={outcome.standings} base={`/${slug}`} />
           <div className="viz-legend">
             <span>
               <i style={{ background: "var(--pos)" }} />
@@ -251,9 +258,22 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
                 </th>
                 <th className={th}>
                   <span className="inline-flex items-center gap-1.5">
-                    Matchups W-L-T <InfoTip down end text={TIPS.winPct} />
+                    Matchups <InfoTip down end text={TIPS.winPct} />
                   </span>
                 </th>
+                <th className={th}>Last 5 weeks</th>
+                <th className={th}>
+                  <span className="inline-flex items-center gap-1.5">
+                    Seed → final <InfoTip down end text={TIPS.vsSeed} />
+                  </span>
+                </th>
+                {season.activity && (
+                  <th className={th}>
+                    <span className="inline-flex items-center gap-1.5">
+                      Moves <InfoTip down end text="The source's season count of adds and drops for each team." />
+                    </span>
+                  </th>
+                )}
                 <th className={th}>Final</th>
               </tr>
             </thead>
@@ -270,30 +290,24 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
                       <ManagerLink id={r.managerId} name={managerName(r.managerId)} />
                     </td>
                     <td className={td}>
-                      <span className="catbar">
-                        <span>{formatPct(p)}</span>
-                        <span className="tr">
-                          <span
-                            className="fl"
-                            style={{
-                              width: `${Math.max(2, Math.min(100, (((p ?? 0) - minPct) / Math.max(0.01, maxPct - minPct)) * 100))}%`,
-                              background: (p ?? 0) >= 0.5 ? "var(--pos)" : "var(--neg)",
-                            }}
-                          />
-                        </span>
-                      </span>
+                      <PctBar p={p} />
                     </td>
                     <td className={`${td} tabular-nums`}>{formatRecord(r.catWins, r.catLosses, r.catTies)}</td>
                     <td className={`${td} tabular-nums`}>
                       {formatRecord(r.wins, r.losses, r.ties)} <span className="text-muted">({formatPct(r.winPct)})</span>
                     </td>
                     <td className={td}>
+                      <FormChips games={teamForm(season, r.teamId)} base={`/${slug}`} year={season.year} />
+                    </td>
+                    <td className={td}>{inPlayoffs ? <SeedArrow seed={r.rank} final={final} title={r.teamName} /> : <span className="text-xs text-muted">missed</span>}</td>
+                    {season.activity && <td className={td}>{season.activity[r.teamId]?.moves ?? "—"}</td>}
+                    <td className={td}>
                       {final === 1 ? (
                         <span className="badge badge-gold">🏆 Champion</span>
                       ) : inPlayoffs ? (
                         <span className="badge">{ordinal(final)}</span>
                       ) : (
-                        <span className="text-muted">{ordinal(final)} · missed playoffs</span>
+                        <span className="text-muted">{ordinal(final)}</span>
                       )}
                     </td>
                   </tr>

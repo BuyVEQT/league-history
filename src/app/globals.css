@@ -8,6 +8,7 @@
 @import "./styles/explore.css";
 @import "./styles/replay.css";
 @import "./styles/spotlight.css";
+@import "./styles/weeks.css";
 
 /* "Caboclo Cup" design: a navy arena band over a cool scorebook-gray floor, white panels, ball-orange accents. */
 :root {

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { matchupWinner, teamIndex, type StandingRow } from "@/lib/analytics/season";
 import type { Season } from "@/lib/types";
 import { tt } from "./tt";
@@ -8,8 +9,12 @@ const shade = (won: boolean, margin: number) => {
   return `color-mix(in srgb, var(${won ? "--pos" : "--neg"}) ${k}%, var(${won ? "--pos-wash" : "--neg-wash"}))`;
 };
 
-/** Every team (standings order) by every week: categories won, colored by result. Playoff weeks are outlined in gold. */
-export function WeekGrid({ season, standings }: { season: Season; standings: StandingRow[] }) {
+/**
+ * Every team (standings order) by every week: categories won, colored by result. Playoff weeks are outlined in gold.
+ * With `base` (the league root, "/demo"), every cell and week number opens that week's page.
+ */
+export function WeekGrid({ season, standings, base }: { season: Season; standings: StandingRow[]; base?: string }) {
+  const weekHref = (w: number) => `${base}/seasons/${season.year}/week/${w}`;
   const teams = teamIndex(season);
   const weeks = [...new Set(season.matchups.map((m) => m.week))].sort((a, b) => a - b);
   const playoffWeek = new Set(season.matchups.filter((m) => m.stage !== "regular").map((m) => m.week));
@@ -22,13 +27,19 @@ export function WeekGrid({ season, standings }: { season: Season; standings: Sta
   }
   return (
     <div className="overflow-x-auto">
-      <div className="wgrid" style={{ gridTemplateColumns: `minmax(120px, 190px) repeat(${weeks.length}, minmax(24px, 1fr))` }} role="img" aria-label={`${season.label}: categories won by every team in every week`}>
+      <div className="wgrid" style={{ gridTemplateColumns: `minmax(120px, 190px) repeat(${weeks.length}, minmax(24px, 1fr))` }} role={base ? "group" : "img"} aria-label={`${season.label}: categories won by every team in every week`}>
         <span />
-        {weeks.map((w) => (
-          <span key={w} className="h" title={playoffWeek.has(w) ? `Week ${w}, playoffs` : `Week ${w}`}>
-            {playoffWeek.has(w) ? "P" : w}
-          </span>
-        ))}
+        {weeks.map((w) =>
+          base ? (
+            <Link key={w} href={weekHref(w)} className="h" title={playoffWeek.has(w) ? `Week ${w}, playoffs` : `Week ${w}`}>
+              {playoffWeek.has(w) ? "P" : w}
+            </Link>
+          ) : (
+            <span key={w} className="h" title={playoffWeek.has(w) ? `Week ${w}, playoffs` : `Week ${w}`}>
+              {playoffWeek.has(w) ? "P" : w}
+            </span>
+          ),
+        )}
         {standings.map((r) => (
           <div key={r.teamId} className="contents">
             <span className="t" title={r.teamName} data-m={r.managerId} data-m-mark>
@@ -39,23 +50,27 @@ export function WeekGrid({ season, standings }: { season: Season; standings: Sta
               if (!c) return <span key={w} />;
               const margin = Math.abs(c.my - c.their);
               const tie = c.won === null;
-              return (
-                <span
-                  key={w}
-                  className={`c ${c.po ? "po" : ""}`}
-                  data-m={r.managerId}
-                  data-m-mark
-                  style={{ background: tie ? "var(--mid)" : shade(c.won!, margin), color: !tie && margin >= 5 ? "#fff" : undefined }}
-                  data-tt={tt(
-                    `Week ${w}${c.po ? " · playoffs" : ""}`,
-                    [
-                      [r.teamName, c.my],
-                      [teams.get(c.opp)!.name, c.their],
-                      ["Tied categories", c.tied],
-                    ],
-                    tie ? "Tied week" : c.won ? `${r.teamName} won${c.po && c.my === c.their ? " on seed" : ""}` : `${teams.get(c.opp)!.name} won${c.po && c.my === c.their ? " on seed" : ""}`,
-                  )}
-                >
+              const cellProps = {
+                className: `c ${c.po ? "po" : ""}`,
+                "data-m": r.managerId,
+                "data-m-mark": "",
+                style: { background: tie ? "var(--mid)" : shade(c.won!, margin), color: !tie && margin >= 5 ? "#fff" : undefined },
+                "data-tt": tt(
+                  `Week ${w}${c.po ? " · playoffs" : ""}`,
+                  [
+                    [r.teamName, c.my],
+                    [teams.get(c.opp)!.name, c.their],
+                    ["Tied categories", c.tied],
+                  ],
+                  tie ? "Tied week" : c.won ? `${r.teamName} won${c.po && c.my === c.their ? " on seed" : ""}` : `${teams.get(c.opp)!.name} won${c.po && c.my === c.their ? " on seed" : ""}`,
+                ),
+              };
+              return base ? (
+                <Link key={w} href={weekHref(w)} aria-label={`Week ${w}: ${r.teamName} ${tie ? "tied" : c.won ? "beat" : "lost to"} ${teams.get(c.opp)!.name}, ${c.my}-${c.their}`} {...cellProps}>
+                  {c.my}
+                </Link>
+              ) : (
+                <span key={w} {...cellProps}>
                   {c.my}
                 </span>
               );
