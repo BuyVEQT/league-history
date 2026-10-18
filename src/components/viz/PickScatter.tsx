@@ -5,7 +5,7 @@ import { rankLabel, signed } from "@/components/draft";
 import { tt } from "./tt";
 
 /** One pick, trimmed to what the scatter draws: year, overall pick, round, finish and preseason rank, value, manager, player. */
-export type ScatterPick = { y: number; ov: number; rd: number; ar: number | null; pr: number | null; v: number; m: string; p: string };
+export type ScatterPick = { y: number; ov: number; rd: number; ar: number | null; pr: number | null; v: number; m: string; p: string; id?: string };
 
 const W = 1140;
 const H = 480;
@@ -18,12 +18,19 @@ export function PickScatter({
   picks,
   names,
   seasons,
+  manager: controlled,
+  onManager,
 }: {
   picks: ScatterPick[];
   names: Record<string, string>;
   seasons: { year: number; label: string }[];
+  /** Highlighted manager, when a parent owns it (the draft report card); "" = everyone. */
+  manager?: string;
+  onManager?: (id: string) => void;
 }) {
-  const [manager, setManager] = useState("");
+  const [own, setOwn] = useState("");
+  const manager = controlled ?? own;
+  const setManager = onManager ?? setOwn;
   const [year, setYear] = useState("");
   const maxOv = Math.max(...picks.map((p) => p.ov));
   const x = (v: number) => m.l + ((v - 1) / (maxOv - 1 || 1)) * (W - m.l - m.r);
@@ -90,11 +97,13 @@ export function PickScatter({
         <text className="lbl" x={m.l + 4} y={m.t - 6}>
           finish rank ↓ (1 = best)
         </text>
+        <g className="dr-sweep">
         {ordered.map((p) => {
           const lit = any && on(p);
           return (
             <circle
               key={`${p.y}-${p.ov}`}
+              data-m={p.m}
               cx={x(p.ov)}
               // Unranked picks get a small deterministic jitter so they don't stack into one line.
               cy={p.ar === null ? y(UNRANKED) + (((p.ov * 37 + p.y) % 11) - 5) : y(p.ar)}
@@ -103,6 +112,7 @@ export function PickScatter({
               fillOpacity={!any ? 0.55 : lit ? 0.95 : 0.08}
               stroke={lit ? "var(--surface)" : "none"}
               style={{ transition: "r .35s, fill-opacity .35s" }}
+              data-panel={p.id ? `player:${p.id}` : undefined}
               data-tt={tt(p.p, [
                 ["Season", labelOf.get(p.y) ?? String(p.y)],
                 ["Drafted by", names[p.m] ?? p.m],
@@ -114,6 +124,7 @@ export function PickScatter({
             />
           );
         })}
+        </g>
       </svg>
       <div className="viz-legend">
         <span>

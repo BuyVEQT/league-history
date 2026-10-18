@@ -9,7 +9,7 @@ export async function unlockLeague(formData: FormData) {
   if (!(PRIVATE_LEAGUES as readonly string[]).includes(slug)) redirect("/");
   const nextRaw = String(formData.get("next") ?? "");
   // Only ever return to a page inside this league.
-  const next = nextRaw === `/${slug}` || nextRaw.startsWith(`/${slug}/`) ? nextRaw : `/${slug}`;
+  const next = nextRaw === `/${slug}` || nextRaw.startsWith(`/${slug}/`) || nextRaw.startsWith(`/${slug}?`) ? nextRaw : `/${slug}`;
 
   const password = configuredPassword();
   const attempt = String(formData.get("password") ?? "").trim();

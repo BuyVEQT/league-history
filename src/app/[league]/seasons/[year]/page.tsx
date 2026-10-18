@@ -2,37 +2,26 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Bracket } from "@/components/Bracket";
 import { RaceChart } from "@/components/charts/RaceChart";
+import { InfoTip } from "@/components/InfoTip";
+import { Card, ManagerLink, PageTitle, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
+import { RosterHeat } from "@/components/viz/RosterHeat";
 import { WeekGrid } from "@/components/viz/WeekGrid";
 import { WhatIfSlope } from "@/components/viz/WhatIfSlope";
-import { Card, ManagerLink, PageTitle, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
-import { formatPct, formatRecord, ordinal } from "@/lib/analytics/format";
+import { FormChips, PctBar, SeedArrow } from "@/components/TableCharts";
+import { WeekStrip } from "@/components/WeekStrip";
+import { formatPct, formatRecord, ordinal, winPct } from "@/lib/analytics/format";
 import { seasonRecords } from "@/lib/analytics/overview";
 import { PUNT_Z, rosterProfiles } from "@/lib/analytics/players";
 import { seasonRace } from "@/lib/analytics/race";
-import { seasonOutcome, seasonStandings, teamIndex } from "@/lib/analytics/season";
+import { rankMethod, seasonOutcome, seasonStandings, teamIndex, type StandingRow } from "@/lib/analytics/season";
+import { raceStorylines, replayFrames } from "@/lib/analytics/seasonView";
 import { alternateStandings } from "@/lib/analytics/whatIf";
-import { colorForManager } from "@/lib/colors";
+import { seasonWeeks, teamForm } from "@/lib/analytics/weeksView";
 import { getLeague } from "@/lib/data";
 import { TIPS } from "@/lib/explain";
-import { InfoTip } from "@/components/InfoTip";
+import { SEASON_TIPS } from "@/lib/explain/seasons";
 
 const METHOD_LABEL = { categories: "category record", matchups: "matchup record" } as const;
-
-/** "+1.2", "−0.4", and "0.0" rather than "-0.0". */
-const zLabel = (z: number) => {
-  const r = Math.round(z * 10) / 10;
-  return r === 0 ? "0.0" : `${r > 0 ? "+" : "−"}${Math.abs(r).toFixed(1)}`;
-};
-
-/** Heat-table tint for a category standard score (positive = strong). */
-function zTone(z: number): string {
-  if (z >= 1.5) return "bg-positive/30";
-  if (z >= 0.5) return "bg-positive/12";
-  if (z <= PUNT_Z) return "bg-negative/30";
-  if (z <= -0.5) return "bg-negative/12";
-  return "";
-}
-
 
 export async function generateStaticParams({ params }: { params: { league: string } }) {
   const league = await getLeague(params.league);
@@ -59,80 +48,232 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
   const alt = alternateStandings(season);
   const builds = rosterProfiles(season);
   const teamName = (id: string) => teams.get(id)!.name;
-  const leader = [...race.lines].sort((a, b) => b.weeksInFirst - a.weeksInFirst)[0];
-  const storylines: string[] = [];
-  if (leader?.weeksInFirst) {
-    storylines.push(
-      `${leader.teamName} spent ${leader.weeksInFirst} of ${race.weeks.length} weeks in first${leader.weeksInFirst === race.weeks.length ? " (wire to wire)" : ""} and finished ${ordinal(leader.finalRank)}.`,
-    );
-  }
-  for (const c of race.comebacks) {
-    storylines.push(`${c.teamName} was ${ordinal(c.rank)} after week ${c.week}, then climbed to the ${ordinal(c.seed)} seed and finished ${ordinal(c.finalRank)}.`);
-  }
-  for (const c of race.collapses) {
-    storylines.push(`${c.teamName} was ${ordinal(c.rank)} after week ${c.week} and missed the playoffs (${ordinal(c.seed)}).`);
-  }
-  if (race.lastWeekOut.length) {
-    storylines.push(
-      `Final-week heartbreak: ${race.lastWeekOut.map(teamName).join(" and ")} dropped out of a playoff spot on the last week; ${race.lastWeekIn.map(teamName).join(" and ")} took ${race.lastWeekIn.length === 1 ? "it" : "them"}.`,
-    );
-  }
+  const stories = raceStorylines(race);
+  const replay = replayFrames(season, race.weeks);
+  const managerNames = Object.fromEntries(league.managers.map((m) => [m.id, m.name]));
+  // The standings' own win % (category win % in category leagues), for the inline bar.
+  const method = rankMethod(season);
+  const pctOf = (r: StandingRow) => (method === "categories" ? winPct(r.catWins, r.catLosses, r.catTies) : r.winPct);
+  const spots = outcome.playoffTeamIds.size;
 
   return (
     <>
       <PageTitle
         eyebrow="Season"
         title={season.label}
-        subtitle={`${season.teams.length} teams · ${weeks} regular-season weeks · ${outcome.playoffTeamIds.size}-team playoff · ${season.categories.length} categories: ${season.categories.join(", ")}.`}
+        subtitle={`${season.teams.length} teams · ${weeks} regular-season weeks · ${spots}-team playoff · ${season.categories.length} categories: ${season.categories.join(", ")}.`}
       />
 
       <nav aria-label="Select season" className="flex flex-wrap gap-2">
         {league.seasons.map((s) => (
-          <Link
-            key={s.year}
-            href={`/${slug}/seasons/${s.year}`}
-            aria-current={s.year === season.year ? "page" : undefined}
-            className="pill"
-          >
+          <Link key={s.year} href={`/${slug}/seasons/${s.year}`} aria-current={s.year === season.year ? "page" : undefined} className="pill">
             {s.label}
           </Link>
         ))}
       </nav>
 
+      <div className="weekstrip-row">
+        <span className="weekstrip-k">Open a week</span>
+        <WeekStrip weeks={seasonWeeks(season)} base={`/${slug}`} year={season.year} label={`${season.label} weeks`} />
+      </div>
+
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        <StatCard label="Champion" value={champ?.name ?? "—"} detail={champ ? managerName(champ.managerId) : "Not decided"} />
+        <StatCard label="Champion" value={champ?.name ?? "—"} detail={champ ? managerName(champ.managerId) : "Not decided"} tip={SEASON_TIPS.titles} />
         <StatCard label="Runner-up" value={runnerUp?.name ?? "—"} detail={runnerUp ? managerName(runnerUp.managerId) : undefined} />
         <StatCard
           label="Regular-season #1"
           value={outcome.standings[0]?.teamName ?? "—"}
-          detail={outcome.standings[0] ? `${managerName(outcome.standings[0].managerId)} · ${formatRecord(outcome.standings[0].catWins, outcome.standings[0].catLosses, outcome.standings[0].catTies)} in categories` : undefined}
+          detail={
+            outcome.standings[0]
+              ? `${managerName(outcome.standings[0].managerId)} · ${formatRecord(outcome.standings[0].catWins, outcome.standings[0].catLosses, outcome.standings[0].catTies)} in categories`
+              : undefined
+          }
+          tip={TIPS.catPct}
         />
         <StatCard
           label="Biggest blowout"
           value={records.biggestBlowout?.score ?? "—"}
           detail={records.biggestBlowout ? `${records.biggestBlowout.winnerName} over ${records.biggestBlowout.loserName}, week ${records.biggestBlowout.week}` : undefined}
+          tip={SEASON_TIPS.blowout}
         />
       </div>
 
+      {race.weeks.length > 0 && (
+        <Section title="The standings race" tip={`${SEASON_TIPS.raceStory} Replay: ${SEASON_TIPS.replay}`}>
+          <Card className="p-5">
+            <RaceChart
+              weeks={race.weeks}
+              spots={race.spots}
+              lines={race.lines.map((l) => ({
+                teamId: l.teamId,
+                managerId: l.managerId,
+                teamName: l.teamName,
+                managerName: managerName(l.managerId),
+                ranks: l.ranks,
+                seed: l.seed,
+                finalRank: l.finalRank,
+                madePlayoffs: l.madePlayoffs,
+                weeksInFirst: l.weeksInFirst,
+              }))}
+              stories={stories}
+              replay={replay}
+              managerNames={managerNames}
+              weekHref={`/${slug}/seasons/${season.year}/week/`}
+            />
+          </Card>
+        </Section>
+      )}
+
+      <Section title="Playoff bracket" id="bracket">
+        <Card className="p-5">
+          <Bracket season={season} managerName={managerName} />
+          <p className="mt-3 text-xs text-muted">Seeds come from the regular-season standings. Ties in a playoff week go to the higher seed.</p>
+        </Card>
+      </Section>
+
+      {(alt || builds) && (
+        <div className={`grid items-start gap-x-4 gap-y-7 ${alt && builds ? "xl:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)]" : ""}`}>
+          {alt && (
+            <Section title={`What if ${METHOD_LABEL[alt.altMethod]} decided it?`} tip={SEASON_TIPS.whatIf}>
+              <Card className="space-y-3 p-5">
+                <p className="text-sm text-[color:var(--ink-2)]">
+                  Left: the real order, by {METHOD_LABEL[alt.method]}. Right: ranked by {METHOD_LABEL[alt.altMethod]} instead. Lines that cross the playoff line change who gets
+                  in: blue would have got in, red would have missed.
+                </p>
+                <WhatIfSlope
+                  actual={outcome.standings}
+                  alt={seasonStandings(season, { method: alt.altMethod })}
+                  spots={alt.spots}
+                  leftLabel={METHOD_LABEL[alt.method]}
+                  rightLabel={METHOD_LABEL[alt.altMethod]}
+                  managerName={managerName}
+                />
+                {alt.out.length === 0 && alt.altTop.teamId === alt.actualTop.teamId ? (
+                  <p className="text-xs text-muted">Same first place and same playoff field either way.</p>
+                ) : (
+                  <p className="season-callout">
+                    {alt.out.length === 0 ? (
+                      "The same playoff field either way."
+                    ) : (
+                      <>
+                        <b>{alt.out.map((r) => r.teamName).join(", ")}</b> would have missed the playoffs; <b>{alt.in.map((r) => r.teamName).join(", ")}</b> would have got in
+                        {alt.finalistsOut.length ? ` (${alt.finalistsOut.map(teamName).join(" and ")} went on to reach the final)` : ""}.
+                      </>
+                    )}
+                    {alt.altTop.teamId !== alt.actualTop.teamId ? (
+                      <>
+                        {" "}
+                        First place would have gone to <b>{alt.altTop.teamName}</b>, not {alt.actualTop.teamName}.
+                      </>
+                    ) : (
+                      " Same first place."
+                    )}
+                  </p>
+                )}
+              </Card>
+            </Section>
+          )}
+          {builds && (
+            <Section title="Roster builds" tip={TIPS.roster}>
+              <Card className="space-y-3 p-5">
+                <p className="text-sm text-[color:var(--ink-2)]">
+                  How each roster stacked up in every category (best {builds.playersPerTeam} players by season rank). Outlined cells look like punts.
+                </p>
+                <RosterHeat builds={builds} managerName={managerName} />
+                <div className="viz-legend">
+                  <span>
+                    <i style={{ background: "var(--neg)" }} />
+                    Weak
+                  </span>
+                  <span>
+                    <i style={{ background: "var(--mid)" }} />
+                    Average
+                  </span>
+                  <span>
+                    <i style={{ background: "var(--pos)" }} />
+                    Strong
+                  </span>
+                  <span>
+                    <i style={{ boxShadow: "inset 0 0 0 2px var(--foreground)" }} />
+                    Likely punt
+                  </span>
+                </div>
+                <p className="text-xs text-muted">
+                  Standard scores vs the rest of the league (+ = strong; TO is flipped so fewer turnovers score higher), from each team&apos;s best {builds.playersPerTeam} players
+                  on its roster when the season ended and those players&apos; full-season totals. A likely punt is {Math.abs(PUNT_Z)}+ below the league and {Math.abs(PUNT_Z)}+
+                  below the team&apos;s own average. Rosters change during a season, so treat this as a sketch of each build, not what the team actually played.
+                </p>
+              </Card>
+            </Section>
+          )}
+        </div>
+      )}
+
+      <Section title="Every week, every team" tip={SEASON_TIPS.weekGrid}>
+        <Card className="space-y-3 p-5">
+          <WeekGrid season={season} standings={outcome.standings} base={`/${slug}`} />
+          <div className="viz-legend">
+            <span>
+              <i style={{ background: "var(--pos)" }} />
+              Won the week
+            </span>
+            <span>
+              <i style={{ background: "var(--neg)" }} />
+              Lost
+            </span>
+            <span>
+              <i style={{ background: "var(--mid)" }} />
+              Tied
+            </span>
+            <span>
+              <i style={{ boxShadow: "inset 0 0 0 1.5px var(--gold)" }} />
+              Playoffs (P)
+            </span>
+            <span>Number = categories won · darker = bigger margin · hover for the score</span>
+          </div>
+        </Card>
+      </Section>
+
       <Section
-        title="Standings"
-        tip="Reg. rank = where the team finished the regular season, which sets its playoff seed. Final = where it ended up after the playoffs. Category W-L-T counts every single category won, lost and tied, not just weekly wins."
+        title="Final standings"
+        tip="Seed = where the team finished the regular season, which sets its playoff seed. Final = where it ended up after the playoffs. Category W-L-T counts every single category won, lost and tied, not just weekly wins."
       >
         <TableWrap>
           <table className="w-full text-sm">
             <caption className="sr-only">{season.label} regular-season standings and final placement</caption>
             <thead>
               <tr>
-                <th className={th}>Reg. rank</th>
+                <th className={th}>Seed</th>
                 <th className={th}>Team (that season)</th>
                 <th className={th}>Manager</th>
-                <th className={th}>W-L-T</th>
-                <th className={th}>Win %</th>
                 <th className={th}>
                   <span className="inline-flex items-center gap-1.5">
-                    Category W-L-T <InfoTip down end text={TIPS.catRecord} />
+                    {method === "categories" ? "Category win %" : "Win %"} <InfoTip down text={method === "categories" ? TIPS.catPct : TIPS.winPct} />
                   </span>
                 </th>
+                <th className={th}>
+                  <span className="inline-flex items-center gap-1.5">
+                    Category W-L-T <InfoTip down text={TIPS.catRecord} />
+                  </span>
+                </th>
+                <th className={th}>
+                  <span className="inline-flex items-center gap-1.5">
+                    Matchups <InfoTip down end text={TIPS.winPct} />
+                  </span>
+                </th>
+                <th className={th}>Last 5 weeks</th>
+                <th className={th}>
+                  <span className="inline-flex items-center gap-1.5">
+                    Seed → final <InfoTip down end text={TIPS.vsSeed} />
+                  </span>
+                </th>
+                {season.activity && (
+                  <th className={th}>
+                    <span className="inline-flex items-center gap-1.5">
+                      Moves <InfoTip down end text="The source's season count of adds and drops for each team." />
+                    </span>
+                  </th>
+                )}
                 <th className={th}>Final</th>
               </tr>
             </thead>
@@ -140,16 +281,34 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
               {outcome.standings.map((r) => {
                 const final = outcome.finalRank.get(r.teamId)!;
                 const inPlayoffs = outcome.playoffTeamIds.has(r.teamId);
+                const p = pctOf(r);
                 return (
-                  <tr key={r.teamId} className={tr}>
-                    <td className={td}>{r.rank}</td>
-                    <td className={td}>{r.teamName}</td>
-                    <td className={td}><ManagerLink id={r.managerId} name={managerName(r.managerId)} /></td>
-                    <td className={`${td} tabular-nums`}>{formatRecord(r.wins, r.losses, r.ties)}</td>
-                    <td className={`${td} tabular-nums`}>{formatPct(r.winPct)}</td>
-                    <td className={`${td} tabular-nums`}>{formatRecord(r.catWins, r.catLosses, r.catTies)}</td>
+                  <tr key={r.teamId} data-m={r.managerId} className={`${tr} ${r.rank === spots && spots < outcome.standings.length ? "cutline" : ""}`}>
+                    <td className={`${td} text-muted`}>{r.rank}</td>
+                    <td className={`${td} font-semibold`}>{r.teamName}</td>
                     <td className={td}>
-                      {final === 1 ? "🏆 Champion" : inPlayoffs ? `${final}${final === 2 ? "nd" : final === 3 ? "rd" : "th"}` : <span className="text-muted">Missed playoffs</span>}
+                      <ManagerLink id={r.managerId} name={managerName(r.managerId)} />
+                    </td>
+                    <td className={td}>
+                      <PctBar p={p} />
+                    </td>
+                    <td className={`${td} tabular-nums`}>{formatRecord(r.catWins, r.catLosses, r.catTies)}</td>
+                    <td className={`${td} tabular-nums`}>
+                      {formatRecord(r.wins, r.losses, r.ties)} <span className="text-muted">({formatPct(r.winPct)})</span>
+                    </td>
+                    <td className={td}>
+                      <FormChips games={teamForm(season, r.teamId)} base={`/${slug}`} year={season.year} />
+                    </td>
+                    <td className={td}>{inPlayoffs ? <SeedArrow seed={r.rank} final={final} title={r.teamName} /> : <span className="text-xs text-muted">missed</span>}</td>
+                    {season.activity && <td className={td}>{season.activity[r.teamId]?.moves ?? "—"}</td>}
+                    <td className={td}>
+                      {final === 1 ? (
+                        <span className="badge badge-gold">🏆 Champion</span>
+                      ) : inPlayoffs ? (
+                        <span className="badge">{ordinal(final)}</span>
+                      ) : (
+                        <span className="text-muted">{ordinal(final)}</span>
+                      )}
                     </td>
                   </tr>
                 );
@@ -158,132 +317,6 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
           </table>
         </TableWrap>
       </Section>
-
-      <Section
-        title="Standings race"
-        tip="Where every team sat in the standings after each week of the regular season. Below the playoff line = outside the playoff places at that point. Pick teams to compare their paths; 1st is at the top."
-      >
-        <Card className="p-5">
-          <RaceChart
-            weeks={race.weeks}
-            spots={race.spots}
-            series={race.lines.map((l) => ({
-              teamId: l.teamId,
-              teamName: l.teamName,
-              managerName: managerName(l.managerId),
-              color: colorForManager(league, l.managerId),
-              ranks: l.ranks,
-            }))}
-            initialSelected={[...new Set([champ?.id, runnerUp?.id, outcome.standings[0]?.teamId].filter((x): x is string => !!x))]}
-          />
-        </Card>
-        {storylines.length > 0 && (
-          <div className="grid gap-2 md:grid-cols-2">
-            {storylines.map((line) => (
-              <p key={line} className="rounded-[10px] border border-border border-l-4 border-l-accent bg-surface px-3 py-2.5 text-sm">
-                {line}
-              </p>
-            ))}
-          </div>
-        )}
-      </Section>
-
-      {alt && (
-        <Section title={`What if ${METHOD_LABEL[alt.altMethod]} decided it?`}>
-          <div className="grid gap-3 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
-            <Card className="p-5">
-              <WhatIfSlope
-                actual={outcome.standings}
-                alt={seasonStandings(season, { method: alt.altMethod })}
-                spots={alt.spots}
-                leftLabel={METHOD_LABEL[alt.method]}
-                rightLabel={METHOD_LABEL[alt.altMethod]}
-                managerName={managerName}
-              />
-            </Card>
-            <div className="space-y-3 text-sm">
-              <p className="text-[color:var(--ink-2)]">
-                Left: the real order, by {METHOD_LABEL[alt.method]}. Right: the same results ranked by {METHOD_LABEL[alt.altMethod]} instead. Lines
-                that cross the dashed playoff line change who gets in: blue would have got in, red would have missed.
-              </p>
-              <p className="rounded-[10px] border border-border border-l-4 border-l-accent bg-surface px-3 py-2.5">
-                {alt.out.length === 0
-                  ? "The same playoff field either way."
-                  : `${alt.in.map((r) => r.teamName).join(", ")} would have made the playoffs instead of ${alt.out.map((r) => r.teamName).join(", ")}${
-                      alt.finalistsOut.length ? ` (${alt.finalistsOut.map(teamName).join(" and ")} went on to reach the final)` : ""
-                    }.`}
-                {alt.altTop.teamId !== alt.actualTop.teamId
-                  ? ` First place would have gone to ${alt.altTop.teamName}, not ${alt.actualTop.teamName}.`
-                  : " Same first place."}
-              </p>
-            </div>
-          </div>
-        </Section>
-      )}
-
-      <Section title="Every week, every team">
-        <Card className="space-y-3 p-5">
-          <WeekGrid season={season} standings={outcome.standings} />
-          <div className="viz-legend">
-            <span><i style={{ background: "var(--pos)" }} />Won the week</span>
-            <span><i style={{ background: "var(--neg)" }} />Lost</span>
-            <span><i style={{ background: "var(--mid)" }} />Tied</span>
-            <span><i style={{ boxShadow: "inset 0 0 0 1.5px var(--gold)" }} />Playoffs (P)</span>
-            <span>Number = categories won · darker = bigger margin · hover for the score</span>
-          </div>
-        </Card>
-      </Section>
-
-      <Section title="Playoff bracket">
-        <Card className="p-5">
-          <Bracket season={season} managerName={managerName} />
-          <p className="mt-3 text-xs text-muted">Seeds come from the regular-season standings. Ties in a playoff week go to the higher seed.</p>
-        </Card>
-      </Section>
-
-      {builds && (
-        <Section title="Roster builds (approximate)" tip={TIPS.roster}>
-          <TableWrap>
-            <table className="w-full text-sm">
-              <caption className="sr-only">Each team&apos;s season-end roster, category by category, compared with the league</caption>
-              <thead>
-                <tr>
-                  <th className={th}>Team</th>
-                  {builds.categories.map((c) => (
-                    <th key={c} className={`${th} text-center`}>
-                      {c}
-                    </th>
-                  ))}
-                  <th className={th}>Likely punts</th>
-                  <th className={th}>Final</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                {builds.rows.map((r) => (
-                  <tr key={r.teamId} className={tr}>
-                    <td className={td}>
-                      {r.teamName} <span className="text-muted">· {managerName(r.managerId)}</span>
-                    </td>
-                    {builds.categories.map((c) => (
-                      <td key={c} className={`${td} text-center tabular-nums ${zTone(r.z[c])} ${r.punts.includes(c) ? "font-semibold" : ""}`}>
-                        {zLabel(r.z[c])}
-                      </td>
-                    ))}
-                    <td className={td}>{r.punts.length ? r.punts.join(", ") : <span className="text-muted">—</span>}</td>
-                    <td className={`${td} tabular-nums`}>{r.finalRank}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </TableWrap>
-          <p className="text-xs text-muted">
-            Standard scores vs the rest of the league (+ = strong; TO is flipped so fewer turnovers score higher), from each team&apos;s best{" "}
-            {builds.playersPerTeam} players on its roster when the season ended and those players&apos; full-season totals. A likely punt is{" "}
-            {Math.abs(PUNT_Z)}+ below the league and {Math.abs(PUNT_Z)}+ below the team&apos;s own average. Rosters change during a season, so treat
-            this as a sketch of each build, not what the team actually played.
-          </p>
-        </Section>
-      )}
     </>
   );
 }

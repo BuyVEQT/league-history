@@ -1,0 +1,37 @@
+/* seasons page styles (round-2/3 redesign). */
+
+/* Standings race + storylines. */
+.race-wrap { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 18px; align-items: start; }
+.race-wrap[hidden] { display: none; }
+@media (max-width: 900px) { .race-wrap { grid-template-columns: 1fr; } }
+.stories { display: grid; gap: 8px; }
+.stories-k { font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.story { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: start; padding: 10px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); transition: border-color .15s, background .15s; }
+.story:hover { border-color: var(--border-2); background: var(--surface-2); }
+.story[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-wash); }
+.story:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.story .ic { width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; background: var(--surface-2); color: var(--ink-2); }
+.story[aria-pressed="true"] .ic { background: var(--surface); color: var(--accent-ink); }
+.story .ic svg { width: 18px; height: 18px; }
+.story b { display: block; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.story .st { display: block; font-weight: 700; font-size: 14px; overflow-wrap: anywhere; }
+.story .sd { display: block; font-size: 12.5px; color: var(--ink-2); }
+
+/* What-if slope: lines swing from the real order to the alternative one. */
+.slope-line { stroke-dasharray: 1; stroke-dashoffset: 1; animation: slope-draw .9s cubic-bezier(.2,.8,.2,1) .2s forwards; }
+.slope-end { opacity: 0; animation: slope-fade .3s ease-out 1s forwards; }
+@keyframes slope-draw { to { stroke-dashoffset: 0; } }
+@keyframes slope-fade { to { opacity: 1; } }
+
+/* Roster builds heat map. */
+.roster-cell { animation: roster-in .4s ease-out backwards; }
+@keyframes roster-in { from { opacity: 0; } }
+
+.season-callout { border-left: 4px solid var(--accent); background: var(--accent-wash); padding: 12px 14px; border-radius: 0 8px 8px 0; font-size: 14px; }
+tr.cutline > td { border-bottom: 2px solid var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .slope-line { animation: none; stroke-dashoffset: 0; }
+  .slope-end { animation: none; opacity: 1; }
+  .roster-cell { animation: none; }
+}

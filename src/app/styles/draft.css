@@ -1,0 +1,93 @@
+/* draft page styles (round-2/3 redesign). */
+
+/* Section head subtitle (prototype .sec-head p). */
+.dr-sub { margin: 4px 0 0; color: var(--ink-2); font-size: 14px; max-width: 70ch; }
+.dr-note { font-size: 12.5px; color: var(--muted); max-width: 90ch; }
+
+/* Tables (prototype table.t). */
+.dr-t { width: 100%; font-size: 14px; }
+.dr-t th { text-align: left; font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding: 10px; border-bottom: 1px solid var(--border-2); white-space: nowrap; background: var(--surface); }
+.dr-t th.r, .dr-t td.r { text-align: right; }
+.dr-t td { padding: 9px 10px; border-bottom: 1px solid var(--border); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.dr-t tbody tr:last-child td { border-bottom: 0; }
+.dr-t tbody tr { transition: background-color .12s; }
+.dr-t tbody tr:hover { background: var(--surface-2); }
+.dr-t tbody tr[data-m] { cursor: pointer; }
+.dr-t tbody tr.on, .dr-t tbody tr.on:hover { background: var(--accent-wash); }
+.dr-who { display: inline-flex; align-items: center; gap: 8px; min-width: 0; }
+.dr-who .mono { width: 28px; height: 28px; font-size: 13px; }
+
+/* Letter grade chip; it's also the keyboard control that highlights a manager in the scatter. */
+.dr-grade { display: inline-grid; place-items: center; min-width: 30px; height: 26px; padding: 0 8px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface-2); color: var(--ink-2); font-family: var(--font-display); font-weight: 800; font-size: 16px; line-height: 1; min-height: 0; }
+.dr-grade.g-A { background: var(--gold-wash); border-color: transparent; color: var(--foreground); }
+.dr-grade.g-F { background: var(--neg-wash); border-color: transparent; color: var(--negative); }
+button.dr-grade:hover { border-color: var(--ink-2); }
+tr.on button.dr-grade { box-shadow: 0 0 0 2px var(--accent); }
+
+/* Inline bars: value | track. Diverging bars grow out from the centre line. */
+.dr-inbar { display: flex; align-items: center; gap: 8px; }
+.dr-inbar .n { flex: none; text-align: left; font-variant-numeric: tabular-nums; }
+.dr-inbar .trk { position: relative; flex: 1; min-width: 60px; height: 6px; background: var(--surface-2); border-radius: 3px; }
+.dr-inbar .trk.div::before { content: ""; position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1px; background: var(--border-2); }
+.dr-inbar .fl { position: absolute; top: 0; bottom: 0; border-radius: 3px; animation: drGrow .7s cubic-bezier(.2,.8,.2,1) both; transform-origin: left center; }
+.dr-inbar .fl.lft { transform-origin: right center; }
+@keyframes drGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.dr-pos { color: var(--positive); }
+.dr-neg { color: var(--negative); }
+
+/* SVG bars that grow from the left (ReachBars, slot chart). */
+.dr-grow { transform-box: fill-box; transform-origin: left center; animation: drGrow .8s cubic-bezier(.2,.8,.2,1) both; }
+/* Scatter: dots sweep in from the left once, on mount. */
+.dr-sweep { animation: drSweep 1s cubic-bezier(.3,.7,.3,1) both; }
+@keyframes drSweep { from { clip-path: inset(0 100% 0 0); opacity: .3; } to { clip-path: inset(0 0 0 0); opacity: 1; } }
+
+/* Impact row: gauge beside the reach bars. */
+.dr-impact { display: grid; grid-template-columns: minmax(300px, .8fr) minmax(0, 1.2fr); gap: 16px; align-items: stretch; }
+@media (max-width: 900px) { .dr-impact { grid-template-columns: 1fr; } }
+
+/* Favourite players. */
+.dr-favs { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr)); }
+.dr-fav { display: grid; gap: 8px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; align-content: start; }
+.dr-fav-h { display: flex; gap: 10px; align-items: center; min-width: 0; }
+.dr-fav-h .mono { width: 28px; height: 28px; font-size: 13px; }
+.dr-fav-yrs { display: flex; flex-wrap: wrap; gap: 6px; }
+.dr-fy { display: grid; grid-template-columns: auto auto; column-gap: 6px; align-items: baseline; padding: 4px 8px; border-radius: 8px; font-size: 12px; background: var(--surface-2); cursor: default; }
+.dr-fy span { color: var(--muted); grid-column: 1 / -1; font-size: 11px; }
+.dr-fy i { font-style: normal; font-variant-numeric: tabular-nums; }
+.dr-fy.up { background: var(--pos-wash); }
+.dr-fy.down { background: var(--neg-wash); }
+
+/* Lists (got away, steals, gems). */
+.dr-list > li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--border); min-width: 0; }
+.dr-list > li:last-child { border-bottom: 0; }
+.dr-list .l { min-width: 0; flex: 1; }
+.dr-list .t1 { display: flex; align-items: center; gap: 6px; font-weight: 600; min-width: 0; }
+.dr-list .t1 > span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dr-list .t2 { display: block; font-size: 12.5px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dr-list .rv { text-align: right; flex: none; font-variant-numeric: tabular-nums; }
+.dr-list .rv b { color: var(--positive); }
+.dr-list .rv .t2 { font-size: 12px; }
+.dr-gems { max-height: 330px; overflow: auto; }
+
+/* First overall picks timeline. */
+.dr-firsts { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(160px, 1fr); gap: 12px; overflow-x: auto; padding-bottom: 4px; }
+.dr-first { display: grid; gap: 4px; padding: 14px; border-radius: 10px; background: var(--surface-2); border-top: 4px solid var(--band); align-content: start; text-decoration: none; transition: transform .2s cubic-bezier(.2,.8,.2,1); }
+a.dr-first:hover, a.dr-first:focus-visible { transform: translateY(-3px); }
+.dr-first .k { font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.dr-first .fp { font-family: var(--font-display); font-weight: 800; font-size: 20px; text-transform: uppercase; line-height: 1.05; overflow-wrap: anywhere; }
+.dr-first .st { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 6px 0 2px; }
+.dr-first .st > span { display: grid; }
+.dr-first .st > span > span { font-size: 11px; color: var(--muted); }
+.dr-first .st b { font-size: 16px; font-variant-numeric: tabular-nums; }
+
+/* Upcoming board: "Draft night is coming". */
+.dr-coming { background: var(--band); color: var(--band-ink); border-radius: 14px; padding: 22px 24px; display: grid; gap: 14px; position: relative; overflow: hidden; }
+.dr-coming .k { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-2); }
+.dr-coming .big { font-family: var(--font-display); font-weight: 900; font-size: clamp(34px, 5vw, 54px); line-height: .92; text-transform: uppercase; }
+.dr-coming .sub { color: var(--band-muted); font-size: 14.5px; max-width: 60ch; }
+.dr-order { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+.dr-order li { display: inline-flex; align-items: center; gap: 8px; background: var(--band-2); border-radius: 999px; padding: 4px 12px 4px 4px; font-weight: 600; font-size: 13.5px; animation: drChip .45s cubic-bezier(.2,.8,.2,1) both; }
+.dr-order li .no { font-variant-numeric: tabular-nums; color: var(--band-muted); font-size: 12px; font-weight: 700; }
+.dr-order li .mono { width: 30px; height: 30px; font-size: 13px; background: var(--surface); color: var(--band); }
+.dr-order li.first .mono { background: var(--gold); color: var(--band); }
+@keyframes drChip { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }

@@ -1,10 +1,29 @@
+import { monograms } from "@/components/viz/monograms";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { rankLabel, signed } from "@/components/draft";
-import { Avatar, Card, ManagerLink, PageTitle, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
+import type { ReactNode } from "react";
+import { CountUp } from "@/components/CountUp";
+import { signed } from "@/components/draft";
+import { InfoTip } from "@/components/InfoTip";
+import { NamesakeCards } from "@/components/NamesakeCards";
+import { RecordsGroup, RecordsPanel } from "@/components/RecordsPanel";
+import { ShowMore } from "@/components/ShowMore";
+import { Avatar, ManagerLink, PageTitle, StatCard, TableWrap, td, th, tr } from "@/components/ui";
+import { CoinFlip } from "@/components/viz/CoinFlip";
+import { DroughtStrip } from "@/components/viz/DroughtStrip";
+import { FrontRunners } from "@/components/viz/FrontRunners";
+import { LuckCareerBars, LuckScatter } from "@/components/viz/LuckScatter";
+import { ParityRanges } from "@/components/viz/ParityRanges";
+import { PlayoffRisers } from "@/components/viz/PlayoffRisers";
+import { ScorelineHistogram } from "@/components/viz/ScorelineHistogram";
+import { SeedStrip } from "@/components/viz/SeedStrip";
+import { SteadyScatter } from "@/components/viz/SteadyScatter";
+import { StreakBars } from "@/components/viz/StreakBars";
+import { WhatIfCards } from "@/components/WhatIfCards";
+import { careerStats, managerSeasons } from "@/lib/analytics/career";
 import { formatNumber, formatPct, ordinal } from "@/lib/analytics/format";
-import { namesakes, type NamesakeRow } from "@/lib/analytics/players";
-import { raceRecords } from "@/lib/analytics/race";
+import { namesakes } from "@/lib/analytics/players";
+import { raceRecords, type RaceRecord } from "@/lib/analytics/race";
 import {
   consistency,
   marginRecords,
@@ -15,37 +34,24 @@ import {
   titleDroughts,
   type TeamSeasonRow,
 } from "@/lib/analytics/records";
+import { biggestRiser, changedAlternates, iceInTheVeins, regularWeeks, seedStrip, seedTiles } from "@/lib/analytics/recordsView";
 import { marginAverages, scorelines, sweeps } from "@/lib/analytics/scorelines";
-import { longestStreaks, type StreakRow } from "@/lib/analytics/streaks";
+import { longestStreaks } from "@/lib/analytics/streaks";
 import { careerLuck, leagueAlternates, matchupLuck } from "@/lib/analytics/whatIf";
-import { colorForManager } from "@/lib/colors";
-import { CoinFlip } from "@/components/viz/CoinFlip";
-import { DroughtStrip } from "@/components/viz/DroughtStrip";
-import { PlayoffRisers } from "@/components/viz/PlayoffRisers";
-import { SteadyScatter } from "@/components/viz/SteadyScatter";
-import { careerStats, managerSeasons } from "@/lib/analytics/career";
 import { getLeague } from "@/lib/data";
 import { TIPS } from "@/lib/explain";
-import { InfoTip } from "@/components/InfoTip";
+import { RECORD_TIPS } from "@/lib/explain/records";
 
-const SECTIONS = [
-  ["playoffs", "Playoffs"],
-  ["seeds", "Seeds"],
-  ["droughts", "Droughts & clutch"],
-  ["streaks", "Streaks"],
-  ["race", "Standings race"],
-  ["what-if", "What if"],
-  ["luck", "Luck"],
-  ["scorelines", "Scorelines"],
-  ["seasons", "Best & worst"],
-  ["consistency", "Consistency & parity"],
-  ["namesakes", "Namesakes"],
+const GROUPS = [
+  ["g-playoffs", "Playoffs"],
+  ["g-streaks", "Streaks & the race"],
+  ["g-luck", "Luck & what-ifs"],
+  ["g-scores", "Scorelines"],
+  ["g-seasons", "Best & worst"],
+  ["g-fun", "Named after a player"],
 ] as const;
 
-const METHOD_LABEL = { categories: "category record", matchups: "matchup record" } as const;
-
-/** Most recent namesake teams shown before "Show all". */
-const NAMESAKES_SHOWN = 10;
+const METHOD_LABEL = { categories: "category win %", matchups: "weeks won" } as const;
 
 export const metadata = { title: "Records" };
 
@@ -54,10 +60,11 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
   const league = await getLeague(slug);
   if (!league) notFound();
 
-  const nameOf = (id: string) => league.managers.find((m) => m.id === id)?.name ?? id;
+  const names = Object.fromEntries(league.managers.map((m) => [m.id, m.name]));
+  const nameOf = (id: string) => names[id] ?? id;
   const who = (id: string) => (
     <span className="flex items-center gap-2">
-      <Avatar size="sm" name={nameOf(id)} color={colorForManager(league, id)} />
+      <Avatar size="sm" name={nameOf(id)} initials={monograms(league.managers).get(id)} />
       <ManagerLink id={id} name={nameOf(id)} />
     </span>
   );
@@ -68,11 +75,14 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
   const steady = consistency(league);
   const pctLabel = league.seasons.some((s) => s.scoring === "categories") ? "category win %" : "win %";
   const seeds = seedHistory(league);
-  const winStreaks = longestStreaks(league, "W", 5);
-  const lossStreaks = longestStreaks(league, "L", 5);
+  const strip = seedStrip(league, seeds);
+  const seedSum = seedTiles(seeds);
+  const winStreaks = longestStreaks(league, "W", 8);
+  const lossStreaks = longestStreaks(league, "L", 8);
+  const lastWeek = regularWeeks(league);
   const race = raceRecords(league);
   const alternates = leagueAlternates(league);
-  const changed = alternates.filter((a) => a.out.length || a.altTop.teamId !== a.actualTop.teamId);
+  const changed = changedAlternates(alternates);
   const luck = careerLuck(league);
   const luckRows = matchupLuck(league);
   const lines = scorelines(league);
@@ -82,7 +92,7 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
     .sort((a, b) => b.avgWinMargin! - a.avgWinMargin!)
     .slice(0, 5);
   const parityRows = parity(league);
-  const names = namesakes(league);
+  const names_ = namesakes(league);
   const titles = Object.fromEntries(careerStats(league).map((c) => [c.managerId, c.titles]));
   const finishes = Object.fromEntries(
     league.managers.map((m) => [
@@ -90,645 +100,615 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
       Object.fromEntries(managerSeasons(league, m.id).map((s) => [s.year, { final: s.finalRank, teams: s.teamCount, teamName: s.teamName }])),
     ]),
   );
+  const best = seasons[0];
+  const riser = biggestRiser(playoffs);
+  const ice = iceInTheVeins(margins);
+  const topStreak = winStreaks[0];
+  const groups = GROUPS.filter(([id]) => id !== "g-fun" || names_.length > 0);
 
   return (
     <>
       <PageTitle
-        eyebrow="Records"
-        title="Clutch, chokes and dynasties"
-        subtitle="Playoff over- and under-achievers, streaks, comebacks, luck, the best and worst seasons ever, and more."
+        eyebrow="Record book"
+        title="Clutch, chokes & dynasties"
+        subtitle="Who rises in the playoffs, who's still waiting on a ring, who gets lucky, and the streaks people still talk about."
       />
 
-      <nav aria-label="Jump to a record" className="jump-bar flex flex-wrap gap-1.5">
-        {SECTIONS.filter(([id]) => id !== "namesakes" || names.length > 0).map(([id, label]) => (
+      <nav aria-label="Jump to a record" className="jump-bar rec-jump flex flex-wrap gap-1.5">
+        {groups.map(([id, label]) => (
           <a key={id} href={`#${id}`} className="pill">
             {label}
           </a>
         ))}
       </nav>
 
-      <Section id="playoffs" title="Playoff risers & fallers" tip={TIPS.vsSeed}>
-        <Card className="space-y-2 p-5">
-          <PlayoffRisers rows={playoffs} nameOf={nameOf} />
-          <div className="viz-legend">
-            <span><i className="dot" style={{ boxShadow: "inset 0 0 0 1.5px var(--ink-2)" }} />Average playoff seed</span>
-            <span><i className="line" style={{ background: "var(--pos)" }} />Finishes better than seeded</span>
-            <span><i className="line" style={{ background: "var(--neg)" }} />Falls below the seed</span>
-          </div>
-        </Card>
-        <details>
-          <summary className="text-sm text-accent">The full table</summary>
-          <div className="mt-2">
-        <TableWrap>
-          <table className="w-full text-sm">
-            <caption className="sr-only">Playoff results compared with regular-season seed</caption>
-            <thead>
-              <tr>
-                <th className={th}>Manager</th>
-                <th className={th}>Playoffs</th>
-                <th className={th}>Avg seed</th>
-                <th className={th}>Avg finish</th>
-                <th className={th}>
-                  <span className="inline-flex items-center gap-1.5">
-                    vs seed <InfoTip down text={TIPS.vsSeed} />
-                  </span>
-                </th>
-                <th className={th}>Playoff W-L</th>
-                <th className={th}>Finals</th>
-                <th className={th}>Titles</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border">
-              {playoffs.map((r) => (
-                <tr key={r.managerId} className={tr}>
-                  <td className={td}>{who(r.managerId)}</td>
-                  <td className={`${td} tabular-nums`}>{r.appearances}</td>
-                  <td className={`${td} tabular-nums`}>{formatNumber(r.avgSeed)}</td>
-                  <td className={`${td} tabular-nums`}>{formatNumber(r.avgFinish)}</td>
-                  <td className={`${td} tabular-nums ${r.avgOverSeed > 0 ? "text-positive" : r.avgOverSeed < 0 ? "text-negative" : ""}`}>
-                    {signed(r.avgOverSeed, 1)}
-                  </td>
-                  <td className={`${td} tabular-nums`}>
-                    {r.playoffWins}-{r.playoffLosses}
-                  </td>
-                  <td className={`${td} tabular-nums`}>{r.finals}</td>
-                  <td className={`${td} tabular-nums`}>{r.titles}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </TableWrap>
-          </div>
-        </details>
-        <p className="text-xs text-muted">
-          vs seed = average places gained (+) or lost (−) between regular-season seed and final finish, in seasons they made the playoffs. +1.5 = they
-          typically finish a place or two better than seeded; −1.0 = about a place worse.
-        </p>
-      </Section>
+      <div className="rec-tiles">
+        {best && (
+          <RecordCard label="Best regular season" tip={TIPS.catPct} value={<CountUp value={best.pct * 100} decimals={1} suffix="%" />}>
+            <b>{best.teamName}</b> · {nameOf(best.managerId)}, {best.label} · {best.record} · finished {ordinal(best.finalRank)}
+          </RecordCard>
+        )}
+        {topStreak && (
+          <RecordCard
+            label="Longest win streak"
+            tip={RECORD_TIPS.streak}
+            value={
+              <>
+                <CountUp value={topStreak.length} />
+                <small>straight</small>
+              </>
+            }
+          >
+            {who(topStreak.managerId)}
+            <span className="mt-0.5 block">
+              {topStreak.teamName}, {topStreak.label}
+            </span>
+          </RecordCard>
+        )}
+        {riser && (
+          <RecordCard
+            label="Biggest playoff riser"
+            tip={TIPS.vsSeed}
+            value={
+              <>
+                <CountUp value={riser.avgOverSeed} decimals={1} prefix={riser.avgOverSeed > 0 ? "+" : ""} />
+                <small>spots</small>
+              </>
+            }
+          >
+            {who(riser.managerId)}
+            <span className="mt-0.5 block">{riser.appearances} playoff trips (3+ to qualify)</span>
+          </RecordCard>
+        )}
+        {ice && (
+          <RecordCard label="Ice in the veins" tip={TIPS.closeGames} value={<CountUp value={ice.pct * 100} suffix="%" />}>
+            {who(ice.row.managerId)}
+            <span className="mt-0.5 block">
+              {ice.row.closeWins}-{ice.row.closeLosses} in one-category weeks (20+ to qualify)
+            </span>
+          </RecordCard>
+        )}
+      </div>
 
-      {seeds.seasons.length > 0 && (
-        <Section id="seeds" title="Seeds and upsets">
-          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+      {/* ---------------- Playoffs ---------------- */}
+      <RecordsGroup id="g-playoffs">Playoffs</RecordsGroup>
+
+      {strip.length > 0 && (
+        <RecordsPanel
+          id="seeds"
+          title="Seeds & upsets"
+          tip={RECORD_TIPS.seeds}
+          sub="Where every champion came from. Each column is a season's playoff field; gold is the eventual champion."
+        >
+          <div className="rec-tiles mb-4">
             <StatCard
               label="Top seed won it all"
-              value={`${seeds.topSeedTitles} of ${seeds.seasons.length}`}
-              detail="seasons the regular-season winner also took the title"
+              value={
+                <>
+                  <CountUp value={seeds.topSeedTitles} />
+                  <small className="rec-of"> of {seedSum.decided}</small>
+                </>
+              }
+              detail="seasons the #1 seed took the title"
             />
             <StatCard
               label="Higher seed wins"
               tip={TIPS.higherSeed}
-              value={formatPct(seeds.bracketGames ? seeds.higherSeedWins / seeds.bracketGames : null, 0)}
-              detail={`${seeds.higherSeedWins} of ${seeds.bracketGames} championship-bracket games`}
+              value={seeds.bracketGames ? <CountUp value={(seeds.higherSeedWins / seeds.bracketGames) * 100} suffix="%" /> : "—"}
+              detail={`${seeds.higherSeedWins} of ${seeds.bracketGames} bracket games`}
             />
             <StatCard
               label="Lowest seed to win"
-              value={ordinal(Math.max(...seeds.seasons.map((x) => x.championSeed ?? 0)))}
-              detail={seeds.seasons
-                .filter((x) => x.championSeed === Math.max(...seeds.seasons.map((y) => y.championSeed ?? 0)))
-                .map((x) => `${nameOf(x.championManagerId!)}, ${x.label}`)
-                .join("; ")}
+              value={seedSum.lowestSeed ? <CountUp value={seedSum.lowestSeed} prefix="#" /> : "—"}
+              detail={seedSum.lowest.map((x) => `${nameOf(x.championManagerId!)}, ${x.label}`).join("; ")}
             />
             <StatCard
               label="Average champion seed"
               tip={TIPS.avgChampSeed}
-              value={formatNumber(
-                seeds.seasons.reduce((a, x) => a + (x.championSeed ?? 0), 0) / Math.max(1, seeds.seasons.filter((x) => x.championSeed).length),
-              )}
+              value={seedSum.avgChampionSeed === null ? "—" : <CountUp value={seedSum.avgChampionSeed} decimals={1} />}
+              detail="lower = favourites win"
             />
           </div>
-          <TableWrap>
-            <table className="w-full text-sm">
-              <caption className="sr-only">Champion&apos;s seed and the top seed&apos;s finish each season</caption>
-              <thead>
-                <tr>
-                  <th className={th}>Season</th>
-                  <th className={th}>Champion</th>
-                  <th className={th}>Seed</th>
-                  <th className={th}>Top seed</th>
-                  <th className={th}>Top seed finished</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                {[...seeds.seasons].reverse().map((x) => (
-                  <tr key={x.year} className={tr}>
-                    <td className={td}>
-                      <Link href={`/${slug}/seasons/${x.year}`} className="text-accent hover:underline">
-                        {x.label}
-                      </Link>
-                    </td>
-                    <td className={td}>{x.championManagerId ? who(x.championManagerId) : "—"}</td>
-                    <td className={`${td} tabular-nums`}>{x.championSeed ?? "—"}</td>
-                    <td className={td}>
-                      {x.topSeedTeam} <span className="text-muted">· {nameOf(x.topSeedManagerId)}</span>
-                    </td>
-                    <td className={`${td} tabular-nums ${x.topSeedFinish === 1 ? "text-positive" : ""}`}>{x.topSeedFinish === 1 ? "🏆 Won it" : ordinal(x.topSeedFinish)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </TableWrap>
-          <p className="text-xs text-muted">Seed = regular-season rank. The third-place game is left out of the higher-seed count.</p>
-        </Section>
+          <SeedStrip rows={strip} names={names} />
+          <details className="mt-3">
+            <summary className="text-sm text-accent">Every season as a table</summary>
+            <div className="mt-2">
+              <TableWrap>
+                <table className="w-full text-sm">
+                  <caption className="sr-only">Champion&apos;s seed and the top seed&apos;s finish each season</caption>
+                  <thead>
+                    <tr>
+                      <th className={th}>Season</th>
+                      <th className={th}>Champion</th>
+                      <th className={th}>Seed</th>
+                      <th className={th}>Top seed</th>
+                      <th className={th}>Top seed finished</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-border">
+                    {[...seeds.seasons].reverse().map((x) => (
+                      <tr key={x.year} className={tr}>
+                        <td className={td}>
+                          <Link href={`/${slug}/seasons/${x.year}`} data-panel={`season:${x.year}`} className="text-accent hover:underline">
+                            {x.label}
+                          </Link>
+                        </td>
+                        <td className={td}>{x.championManagerId ? who(x.championManagerId) : "—"}</td>
+                        <td className={`${td} tabular-nums`}>{x.championSeed ?? "—"}</td>
+                        <td className={td}>
+                          {x.topSeedTeam} <span className="text-muted">· {nameOf(x.topSeedManagerId)}</span>
+                        </td>
+                        <td className={`${td} tabular-nums ${x.topSeedFinish === 1 ? "text-positive" : ""}`}>
+                          {x.topSeedFinish === 1 ? "🏆 Won it" : ordinal(x.topSeedFinish)}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </TableWrap>
+            </div>
+          </details>
+        </RecordsPanel>
       )}
 
-      <div id="droughts" className="grid scroll-mt-32 gap-3 lg:grid-cols-2">
-        <Section title="Title droughts">
-          <Card className="space-y-3 p-5">
-            <DroughtStrip rows={droughts} seasons={league.seasons} finishes={finishes} nameOf={nameOf} />
-            <div className="viz-legend">
-              <span><i style={{ background: "var(--gold)" }} />Title</span>
-              <span><i style={{ background: "var(--neg-wash)" }} />Since the last title</span>
-              <span><i style={{ border: "1px dashed var(--border-2)" }} />Not in the league</span>
-            </div>
-          </Card>
-        </Section>
-
-        <Section title="Coin-flip weeks" tip={TIPS.closeGames}>
-          <Card className="p-5">
-            <CoinFlip rows={margins} names={Object.fromEntries(league.managers.map((m) => [m.id, m.name]))} />
-          </Card>
-          <p className="text-xs text-muted">Close = decided by exactly one category (e.g. 5-4). Blowout = won by 7+ categories. Playoffs included. Best net record first.</p>
-        </Section>
-      </div>
-
-      <div id="streaks" className="grid scroll-mt-32 gap-3 lg:grid-cols-2">
-        <Section title="Longest winning streaks">
-          <Card className="py-1">
-            <StreakList rows={winStreaks} slug={slug} nameOf={nameOf} />
-          </Card>
-        </Section>
-        <Section title="Longest losing streaks">
-          <Card className="py-1">
-            <StreakList rows={lossStreaks} slug={slug} nameOf={nameOf} />
-          </Card>
-        </Section>
-      </div>
-      <p className="-mt-6 text-xs text-muted">Consecutive regular-season matchups won or lost within one season; a tied matchup ends a streak.</p>
-
-      <Section id="race" title="The standings race">
-        <div className="grid gap-3 lg:grid-cols-3">
-          <Card className="py-1">
-            <h3 className="pt-2 text-xs font-medium uppercase tracking-wide text-muted">Most weeks in first</h3>
-            <ol className="divide-y divide-border">
-              {race.frontRunners.slice(0, 5).map((r) => (
-                <li key={`${r.year}-${r.managerId}`} className="flex justify-between gap-3 py-2 text-sm">
-                  <span className="min-w-0">
-                    <span className="block truncate font-medium">{r.teamName}</span>
-                    <span className="block truncate text-xs text-muted">
-                      {nameOf(r.managerId)} · {r.label} · finished {ordinal(r.finalRank)}
-                    </span>
-                  </span>
-                  <span className="shrink-0 tabular-nums">
-                    {r.weeksInFirst}/{r.weeks}
-                  </span>
-                </li>
-              ))}
-            </ol>
-          </Card>
-          <Card className="py-1">
-            <h3 className="pt-2 text-xs font-medium uppercase tracking-wide text-muted">Comebacks</h3>
-            {race.comebacks.length ? (
-              <ol className="divide-y divide-border">
-                {race.comebacks.slice(0, 5).map((r) => (
-                  <li key={`${r.year}-${r.managerId}`} className="flex justify-between gap-3 py-2 text-sm">
-                    <span className="min-w-0">
-                      <span className="block truncate font-medium">{r.teamName}</span>
-                      <span className="block truncate text-xs text-muted">
-                        {nameOf(r.managerId)} · {r.label} · {ordinal(r.rank)} after wk {r.week}
-                      </span>
-                    </span>
-                    <span className="shrink-0 text-right tabular-nums">
-                      {ordinal(r.rank)} → {ordinal(r.finalRank)}
-                    </span>
-                  </li>
-                ))}
-              </ol>
-            ) : (
-              <p className="py-2 text-sm text-muted">No team has come from outside the playoff places after midseason.</p>
-            )}
-          </Card>
-          <Card className="py-1">
-            <h3 className="pt-2 text-xs font-medium uppercase tracking-wide text-muted">Collapses and final-week heartbreak</h3>
-            <ol className="divide-y divide-border">
-              {race.collapses.slice(0, 3).map((r) => (
-                <li key={`c-${r.year}-${r.managerId}`} className="py-2 text-sm">
-                  <span className="block truncate font-medium">{r.teamName}</span>
-                  <span className="block text-xs text-muted">
-                    {nameOf(r.managerId)} · {r.label} · {ordinal(r.rank)} after wk {r.week}, missed the playoffs
-                  </span>
-                </li>
-              ))}
-              {race.heartbreaks.map((r) => (
-                <li key={`h-${r.year}-${r.managerId}`} className="py-2 text-sm">
-                  <span className="block truncate font-medium">{r.teamName}</span>
-                  <span className="block text-xs text-muted">
-                    {nameOf(r.managerId)} · {r.label} · lost a playoff spot in the final week (wk {r.week})
-                  </span>
-                </li>
-              ))}
-              {!race.collapses.length && !race.heartbreaks.length && <li className="py-2 text-sm text-muted">None yet.</li>}
-            </ol>
-          </Card>
+      <RecordsPanel
+        id="playoffs"
+        title="Playoff risers & fallers"
+        tip={TIPS.vsSeed}
+        sub="Arrow runs from average playoff seed to average final finish. Pointing left = finishes better than seeded."
+      >
+        <PlayoffRisers rows={playoffs} names={names} />
+        <div className="viz-legend mt-2">
+          <span>
+            <i className="dot" style={{ boxShadow: "inset 0 0 0 1.5px var(--ink-2)" }} />
+            Average playoff seed
+          </span>
+          <span>
+            <i className="line" style={{ background: "var(--pos)" }} />
+            Beats their seed
+          </span>
+          <span>
+            <i className="line" style={{ background: "var(--neg)" }} />
+            Falls below their seed
+          </span>
         </div>
-        <p className="text-xs text-muted">
-          Built from the standings after every week. Comeback = made the playoffs after sitting outside a playoff place in the second half of
-          the season; collapse = missed them after sitting in the top half of the playoff places. Each season page has the full race chart.
-        </p>
-      </Section>
-
-      {alternates.length > 0 && (
-        <Section id="what-if" title={`What if ${METHOD_LABEL[alternates[0].altMethod]} decided the standings?`}>
-          {changed.length === 0 ? (
-            <p className="text-sm text-muted">Every season would have had the same first place and the same playoff field.</p>
-          ) : (
+        <details className="mt-3">
+          <summary className="text-sm text-accent">The full table</summary>
+          <div className="mt-2">
             <TableWrap>
               <table className="w-full text-sm">
-                <caption className="sr-only">Seasons whose first place or playoff field would change under the other ranking</caption>
+                <caption className="sr-only">Playoff results compared with regular-season seed</caption>
                 <thead>
                   <tr>
-                    <th className={th}>Season</th>
-                    <th className={th}>Would make the playoffs</th>
-                    <th className={th}>Would miss</th>
-                    <th className={th}>First place</th>
+                    <th className={th}>Manager</th>
+                    <th className={th}>Playoffs</th>
+                    <th className={th}>Avg seed</th>
+                    <th className={th}>Avg finish</th>
+                    <th className={th}>
+                      <span className="inline-flex items-center gap-1.5">
+                        vs seed <InfoTip down text={TIPS.vsSeed} />
+                      </span>
+                    </th>
+                    <th className={th}>Playoff W-L</th>
+                    <th className={th}>Finals</th>
+                    <th className={th}>Titles</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
-                  {[...changed].reverse().map((a) => (
-                    <tr key={a.year} className={tr}>
-                      <td className={td}>
-                        <Link href={`/${slug}/seasons/${a.year}`} className="text-accent hover:underline">
-                          {a.label}
-                        </Link>
+                  {playoffs.map((r) => (
+                    <tr key={r.managerId} className={tr}>
+                      <td className={td}>{who(r.managerId)}</td>
+                      <td className={`${td} tabular-nums`}>{r.appearances}</td>
+                      <td className={`${td} tabular-nums`}>{formatNumber(r.avgSeed)}</td>
+                      <td className={`${td} tabular-nums`}>{formatNumber(r.avgFinish)}</td>
+                      <td className={`${td} tabular-nums ${r.avgOverSeed > 0 ? "text-positive" : r.avgOverSeed < 0 ? "text-negative" : ""}`}>{signed(r.avgOverSeed, 1)}</td>
+                      <td className={`${td} tabular-nums`}>
+                        {r.playoffWins}-{r.playoffLosses}
                       </td>
-                      <td className={td}>{a.in.length ? a.in.map((r) => `${r.teamName} (${nameOf(r.managerId)})`).join(", ") : <span className="text-muted">same field</span>}</td>
-                      <td className={td}>
-                        {a.out.length ? a.out.map((r) => `${r.teamName} (${nameOf(r.managerId)})`).join(", ") : "—"}
-                        {a.finalistsOut.length > 0 && <span className="ml-1 text-xs text-accent">reached the final</span>}
-                      </td>
-                      <td className={td}>
-                        {a.altTop.teamId === a.actualTop.teamId ? (
-                          <span className="text-muted">unchanged</span>
-                        ) : (
-                          `${a.altTop.teamName} instead of ${a.actualTop.teamName}`
-                        )}
-                      </td>
+                      <td className={`${td} tabular-nums`}>{r.finals}</td>
+                      <td className={`${td} tabular-nums`}>{r.titles}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </TableWrap>
-          )}
-          <p className="text-xs text-muted">
-            The league ranks standings by {METHOD_LABEL[alternates[0].method]}. This re-ranks the same results by{" "}
-            {METHOD_LABEL[alternates[0].altMethod]} and compares the playoff fields. {alternates.length - changed.length} of {alternates.length} seasons
-            would not change at all.
-          </p>
-        </Section>
-      )}
+          </div>
+        </details>
+      </RecordsPanel>
 
-      <Section id="luck" title="Matchup luck" tip={TIPS.matchupLuck}>
-        <div className="grid gap-3 lg:grid-cols-2">
-          <TableWrap>
-            <table className="w-full text-sm">
-              <caption className="sr-only">Career matchup wins above or below what category results predicted</caption>
-              <thead>
-                <tr>
-                  <th className={th}>Manager</th>
-                  <th className={th}>Seasons</th>
-                  <th className={th}>
-                    <span className="inline-flex items-center gap-1.5">
-                      Wins vs expected <InfoTip down end text={TIPS.matchupLuck} />
-                    </span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                {luck.map((r) => (
-                  <tr key={r.managerId} className={tr}>
-                    <td className={td}>{who(r.managerId)}</td>
-                    <td className={`${td} tabular-nums`}>{r.seasons}</td>
-                    <td className={`${td} tabular-nums ${r.luck >= 0.5 ? "text-positive" : r.luck <= -0.5 ? "text-negative" : ""}`}>{signed(r.luck, 1)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </TableWrap>
-          <Card className="space-y-4">
+      <div className="rec-g2">
+        <RecordsPanel id="droughts" title="Title droughts" tip={RECORD_TIPS.drought} sub="Seasons since their last championship. Gold = a title year.">
+          <DroughtStrip rows={droughts} seasons={league.seasons} finishes={finishes} nameOf={nameOf} />
+          <div className="viz-legend mt-3">
+            <span>
+              <i style={{ background: "var(--gold)" }} />
+              Title
+            </span>
+            <span>
+              <i style={{ background: "var(--neg-wash)" }} />
+              Since the last title
+            </span>
+            <span>
+              <i style={{ border: "1px dashed var(--border-2)" }} />
+              Not in the league
+            </span>
+          </div>
+        </RecordsPanel>
+        <RecordsPanel title="Coin-flip weeks" tip={`${TIPS.closeGames} ${RECORD_TIPS.blowout}`} sub="Record in weeks decided by one category, and in 7+ category blowouts. Best net record first.">
+          <CoinFlip rows={margins} names={names} />
+        </RecordsPanel>
+      </div>
+
+      {/* ---------------- Streaks & the race ---------------- */}
+      <RecordsGroup id="g-streaks">Streaks &amp; the standings race</RecordsGroup>
+
+      <RecordsPanel id="streaks" title="Longest streaks" tip={RECORD_TIPS.streak} sub="Within one regular season. Bars show where the run fell in the season.">
+        <div className="rec-g2">
+          <div>
+            <h4 className="rec-sub">Winning</h4>
+            <StreakBars rows={winStreaks} names={names} lastWeek={lastWeek} kind="W" />
+          </div>
+          <div>
+            <h4 className="rec-sub">Losing</h4>
+            <StreakBars rows={lossStreaks} names={names} lastWeek={lastWeek} kind="L" />
+          </div>
+        </div>
+      </RecordsPanel>
+
+      <div className="rec-g2" id="race">
+        <RecordsPanel title="Front-runners" tip={RECORD_TIPS.frontRunner} sub="Most of a season spent in first place.">
+          {race.frontRunners.length ? (
+            <>
+              <FrontRunners rows={race.frontRunners.slice(0, 8)} names={names} />
+              <div className="viz-legend mt-2">
+                <span>
+                  <i style={{ background: "var(--gold)" }} />
+                  Went on to win the title
+                </span>
+                <span>
+                  <i style={{ background: "var(--s1)" }} />
+                  Didn&apos;t
+                </span>
+              </div>
+            </>
+          ) : (
+            <p className="text-sm text-muted">No standings history yet.</p>
+          )}
+        </RecordsPanel>
+        <RecordsPanel title="Comebacks & collapses" tip={RECORD_TIPS.raceStory} sub="Where they stood after midseason, and where they ended up.">
+          {race.comebacks.length + race.collapses.length + race.heartbreaks.length ? (
+            <ShowMore initial={8} className="rec-list rec-race" noun="stories">
+              {[
+                ...race.comebacks.slice(0, 5).map((r) => <RaceRow key={`c-${r.year}-${r.managerId}`} r={r} kind="Comeback" nameOf={nameOf} />),
+                ...race.collapses.map((r) => <RaceRow key={`x-${r.year}-${r.managerId}`} r={r} kind="Collapse" nameOf={nameOf} />),
+                ...race.heartbreaks.map((r) => <RaceRow key={`h-${r.year}-${r.managerId}`} r={r} kind="Final-week heartbreak" nameOf={nameOf} />),
+              ]}
+            </ShowMore>
+          ) : (
+            <p className="text-sm text-muted">No comebacks or collapses yet.</p>
+          )}
+        </RecordsPanel>
+      </div>
+
+      {/* ---------------- Luck & what-ifs ---------------- */}
+      <RecordsGroup id="g-luck">Luck &amp; what-ifs</RecordsGroup>
+
+      <RecordsPanel
+        id="luck"
+        title="Matchup luck"
+        tip={TIPS.matchupLuck}
+        sub="Every team-season: weeks it should have won from its category totals (across) against weeks it actually won (up). Above the line = lucky."
+      >
+        <div className="rec-luck">
+          <div>
+            <LuckScatter rows={luckRows} names={names} />
+          </div>
+          <div>
+            <h4 className="rec-sub">
+              Career luck <InfoTip down end text={TIPS.matchupLuck} />
+            </h4>
+            <LuckCareerBars rows={luck} names={names} />
+          </div>
+        </div>
+        <details className="mt-3">
+          <summary className="text-sm text-accent">The luckiest and unluckiest seasons</summary>
+          <div className="rec-g2 mt-2">
             {[
-              { title: "Luckiest seasons", rows: luckRows.slice(0, 4) },
-              { title: "Unluckiest seasons", rows: [...luckRows].reverse().slice(0, 4) },
+              { title: "Luckiest seasons", rows: luckRows.slice(0, 5) },
+              { title: "Unluckiest seasons", rows: [...luckRows].reverse().slice(0, 5) },
             ].map((g) => (
               <div key={g.title}>
-                <h3 className="mb-1 text-xs font-medium uppercase tracking-wide text-muted">{g.title}</h3>
-                <ol className="divide-y divide-border">
+                <h4 className="rec-sub">{g.title}</h4>
+                <div className="rec-list">
                   {g.rows.map((r) => (
-                    <li key={`${r.year}-${r.managerId}`} className="flex justify-between gap-3 py-1.5 text-sm">
-                      <span className="min-w-0 truncate">
-                        {r.teamName} <span className="text-muted">· {nameOf(r.managerId)}, {r.label}</span>
-                      </span>
-                      <span className="shrink-0 tabular-nums">
-                        {formatNumber(r.actual, 1)} won, {formatNumber(r.expected, 1)} expected
-                      </span>
-                    </li>
+                    <div key={`${r.year}-${r.managerId}`}>
+                      <div className="l">
+                        <span className="t1">{r.teamName}</span>
+                        <span className="t2">
+                          {nameOf(r.managerId)} · {r.label}
+                        </span>
+                      </div>
+                      <div className="rv">
+                        <b className={r.luck >= 0 ? "text-[color:var(--pos)]" : "text-[color:var(--neg)]"}>{signed(r.luck, 1)}</b>
+                        <span className="t2 block">
+                          {formatNumber(r.actual, 1)} won, {formatNumber(r.expected, 1)} expected
+                        </span>
+                      </div>
+                    </div>
                   ))}
-                </ol>
+                </div>
               </div>
             ))}
-          </Card>
-        </div>
-        <p className="text-xs text-muted">
-          Expected wins treat each category as a coin flip weighted by both teams&apos; season category win % (log5), then count how often that
-          wins the majority of categories. Regular season only; ties count half. A big positive number means winning a lot of close matchups
-          with an ordinary category record: +2.0 = about two more weekly wins than their categories usually earn. Over a career, it mostly evens out.
-        </p>
-      </Section>
+          </div>
+        </details>
+      </RecordsPanel>
 
-      <Section id="scorelines" title="Scorelines and sweeps">
-        <div className="grid gap-3 lg:grid-cols-2">
-          <Card>
-            <h3 className="mb-3 text-xs font-medium uppercase tracking-wide text-muted">How matchups end</h3>
-            <ul className="space-y-1.5">
-              {lines.rows.slice(0, 8).map((r) => (
-                <li key={r.score} className="flex items-center gap-3 text-sm">
-                  <span className="w-12 shrink-0 tabular-nums">{r.score}</span>
-                  <div className="h-2 flex-1 overflow-hidden rounded-full bg-surface-2">
-                    <div className="h-full rounded-full bg-accent" style={{ width: `${(r.share / (lines.rows[0]?.share || 1)) * 100}%` }} />
-                  </div>
-                  <span className="w-24 shrink-0 text-right tabular-nums text-muted">
-                    {formatPct(r.share, 0)} · {r.count}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-3 text-xs text-muted">
-              {lines.matchups.toLocaleString()} matchups, playoffs included. {formatPct(lines.withTiedCategory / Math.max(1, lines.matchups), 0)} had
-              at least one tied category (the third number).
-            </p>
-          </Card>
-          <Card className="space-y-4">
-            <div>
-              <h3 className="mb-1 text-xs font-medium uppercase tracking-wide text-muted">Clean sweeps ({sweepRows.length})</h3>
-              {sweepRows.length ? (
-                <ol className="divide-y divide-border">
-                  {sweepRows.map((r) => (
-                    <li key={`${r.year}-${r.week}-${r.winnerManagerId}`} className="flex justify-between gap-3 py-1.5 text-sm">
-                      <span className="min-w-0 truncate">
-                        {r.winnerTeam} <span className="text-muted">over {r.loserTeam}</span>
-                      </span>
-                      <span className="shrink-0 text-muted">
-                        {r.score} · {r.label}, wk {r.week}
-                      </span>
-                    </li>
-                  ))}
-                </ol>
-              ) : (
-                <p className="text-sm text-muted">Nobody has won every category in a week yet.</p>
-              )}
-            </div>
-            <div>
-              <h3 className="mb-1 text-xs font-medium uppercase tracking-wide text-muted">Most dominant seasons</h3>
-              <ol className="divide-y divide-border">
-                {dominant.map((r) => (
-                  <li key={`${r.year}-${r.managerId}`} className="flex justify-between gap-3 py-1.5 text-sm">
-                    <span className="min-w-0 truncate">
-                      {r.teamName} <span className="text-muted">· {nameOf(r.managerId)}, {r.label}</span>
-                    </span>
-                    <span className="shrink-0 tabular-nums">won by {formatNumber(r.avgWinMargin, 2)}</span>
-                  </li>
-                ))}
-              </ol>
-              <p className="mt-1 text-xs text-muted">Average categories won by in matchups won (5+ wins, playoffs included). {TIPS.winMargin}</p>
-            </div>
-          </Card>
-        </div>
-      </Section>
-
-      <div id="seasons" className="grid scroll-mt-32 gap-3 lg:grid-cols-2">
-        <Section title="Best regular seasons ever">
-          <Card className="py-1">
-            <SeasonList rows={seasons.slice(0, 8)} slug={slug} nameOf={nameOf} />
-          </Card>
-        </Section>
-        <Section title="Worst regular seasons ever">
-          <Card className="py-1">
-            <SeasonList rows={[...seasons].reverse().slice(0, 8)} slug={slug} nameOf={nameOf} />
-          </Card>
-        </Section>
-      </div>
-      <p className="-mt-6 text-xs text-muted">Ranked by regular-season {pctLabel}, the number the league&apos;s standings use.</p>
-
-      <div id="consistency" className="grid scroll-mt-32 gap-3 lg:grid-cols-2">
-        <Section title="Steady or streaky?" tip={TIPS.swing}>
-          <Card className="space-y-2 p-5">
-            <SteadyScatter rows={steady} titles={titles} nameOf={nameOf} />
-            <div className="viz-legend">
-              <span><i className="dot" style={{ background: "var(--gold)" }} />Has won a title</span>
-              <span><i className="dot" style={{ background: "var(--s1)" }} />Hasn&apos;t</span>
-              <span>Bottom-left = always good</span>
-            </div>
-          </Card>
-          <details>
-            <summary className="text-sm text-accent">The table</summary>
-            <div className="mt-2">
-          <TableWrap>
-            <table className="w-full text-sm">
-              <caption className="sr-only">How much each manager&apos;s finish varies from year to year</caption>
-              <thead>
-                <tr>
-                  <th className={th}>Manager</th>
-                  <th className={th}>Seasons</th>
-                  <th className={th}>
-                    <span className="inline-flex items-center gap-1.5">
-                      Typical finish <InfoTip down text={TIPS.typicalFinish} />
-                    </span>
-                  </th>
-                  <th className={th}>
-                    <span className="inline-flex items-center gap-1.5">
-                      Swing <InfoTip down end text={TIPS.swing} />
-                    </span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                {steady.map((r) => (
-                  <tr key={r.managerId} className={tr}>
-                    <td className={td}>{who(r.managerId)}</td>
-                    <td className={`${td} tabular-nums`}>{r.seasons}</td>
-                    <td className={`${td} tabular-nums`}>top {formatPct(r.avgPercentile, 0)}</td>
-                    <td className={`${td} tabular-nums`}>±{formatPct(r.spread, 0)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </TableWrap>
-            </div>
-          </details>
-          <p className="text-xs text-muted">
-            Finish as a share of the league (top 0% = always first), so 10- and 12-team seasons compare fairly. Swing = standard
-            deviation; steadiest first. Minimum 3 seasons.
-          </p>
-        </Section>
-
-        <Section title="Parity by season" tip={TIPS.parity}>
-          <TableWrap>
-            <table className="w-full text-sm">
-              <caption className="sr-only">How even each season was</caption>
-              <thead>
-                <tr>
-                  <th className={th}>Season</th>
-                  <th className={th}>
-                    <span className="inline-flex items-center gap-1.5">
-                      Spread <InfoTip down text={TIPS.parity} />
-                    </span>
-                  </th>
-                  <th className={th}>Best</th>
-                  <th className={th}>Worst</th>
-                  <th className={th}>
-                    <span className="inline-flex items-center gap-1.5">
-                      1st to last seed <InfoTip down end text={TIPS.bubbleGap} />
-                    </span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                {[...parityRows].reverse().map((r) => {
-                  const max = Math.max(...parityRows.map((x) => x.spread));
-                  return (
-                    <tr key={r.year} className={tr}>
-                      <td className={td}>{r.label}</td>
-                      <td className={td}>
-                        <span className="flex items-center gap-2">
-                          <span className="h-1.5 w-16 overflow-hidden rounded-full bg-surface-2">
-                            <span className="block h-full rounded-full bg-accent" style={{ width: `${(r.spread / max) * 100}%` }} />
-                          </span>
-                          <span className="tabular-nums">±{formatPct(r.spread)}</span>
-                        </span>
-                      </td>
-                      <td className={`${td} tabular-nums`}>{formatPct(r.best)}</td>
-                      <td className={`${td} tabular-nums`}>{formatPct(r.worst)}</td>
-                      <td className={`${td} tabular-nums`}>{r.bubbleGap === null ? "—" : `${(r.bubbleGap * 100).toFixed(1)} pts`}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </TableWrap>
-          <p className="text-xs text-muted">
-            Spread = standard deviation of every team&apos;s regular-season {pctLabel}: lower means a more even league. The last column is how far the
-            last playoff seed finished behind first place.
-          </p>
-        </Section>
-      </div>
-
-      {names.length > 0 && (
-        <Section id="namesakes" title="Named after a player">
-          <TableWrap>
-            <NamesakeTable rows={names.slice(0, NAMESAKES_SHOWN)} nameOf={nameOf} />
-          </TableWrap>
-          {names.length > NAMESAKES_SHOWN && (
-            <details className="text-sm">
-              <summary className="cursor-pointer text-accent">Show all {names.length}</summary>
-              <div className="mt-3">
-                <TableWrap>
-                  <NamesakeTable rows={names.slice(NAMESAKES_SHOWN)} nameOf={nameOf} />
-                </TableWrap>
-              </div>
-            </details>
+      {alternates.length > 0 && (
+        <RecordsPanel
+          id="what-if"
+          title={`What if ${METHOD_LABEL[alternates[0].altMethod]} decided the standings?`}
+          tip={RECORD_TIPS.whatIf}
+          sub={`Seasons where ranking by ${METHOD_LABEL[alternates[0].altMethod]} instead of ${METHOD_LABEL[alternates[0].method]} would have changed the playoff field or first place. ${alternates.length - changed.length} of ${alternates.length} seasons would not change at all.`}
+        >
+          {changed.length ? (
+            <WhatIfCards rows={changed} slug={slug} names={names} />
+          ) : (
+            <p className="text-sm text-muted">Every season would have had the same first place and the same playoff field.</p>
           )}
-          <p className="text-xs text-muted">
-            {names.filter((r) => r.ownedAtEnd).length} of {names.length} teams still had their namesake when the season ended;{" "}
-            {names.filter((r) => r.finalRank === 1).length} won the title. &quot;300+&quot; = outside the top 300 (or not in the league that season).
-          </p>
-        </Section>
+        </RecordsPanel>
+      )}
+
+      {/* ---------------- Scorelines ---------------- */}
+      <RecordsGroup id="g-scores">Scorelines &amp; sweeps</RecordsGroup>
+
+      <div className="rec-scores" id="scorelines">
+        <RecordsPanel
+          title="How matchups end"
+          tip={RECORD_TIPS.scorelines}
+          sub={`${lines.matchups.toLocaleString()} matchups, playoffs included. ${formatPct(lines.withTiedCategory / Math.max(1, lines.matchups), 0)} had at least one tied category.`}
+        >
+          <ScorelineHistogram rows={lines.rows} />
+          <div className="viz-legend mt-2">
+            <span>
+              <i style={{ background: "var(--accent)" }} />
+              Decided by one category (or level)
+            </span>
+            <span>
+              <i style={{ background: "var(--s1)" }} />
+              2-6 categories
+            </span>
+            <span>
+              <i style={{ background: "var(--foreground)" }} />
+              Blowout (7+)
+            </span>
+            <span>
+              <i style={{ background: "var(--gold)" }} />
+              Sweep
+            </span>
+          </div>
+          {dominant.length > 0 && (
+            <>
+              <h4 className="rec-sub mt-5">
+                Most dominant seasons <InfoTip down text={`${TIPS.winMargin} Teams with 5+ wins, playoffs included.`} />
+              </h4>
+              <div className="rec-list">
+                {dominant.map((r, i) => (
+                  <div key={`${r.year}-${r.managerId}`}>
+                    <span className="rk">{i + 1}</span>
+                    <div className="l">
+                      <span className="t1">{r.teamName}</span>
+                      <span className="t2">
+                        {nameOf(r.managerId)} · {r.label} · {r.wins}-{r.losses}
+                      </span>
+                    </div>
+                    <div className="rv">
+                      <b>+{formatNumber(r.avgWinMargin, 2)}</b>
+                      <span className="t2 block">cats per win</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+        </RecordsPanel>
+        <RecordsPanel title={`Clean sweeps (${sweepRows.length})`} tip={RECORD_TIPS.sweep} sub="Every week one team won every category.">
+          {sweepRows.length ? (
+            <ShowMore initial={10} className="rec-list" noun="sweeps">
+              {sweepRows.map((r) => (
+                <div key={`${r.year}-${r.week}-${r.winnerManagerId}`}>
+                  <div className="l">
+                    <span className="t1">
+                      {r.winnerTeam} <span className="font-normal text-muted">over</span> {r.loserTeam}
+                    </span>
+                    <span className="t2">
+                      {nameOf(r.winnerManagerId)} ·{" "}
+                      <Link href={`/${slug}/seasons/${r.year}`} data-panel={`season:${r.year}`} className="hover:text-accent">
+                        {r.label}
+                      </Link>
+                      , {r.stage === "regular" ? `week ${r.week}` : "playoffs"}
+                    </span>
+                  </div>
+                  <div className="rv">
+                    <b>{r.score}</b>
+                  </div>
+                </div>
+              ))}
+            </ShowMore>
+          ) : (
+            <p className="text-sm text-muted">Nobody has won every category in a week yet.</p>
+          )}
+        </RecordsPanel>
+      </div>
+
+      {/* ---------------- Best & worst ---------------- */}
+      <RecordsGroup id="g-seasons">Best &amp; worst seasons</RecordsGroup>
+
+      <div className="rec-g2" id="seasons">
+        <RecordsPanel title="Best regular seasons ever" tip={TIPS.catPct} sub={`Ranked by ${pctLabel}, the number the standings use.`}>
+          <SeasonList rows={seasons.slice(0, 8)} slug={slug} nameOf={nameOf} />
+        </RecordsPanel>
+        <RecordsPanel title="Worst regular seasons ever" tip={TIPS.catPct} sub="Somebody had to.">
+          <SeasonList rows={[...seasons].reverse().slice(0, 8)} slug={slug} nameOf={nameOf} />
+        </RecordsPanel>
+      </div>
+
+      <div className="rec-g2" id="consistency">
+        <RecordsPanel title="Steady or streaky?" tip={TIPS.swing} sub="Typical finish (across) against how much it swings year to year (up). Bottom-left = always good. Minimum 3 seasons.">
+          {steady.length ? (
+            <>
+              <SteadyScatter rows={steady} titles={titles} names={names} />
+              <div className="viz-legend mt-2">
+                <span>
+                  <i className="dot" style={{ background: "var(--gold)" }} />
+                  Has won a title
+                </span>
+                <span>
+                  <i className="dot" style={{ background: "var(--s1)" }} />
+                  Hasn&apos;t
+                </span>
+              </div>
+              <details className="mt-3">
+                <summary className="text-sm text-accent">The table</summary>
+                <div className="mt-2">
+                  <TableWrap>
+                    <table className="w-full text-sm">
+                      <caption className="sr-only">How much each manager&apos;s finish varies from year to year</caption>
+                      <thead>
+                        <tr>
+                          <th className={th}>Manager</th>
+                          <th className={th}>Seasons</th>
+                          <th className={th}>
+                            <span className="inline-flex items-center gap-1.5">
+                              Typical finish <InfoTip down text={TIPS.typicalFinish} />
+                            </span>
+                          </th>
+                          <th className={th}>
+                            <span className="inline-flex items-center gap-1.5">
+                              Swing <InfoTip down end text={TIPS.swing} />
+                            </span>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-border">
+                        {steady.map((r) => (
+                          <tr key={r.managerId} className={tr}>
+                            <td className={td}>{who(r.managerId)}</td>
+                            <td className={`${td} tabular-nums`}>{r.seasons}</td>
+                            <td className={`${td} tabular-nums`}>top {formatPct(r.avgPercentile, 0)}</td>
+                            <td className={`${td} tabular-nums`}>±{formatPct(r.spread, 0)}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </TableWrap>
+                </div>
+              </details>
+            </>
+          ) : (
+            <p className="text-sm text-muted">Nobody has played 3 seasons yet.</p>
+          )}
+        </RecordsPanel>
+
+        <RecordsPanel
+          title="Parity by season"
+          tip={TIPS.parity}
+          sub={`Each bar runs from the worst to the best ${pctLabel} that season. The orange tick is the last playoff seed; the most even season is in blue.`}
+        >
+          <ParityRanges rows={parityRows} />
+          <div className="viz-legend mt-2">
+            <span>
+              <i className="line" style={{ background: "var(--border-2)", height: 6 }} />
+              Worst to best
+            </span>
+            <span>
+              <i style={{ background: "var(--accent)", width: 3, height: 12, borderRadius: 1 }} />
+              Last playoff seed <InfoTip down end text={TIPS.bubbleGap} />
+            </span>
+            <span>
+              <i className="line" style={{ background: "var(--s1)", height: 6 }} />
+              Most even season
+            </span>
+          </div>
+        </RecordsPanel>
+      </div>
+
+      {/* ---------------- Named after a player ---------------- */}
+      {names_.length > 0 && (
+        <>
+          <RecordsGroup id="g-fun">Named after a player</RecordsGroup>
+          <RecordsPanel
+            id="namesakes"
+            title="Did the namesake deliver?"
+            tip={RECORD_TIPS.namesake}
+            sub={`${names_.filter((r) => r.ownedAtEnd).length} of ${names_.length} teams still had their namesake when the season ended; ${names_.filter((r) => r.finalRank === 1).length} won the title. "300+" = outside the top 300.`}
+          >
+            <NamesakeCards rows={names_} names={names} />
+          </RecordsPanel>
+        </>
       )}
     </>
   );
 }
 
-function StreakList({ rows, slug, nameOf }: { rows: StreakRow[]; slug: string; nameOf: (id: string) => string }) {
+function RecordCard({ label, tip, value, children }: { label: string; tip?: string; value: ReactNode; children: ReactNode }) {
   return (
-    <ol className="divide-y divide-border">
-      {rows.map((r, i) => (
-        <li key={`${r.year}-${r.managerId}-${r.fromWeek}`} className="flex items-center justify-between gap-3 py-2 text-sm">
-          <span className="min-w-0">
-            <span className="mr-2 text-muted">{i + 1}.</span>
-            <span className="font-medium">{r.teamName}</span>
-            <span className="block truncate pl-5 text-xs text-muted">
-              {nameOf(r.managerId)} ·{" "}
-              <Link href={`/${slug}/seasons/${r.year}`} className="hover:text-accent">
-                {r.label}
-              </Link>{" "}
-              · weeks {r.fromWeek}–{r.toWeek}
-            </span>
-          </span>
-          <span className="shrink-0 tabular-nums">{r.length}</span>
-        </li>
-      ))}
-    </ol>
+    <div className="tile rec relative">
+      <div className="rec-k flex items-center gap-1.5">
+        {label}
+        {tip && <InfoTip box text={tip} />}
+      </div>
+      <div className="rec-v tabular-nums">{value}</div>
+      <div className="rec-d">{children}</div>
+    </div>
+  );
+}
+
+function RaceRow({ r, kind, nameOf }: { r: RaceRecord; kind: "Comeback" | "Collapse" | "Final-week heartbreak"; nameOf: (id: string) => string }) {
+  const missed = kind !== "Comeback";
+  return (
+    <div>
+      <div className="l">
+        <span className="t1">
+          <span className={`badge mr-1.5 ${missed ? "badge-orange" : ""}`}>{kind}</span>
+          {r.teamName}
+        </span>
+        <span className="t2">
+          {nameOf(r.managerId)} · {r.label}
+        </span>
+      </div>
+      <div className="rv">
+        <span className="tabular-nums">
+          {ordinal(r.rank)} <span className="text-muted">wk {r.week}</span> →{" "}
+          {missed ? <b className="text-[color:var(--negative)]">missed</b> : <b className="text-[color:var(--positive)]">{ordinal(r.seed)} seed</b>}
+        </span>
+        <span className="t2 block">finished {ordinal(r.finalRank)}</span>
+      </div>
+    </div>
   );
 }
 
 function SeasonList({ rows, slug, nameOf }: { rows: TeamSeasonRow[]; slug: string; nameOf: (id: string) => string }) {
   return (
-    <ol className="divide-y divide-border">
+    <div className="rec-list">
       {rows.map((r, i) => (
-        <li key={`${r.year}-${r.managerId}`} className="flex items-center justify-between gap-3 py-2 text-sm">
-          <span className="min-w-0">
-            <span className="mr-2 text-muted">{i + 1}.</span>
-            <span className="font-medium">{r.teamName}</span>
-            <span className="block truncate pl-5 text-xs text-muted">
+        <div key={`${r.year}-${r.managerId}`}>
+          <span className="rk">{i + 1}</span>
+          <div className="l">
+            <span className="t1">{r.teamName}</span>
+            <span className="t2">
               {nameOf(r.managerId)} ·{" "}
-              <Link href={`/${slug}/seasons/${r.year}`} className="hover:text-accent">
+              <Link href={`/${slug}/seasons/${r.year}`} data-panel={`season:${r.year}`} className="underline decoration-[color:var(--border-2)] hover:text-accent">
                 {r.label}
               </Link>{" "}
-              · finished {r.finalRank}
+              · finished {ordinal(r.finalRank)}
             </span>
-          </span>
-          <span className="shrink-0 text-right tabular-nums">
-            {formatPct(r.pct)}
-            <span className="block text-xs text-muted">{r.record}</span>
-          </span>
-        </li>
+          </div>
+          <div className="rv">
+            <b>{formatPct(r.pct)}</b>
+            <span className="t2 block">{r.record}</span>
+          </div>
+        </div>
       ))}
-    </ol>
-  );
-}
-
-function NamesakeTable({ rows, nameOf }: { rows: NamesakeRow[]; nameOf: (id: string) => string }) {
-  return (
-    <table className="w-full text-sm">
-      <caption className="sr-only">Teams named after a player, and whether they had him</caption>
-      <thead>
-        <tr>
-          <th className={th}>Team</th>
-          <th className={th}>Named after</th>
-          <th className={th}>Player finished</th>
-          <th className={th}>Drafted him?</th>
-          <th className={th}>Kept him?</th>
-          <th className={th}>Team finished</th>
-        </tr>
-      </thead>
-      <tbody className="divide-y divide-border">
-        {rows.map((r) => (
-          <tr key={`${r.year}-${r.managerId}`} className={tr}>
-            <td className={td}>
-              <span className="block font-medium">{r.teamName}</span>
-              <span className="block text-xs text-muted">
-                {nameOf(r.managerId)} · {r.label}
-              </span>
-            </td>
-            <td className={td}>{r.playerName}</td>
-            <td className={`${td} tabular-nums`}>{rankLabel(r.actualRank)}</td>
-            <td className={td}>
-              {r.draftedBy === "them" ? "Yes" : r.draftedBy ? <span className="text-muted">No ({nameOf(r.draftedBy)})</span> : <span className="text-muted">Nobody did</span>}
-            </td>
-            <td className={td}>{r.ownedAtEnd ? "Yes" : <span className="text-muted">No</span>}</td>
-            <td className={`${td} tabular-nums ${r.finalRank === 1 ? "text-positive" : ""}`}>
-              {r.finalRank === 1 ? "🏆 Champion" : `${ordinal(r.finalRank)} of ${r.teamCount}`}
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    </div>
   );
 }

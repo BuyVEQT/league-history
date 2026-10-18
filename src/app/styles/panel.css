@@ -1,0 +1,65 @@
+/* Side panel (drawer): manager, season and player details over a dimmed page. */
+[data-panel] { cursor: pointer; }
+.plink { color: inherit; font: inherit; text-align: inherit; background: none; border: 0; padding: 0; min-height: 0; cursor: pointer; text-decoration: none; }
+.plink:hover { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+.pn-veil { position: fixed; inset: 0; background: rgb(20 32 48 / .28); opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 40; }
+.pn-veil.open { opacity: 1; pointer-events: auto; }
+.pn-drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(440px, 100vw); background: var(--surface); box-shadow: -12px 0 40px rgb(20 32 48 / .18); z-index: 41; transform: translateX(104%); visibility: hidden; transition: transform .28s cubic-bezier(.2,.8,.2,1), visibility 0s linear .28s; display: flex; flex-direction: column; padding-top: env(safe-area-inset-top, 0px); padding-right: env(safe-area-inset-right, 0px); }
+.pn-drawer.open { transform: none; visibility: visible; transition: transform .28s cubic-bezier(.2,.8,.2,1), visibility 0s; }
+.pn-head { display: flex; justify-content: space-between; align-items: center; padding: 12px 18px; border-bottom: 1px solid var(--border); }
+.pn-kind { font-size: 11.5px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-ink); }
+.pn-x { border: 0; background: var(--surface-2); width: 32px; height: 32px; min-height: 0; border-radius: 50%; font-size: 14px; color: var(--foreground); }
+.pn-x:hover { background: var(--border); }
+.pn-body { overflow-y: auto; overscroll-behavior: contain; padding: 18px; display: grid; gap: 16px; align-content: start; flex: 1; }
+.pn-hero { display: flex; gap: 14px; align-items: center; }
+.pn-title { font-family: var(--font-display); font-weight: 900; font-size: 34px; line-height: .95; text-transform: uppercase; margin: 0; overflow-wrap: anywhere; }
+.pn-sub { font-size: 13px; color: var(--muted); }
+.pn-note { font-size: 11.5px; color: var(--muted); margin-top: 6px; }
+.pn-trophy { width: 56px; height: 56px; border-radius: 14px; display: grid; place-items: center; background: var(--gold-wash); color: var(--gold); flex: none; }
+.pn-trophy.star { background: var(--band); color: var(--band-ink); }
+.pn-trophy svg { width: 28px; height: 28px; }
+.pn-badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.pn-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.pn-tiles div { background: var(--surface-2); border-radius: 10px; padding: 8px 10px; display: grid; gap: 2px; min-width: 0; }
+.pn-tiles span { font-size: 11px; color: var(--muted); }
+.pn-tiles b { font-family: var(--font-display); font-weight: 800; font-size: 20px; overflow-wrap: anywhere; line-height: 1.1; }
+.pn-h { margin: 0 0 6px; font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.pn-chart { max-width: 100%; }
+.pn-list { display: grid; }
+.pn-list > * { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--border); min-width: 0; }
+.pn-list > *:last-child { border-bottom: 0; }
+.pn-list .l { min-width: 0; flex: 1; }
+.pn-list .t1 { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pn-list .t2 { font-size: 12.5px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pn-list .rv { text-align: right; flex: none; font-variant-numeric: tabular-nums; }
+.pn-form { display: inline-flex; gap: 3px; }
+.pn-fc { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 4px; font-size: 11px; font-weight: 800; color: #fff; text-decoration: none; }
+.pn-fc.W { background: var(--pos); } .pn-fc.L { background: var(--neg); } .pn-fc.T { background: var(--muted); }
+.pn-fc:hover { filter: brightness(1.1); }
+.pn-actions { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px; }
+.pn-btn { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--border-2); background: var(--surface); border-radius: 999px; padding: 7px 14px; min-height: 0; font-size: 13px; font-weight: 700; text-decoration: none; color: var(--foreground); }
+.pn-btn:hover { border-color: var(--accent); color: var(--accent-ink); }
+.pn-btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.pn-btn.primary:hover { filter: brightness(1.05); color: #fff; }
+.pn-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.pn-pills .pill { min-width: 34px; justify-content: center; padding: 4px 9px; }
+.pn-stand { display: grid; gap: 4px; }
+.pn-stand > div { display: grid; grid-template-columns: 20px minmax(0, 1fr) minmax(110px, 150px) 34px; gap: 8px; align-items: center; font-size: 13px; }
+.pn-stand .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; }
+.pn-stand .fin { text-align: right; }
+.pn-pct { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.pn-pct .num { width: 44px; flex: none; font-variant-numeric: tabular-nums; font-size: 12.5px; }
+.pn-pct .tr { flex: 1; min-width: 40px; height: 6px; background: var(--surface-2); border-radius: 3px; overflow: hidden; }
+.pn-pct .fl { display: block; height: 100%; border-radius: 0 3px 3px 0; }
+.pn-picks { display: grid; gap: 6px; }
+.pn-picks > div { display: grid; grid-template-columns: 58px 28px minmax(0, 1fr) 40px 50px; gap: 8px; align-items: center; font-size: 13px; padding: 6px 8px; border-radius: 8px; background: var(--surface-2); }
+.pn-picks .yr { font-size: 12px; color: var(--muted); font-weight: 600; }
+.pn-vchip { text-align: center; font-weight: 800; font-size: 12px; border-radius: 6px; padding: 2px 4px; }
+.pn-vchip.up { background: var(--pos-wash); color: var(--positive); } .pn-vchip.down { background: var(--neg-wash); color: var(--negative); }
+@media (max-width: 420px) {
+  .pn-body { padding: 14px 16px; }
+  .pn-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pn-stand > div { grid-template-columns: 18px minmax(0, 1fr) 96px 30px; }
+  .pn-pct .num { width: 40px; }
+  .pn-picks > div { grid-template-columns: 52px 28px minmax(0, 1fr) 38px 46px; gap: 6px; }
+}

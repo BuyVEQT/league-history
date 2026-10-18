@@ -75,7 +75,7 @@ export function Card({ children, className = "" }: { children: ReactNode; classN
  * Navy monogram with the manager's initials. Identity is the name beside it, not a color, so `color` is
  * accepted for compatibility and ignored.
  */
-export function Avatar({ name, size = "md" }: { name: string; color?: string; size?: "sm" | "md" | "lg" }) {
+export function Avatar({ name, size = "md", initials: given }: { name: string; color?: string; size?: "sm" | "md" | "lg"; initials?: string }) {
   const initials = name
     .split(" ")
     .map((p) => p[0])
@@ -85,7 +85,7 @@ export function Avatar({ name, size = "md" }: { name: string; color?: string; si
   const dims = { sm: "size-7 text-[12px]", md: "size-10 text-[17px]", lg: "size-16 text-[28px] shadow-[inset_0_0_0_3px_var(--accent)]" }[size];
   return (
     <span aria-hidden className={`mono ${dims}`}>
-      {initials.length === 1 ? name.slice(0, 2).toUpperCase() : initials}
+      {given ?? (initials.length === 1 ? name.slice(0, 2).toUpperCase() : initials)}
     </span>
   );
 }

@@ -1,3 +1,4 @@
+import { monograms } from "@/components/viz/monograms";
 import Link from "next/link";
 import {
   ArrowDownToLine,
@@ -63,7 +64,7 @@ export function AwardGrid({ awards, league, scope }: { awards: Award[]; league: 
               <div className="mt-1.5 flex flex-wrap gap-2.5">
                 {a.winners.map((id) => (
                   <span key={id} className="inline-flex items-center gap-2 text-sm font-semibold">
-                    <Avatar size="sm" name={nameOf(id)} />
+                    <Avatar size="sm" name={nameOf(id)} initials={monograms(league.managers).get(id)} />
                     <ManagerLink id={id} name={nameOf(id)} />
                   </span>
                 ))}

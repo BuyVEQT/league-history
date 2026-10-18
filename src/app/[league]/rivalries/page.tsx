@@ -36,8 +36,8 @@ export default async function RivalriesPage(props: PageProps<"/[league]/rivalrie
         title="Settle the debate"
         subtitle="Pick any two managers. Everything comes from the weeks they actually played each other, regular season and playoffs — never inferred from standings. Playoff ties are decided by seed."
       />
-      <RivalryExplorer league={coreLeague(league)} defaultA={mostPlayed?.a ?? league.managers[0].id} defaultB={mostPlayed?.b ?? league.managers[1].id} />
-      <div className="grid gap-3 lg:grid-cols-3">
+      <RivalryExplorer league={coreLeague(league)} defaultA={mostPlayed?.a ?? league.managers[0].id} defaultB={mostPlayed?.b ?? league.managers[1].id}>
+        <div className="grid gap-3 lg:grid-cols-3">
         <PairList title="Most lopsided" note={`Minimum ${MIN_MEETINGS} meetings.`} nameOf={nameOf} rows={lopsided.map((p) => ({ p, value: rec(p), detail: `${Math.round(p.pct * 100)}% for ${nameOf(p.a)} · ${p.games} meetings` }))} />
         <PairList title="Dead even" note={`Closest to .500, minimum ${MIN_MEETINGS} meetings.`} nameOf={nameOf} rows={even.map((p) => ({ p, value: rec(p), detail: `${p.games} meetings` }))} />
         <PairList
@@ -47,7 +47,8 @@ export default async function RivalriesPage(props: PageProps<"/[league]/rivalrie
           nameOf={nameOf}
           rows={playoff.map((p) => ({ p, value: `${p.playoffMeetings}×`, detail: `${p.finalMeetings ? `${p.finalMeetings} in the final · ` : ""}${rec(p)} overall` }))}
         />
-      </div>
+        </div>
+      </RivalryExplorer>
     </>
   );
 }

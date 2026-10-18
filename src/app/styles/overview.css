@@ -1,0 +1,45 @@
+/* overview + leaderboard page styles (round-2/3 redesign). */
+
+/* Inline win % bar in tables (leaderboard + season standings). */
+.catbar { display: flex; align-items: center; gap: 8px; }
+.catbar > span:first-child { width: 48px; flex: none; }
+.catbar .tr { flex: 1; min-width: 60px; height: 6px; background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--border); border-radius: 3px; overflow: hidden; }
+.catbar .fl { display: block; height: 100%; border-radius: 0 3px 3px 0; background: var(--s1); transform-origin: left; animation: catbar-grow .7s cubic-bezier(.2,.8,.2,1) backwards; }
+@keyframes catbar-grow { from { transform: scaleX(0); } }
+.trophies { display: inline-flex; gap: 1px; color: var(--gold); vertical-align: -2px; margin-left: 6px; }
+.trophies svg { width: 15px; height: 15px; }
+
+/* GOAT banner (leaderboard). */
+.goat-banner { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+@media (min-width: 1024px) { .goat-banner { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); align-items: center; } }
+.goat-main { display: grid; gap: 10px; align-content: start; min-width: 0; }
+.goat-score { font-family: var(--font-display); font-weight: 900; font-size: clamp(56px, 8vw, 88px); line-height: .85; color: var(--gold); }
+.goat-score small { font-size: 22px; font-weight: 700; color: var(--band-muted); margin-left: 4px; }
+.goat-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(96px, 1fr)); gap: 12px; margin-top: 6px; }
+@media (min-width: 640px) { .goat-stats { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+.goat-stats .v { white-space: nowrap; }
+.goat-stats .v { font-family: var(--font-display); font-size: 30px; font-weight: 800; line-height: 1; }
+.goat-stats .v small { font-size: 15px; font-weight: 700; color: var(--band-muted); margin-left: 3px; }
+.goat-stats .k { margin-top: 4px; font-size: 12px; color: var(--band-muted); }
+.goat-side { position: relative; display: grid; gap: 10px; background: var(--band-2); border-radius: 12px; padding: 16px; min-width: 0; }
+.goat-k { display: flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--band-muted); }
+.goat-bars { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.goat-bars li { display: grid; grid-template-columns: 18px minmax(0, 96px) 34px minmax(0, 1fr); align-items: center; gap: 8px; }
+.goat-bars .rk { font-size: 12px; color: var(--band-muted); font-variant-numeric: tabular-nums; }
+.goat-bars .nm { font-weight: 700; font-size: 14px; color: var(--band-ink); text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.goat-bars .nm:hover { text-decoration: underline; }
+.goat-bars .sc { font-family: var(--font-display); font-weight: 800; font-size: 22px; text-align: right; line-height: 1; }
+.goat-bars .trk { display: flex; height: 18px; border-radius: 4px; background: rgb(255 255 255 / .08); overflow: hidden; }
+.goat-bars .seg-part { height: 100%; border-right: 1px solid var(--band-2); transform-origin: left; animation: goat-grow .6s cubic-bezier(.2,.8,.2,1) backwards; }
+.goat-bars .seg-part:last-child { border-right: 0; }
+@keyframes goat-grow { from { transform: scaleX(0); opacity: 0; } }
+.goat-legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--band-muted); }
+.goat-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.goat-legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+
+/* Leaderboard finish sparkline column. */
+.lb-spark { display: block; }
+
+@media (prefers-reduced-motion: reduce) {
+  .catbar .fl, .goat-bars .seg-part { animation: none; }
+}

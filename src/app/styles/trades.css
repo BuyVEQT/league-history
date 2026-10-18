@@ -1,0 +1,64 @@
+/* trades page styles (round-2/3 redesign). All classes prefixed tx- to stay clear of other pages. */
+
+/* Panels with their heading inside, as on the prototype. */
+.tx-tp-panel { padding: 18px; min-width: 0; }
+.tx-tp-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px 20px; flex-wrap: wrap; margin-bottom: 12px; }
+.tx-tp-head p { margin: 4px 0 0; color: var(--ink-2); font-size: 14px; max-width: 70ch; }
+.tx-tp-note { border-top: 1px solid var(--border); padding: 10px 18px 12px; font-size: 12.5px; color: var(--muted); }
+.tx-tp-note summary { font-weight: 600; color: var(--ink-2); width: max-content; max-width: 100%; }
+.tx-tp-note p { margin-top: 6px; max-width: 90ch; }
+
+/* Who trades with whom: links draw on, nodes pop in. The resting state is drawn, so reduced motion shows it finished. */
+.tx-tn-edge { stroke-dasharray: 1 1; stroke-dashoffset: 0; animation: tx-draw .9s cubic-bezier(.2,.8,.2,1) both; transition: stroke-opacity .15s; }
+@keyframes tx-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+.tx-tn-node { animation: tx-pop .45s cubic-bezier(.2,.8,.2,1.2) both; transform-box: fill-box; transform-origin: center; }
+@keyframes tx-pop { from { opacity: 0; transform: scale(.6); } to { opacity: 1; transform: none; } }
+
+/* Wire charts. */
+.tx-wire { display: grid; gap: 6px; }
+.tx-wire-row { display: grid; grid-template-columns: 108px 1fr; gap: 10px; align-items: center; cursor: default; }
+.tx-wire-nm { text-align: right; font-size: 12.5px; font-weight: 600; white-space: nowrap; }
+.tx-wire-trk { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.tx-wire-bar { display: block; flex: none; height: 20px; border-radius: 4px; transform-origin: left center; animation: tx-grow .7s cubic-bezier(.2,.8,.2,1) both; }
+.tx-wire-v { font-size: 12px; font-weight: 700; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.tx-wire-fade { animation: tx-fade .4s ease-out both; }
+@keyframes tx-grow { from { transform: scaleX(0); } to { transform: none; } }
+@keyframes tx-fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* Inline table bars: number | track. */
+.tx-inbar { display: flex; align-items: center; gap: 8px; min-width: 150px; }
+.tx-inbar-n { width: 34px; flex: none; font-variant-numeric: tabular-nums; }
+.tx-inbar-n.wide { width: 46px; }
+.tx-inbar-tr { position: relative; flex: 1; min-width: 60px; height: 6px; background: var(--surface-2); border-radius: 3px; overflow: hidden; }
+.tx-inbar-fl { position: absolute; top: 0; bottom: 0; left: 0; background: var(--s1); border-radius: 0 3px 3px 0; transform-origin: left center; animation: tx-grow .6s cubic-bezier(.2,.8,.2,1) both; }
+.tx-inbar-tr.div::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--border-2); z-index: 1; }
+.tx-inbar-fl.pos { background: var(--pos); border-radius: 0 3px 3px 0; }
+.tx-inbar-fl.neg { background: var(--neg); border-radius: 3px 0 0 3px; left: auto; transform-origin: right center; }
+
+/* Trade log. */
+.tx-tl-seg { flex-wrap: nowrap; overflow-x: auto; max-width: 100%; scrollbar-width: none; }
+.tx-tl-seg button { white-space: nowrap; flex: none; }
+.tx-tl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap: 12px; }
+.tx-tl-card { display: grid; gap: 10px; align-content: start; border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; background: var(--surface); min-width: 0; animation: tx-fade .35s ease-out both; }
+.tx-tl-card.vetoed { opacity: .6; }
+.tx-tl-hd { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 12.5px; color: var(--muted); flex-wrap: wrap; }
+.tx-tl-veto { color: var(--negative); border-color: transparent; background: var(--neg-wash); }
+.tx-tl-sides { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+.tx-tl-side { min-width: 0; }
+.tx-tl-team { font-size: 12.5px; color: var(--muted); margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tx-tl-side ul { min-width: 0; list-style: none; margin: 6px 0 0; padding: 0; font-size: 13px; display: grid; gap: 2px; }
+.tx-tl-side li { min-width: 0; display: flex; justify-content: space-between; gap: 8px; }
+.tx-tl-side li > span:first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tx-tl-side li > span:last-child { white-space: nowrap; flex: none; }
+.tx-tl-track { margin-top: 8px; padding-block: 4px; cursor: default; }
+.tx-tl-bar { height: 6px; border-radius: 3px; background: var(--border-2); transform-origin: left center; animation: tx-grow .7s cubic-bezier(.2,.8,.2,1) both; }
+.tx-tl-bar.win { background: var(--s1); }
+.tx-tl-val { font-size: 12.5px; color: var(--muted); margin-top: 1px; }
+
+/* Undrafted gems: rank-badge cards. */
+.tx-und-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: 14px 16px; }
+.tx-und-card { display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: start; }
+.tx-und-rk { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--surface-2); font-family: var(--font-display); font-weight: 900; font-size: 18px; color: var(--positive); }
+.tx-und-nm { font-family: var(--font-display); font-weight: 800; font-size: 19px; text-transform: uppercase; line-height: 1.05; overflow-wrap: anywhere; }
+.tx-und-d { font-size: 13px; color: var(--ink-2); margin-top: 2px; }
+@media (max-width: 480px) { .tx-tl-sides { gap: 10px; } .tx-tl-card { padding: 12px; } .tx-tl-side li { font-size: 12.5px; gap: 4px; } }

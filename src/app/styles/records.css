@@ -1,0 +1,68 @@
+/* records page styles (round-2/3 redesign). */
+
+/* Smooth jumps from the pill bar (off for reduced motion by the global rule below). */
+html:has(.rec-jump) { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html:has(.rec-jump) { scroll-behavior: auto; } }
+
+/* Group headings: the jump bar's targets. */
+.rec-group { font-family: var(--font-display); font-weight: 900; font-size: 15px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent-ink); margin: 14px 0 -10px; display: flex; align-items: center; gap: 12px; scroll-margin-top: 150px; }
+.rec-group::after { content: ""; flex: 1; height: 2px; background: var(--border-2); }
+.rec-panel[id], .rec-g2[id], .rec-scores[id] { scroll-margin-top: 150px; }
+
+/* Panels. */
+.rec-panel { padding: 18px; min-width: 0; }
+.rec-head { display: flex; align-items: end; justify-content: space-between; gap: 12px 20px; flex-wrap: wrap; margin-bottom: 12px; }
+.rec-head p { margin: 4px 0 0; color: var(--ink-2); font-size: 14px; max-width: 70ch; }
+.rec-sub { margin-bottom: 6px; font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); display: flex; gap: 6px; align-items: center; }
+
+/* Grids. */
+.rec-tiles { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }
+.rec-g2 { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); align-items: start; }
+.rec-g2 > * { min-width: 0; }
+.rec-scores { display: grid; gap: 16px; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: start; }
+.rec-luck { display: grid; gap: 20px; grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr); align-items: start; }
+@media (max-width: 900px) { .rec-scores, .rec-luck { grid-template-columns: minmax(0, 1fr); } }
+
+/* Record cards (the .rec / .rec-k / .rec-v base lives in globals). */
+.rec .rec-d { font-size: 13.5px; color: var(--ink-2); }
+.rec .rec-d .mono + a, .rec .rec-d a { font-weight: 700; }
+.rec-of { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--muted); }
+
+/* Lists: rank | two-line label | value. */
+.rec-list { display: grid; }
+.rec-list > * { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--border); min-width: 0; }
+.rec-list > *:last-child { border-bottom: 0; }
+.rec-list .l { min-width: 0; flex: 1; }
+.rec-list .t1, .rec-list .t2 { display: block; }
+.rec-list .t1 { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rec-list .t2 { font-size: 12.5px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rec-list .rv { text-align: right; flex: none; font-variant-numeric: tabular-nums; }
+.rec-list .rv .t2 { font-size: 12px; }
+.rec-list .rk { width: 22px; color: var(--muted); font-size: 13px; flex: none; font-variant-numeric: tabular-nums; }
+@media (max-width: 520px) { .rec-list .rv .tabular-nums { white-space: nowrap; } .rec-list .badge { font-size: 11px; padding: 2px 7px; } }
+
+/* What-if cards. */
+.rec-alts { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+.rec-alt { display: grid; gap: 6px; align-content: start; text-decoration: none; padding: 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); transition: border-color .15s, transform .2s; animation: rec-rise .5s ease-out backwards; animation-delay: calc(var(--i, 0) * 60ms); }
+.rec-alt:hover, .rec-alt:focus-visible { border-color: var(--accent); transform: translateY(-2px); }
+.rec-alt .an { font-family: var(--font-display); font-weight: 900; font-size: 24px; line-height: 1; margin-bottom: 4px; }
+.rec-alt .sw { font-size: 13.5px; display: grid; grid-template-columns: 52px 1fr; align-items: baseline; }
+.rec-alt .sw > span:first-child { font-weight: 800; font-size: 12px; }
+
+/* Namesake cards. */
+.rec-ncards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); gap: 12px; }
+.rec-ncard { display: grid; gap: 8px; align-content: start; padding: 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); min-width: 0; }
+.rec-ncard .nt { font-family: var(--font-display); font-weight: 800; font-size: 21px; line-height: 1.05; text-transform: uppercase; overflow-wrap: anywhere; }
+.rec-ncard .nrow { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.rec-ncard .nrow > div { background: var(--surface-2); border-radius: 8px; padding: 6px 8px; display: grid; min-width: 0; }
+.rec-ncard .l2 { font-size: 11px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rec-ncard .nrow b { font-size: 15px; }
+
+/* Entrance animations for the HTML charts (d3 charts animate themselves). */
+.rec-drought .rec-cell { animation: rec-pop .35s ease-out backwards; animation-delay: calc(var(--i, 0) * 40ms); }
+.rec-grow-l { transform-origin: right center; animation: rec-grow .6s cubic-bezier(.2,.8,.2,1) backwards; }
+.rec-grow-r { transform-origin: left center; animation: rec-grow .6s cubic-bezier(.2,.8,.2,1) backwards; }
+@keyframes rec-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes rec-pop { from { opacity: 0; transform: scale(.6); } to { opacity: 1; transform: none; } }
+@keyframes rec-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (max-width: 520px) { .rec-race .t1 .badge { display: table; margin-bottom: 3px; } }
