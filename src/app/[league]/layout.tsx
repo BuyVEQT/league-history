@@ -9,6 +9,7 @@ import { ChartTooltip } from "@/components/viz/ChartTooltip";
 import { hasDraftData } from "@/lib/analytics/draft";
 import { hasTradeData } from "@/lib/analytics/trades";
 import { getLeague, leagueSlugs } from "@/lib/data";
+import { cabocloFinalFor } from "@/lib/data/cabocloFinal";
 import { spotlightOptions } from "@/lib/spotlight";
 import { panelData, type PanelData } from "@/lib/analytics/panelView";
 import { managerBadges } from "./managers/managerBadges";
@@ -57,7 +58,7 @@ export default async function LeagueLayout({ children, params }: LayoutProps<"/[
             </span>
           </Link>
           <SpotlightPicker />
-          <Nav features={{ draft: hasDraftData(league), trades: hasTradeData(league) }} />
+          <Nav features={{ draft: hasDraftData(league), trades: hasTradeData(league), story: !!cabocloFinalFor((await params).league) }} />
         </div>
       </header>
       <main id="league-content" className="league-main flex-1">

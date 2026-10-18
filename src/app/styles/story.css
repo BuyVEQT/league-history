@@ -1,0 +1,44 @@
+/* "Why the Caboclo Cup" page. */
+.cf-hero { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 24px; align-items: center; background: var(--band); color: var(--band-ink); border-radius: 14px; padding: 26px 28px; }
+.cf-hero p { color: var(--band-muted); max-width: 60ch; margin-top: 10px; }
+.cf-hero p b { color: var(--band-ink); }
+.cf-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.cf-big { font-family: var(--font-display); font-weight: 900; font-size: clamp(44px, 8vw, 84px); line-height: .95; letter-spacing: .01em; margin-top: 6px; }
+.cf-big span { font-size: .4em; color: var(--band-muted); vertical-align: middle; margin: 0 .2em; }
+.cf-ball { justify-self: end; display: grid; gap: 4px; background: var(--band-2); border-radius: 12px; padding: 16px 20px; font-family: var(--font-mono); }
+.cf-ball-n { font-size: clamp(22px, 3.2vw, 32px); font-weight: 700; letter-spacing: .04em; color: var(--band-muted); font-variant-numeric: tabular-nums; }
+.cf-ball-n b { color: var(--accent); background: rgb(224 96 28 / .18); border-radius: 4px; padding: 0 2px; }
+.cf-ball-l { font-family: var(--font-sans); font-size: 12px; color: var(--band-muted); margin-top: 4px; }
+@media (max-width: 760px) { .cf-hero { grid-template-columns: 1fr; } .cf-ball { justify-self: start; } }
+.cf-story p { max-width: 75ch; }
+.cf-chart .cf-line { stroke-dasharray: 3000; stroke-dashoffset: 3000; animation: cf-draw 2.4s ease-out .2s forwards; }
+@keyframes cf-draw { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) { .cf-chart .cf-line { animation: none; stroke-dashoffset: 0; } }
+.cf-shots th, .cf-score th { text-align: left; font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding: 8px 10px; border-bottom: 1px solid var(--border-2); white-space: nowrap; }
+.cf-shots td, .cf-score td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
+.cf-shots tr.cf-start td { background: var(--surface-2); }
+.cf-shots tr.cf-cab td { background: color-mix(in srgb, var(--accent-wash) 45%, transparent); }
+.cf-shots tr.cf-last td { background: var(--accent-wash); font-weight: 700; }
+.cf-shots tr.cf-last td:first-child { box-shadow: inset 4px 0 0 var(--accent); }
+.cf-chip { display: inline-block; font-size: 11.5px; font-weight: 700; border-radius: 999px; padding: 2px 8px; }
+.cf-chip.ahead { background: var(--pos-wash); color: var(--pos); }
+.cf-chip.behind { background: var(--neg-wash); color: var(--neg); }
+.cf-whatif { display: grid; gap: 6px; align-content: start; }
+.cf-whatif p { font-size: 13.5px; color: var(--ink-2); }
+.cf-k { font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.cf-v { font-family: var(--font-display); font-weight: 900; font-size: 34px; line-height: 1; text-transform: uppercase; }
+.cf-score td.cf-won { background: var(--pos-wash); font-weight: 700; }
+.cf-score td.cf-close { box-shadow: inset 0 0 0 2px var(--accent); }
+.cf-night { display: grid; gap: 2px; }
+.cf-night li { display: grid; grid-template-columns: 90px 110px minmax(0, 1fr); gap: 10px; align-items: baseline; padding: 8px 10px; border-radius: 8px; font-size: 14px; }
+.cf-night li .t { color: var(--muted); }
+.cf-night li .g { font-weight: 700; }
+.cf-night li .p { color: var(--ink-2); }
+.cf-night li.last { background: var(--accent-wash); box-shadow: inset 4px 0 0 var(--accent); }
+@media (max-width: 560px) { .cf-night li { grid-template-columns: 70px minmax(0, 1fr); } .cf-night li .p { grid-column: 1 / -1; } }
+.cf-teaser { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 6px 16px; align-items: center; text-decoration: none; background: var(--surface); border: 1px solid var(--border); border-left: 5px solid var(--accent); border-radius: 10px; padding: 12px 16px; box-shadow: var(--shadow); transition: border-color .2s, transform .2s; }
+.cf-teaser:hover { border-color: var(--accent); transform: translateY(-2px); }
+.cf-teaser-k { font-family: var(--font-display); font-weight: 800; font-size: 20px; text-transform: uppercase; white-space: nowrap; }
+.cf-teaser-v { color: var(--ink-2); font-size: 14px; }
+.cf-teaser-go { font-weight: 700; font-size: 14px; color: var(--accent-ink); white-space: nowrap; }
+@media (max-width: 760px) { .cf-teaser { grid-template-columns: 1fr; } .cf-teaser-k { white-space: normal; } }

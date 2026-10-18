@@ -23,6 +23,7 @@ import { hasTradeData, leagueTrades } from "@/lib/analytics/trades";
 import { careerLuck } from "@/lib/analytics/whatIf";
 import { allTimeRace } from "@/lib/analytics/weekly";
 import { getLeague } from "@/lib/data";
+import { cabocloFinalFor } from "@/lib/data/cabocloFinal";
 import { monograms } from "@/components/viz/monograms";
 import { SEASON_TIPS } from "@/lib/explain/seasons";
 import { AWARD_RULES, TIPS } from "@/lib/explain";
@@ -170,6 +171,14 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
           <StatCard label="Matchups played" value={<CountUp value={summary.completedMatchups} />} detail="weekly head-to-heads, playoffs included" />
         </div>
       </div>
+
+      {cabocloFinalFor(slug) && (
+        <Link href={`/${slug}/caboclo-cup`} className="cf-teaser">
+          <span className="cf-teaser-k">Why the Caboclo Cup?</span>
+          <span className="cf-teaser-v">The first title was decided by .00015 in field-goal percentage, on Bruno Caboclo&apos;s last shot of the season.</span>
+          <span className="cf-teaser-go">See every shot →</span>
+        </Link>
+      )}
 
       <Section title="Banners in the rafters">
         <p className="-mt-1 text-sm text-[color:var(--ink-2)]">Every champion, hung where they belong. Click a banner to relive that season.</p>
