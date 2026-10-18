@@ -5,7 +5,7 @@ import { rankLabel, signed } from "@/components/draft";
 import { tt } from "./tt";
 
 /** One pick, trimmed to what the scatter draws: year, overall pick, round, finish and preseason rank, value, manager, player. */
-export type ScatterPick = { y: number; ov: number; rd: number; ar: number | null; pr: number | null; v: number; m: string; p: string };
+export type ScatterPick = { y: number; ov: number; rd: number; ar: number | null; pr: number | null; v: number; m: string; p: string; id?: string };
 
 const W = 1140;
 const H = 480;
@@ -112,6 +112,7 @@ export function PickScatter({
               fillOpacity={!any ? 0.55 : lit ? 0.95 : 0.08}
               stroke={lit ? "var(--surface)" : "none"}
               style={{ transition: "r .35s, fill-opacity .35s" }}
+              data-panel={p.id ? `player:${p.id}` : undefined}
               data-tt={tt(p.p, [
                 ["Season", labelOf.get(p.y) ?? String(p.y)],
                 ["Drafted by", names[p.m] ?? p.m],

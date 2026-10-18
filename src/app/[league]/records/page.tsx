@@ -229,7 +229,7 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
                     {[...seeds.seasons].reverse().map((x) => (
                       <tr key={x.year} className={tr}>
                         <td className={td}>
-                          <Link href={`/${slug}/seasons/${x.year}`} className="text-accent hover:underline">
+                          <Link href={`/${slug}/seasons/${x.year}`} data-panel={`season:${x.year}`} className="text-accent hover:underline">
                             {x.label}
                           </Link>
                         </td>
@@ -522,7 +522,7 @@ export default async function RecordsPage(props: PageProps<"/[league]/records">)
                     </span>
                     <span className="t2">
                       {nameOf(r.winnerManagerId)} ·{" "}
-                      <Link href={`/${slug}/seasons/${r.year}`} className="hover:text-accent">
+                      <Link href={`/${slug}/seasons/${r.year}`} data-panel={`season:${r.year}`} className="hover:text-accent">
                         {r.label}
                       </Link>
                       , {r.stage === "regular" ? `week ${r.week}` : "playoffs"}
@@ -697,7 +697,7 @@ function SeasonList({ rows, slug, nameOf }: { rows: TeamSeasonRow[]; slug: strin
             <span className="t1">{r.teamName}</span>
             <span className="t2">
               {nameOf(r.managerId)} ·{" "}
-              <Link href={`/${slug}/seasons/${r.year}`} className="underline decoration-[color:var(--border-2)] hover:text-accent">
+              <Link href={`/${slug}/seasons/${r.year}`} data-panel={`season:${r.year}`} className="underline decoration-[color:var(--border-2)] hover:text-accent">
                 {r.label}
               </Link>{" "}
               · finished {ordinal(r.finalRank)}

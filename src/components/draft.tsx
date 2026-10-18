@@ -1,4 +1,5 @@
 import type { PickValue } from "@/lib/analytics/draft";
+import { PlayerName } from "./panel/PlayerName";
 
 export const rankLabel = (rank: number | null) => (rank === null ? "300+" : `#${rank}`);
 /** "+1.2", "−0.4", or "±0.0" when the value rounds to zero at `digits` (so nothing shows as "−0.0"). */
@@ -22,7 +23,9 @@ export function PickLine({ p, manager }: { p: PickValue; manager: string }) {
   return (
     <li className="flex items-start justify-between gap-3 py-2 text-sm">
       <div className="min-w-0">
-        <div className="truncate font-medium">{p.playerName}</div>
+        <div className="truncate font-medium">
+          <PlayerName id={p.playerId} name={p.playerName} />
+        </div>
         <div className="truncate text-xs text-muted">
           {p.label} · Rd {p.round}, #{p.overall} overall · {manager}
         </div>

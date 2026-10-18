@@ -60,7 +60,7 @@ export function GoatBanner({
         </div>
         <div className="flex flex-wrap items-end gap-x-6 gap-y-2">
           <div className="big">
-            <Link href={`/${slug}/managers/${goat.managerId}`} className="hover:underline">
+            <Link href={`/${slug}/managers/${goat.managerId}`} data-panel={`manager:${goat.managerId}`} className="hover:underline">
               {goat.name}
             </Link>
           </div>
@@ -94,7 +94,7 @@ export function GoatBanner({
           {top.map((g, i) => (
             <li key={g.managerId}>
               <span className="rk">{i + 1}</span>
-              <Link href={`/${slug}/managers/${g.managerId}`} className="nm">
+              <Link href={`/${slug}/managers/${g.managerId}`} data-panel={`manager:${g.managerId}`} className="nm">
                 {g.name}
               </Link>
               <span className="sc">

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { DivBar, FillBar, Mono, PickLine, rankLabel, signed } from "@/components/draft";
 import { DraftExplorer } from "@/components/DraftExplorer";
 import { InfoTip } from "@/components/InfoTip";
+import { PlayerName } from "@/components/panel/PlayerName";
 import { ShowMore } from "@/components/ShowMore";
 import { Card, ManagerLink, PageTitle, Section } from "@/components/ui";
 import { DraftGauge } from "@/components/viz/DraftGauge";
@@ -29,6 +30,7 @@ import {
   topSteals,
 } from "@/lib/analytics/draft";
 import { draftGrade, impactShare, roundOneSlots } from "@/lib/analytics/draftView";
+import { playerIdLookup } from "@/lib/analytics/panelView";
 import { formatNumber, formatPct, ordinal } from "@/lib/analytics/format";
 import { getLeague } from "@/lib/data";
 import { TIPS } from "@/lib/explain";
@@ -61,6 +63,7 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
   const keep = keepRates(league);
   const favourites = favouritePlayers(league);
   const away = gotAway(league);
+  const pid = playerIdLookup(league);
   const keepOf = new Map(keep.rows.map((r) => [r.managerId, r]));
   const favOf = (id: string) => favourites.find((f) => f.managerId === id);
   // keepRates correlates with finish percentile (0 = first), so flip it: positive = keepers finish higher.
@@ -78,6 +81,7 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
     v: Math.round(p.value * 10) / 10,
     m: p.managerId,
     p: p.playerName,
+    id: p.playerId,
   }));
   const names = Object.fromEntries(league.managers.map((m) => [m.id, m.name]));
   const relation = (r: number | null) =>
@@ -168,7 +172,7 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
                   </td>
                   <td className="r">{g.gems}</td>
                   <td className="min-w-[170px] !whitespace-normal leading-tight">
-                    {g.best.playerName}{" "}
+                    <PlayerName id={g.best.playerId} name={g.best.playerName} />{" "}
                     <span className="whitespace-nowrap text-[12.5px] text-muted">
                       {g.best.label} · {signed(g.best.value, 1)}
                     </span>
@@ -374,7 +378,7 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
                     <td>
                       {f ? (
                         <>
-                          {f.playerName} <span className="text-[12.5px] text-muted">×{f.picks.length}</span>
+                          <PlayerName id={f.playerId} name={f.playerName} /> <span className="text-[12.5px] text-muted">×{f.picks.length}</span>
                         </>
                       ) : (
                         <span className="text-muted">—</span>
@@ -401,7 +405,9 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
                   <div className="dr-fav-h">
                     <Mono text={monoOf(f.managerId)} />
                     <div className="min-w-0">
-                      <b className="block truncate">{f.playerName}</b>
+                      <b className="block truncate">
+                        <PlayerName id={f.playerId} name={f.playerName} />
+                      </b>
                       <div className="truncate text-[12.5px] text-muted">
                         {nameOf(f.managerId)} · drafted {f.picks.length} times
                       </div>
@@ -442,7 +448,7 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
               <li key={`${g.year}-${g.overall}`}>
                 <div className="l">
                   <div className="t1">
-                    <span>{g.playerName}</span>
+                    <PlayerName id={pid(g.year, g.playerName)} name={g.playerName} />
                     <span className={`badge ${g.how === "traded" ? "badge-orange" : ""}`}>{g.how}</span>
                   </div>
                   <span className="t2">
@@ -478,7 +484,9 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
                 ])}
               >
                 <span className="k">{h.label}</span>
-                <span className="fp">{h.firstPick.playerName}</span>
+                <span className="fp plink" data-panel={`player:${h.firstPick.playerId}`}>
+                  {h.firstPick.playerName}
+                </span>
                 <span className="text-[12.5px] text-muted">
                   {nameOf(h.firstPick.managerId)} · {h.teamCount} teams
                 </span>
@@ -514,7 +522,7 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
                 <li key={`${p.year}-${p.overall}`}>
                   <div className="l">
                     <div className="t1">
-                      <span>{p.playerName}</span>
+                      <PlayerName id={p.playerId} name={p.playerName} />
                     </div>
                     <span className="t2">
                       {p.label} · Rd {p.round} (#{p.overall}) · {nameOf(p.managerId)}
