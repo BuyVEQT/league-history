@@ -1,17 +1,29 @@
-import { Crown, Flame, Gauge, Medal, Swords, Trophy } from "lucide-react";
+import { Trophy } from "lucide-react";
 import Link from "next/link";
-import { ManagerTrend } from "@/components/charts/ManagerTrend";
-import { Avatar, Card, cardClass, ManagerLink, PageTitle, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
-import { careerStats, defaultCompare, managerSeasons, type CareerRow } from "@/lib/analytics/career";
-import { ELO, eloRatings } from "@/lib/analytics/elo";
-import { formatPct, formatRecord } from "@/lib/analytics/format";
-import { championHistory, leagueSummary, MIN_SEASONS_FOR_RATES, seasonRecords } from "@/lib/analytics/overview";
-import { seasonOutcome } from "@/lib/analytics/season";
-import { colorForManager, managerColor } from "@/lib/colors";
 import { notFound } from "next/navigation";
+import { ManagerTrend } from "@/components/charts/ManagerTrend";
+import { Avatar, Card, ManagerLink, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
+import { careerStats, defaultCompare, managerSeasons } from "@/lib/analytics/career";
+import { formatRecord, ordinal } from "@/lib/analytics/format";
+import { championHistory, leagueSummary, seasonRecords } from "@/lib/analytics/overview";
+import { sweeps } from "@/lib/analytics/scorelines";
+import { seasonOutcome } from "@/lib/analytics/season";
+import { longestStreaks } from "@/lib/analytics/streaks";
 import { getLeague } from "@/lib/data";
 
 export const metadata = { title: "League overview" };
+
+/** Faint basketball court, drawn behind the hero card. */
+function Court() {
+  return (
+    <svg className="court" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <rect x="10" y="10" width="180" height="180" rx="4" />
+      <circle cx="100" cy="100" r="30" />
+      <path d="M10 100h180M60 10v50h80V10M60 190v-50h80v50" />
+      <path d="M40 10a60 60 0 0 0 120 0M40 190a60 60 0 0 1 120 0" />
+    </svg>
+  );
+}
 
 export default async function OverviewPage(props: PageProps<"/[league]">) {
   const { league: slug } = await props.params;
@@ -21,16 +33,18 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
   const champions = championHistory(league);
   const careers = careerStats(league);
   const ranked = [...careers].sort(defaultCompare);
-  const qualified = careers.filter((c) => c.seasons >= MIN_SEASONS_FOR_RATES && c.winPct !== null);
-  const nameOf = (id: string) => league.managers.find((m) => m.id === id)!.name;
+  const nameOf = (id: string) => league.managers.find((m) => m.id === id)?.name ?? id;
   const titlesOf = (id: string) => careers.find((c) => c.managerId === id)?.titles ?? 0;
 
   const recent = league.seasons.at(-1)!;
   const recentOutcome = seasonOutcome(recent);
   const recentRecords = seasonRecords(recent);
   const reigning = champions.at(-1)!;
+  const [hot] = longestStreaks(league, "W", 1);
+  const [cold] = longestStreaks(league, "L", 1);
 
-  const managerOptions = league.managers.map((m, i) => ({ id: m.id, name: m.name, color: managerColor(i) }));
+  // Everyone who ever played, in league order; chart colors follow the order they're picked.
+  const managerOptions = careers.map((c) => ({ id: c.managerId, name: c.name }));
   const finishRows = league.seasons.map((season) => {
     const o = seasonOutcome(season);
     const row: { year: number } & Record<string, number | null> = { year: season.year };
@@ -48,238 +62,111 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
     return row;
   });
   const maxTeams = Math.max(...league.seasons.map((s) => s.teams.length));
-  const elo = eloRatings(league);
-  const ratingRows = league.seasons.map((season) => {
-    const row: { year: number } & Record<string, number | null> = { year: season.year };
-    for (const m of league.managers) row[m.id] = elo.seasonEnd[season.year][m.id] ?? null;
-    return row;
-  });
-  const ratingSpan = Math.max(1, ...elo.current.map((c) => Math.abs(c.rating - ELO.start)));
 
-  const previews: { title: string; icon: React.ReactNode; rows: { c: CareerRow; label: string; value: number }[] }[] = [
-    {
-      title: "Championships",
-      icon: <Trophy />,
-      rows: ranked.slice(0, 3).map((c) => ({ c, label: String(c.titles), value: c.titles })),
-    },
-    {
-      title: `Win % · ${MIN_SEASONS_FOR_RATES}+ seasons`,
-      icon: <Flame />,
-      rows: [...qualified]
-        .sort((a, b) => b.winPct! - a.winPct!)
-        .slice(0, 3)
-        .map((c) => ({ c, label: formatPct(c.winPct), value: c.winPct! })),
-    },
-    {
-      title: "Playoff appearances",
-      icon: <Medal />,
-      rows: [...careers]
-        .sort((a, b) => b.playoffApps - a.playoffApps || defaultCompare(a, b))
-        .slice(0, 3)
-        .map((c) => ({ c, label: `${c.playoffApps}/${c.seasons}`, value: c.playoffApps })),
-    },
-  ];
+  // Bragging rights: 9-0 weeks and categories won per week.
+  const sweepCounts = new Map<string, number>();
+  for (const s of sweeps(league)) sweepCounts.set(s.winnerManagerId, (sweepCounts.get(s.winnerManagerId) ?? 0) + 1);
+  const [sweepKing] = [...sweepCounts.entries()].sort((a, b) => b[1] - a[1]);
+  const perWeek = careers
+    .filter((c) => c.seasons >= 3 && c.wins + c.losses + c.ties > 0)
+    .map((c) => ({ c, avg: c.catWins / (c.wins + c.losses + c.ties), weeks: c.wins + c.losses + c.ties }))
+    .sort((a, b) => b.avg - a.avg)[0];
 
   return (
     <>
-      <PageTitle
-        eyebrow="League overview"
-        title="The league. The legends."
-        subtitle={`${summary.seasons} seasons · ${summary.managers} managers · a whole lot of bragging rights.`}
-      />
-
-      {/* Hero: reigning champion + headline numbers */}
-      <div className="grid gap-3 lg:grid-cols-5">
-        <div className={`${cardClass} champion-hero relative overflow-hidden p-6 lg:col-span-2`}>
-          <div className="pointer-events-none absolute -right-10 -top-10 size-48 rounded-full bg-accent/15 blur-3xl" />
-          <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-accent">
-            <Crown className="size-4" aria-hidden /> Reigning champion · {reigning.label}
-          </div>
+      <div className="grid gap-4 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
+        <div className="hero-card">
+          <Court />
+          <div className="eyebrow-accent !text-accent">Reigning champion · {reigning.label}</div>
           {reigning.championManagerId ? (
             <>
-              <div className="mt-4 text-3xl font-semibold tracking-tight">{reigning.championTeamName}</div>
-              <div className="mt-3 flex items-center gap-2.5">
-                <Avatar name={nameOf(reigning.championManagerId)} color={colorForManager(league, reigning.championManagerId)} />
-                <div>
-                  <ManagerLink id={reigning.championManagerId} name={nameOf(reigning.championManagerId)} />
-                  <div className="text-xs text-muted">
-                    {titlesOf(reigning.championManagerId)} career title{titlesOf(reigning.championManagerId) === 1 ? "" : "s"}
-                    {reigning.runnerUpTeamName && ` · beat ${reigning.runnerUpTeamName} in the final`}
-                  </div>
+              <div className="big">{reigning.championTeamName}</div>
+              <div className="flex items-center gap-2.5">
+                <span className="mono size-10 !bg-accent text-[17px]" aria-hidden>
+                  {nameOf(reigning.championManagerId).slice(0, 2).toUpperCase()}
+                </span>
+                <div className="sub">
+                  <b>{nameOf(reigning.championManagerId)}</b> · title #{titlesOf(reigning.championManagerId)}
+                  {reigning.runnerUpTeamName && `. Beat ${nameOf(reigning.runnerUpManagerId!)} (${reigning.runnerUpTeamName}) in the final.`}
                 </div>
               </div>
             </>
           ) : (
-            <div className="mt-4 text-muted">Not decided yet.</div>
+            <div className="sub">Not decided yet.</div>
           )}
-          <Link
-            href={`/${slug}/seasons/${reigning.year}`}
-            className="mt-6 inline-block text-sm text-accent hover:underline"
-          >
-            View the {reigning.label} season →
+          <Link href={`/${slug}/seasons/${reigning.year}`} className="go">
+            Relive the {reigning.label} season →
           </Link>
         </div>
-        <div className="grid grid-cols-2 gap-3 lg:col-span-3">
-          <StatCard
-            label="Most titles"
-            icon={<Trophy />}
-            value={summary.mostTitles.count}
-            detail={summary.mostTitles.rows.map((r) => r.name).join(", ")}
-          />
-          <StatCard
-            label="Best career win %"
-            icon={<Flame />}
-            value={formatPct(summary.bestWinPct?.winPct ?? null)}
-            detail={summary.bestWinPct?.name}
-          />
+        <div className="grid grid-cols-2 gap-3">
+          <StatCard label="Most titles" value={summary.mostTitles.count} detail={`${summary.mostTitles.rows.map((r) => r.name).join(", ")}${summary.mostTitles.rows.length > 1 ? " (tied)" : ""}`} />
+          <StatCard label="Longest win streak" value={hot?.length ?? "—"} detail={hot && `${nameOf(hot.managerId)} · ${hot.label}, weeks ${hot.fromWeek}–${hot.toWeek}`} />
           <StatCard label="Seasons" value={summary.seasons} detail={`${league.seasons[0].label} to ${recent.label}`} />
-          <StatCard
-            label="Matchups played"
-            icon={<Swords />}
-            value={summary.completedMatchups.toLocaleString()}
-            detail="including playoffs"
-          />
+          <StatCard label="Matchups played" value={summary.completedMatchups.toLocaleString()} detail="weekly head-to-heads, playoffs included" />
         </div>
       </div>
 
-      <Section title="Trophy cabinet">
-        <ol className="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-5">
-          {[...champions].reverse().map((c) => (
-            <li key={c.year}>
-              <Link
-                href={`/${slug}/seasons/${c.year}`}
-                className={`${cardClass} group block h-full p-4 transition-colors hover:border-accent/50`}
-              >
-                <div className="flex items-center justify-between text-xs text-muted">
-                  {c.label}
-                  <Trophy className="size-3.5 text-accent/70 transition-colors group-hover:text-accent" aria-hidden />
-                </div>
-                {c.championManagerId ? (
-                  <>
-                    <div className="mt-2 truncate font-medium">{c.championTeamName}</div>
-                    <div className="mt-2 flex items-center gap-2 text-xs text-muted">
-                      <Avatar size="sm" name={nameOf(c.championManagerId)} color={colorForManager(league, c.championManagerId)} />
-                      <span className="truncate">{nameOf(c.championManagerId)}</span>
-                    </div>
-                  </>
-                ) : (
-                  <div className="mt-2 text-sm text-muted">No champion</div>
-                )}
+      <Section title="Banners in the rafters">
+        <p className="-mt-1 text-sm text-[color:var(--ink-2)]">Every champion, hung where they belong. Click a banner to relive that season.</p>
+        <div className="rafters">
+          <div className="banners">
+            {champions.map((c, i) => (
+              <Link key={c.year} href={`/${slug}/seasons/${c.year}`} className={`banner ${i === champions.length - 1 ? "latest" : ""}`}>
+                <span className="champ-word">Champions</span>
+                <span className="yr">{c.label}</span>
+                <Trophy className="tr" aria-hidden />
+                <span className="tm">{c.championTeamName ?? "—"}</span>
+                <span className="mg">{c.championManagerId ? nameOf(c.championManagerId) : "Not decided"}</span>
               </Link>
-            </li>
-          ))}
-        </ol>
-      </Section>
-
-      <Section
-        title="All-time rankings"
-        aside={
-          <Link href={`/${slug}/leaderboard`} className="text-sm text-accent hover:underline">
-            Full leaderboard →
-          </Link>
-        }
-      >
-        <div className="grid gap-3 md:grid-cols-3">
-          {previews.map((p) => {
-            const max = Math.max(...p.rows.map((r) => r.value), 0) || 1;
-            return (
-              <Card key={p.title}>
-                <h3 className="mb-4 flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-muted [&_svg]:size-4">
-                  {p.icon}
-                  {p.title}
-                </h3>
-                <ol className="space-y-3">
-                  {p.rows.map(({ c, label, value }, i) => (
-                    <li key={c.managerId}>
-                      <div className="flex items-center justify-between gap-2 text-sm">
-                        <span className="flex min-w-0 items-center gap-2">
-                          <span className="w-4 text-xs text-muted">{i + 1}</span>
-                          <Avatar size="sm" name={c.name} color={colorForManager(league, c.managerId)} />
-                          <span className="truncate">
-                            <ManagerLink id={c.managerId} name={c.name} />
-                          </span>
-                        </span>
-                        <span className="font-medium tabular-nums">{label}</span>
-                      </div>
-                      <div className="ml-6 mt-1.5 h-1 overflow-hidden rounded-full bg-surface-2">
-                        <div
-                          className="rank-bar h-full rounded-full"
-                          style={{ width: `${(value / max) * 100}%`, background: colorForManager(league, c.managerId) }}
-                        />
-                      </div>
-                    </li>
-                  ))}
-                </ol>
-              </Card>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </Section>
 
-      <Section title="Power ratings">
-        <Card className="p-5">
-          <ol className="space-y-2">
-            {elo.current.map((c, i) => {
-              const delta = c.rating - ELO.start;
-              const peak = elo.peak[c.managerId];
-              return (
-                <li key={c.managerId} className="grid grid-cols-[1.25rem_minmax(0,9rem)_1fr_auto] items-center gap-3 text-sm">
-                  <span className="text-xs text-muted">{i + 1}</span>
-                  <span className="flex min-w-0 items-center gap-2">
-                    <Avatar size="sm" name={nameOf(c.managerId)} color={colorForManager(league, c.managerId)} />
-                    <span className="truncate">
-                      <ManagerLink id={c.managerId} name={nameOf(c.managerId)} />
-                    </span>
-                  </span>
-                  {/* Bars grow left or right from the 1500 starting rating. */}
-                  <span className="relative h-2 rounded-full bg-surface-2" aria-hidden>
-                    <span className="absolute inset-y-0 left-1/2 w-px bg-muted/50" />
-                    <span
-                      className={`absolute inset-y-0 rounded-full ${delta >= 0 ? "bg-accent" : "bg-muted/60"}`}
-                      style={delta >= 0 ? { left: "50%", width: `${(delta / ratingSpan) * 50}%` } : { right: "50%", width: `${(-delta / ratingSpan) * 50}%` }}
-                    />
-                  </span>
-                  <span className="text-right tabular-nums">
-                    <span className="font-medium">{c.rating.toFixed(0)}</span>
-                    {peak && (
-                      <span className="block text-xs text-muted">
-                        peak {peak.rating.toFixed(0)}, {peak.label}
-                      </span>
-                    )}
-                  </span>
-                </li>
-              );
-            })}
-          </ol>
-          <p className="mt-4 text-xs text-muted">
-            <Gauge className="mr-1 inline size-3.5 align-[-2px]" aria-hidden />
-            Elo ratings chained across every season, scored on the share of categories won each week (a 6-3 win scores 0.67). Everyone starts
-            at {ELO.start}; a 100-point gap means the higher-rated side is expected to take about 64% of the categories. Ratings move halfway back
-            to {ELO.start} each new season.{" "}
-            {elo.predictiveSkill > 0
-              ? `Week to week they predict the category split ${formatPct(elo.predictiveSkill, 1)} better than a coin flip${elo.predictiveSkill < 0.05 ? ": in this league, one week tells you very little about the next." : "."}`
-              : "Week to week they predict the category split no better than a coin flip."}
-          </p>
-        </Card>
-      </Section>
-
-      <Section title="Performance over time">
+      <Section title="Where everyone finished">
         <Card className="p-5">
           <ManagerTrend
             managers={managerOptions}
             finishRows={finishRows}
             winPctRows={winPctRows}
-            ratingRows={ratingRows}
-            initialSelected={ranked.slice(0, 4).map((c) => c.managerId)}
+            initialSelected={[...new Set([reigning.championManagerId, ...ranked.map((c) => c.managerId)].filter((x): x is string => !!x))].slice(0, 2)}
             teamCount={maxTeams}
           />
         </Card>
       </Section>
 
+      <Section title="Bragging rights">
+        <p className="-mt-1 text-sm text-[color:var(--ink-2)]">The streaks and weeks people still bring up in the group chat.</p>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            hot && { k: "Hottest streak", v: String(hot.length), unit: "straight wins", who: hot.managerId, d: `${hot.teamName}, ${hot.label}, weeks ${hot.fromWeek}–${hot.toWeek}` },
+            cold && { k: "Coldest streak", v: String(cold.length), unit: "straight losses", who: cold.managerId, d: `${cold.teamName}, ${cold.label}, weeks ${cold.fromWeek}–${cold.toWeek}` },
+            sweepKing && { k: "9-0 sweeps", v: String(sweepKing[1]), unit: sweepKing[1] === 1 ? "perfect week" : "perfect weeks", who: sweepKing[0], d: "most in league history" },
+            perWeek && { k: "Categories per week", v: perWeek.avg.toFixed(2), unit: `of ${recent.categories.length || 9}`, who: perWeek.c.managerId, d: `best average, ${perWeek.weeks} weeks` },
+          ]
+            .filter((x): x is { k: string; v: string; unit: string; who: string; d: string } => !!x)
+            .map((r) => (
+              <div key={r.k} className="panel rec p-4">
+                <div className="rec-k">{r.k}</div>
+                <div className="rec-v">
+                  {r.v}
+                  <small>{r.unit}</small>
+                </div>
+                <div className="mt-1 flex items-center gap-2 text-[13.5px] text-[color:var(--ink-2)]">
+                  <Avatar size="sm" name={nameOf(r.who)} />
+                  <span>
+                    <ManagerLink id={r.who} name={nameOf(r.who)} /> · {r.d}
+                  </span>
+                </div>
+              </div>
+            ))}
+        </div>
+      </Section>
+
       <Section
         title={`Latest season · ${recent.label}`}
         aside={
-          <Link href={`/${slug}/seasons/${recent.year}`} className="text-sm text-accent hover:underline">
+          <Link href={`/${slug}/seasons/${recent.year}`} className="text-sm font-semibold text-accent hover:underline">
             Season details →
           </Link>
         }
@@ -293,16 +180,18 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
                   <th className={th}>#</th>
                   <th className={th}>Team</th>
                   <th className={th}>Record</th>
-                  <th className={th}>Win %</th>
+                  <th className={th}>Final</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
                 {recentOutcome.standings.slice(0, 5).map((r) => (
                   <tr key={r.teamId} className={tr}>
                     <td className={`${td} text-muted`}>{r.rank}</td>
-                    <td className={td}>{r.teamName}</td>
-                    <td className={`${td} tabular-nums`}>{formatRecord(r.wins, r.losses, r.ties)}</td>
-                    <td className={`${td} tabular-nums`}>{formatPct(r.winPct)}</td>
+                    <td className={td}>
+                      <span className="font-semibold">{r.teamName}</span> <span className="text-muted">· {nameOf(r.managerId)}</span>
+                    </td>
+                    <td className={td}>{formatRecord(r.wins, r.losses, r.ties)}</td>
+                    <td className={td}>{ordinal(recentOutcome.finalRank.get(r.teamId)!)}</td>
                   </tr>
                 ))}
               </tbody>
@@ -311,24 +200,14 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
           <div className="grid grid-cols-2 gap-3">
             <StatCard
               label="Best regular season"
-              value={
-                recentRecords.bestRecord
-                  ? formatRecord(recentRecords.bestRecord.wins, recentRecords.bestRecord.losses, recentRecords.bestRecord.ties)
-                  : "—"
-              }
+              value={recentRecords.bestRecord ? formatRecord(recentRecords.bestRecord.wins, recentRecords.bestRecord.losses, recentRecords.bestRecord.ties) : "—"}
               detail={recentRecords.bestRecord?.teamName}
             />
             <StatCard
               label="Biggest blowout"
               value={recentRecords.biggestBlowout?.score ?? "—"}
-              detail={
-                recentRecords.biggestBlowout
-                  ? `${recentRecords.biggestBlowout.winnerName} over ${recentRecords.biggestBlowout.loserName}, wk ${recentRecords.biggestBlowout.week}`
-                  : undefined
-              }
+              detail={recentRecords.biggestBlowout ? `${recentRecords.biggestBlowout.winnerName} over ${recentRecords.biggestBlowout.loserName}, wk ${recentRecords.biggestBlowout.week}` : undefined}
             />
-            <StatCard label="Champion" value={reigning.championTeamName ?? "—"} detail={reigning.championManagerId ? nameOf(reigning.championManagerId) : undefined} />
-            <StatCard label="Runner-up" value={reigning.runnerUpTeamName ?? "—"} detail={reigning.runnerUpManagerId ? nameOf(reigning.runnerUpManagerId) : undefined} />
           </div>
         </div>
       </Section>

@@ -2,28 +2,29 @@
 
 import { useState } from "react";
 import { formatPct } from "@/lib/analytics/format";
+import { MUTED_SERIES, SERIES } from "@/lib/colors";
 import { TrendChart, type TrendRow } from "./TrendChart";
 
 interface Props {
-  managers: { id: string; name: string; color: string }[];
+  managers: { id: string; name: string }[];
   finishRows: TrendRow[];
   winPctRows: TrendRow[];
-  /** Season-end power rating (Elo). */
-  ratingRows: TrendRow[];
   initialSelected: string[];
   teamCount: number;
 }
 
-type Metric = "finish" | "winPct" | "rating";
+type Metric = "finish" | "winPct";
 
 /** Overview chart: pick any managers and either metric. */
-export function ManagerTrend({ managers, finishRows, winPctRows, ratingRows, initialSelected, teamCount }: Props) {
+export function ManagerTrend({ managers, finishRows, winPctRows, initialSelected, teamCount }: Props) {
   const [selected, setSelected] = useState<string[]>(initialSelected);
   const [metric, setMetric] = useState<Metric>("finish");
 
   const toggle = (id: string) =>
-    setSelected((cur) => (cur.includes(id) ? cur.filter((x) => x !== id) : [...cur, id]));
-  const series = managers.filter((m) => selected.includes(m.id)).map((m) => ({ key: m.id, name: m.name, color: m.color }));
+    setSelected((cur) => (cur.includes(id) ? cur.filter((x) => x !== id) : [...cur, id].slice(-SERIES.length)));
+  // Colors follow the order managers were picked, so a series keeps its color while others come and go.
+  const colorOf = (id: string) => SERIES[selected.indexOf(id)] ?? MUTED_SERIES;
+  const series = selected.map((id) => ({ key: id, name: managers.find((m) => m.id === id)!.name, color: colorOf(id) }));
 
   return (
     <div className="space-y-3">
@@ -39,7 +40,6 @@ export function ManagerTrend({ managers, finishRows, winPctRows, ratingRows, ini
         >
           <option value="finish">Final finish</option>
           <option value="winPct">Regular-season win %</option>
-          <option value="rating">Power rating (season end)</option>
         </select>
       </div>
       <div className="flex flex-wrap gap-2" role="group" aria-label="Managers shown on chart">
@@ -51,11 +51,9 @@ export function ManagerTrend({ managers, finishRows, winPctRows, ratingRows, ini
               type="button"
               aria-pressed={on}
               onClick={() => toggle(m.id)}
-              className={`flex items-center gap-2 rounded-full border px-3 py-1 text-xs ${
-                on ? "border-foreground/40 bg-surface-2" : "border-border text-muted"
-              }`}
+              className="pill"
             >
-              <span className="size-2 rounded-full" style={{ background: m.color, opacity: on ? 1 : 0.4 }} />
+              <span className="size-2 rounded-full" style={{ background: on ? colorOf(m.id) : MUTED_SERIES }} />
               {m.name}
             </button>
           );
@@ -75,21 +73,13 @@ export function ManagerTrend({ managers, finishRows, winPctRows, ratingRows, ini
           valueLabel="Final finish"
           formatValue={(v) => String(v)}
         />
-      ) : metric === "winPct" ? (
+      ) : (
         <TrendChart
           rows={winPctRows}
           series={series}
           domain={[0, 1]}
           valueLabel="Regular-season win %"
           formatValue={(v) => formatPct(v, 0)}
-        />
-      ) : (
-        <TrendChart
-          rows={ratingRows}
-          series={series}
-          domain={["auto", "auto"]}
-          valueLabel="Power rating at season end"
-          formatValue={(v) => v.toFixed(0)}
         />
       )}
     </div>

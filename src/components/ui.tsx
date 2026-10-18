@@ -3,18 +3,18 @@ import type { ReactNode } from "react";
 export function PageTitle({ title, subtitle, eyebrow }: { title: string; subtitle?: string; eyebrow?: string }) {
   return (
     <div>
-      {eyebrow && <div className="mb-1 text-xs font-medium uppercase tracking-widest text-accent">{eyebrow}</div>}
-      <h1 className="page-title">{title}</h1>
-      {subtitle && <p className="mt-1.5 max-w-3xl text-sm text-muted">{subtitle}</p>}
+      {eyebrow && <div className="eyebrow-accent">{eyebrow}</div>}
+      <h1 className="title-display">{title}</h1>
+      {subtitle && <p className="mt-2.5 max-w-[68ch] text-[color:var(--ink-2)]">{subtitle}</p>}
     </div>
   );
 }
 
 export function Section({ title, children, aside, id }: { title: string; children: ReactNode; aside?: ReactNode; id?: string }) {
   return (
-    <section id={id} className="scroll-mt-6 space-y-3">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 className="text-base font-semibold tracking-tight">{title}</h2>
+    <section id={id} className="scroll-mt-32 space-y-3">
+      <div className="flex flex-wrap items-end justify-between gap-x-5 gap-y-2">
+        <h2 className="sec-title">{title}</h2>
         {aside}
       </div>
       {children}
@@ -37,13 +37,13 @@ export function StatCard({
   icon?: ReactNode;
 }) {
   return (
-    <div className={`${cardClass} stat-card p-5`}>
-      <div className="flex items-center justify-between text-xs font-medium uppercase tracking-wide text-muted">
+    <div className="tile">
+      <div className="flex items-center justify-between gap-2 text-[12.5px] font-semibold text-[color:var(--ink-2)]">
         {label}
-        {icon && <span className="rounded-md bg-accent/10 p-1.5 text-accent [&_svg]:size-4">{icon}</span>}
+        {icon && <span className="text-accent [&_svg]:size-4">{icon}</span>}
       </div>
-      <div className="mt-3 break-words text-2xl font-bold tabular-nums tracking-tight">{value}</div>
-      {detail && <div className="mt-1 text-xs leading-5 text-muted">{detail}</div>}
+      <div className="tile-val tabular-nums">{value}</div>
+      {detail && <div className="mt-0.5 text-[13px] leading-5 text-muted">{detail}</div>}
     </div>
   );
 }
@@ -52,21 +52,21 @@ export function Card({ children, className = "" }: { children: ReactNode; classN
   return <div className={`${cardClass} p-4 ${className}`}>{children}</div>;
 }
 
-/** Initials in a colored circle; color comes from the manager's chart color. */
-export function Avatar({ name, color, size = "md" }: { name: string; color: string; size?: "sm" | "md" | "lg" }) {
+/**
+ * Navy monogram with the manager's initials. Identity is the name beside it, not a color, so `color` is
+ * accepted for compatibility and ignored.
+ */
+export function Avatar({ name, size = "md" }: { name: string; color?: string; size?: "sm" | "md" | "lg" }) {
   const initials = name
     .split(" ")
     .map((p) => p[0])
     .slice(0, 2)
-    .join("");
-  const dims = { sm: "size-6 text-[10px]", md: "size-8 text-xs", lg: "size-12 text-base" }[size];
+    .join("")
+    .toUpperCase();
+  const dims = { sm: "size-7 text-[12px]", md: "size-10 text-[17px]", lg: "size-16 text-[28px] shadow-[inset_0_0_0_3px_var(--accent)]" }[size];
   return (
-    <span
-      aria-hidden
-      className={`inline-flex shrink-0 items-center justify-center rounded-full font-semibold text-black/80 ${dims}`}
-      style={{ background: color }}
-    >
-      {initials}
+    <span aria-hidden className={`mono ${dims}`}>
+      {initials.length === 1 ? name.slice(0, 2).toUpperCase() : initials}
     </span>
   );
 }
@@ -85,6 +85,6 @@ export function TableWrap({ children }: { children: ReactNode }) {
 }
 
 export const th =
-  "px-3 py-2.5 text-left text-[11px] font-medium uppercase tracking-wider text-muted whitespace-nowrap border-b border-border";
-export const td = "px-3 py-2.5 whitespace-nowrap";
-export const tr = "transition-colors hover:bg-surface-2/60";
+  "px-2.5 py-2.5 text-left text-[11.5px] font-bold uppercase tracking-[.06em] text-muted whitespace-nowrap border-b border-[color:var(--border-2)] bg-surface";
+export const td = "px-2.5 py-[9px] whitespace-nowrap tabular-nums";
+export const tr = "transition-colors hover:bg-surface-2";

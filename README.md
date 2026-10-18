@@ -30,7 +30,9 @@ Requires Node 20.19+ (developed on Node 22–24).
 | Route | What it shows |
 |---|---|
 | `/` | Landing page; "Connect Yahoo" is a disabled, clearly-labelled placeholder |
-| `/[league]` | Reigning champion, trophy cabinet, ranking previews, power ratings (Elo), trend chart, latest season |
+| `/[league]` | Reigning champion, banners in the rafters, where everyone finished, bragging rights, latest season |
+| `/[league]/managers` | Every manager as a card: finish sparkline, titles, category win %, badges |
+| `/[league]/awards` | Season and all-time superlatives (`/awards/[year]` for any season) |
 | `/[league]/leaderboard` | Sortable/searchable all-time table with a season-range filter |
 | `/[league]/seasons/[year]` | Standings, the week-by-week standings race (bump chart + storylines), "what if" standings, playoffs, roster builds |
 | `/[league]/managers/[id]` | Career stats, power rating, streaks, matchup luck, manager rating, draft habits, season-by-season, rivals |

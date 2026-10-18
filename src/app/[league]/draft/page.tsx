@@ -68,7 +68,7 @@ export default async function DraftPage(props: PageProps<"/[league]/draft">) {
           <Link
             key={s.year}
             href={`/${slug}/draft/${s.year}`}
-            className="rounded-full border border-border px-3 py-1 text-sm text-muted hover:border-accent/50 hover:text-foreground"
+            className="pill"
           >
             {s.label} board
           </Link>

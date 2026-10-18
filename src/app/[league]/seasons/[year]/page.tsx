@@ -1,16 +1,16 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Bracket } from "@/components/Bracket";
 import { RaceChart } from "@/components/charts/RaceChart";
 import { Card, ManagerLink, PageTitle, Section, StatCard, TableWrap, td, th, tr } from "@/components/ui";
 import { formatPct, formatRecord, ordinal } from "@/lib/analytics/format";
 import { seasonRecords } from "@/lib/analytics/overview";
 import { PUNT_Z, rosterProfiles } from "@/lib/analytics/players";
 import { seasonRace } from "@/lib/analytics/race";
-import { matchupWinner, seasonOutcome, teamIndex } from "@/lib/analytics/season";
+import { seasonOutcome, teamIndex } from "@/lib/analytics/season";
 import { alternateStandings } from "@/lib/analytics/whatIf";
 import { colorForManager } from "@/lib/colors";
 import { getLeague } from "@/lib/data";
-import type { Stage } from "@/lib/types";
 
 const METHOD_LABEL = { categories: "category record", matchups: "matchup record" } as const;
 
@@ -29,13 +29,6 @@ function zTone(z: number): string {
   return "";
 }
 
-const STAGE_LABEL: Record<Stage, string> = {
-  regular: "Regular season",
-  quarterfinal: "Quarterfinal",
-  semifinal: "Semifinal",
-  final: "Final",
-  third_place: "Third-place game",
-};
 
 export async function generateStaticParams({ params }: { params: { league: string } }) {
   const league = await getLeague(params.league);
@@ -58,9 +51,6 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
   const weeks = new Set(season.matchups.filter((m) => m.stage === "regular").map((m) => m.week)).size;
   const champ = outcome.championTeamId ? teams.get(outcome.championTeamId)! : null;
   const runnerUp = outcome.runnerUpTeamId ? teams.get(outcome.runnerUpTeamId)! : null;
-  const playoffGames = season.matchups
-    .filter((m) => m.stage !== "regular")
-    .sort((a, b) => a.week - b.week || a.stage.localeCompare(b.stage));
   const race = seasonRace(season);
   const alt = alternateStandings(season);
   const builds = rosterProfiles(season);
@@ -86,7 +76,11 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
 
   return (
     <>
-      <PageTitle title={`${season.label} season`} subtitle={`${season.teams.length}-team head-to-head ${season.categories.length}-category league · ${weeks} regular-season weeks`} />
+      <PageTitle
+        eyebrow="Season"
+        title={season.label}
+        subtitle={`${season.teams.length} teams · ${weeks} regular-season weeks · ${outcome.playoffTeamIds.size}-team playoff · ${season.categories.length} categories: ${season.categories.join(", ")}.`}
+      />
 
       <nav aria-label="Select season" className="flex flex-wrap gap-2">
         {league.seasons.map((s) => (
@@ -94,9 +88,7 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
             key={s.year}
             href={`/${slug}/seasons/${s.year}`}
             aria-current={s.year === season.year ? "page" : undefined}
-            className={`rounded-full border px-3 py-1 text-sm ${
-              s.year === season.year ? "border-accent bg-accent/10 text-accent" : "border-border text-muted hover:text-foreground"
-            }`}
+            className="pill"
           >
             {s.label}
           </Link>
@@ -106,11 +98,15 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         <StatCard label="Champion" value={champ?.name ?? "—"} detail={champ ? managerName(champ.managerId) : "Not decided"} />
         <StatCard label="Runner-up" value={runnerUp?.name ?? "—"} detail={runnerUp ? managerName(runnerUp.managerId) : undefined} />
-        <StatCard label="Teams" value={season.teams.length} detail={`${outcome.playoffTeamIds.size} made the playoffs`} />
+        <StatCard
+          label="Regular-season #1"
+          value={outcome.standings[0]?.teamName ?? "—"}
+          detail={outcome.standings[0] ? `${managerName(outcome.standings[0].managerId)} · ${formatRecord(outcome.standings[0].catWins, outcome.standings[0].catLosses, outcome.standings[0].catTies)} in categories` : undefined}
+        />
         <StatCard
           label="Biggest blowout"
           value={records.biggestBlowout?.score ?? "—"}
-          detail={records.biggestBlowout ? `${records.biggestBlowout.winnerName}, wk ${records.biggestBlowout.week}` : undefined}
+          detail={records.biggestBlowout ? `${records.biggestBlowout.winnerName} over ${records.biggestBlowout.loserName}, week ${records.biggestBlowout.week}` : undefined}
         />
       </div>
 
@@ -168,11 +164,13 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
           />
         </Card>
         {storylines.length > 0 && (
-          <ul className="list-disc space-y-1 pl-5 text-sm">
+          <div className="grid gap-2 md:grid-cols-2">
             {storylines.map((line) => (
-              <li key={line}>{line}</li>
+              <p key={line} className="rounded-[10px] border border-border border-l-4 border-l-accent bg-surface px-3 py-2.5 text-sm">
+                {line}
+              </p>
             ))}
-          </ul>
+          </div>
         )}
         {alt && (
           <p className="text-sm text-muted">
@@ -188,42 +186,11 @@ export default async function SeasonPage(props: PageProps<"/[league]/seasons/[ye
         )}
       </Section>
 
-      <Section title="Playoffs">
-        {playoffGames.length === 0 ? (
-          <p className="text-sm text-muted">No playoff games recorded for this season.</p>
-        ) : (
-          <TableWrap>
-            <table className="w-full text-sm">
-              <caption className="sr-only">{season.label} playoff results</caption>
-              <thead>
-                <tr>
-                  <th className={th}>Round</th>
-                  <th className={th}>Matchup</th>
-                  <th className={th}>Score (cats)</th>
-                  <th className={th}>Winner</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                {playoffGames.map((m) => {
-                  const home = teams.get(m.homeTeamId)!;
-                  const away = teams.get(m.awayTeamId)!;
-                  const winner = teams.get(matchupWinner(m)!)!;
-                  return (
-                    <tr key={`${m.stage}-${m.homeTeamId}`} className={tr}>
-                      <td className={td}>{STAGE_LABEL[m.stage]}</td>
-                      <td className={td}>{home.name} vs {away.name}</td>
-                      <td className={`${td} tabular-nums`}>
-                        {m.homeCats}-{m.awayCats}{m.tiedCats ? `-${m.tiedCats}` : ""}
-                        {m.tiebreakWinnerTeamId && <span className="text-muted"> (seed tiebreak)</span>}
-                      </td>
-                      <td className={td}>{winner.name}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </TableWrap>
-        )}
+      <Section title="Playoff bracket">
+        <Card className="p-5">
+          <Bracket season={season} managerName={managerName} />
+          <p className="mt-3 text-xs text-muted">Seeds come from the regular-season standings. Ties in a playoff week go to the higher seed.</p>
+        </Card>
       </Section>
 
       {builds && (

@@ -37,7 +37,7 @@ export default async function DraftBoardPage(props: PageProps<"/[league]/draft/[
       />
 
       <nav aria-label="Select draft" className="flex flex-wrap gap-2">
-        <Link href={`/${slug}/draft`} className="rounded-full border border-border px-3 py-1 text-sm text-muted hover:text-foreground">
+        <Link href={`/${slug}/draft`} className="pill">
           ← All drafts
         </Link>
         {draftSeasons.map((s) => (
@@ -45,9 +45,7 @@ export default async function DraftBoardPage(props: PageProps<"/[league]/draft/[
             key={s.year}
             href={`/${slug}/draft/${s.year}`}
             aria-current={s.year === season.year ? "page" : undefined}
-            className={`rounded-full border px-3 py-1 text-sm ${
-              s.year === season.year ? "border-accent bg-accent/10 text-accent" : "border-border text-muted hover:text-foreground"
-            }`}
+            className="pill"
           >
             {s.label}
           </Link>
