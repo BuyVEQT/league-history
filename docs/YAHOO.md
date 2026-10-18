@@ -8,14 +8,20 @@ captures of one real league (password-gated, see [EXTRACTION.md](EXTRACTION.md))
 Yahoo no longer provisions the Fantasy Sports API self-serve. Submit a request at
 <https://sports.yahoo.com/developer/access/>. Incomplete requests are closed without reply, so prepare:
 
-- [ ] A live site on a real domain (the demo deployed to Vercel)
-- [x] Privacy policy and terms pages (`/privacy`, `/terms`) — set `CONTACT_EMAIL` in `src/lib/config.ts`
+- [ ] A live site on a real domain (the demo deployed to Vercel); put the URL in the application
+- [x] Landing page that shows the product with the demo league and states exactly what Yahoo data is read
+- [x] Privacy policy and terms pages (`/privacy`, `/terms`), matched to Yahoo's API terms (third-party
+      disclosure, 24-hour removal of personal data not marked storable, no GUID sharing, under-13s)
+- [ ] Set `CONTACT_EMAIL` in `src/lib/config.ts` (the policy shows a placeholder until then)
 - [x] Attribution footer ("Fantasy data provided by Yahoo Fantasy" + link), shown when `league.source === "yahoo"`
-- [ ] Read Yahoo's API terms on caching/retention and make the privacy policy match
-- [ ] A clear description: read-only multi-season league history/analytics, what data is read, who uses it
+- [x] A clear description: see [YAHOO-APPLICATION.md](YAHOO-APPLICATION.md) (paste-ready answers)
 - [ ] The OAuth redirect URI you will register (e.g. `https://<domain>/api/auth/yahoo/callback`)
-- [ ] A data-retention/caching plan (check Yahoo's current developer terms before persisting Yahoo data)
-- [ ] A contact email
+- [ ] Data-retention design: fetch on view, cache ≤ 24 hours (see the API terms, §2.1)
+
+Terms to re-read before building: Yahoo Developer Network API Terms of Use
+(<https://legal.yahoo.com/us/en/yahoo/terms/product-atos/apiforydn/index.html>): no income from the APIs without
+permission (§1.7.4), no competing products (§1.7.6), consent and OAuth (§1.8), privacy policy (§2.4), retention (§2.1),
+no GUID sharing (§2.3).
 
 ## 2. What to build once approved
 

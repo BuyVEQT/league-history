@@ -6,7 +6,7 @@ export const SITE_TAGLINE = "Your Yahoo Fantasy Basketball league, remembered.";
 export const CONTACT_EMAIL: string | null = null;
 
 /** Date the privacy policy and terms were last changed. */
-export const LEGAL_UPDATED = "October 17, 2026";
+export const LEGAL_UPDATED = "October 18, 2026";
 
 /** Required attribution wherever Yahoo-sourced data is shown (Yahoo developer requirements). */
 export const YAHOO_ATTRIBUTION = {

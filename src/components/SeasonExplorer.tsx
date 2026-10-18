@@ -20,7 +20,7 @@ export function SeasonExplorer({ seasons }: { seasons: SeasonStory[] }) {
     <div className="season-explorer">
       <div className="explorer-copy">
         <div className="eyebrow text-accent">The history books</div>
-        <h2 className="display-heading mt-4">Every season.<br />A different story.</h2>
+        <h2 className="display-heading mt-4">Every champion.<br />A different story.</h2>
         <p className="mt-5 max-w-sm text-sm leading-7 text-muted">The unlikely runs. The repeat champions. The finals nobody lets you forget. Take a trip through our fictional demo league.</p>
         <Link href="/demo/seasons" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-accent">Open the season archive <ArrowRight size={16} /></Link>
       </div>

@@ -29,7 +29,7 @@ Requires Node 20.19+ (developed on Node 22–24).
 
 | Route | What it shows |
 |---|---|
-| `/` | Landing page; "Connect Yahoo" is a disabled, clearly-labelled placeholder |
+| `/` | Landing page: live previews from the demo league, how the read-only Yahoo connection will work, and a disabled, clearly-labelled "Connect Yahoo" |
 | `/[league]` | Reigning champion, banners in the rafters, where everyone finished, bragging rights, latest season |
 | `/[league]/managers` | Every manager as a card: finish sparkline, titles, category win %, badges |
 | `/[league]/awards` | Season and all-time superlatives (`/awards/[year]` for any season) |
@@ -40,6 +40,7 @@ Requires Node 20.19+ (developed on Node 22–24).
 | `/[league]/records` | Playoff performers, seeds and upsets, droughts, clutch, streaks, standings-race records, what-if, luck, scorelines and sweeps, best/worst seasons, consistency, parity, namesakes |
 | `/[league]/draft` | Draft report card, draft position, how much the draft decides, draft habits, steals/busts, late gems, favourites, the ones that got away, draft slots |
 | `/[league]/draft/[year]` | One season's draft board, each pick coloured by value |
+| `/[league]/injuries` | Injury luck: games played by each manager's draft picks, draft-by-draft heat grid, biggest losses, iron men, repeat risks, and whether health decided seasons |
 | `/[league]/trades` | Trade log with winners, activity by manager, waiver activity vs finish, undrafted gems, stars nobody owned |
 
 Draft and trade pages appear when a league has that data (both leagues do).
