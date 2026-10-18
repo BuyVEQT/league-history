@@ -11,6 +11,8 @@ export interface FinalTeam {
   fga: number;
   /** Yahoo's own tiebreaker value, to 8 decimals. */
   yahooFgPct: number;
+  /** Yahoo's FT% for the week, as displayed (3 decimals). Optional: added by hand from the matchup page. */
+  yahooFtPct?: number;
   tpm: number;
   pts: number;
   reb: number;

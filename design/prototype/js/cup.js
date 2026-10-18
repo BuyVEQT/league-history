@@ -155,7 +155,7 @@
   function cats(el) {
     const C = [
       ["FG%", "FG%", (t) => pct8(t.yahooFgPct).slice(0, 7), true],
-      ["FT%", "FT%", () => "—", false],
+      ["FT%", "FT%", (t) => (t.yahooFtPct == null ? "—" : t.yahooFtPct.toFixed(3).replace(/^0/, "")), false],
       ["3PTM", "3PM", (t) => t.tpm],
       ["PTS", "PTS", (t) => t.pts, true],
       ["REB", "REB", (t) => t.reb],
