@@ -32,8 +32,30 @@ export default function PrivacyPage() {
           <li>Never post, trade, or change anything in your Yahoo account.</li>
           <li>Keep access tokens on the server only, never in your browser, and protect them with encryption.</li>
           <li>Show league data only to signed-in members of that league.</li>
-          <li>Keep Yahoo data only as long as needed to show your league history, within Yahoo&apos;s API terms.</li>
+          <li>
+            Store what it reads from Yahoo (league results and the names your league uses) only to show that league&apos;s
+            history, and refresh it from Yahoo rather than keep it longer than Yahoo&apos;s API terms allow. Personal
+            data that Yahoo does not mark as storable is deleted within 24 hours.
+          </li>
+          <li>Never share your Yahoo account ID (GUID) or other Yahoo data with anyone else.</li>
         </ul>
+        <p>
+          In other words, {SITE_NAME} is a third party that collects, stores and uses data from your Yahoo account, with
+          your permission, for this one purpose.
+        </p>
+      </section>
+
+      <section>
+        <h2>Who can use it</h2>
+        <p>{SITE_NAME} is not for children under 13, and we do not knowingly collect data from them.</p>
+      </section>
+
+      <section>
+        <h2>Other sources</h2>
+        <p>
+          Some NBA player statistics (games played, season totals) come from Sleeper&apos;s public NBA data. They are
+          about NBA players, not about you.
+        </p>
       </section>
 
       <section>
