@@ -6,7 +6,7 @@ import { tt } from "./tt";
 export function H2HBars({ rows, name, nameOf, href }: { rows: RivalRecord[]; name: string; nameOf: (id: string) => string; href: string }) {
   const sorted = [...rows].sort((a, b) => b.winPct - a.winPct || b.games - a.games);
   return (
-    <div className="space-y-2">
+    <div className="space-y-2" role="group" aria-label={`${name}: head-to-head win % against each opponent`}>
       <div className="rowchart">
         <span />
         <div className="relative flex justify-between text-[11px] text-muted">
@@ -15,7 +15,7 @@ export function H2HBars({ rows, name, nameOf, href }: { rows: RivalRecord[]; nam
           <span>100%</span>
         </div>
         <span />
-        {sorted.map((r) => {
+        {sorted.map((r, i) => {
           const left = Math.min(r.winPct, 0.5) * 100;
           const width = Math.max(0.6, Math.abs(r.winPct - 0.5) * 100);
           return (
@@ -23,6 +23,7 @@ export function H2HBars({ rows, name, nameOf, href }: { rows: RivalRecord[]; nam
               key={r.opponentId}
               href={`${href}&b=${r.opponentId}`}
               className="contents"
+              aria-label={`${name} vs ${nameOf(r.opponentId)}: ${r.wins}-${r.losses}-${r.ties}, open the rivalry`}
               data-tt={tt(`${name} vs ${nameOf(r.opponentId)}`, [
                 ["Record", `${r.wins}-${r.losses}-${r.ties}`],
                 ["Win %", `${Math.round(r.winPct * 100)}%`],
@@ -31,7 +32,10 @@ export function H2HBars({ rows, name, nameOf, href }: { rows: RivalRecord[]; nam
             >
               <span className="nm">{nameOf(r.opponentId)}</span>
               <span className="trk" style={{ background: "linear-gradient(90deg, transparent calc(50% - .5px), var(--border-2) calc(50% - .5px), var(--border-2) calc(50% + .5px), transparent calc(50% + .5px))" }}>
-                <span className="bar" style={{ left: `${left}%`, width: `${width}%`, background: r.winPct >= 0.5 ? "var(--pos)" : "var(--neg)" }} />
+                <span
+                  className={`bar mg-bar ${r.winPct >= 0.5 ? "from-l" : "from-r"}`}
+                  style={{ left: `${left}%`, width: `${width}%`, background: r.winPct >= 0.5 ? "var(--pos)" : "var(--neg)", animationDelay: `${i * 35}ms` }}
+                />
               </span>
               <span className="v">
                 {r.wins}-{r.losses}

@@ -4,7 +4,7 @@ import { tt } from "./tt";
 
 type Point = ReturnType<typeof careerPath>[number];
 
-/** Each season: regular-season seed (ring) and final finish (dot, gold for a title), joined by a line colored by the playoff move. */
+/** Each season (dots pop in one season at a time; CSS, so it stays a server component): regular-season seed (ring) and final finish (dot, gold for a title), joined by a line colored by the playoff move. */
 export function CareerPath({ points, years, maxTeams }: { points: Point[]; years: { year: number; label: string }[]; maxTeams: number }) {
   const W = 560;
   const H = 250;
@@ -28,7 +28,7 @@ export function CareerPath({ points, years, maxTeams }: { points: Point[]; years
           &apos;{String(yr.year).slice(2)}
         </text>
       ))}
-      {points.map((p) => {
+      {points.map((p, i) => {
         const stroke = p.final < p.seed ? "var(--pos)" : p.final > p.seed ? "var(--neg)" : "var(--border-2)";
         return (
           <g
@@ -40,9 +40,9 @@ export function CareerPath({ points, years, maxTeams }: { points: Point[]; years
             ])}
           >
             <rect x={x(p.year) - step / 2} y={0} width={step} height={H} fill="transparent" />
-            <line x1={x(p.year)} x2={x(p.year)} y1={y(p.seed)} y2={y(p.final)} stroke={stroke} strokeWidth={2} />
-            <circle cx={x(p.year)} cy={y(p.seed)} r={5} fill="var(--surface)" stroke="var(--ink-2)" strokeWidth={2} />
-            <circle cx={x(p.year)} cy={y(p.final)} r={p.final === 1 ? 8 : 6} fill={p.final === 1 ? "var(--gold)" : "var(--s1)"} stroke="var(--surface)" strokeWidth={2} />
+            <line className="mg-fade" style={{ animationDelay: `${i * 70 + 150}ms` }} x1={x(p.year)} x2={x(p.year)} y1={y(p.seed)} y2={y(p.final)} stroke={stroke} strokeWidth={2} />
+            <circle className="mg-pop" style={{ animationDelay: `${i * 70}ms` }} cx={x(p.year)} cy={y(p.seed)} r={5} fill="var(--surface)" stroke="var(--ink-2)" strokeWidth={2} />
+            <circle className="mg-pop" style={{ animationDelay: `${i * 70 + 120}ms` }} cx={x(p.year)} cy={y(p.final)} r={p.final === 1 ? 8 : 6} fill={p.final === 1 ? "var(--gold)" : "var(--s1)"} stroke="var(--surface)" strokeWidth={2} />
           </g>
         );
       })}

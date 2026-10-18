@@ -28,13 +28,13 @@ export function WeekHistogram({ dist, leagueDist, name }: { dist: number[]; leag
       {rows.map((r) => (
         <g key={r.k} data-tt={tt(`Won ${r.k} of ${rows.length - 1} categories`, [[name, `${r.c} weeks (${Math.round(r.me * 100)}%)`], ["League average", `${Math.round(r.lg * 100)}%`]])}>
           <rect x={cx(r.k) - band / 2} y={0} width={band} height={H} fill="transparent" />
-          <rect x={cx(r.k) - bw / 2} y={y(r.me)} width={bw} height={Math.max(0, H - m.b - y(r.me))} rx={3} fill="var(--s1)" />
+          <rect className="mg-grow" style={{ animationDelay: `${r.k * 45}ms` }} x={cx(r.k) - bw / 2} y={y(r.me)} width={bw} height={Math.max(0, H - m.b - y(r.me))} rx={3} fill="var(--s1)" />
           <text className="lbl num" x={cx(r.k)} y={H - m.b + 16} textAnchor="middle">
             {r.k}
           </text>
         </g>
       ))}
-      <path d={line} fill="none" stroke="var(--foreground)" strokeWidth={2} strokeLinejoin="round" pointerEvents="none" />
+      <path className="mg-draw" pathLength={1} d={line} fill="none" stroke="var(--foreground)" strokeWidth={2} strokeLinejoin="round" pointerEvents="none" />
       <text className="lbl" x={W - m.r} y={H - 2} textAnchor="end">
         categories won →
       </text>
