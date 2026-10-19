@@ -36,11 +36,11 @@ describe("season view helpers", () => {
 });
 
 describe("leaderboard view helpers", () => {
-  it("GOAT slices add up to the score", () => {
+  it("GOAT slices add up to the score, from the average of 50", () => {
     for (const row of goatScores(generateDemoLeague())) {
       const stack = goatStack(row);
       expect(stack).toHaveLength(6);
-      expect(stack.reduce((a, s) => a + s.points, 0)).toBeCloseTo(row.score, 6);
+      expect(Math.min(100, Math.max(0, 50 + stack.reduce((a, s) => a + s.points, 0)))).toBeCloseTo(row.score, 6);
     }
   });
 

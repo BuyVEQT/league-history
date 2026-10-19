@@ -6,7 +6,7 @@ import { PUNT_Z } from "./analytics/players";
  * terms and how to read it, with an example, then gives the precise definition.
  */
 export const TIPS = {
-  goat: `One number for a whole career, from 0 to 100: 100 = the best in the league at everything that matters, 0 = the weakest of the regulars. A 90+ is hall-of-fame stuff; 50 is mid-pack. How it's built: ${GOAT_RULE}`,
+  goat: `One number for a whole career, from 0 to 100, where 50 = an average regular. Every part is measured against the league average, so a 10-point gap means a real gap: being one standard deviation better than average at everything is worth 70. 80+ is hall-of-fame stuff. How it's built: ${GOAT_RULE}`,
   catPct:
     "Of every single category played in weekly matchups (points, rebounds, steals and so on), the share they won; ties count half. 50% is average. 57% ≈ winning about 5 of the 9 categories in a typical week.",
   catRecord:

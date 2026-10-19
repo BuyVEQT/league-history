@@ -102,7 +102,7 @@ export default async function OverviewPage(props: PageProps<"/[league]">) {
     })
     .sort((x, y) => y.pct - x.pct || y.cell.wins - x.cell.wins)[0];
   const explore = [
-    goat && { href: "leaderboard", k: "Leaderboard", line: `${goat.name} leads the all-time GOAT rankings at ${goat.score.toFixed(0)} out of 100.`, tip: TIPS.goat },
+    goat && { href: "leaderboard", k: "Leaderboard", line: `${goat.name} leads the all-time GOAT rankings at ${goat.score.toFixed(0)} (50 = an average manager).`, tip: TIPS.goat },
     luckiest && {
       href: "records#luck",
       k: "Records",

@@ -164,7 +164,7 @@ export default async function Home() {
               </header>
               <ol className="home-goat">
                 {goat.map((g, i) => (
-                  <li key={g.managerId} data-tt={tt(g.name, [["GOAT score", g.score.toFixed(1)]], "0-100. Hover the leaderboard in the demo for the full recipe.")}>
+                  <li key={g.managerId} data-tt={tt(g.name, [["GOAT score", g.score.toFixed(1)]], "0-100, where 50 = an average manager. The demo leaderboard shows the full recipe.")}>
                     <span className="n">{i + 1}</span>
                     <span className="nm">{g.name}</span>
                     <span className="bar" aria-hidden>
