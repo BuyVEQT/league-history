@@ -26,14 +26,31 @@ const SHORT: Record<GoatSlice["key"], string> = {
   titles: "Titles",
   finish: "Avg finish",
   catPct: "Category win %",
-  finals: "Finals",
+  finals: "Runner-ups",
   playoffRate: "Playoff rate",
   playoffWinPct: "Playoff game win %",
 };
 
+const signedPts = (n: number) => `${n >= 0 ? "+" : "−"}${Math.abs(n).toFixed(1)}`;
+const standing = (z: number) =>
+  Math.abs(z) < 0.15 ? "about average" : `${Math.abs(z).toFixed(1)} standard deviations ${z > 0 ? "better" : "worse"}`;
+
+/** Lays slices out from the 50 line: positive ones stack rightwards, negative ones leftwards (widths in score points = % of the 0-100 track). */
+function placeSlices(stack: GoatSlice[]) {
+  let right = 50;
+  let left = 50;
+  return stack.map((p) => {
+    const width = Math.min(Math.abs(p.points), p.points >= 0 ? 100 - right : left);
+    const at = p.points >= 0 ? right : left - width;
+    if (p.points >= 0) right += width;
+    else left -= width;
+    return { p, left: at, width };
+  });
+}
+
 /**
  * The GOAT banner: the leader's score as a big count-up, their headline numbers, and the top three
- * scores split into the six weighted parts as stacked bars (each slice = points it adds to the 0-100 score).
+ * scores split into the six weighted parts, each growing right (above average) or left (below) from the 50 line.
  */
 export function GoatBanner({
   slug,
@@ -41,12 +58,15 @@ export function GoatBanner({
   top,
   stats,
   tip,
+  confidence,
 }: {
   slug: string;
   seasons: number;
   top: GoatEntry[];
   stats: { label: string; value: number; decimals?: number; suffix?: string; detail?: string }[];
   tip: string;
+  /** One line on how sure the #1 is (see goatConfidence). */
+  confidence?: string;
 }) {
   const [goat] = top;
   if (!goat) return null;
@@ -64,7 +84,7 @@ export function GoatBanner({
               {goat.name}
             </Link>
           </div>
-          <div className="goat-score" aria-label={`GOAT score ${goat.score.toFixed(0)} of 100`}>
+          <div className="goat-score" aria-label={`GOAT score ${goat.score.toFixed(0)} of 100, where 50 is average`}>
             <CountUp value={Math.round(goat.score)} />
             <small>/100</small>
           </div>
@@ -87,7 +107,7 @@ export function GoatBanner({
           <InfoTip
             down
             end
-            text={`Each bar is the 0-100 GOAT score split into its six parts. The weights: ${parts.map((p) => `${SHORT[p.key].toLowerCase()} ${Math.round(p.weight * 100)}%`).join(", ")}. A part's slice is its weight × how the manager ranks on it, from worst (0) to best (1) of everyone with enough seasons.`}
+            text={`Each bar starts at the middle line, the league average of 50, and shows what each of the six parts adds (to the right) or takes away (to the left, faded). The weights: ${parts.map((p) => `${SHORT[p.key].toLowerCase()} ${Math.round(p.weight * 100)}%`).join(", ")}. A part's slice is its weight × how far above or below the league average the manager is on it.`}
           />
         </div>
         <ol className="goat-bars">
@@ -100,16 +120,16 @@ export function GoatBanner({
               <span className="sc">
                 <CountUp value={Math.round(g.score)} />
               </span>
-              <span className="trk" role="img" aria-label={`${g.name}: ${g.stack.map((p) => `${SHORT[p.key]} ${p.points.toFixed(1)}`).join(", ")} points`}>
-                {g.stack.map((p, k) => (
+              <span className="trk div" role="img" aria-label={`${g.name}: ${g.stack.map((p) => `${SHORT[p.key]} ${signedPts(p.points)}`).join(", ")} points from the average of 50`}>
+                {placeSlices(g.stack).map(({ p, left, width }, k) => (
                   <span
                     key={p.key}
-                    className="seg-part"
-                    style={{ width: `${p.points}%`, background: PART_COLOR[p.key], animationDelay: `${i * 120 + k * 60}ms` }}
+                    className={`seg-part ${p.points < 0 ? "neg" : ""}`}
+                    style={{ left: `${left}%`, width: `${width}%`, background: PART_COLOR[p.key], animationDelay: `${i * 120 + k * 60}ms` }}
                     data-tt={tt(`${g.name} · ${SHORT[p.key]}`, [
                       ["Weight", `${Math.round(p.weight * 100)}%`],
-                      ["Standing on this part", `${Math.round(p.part * 100)}% of the way from worst to best`],
-                      ["Points added", `${p.points.toFixed(1)} of ${Math.round(p.weight * 100)}`],
+                      ["Vs the league average", standing(p.z)],
+                      ["Points", `${signedPts(p.points)} from the average of 50`],
                     ])}
                   />
                 ))}
@@ -117,6 +137,7 @@ export function GoatBanner({
             </li>
           ))}
         </ol>
+        {confidence && <p className="goat-sure">{confidence}</p>}
         <div className="goat-legend">
           {parts.map((p) => (
             <span key={p.key}>

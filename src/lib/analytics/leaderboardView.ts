@@ -1,7 +1,7 @@
 import type { League, ManagerId } from "../types";
 import { managerSeasons, type YearRange } from "./career";
 import { winPct } from "./format";
-import { GOAT_LABELS, GOAT_WEIGHTS, type GoatRow } from "./goat";
+import { GOAT_LABELS, GOAT_SPREAD, GOAT_WEIGHTS, type GoatPart, type GoatRow } from "./goat";
 
 /**
  * Display-only reshaping for the leaderboard and overview. No new formulas: values come from
@@ -9,24 +9,27 @@ import { GOAT_LABELS, GOAT_WEIGHTS, type GoatRow } from "./goat";
  */
 
 export interface GoatSlice {
-  key: keyof typeof GOAT_WEIGHTS;
+  key: GoatPart;
   label: string;
   /** The part's weight, 0-1. */
   weight: number;
-  /** The manager's scaled value for the part, 0-1 (worst to best qualifying manager). */
-  part: number;
-  /** Points this part adds to the 0-100 score: weight × part × 100. The slices add up to the score. */
+  /** The manager's standard score on the part: 0 = league average, +1 = one standard deviation better. */
+  z: number;
+  /**
+   * Points this part adds to (+) or takes from (−) the average of 50: GOAT_SPREAD × weight × z.
+   * 50 plus the slices is the score (before it's kept within 0-100).
+   */
   points: number;
 }
 
-/** A GOAT score split into its six weighted parts, in weight order, for a stacked bar. */
+/** A GOAT score split into its six weighted parts, in weight order, for a bar that grows either way from 50. */
 export function goatStack(row: GoatRow): GoatSlice[] {
-  return (Object.keys(GOAT_WEIGHTS) as (keyof typeof GOAT_WEIGHTS)[]).map((key) => ({
+  return (Object.keys(GOAT_WEIGHTS) as GoatPart[]).map((key) => ({
     key,
     label: GOAT_LABELS[key],
     weight: GOAT_WEIGHTS[key],
-    part: row.parts[key],
-    points: 100 * GOAT_WEIGHTS[key] * row.parts[key],
+    z: row.z[key],
+    points: GOAT_SPREAD * GOAT_WEIGHTS[key] * row.z[key],
   }));
 }
 
