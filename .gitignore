@@ -50,3 +50,7 @@ next-env.d.ts
 *.local.json
 data/leagues/caboclo/.sleeper-cache/
 data/leagues/caboclo/.story-cache/
+
+# Yahoo Fantasy API (scripts/yahoo-api.mjs)
+.yahoo-tokens.local.json
+data/leagues/caboclo/.yahoo-cache/
